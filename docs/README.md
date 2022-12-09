@@ -1,3 +1,10 @@
+<div style='text-align:center'>
+<img src='Assets/obs-powershell.svg' />
+<h1>
+obs-powershell
+</h1>
+</div>
+
 obs-powershell is a PowerShell module that lets you script Open Broadcast Studio.
 
 ## Getting Started

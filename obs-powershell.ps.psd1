@@ -7,13 +7,7 @@
     CompanyName       = 'Start-Automating'
     Copyright         = '2022 Start-Automating'
     FormatsToProcess  = 'obs-powershell.format.ps1xml'
-    TypesToProcess    = 'obs-powershell.types.ps1xml'
-    FunctionsToExport = '' <#{
-        $exportNames = Get-ChildItem -Recurse -Filter '*-*.ps1' |
-            Where-Object Name -notmatch '\.[^\.]+\.ps1' |
-            Foreach-Object { $_.Name.Substring(0, $_.Name.Length - $_.Extension.Length) }
-        "'$($exportNames -join "','")'"
-    }#>
+    TypesToProcess    = 'obs-powershell.types.ps1xml'    
     PrivateData = @{
         PSData = @{
             Tags = 'PowerShell', 'OBS'
@@ -30,4 +24,10 @@ Initial Release of obs-powershell
 '@
         }
     }
+    FunctionsToExport = '' <#{
+        $exportNames = Get-ChildItem -Recurse -Filter '*-*.ps1' |
+            Where-Object Name -notmatch '\.[^\.]+\.ps1' |
+            Foreach-Object { $_.Name.Substring(0, $_.Name.Length - $_.Extension.Length) }
+        "'$($exportNames -join "',$([Environment]::Newline)'")'"
+    }#>
 }

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-16"?>
+<!-- Generated with EZOut 1.9.7: Install-Module EZOut or https://github.com/StartAutomating/EZOut -->
+<Configuration>
+  <ViewDefinitions>
+    <View>
+      <Name>OBS.GetMonitorList.Response</Name>
+      <ViewSelectedBy>
+        <TypeName>OBS.GetMonitorList.Response</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+          </TableColumnHeader>
+          <TableColumnHeader>
+          </TableColumnHeader>
+          <TableColumnHeader>
+          </TableColumnHeader>
+          <TableColumnHeader>
+          </TableColumnHeader>
+          <TableColumnHeader>
+          </TableColumnHeader>
+          <TableColumnHeader>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>monitorIndex</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>monitorName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>monitorWidth</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>monitorHeight</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>monitorPositionX</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>monitorPositionY</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+  </ViewDefinitions>
+</Configuration>

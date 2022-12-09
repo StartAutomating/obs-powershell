@@ -17,6 +17,6 @@ if (-not (Test-Path $assetsPath)) {
         =<svg.use> -Href '#psChevron' -Fill 'white' -Height 33% -Y 7.5%
         =<svg.use> -Href '#psChevron' -Fill 'white' -Height 33% -X -25% -Y 45%
         =<svg.use> -Href '#psChevron' -Fill 'white' -Height 33% -X 25% -Y 45%
-    ) -Id 'obspowershell'        
-    =<svg.use> -Href 'obspowershell' 
+    ) -Id 'combinedLogo'        
+    =<svg.use> -Href '#combinedLogo' 
 ) -ViewBox 1000,1000 -OutputPath (Join-Path $assetsPath obs-powershell.svg)

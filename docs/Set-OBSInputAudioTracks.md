@@ -1,0 +1,60 @@
+Set-OBSInputAudioTracks
+-----------------------
+### Synopsis
+Set-OBSInputAudioTracks : SetInputAudioTracks
+
+---
+### Description
+
+Sets the enable state of audio tracks of an input.
+
+
+Set-OBSInputAudioTracks calls the OBS WebSocket with a request of type SetInputAudioTracks.
+
+---
+### Related Links
+* [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setinputaudiotracks](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setinputaudiotracks)
+
+
+
+---
+### Parameters
+#### **inputName**
+
+Name of the input
+
+
+
+> **Type**: ```[String]```
+
+> **Required**: true
+
+> **Position**: 1
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
+#### **inputAudioTracks**
+
+Track settings to apply
+
+
+
+> **Type**: ```[PSObject]```
+
+> **Required**: true
+
+> **Position**: 2
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
+### Syntax
+```PowerShell
+Set-OBSInputAudioTracks [-inputName] <String> [-inputAudioTracks] <PSObject> [<CommonParameters>]
+```
+---

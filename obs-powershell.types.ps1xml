@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<!-- Generated with EZOut 1.9.7: Install-Module EZOut or https://github.com/StartAutomating/EZOut -->
+<Types>
+  <Type>
+    <Name>OBS.GetSceneItemList.Response</Name>
+    <Members>
+      <ScriptMethod>
+        <Name>Disable</Name>
+        <Script>
+                        $this | Set-OBSSceneItemEnabled -sceneItemEnabled:$false
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Enable</Name>
+        <Script>
+                        $this | Set-OBSSceneItemEnabled -sceneItemEnabled
+
+                    </Script>
+      </ScriptMethod>
+    </Members>
+  </Type>
+</Types>

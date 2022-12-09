@@ -1,0 +1,32 @@
+Get-OBSCurrentProgramScene
+--------------------------
+### Synopsis
+Get-OBSCurrentProgramScene : GetCurrentProgramScene
+
+---
+### Description
+
+Gets the current program scene.
+
+
+Get-OBSCurrentProgramScene calls the OBS WebSocket with a request of type GetCurrentProgramScene.
+
+---
+### Related Links
+* [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getcurrentprogramscene](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getcurrentprogramscene)
+
+
+
+---
+### Examples
+#### EXAMPLE 1
+```PowerShell
+Get-OBSCurrentProgramScene
+```
+
+---
+### Syntax
+```PowerShell
+Get-OBSCurrentProgramScene [<CommonParameters>]
+```
+---

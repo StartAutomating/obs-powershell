@@ -1,0 +1,32 @@
+Switch-OBSStream
+----------------
+### Synopsis
+Switch-OBSStream : ToggleStream
+
+---
+### Description
+
+Toggles the status of the stream output.
+
+
+Switch-OBSStream calls the OBS WebSocket with a request of type ToggleStream.
+
+---
+### Related Links
+* [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#togglestream](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#togglestream)
+
+
+
+---
+### Examples
+#### EXAMPLE 1
+```PowerShell
+Switch-OBSStream
+```
+
+---
+### Syntax
+```PowerShell
+Switch-OBSStream [<CommonParameters>]
+```
+---

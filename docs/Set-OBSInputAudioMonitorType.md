@@ -1,0 +1,60 @@
+Set-OBSInputAudioMonitorType
+----------------------------
+### Synopsis
+Set-OBSInputAudioMonitorType : SetInputAudioMonitorType
+
+---
+### Description
+
+Sets the audio monitor type of an input.
+
+
+Set-OBSInputAudioMonitorType calls the OBS WebSocket with a request of type SetInputAudioMonitorType.
+
+---
+### Related Links
+* [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setinputaudiomonitortype](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setinputaudiomonitortype)
+
+
+
+---
+### Parameters
+#### **inputName**
+
+Name of the input to set the audio monitor type of
+
+
+
+> **Type**: ```[String]```
+
+> **Required**: true
+
+> **Position**: 1
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
+#### **monitorType**
+
+Audio monitor type
+
+
+
+> **Type**: ```[String]```
+
+> **Required**: true
+
+> **Position**: 2
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
+### Syntax
+```PowerShell
+Set-OBSInputAudioMonitorType [-inputName] <String> [-monitorType] <String> [<CommonParameters>]
+```
+---

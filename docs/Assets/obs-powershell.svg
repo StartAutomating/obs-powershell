@@ -53,11 +53,11 @@
     </symbol>
     <use href="#psChevron" fill="#4488ff" xmlns="http://www.w3.org/2000/svg" />
   </symbol>
-  <symbol viewBox="0 0 1000 1000" id="obspowershell">
+  <symbol viewBox="0 0 1000 1000" id="combinedLogo">
     <use href="#obslogo" />
     <use href="#psChevron" fill="white" height="33%" y="7.5%" />
     <use href="#psChevron" fill="white" height="33%" x="-25%" y="45%" />
     <use href="#psChevron" fill="white" height="33%" x="25%" y="45%" />
   </symbol>
-  <use href="obspowershell" />
+  <use href="#combinedLogo" />
 </svg>

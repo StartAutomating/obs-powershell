@@ -61,6 +61,7 @@
         </TableHeaders>
         <TableRowEntries>
           <TableRowEntry>
+            <Wrap />
             <TableColumnItems>
               <TableColumnItem>
                 <ScriptBlock>$moduleName = 'obs-powershell'
@@ -101,7 +102,7 @@
                 }
             )
 
-            $sceneInfo.Name + $(
+            $sceneInfo.sceneName + ' ' + $(
                 if ($currentOrPreview) {
                     "( $($currentOrPreview -join ' ') )"
                 }
@@ -162,7 +163,7 @@
                 }
             )
 
-            $sceneInfo.Name + $(
+            $sceneInfo.SceneName + ' ' + $(
                 if ($currentOrPreview) {
                     "( $($currentOrPreview -join ' ') )"
                 }

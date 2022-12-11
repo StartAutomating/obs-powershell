@@ -2,10 +2,10 @@ Write-FormatView -TypeName OBS.GetSceneList.Response -Property Scenes -VirtualPr
     Scenes = {        
         @(foreach ($sceneInfo in $_.scenes) {        
             $currentOrPreview = @(            
-                if ($sceneInfo.Name -eq $_.currentProgramSceneName) {
+                if ($sceneInfo.sceneName -eq $_.currentProgramSceneName) {
                     Format-RichText -InputObject 'current' -ForegroundColor Warning
                 }
-                if ($sceneInfo.Name -eq $_.currentPreviewSceneName) {
+                if ($sceneInfo.sceneName -eq $_.currentPreviewSceneName) {
                     Format-RichText -InputObject 'preview' -ForegroundColor Verbose
                 }
             )
@@ -23,10 +23,10 @@ Write-FormatView -TypeName OBS.GetSceneList.Response -Action {
     Write-FormatViewExpression -ScriptBlock {
         @(foreach ($sceneInfo in $_.scenes) {        
             $currentOrPreview = @(            
-                if ($sceneInfo.Name -eq $_.currentProgramSceneName) {
+                if ($sceneInfo.sceneName -eq $_.currentProgramSceneName) {
                     Format-RichText -InputObject 'current' -ForegroundColor Warning
                 }
-                if ($sceneInfo.Name -eq $_.currentPreviewSceneName) {
+                if ($sceneInfo.sceneName -eq $_.currentPreviewSceneName) {
                     Format-RichText -InputObject 'preview' -ForegroundColor Verbose
                 }
             )

@@ -1,5 +1,5 @@
 Write-FormatView -TypeName OBS.GetSceneList.Response -Property Scenes -VirtualProperty @{
-    Scenes = @(
+    Scenes = {        
         @(foreach ($sceneInfo in $_.scenes) {        
             $currentOrPreview = @(            
                 if ($sceneInfo.Name -eq $_.currentProgramSceneName) {
@@ -16,7 +16,7 @@ Write-FormatView -TypeName OBS.GetSceneList.Response -Property Scenes -VirtualPr
                 }
             )
         }) -join [Environment]::Newline
-    )
+    }
 }
 
 Write-FormatView -TypeName OBS.GetSceneList.Response -Action {

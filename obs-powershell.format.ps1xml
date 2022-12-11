@@ -94,10 +94,10 @@
         
         @(foreach ($sceneInfo in $_.scenes) {        
             $currentOrPreview = @(            
-                if ($sceneInfo.Name -eq $_.currentProgramSceneName) {
+                if ($sceneInfo.sceneName -eq $_.currentProgramSceneName) {
                     &amp; ${obs-powershell_Format-RichText} -InputObject 'current' -ForegroundColor Warning
                 }
-                if ($sceneInfo.Name -eq $_.currentPreviewSceneName) {
+                if ($sceneInfo.sceneName -eq $_.currentPreviewSceneName) {
                     &amp; ${obs-powershell_Format-RichText} -InputObject 'preview' -ForegroundColor Verbose
                 }
             )
@@ -155,10 +155,10 @@
 
         @(foreach ($sceneInfo in $_.scenes) {        
             $currentOrPreview = @(            
-                if ($sceneInfo.Name -eq $_.currentProgramSceneName) {
+                if ($sceneInfo.sceneName -eq $_.currentProgramSceneName) {
                     &amp; ${obs-powershell_Format-RichText} -InputObject 'current' -ForegroundColor Warning
                 }
-                if ($sceneInfo.Name -eq $_.currentPreviewSceneName) {
+                if ($sceneInfo.sceneName -eq $_.currentPreviewSceneName) {
                     &amp; ${obs-powershell_Format-RichText} -InputObject 'preview' -ForegroundColor Verbose
                 }
             )

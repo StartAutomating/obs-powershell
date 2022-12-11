@@ -12,7 +12,7 @@ Write-FormatView -TypeName OBS.GetSceneList.Response -Property Scenes -VirtualPr
 
             $sceneInfo.sceneName + ' ' + $(
                 if ($currentOrPreview) {
-                    "( $($currentOrPreview -join ' ') )"
+                    "( $($currentOrPreview -join ' '))"
                 }
             )
         }) -join [Environment]::Newline
@@ -33,7 +33,7 @@ Write-FormatView -TypeName OBS.GetSceneList.Response -Action {
 
             $sceneInfo.SceneName + ' ' + $(
                 if ($currentOrPreview) {
-                    "( $($currentOrPreview -join ' ') )"
+                    "( $($currentOrPreview -join ' '))"
                 }
             )
         }) -join [Environment]::Newline

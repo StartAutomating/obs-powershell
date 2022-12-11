@@ -138,6 +138,11 @@ process {
                 # wait a second for that event
                 $eventResponse = Wait-Event -SourceIdentifier $myRequestId -Timeout 1 |
                     Select-Object -ExpandProperty MessageData
+
+                if ($eventResponse -is [Management.Automation.ErrorRecord]) {
+                    Write-Error -ErrorRecord $eventResponse
+                    continue
+                }
                 # Collect all properties from the response
                 $eventResponseProperties = @($eventResponse.psobject.properties)
                 

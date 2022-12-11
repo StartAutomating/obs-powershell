@@ -133,13 +133,32 @@ function Connect-OBS
                     New-Event @newEventSplat
                 }
                 
-                if ($messageData.op -eq 7) {
+                # A message with the opcode of 7 is an event response.
+                if ($messageData.op -eq 7) {                    
                     $newEventSplat = @{}
+                    # For event responses, we want to send another event using the requestID.
                     $newEventSplat.SourceIdentifier = $MessageData.d.requestId
+                    # If there was response data
                     if ($messageData.d.responseData) {
+                        # create a new object with that data
                         $newEventSplat.MessageData = [PSObject]::new($MessageData.d.responseData)
+                        # and decorate it's return
                         $newEventSplat.MessageData.pstypenames.insert(0,"OBS.$($MessageData.d.requestType).response")
                         $newEventSplat.MessageData.pstypenames.insert(0,"$($newEventSplat.SourceIdentifier)")
+                    }
+                    # Otherwise, if the request failed
+                    elseif ($messageData.d.requestStatus.result -eq $false)
+                    {
+                        # Our message will be an error record.
+                        $newEventSplat.MessageData = 
+                            [Management.Automation.ErrorRecord]::new(
+                                # using the comment as the error message
+                                [Exception]::new($MessageData.d.requestStatus.comment),
+                                $messageData.d.requestId, 'NotSpecified', $messageData
+                            )
+                                                    
+                        $newEventSplat.MessageData.pstypenames.insert(0,"OBS.$($MessageData.d.requestType).error")
+                        $newEventSplat.MessageData.pstypenames.insert(0,"$($newEventSplat.SourceIdentifier).error")
                     }
                     New-Event @newEventSplat
                 }

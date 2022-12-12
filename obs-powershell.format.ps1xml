@@ -49,6 +49,50 @@
       </TableControl>
     </View>
     <View>
+      <Name>OBS.GetSceneItemList.Response</Name>
+      <ViewSelectedBy>
+        <TypeName>OBS.GetSceneItemList.Response</TypeName>
+      </ViewSelectedBy>
+      <GroupBy>
+        <PropertyName>SceneName</PropertyName>
+      </GroupBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+          </TableColumnHeader>
+          <TableColumnHeader>
+          </TableColumnHeader>
+          <TableColumnHeader>
+          </TableColumnHeader>
+          <TableColumnHeader>
+          </TableColumnHeader>
+          <TableColumnHeader>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>SceneItemID</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>sourceName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>inputKind</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Layer</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Enabled</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
       <Name>OBS.GetSceneList.Response</Name>
       <ViewSelectedBy>
         <TypeName>OBS.GetSceneList.Response</TypeName>

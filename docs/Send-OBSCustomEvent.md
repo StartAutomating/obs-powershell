@@ -36,8 +36,21 @@ Data payload to emit to all receivers
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Send-OBSCustomEvent [-eventData] <PSObject> [<CommonParameters>]
+Send-OBSCustomEvent [-eventData] <PSObject> [-PassThru] [<CommonParameters>]
 ```
 ---

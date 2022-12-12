@@ -70,8 +70,21 @@ New name for the filter
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSSourceFilterName [-sourceName] <String> [-filterName] <String> [-newFilterName] <String> [<CommonParameters>]
+Set-OBSSourceFilterName [-sourceName] <String> [-filterName] <String> [-newFilterName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

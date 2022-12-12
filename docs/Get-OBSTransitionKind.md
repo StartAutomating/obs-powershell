@@ -27,8 +27,22 @@ Get-OBSTransitionKind
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSTransitionKind [<CommonParameters>]
+Get-OBSTransitionKind [-PassThru] [<CommonParameters>]
 ```
 ---

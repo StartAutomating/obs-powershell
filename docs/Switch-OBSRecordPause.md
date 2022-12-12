@@ -25,8 +25,22 @@ Switch-OBSRecordPause
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Switch-OBSRecordPause [<CommonParameters>]
+Switch-OBSRecordPause [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -25,8 +25,22 @@ Stop-OBSReplayBuffer
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Stop-OBSReplayBuffer [<CommonParameters>]
+Stop-OBSReplayBuffer [-PassThru] [<CommonParameters>]
 ```
 ---

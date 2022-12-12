@@ -72,8 +72,21 @@ New lock state of the scene item
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSSceneItemLocked [-sceneName] <String> [-sceneItemId] <Double> -sceneItemLocked [<CommonParameters>]
+Set-OBSSceneItemLocked [-sceneName] <String> [-sceneItemId] <Double> -sceneItemLocked [-PassThru] [<CommonParameters>]
 ```
 ---

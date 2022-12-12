@@ -36,8 +36,21 @@ True == Enabled, False == Disabled
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSStudioModeEnabled -studioModeEnabled [<CommonParameters>]
+Set-OBSStudioModeEnabled -studioModeEnabled [-PassThru] [<CommonParameters>]
 ```
 ---

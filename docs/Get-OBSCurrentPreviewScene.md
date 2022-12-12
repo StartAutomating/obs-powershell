@@ -27,8 +27,22 @@ Get-OBSCurrentPreviewScene
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSCurrentPreviewScene [<CommonParameters>]
+Get-OBSCurrentPreviewScene [-PassThru] [<CommonParameters>]
 ```
 ---

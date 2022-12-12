@@ -36,8 +36,21 @@ Name of the input
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSInputAudioTracks [-inputName] <String> [<CommonParameters>]
+Get-OBSInputAudioTracks [-inputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

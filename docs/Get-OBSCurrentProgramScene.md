@@ -25,8 +25,22 @@ Get-OBSCurrentProgramScene
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSCurrentProgramScene [<CommonParameters>]
+Get-OBSCurrentProgramScene [-PassThru] [<CommonParameters>]
 ```
 ---

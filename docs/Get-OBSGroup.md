@@ -27,8 +27,22 @@ Get-OBSGroup
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSGroup [<CommonParameters>]
+Get-OBSGroup [-PassThru] [<CommonParameters>]
 ```
 ---

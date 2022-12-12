@@ -38,6 +38,10 @@ Scene to set as the current program scene
 ---
 #### **PassThru**
 
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
 > **Type**: ```[Switch]```
 
 > **Required**: false

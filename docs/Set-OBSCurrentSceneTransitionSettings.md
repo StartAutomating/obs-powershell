@@ -55,6 +55,10 @@ Whether to overlay over the current settings or replace them
 ---
 #### **PassThru**
 
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
 > **Type**: ```[Switch]```
 
 > **Required**: false

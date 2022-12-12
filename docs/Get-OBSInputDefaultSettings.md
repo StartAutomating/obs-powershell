@@ -36,8 +36,21 @@ Input kind to get the default settings for
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSInputDefaultSettings [-inputKind] <String> [<CommonParameters>]
+Get-OBSInputDefaultSettings [-inputKind] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

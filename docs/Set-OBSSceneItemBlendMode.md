@@ -72,8 +72,21 @@ New blend mode
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSSceneItemBlendMode [-sceneName] <String> [-sceneItemId] <Double> [-sceneItemBlendMode] <String> [<CommonParameters>]
+Set-OBSSceneItemBlendMode [-sceneName] <String> [-sceneItemId] <Double> [-sceneItemBlendMode] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

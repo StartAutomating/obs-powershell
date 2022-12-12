@@ -36,8 +36,21 @@ Name of the input to get the audio balance of
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSInputAudioBalance [-inputName] <String> [<CommonParameters>]
+Get-OBSInputAudioBalance [-inputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -70,8 +70,21 @@ True == apply the settings on top of existing ones, False == reset the input to 
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSInputSettings [-inputName] <String> [-inputSettings] <PSObject> [-overlay] [<CommonParameters>]
+Set-OBSInputSettings [-inputName] <String> [-inputSettings] <PSObject> [-overlay] [-PassThru] [<CommonParameters>]
 ```
 ---

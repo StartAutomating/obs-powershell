@@ -53,8 +53,21 @@ New name for the scene
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSSceneName [-sceneName] <String> [-newSceneName] <String> [<CommonParameters>]
+Set-OBSSceneName [-sceneName] <String> [-newSceneName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

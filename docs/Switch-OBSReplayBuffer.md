@@ -25,8 +25,22 @@ Switch-OBSReplayBuffer
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Switch-OBSReplayBuffer [<CommonParameters>]
+Switch-OBSReplayBuffer [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -25,8 +25,22 @@ Get-OBSScene
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSScene [<CommonParameters>]
+Get-OBSScene [-PassThru] [<CommonParameters>]
 ```
 ---

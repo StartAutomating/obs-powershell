@@ -36,8 +36,21 @@ Caption text
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Send-OBSStreamCaption [-captionText] <String> [<CommonParameters>]
+Send-OBSStreamCaption [-captionText] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

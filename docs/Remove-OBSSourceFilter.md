@@ -53,8 +53,21 @@ Name of the filter to remove
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Remove-OBSSourceFilter [-sourceName] <String> [-filterName] <String> [<CommonParameters>]
+Remove-OBSSourceFilter [-sourceName] <String> [-filterName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

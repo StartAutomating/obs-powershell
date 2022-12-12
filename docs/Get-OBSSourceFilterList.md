@@ -36,8 +36,21 @@ Name of the source
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSSourceFilterList [-sourceName] <String> [<CommonParameters>]
+Get-OBSSourceFilterList [-sourceName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

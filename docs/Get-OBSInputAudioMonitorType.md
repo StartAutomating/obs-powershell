@@ -42,8 +42,21 @@ Name of the input to get the audio monitor type of
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSInputAudioMonitorType [-inputName] <String> [<CommonParameters>]
+Get-OBSInputAudioMonitorType [-inputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

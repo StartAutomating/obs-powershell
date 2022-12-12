@@ -53,8 +53,21 @@ Whether to mute the input or not
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSInputMute [-inputName] <String> -inputMuted [<CommonParameters>]
+Set-OBSInputMute [-inputName] <String> -inputMuted [-PassThru] [<CommonParameters>]
 ```
 ---

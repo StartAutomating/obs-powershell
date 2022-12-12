@@ -53,8 +53,21 @@ New audio balance value
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSInputAudioBalance [-inputName] <String> [-inputAudioBalance] <Double> [<CommonParameters>]
+Set-OBSInputAudioBalance [-inputName] <String> [-inputAudioBalance] <Double> [-PassThru] [<CommonParameters>]
 ```
 ---

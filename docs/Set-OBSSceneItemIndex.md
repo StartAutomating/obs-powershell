@@ -72,8 +72,21 @@ New index position of the scene item
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSSceneItemIndex [-sceneName] <String> [-sceneItemId] <Double> [-sceneItemIndex] <Double> [<CommonParameters>]
+Set-OBSSceneItemIndex [-sceneName] <String> [-sceneItemId] <Double> [-sceneItemIndex] <Double> [-PassThru] [<CommonParameters>]
 ```
 ---

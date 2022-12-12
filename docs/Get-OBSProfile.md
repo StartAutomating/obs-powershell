@@ -25,8 +25,22 @@ Get-OBSProfile
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSProfile [<CommonParameters>]
+Get-OBSProfile [-PassThru] [<CommonParameters>]
 ```
 ---

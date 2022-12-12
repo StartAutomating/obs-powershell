@@ -72,8 +72,21 @@ New enable state of the scene item
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSSceneItemEnabled [-sceneName] <String> [-sceneItemId] <Double> -sceneItemEnabled [<CommonParameters>]
+Set-OBSSceneItemEnabled [-sceneName] <String> [-sceneItemId] <Double> -sceneItemEnabled [-PassThru] [<CommonParameters>]
 ```
 ---

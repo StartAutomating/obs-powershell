@@ -25,8 +25,22 @@ Get-OBSMonitor
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSMonitor [<CommonParameters>]
+Get-OBSMonitor [-PassThru] [<CommonParameters>]
 ```
 ---

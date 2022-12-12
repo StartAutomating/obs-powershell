@@ -25,8 +25,22 @@ Get-OBSLastReplayBufferReplay
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSLastReplayBufferReplay [<CommonParameters>]
+Get-OBSLastReplayBufferReplay [-PassThru] [<CommonParameters>]
 ```
 ---

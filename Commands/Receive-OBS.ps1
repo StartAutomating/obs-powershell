@@ -67,6 +67,10 @@ function Receive-OBS
             $SendSegment  = [ArraySegment[Byte]]::new([Text.Encoding]::UTF8.GetBytes($PayloadJson))
             $null = $Websocket.SendAsync($SendSegment,'Text', $true, [Threading.CancellationToken]::new($false))
         }
+
+        if ($home) {
+            $obsPowerShellRoot = Join-Path $home '.obs-powershell'
+        }
     }
 
     process {

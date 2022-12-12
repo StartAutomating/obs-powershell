@@ -25,8 +25,22 @@ Get-OBSStudioModeEnabled
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSStudioModeEnabled [<CommonParameters>]
+Get-OBSStudioModeEnabled [-PassThru] [<CommonParameters>]
 ```
 ---

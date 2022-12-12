@@ -25,8 +25,22 @@ Get-OBSOutput
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSOutput [<CommonParameters>]
+Get-OBSOutput [-PassThru] [<CommonParameters>]
 ```
 ---

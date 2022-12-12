@@ -55,8 +55,21 @@ Value to offset the current cursor position by
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Send-OBSOffsetMediaInputCursor [-inputName] <String> [-mediaCursorOffset] <Double> [<CommonParameters>]
+Send-OBSOffsetMediaInputCursor [-inputName] <String> [-mediaCursorOffset] <Double> [-PassThru] [<CommonParameters>]
 ```
 ---

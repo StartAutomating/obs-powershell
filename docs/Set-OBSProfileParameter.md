@@ -70,8 +70,21 @@ Value of the parameter to set. Use `null` to delete
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSProfileParameter [-parameterCategory] <String> [-parameterName] <String> [-parameterValue] <String> [<CommonParameters>]
+Set-OBSProfileParameter [-parameterCategory] <String> [-parameterName] <String> [-parameterValue] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

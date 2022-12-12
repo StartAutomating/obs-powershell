@@ -36,8 +36,21 @@ Name of the profile to remove
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Remove-OBSProfile [-profileName] <String> [<CommonParameters>]
+Remove-OBSProfile [-profileName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

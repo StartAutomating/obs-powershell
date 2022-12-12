@@ -25,8 +25,22 @@ Stop-OBSVirtualCam
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Stop-OBSVirtualCam [<CommonParameters>]
+Stop-OBSVirtualCam [-PassThru] [<CommonParameters>]
 ```
 ---

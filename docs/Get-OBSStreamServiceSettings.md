@@ -25,8 +25,22 @@ Get-OBSStreamServiceSettings
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSStreamServiceSettings [<CommonParameters>]
+Get-OBSStreamServiceSettings [-PassThru] [<CommonParameters>]
 ```
 ---

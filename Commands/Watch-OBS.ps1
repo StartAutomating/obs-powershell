@@ -11,13 +11,18 @@ function Watch-OBS
         Watch-OBS    # If you turn off authentication on OBS
     .LINK
         Connect-OBS
+    .LINK
+        Receive-OBS
     #>
-    param(    
+    param(
+    # The OBS websocket URL.  If not provided, this will default to loopback on port 4455.
     [Parameter(ValueFromPipelineByPropertyName)]
     [Alias('WebSocketURL')]
     [uri]    
     $WebSocketURI = "ws://$([ipaddress]::Loopback):4455",
 
+    # A randomly generated password used to connect to OBS.
+    # You can see the websocket password in Tools -> obs-websocket settings -> show connect info
     [Parameter(ValueFromPipelineByPropertyName)]
     [Alias('WebSocketPassword')]
     [string]
@@ -25,48 +30,23 @@ function Watch-OBS
     )
 
     begin {
-        $obsWatcherJobDefinition = {
+        $obsWatcherJobDefinition = '' + {
             param(            
             [uri]$webSocketUri,
             
             [Alias('WebSocketPassword')]
             $WebSocketToken
             )
+        }.ToString() + 
+"
+function Receive-OBS {
+$($ExecutionContext.SessionState.InvokeCommand.GetCommand('Receive-OBS', 'Function').Definition)
+}
 
-            if ($home) {
-                $obsPowerShellRoot = Join-Path $home '.obs-powershell'
-            }
-
-            function OBSIdentify {
-                $secret = "$obsPwd$($messageData.d.authentication.salt)"
-                $enc = [Security.Cryptography.SHA256Managed]::new()
-                $secretSalted64 = [Convert]::ToBase64String(
-                    $enc.ComputeHash([Text.Encoding]::ascii.GetBytes($secret)
-                ))
-
-                $saltedSecretAndChallenge = "$secretSalted64$(
-                    $messageData.d.authentication.challenge
-                )"
-
-                $enc = [Security.Cryptography.SHA256Managed]::new()
-                $challenge64 = [Convert]::ToBase64String(
-                    $enc.ComputeHash([Text.Encoding]::ascii.GetBytes(
-                        $saltedSecretAndChallenge
-                    ))
-                )                
-
-                $identifyMessage = [Ordered]@{
-                    op = 1
-                    d = [Ordered]@{
-                        rpcVersion = 1
-                        authentication = $challenge64                        
-                    }
-                }
-                $PayloadJson = $identifyMessage | ConvertTo-Json -Compress
-                $SendSegment  = [ArraySegment[Byte]]::new([Text.Encoding]::UTF8.GetBytes($PayloadJson))
-                $null = $Websocket.SendAsync($SendSegment,'Text', $true, [Threading.CancellationToken]::new($false))
-            }
-
+function Send-OBS {
+$($ExecutionContext.SessionState.InvokeCommand.GetCommand('Send-OBS', 'Function').Definition)
+}
+" + {
             $Websocket   = [Net.WebSockets.ClientWebSocket]::new() # [Net.WebSockets.ClientWebSocket]::new()
                         $waitFor = [Timespan]'00:00:05'
             $ConnectTask = $Websocket.ConnectAsync($webSocketUri, [Threading.CancellationToken]::new($false))
@@ -82,8 +62,13 @@ function Watch-OBS
             while (!$ConnectTask.IsCompleted -and [DateTime]::Now -lt $maxWaitTime) {
 
             }
+
+            if (-not $script:ObsConnections) {
+                $script:ObsConnections = @{}
+            }
+            $script:ObsConnections[$webSocketUri] = $Websocket
     
-            $Websocket
+            $Websocket            
    
     try {
              
@@ -104,84 +89,7 @@ function Watch-OBS
             
             if ($msg) {
                 $messageData = ConvertFrom-Json $msg
-                $MessageData.pstypenames.insert(0,'OBS.WebSocket.Message')                
-                $newEventSplat = @{}
-                
-                if ($messageData.op -eq 0 -and $messageData.d.authentication) {
-                    . OBSIdentify
-                }
-                                
-                $newEventSplat.SourceIdentifier = 'OBS.WebSocket.Message'
-                $newEventSplat.MessageData = $MessageData
-    
-                New-Event @newEventSplat
-
-                if ($messageData.op -eq 2 -and 
-                    $obsPowerShellRoot) {
-                    $obsConnectedFileName = $webSocketUri.DnsSafeHost + '_' + $webSocketUri.Port
-                    if (-not (Test-Path $obsPowerShellRoot)) {
-                        $null = New-Item -ItemType Directory -Path $obsPowerShellRoot
-                    }
-                    $obsConnectionFile =
-                        Join-Path $obsPowerShellRoot "$obsConnectedFileName.obs-websocket.clixml"
-
-                    if (Test-Path $obsConnectionFile) {
-                        $fileData = Import-Clixml $obsConnectionFile
-                        $fileData.WebSocketToken = $WebSocketToken
-                        $fileData.WebSocketUri = $webSocketUri
-                        $fileData | Export-Clixml -Path $obsConnectionFile
-                    } else {
-                        [PSCustomObject][Ordered]@{
-                            PSTypeName = 'OBS.PowerShell.Connection.Info'
-                            WebSocketToken = $WebSocketToken
-                            WebSocketUri   = $webSocketUri
-                        } | Export-Clixml -Path $obsConnectionFile
-                    }
-                    
-                    
-                }
-                
-                if ($messageData.op -eq 5) {
-                    $newEventSplat = @{}
-                    $newEventSplat.SourceIdentifier = "OBS.Event.$($messageData.d.eventType)"
-                    if ($messageData.d.eventData) {
-                        $newEventSplat.MessageData = [PSObject]::new($messageData.d.eventData)
-                        $newEventSplat.MessageData.pstypenames.insert(0,"OBS.$($MessageData.d.eventType).response")
-                        $newEventSplat.MessageData.pstypenames.insert(0,"$($newEventSplat.SourceIdentifier)")
-                    }
-                    New-Event @newEventSplat
-                }
-                
-                # A message with the opcode of 7 is an event response.
-                if ($messageData.op -eq 7) {                    
-                    $newEventSplat = @{}
-                    # For event responses, we want to send another event using the requestID.
-                    $newEventSplat.SourceIdentifier = $MessageData.d.requestId
-                    # If there was response data
-                    if ($messageData.d.responseData) {
-                        # create a new object with that data
-                        $newEventSplat.MessageData = [PSObject]::new($MessageData.d.responseData)
-                        # and decorate it's return
-                        $newEventSplat.MessageData.pstypenames.insert(0,"OBS.$($MessageData.d.requestType).response")
-                        $newEventSplat.MessageData.pstypenames.insert(0,"$($newEventSplat.SourceIdentifier)")
-                    }
-                    # Otherwise, if the request failed
-                    elseif ($messageData.d.requestStatus.result -eq $false)
-                    {
-                        # Our message will be an error record.
-                        $newEventSplat.MessageData = 
-                            [Management.Automation.ErrorRecord]::new(
-                                # using the comment as the error message
-                                [Exception]::new($MessageData.d.requestStatus.comment),
-                                $messageData.d.requestId, 'NotSpecified', $messageData
-                            )
-                                                    
-                        $newEventSplat.MessageData.pstypenames.insert(0,"OBS.$($MessageData.d.requestType).error")
-                        $newEventSplat.MessageData.pstypenames.insert(0,"$($newEventSplat.SourceIdentifier).error")
-                    }
-                    New-Event @newEventSplat
-                }
-                
+                $messageData | Receive-OBS -WebSocketToken $WebSocketToken -WebSocketUri $webSocketUri -SendEvent
             }
     
             $buffer.Clear()
@@ -192,6 +100,8 @@ function Watch-OBS
         Write-Error -Exception $_.Exception -Message "StreamDeck Exception: $($_ | Out-String)" -ErrorId "WebSocket.State.$($Websocket.State)"
     }
         }
+
+        $obsWatcherJobDefinition = [scriptblock]::Create($obsWatcherJobDefinition)
         
         if (-not $script:ObsConnections) {
             $script:ObsConnections = [Ordered]@{}

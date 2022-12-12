@@ -53,8 +53,21 @@ Track settings to apply
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSInputAudioTracks [-inputName] <String> [-inputAudioTracks] <PSObject> [<CommonParameters>]
+Set-OBSInputAudioTracks [-inputName] <String> [-inputAudioTracks] <PSObject> [-PassThru] [<CommonParameters>]
 ```
 ---

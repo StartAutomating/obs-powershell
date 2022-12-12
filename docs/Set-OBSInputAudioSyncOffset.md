@@ -53,8 +53,21 @@ New audio sync offset in milliseconds
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSInputAudioSyncOffset [-inputName] <String> [-inputAudioSyncOffset] <Double> [<CommonParameters>]
+Set-OBSInputAudioSyncOffset [-inputName] <String> [-inputAudioSyncOffset] <Double> [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -55,8 +55,21 @@ Numeric ID of the scene item
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSSceneItemTransform [-sceneName] <String> [-sceneItemId] <Double> [<CommonParameters>]
+Get-OBSSceneItemTransform [-sceneName] <String> [-sceneItemId] <Double> [-PassThru] [<CommonParameters>]
 ```
 ---

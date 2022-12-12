@@ -25,8 +25,22 @@ Start-OBSReplayBuffer
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Start-OBSReplayBuffer [<CommonParameters>]
+Start-OBSReplayBuffer [-PassThru] [<CommonParameters>]
 ```
 ---

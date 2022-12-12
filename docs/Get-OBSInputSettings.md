@@ -38,8 +38,21 @@ Name of the input to get the settings of
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSInputSettings [-inputName] <String> [<CommonParameters>]
+Get-OBSInputSettings [-inputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

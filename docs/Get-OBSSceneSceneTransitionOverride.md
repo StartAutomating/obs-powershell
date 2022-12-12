@@ -36,8 +36,21 @@ Name of the scene
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSSceneSceneTransitionOverride [-sceneName] <String> [<CommonParameters>]
+Get-OBSSceneSceneTransitionOverride [-sceneName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

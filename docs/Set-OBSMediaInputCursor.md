@@ -55,8 +55,21 @@ New cursor position to set
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSMediaInputCursor [-inputName] <String> [-mediaCursor] <Double> [<CommonParameters>]
+Set-OBSMediaInputCursor [-inputName] <String> [-mediaCursor] <Double> [-PassThru] [<CommonParameters>]
 ```
 ---

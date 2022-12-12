@@ -53,8 +53,21 @@ Name of the parameter to get
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSProfileParameter [-parameterCategory] <String> [-parameterName] <String> [<CommonParameters>]
+Get-OBSProfileParameter [-parameterCategory] <String> [-parameterName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

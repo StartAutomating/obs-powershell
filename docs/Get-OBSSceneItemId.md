@@ -74,6 +74,10 @@ Number of matches to skip during search. >= 0 means first forward. -1 means last
 ---
 #### **PassThru**
 
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
 > **Type**: ```[Switch]```
 
 > **Required**: false

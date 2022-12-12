@@ -25,8 +25,22 @@ Get-OBSReplayBufferStatus
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSReplayBufferStatus [<CommonParameters>]
+Get-OBSReplayBufferStatus [-PassThru] [<CommonParameters>]
 ```
 ---

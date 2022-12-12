@@ -65,8 +65,21 @@ Numeric ID of the scene item
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSSceneItemBlendMode [-sceneName] <String> [-sceneItemId] <Double> [<CommonParameters>]
+Get-OBSSceneItemBlendMode [-sceneName] <String> [-sceneItemId] <Double> [-PassThru] [<CommonParameters>]
 ```
 ---

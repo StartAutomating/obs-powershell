@@ -36,8 +36,21 @@ Name of the input to open the dialog of
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Open-OBSInputInteractDialog [-inputName] <String> [<CommonParameters>]
+Open-OBSInputInteractDialog [-inputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

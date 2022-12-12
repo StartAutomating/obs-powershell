@@ -87,8 +87,21 @@ Settings object to initialize the filter with
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Add-OBSSourceFilter [-sourceName] <String> [-filterName] <String> [-filterKind] <String> [[-filterSettings] <PSObject>] [<CommonParameters>]
+Add-OBSSourceFilter [-sourceName] <String> [-filterName] <String> [-filterKind] <String> [[-filterSettings] <PSObject>] [-PassThru] [<CommonParameters>]
 ```
 ---

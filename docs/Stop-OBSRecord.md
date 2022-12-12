@@ -25,8 +25,22 @@ Stop-OBSRecord
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Stop-OBSRecord [<CommonParameters>]
+Stop-OBSRecord [-PassThru] [<CommonParameters>]
 ```
 ---

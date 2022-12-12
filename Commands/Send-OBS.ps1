@@ -5,6 +5,10 @@ function Send-OBS
         Sends messages to the OBS websocket.        
     .DESCRIPTION
         Sends one or more messages to the OBS websocket.
+    .LINK
+        Receive-OBS
+    .LINK
+        Watch-OBS
     #>
     param(
     [Parameter(ValueFromPipeline,ValueFromPipelineByPropertyName)]
@@ -66,7 +70,7 @@ function Send-OBS
                         }
                     }
                 }
-                $payloadObject |            
+                $PayloadJson =  $payloadObject |            
                     ConvertTo-Json -Depth 100        
             
                 # And create a byte segment to send it off.

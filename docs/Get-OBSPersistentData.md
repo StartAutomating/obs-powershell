@@ -53,8 +53,25 @@ The name of the slot to retrieve data from
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSPersistentData [-realm] <String> [-slotName] <String> [<CommonParameters>]
+Get-OBSPersistentData [-realm] <String> [-slotName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

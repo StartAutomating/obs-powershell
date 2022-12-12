@@ -36,8 +36,25 @@ Filter kind to get the default settings for
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSSourceFilterDefaultSettings [-filterKind] <String> [<CommonParameters>]
+Get-OBSSourceFilterDefaultSettings [-filterKind] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

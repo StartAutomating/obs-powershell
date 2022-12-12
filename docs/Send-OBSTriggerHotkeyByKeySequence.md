@@ -121,8 +121,25 @@ Press CMD (Mac)
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Send-OBSTriggerHotkeyByKeySequence [[-keyId] <String>] [[-keyModifiers] <PSObject>] [-keyModifiersshift] [-keyModifierscontrol] [-keyModifiersalt] [-keyModifierscommand] [<CommonParameters>]
+Send-OBSTriggerHotkeyByKeySequence [[-keyId] <String>] [[-keyModifiers] <PSObject>] [-keyModifiersshift] [-keyModifierscontrol] [-keyModifiersalt] [-keyModifierscommand] [-PassThru] [<CommonParameters>]
 ```
 ---

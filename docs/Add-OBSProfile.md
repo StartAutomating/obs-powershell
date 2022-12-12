@@ -36,8 +36,25 @@ Name for the new profile
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Add-OBSProfile [-profileName] <String> [<CommonParameters>]
+Add-OBSProfile [-profileName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

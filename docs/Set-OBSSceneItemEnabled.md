@@ -72,8 +72,25 @@ New enable state of the scene item
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSSceneItemEnabled [-sceneName] <String> [-sceneItemId] <Double> -sceneItemEnabled [<CommonParameters>]
+Set-OBSSceneItemEnabled [-sceneName] <String> [-sceneItemId] <Double> -sceneItemEnabled [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -38,8 +38,25 @@ Name for the new scene collection
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Add-OBSSceneCollection [-sceneCollectionName] <String> [<CommonParameters>]
+Add-OBSSceneCollection [-sceneCollectionName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

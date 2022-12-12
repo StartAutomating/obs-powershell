@@ -53,8 +53,25 @@ Whether to mute the input or not
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSInputMute [-inputName] <String> -inputMuted [<CommonParameters>]
+Set-OBSInputMute [-inputName] <String> -inputMuted [-PassThru] [<CommonParameters>]
 ```
 ---

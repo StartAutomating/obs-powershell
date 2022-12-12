@@ -87,8 +87,25 @@ True == apply the settings on top of existing ones, False == reset the input to 
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSSourceFilterSettings [-sourceName] <String> [-filterName] <String> [-filterSettings] <PSObject> [-overlay] [<CommonParameters>]
+Set-OBSSourceFilterSettings [-sourceName] <String> [-filterName] <String> [-filterSettings] <PSObject> [-overlay] [-PassThru] [<CommonParameters>]
 ```
 ---

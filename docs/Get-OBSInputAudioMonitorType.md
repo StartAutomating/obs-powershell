@@ -42,8 +42,25 @@ Name of the input to get the audio monitor type of
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSInputAudioMonitorType [-inputName] <String> [<CommonParameters>]
+Get-OBSInputAudioMonitorType [-inputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

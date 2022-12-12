@@ -36,8 +36,25 @@ Name of the source
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSSourceFilterList [-sourceName] <String> [<CommonParameters>]
+Get-OBSSourceFilterList [-sourceName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

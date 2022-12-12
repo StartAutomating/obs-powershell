@@ -36,8 +36,25 @@ Scene to set as the current program scene
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSCurrentProgramScene [-sceneName] <String> [<CommonParameters>]
+Set-OBSCurrentProgramScene [-sceneName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -36,8 +36,25 @@ Name of the profile to switch to
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSCurrentProfile [-profileName] <String> [<CommonParameters>]
+Set-OBSCurrentProfile [-profileName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

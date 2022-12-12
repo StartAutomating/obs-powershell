@@ -36,8 +36,25 @@ Name of the input
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSInputAudioTracks [-inputName] <String> [<CommonParameters>]
+Get-OBSInputAudioTracks [-inputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

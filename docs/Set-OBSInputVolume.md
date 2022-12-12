@@ -70,8 +70,25 @@ Volume setting in dB
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSInputVolume [-inputName] <String> [[-inputVolumeMul] <Double>] [[-inputVolumeDb] <Double>] [<CommonParameters>]
+Set-OBSInputVolume [-inputName] <String> [[-inputVolumeMul] <Double>] [[-inputVolumeDb] <Double>] [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -53,8 +53,25 @@ Name of the parameter to get
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSProfileParameter [-parameterCategory] <String> [-parameterName] <String> [<CommonParameters>]
+Get-OBSProfileParameter [-parameterCategory] <String> [-parameterName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

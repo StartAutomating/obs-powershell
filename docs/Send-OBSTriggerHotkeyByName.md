@@ -36,8 +36,25 @@ Name of the hotkey to trigger
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Send-OBSTriggerHotkeyByName [-hotkeyName] <String> [<CommonParameters>]
+Send-OBSTriggerHotkeyByName [-hotkeyName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

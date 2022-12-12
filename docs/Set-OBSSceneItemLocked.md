@@ -72,8 +72,25 @@ New lock state of the scene item
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSSceneItemLocked [-sceneName] <String> [-sceneItemId] <Double> -sceneItemLocked [<CommonParameters>]
+Set-OBSSceneItemLocked [-sceneName] <String> [-sceneItemId] <Double> -sceneItemLocked [-PassThru] [<CommonParameters>]
 ```
 ---

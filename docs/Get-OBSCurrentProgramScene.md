@@ -25,8 +25,26 @@ Get-OBSCurrentProgramScene
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSCurrentProgramScene [<CommonParameters>]
+Get-OBSCurrentProgramScene [-PassThru] [<CommonParameters>]
 ```
 ---

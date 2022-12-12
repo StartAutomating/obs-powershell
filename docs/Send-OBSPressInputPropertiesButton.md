@@ -59,8 +59,25 @@ Name of the button property to press
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Send-OBSPressInputPropertiesButton [-inputName] <String> [-propertyName] <String> [<CommonParameters>]
+Send-OBSPressInputPropertiesButton [-inputName] <String> [-propertyName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

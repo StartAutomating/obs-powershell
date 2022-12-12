@@ -53,8 +53,25 @@ New audio sync offset in milliseconds
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSInputAudioSyncOffset [-inputName] <String> [-inputAudioSyncOffset] <Double> [<CommonParameters>]
+Set-OBSInputAudioSyncOffset [-inputName] <String> [-inputAudioSyncOffset] <Double> [-PassThru] [<CommonParameters>]
 ```
 ---

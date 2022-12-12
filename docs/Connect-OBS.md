@@ -25,45 +25,9 @@ Connect-OBS
 
 ---
 ### Parameters
-#### **Credential**
-
-A credential describing the connection.
-The username should be the IPAddress, and the password should be the obs-websocket password.
-
-
-
-> **Type**: ```[PSCredential]```
-
-> **Required**: false
-
-> **Position**: 1
-
-> **PipelineInput**:true (ByPropertyName)
-
-
-
----
-#### **WebSocketPassword**
-
-The websocket password.
-You can see the websocket password in Tools -> obs-websocket settings -> show connect info
-
-
-
-> **Type**: ```[SecureString]```
-
-> **Required**: false
-
-> **Position**: 2
-
-> **PipelineInput**:true (ByPropertyName)
-
-
-
----
 #### **WebSocketUri**
 
-The websocket URL.  If not provided, this will default to loopback on port 4455.
+The OBS websocket URL.  If not provided, this will default to loopback on port 4455.
 
 
 
@@ -71,7 +35,25 @@ The websocket URL.  If not provided, this will default to loopback on port 4455.
 
 > **Required**: false
 
-> **Position**: 3
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
+#### **WebSocketToken**
+
+A randomly generated password used to connect to OBS.
+You can see the websocket password in Tools -> obs-websocket settings -> show connect info
+
+
+
+> **Type**: ```[String]```
+
+> **Required**: false
+
+> **Position**: named
 
 > **PipelineInput**:true (ByPropertyName)
 
@@ -80,6 +62,9 @@ The websocket URL.  If not provided, this will default to loopback on port 4455.
 ---
 ### Syntax
 ```PowerShell
-Connect-OBS [[-Credential] <PSCredential>] [[-WebSocketPassword] <SecureString>] [[-WebSocketUri] <Uri>] [<CommonParameters>]
+Connect-OBS [<CommonParameters>]
+```
+```PowerShell
+Connect-OBS [-WebSocketUri <Uri>] [-WebSocketToken <String>] [<CommonParameters>]
 ```
 ---

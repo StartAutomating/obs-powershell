@@ -70,8 +70,25 @@ Value of the parameter to set. Use `null` to delete
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSProfileParameter [-parameterCategory] <String> [-parameterName] <String> [-parameterValue] <String> [<CommonParameters>]
+Set-OBSProfileParameter [-parameterCategory] <String> [-parameterName] <String> [-parameterValue] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

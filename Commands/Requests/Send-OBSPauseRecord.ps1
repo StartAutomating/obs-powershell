@@ -17,7 +17,11 @@ function Send-OBSPauseRecord {
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'PauseRecord')]
 
 param(
-
+# If set, will return the information that would otherwise be sent to OBS.
+[Parameter(ValueFromPipelineByPropertyName)]
+[Alias('OutputRequest','OutputInput')]
+[switch]
+$PassThru
 )
 
 
@@ -72,111 +76,34 @@ process {
             }
         }
 
+        
         # If we don't have a request counter for this request type
-        if (-not $script:ObsRequestsCounts[$requestType]) {
+        if (-not $script:ObsRequestsCounts[$myRequestType]) {
             # initialize it to zero.
-            $script:ObsRequestsCounts[$requestType] = 0
+            $script:ObsRequestsCounts[$myRequestType] = 0
         }
         # Increment the counter for requests of this type
-        $script:ObsRequestsCounts[$requestType]++
+        $script:ObsRequestsCounts[$myRequestType]++
 
         # and make a request ID from that.
-        $myRequestId = "$myRequestType.$($script:ObsRequestsCounts[$requestType])"
+        $myRequestId = "$myRequestType.$($script:ObsRequestsCounts[$myRequestType])"
 
-        # Construct the actual payload
-        $payloadJson = [Ordered]@{
-            op = 6   # All requests are sent with the opcode 6
-            d = @{
-                # and must include a request ID
-                requestId = "$myRequestType.$($script:ObsRequestsCounts[$requestType])"
-                # request type
-                requestType = $myRequestType
-                # and optional data
-                requestData = $paramCopy
-            }
-        } |
-            # Once we have constructed the payload, make it JSON
-            ConvertTo-Json -Depth 100
-        
-        # And create a byte segment to send it offf.
-        $SendSegment  = [ArraySegment[Byte]]::new([Text.Encoding]::UTF8.GetBytes($PayloadJson))
-
-        # If we have no OBS connections
-        if (-not $script:ObsConnections.Values) {
-            # error out
-            Write-Error "Not connected to OBS.  Use Connect-OBS."
-            return
+    
+        # Construct the payload object
+        $requestPayload = [Ordered]@{
+            # It must include a request ID
+            requestId = "$myRequestType.$($script:ObsRequestsCounts[$myRequestType])"
+            # request type
+            requestType = $myRequestType
+            # and optional data
+            requestData = $paramCopy
         }
 
-        # Otherwise, walk over each connection
-        foreach ($obsConnection in $script:ObsConnections.Values) {
-            $OBSWebSocket = $obsConnection.Websocket
-            if ($VerbosePreference -notin 'silentlyContinue', 'ignore') {
-                Write-Verbose "Sending $payloadJSON"
-            }
-            # and send the payload
-            $null = $OBSWebSocket.SendAsync($SendSegment,'Text', $true, [Threading.CancellationToken]::new($false))
-
-            # If a response was expected
-            if ($responseExpected) {
-                # wait a second for that event
-                $eventResponse = Wait-Event -SourceIdentifier $myRequestId -Timeout 1 |
-                    Select-Object -ExpandProperty MessageData
-                # Collect all properties from the response
-                $eventResponseProperties = @($eventResponse.psobject.properties)
-                
-                $expandedResponse =
-                    # If there was only one, expand that property
-                    if ($eventResponseProperties.Length -eq 1) {
-                        $eventResponse.psobject.properties.value
-                    } else {
-                        $eventResponse
-                    }
-
-                
-                # Now walk thru each response and expand / decorate it
-                foreach ($responseObject in $expandedResponse) {
-                    # If there was no response, move on.
-                    if ($null -eq $responseObject) {
-                        continue
-                    }
-                    # If the response is a string and it's the same as the request type                        
-                    if ($responseObject -is [string] -and $responseObject -eq $myRequestType) {
-                        continue # ignore it
-                    }
-                    # otherwise, if the response looks like a file
-                    elseif ($responseObject -is [string] -and 
-                        $responseObject -match '^(?:\p{L}\:){0,1}[\\/]') {
-                        $fileName = $responseObject -replace '[\\/]', ([io.path]::DirectorySeparatorChar)
-                        if (Test-Path $fileName) {
-                            $responseObject = Get-Item -LiteralPath $fileName
-                        }
-                    }
-
-                    # Otherwise, create a new PSObject out of the response
-                    $responseObject = [PSObject]::new($responseObject)                    
-                    # and decorate it with the command name and OBS.requestype.response
-                    $responseObject.pstypenames.add("$myCmd")                        
-                    $responseObject.pstypenames.add("OBS.$myRequestType.Response")
-
-                    # Now, walk thru all properties in our input payload
-                    foreach ($keyValue in $paramCopy.GetEnumerator()) {
-                        # If they were not in our output
-                        if (-not $responseObject.psobject.properties[$keyValue.Key]) {
-                            # add them
-                            $responseObject.psobject.properties.add(
-                                [psnoteproperty]::new($keyValue.Key, $keyValue.Value)
-                            )
-                        }
-
-                        # Doing this will make it easier to pipe one step to another
-                        # and make results more useful.
-                    }
-
-                    # finally, emit our response object
-                    $responseObject
-                }            
-            }    
+        if ($PassThru) {
+            [PSCustomObject]$requestPayload
+        } else {
+            [PSCustomObject]$requestPayload | 
+                Send-OBS
         }
 
 }

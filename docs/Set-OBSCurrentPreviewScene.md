@@ -38,8 +38,25 @@ Scene to set as the current preview scene
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSCurrentPreviewScene [-sceneName] <String> [<CommonParameters>]
+Set-OBSCurrentPreviewScene [-sceneName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

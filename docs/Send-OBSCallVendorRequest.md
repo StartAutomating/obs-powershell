@@ -73,8 +73,25 @@ Object containing appropriate request data
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Send-OBSCallVendorRequest [-vendorName] <String> [-requestType] <String> [[-requestData] <PSObject>] [<CommonParameters>]
+Send-OBSCallVendorRequest [-vendorName] <String> [-requestType] <String> [[-requestData] <PSObject>] [-PassThru] [<CommonParameters>]
 ```
 ---

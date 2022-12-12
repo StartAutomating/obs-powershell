@@ -53,8 +53,25 @@ Audio monitor type
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSInputAudioMonitorType [-inputName] <String> [-monitorType] <String> [<CommonParameters>]
+Set-OBSInputAudioMonitorType [-inputName] <String> [-monitorType] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

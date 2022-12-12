@@ -53,8 +53,25 @@ New name for the input
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSInputName [-inputName] <String> [-newInputName] <String> [<CommonParameters>]
+Set-OBSInputName [-inputName] <String> [-newInputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -36,8 +36,25 @@ Output name
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Start-OBSOutput [-outputName] <String> [<CommonParameters>]
+Start-OBSOutput [-outputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

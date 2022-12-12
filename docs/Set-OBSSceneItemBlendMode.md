@@ -72,8 +72,25 @@ New blend mode
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSSceneItemBlendMode [-sceneName] <String> [-sceneItemId] <Double> [-sceneItemBlendMode] <String> [<CommonParameters>]
+Set-OBSSceneItemBlendMode [-sceneName] <String> [-sceneItemId] <Double> [-sceneItemBlendMode] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -36,8 +36,25 @@ Restrict the array to only inputs of the specified kind
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSInput [[-inputKind] <String>] [<CommonParameters>]
+Get-OBSInput [[-inputKind] <String>] [-PassThru] [<CommonParameters>]
 ```
 ---

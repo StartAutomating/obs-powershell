@@ -70,8 +70,25 @@ New name for the filter
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSSourceFilterName [-sourceName] <String> [-filterName] <String> [-newFilterName] <String> [<CommonParameters>]
+Set-OBSSourceFilterName [-sourceName] <String> [-filterName] <String> [-newFilterName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

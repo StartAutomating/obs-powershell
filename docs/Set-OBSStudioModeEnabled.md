@@ -36,8 +36,25 @@ True == Enabled, False == Disabled
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSStudioModeEnabled -studioModeEnabled [<CommonParameters>]
+Set-OBSStudioModeEnabled -studioModeEnabled [-PassThru] [<CommonParameters>]
 ```
 ---

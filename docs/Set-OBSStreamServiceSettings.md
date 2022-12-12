@@ -55,8 +55,25 @@ Settings to apply to the service
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSStreamServiceSettings [-streamServiceType] <String> [-streamServiceSettings] <PSObject> [<CommonParameters>]
+Set-OBSStreamServiceSettings [-streamServiceType] <String> [-streamServiceSettings] <PSObject> [-PassThru] [<CommonParameters>]
 ```
 ---

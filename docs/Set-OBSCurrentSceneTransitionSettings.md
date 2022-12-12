@@ -53,8 +53,25 @@ Whether to overlay over the current settings or replace them
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSCurrentSceneTransitionSettings [-transitionSettings] <PSObject> [-overlay] [<CommonParameters>]
+Set-OBSCurrentSceneTransitionSettings [-transitionSettings] <PSObject> [-overlay] [-PassThru] [<CommonParameters>]
 ```
 ---

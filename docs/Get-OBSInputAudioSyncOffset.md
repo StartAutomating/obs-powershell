@@ -38,8 +38,25 @@ Name of the input to get the audio sync offset of
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSInputAudioSyncOffset [-inputName] <String> [<CommonParameters>]
+Get-OBSInputAudioSyncOffset [-inputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

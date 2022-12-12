@@ -72,8 +72,25 @@ Enable state to apply to the scene item on creation
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Add-OBSSceneItem [-sceneName] <String> [-sourceName] <String> [-sceneItemEnabled] [<CommonParameters>]
+Add-OBSSceneItem [-sceneName] <String> [-sourceName] <String> [-sceneItemEnabled] [-PassThru] [<CommonParameters>]
 ```
 ---

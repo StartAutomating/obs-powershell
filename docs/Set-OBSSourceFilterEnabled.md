@@ -70,8 +70,25 @@ New enable state of the filter
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSSourceFilterEnabled [-sourceName] <String> [-filterName] <String> -filterEnabled [<CommonParameters>]
+Set-OBSSourceFilterEnabled [-sourceName] <String> [-filterName] <String> -filterEnabled [-PassThru] [<CommonParameters>]
 ```
 ---

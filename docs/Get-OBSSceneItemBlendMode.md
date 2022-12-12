@@ -65,8 +65,25 @@ Numeric ID of the scene item
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSSceneItemBlendMode [-sceneName] <String> [-sceneItemId] <Double> [<CommonParameters>]
+Get-OBSSceneItemBlendMode [-sceneName] <String> [-sceneItemId] <Double> [-PassThru] [<CommonParameters>]
 ```
 ---

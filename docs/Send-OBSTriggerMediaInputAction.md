@@ -53,8 +53,25 @@ Identifier of the `ObsMediaInputAction` enum
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Send-OBSTriggerMediaInputAction [-inputName] <String> [-mediaAction] <String> [<CommonParameters>]
+Send-OBSTriggerMediaInputAction [-inputName] <String> [-mediaAction] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

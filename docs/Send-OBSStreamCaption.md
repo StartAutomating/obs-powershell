@@ -36,8 +36,25 @@ Caption text
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Send-OBSStreamCaption [-captionText] <String> [<CommonParameters>]
+Send-OBSStreamCaption [-captionText] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -1,5 +1,5 @@
 @{
-    ModuleVersion     = '0.1'
+    ModuleVersion     = '0.1.1'
     RootModule        = 'obs-powershell.psm1'
     Description       = 'Script OBS with PowerShell'
     Guid              = '1417123e-a932-439f-9b68-a7313cf1e170'
@@ -14,6 +14,21 @@
             ProjectURI = 'https://github.com/StartAutomating/obs-powershell'
             LicenseURI = 'https://github.com/StartAutomating/obs-powershell/blob/main/LICENSE'
             ReleaseNotes = @'
+## obs-powershell 0.1.1
+
+* Connect-OBS now caches connections (Fixes #18)
+* Adding new core commands:
+  * Watch-OBS (Fixes #19)
+  * Receive-OBS (Fixes #20)
+  * Send-OBS (Fixes #21)
+* All commands now support -PassThru (Fixes #16)
+* All commands now increment requests correctly (Fixes #15)
+* Improved formatting:
+  * Get-OBSScene (Fixes #14)
+  * Get-OBSSceneItem (Fixes #17)
+
+---
+            
 ## obs-powershell 0.1
 
 Initial Release of obs-powershell
@@ -26,6 +41,9 @@ Initial Release of obs-powershell
     }
     FunctionsToExport = 'Connect-OBS',
 'Disconnect-OBS',
+'Receive-OBS',
+'Send-OBS',
+'Watch-OBS',
 'Add-OBSInput',
 'Add-OBSProfile',
 'Add-OBSScene',

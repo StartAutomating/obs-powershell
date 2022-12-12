@@ -55,8 +55,25 @@ Name of the list property to get the items of
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSInputPropertiesListPropertyItems [-inputName] <String> [-propertyName] <String> [<CommonParameters>]
+Get-OBSInputPropertiesListPropertyItems [-inputName] <String> [-propertyName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

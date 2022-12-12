@@ -36,8 +36,25 @@ Input kind to get the default settings for
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSInputDefaultSettings [-inputKind] <String> [<CommonParameters>]
+Get-OBSInputDefaultSettings [-inputKind] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

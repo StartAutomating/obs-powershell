@@ -47,8 +47,25 @@ Name of the media input
 
 
 ---
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSMediaInputStatus [-inputName] <String> [<CommonParameters>]
+Get-OBSMediaInputStatus [-inputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

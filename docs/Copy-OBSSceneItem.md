@@ -74,6 +74,10 @@ Name of the scene to create the duplicated item in
 ---
 #### **PassThru**
 
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
 > **Type**: ```[Switch]```
 
 > **Required**: false

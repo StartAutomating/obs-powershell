@@ -25,8 +25,22 @@ Get-OBSCurrentSceneTransition
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSCurrentSceneTransition [<CommonParameters>]
+Get-OBSCurrentSceneTransition [-PassThru] [<CommonParameters>]
 ```
 ---

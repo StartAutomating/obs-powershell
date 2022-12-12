@@ -70,8 +70,21 @@ New enable state of the filter
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSSourceFilterEnabled [-sourceName] <String> [-filterName] <String> -filterEnabled [<CommonParameters>]
+Set-OBSSourceFilterEnabled [-sourceName] <String> [-filterName] <String> -filterEnabled [-PassThru] [<CommonParameters>]
 ```
 ---

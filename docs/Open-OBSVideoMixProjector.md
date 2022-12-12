@@ -78,8 +78,21 @@ Size/Position data for a windowed projector, in Qt Base64 encoded format. Mutual
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Open-OBSVideoMixProjector [-videoMixType] <String> [[-monitorIndex] <Double>] [[-projectorGeometry] <String>] [<CommonParameters>]
+Open-OBSVideoMixProjector [-videoMixType] <String> [[-monitorIndex] <Double>] [[-projectorGeometry] <String>] [-PassThru] [<CommonParameters>]
 ```
 ---

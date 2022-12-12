@@ -245,6 +245,7 @@ Because the obs-websocket cleanly documents it's protocol, most commands in obs-
 |[Switch-OBSReplayBuffer](docs/Switch-OBSReplayBuffer.md)                                  |[ToggleReplayBuffer](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#togglereplaybuffer)                                  |
 |[Switch-OBSStream](docs/Switch-OBSStream.md)                                              |[ToggleStream](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#togglestream)                                              |
 |[Switch-OBSVirtualCam](docs/Switch-OBSVirtualCam.md)                                      |[ToggleVirtualCam](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#togglevirtualcam)                                      |
+|[Watch-OBS](docs/Watch-OBS.md)                                                            |
 
 
 

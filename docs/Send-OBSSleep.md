@@ -55,6 +55,10 @@ Number of frames to sleep for (if `SERIAL_FRAME` mode)
 ---
 #### **PassThru**
 
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
 > **Type**: ```[Switch]```
 
 > **Required**: false

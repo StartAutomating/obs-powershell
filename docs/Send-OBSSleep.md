@@ -53,8 +53,21 @@ Number of frames to sleep for (if `SERIAL_FRAME` mode)
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Send-OBSSleep [[-sleepMillis] <Double>] [[-sleepFrames] <Double>] [<CommonParameters>]
+Send-OBSSleep [[-sleepMillis] <Double>] [[-sleepFrames] <Double>] [-PassThru] [<CommonParameters>]
 ```
 ---

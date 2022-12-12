@@ -25,8 +25,22 @@ Resume-OBSRecord
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Resume-OBSRecord [<CommonParameters>]
+Resume-OBSRecord [-PassThru] [<CommonParameters>]
 ```
 ---

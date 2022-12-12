@@ -53,8 +53,21 @@ New name for the input
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSInputName [-inputName] <String> [-newInputName] <String> [<CommonParameters>]
+Set-OBSInputName [-inputName] <String> [-newInputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -36,8 +36,21 @@ Scene to set as the current program scene
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSCurrentProgramScene [-sceneName] <String> [<CommonParameters>]
+Set-OBSCurrentProgramScene [-sceneName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

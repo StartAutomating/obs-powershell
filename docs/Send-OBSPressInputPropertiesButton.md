@@ -59,8 +59,21 @@ Name of the button property to press
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Send-OBSPressInputPropertiesButton [-inputName] <String> [-propertyName] <String> [<CommonParameters>]
+Send-OBSPressInputPropertiesButton [-inputName] <String> [-propertyName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

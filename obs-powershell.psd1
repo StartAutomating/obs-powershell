@@ -27,6 +27,7 @@ Initial Release of obs-powershell
     FunctionsToExport = 'Connect-OBS',
 'Disconnect-OBS',
 'Receive-OBS',
+'Send-OBS',
 'Watch-OBS',
 'Add-OBSInput',
 'Add-OBSProfile',

@@ -27,8 +27,22 @@ Get-OBSVideoSettings
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSVideoSettings [<CommonParameters>]
+Get-OBSVideoSettings [-PassThru] [<CommonParameters>]
 ```
 ---

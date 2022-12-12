@@ -36,8 +36,21 @@ Name of input to get the mute state of
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSInputMute [-inputName] <String> [<CommonParameters>]
+Get-OBSInputMute [-inputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

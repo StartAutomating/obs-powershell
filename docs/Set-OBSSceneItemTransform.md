@@ -70,8 +70,21 @@ Object containing scene item transform info to update
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSSceneItemTransform [-sceneName] <String> [-sceneItemId] <Double> [-sceneItemTransform] <PSObject> [<CommonParameters>]
+Set-OBSSceneItemTransform [-sceneName] <String> [-sceneItemId] <Double> [-sceneItemTransform] <PSObject> [-PassThru] [<CommonParameters>]
 ```
 ---

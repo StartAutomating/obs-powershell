@@ -25,8 +25,22 @@ Get-OBSSpecialInputs
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSSpecialInputs [<CommonParameters>]
+Get-OBSSpecialInputs [-PassThru] [<CommonParameters>]
 ```
 ---

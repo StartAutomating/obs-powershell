@@ -38,8 +38,21 @@ Scene to set as the current preview scene
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSCurrentPreviewScene [-sceneName] <String> [<CommonParameters>]
+Set-OBSCurrentPreviewScene [-sceneName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

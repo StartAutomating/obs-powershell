@@ -25,8 +25,22 @@ Start-OBSRecord
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Start-OBSRecord [<CommonParameters>]
+Start-OBSRecord [-PassThru] [<CommonParameters>]
 ```
 ---

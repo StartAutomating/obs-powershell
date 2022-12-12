@@ -38,8 +38,21 @@ Name of the scene to get the items of
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSSceneItem [-sceneName] <String> [<CommonParameters>]
+Get-OBSSceneItem [-sceneName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

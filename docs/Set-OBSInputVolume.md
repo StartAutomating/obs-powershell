@@ -70,8 +70,21 @@ Volume setting in dB
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSInputVolume [-inputName] <String> [[-inputVolumeMul] <Double>] [[-inputVolumeDb] <Double>] [<CommonParameters>]
+Set-OBSInputVolume [-inputName] <String> [[-inputVolumeMul] <Double>] [[-inputVolumeDb] <Double>] [-PassThru] [<CommonParameters>]
 ```
 ---

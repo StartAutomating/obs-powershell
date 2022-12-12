@@ -25,8 +25,22 @@ Get-OBSVersion
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSVersion [<CommonParameters>]
+Get-OBSVersion [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -94,23 +94,24 @@ process {
             }
         }
 
+        
         # If we don't have a request counter for this request type
-        if (-not $script:ObsRequestsCounts[$requestType]) {
+        if (-not $script:ObsRequestsCounts[$myRequestType]) {
             # initialize it to zero.
-            $script:ObsRequestsCounts[$requestType] = 0
+            $script:ObsRequestsCounts[$myRequestType] = 0
         }
         # Increment the counter for requests of this type
-        $script:ObsRequestsCounts[$requestType]++
+        $script:ObsRequestsCounts[$myRequestType]++
 
         # and make a request ID from that.
-        $myRequestId = "$myRequestType.$($script:ObsRequestsCounts[$requestType])"
+        $myRequestId = "$myRequestType.$($script:ObsRequestsCounts[$myRequestType])"
 
         # Construct the actual payload
         $payloadJson = [Ordered]@{
             op = 6   # All requests are sent with the opcode 6
             d = @{
                 # and must include a request ID
-                requestId = "$myRequestType.$($script:ObsRequestsCounts[$requestType])"
+                requestId = "$myRequestType.$($script:ObsRequestsCounts[$myRequestType])"
                 # request type
                 requestType = $myRequestType
                 # and optional data

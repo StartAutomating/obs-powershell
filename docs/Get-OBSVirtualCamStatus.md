@@ -25,8 +25,22 @@ Get-OBSVirtualCamStatus
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSVirtualCamStatus [<CommonParameters>]
+Get-OBSVirtualCamStatus [-PassThru] [<CommonParameters>]
 ```
 ---

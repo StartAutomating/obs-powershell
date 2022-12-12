@@ -53,8 +53,21 @@ Audio monitor type
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSInputAudioMonitorType [-inputName] <String> [-monitorType] <String> [<CommonParameters>]
+Set-OBSInputAudioMonitorType [-inputName] <String> [-monitorType] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

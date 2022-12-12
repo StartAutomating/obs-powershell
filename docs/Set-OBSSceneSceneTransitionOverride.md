@@ -70,8 +70,21 @@ Duration to use for any overridden transition. Specify `null` to remove
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSSceneSceneTransitionOverride [-sceneName] <String> [[-transitionName] <String>] [[-transitionDuration] <Double>] [<CommonParameters>]
+Set-OBSSceneSceneTransitionOverride [-sceneName] <String> [[-transitionName] <String>] [[-transitionDuration] <Double>] [-PassThru] [<CommonParameters>]
 ```
 ---

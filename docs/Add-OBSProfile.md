@@ -36,8 +36,21 @@ Name for the new profile
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Add-OBSProfile [-profileName] <String> [<CommonParameters>]
+Add-OBSProfile [-profileName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

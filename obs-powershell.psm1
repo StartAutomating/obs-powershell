@@ -7,3 +7,5 @@ foreach ($file in (Get-ChildItem -Path "$PSScriptRoot" -Filter "*-*.ps1" -Recurs
 $MyInvocation.MyCommand.ScriptBlock.Module.OnRemove = {
     Disconnect-OBS
 }
+
+Connect-OBS

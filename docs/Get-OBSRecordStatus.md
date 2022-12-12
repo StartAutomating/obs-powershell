@@ -25,8 +25,22 @@ Get-OBSRecordStatus
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSRecordStatus [<CommonParameters>]
+Get-OBSRecordStatus [-PassThru] [<CommonParameters>]
 ```
 ---

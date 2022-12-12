@@ -36,8 +36,21 @@ True == Return all kinds as unversioned, False == Return with version suffixes (
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSInputKind [-unversioned] [<CommonParameters>]
+Get-OBSInputKind [-unversioned] [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -25,8 +25,22 @@ Get-OBSRecordDirectory
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSRecordDirectory [<CommonParameters>]
+Get-OBSRecordDirectory [-PassThru] [<CommonParameters>]
 ```
 ---

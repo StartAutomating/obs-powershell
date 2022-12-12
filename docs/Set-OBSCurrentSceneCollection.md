@@ -38,8 +38,21 @@ Name of the scene collection to switch to
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSCurrentSceneCollection [-sceneCollectionName] <String> [<CommonParameters>]
+Set-OBSCurrentSceneCollection [-sceneCollectionName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

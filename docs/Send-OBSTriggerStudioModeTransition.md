@@ -25,8 +25,22 @@ Send-OBSTriggerStudioModeTransition
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Send-OBSTriggerStudioModeTransition [<CommonParameters>]
+Send-OBSTriggerStudioModeTransition [-PassThru] [<CommonParameters>]
 ```
 ---

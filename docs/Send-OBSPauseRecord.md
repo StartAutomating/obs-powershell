@@ -25,8 +25,22 @@ Send-OBSPauseRecord
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Send-OBSPauseRecord [<CommonParameters>]
+Send-OBSPauseRecord [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -14,14 +14,7 @@ function Connect-OBS
     #>
     [CmdletBinding(DefaultParameterSetName='ExistingConnections')]
     param(
-    # A randomly generated password used to connect to obs.
-    # You can see the websocket password in Tools -> obs-websocket settings -> show connect info
-    [Parameter(ValueFromPipelineByPropertyName,ParameterSetName='NewConnection')]
-    [Alias('WebSocketPassword')]
-    [string]
-    $WebSocketToken,
-
-    # The websocket URL.  If not provided, this will default to loopback on port 4455.
+    # The OBS websocket URL.  If not provided, this will default to loopback on port 4455.
     [Parameter(ValueFromPipelineByPropertyName,ParameterSetName='NewConnection')]
     [ValidateScript({
         if ($_.Scheme -ne 'ws') {
@@ -30,7 +23,14 @@ function Connect-OBS
         return $true
     })]
     [uri]
-    $WebSocketUri = "ws://$([ipaddress]::Loopback):4455"
+    $WebSocketUri = "ws://$([ipaddress]::Loopback):4455",
+
+    # A randomly generated password used to connect to OBS.
+    # You can see the websocket password in Tools -> obs-websocket settings -> show connect info
+    [Parameter(ValueFromPipelineByPropertyName,ParameterSetName='NewConnection')]
+    [Alias('WebSocketPassword')]
+    [string]
+    $WebSocketToken
     )
 
 

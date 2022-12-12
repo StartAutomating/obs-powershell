@@ -40,6 +40,10 @@ Name of the transition to make active
 ---
 #### **PassThru**
 
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
 > **Type**: ```[Switch]```
 
 > **Required**: false

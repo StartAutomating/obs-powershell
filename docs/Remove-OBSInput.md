@@ -38,8 +38,21 @@ Name of the input to remove
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Remove-OBSInput [-inputName] <String> [<CommonParameters>]
+Remove-OBSInput [-inputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

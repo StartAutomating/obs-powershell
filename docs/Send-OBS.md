@@ -9,6 +9,16 @@ Sends messages to the OBS websocket.
 Sends one or more messages to the OBS websocket.
 
 ---
+### Related Links
+* [Receive-OBS](Receive-OBS.md)
+
+
+
+* [Watch-OBS](Watch-OBS.md)
+
+
+
+---
 ### Parameters
 #### **MessageData**
 

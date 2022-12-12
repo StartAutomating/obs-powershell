@@ -38,8 +38,21 @@ Name of the source to get the active state of
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSSourceActive [-sourceName] <String> [<CommonParameters>]
+Get-OBSSourceActive [-sourceName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

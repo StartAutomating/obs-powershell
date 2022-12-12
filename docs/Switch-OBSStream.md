@@ -25,8 +25,22 @@ Switch-OBSStream
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Switch-OBSStream [<CommonParameters>]
+Switch-OBSStream [-PassThru] [<CommonParameters>]
 ```
 ---

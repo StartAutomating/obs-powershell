@@ -104,8 +104,21 @@ Whether to set the created scene item to enabled or disabled
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Add-OBSInput [-sceneName] <String> [-inputName] <String> [-inputKind] <String> [[-inputSettings] <PSObject>] [-sceneItemEnabled] [<CommonParameters>]
+Add-OBSInput [-sceneName] <String> [-inputName] <String> [-inputKind] <String> [[-inputSettings] <PSObject>] [-sceneItemEnabled] [-PassThru] [<CommonParameters>]
 ```
 ---

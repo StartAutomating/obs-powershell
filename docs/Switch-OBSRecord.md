@@ -25,8 +25,22 @@ Switch-OBSRecord
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Switch-OBSRecord [<CommonParameters>]
+Switch-OBSRecord [-PassThru] [<CommonParameters>]
 ```
 ---

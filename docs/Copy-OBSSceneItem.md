@@ -72,8 +72,21 @@ Name of the scene to create the duplicated item in
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Copy-OBSSceneItem [-sceneName] <String> [-sceneItemId] <Double> [[-destinationSceneName] <String>] [<CommonParameters>]
+Copy-OBSSceneItem [-sceneName] <String> [-sceneItemId] <Double> [[-destinationSceneName] <String>] [-PassThru] [<CommonParameters>]
 ```
 ---

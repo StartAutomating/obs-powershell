@@ -72,8 +72,21 @@ Number of matches to skip during search. >= 0 means first forward. -1 means last
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSSceneItemId [-sceneName] <String> [-sourceName] <String> [[-searchOffset] <Double>] [<CommonParameters>]
+Get-OBSSceneItemId [-sceneName] <String> [-sourceName] <String> [[-searchOffset] <Double>] [-PassThru] [<CommonParameters>]
 ```
 ---

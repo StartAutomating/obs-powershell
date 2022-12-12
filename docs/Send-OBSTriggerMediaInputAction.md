@@ -53,8 +53,21 @@ Identifier of the `ObsMediaInputAction` enum
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Send-OBSTriggerMediaInputAction [-inputName] <String> [-mediaAction] <String> [<CommonParameters>]
+Send-OBSTriggerMediaInputAction [-inputName] <String> [-mediaAction] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

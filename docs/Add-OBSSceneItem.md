@@ -74,6 +74,10 @@ Enable state to apply to the scene item on creation
 ---
 #### **PassThru**
 
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
 > **Type**: ```[Switch]```
 
 > **Required**: false

@@ -109,8 +109,21 @@ Compression quality to use. 0 for high compression, 100 for uncompressed. -1 to 
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSSourceScreenshot [-sourceName] <String> [-imageFormat] <String> [[-imageWidth] <Double>] [[-imageHeight] <Double>] [[-imageCompressionQuality] <Double>] [<CommonParameters>]
+Get-OBSSourceScreenshot [-sourceName] <String> [-imageFormat] <String> [[-imageWidth] <Double>] [[-imageHeight] <Double>] [[-imageCompressionQuality] <Double>] [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -27,8 +27,22 @@ Get-OBSCurrentSceneTransitionCursor
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSCurrentSceneTransitionCursor [<CommonParameters>]
+Get-OBSCurrentSceneTransitionCursor [-PassThru] [<CommonParameters>]
 ```
 ---

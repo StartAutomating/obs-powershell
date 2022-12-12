@@ -55,8 +55,21 @@ Settings to apply to the service
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSStreamServiceSettings [-streamServiceType] <String> [-streamServiceSettings] <PSObject> [<CommonParameters>]
+Set-OBSStreamServiceSettings [-streamServiceType] <String> [-streamServiceSettings] <PSObject> [-PassThru] [<CommonParameters>]
 ```
 ---

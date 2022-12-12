@@ -25,8 +25,22 @@ Get-OBSStreamStatus
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSStreamStatus [<CommonParameters>]
+Get-OBSStreamStatus [-PassThru] [<CommonParameters>]
 ```
 ---

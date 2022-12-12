@@ -36,8 +36,21 @@ Duration in milliseconds
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSCurrentSceneTransitionDuration [-transitionDuration] <Double> [<CommonParameters>]
+Set-OBSCurrentSceneTransitionDuration [-transitionDuration] <Double> [-PassThru] [<CommonParameters>]
 ```
 ---

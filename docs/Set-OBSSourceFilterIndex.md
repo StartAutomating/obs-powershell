@@ -70,8 +70,21 @@ New index position of the filter
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSSourceFilterIndex [-sourceName] <String> [-filterName] <String> [-filterIndex] <Double> [<CommonParameters>]
+Set-OBSSourceFilterIndex [-sourceName] <String> [-filterName] <String> [-filterIndex] <Double> [-PassThru] [<CommonParameters>]
 ```
 ---

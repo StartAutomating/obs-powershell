@@ -36,8 +36,21 @@ Name of the input to get the volume of
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSInputVolume [-inputName] <String> [<CommonParameters>]
+Get-OBSInputVolume [-inputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

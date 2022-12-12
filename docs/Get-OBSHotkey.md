@@ -25,8 +25,22 @@ Get-OBSHotkey
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSHotkey [<CommonParameters>]
+Get-OBSHotkey [-PassThru] [<CommonParameters>]
 ```
 ---

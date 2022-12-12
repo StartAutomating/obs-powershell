@@ -72,8 +72,21 @@ Enable state to apply to the scene item on creation
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Add-OBSSceneItem [-sceneName] <String> [-sourceName] <String> [-sceneItemEnabled] [<CommonParameters>]
+Add-OBSSceneItem [-sceneName] <String> [-sourceName] <String> [-sceneItemEnabled] [-PassThru] [<CommonParameters>]
 ```
 ---

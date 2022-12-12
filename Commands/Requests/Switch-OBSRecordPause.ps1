@@ -17,6 +17,7 @@ function Switch-OBSRecordPause {
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'ToggleRecordPause')]
 
 param(
+# If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
 [switch]

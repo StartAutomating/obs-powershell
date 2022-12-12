@@ -17,6 +17,7 @@ function Get-OBSStats {
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetStats')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
+# If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
 [switch]

@@ -20,6 +20,7 @@ param(
 [ComponentModel.DefaultBindingProperty('hotkeyName')]
 [string]
 $hotkeyName,
+# If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
 [switch]

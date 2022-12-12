@@ -22,6 +22,7 @@ param(
 [ComponentModel.DefaultBindingProperty('transitionName')]
 [string]
 $transitionName,
+# If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
 [switch]

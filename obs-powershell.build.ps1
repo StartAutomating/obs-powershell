@@ -221,6 +221,7 @@ foreach ($obsRequestInfo in $obsWebSocketProtocol.requests) {
     }
 
     $obsFunctionParameters['PassThru'] = @(
+        "# If set, will return the information that would otherwise be sent to OBS."
         "[Parameter(ValueFromPipelineByPropertyName)]"
         "[Alias('OutputRequest','OutputInput')]"
         "[switch]"

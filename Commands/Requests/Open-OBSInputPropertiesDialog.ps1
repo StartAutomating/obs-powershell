@@ -20,6 +20,7 @@ param(
 [ComponentModel.DefaultBindingProperty('inputName')]
 [string]
 $inputName,
+# If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
 [switch]

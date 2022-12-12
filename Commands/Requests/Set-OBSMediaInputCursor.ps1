@@ -28,6 +28,7 @@ $inputName,
 [ValidateRange(0,[int]::MaxValue)]
 [double]
 $mediaCursor,
+# If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
 [switch]

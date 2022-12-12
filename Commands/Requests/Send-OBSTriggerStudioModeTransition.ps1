@@ -17,6 +17,7 @@ function Send-OBSTriggerStudioModeTransition {
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'TriggerStudioModeTransition')]
 
 param(
+# If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
 [switch]

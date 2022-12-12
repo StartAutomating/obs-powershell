@@ -30,6 +30,7 @@ $parameterName,
 [ComponentModel.DefaultBindingProperty('parameterValue')]
 [string]
 $parameterValue,
+# If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
 [switch]

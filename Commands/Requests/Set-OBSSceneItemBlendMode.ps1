@@ -33,6 +33,7 @@ $sceneItemId,
 [ComponentModel.DefaultBindingProperty('sceneItemBlendMode')]
 [string]
 $sceneItemBlendMode,
+# If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
 [switch]

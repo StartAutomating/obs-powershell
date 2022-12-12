@@ -17,6 +17,7 @@ function Stop-OBSStream {
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'StopStream')]
 
 param(
+# If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
 [switch]

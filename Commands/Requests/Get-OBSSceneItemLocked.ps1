@@ -28,6 +28,7 @@ $sceneName,
 [ValidateRange(0,[int]::MaxValue)]
 [double]
 $sceneItemId,
+# If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
 [switch]

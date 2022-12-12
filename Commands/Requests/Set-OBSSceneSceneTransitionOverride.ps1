@@ -31,6 +31,7 @@ $transitionName,
 [ValidateRange(50,20000)]
 [double]
 $transitionDuration,
+# If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
 [switch]

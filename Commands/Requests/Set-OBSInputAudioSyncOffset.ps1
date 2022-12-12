@@ -26,6 +26,7 @@ $inputName,
 [ValidateRange(-950,20000)]
 [double]
 $inputAudioSyncOffset,
+# If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
 [switch]

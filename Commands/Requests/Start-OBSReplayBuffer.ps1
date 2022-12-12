@@ -17,6 +17,7 @@ function Start-OBSReplayBuffer {
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'StartReplayBuffer')]
 
 param(
+# If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
 [switch]

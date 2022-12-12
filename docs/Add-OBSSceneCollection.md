@@ -38,8 +38,21 @@ Name for the new scene collection
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Add-OBSSceneCollection [-sceneCollectionName] <String> [<CommonParameters>]
+Add-OBSSceneCollection [-sceneCollectionName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

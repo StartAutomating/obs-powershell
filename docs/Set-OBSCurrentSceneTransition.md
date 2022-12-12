@@ -38,8 +38,21 @@ Name of the transition to make active
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSCurrentSceneTransition [-transitionName] <String> [<CommonParameters>]
+Set-OBSCurrentSceneTransition [-transitionName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

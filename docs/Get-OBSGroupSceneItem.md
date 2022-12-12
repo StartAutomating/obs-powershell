@@ -40,8 +40,21 @@ Name of the group to get the items of
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSGroupSceneItem [-sceneName] <String> [<CommonParameters>]
+Get-OBSGroupSceneItem [-sceneName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

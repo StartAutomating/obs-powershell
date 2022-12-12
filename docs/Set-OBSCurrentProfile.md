@@ -36,8 +36,21 @@ Name of the profile to switch to
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSCurrentProfile [-profileName] <String> [<CommonParameters>]
+Set-OBSCurrentProfile [-profileName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

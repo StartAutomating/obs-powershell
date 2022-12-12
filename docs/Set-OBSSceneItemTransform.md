@@ -72,6 +72,10 @@ Object containing scene item transform info to update
 ---
 #### **PassThru**
 
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
 > **Type**: ```[Switch]```
 
 > **Required**: false

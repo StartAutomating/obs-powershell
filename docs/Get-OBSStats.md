@@ -25,8 +25,22 @@ Get-OBSStats
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSStats [<CommonParameters>]
+Get-OBSStats [-PassThru] [<CommonParameters>]
 ```
 ---

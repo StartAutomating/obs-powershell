@@ -6,7 +6,7 @@ describe "obs-powershell" {
     }
     
     it 'Has lots of OBS websocket commands' {
-        Get-Command -Name *-OBS | 
+        Get-Command -Name *-OBS* | 
             Measure-Object |
             Select-Object -ExpandProperty Count |
             Should -BeGreaterThan 100

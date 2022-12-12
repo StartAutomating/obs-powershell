@@ -73,8 +73,21 @@ Object containing appropriate request data
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Send-OBSCallVendorRequest [-vendorName] <String> [-requestType] <String> [[-requestData] <PSObject>] [<CommonParameters>]
+Send-OBSCallVendorRequest [-vendorName] <String> [-requestType] <String> [[-requestData] <PSObject>] [-PassThru] [<CommonParameters>]
 ```
 ---

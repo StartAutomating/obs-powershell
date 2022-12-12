@@ -18,6 +18,20 @@
 
                     </Script>
       </ScriptMethod>
+      <ScriptProperty>
+        <Name>Enabled</Name>
+        <GetScriptBlock>
+                        return $this.sceneItemEnabled
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Layer</Name>
+        <GetScriptBlock>
+                        return $this.sceneItemIndex
+
+                    </GetScriptBlock>
+      </ScriptProperty>
     </Members>
   </Type>
 </Types>

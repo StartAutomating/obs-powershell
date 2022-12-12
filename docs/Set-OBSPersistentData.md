@@ -70,8 +70,21 @@ The value to apply to the slot
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSPersistentData [-realm] <String> [-slotName] <String> [-slotValue] <PSObject> [<CommonParameters>]
+Set-OBSPersistentData [-realm] <String> [-slotName] <String> [-slotValue] <PSObject> [-PassThru] [<CommonParameters>]
 ```
 ---

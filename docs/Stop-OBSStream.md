@@ -25,8 +25,22 @@ Stop-OBSStream
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Stop-OBSStream [<CommonParameters>]
+Stop-OBSStream [-PassThru] [<CommonParameters>]
 ```
 ---

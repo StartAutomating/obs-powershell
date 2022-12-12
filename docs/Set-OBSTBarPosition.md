@@ -57,6 +57,10 @@ Whether to release the TBar. Only set `false` if you know that you will be sendi
 ---
 #### **PassThru**
 
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
 > **Type**: ```[Switch]```
 
 > **Required**: false

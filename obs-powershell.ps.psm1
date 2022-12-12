@@ -3,3 +3,5 @@
 $MyInvocation.MyCommand.ScriptBlock.Module.OnRemove = {
     Disconnect-OBS
 }
+
+Connect-OBS

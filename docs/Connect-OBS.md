@@ -25,9 +25,26 @@ Connect-OBS
 
 ---
 ### Parameters
+#### **WebSocketUri**
+
+The OBS websocket URL.  If not provided, this will default to loopback on port 4455.
+
+
+
+> **Type**: ```[Uri]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 #### **WebSocketToken**
 
-A randomly generated password used to connect to obs.
+A randomly generated password used to connect to OBS.
 You can see the websocket password in Tools -> obs-websocket settings -> show connect info
 
 
@@ -43,28 +60,11 @@ You can see the websocket password in Tools -> obs-websocket settings -> show co
 
 
 ---
-#### **WebSocketUri**
-
-The websocket URL.  If not provided, this will default to loopback on port 4455.
-
-
-
-> **Type**: ```[Uri]```
-
-> **Required**: false
-
-> **Position**: named
-
-> **PipelineInput**:true (ByPropertyName)
-
-
-
----
 ### Syntax
 ```PowerShell
 Connect-OBS [<CommonParameters>]
 ```
 ```PowerShell
-Connect-OBS [-WebSocketToken <String>] [-WebSocketUri <Uri>] [<CommonParameters>]
+Connect-OBS [-WebSocketUri <Uri>] [-WebSocketToken <String>] [<CommonParameters>]
 ```
 ---

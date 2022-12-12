@@ -123,8 +123,21 @@ Height of the output resolution in pixels
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSVideoSettings [[-fpsNumerator] <Double>] [[-fpsDenominator] <Double>] [[-baseWidth] <Double>] [[-baseHeight] <Double>] [[-outputWidth] <Double>] [[-outputHeight] <Double>] [<CommonParameters>]
+Set-OBSVideoSettings [[-fpsNumerator] <Double>] [[-fpsDenominator] <Double>] [[-baseWidth] <Double>] [[-baseHeight] <Double>] [[-outputWidth] <Double>] [[-outputHeight] <Double>] [-PassThru] [<CommonParameters>]
 ```
 ---

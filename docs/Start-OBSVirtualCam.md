@@ -25,8 +25,22 @@ Start-OBSVirtualCam
 ```
 
 ---
+### Parameters
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Start-OBSVirtualCam [<CommonParameters>]
+Start-OBSVirtualCam [-PassThru] [<CommonParameters>]
 ```
 ---

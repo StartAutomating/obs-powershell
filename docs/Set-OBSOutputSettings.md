@@ -53,8 +53,21 @@ Output settings
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Set-OBSOutputSettings [-outputName] <String> [-outputSettings] <PSObject> [<CommonParameters>]
+Set-OBSOutputSettings [-outputName] <String> [-outputSettings] <PSObject> [-PassThru] [<CommonParameters>]
 ```
 ---

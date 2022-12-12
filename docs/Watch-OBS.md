@@ -14,6 +14,10 @@ Watches the OBS websocket for events.
 
 
 
+* [Receive-OBS](Receive-OBS.md)
+
+
+
 ---
 ### Examples
 #### EXAMPLE 1
@@ -30,6 +34,10 @@ Watch-OBS    # If you turn off authentication on OBS
 ### Parameters
 #### **WebSocketURI**
 
+The OBS websocket URL.  If not provided, this will default to loopback on port 4455.
+
+
+
 > **Type**: ```[Uri]```
 
 > **Required**: false
@@ -42,6 +50,11 @@ Watch-OBS    # If you turn off authentication on OBS
 
 ---
 #### **WebSocketToken**
+
+A randomly generated password used to connect to OBS.
+You can see the websocket password in Tools -> obs-websocket settings -> show connect info
+
+
 
 > **Type**: ```[String]```
 

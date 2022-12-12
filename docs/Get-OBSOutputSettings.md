@@ -36,8 +36,21 @@ Output name
 
 
 ---
+#### **PassThru**
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
 ### Syntax
 ```PowerShell
-Get-OBSOutputSettings [-outputName] <String> [<CommonParameters>]
+Get-OBSOutputSettings [-outputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

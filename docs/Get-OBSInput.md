@@ -19,7 +19,7 @@ Get-OBSInput calls the OBS WebSocket with a request of type GetInputList.
 
 ---
 ### Parameters
-#### **inputKind**
+#### **InputKind**
 
 Restrict the array to only inputs of the specified kind
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Get-OBSInput [[-inputKind] <String>] [-PassThru] [<CommonParameters>]
+Get-OBSInput [[-InputKind] <String>] [-PassThru] [<CommonParameters>]
 ```
 ---

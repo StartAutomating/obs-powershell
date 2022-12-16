@@ -21,7 +21,7 @@ Add-OBSSceneItem calls the OBS WebSocket with a request of type CreateSceneItem.
 
 ---
 ### Parameters
-#### **sceneName**
+#### **SceneName**
 
 Name of the scene to create the new item in
 
@@ -38,7 +38,7 @@ Name of the scene to create the new item in
 
 
 ---
-#### **sourceName**
+#### **SourceName**
 
 Name of the source to add to the scene
 
@@ -55,7 +55,7 @@ Name of the source to add to the scene
 
 
 ---
-#### **sceneItemEnabled**
+#### **SceneItemEnabled**
 
 Enable state to apply to the scene item on creation
 
@@ -91,6 +91,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Add-OBSSceneItem [-sceneName] <String> [-sourceName] <String> [-sceneItemEnabled] [-PassThru] [<CommonParameters>]
+Add-OBSSceneItem [-SceneName] <String> [-SourceName] <String> [-SceneItemEnabled] [-PassThru] [<CommonParameters>]
 ```
 ---

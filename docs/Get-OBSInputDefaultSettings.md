@@ -19,7 +19,7 @@ Get-OBSInputDefaultSettings calls the OBS WebSocket with a request of type GetIn
 
 ---
 ### Parameters
-#### **inputKind**
+#### **InputKind**
 
 Input kind to get the default settings for
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Get-OBSInputDefaultSettings [-inputKind] <String> [-PassThru] [<CommonParameters>]
+Get-OBSInputDefaultSettings [-InputKind] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

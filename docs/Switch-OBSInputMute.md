@@ -19,7 +19,7 @@ Switch-OBSInputMute calls the OBS WebSocket with a request of type ToggleInputMu
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Name of the input to toggle the mute state of
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Switch-OBSInputMute [-inputName] <String> [-PassThru] [<CommonParameters>]
+Switch-OBSInputMute [-InputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

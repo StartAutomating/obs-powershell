@@ -21,7 +21,7 @@ Get-OBSInputAudioSyncOffset calls the OBS WebSocket with a request of type GetIn
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Name of the input to get the audio sync offset of
 
@@ -57,6 +57,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Get-OBSInputAudioSyncOffset [-inputName] <String> [-PassThru] [<CommonParameters>]
+Get-OBSInputAudioSyncOffset [-InputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -6,7 +6,9 @@
   * Add-OBSMediaSource (Fixes #28)
   * Clear-OBSScene (Fixes #27)
 * New Methods
-  * OBS.GetSceneListResponse: .Remove()/.Delete() (Fixes #26)
+  * OBS.GetSceneListResponse:
+    * .Remove()/.Delete() (Fixes #26)
+    * .Lock()/.Unlock() (Fixes #32)
 * General Improvements
   * Standardizing Parameter Naming (Fixes #30)  
   * Using GUIDs for RequestIDs (Fixes #29)

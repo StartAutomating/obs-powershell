@@ -19,7 +19,7 @@ Get-OBSPersistentData calls the OBS WebSocket with a request of type GetPersiste
 
 ---
 ### Parameters
-#### **realm**
+#### **Realm**
 
 The data realm to select. `OBS_WEBSOCKET_DATA_REALM_GLOBAL` or `OBS_WEBSOCKET_DATA_REALM_PROFILE`
 
@@ -36,7 +36,7 @@ The data realm to select. `OBS_WEBSOCKET_DATA_REALM_GLOBAL` or `OBS_WEBSOCKET_DA
 
 
 ---
-#### **slotName**
+#### **SlotName**
 
 The name of the slot to retrieve data from
 
@@ -72,6 +72,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Get-OBSPersistentData [-realm] <String> [-slotName] <String> [-PassThru] [<CommonParameters>]
+Get-OBSPersistentData [-Realm] <String> [-SlotName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

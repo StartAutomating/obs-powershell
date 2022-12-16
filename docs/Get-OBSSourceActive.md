@@ -21,7 +21,7 @@ Get-OBSSourceActive calls the OBS WebSocket with a request of type GetSourceActi
 
 ---
 ### Parameters
-#### **sourceName**
+#### **SourceName**
 
 Name of the source to get the active state of
 
@@ -57,6 +57,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Get-OBSSourceActive [-sourceName] <String> [-PassThru] [<CommonParameters>]
+Get-OBSSourceActive [-SourceName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

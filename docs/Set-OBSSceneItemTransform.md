@@ -19,7 +19,7 @@ Set-OBSSceneItemTransform calls the OBS WebSocket with a request of type SetScen
 
 ---
 ### Parameters
-#### **sceneName**
+#### **SceneName**
 
 Name of the scene the item is in
 
@@ -36,7 +36,7 @@ Name of the scene the item is in
 
 
 ---
-#### **sceneItemId**
+#### **SceneItemId**
 
 Numeric ID of the scene item
 
@@ -53,7 +53,7 @@ Numeric ID of the scene item
 
 
 ---
-#### **sceneItemTransform**
+#### **SceneItemTransform**
 
 Object containing scene item transform info to update
 
@@ -89,6 +89,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSSceneItemTransform [-sceneName] <String> [-sceneItemId] <Double> [-sceneItemTransform] <PSObject> [-PassThru] [<CommonParameters>]
+Set-OBSSceneItemTransform [-SceneName] <String> [-SceneItemId] <Double> [-SceneItemTransform] <PSObject> [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -21,7 +21,7 @@ Set-OBSStreamServiceSettings calls the OBS WebSocket with a request of type SetS
 
 ---
 ### Parameters
-#### **streamServiceType**
+#### **StreamServiceType**
 
 Type of stream service to apply. Example: `rtmp_common` or `rtmp_custom`
 
@@ -38,7 +38,7 @@ Type of stream service to apply. Example: `rtmp_common` or `rtmp_custom`
 
 
 ---
-#### **streamServiceSettings**
+#### **StreamServiceSettings**
 
 Settings to apply to the service
 
@@ -74,6 +74,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSStreamServiceSettings [-streamServiceType] <String> [-streamServiceSettings] <PSObject> [-PassThru] [<CommonParameters>]
+Set-OBSStreamServiceSettings [-StreamServiceType] <String> [-StreamServiceSettings] <PSObject> [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -109,6 +109,7 @@ Because the obs-websocket cleanly documents it's protocol, most commands in obs-
 |Name                                                                                      |RequestType                                                                                                                                                  |
 |------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |[Add-OBSBrowserSource](docs/Add-OBSBrowserSource.md)                                      |
+|[Add-OBSDisplaySource](docs/Add-OBSDisplaySource.md)                                      |
 |[Add-OBSInput](docs/Add-OBSInput.md)                                                      |[CreateInput](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createinput)                                                |
 |[Add-OBSProfile](docs/Add-OBSProfile.md)                                                  |[CreateProfile](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createprofile)                                            |
 |[Add-OBSScene](docs/Add-OBSScene.md)                                                      |[CreateScene](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createscene)                                                |
@@ -250,6 +251,7 @@ Because the obs-websocket cleanly documents it's protocol, most commands in obs-
 |[Switch-OBSStream](docs/Switch-OBSStream.md)                                              |[ToggleStream](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#togglestream)                                              |
 |[Switch-OBSVirtualCam](docs/Switch-OBSVirtualCam.md)                                      |[ToggleVirtualCam](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#togglevirtualcam)                                      |
 |[Watch-OBS](docs/Watch-OBS.md)                                                            |
+|[Add-OBSMonitorSource](docs/Add-OBSMonitorSource.md)                                      |
 
 
 

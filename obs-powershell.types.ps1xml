@@ -25,9 +25,22 @@
                     </Script>
       </ScriptMethod>
       <ScriptMethod>
+        <Name>Lock</Name>
+        <Script>
+                        $this | Set-OBSSceneItemLocked -sceneItemLocked
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
         <Name>Remove</Name>
         <Script>
                         $this | Remove-OBSSceneItem
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Unlock</Name>
+        <Script>
+                        $this | Set-OBSSceneItemLocked -sceneItemLocked:$false
+
                     </Script>
       </ScriptMethod>
       <ScriptProperty>

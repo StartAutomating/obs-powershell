@@ -21,7 +21,7 @@ Get-OBSSceneItemId calls the OBS WebSocket with a request of type GetSceneItemId
 
 ---
 ### Parameters
-#### **sceneName**
+#### **SceneName**
 
 Name of the scene or group to search in
 
@@ -38,7 +38,7 @@ Name of the scene or group to search in
 
 
 ---
-#### **sourceName**
+#### **SourceName**
 
 Name of the source to find
 
@@ -55,7 +55,7 @@ Name of the source to find
 
 
 ---
-#### **searchOffset**
+#### **SearchOffset**
 
 Number of matches to skip during search. >= 0 means first forward. -1 means last (top) item
 
@@ -91,6 +91,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Get-OBSSceneItemId [-sceneName] <String> [-sourceName] <String> [[-searchOffset] <Double>] [-PassThru] [<CommonParameters>]
+Get-OBSSceneItemId [-SceneName] <String> [-SourceName] <String> [[-SearchOffset] <Double>] [-PassThru] [<CommonParameters>]
 ```
 ---

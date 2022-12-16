@@ -139,6 +139,12 @@ function Add-OBSBrowserSource
                 }
         }
 
-        Add-OBSInput -sceneName $myParameters["Scene"] -inputKind "browser_source" -inputSettings $myParameterData -inputName $Name        
+        $outputAddedResult = 
+            Add-OBSInput -sceneName $myParameters["Scene"] -inputKind "browser_source" -inputSettings $myParameterData -inputName $Name
+
+        if ($outputAddedResult) {
+            Get-OBSSceneItem -sceneName $myParameters["Scene"] |
+                Where-Object SourceName -eq $name
+        }
     }
 }

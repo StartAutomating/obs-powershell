@@ -21,7 +21,7 @@ Open-OBSSourceProjector calls the OBS WebSocket with a request of type OpenSourc
 
 ---
 ### Parameters
-#### **sourceName**
+#### **SourceName**
 
 Name of the source to open a projector for
 
@@ -38,7 +38,7 @@ Name of the source to open a projector for
 
 
 ---
-#### **monitorIndex**
+#### **MonitorIndex**
 
 Monitor index, use `GetMonitorList` to obtain index
 
@@ -55,7 +55,7 @@ Monitor index, use `GetMonitorList` to obtain index
 
 
 ---
-#### **projectorGeometry**
+#### **ProjectorGeometry**
 
 Size/Position data for a windowed projector, in Qt Base64 encoded format. Mutually exclusive with `monitorIndex`
 
@@ -91,6 +91,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Open-OBSSourceProjector [-sourceName] <String> [[-monitorIndex] <Double>] [[-projectorGeometry] <String>] [-PassThru] [<CommonParameters>]
+Open-OBSSourceProjector [-SourceName] <String> [[-MonitorIndex] <Double>] [[-ProjectorGeometry] <String>] [-PassThru] [<CommonParameters>]
 ```
 ---

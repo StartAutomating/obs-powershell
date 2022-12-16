@@ -19,7 +19,7 @@ Get-OBSProfileParameter calls the OBS WebSocket with a request of type GetProfil
 
 ---
 ### Parameters
-#### **parameterCategory**
+#### **ParameterCategory**
 
 Category of the parameter to get
 
@@ -36,7 +36,7 @@ Category of the parameter to get
 
 
 ---
-#### **parameterName**
+#### **ParameterName**
 
 Name of the parameter to get
 
@@ -72,6 +72,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Get-OBSProfileParameter [-parameterCategory] <String> [-parameterName] <String> [-PassThru] [<CommonParameters>]
+Get-OBSProfileParameter [-ParameterCategory] <String> [-ParameterName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

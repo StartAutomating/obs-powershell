@@ -132,7 +132,11 @@ dynamicParam {
         if (-not $Name) {
             $Name = $FilePathItem.Name
         }
-        Add-OBSInput -sceneName $myParameters["Scene"] -inputKind "ffmpeg_source" -inputSettings $myParameterData -inputName $Name        
+        $outputAddedResult = Add-OBSInput -sceneName $myParameters["Scene"] -inputKind "ffmpeg_source" -inputSettings $myParameterData -inputName $Name
+        if ($outputAddedResult) {
+            Get-OBSSceneItem -sceneName $myParameters["Scene"] |
+                Where-Object SourceName -eq $name
+        }
     
 }
 }

@@ -19,7 +19,7 @@ Set-OBSInputSettings calls the OBS WebSocket with a request of type SetInputSett
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Name of the input to set the settings of
 
@@ -36,7 +36,7 @@ Name of the input to set the settings of
 
 
 ---
-#### **inputSettings**
+#### **InputSettings**
 
 Object of settings to apply
 
@@ -53,7 +53,7 @@ Object of settings to apply
 
 
 ---
-#### **overlay**
+#### **Overlay**
 
 True == apply the settings on top of existing ones, False == reset the input to its defaults, then apply settings.
 
@@ -89,6 +89,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSInputSettings [-inputName] <String> [-inputSettings] <PSObject> [-overlay] [-PassThru] [<CommonParameters>]
+Set-OBSInputSettings [-InputName] <String> [-InputSettings] <PSObject> [-Overlay] [-PassThru] [<CommonParameters>]
 ```
 ---

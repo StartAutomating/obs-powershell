@@ -19,7 +19,7 @@ Start-OBSOutput calls the OBS WebSocket with a request of type StartOutput.
 
 ---
 ### Parameters
-#### **outputName**
+#### **OutputName**
 
 Output name
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Start-OBSOutput [-outputName] <String> [-PassThru] [<CommonParameters>]
+Start-OBSOutput [-OutputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

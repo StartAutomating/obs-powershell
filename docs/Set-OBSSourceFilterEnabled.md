@@ -19,7 +19,7 @@ Set-OBSSourceFilterEnabled calls the OBS WebSocket with a request of type SetSou
 
 ---
 ### Parameters
-#### **sourceName**
+#### **SourceName**
 
 Name of the source the filter is on
 
@@ -36,7 +36,7 @@ Name of the source the filter is on
 
 
 ---
-#### **filterName**
+#### **FilterName**
 
 Name of the filter
 
@@ -53,7 +53,7 @@ Name of the filter
 
 
 ---
-#### **filterEnabled**
+#### **FilterEnabled**
 
 New enable state of the filter
 
@@ -89,6 +89,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSSourceFilterEnabled [-sourceName] <String> [-filterName] <String> -filterEnabled [-PassThru] [<CommonParameters>]
+Set-OBSSourceFilterEnabled [-SourceName] <String> [-FilterName] <String> -FilterEnabled [-PassThru] [<CommonParameters>]
 ```
 ---

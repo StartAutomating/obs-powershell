@@ -21,7 +21,7 @@ Set-OBSCurrentSceneCollection calls the OBS WebSocket with a request of type Set
 
 ---
 ### Parameters
-#### **sceneCollectionName**
+#### **SceneCollectionName**
 
 Name of the scene collection to switch to
 
@@ -57,6 +57,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSCurrentSceneCollection [-sceneCollectionName] <String> [-PassThru] [<CommonParameters>]
+Set-OBSCurrentSceneCollection [-SceneCollectionName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

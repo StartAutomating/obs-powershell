@@ -19,7 +19,7 @@ Remove-OBSSourceFilter calls the OBS WebSocket with a request of type RemoveSour
 
 ---
 ### Parameters
-#### **sourceName**
+#### **SourceName**
 
 Name of the source the filter is on
 
@@ -36,7 +36,7 @@ Name of the source the filter is on
 
 
 ---
-#### **filterName**
+#### **FilterName**
 
 Name of the filter to remove
 
@@ -72,6 +72,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Remove-OBSSourceFilter [-sourceName] <String> [-filterName] <String> [-PassThru] [<CommonParameters>]
+Remove-OBSSourceFilter [-SourceName] <String> [-FilterName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

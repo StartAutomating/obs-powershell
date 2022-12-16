@@ -183,6 +183,7 @@ Initial Release of obs-powershell
 'Switch-OBSStream',
 'Switch-OBSVirtualCam',
 'Add-OBSBrowserSource',
-'Add-OBSDisplaySource'
+'Add-OBSDisplaySource',
+'Add-OBSMediaSource'
 }
 

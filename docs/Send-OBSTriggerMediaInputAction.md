@@ -19,7 +19,7 @@ Send-OBSTriggerMediaInputAction calls the OBS WebSocket with a request of type T
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Name of the media input
 
@@ -36,7 +36,7 @@ Name of the media input
 
 
 ---
-#### **mediaAction**
+#### **MediaAction**
 
 Identifier of the `ObsMediaInputAction` enum
 
@@ -72,6 +72,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Send-OBSTriggerMediaInputAction [-inputName] <String> [-mediaAction] <String> [-PassThru] [<CommonParameters>]
+Send-OBSTriggerMediaInputAction [-InputName] <String> [-MediaAction] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -21,7 +21,7 @@ Set-OBSSceneItemBlendMode calls the OBS WebSocket with a request of type SetScen
 
 ---
 ### Parameters
-#### **sceneName**
+#### **SceneName**
 
 Name of the scene the item is in
 
@@ -38,7 +38,7 @@ Name of the scene the item is in
 
 
 ---
-#### **sceneItemId**
+#### **SceneItemId**
 
 Numeric ID of the scene item
 
@@ -55,7 +55,7 @@ Numeric ID of the scene item
 
 
 ---
-#### **sceneItemBlendMode**
+#### **SceneItemBlendMode**
 
 New blend mode
 
@@ -91,6 +91,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSSceneItemBlendMode [-sceneName] <String> [-sceneItemId] <Double> [-sceneItemBlendMode] <String> [-PassThru] [<CommonParameters>]
+Set-OBSSceneItemBlendMode [-SceneName] <String> [-SceneItemId] <Double> [-SceneItemBlendMode] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

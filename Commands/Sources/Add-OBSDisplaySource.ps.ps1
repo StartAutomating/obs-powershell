@@ -1,0 +1,91 @@
+function Add-OBSDisplaySource
+{
+    <#
+    .SYNOPSIS
+        Adds a display source
+    .DESCRIPTION
+        Adds a display source to OBS.  This captures the contents of the display.
+    .EXAMPLE
+        Add-OBSMonitorSource  # Adds a display source of the primary monitor
+    .EXAMPLE
+        Add-OBSMonitorSource -Display 2 # Adds a display source of the second monitor
+    #>
+    [inherit("Add-OBSInput", Dynamic, Abstract, ExcludeParameter='inputKind','sceneName','inputName')]
+    [Alias('Add-OBSMonitorSource')]
+    param(
+    # The monitor number.
+    # This the number of the monitor you would like to capture.
+    [Parameter(ValueFromPipelineByPropertyName)]
+    [ComponentModel.DefaultBindingProperty("monitor")]
+    [Alias('MonitorNumber','Display','DisplayNumber')]
+    [int]
+    $Monitor = 1,
+
+    # If set, will capture the cursor.
+    # This will be set by default.
+    # If explicitly set to false, the cursor will not be captured.
+    [Parameter(ValueFromPipelineByPropertyName)]
+    [ComponentModel.DefaultBindingProperty("capture_cursor")]
+    [switch]
+    $CaptureCursor,
+
+    # The name of the scene.
+    # If no scene name is provided, the current program scene will be used.
+    [Parameter(ValueFromPipelineByPropertyName)]
+    [Alias('SceneName')]
+    [string]
+    $Scene,
+
+    # The name of the input.
+    # If no name is provided, "Display $($Monitor + 1)" will be the input source name.
+    [Parameter(ValueFromPipelineByPropertyName)]
+    [Alias('InputName')]
+    [string]
+    $Name
+    )
+    
+    process {
+        $myParameters = [Ordered]@{} + $PSBoundParameters
+        
+        if (-not $myParameters["Scene"]) {
+            $myParameters["Scene"] = Get-OBSCurrentProgramScene
+        }
+                
+        $myParameterData = [Ordered]@{}
+        foreach ($parameter in $MyInvocation.MyCommand.Parameters.Values) {
+
+            $bindToPropertyName = $null            
+            
+            foreach ($attribute in $parameter.Attributes) {
+                if ($attribute -is [ComponentModel.DefaultBindingPropertyAttribute]) {
+                    $bindToPropertyName = $attribute.Name
+                    break
+                }
+            }
+
+            if (-not $bindToPropertyName) { continue }
+            if ($myParameters.Contains($parameter.Name)) {
+                $myParameterData[$bindToPropertyName] = $myParameters[$parameter.Name]
+                if ($myParameters[$parameter.Name] -is [switch]) {
+                    $myParameterData[$bindToPropertyName] = $parameter.Name -as [bool]
+                }
+            }
+        }
+
+        # Users like 1 indexed, computers like zero-indexed.
+        $myParameterData["monitor"] = $Monitor - 1
+
+        if (-not $myParameters["Name"]) {
+            $myParameters["Name"] = "Display $($Monitor)"
+        }
+
+        $addObsInputParams = @{
+            sceneName = $myParameters["Scene"]
+            inputName = $myParameters["Name"]
+            inputKind = "monitor_capture"
+            inputSettings = $myParameterData
+        }
+
+        Add-OBSInput @addObsInputParams
+    }
+}

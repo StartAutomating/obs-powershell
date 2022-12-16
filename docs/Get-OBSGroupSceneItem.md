@@ -23,7 +23,7 @@ Get-OBSGroupSceneItem calls the OBS WebSocket with a request of type GetGroupSce
 
 ---
 ### Parameters
-#### **sceneName**
+#### **SceneName**
 
 Name of the group to get the items of
 
@@ -59,6 +59,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Get-OBSGroupSceneItem [-sceneName] <String> [-PassThru] [<CommonParameters>]
+Get-OBSGroupSceneItem [-SceneName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

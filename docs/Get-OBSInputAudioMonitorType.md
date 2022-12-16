@@ -25,7 +25,7 @@ Get-OBSInputAudioMonitorType calls the OBS WebSocket with a request of type GetI
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Name of the input to get the audio monitor type of
 
@@ -61,6 +61,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Get-OBSInputAudioMonitorType [-inputName] <String> [-PassThru] [<CommonParameters>]
+Get-OBSInputAudioMonitorType [-InputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

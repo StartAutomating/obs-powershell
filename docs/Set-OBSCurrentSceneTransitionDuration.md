@@ -19,7 +19,7 @@ Set-OBSCurrentSceneTransitionDuration calls the OBS WebSocket with a request of 
 
 ---
 ### Parameters
-#### **transitionDuration**
+#### **TransitionDuration**
 
 Duration in milliseconds
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSCurrentSceneTransitionDuration [-transitionDuration] <Double> [-PassThru] [<CommonParameters>]
+Set-OBSCurrentSceneTransitionDuration [-TransitionDuration] <Double> [-PassThru] [<CommonParameters>]
 ```
 ---

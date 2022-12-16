@@ -19,7 +19,7 @@ Get-OBSInputAudioBalance calls the OBS WebSocket with a request of type GetInput
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Name of the input to get the audio balance of
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Get-OBSInputAudioBalance [-inputName] <String> [-PassThru] [<CommonParameters>]
+Get-OBSInputAudioBalance [-InputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

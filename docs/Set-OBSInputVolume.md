@@ -19,7 +19,7 @@ Set-OBSInputVolume calls the OBS WebSocket with a request of type SetInputVolume
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Name of the input to set the volume of
 
@@ -36,7 +36,7 @@ Name of the input to set the volume of
 
 
 ---
-#### **inputVolumeMul**
+#### **InputVolumeMul**
 
 Volume setting in mul
 
@@ -53,7 +53,7 @@ Volume setting in mul
 
 
 ---
-#### **inputVolumeDb**
+#### **InputVolumeDb**
 
 Volume setting in dB
 
@@ -89,6 +89,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSInputVolume [-inputName] <String> [[-inputVolumeMul] <Double>] [[-inputVolumeDb] <Double>] [-PassThru] [<CommonParameters>]
+Set-OBSInputVolume [-InputName] <String> [[-InputVolumeMul] <Double>] [[-InputVolumeDb] <Double>] [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -19,7 +19,7 @@ Set-OBSCurrentSceneTransitionSettings calls the OBS WebSocket with a request of 
 
 ---
 ### Parameters
-#### **transitionSettings**
+#### **TransitionSettings**
 
 Settings object to apply to the transition. Can be `{}`
 
@@ -36,7 +36,7 @@ Settings object to apply to the transition. Can be `{}`
 
 
 ---
-#### **overlay**
+#### **Overlay**
 
 Whether to overlay over the current settings or replace them
 
@@ -72,6 +72,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSCurrentSceneTransitionSettings [-transitionSettings] <PSObject> [-overlay] [-PassThru] [<CommonParameters>]
+Set-OBSCurrentSceneTransitionSettings [-TransitionSettings] <PSObject> [-Overlay] [-PassThru] [<CommonParameters>]
 ```
 ---

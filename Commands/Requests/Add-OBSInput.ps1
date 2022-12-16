@@ -19,27 +19,27 @@ param(
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sceneName')]
 [string]
-$sceneName,
+$SceneName,
 <# Name of the new input to created #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('inputName')]
 [string]
-$inputName,
+$InputName,
 <# The kind of input to be created #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('inputKind')]
 [string]
-$inputKind,
+$InputKind,
 <# Settings object to initialize the input with #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('inputSettings')]
 [PSObject]
-$inputSettings,
+$InputSettings,
 <# Whether to set the created scene item to enabled or disabled #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sceneItemEnabled')]
 [switch]
-$sceneItemEnabled,
+$SceneItemEnabled,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
@@ -98,24 +98,14 @@ process {
                 }
             }
         }
-
         
-        # If we don't have a request counter for this request type
-        if (-not $script:ObsRequestsCounts[$myRequestType]) {
-            # initialize it to zero.
-            $script:ObsRequestsCounts[$myRequestType] = 0
-        }
-        # Increment the counter for requests of this type
-        $script:ObsRequestsCounts[$myRequestType]++
-
         # and make a request ID from that.
-        $myRequestId = "$myRequestType.$($script:ObsRequestsCounts[$myRequestType])"
-
+        $myRequestId = "$myRequestType.$([Guid]::newGuid())"
     
         # Construct the payload object
         $requestPayload = [Ordered]@{
             # It must include a request ID
-            requestId = "$myRequestType.$($script:ObsRequestsCounts[$myRequestType])"
+            requestId = $myRequestId
             # request type
             requestType = $myRequestType
             # and optional data

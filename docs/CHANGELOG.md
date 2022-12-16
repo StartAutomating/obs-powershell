@@ -1,3 +1,21 @@
+## obs-powershell 0.1.2:
+
+* New Commands
+  * Add-OBSBrowserSource (Fixes #24)
+  * Add-OBSDisplaySource (Fixes #25)
+  * Add-OBSMediaSource (Fixes #28)
+  * Clear-OBSScene (Fixes #27)
+* New Methods
+  * OBS.GetSceneListResponse:
+    * .Remove()/.Delete() (Fixes #26)
+    * .Lock()/.Unlock() (Fixes #32)
+* General Improvements
+  * Standardizing Parameter Naming (Fixes #30)  
+  * Using GUIDs for RequestIDs (Fixes #29)
+  * Updated logo (Fixes #23)
+  
+---
+
 ## obs-powershell 0.1.1
 
 * Connect-OBS now caches connections (Fixes #18)

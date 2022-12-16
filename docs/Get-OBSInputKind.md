@@ -19,7 +19,7 @@ Get-OBSInputKind calls the OBS WebSocket with a request of type GetInputKindList
 
 ---
 ### Parameters
-#### **unversioned**
+#### **Unversioned**
 
 True == Return all kinds as unversioned, False == Return with version suffixes (if available)
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Get-OBSInputKind [-unversioned] [-PassThru] [<CommonParameters>]
+Get-OBSInputKind [-Unversioned] [-PassThru] [<CommonParameters>]
 ```
 ---

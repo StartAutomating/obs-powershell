@@ -19,7 +19,7 @@ Set-OBSSourceFilterName calls the OBS WebSocket with a request of type SetSource
 
 ---
 ### Parameters
-#### **sourceName**
+#### **SourceName**
 
 Name of the source the filter is on
 
@@ -36,7 +36,7 @@ Name of the source the filter is on
 
 
 ---
-#### **filterName**
+#### **FilterName**
 
 Current name of the filter
 
@@ -53,7 +53,7 @@ Current name of the filter
 
 
 ---
-#### **newFilterName**
+#### **NewFilterName**
 
 New name for the filter
 
@@ -89,6 +89,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSSourceFilterName [-sourceName] <String> [-filterName] <String> [-newFilterName] <String> [-PassThru] [<CommonParameters>]
+Set-OBSSourceFilterName [-SourceName] <String> [-FilterName] <String> [-NewFilterName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -19,7 +19,7 @@ Send-OBSCustomEvent calls the OBS WebSocket with a request of type BroadcastCust
 
 ---
 ### Parameters
-#### **eventData**
+#### **EventData**
 
 Data payload to emit to all receivers
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Send-OBSCustomEvent [-eventData] <PSObject> [-PassThru] [<CommonParameters>]
+Send-OBSCustomEvent [-EventData] <PSObject> [-PassThru] [<CommonParameters>]
 ```
 ---

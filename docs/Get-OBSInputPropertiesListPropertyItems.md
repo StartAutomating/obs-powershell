@@ -21,7 +21,7 @@ Get-OBSInputPropertiesListPropertyItems calls the OBS WebSocket with a request o
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Name of the input
 
@@ -38,7 +38,7 @@ Name of the input
 
 
 ---
-#### **propertyName**
+#### **PropertyName**
 
 Name of the list property to get the items of
 
@@ -74,6 +74,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Get-OBSInputPropertiesListPropertyItems [-inputName] <String> [-propertyName] <String> [-PassThru] [<CommonParameters>]
+Get-OBSInputPropertiesListPropertyItems [-InputName] <String> [-PropertyName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

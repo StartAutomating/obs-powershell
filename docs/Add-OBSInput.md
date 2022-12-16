@@ -19,7 +19,7 @@ Add-OBSInput calls the OBS WebSocket with a request of type CreateInput.
 
 ---
 ### Parameters
-#### **sceneName**
+#### **SceneName**
 
 Name of the scene to add the input to as a scene item
 
@@ -36,7 +36,7 @@ Name of the scene to add the input to as a scene item
 
 
 ---
-#### **inputName**
+#### **InputName**
 
 Name of the new input to created
 
@@ -53,7 +53,7 @@ Name of the new input to created
 
 
 ---
-#### **inputKind**
+#### **InputKind**
 
 The kind of input to be created
 
@@ -70,7 +70,7 @@ The kind of input to be created
 
 
 ---
-#### **inputSettings**
+#### **InputSettings**
 
 Settings object to initialize the input with
 
@@ -87,7 +87,7 @@ Settings object to initialize the input with
 
 
 ---
-#### **sceneItemEnabled**
+#### **SceneItemEnabled**
 
 Whether to set the created scene item to enabled or disabled
 
@@ -123,6 +123,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Add-OBSInput [-sceneName] <String> [-inputName] <String> [-inputKind] <String> [[-inputSettings] <PSObject>] [-sceneItemEnabled] [-PassThru] [<CommonParameters>]
+Add-OBSInput [-SceneName] <String> [-InputName] <String> [-InputKind] <String> [[-InputSettings] <PSObject>] [-SceneItemEnabled] [-PassThru] [<CommonParameters>]
 ```
 ---

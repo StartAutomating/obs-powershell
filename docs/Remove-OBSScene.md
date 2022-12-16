@@ -19,7 +19,7 @@ Remove-OBSScene calls the OBS WebSocket with a request of type RemoveScene.
 
 ---
 ### Parameters
-#### **sceneName**
+#### **SceneName**
 
 Name of the scene to remove
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Remove-OBSScene [-sceneName] <String> [-PassThru] [<CommonParameters>]
+Remove-OBSScene [-SceneName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

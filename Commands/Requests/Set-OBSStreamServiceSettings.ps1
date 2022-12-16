@@ -15,18 +15,17 @@ function Set-OBSStreamServiceSettings {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setstreamservicesettings
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetStreamServiceSettings')]
-
 param(
 <# Type of stream service to apply. Example: `rtmp_common` or `rtmp_custom` #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('streamServiceType')]
 [string]
-$streamServiceType,
+$StreamServiceType,
 <# Settings to apply to the service #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('streamServiceSettings')]
 [PSObject]
-$streamServiceSettings,
+$StreamServiceSettings,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
@@ -85,24 +84,14 @@ process {
                 }
             }
         }
-
         
-        # If we don't have a request counter for this request type
-        if (-not $script:ObsRequestsCounts[$myRequestType]) {
-            # initialize it to zero.
-            $script:ObsRequestsCounts[$myRequestType] = 0
-        }
-        # Increment the counter for requests of this type
-        $script:ObsRequestsCounts[$myRequestType]++
-
         # and make a request ID from that.
-        $myRequestId = "$myRequestType.$($script:ObsRequestsCounts[$myRequestType])"
-
+        $myRequestId = "$myRequestType.$([Guid]::newGuid())"
     
         # Construct the payload object
         $requestPayload = [Ordered]@{
             # It must include a request ID
-            requestId = "$myRequestType.$($script:ObsRequestsCounts[$myRequestType])"
+            requestId = $myRequestId
             # request type
             requestType = $myRequestType
             # and optional data

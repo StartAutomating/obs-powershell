@@ -19,7 +19,7 @@ Set-OBSSourceFilterSettings calls the OBS WebSocket with a request of type SetSo
 
 ---
 ### Parameters
-#### **sourceName**
+#### **SourceName**
 
 Name of the source the filter is on
 
@@ -36,7 +36,7 @@ Name of the source the filter is on
 
 
 ---
-#### **filterName**
+#### **FilterName**
 
 Name of the filter to set the settings of
 
@@ -53,7 +53,7 @@ Name of the filter to set the settings of
 
 
 ---
-#### **filterSettings**
+#### **FilterSettings**
 
 Object of settings to apply
 
@@ -70,7 +70,7 @@ Object of settings to apply
 
 
 ---
-#### **overlay**
+#### **Overlay**
 
 True == apply the settings on top of existing ones, False == reset the input to its defaults, then apply settings.
 
@@ -106,6 +106,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSSourceFilterSettings [-sourceName] <String> [-filterName] <String> [-filterSettings] <PSObject> [-overlay] [-PassThru] [<CommonParameters>]
+Set-OBSSourceFilterSettings [-SourceName] <String> [-FilterName] <String> [-FilterSettings] <PSObject> [-Overlay] [-PassThru] [<CommonParameters>]
 ```
 ---

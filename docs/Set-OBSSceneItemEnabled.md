@@ -21,7 +21,7 @@ Set-OBSSceneItemEnabled calls the OBS WebSocket with a request of type SetSceneI
 
 ---
 ### Parameters
-#### **sceneName**
+#### **SceneName**
 
 Name of the scene the item is in
 
@@ -38,7 +38,7 @@ Name of the scene the item is in
 
 
 ---
-#### **sceneItemId**
+#### **SceneItemId**
 
 Numeric ID of the scene item
 
@@ -55,7 +55,7 @@ Numeric ID of the scene item
 
 
 ---
-#### **sceneItemEnabled**
+#### **SceneItemEnabled**
 
 New enable state of the scene item
 
@@ -91,6 +91,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSSceneItemEnabled [-sceneName] <String> [-sceneItemId] <Double> -sceneItemEnabled [-PassThru] [<CommonParameters>]
+Set-OBSSceneItemEnabled [-SceneName] <String> [-SceneItemId] <Double> -SceneItemEnabled [-PassThru] [<CommonParameters>]
 ```
 ---

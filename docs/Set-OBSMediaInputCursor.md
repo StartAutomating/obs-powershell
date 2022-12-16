@@ -21,7 +21,7 @@ Set-OBSMediaInputCursor calls the OBS WebSocket with a request of type SetMediaI
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Name of the media input
 
@@ -38,7 +38,7 @@ Name of the media input
 
 
 ---
-#### **mediaCursor**
+#### **MediaCursor**
 
 New cursor position to set
 
@@ -74,6 +74,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSMediaInputCursor [-inputName] <String> [-mediaCursor] <Double> [-PassThru] [<CommonParameters>]
+Set-OBSMediaInputCursor [-InputName] <String> [-MediaCursor] <Double> [-PassThru] [<CommonParameters>]
 ```
 ---

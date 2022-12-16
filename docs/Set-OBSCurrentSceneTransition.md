@@ -21,7 +21,7 @@ Set-OBSCurrentSceneTransition calls the OBS WebSocket with a request of type Set
 
 ---
 ### Parameters
-#### **transitionName**
+#### **TransitionName**
 
 Name of the transition to make active
 
@@ -57,6 +57,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSCurrentSceneTransition [-transitionName] <String> [-PassThru] [<CommonParameters>]
+Set-OBSCurrentSceneTransition [-TransitionName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

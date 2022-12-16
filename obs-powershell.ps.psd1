@@ -1,5 +1,5 @@
 @{
-    ModuleVersion     = '0.1.1'
+    ModuleVersion     = '0.1.2'
     RootModule        = 'obs-powershell.psm1'
     Description       = 'Script OBS with PowerShell'
     Guid              = '1417123e-a932-439f-9b68-a7313cf1e170'
@@ -14,7 +14,25 @@
             ProjectURI = 'https://github.com/StartAutomating/obs-powershell'
             LicenseURI = 'https://github.com/StartAutomating/obs-powershell/blob/main/LICENSE'
             ReleaseNotes = @'
-## obs-powershell 0.1.1
+## obs-powershell 0.1.2:
+
+* New Commands
+  * Add-OBSBrowserSource (Fixes #24)
+  * Add-OBSDisplaySource (Fixes #25)
+  * Add-OBSMediaSource (Fixes #28)
+  * Clear-OBSScene (Fixes #27)
+* New Methods
+  * OBS.GetSceneListResponse:
+    * .Remove()/.Delete() (Fixes #26)
+    * .Lock()/.Unlock() (Fixes #32)
+* General Improvements
+  * Standardizing Parameter Naming (Fixes #30)  
+  * Using GUIDs for RequestIDs (Fixes #29)
+  * Updated logo (Fixes #23)
+  
+---
+
+## obs-powershell 0.1.1:
 
 * Connect-OBS now caches connections (Fixes #18)
 * Adding new core commands:
@@ -29,7 +47,7 @@
 
 ---
             
-## obs-powershell 0.1
+## obs-powershell 0.1:
 
 Initial Release of obs-powershell
 

@@ -21,7 +21,7 @@ Set-OBSSceneItemLocked calls the OBS WebSocket with a request of type SetSceneIt
 
 ---
 ### Parameters
-#### **sceneName**
+#### **SceneName**
 
 Name of the scene the item is in
 
@@ -38,7 +38,7 @@ Name of the scene the item is in
 
 
 ---
-#### **sceneItemId**
+#### **SceneItemId**
 
 Numeric ID of the scene item
 
@@ -55,7 +55,7 @@ Numeric ID of the scene item
 
 
 ---
-#### **sceneItemLocked**
+#### **SceneItemLocked**
 
 New lock state of the scene item
 
@@ -91,6 +91,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSSceneItemLocked [-sceneName] <String> [-sceneItemId] <Double> -sceneItemLocked [-PassThru] [<CommonParameters>]
+Set-OBSSceneItemLocked [-SceneName] <String> [-SceneItemId] <Double> -SceneItemLocked [-PassThru] [<CommonParameters>]
 ```
 ---

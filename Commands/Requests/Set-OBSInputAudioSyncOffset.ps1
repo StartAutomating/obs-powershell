@@ -13,19 +13,18 @@ function Set-OBSInputAudioSyncOffset {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setinputaudiosyncoffset
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetInputAudioSyncOffset')]
-
 param(
 <# Name of the input to set the audio sync offset of #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('inputName')]
 [string]
-$inputName,
+$InputName,
 <# New audio sync offset in milliseconds #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('inputAudioSyncOffset')]
 [ValidateRange(-950,20000)]
 [double]
-$inputAudioSyncOffset,
+$InputAudioSyncOffset,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
@@ -84,24 +83,14 @@ process {
                 }
             }
         }
-
         
-        # If we don't have a request counter for this request type
-        if (-not $script:ObsRequestsCounts[$myRequestType]) {
-            # initialize it to zero.
-            $script:ObsRequestsCounts[$myRequestType] = 0
-        }
-        # Increment the counter for requests of this type
-        $script:ObsRequestsCounts[$myRequestType]++
-
         # and make a request ID from that.
-        $myRequestId = "$myRequestType.$($script:ObsRequestsCounts[$myRequestType])"
-
+        $myRequestId = "$myRequestType.$([Guid]::newGuid())"
     
         # Construct the payload object
         $requestPayload = [Ordered]@{
             # It must include a request ID
-            requestId = "$myRequestType.$($script:ObsRequestsCounts[$myRequestType])"
+            requestId = $myRequestId
             # request type
             requestType = $myRequestType
             # and optional data

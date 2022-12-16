@@ -19,7 +19,7 @@ Open-OBSInputPropertiesDialog calls the OBS WebSocket with a request of type Ope
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Name of the input to open the dialog of
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Open-OBSInputPropertiesDialog [-inputName] <String> [-PassThru] [<CommonParameters>]
+Open-OBSInputPropertiesDialog [-InputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

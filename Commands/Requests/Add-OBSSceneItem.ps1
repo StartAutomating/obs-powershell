@@ -16,22 +16,23 @@ function Add-OBSSceneItem {
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'CreateSceneItem')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
+[Alias('Add-OBSSceneSource')]
 param(
 <# Name of the scene to create the new item in #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sceneName')]
 [string]
-$sceneName,
+$SceneName,
 <# Name of the source to add to the scene #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sourceName')]
 [string]
-$sourceName,
+$SourceName,
 <# Enable state to apply to the scene item on creation #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sceneItemEnabled')]
 [switch]
-$sceneItemEnabled,
+$SceneItemEnabled,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
@@ -90,24 +91,14 @@ process {
                 }
             }
         }
-
         
-        # If we don't have a request counter for this request type
-        if (-not $script:ObsRequestsCounts[$myRequestType]) {
-            # initialize it to zero.
-            $script:ObsRequestsCounts[$myRequestType] = 0
-        }
-        # Increment the counter for requests of this type
-        $script:ObsRequestsCounts[$myRequestType]++
-
         # and make a request ID from that.
-        $myRequestId = "$myRequestType.$($script:ObsRequestsCounts[$myRequestType])"
-
+        $myRequestId = "$myRequestType.$([Guid]::newGuid())"
     
         # Construct the payload object
         $requestPayload = [Ordered]@{
             # It must include a request ID
-            requestId = "$myRequestType.$($script:ObsRequestsCounts[$myRequestType])"
+            requestId = $myRequestId
             # request type
             requestType = $myRequestType
             # and optional data

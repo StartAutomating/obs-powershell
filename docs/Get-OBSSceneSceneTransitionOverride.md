@@ -19,7 +19,7 @@ Get-OBSSceneSceneTransitionOverride calls the OBS WebSocket with a request of ty
 
 ---
 ### Parameters
-#### **sceneName**
+#### **SceneName**
 
 Name of the scene
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Get-OBSSceneSceneTransitionOverride [-sceneName] <String> [-PassThru] [<CommonParameters>]
+Get-OBSSceneSceneTransitionOverride [-SceneName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

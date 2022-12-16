@@ -19,7 +19,7 @@ Send-OBSStreamCaption calls the OBS WebSocket with a request of type SendStreamC
 
 ---
 ### Parameters
-#### **captionText**
+#### **CaptionText**
 
 Caption text
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Send-OBSStreamCaption [-captionText] <String> [-PassThru] [<CommonParameters>]
+Send-OBSStreamCaption [-CaptionText] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

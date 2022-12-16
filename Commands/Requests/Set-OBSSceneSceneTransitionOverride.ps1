@@ -13,24 +13,23 @@ function Set-OBSSceneSceneTransitionOverride {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setscenescenetransitionoverride
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetSceneSceneTransitionOverride')]
-
 param(
 <# Name of the scene #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sceneName')]
 [string]
-$sceneName,
+$SceneName,
 <# Name of the scene transition to use as override. Specify `null` to remove #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('transitionName')]
 [string]
-$transitionName,
+$TransitionName,
 <# Duration to use for any overridden transition. Specify `null` to remove #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('transitionDuration')]
 [ValidateRange(50,20000)]
 [double]
-$transitionDuration,
+$TransitionDuration,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
@@ -89,24 +88,14 @@ process {
                 }
             }
         }
-
         
-        # If we don't have a request counter for this request type
-        if (-not $script:ObsRequestsCounts[$myRequestType]) {
-            # initialize it to zero.
-            $script:ObsRequestsCounts[$myRequestType] = 0
-        }
-        # Increment the counter for requests of this type
-        $script:ObsRequestsCounts[$myRequestType]++
-
         # and make a request ID from that.
-        $myRequestId = "$myRequestType.$($script:ObsRequestsCounts[$myRequestType])"
-
+        $myRequestId = "$myRequestType.$([Guid]::newGuid())"
     
         # Construct the payload object
         $requestPayload = [Ordered]@{
             # It must include a request ID
-            requestId = "$myRequestType.$($script:ObsRequestsCounts[$myRequestType])"
+            requestId = $myRequestId
             # request type
             requestType = $myRequestType
             # and optional data

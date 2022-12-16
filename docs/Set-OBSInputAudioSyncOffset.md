@@ -19,7 +19,7 @@ Set-OBSInputAudioSyncOffset calls the OBS WebSocket with a request of type SetIn
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Name of the input to set the audio sync offset of
 
@@ -36,7 +36,7 @@ Name of the input to set the audio sync offset of
 
 
 ---
-#### **inputAudioSyncOffset**
+#### **InputAudioSyncOffset**
 
 New audio sync offset in milliseconds
 
@@ -72,6 +72,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSInputAudioSyncOffset [-inputName] <String> [-inputAudioSyncOffset] <Double> [-PassThru] [<CommonParameters>]
+Set-OBSInputAudioSyncOffset [-InputName] <String> [-InputAudioSyncOffset] <Double> [-PassThru] [<CommonParameters>]
 ```
 ---

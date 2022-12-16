@@ -19,7 +19,7 @@ Set-OBSInputAudioMonitorType calls the OBS WebSocket with a request of type SetI
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Name of the input to set the audio monitor type of
 
@@ -36,7 +36,7 @@ Name of the input to set the audio monitor type of
 
 
 ---
-#### **monitorType**
+#### **MonitorType**
 
 Audio monitor type
 
@@ -72,6 +72,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSInputAudioMonitorType [-inputName] <String> [-monitorType] <String> [-PassThru] [<CommonParameters>]
+Set-OBSInputAudioMonitorType [-InputName] <String> [-MonitorType] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -21,7 +21,7 @@ Get-OBSSceneItem calls the OBS WebSocket with a request of type GetSceneItemList
 
 ---
 ### Parameters
-#### **sceneName**
+#### **SceneName**
 
 Name of the scene to get the items of
 
@@ -57,6 +57,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Get-OBSSceneItem [-sceneName] <String> [-PassThru] [<CommonParameters>]
+Get-OBSSceneItem [-SceneName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

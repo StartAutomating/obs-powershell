@@ -19,7 +19,7 @@ Set-OBSStudioModeEnabled calls the OBS WebSocket with a request of type SetStudi
 
 ---
 ### Parameters
-#### **studioModeEnabled**
+#### **StudioModeEnabled**
 
 True == Enabled, False == Disabled
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSStudioModeEnabled -studioModeEnabled [-PassThru] [<CommonParameters>]
+Set-OBSStudioModeEnabled -StudioModeEnabled [-PassThru] [<CommonParameters>]
 ```
 ---

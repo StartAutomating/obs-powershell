@@ -19,7 +19,7 @@ Get-OBSOutputSettings calls the OBS WebSocket with a request of type GetOutputSe
 
 ---
 ### Parameters
-#### **outputName**
+#### **OutputName**
 
 Output name
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Get-OBSOutputSettings [-outputName] <String> [-PassThru] [<CommonParameters>]
+Get-OBSOutputSettings [-OutputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

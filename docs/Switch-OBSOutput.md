@@ -19,7 +19,7 @@ Switch-OBSOutput calls the OBS WebSocket with a request of type ToggleOutput.
 
 ---
 ### Parameters
-#### **outputName**
+#### **OutputName**
 
 Output name
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Switch-OBSOutput [-outputName] <String> [-PassThru] [<CommonParameters>]
+Switch-OBSOutput [-OutputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

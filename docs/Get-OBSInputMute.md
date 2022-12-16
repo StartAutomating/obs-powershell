@@ -19,7 +19,7 @@ Get-OBSInputMute calls the OBS WebSocket with a request of type GetInputMute.
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Name of input to get the mute state of
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Get-OBSInputMute [-inputName] <String> [-PassThru] [<CommonParameters>]
+Get-OBSInputMute [-InputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

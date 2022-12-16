@@ -19,7 +19,7 @@ Add-OBSProfile calls the OBS WebSocket with a request of type CreateProfile.
 
 ---
 ### Parameters
-#### **profileName**
+#### **ProfileName**
 
 Name for the new profile
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Add-OBSProfile [-profileName] <String> [-PassThru] [<CommonParameters>]
+Add-OBSProfile [-ProfileName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

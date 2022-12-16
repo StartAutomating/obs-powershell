@@ -31,7 +31,7 @@ Get-OBSSceneItemBlendMode calls the OBS WebSocket with a request of type GetScen
 
 ---
 ### Parameters
-#### **sceneName**
+#### **SceneName**
 
 Name of the scene the item is in
 
@@ -48,7 +48,7 @@ Name of the scene the item is in
 
 
 ---
-#### **sceneItemId**
+#### **SceneItemId**
 
 Numeric ID of the scene item
 
@@ -84,6 +84,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Get-OBSSceneItemBlendMode [-sceneName] <String> [-sceneItemId] <Double> [-PassThru] [<CommonParameters>]
+Get-OBSSceneItemBlendMode [-SceneName] <String> [-SceneItemId] <Double> [-PassThru] [<CommonParameters>]
 ```
 ---

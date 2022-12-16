@@ -19,7 +19,7 @@ Set-OBSInputName calls the OBS WebSocket with a request of type SetInputName.
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Current input name
 
@@ -36,7 +36,7 @@ Current input name
 
 
 ---
-#### **newInputName**
+#### **NewInputName**
 
 New name for the input
 
@@ -72,6 +72,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSInputName [-inputName] <String> [-newInputName] <String> [-PassThru] [<CommonParameters>]
+Set-OBSInputName [-InputName] <String> [-NewInputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

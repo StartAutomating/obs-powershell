@@ -19,7 +19,7 @@ Send-OBSTriggerHotkeyByKeySequence calls the OBS WebSocket with a request of typ
 
 ---
 ### Parameters
-#### **keyId**
+#### **KeyId**
 
 The OBS key ID to use. See https://github.com/obsproject/obs-studio/blob/master/libobs/obs-hotkeys.h
 
@@ -36,7 +36,7 @@ The OBS key ID to use. See https://github.com/obsproject/obs-studio/blob/master/
 
 
 ---
-#### **keyModifiers**
+#### **KeyModifiers**
 
 Object containing key modifiers to apply
 
@@ -53,7 +53,7 @@ Object containing key modifiers to apply
 
 
 ---
-#### **keyModifiersshift**
+#### **KeyModifiersshift**
 
 Press Shift
 
@@ -70,7 +70,7 @@ Press Shift
 
 
 ---
-#### **keyModifierscontrol**
+#### **KeyModifierscontrol**
 
 Press CTRL
 
@@ -87,7 +87,7 @@ Press CTRL
 
 
 ---
-#### **keyModifiersalt**
+#### **KeyModifiersalt**
 
 Press ALT
 
@@ -104,7 +104,7 @@ Press ALT
 
 
 ---
-#### **keyModifierscommand**
+#### **KeyModifierscommand**
 
 Press CMD (Mac)
 
@@ -140,6 +140,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Send-OBSTriggerHotkeyByKeySequence [[-keyId] <String>] [[-keyModifiers] <PSObject>] [-keyModifiersshift] [-keyModifierscontrol] [-keyModifiersalt] [-keyModifierscommand] [-PassThru] [<CommonParameters>]
+Send-OBSTriggerHotkeyByKeySequence [[-KeyId] <String>] [[-KeyModifiers] <PSObject>] [-KeyModifiersshift] [-KeyModifierscontrol] [-KeyModifiersalt] [-KeyModifierscommand] [-PassThru] [<CommonParameters>]
 ```
 ---

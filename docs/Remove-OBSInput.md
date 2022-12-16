@@ -21,7 +21,7 @@ Remove-OBSInput calls the OBS WebSocket with a request of type RemoveInput.
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Name of the input to remove
 
@@ -57,6 +57,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Remove-OBSInput [-inputName] <String> [-PassThru] [<CommonParameters>]
+Remove-OBSInput [-InputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

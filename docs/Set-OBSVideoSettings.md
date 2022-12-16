@@ -21,7 +21,7 @@ Set-OBSVideoSettings calls the OBS WebSocket with a request of type SetVideoSett
 
 ---
 ### Parameters
-#### **fpsNumerator**
+#### **FpsNumerator**
 
 Numerator of the fractional FPS value
 
@@ -38,7 +38,7 @@ Numerator of the fractional FPS value
 
 
 ---
-#### **fpsDenominator**
+#### **FpsDenominator**
 
 Denominator of the fractional FPS value
 
@@ -55,7 +55,7 @@ Denominator of the fractional FPS value
 
 
 ---
-#### **baseWidth**
+#### **BaseWidth**
 
 Width of the base (canvas) resolution in pixels
 
@@ -72,7 +72,7 @@ Width of the base (canvas) resolution in pixels
 
 
 ---
-#### **baseHeight**
+#### **BaseHeight**
 
 Height of the base (canvas) resolution in pixels
 
@@ -89,7 +89,7 @@ Height of the base (canvas) resolution in pixels
 
 
 ---
-#### **outputWidth**
+#### **OutputWidth**
 
 Width of the output resolution in pixels
 
@@ -106,7 +106,7 @@ Width of the output resolution in pixels
 
 
 ---
-#### **outputHeight**
+#### **OutputHeight**
 
 Height of the output resolution in pixels
 
@@ -142,6 +142,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSVideoSettings [[-fpsNumerator] <Double>] [[-fpsDenominator] <Double>] [[-baseWidth] <Double>] [[-baseHeight] <Double>] [[-outputWidth] <Double>] [[-outputHeight] <Double>] [-PassThru] [<CommonParameters>]
+Set-OBSVideoSettings [[-FpsNumerator] <Double>] [[-FpsDenominator] <Double>] [[-BaseWidth] <Double>] [[-BaseHeight] <Double>] [[-OutputWidth] <Double>] [[-OutputHeight] <Double>] [-PassThru] [<CommonParameters>]
 ```
 ---

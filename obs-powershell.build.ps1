@@ -50,6 +50,10 @@ if (-not (Test-Path $requestsPath)) {
     $null = New-Item -ItemType Directory -Path $requestsPath -Force
 }
 
+$ToAlias = @{
+    "Add-OBSSceneItem" = "Add-OBSSceneSource"
+}
+
 # Declare the process block for all commands now
 $obsFunctionProcessBlock = {
 
@@ -100,24 +104,14 @@ $obsFunctionProcessBlock = {
                 }
             }
         }
-
         
-        # If we don't have a request counter for this request type
-        if (-not $script:ObsRequestsCounts[$myRequestType]) {
-            # initialize it to zero.
-            $script:ObsRequestsCounts[$myRequestType] = 0
-        }
-        # Increment the counter for requests of this type
-        $script:ObsRequestsCounts[$myRequestType]++
-
         # and make a request ID from that.
-        $myRequestId = "$myRequestType.$($script:ObsRequestsCounts[$myRequestType])"
-
+        $myRequestId = "$myRequestType.$([Guid]::newGuid())"
     
         # Construct the payload object
         $requestPayload = [Ordered]@{
             # It must include a request ID
-            requestId = "$myRequestType.$($script:ObsRequestsCounts[$myRequestType])"
+            requestId = $myRequestId
             # request type
             requestType = $myRequestType
             # and optional data
@@ -169,6 +163,9 @@ foreach ($obsRequestInfo in $obsWebSocketProtocol.requests) {
         $valueType = $requestField.valueType
         # Some field names contain periods, don't forget to get rid of those.
         $paramName = $requestField.valueName -replace '\.'
+
+        # PowerShell parameters should start with uppercase letters, so fix that.
+        $paramName = $paramName.Substring(0,1).ToUpper() + $paramName.Substring(1)
 
         $paramType = # map their parameter types to PowerShell parameter types
             if ($valueType -eq 'Boolean') { '[switch]'}
@@ -227,16 +224,19 @@ foreach ($obsRequestInfo in $obsWebSocketProtocol.requests) {
         "[switch]"
         '$PassThru'
     )
+
+    $newFunctionAttributes = @(
+        "[Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', '$requestType')]"
+        if ($obsRequestInfo.responseFields.Count) {
+            "[Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', `$true)]"
+        }
+        if ($ToAlias[$obsFunctionName]) {
+            "[Alias('$($ToAlias[$obsFunctionName] -join "','")')]"
+        }
+    )
     
     $newFunc = 
-    New-PipeScript -FunctionName $obsFunctionName -Parameter $obsFunctionParameters -Process $obsFunctionProcessBlock -Attribute @"
-[Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', '$requestType')]
-$(
-    if ($obsRequestInfo.responseFields.Count) {
-"[Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', `$true)]"
-    }
-)
-"@ -Synopsis "
+    New-PipeScript -FunctionName $obsFunctionName -Parameter $obsFunctionParameters -Process $obsFunctionProcessBlock -Attribute $newFunctionAttributes -Synopsis "
 $obsFunctionName : $requestType
 " -Description @"
 $($obsRequestInfo.description)

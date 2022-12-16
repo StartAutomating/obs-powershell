@@ -21,7 +21,7 @@ Get-OBSInputSettings calls the OBS WebSocket with a request of type GetInputSett
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Name of the input to get the settings of
 
@@ -57,6 +57,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Get-OBSInputSettings [-inputName] <String> [-PassThru] [<CommonParameters>]
+Get-OBSInputSettings [-InputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

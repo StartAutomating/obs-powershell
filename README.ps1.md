@@ -108,7 +108,9 @@ Because the obs-websocket cleanly documents it's protocol, most commands in obs-
 ~~~PipeScript {
     $importedModule = Import-Module .\obs-powershell.psd1 -Passthru
     $exportedCmds = $importedModule.ExportedCommands.Values | 
-        Where-Object Name -notin 'Connect-OBS', 'Disconnect-OBS'
+        Where-Object {
+            $_.ScriptBlock.Attributes.Key -eq 'OBS.WebSocket.RequestType'
+        }
     [PSCustomObject]@{
         Table = $exportedCmds |
             .Name {

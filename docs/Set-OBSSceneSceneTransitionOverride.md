@@ -19,7 +19,7 @@ Set-OBSSceneSceneTransitionOverride calls the OBS WebSocket with a request of ty
 
 ---
 ### Parameters
-#### **sceneName**
+#### **SceneName**
 
 Name of the scene
 
@@ -36,7 +36,7 @@ Name of the scene
 
 
 ---
-#### **transitionName**
+#### **TransitionName**
 
 Name of the scene transition to use as override. Specify `null` to remove
 
@@ -53,7 +53,7 @@ Name of the scene transition to use as override. Specify `null` to remove
 
 
 ---
-#### **transitionDuration**
+#### **TransitionDuration**
 
 Duration to use for any overridden transition. Specify `null` to remove
 
@@ -89,6 +89,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSSceneSceneTransitionOverride [-sceneName] <String> [[-transitionName] <String>] [[-transitionDuration] <Double>] [-PassThru] [<CommonParameters>]
+Set-OBSSceneSceneTransitionOverride [-SceneName] <String> [[-TransitionName] <String>] [[-TransitionDuration] <Double>] [-PassThru] [<CommonParameters>]
 ```
 ---

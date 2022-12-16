@@ -13,38 +13,37 @@ function Send-OBSTriggerHotkeyByKeySequence {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#triggerhotkeybykeysequence
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'TriggerHotkeyByKeySequence')]
-
 param(
 <# The OBS key ID to use. See https://github.com/obsproject/obs-studio/blob/master/libobs/obs-hotkeys.h #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('keyId')]
 [string]
-$keyId,
+$KeyId,
 <# Object containing key modifiers to apply #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('keyModifiers')]
 [PSObject]
-$keyModifiers,
+$KeyModifiers,
 <# Press Shift #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('keyModifiers.shift')]
 [switch]
-$keyModifiersshift,
+$KeyModifiersshift,
 <# Press CTRL #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('keyModifiers.control')]
 [switch]
-$keyModifierscontrol,
+$KeyModifierscontrol,
 <# Press ALT #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('keyModifiers.alt')]
 [switch]
-$keyModifiersalt,
+$KeyModifiersalt,
 <# Press CMD (Mac) #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('keyModifiers.command')]
 [switch]
-$keyModifierscommand,
+$KeyModifierscommand,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
@@ -103,24 +102,14 @@ process {
                 }
             }
         }
-
         
-        # If we don't have a request counter for this request type
-        if (-not $script:ObsRequestsCounts[$myRequestType]) {
-            # initialize it to zero.
-            $script:ObsRequestsCounts[$myRequestType] = 0
-        }
-        # Increment the counter for requests of this type
-        $script:ObsRequestsCounts[$myRequestType]++
-
         # and make a request ID from that.
-        $myRequestId = "$myRequestType.$($script:ObsRequestsCounts[$myRequestType])"
-
+        $myRequestId = "$myRequestType.$([Guid]::newGuid())"
     
         # Construct the payload object
         $requestPayload = [Ordered]@{
             # It must include a request ID
-            requestId = "$myRequestType.$($script:ObsRequestsCounts[$myRequestType])"
+            requestId = $myRequestId
             # request type
             requestType = $myRequestType
             # and optional data

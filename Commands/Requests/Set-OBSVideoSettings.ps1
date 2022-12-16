@@ -15,44 +15,43 @@ function Set-OBSVideoSettings {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setvideosettings
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetVideoSettings')]
-
 param(
 <# Numerator of the fractional FPS value #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('fpsNumerator')]
 [ValidateRange(1,[int]::MaxValue)]
 [double]
-$fpsNumerator,
+$FpsNumerator,
 <# Denominator of the fractional FPS value #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('fpsDenominator')]
 [ValidateRange(1,[int]::MaxValue)]
 [double]
-$fpsDenominator,
+$FpsDenominator,
 <# Width of the base (canvas) resolution in pixels #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('baseWidth')]
 [ValidateRange(1,4096)]
 [double]
-$baseWidth,
+$BaseWidth,
 <# Height of the base (canvas) resolution in pixels #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('baseHeight')]
 [ValidateRange(1,4096)]
 [double]
-$baseHeight,
+$BaseHeight,
 <# Width of the output resolution in pixels #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('outputWidth')]
 [ValidateRange(1,4096)]
 [double]
-$outputWidth,
+$OutputWidth,
 <# Height of the output resolution in pixels #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('outputHeight')]
 [ValidateRange(1,4096)]
 [double]
-$outputHeight,
+$OutputHeight,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
@@ -111,24 +110,14 @@ process {
                 }
             }
         }
-
         
-        # If we don't have a request counter for this request type
-        if (-not $script:ObsRequestsCounts[$myRequestType]) {
-            # initialize it to zero.
-            $script:ObsRequestsCounts[$myRequestType] = 0
-        }
-        # Increment the counter for requests of this type
-        $script:ObsRequestsCounts[$myRequestType]++
-
         # and make a request ID from that.
-        $myRequestId = "$myRequestType.$($script:ObsRequestsCounts[$myRequestType])"
-
+        $myRequestId = "$myRequestType.$([Guid]::newGuid())"
     
         # Construct the payload object
         $requestPayload = [Ordered]@{
             # It must include a request ID
-            requestId = "$myRequestType.$($script:ObsRequestsCounts[$myRequestType])"
+            requestId = $myRequestId
             # request type
             requestType = $myRequestType
             # and optional data

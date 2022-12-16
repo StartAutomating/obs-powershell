@@ -19,7 +19,7 @@ Set-OBSProfileParameter calls the OBS WebSocket with a request of type SetProfil
 
 ---
 ### Parameters
-#### **parameterCategory**
+#### **ParameterCategory**
 
 Category of the parameter to set
 
@@ -36,7 +36,7 @@ Category of the parameter to set
 
 
 ---
-#### **parameterName**
+#### **ParameterName**
 
 Name of the parameter to set
 
@@ -53,7 +53,7 @@ Name of the parameter to set
 
 
 ---
-#### **parameterValue**
+#### **ParameterValue**
 
 Value of the parameter to set. Use `null` to delete
 
@@ -89,6 +89,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSProfileParameter [-parameterCategory] <String> [-parameterName] <String> [-parameterValue] <String> [-PassThru] [<CommonParameters>]
+Set-OBSProfileParameter [-ParameterCategory] <String> [-ParameterName] <String> [-ParameterValue] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

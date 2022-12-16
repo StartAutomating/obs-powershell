@@ -19,7 +19,7 @@ Set-OBSSceneName calls the OBS WebSocket with a request of type SetSceneName.
 
 ---
 ### Parameters
-#### **sceneName**
+#### **SceneName**
 
 Name of the scene to be renamed
 
@@ -36,7 +36,7 @@ Name of the scene to be renamed
 
 
 ---
-#### **newSceneName**
+#### **NewSceneName**
 
 New name for the scene
 
@@ -72,6 +72,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSSceneName [-sceneName] <String> [-newSceneName] <String> [-PassThru] [<CommonParameters>]
+Set-OBSSceneName [-SceneName] <String> [-NewSceneName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

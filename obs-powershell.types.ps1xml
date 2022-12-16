@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-16"?>
-<!-- Generated with EZOut 1.9.7: Install-Module EZOut or https://github.com/StartAutomating/EZOut -->
+<!-- Generated with EZOut 1.9.9: Install-Module EZOut or https://github.com/StartAutomating/EZOut -->
 <Types>
   <Type>
     <Name>OBS.GetSceneItemList.Response</Name>
     <Members>
+      <ScriptMethod>
+        <Name>Delete</Name>
+        <Script>
+                        $this.Remove()
+                    </Script>
+      </ScriptMethod>
       <ScriptMethod>
         <Name>Disable</Name>
         <Script>
@@ -15,6 +21,25 @@
         <Name>Enable</Name>
         <Script>
                         $this | Set-OBSSceneItemEnabled -sceneItemEnabled
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Lock</Name>
+        <Script>
+                        $this | Set-OBSSceneItemLocked -sceneItemLocked
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Remove</Name>
+        <Script>
+                        $this | Remove-OBSSceneItem
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Unlock</Name>
+        <Script>
+                        $this | Set-OBSSceneItemLocked -sceneItemLocked:$false
 
                     </Script>
       </ScriptMethod>

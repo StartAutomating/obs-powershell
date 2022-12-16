@@ -19,7 +19,7 @@ Open-OBSInputFiltersDialog calls the OBS WebSocket with a request of type OpenIn
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Name of the input to open the dialog of
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Open-OBSInputFiltersDialog [-inputName] <String> [-PassThru] [<CommonParameters>]
+Open-OBSInputFiltersDialog [-InputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -21,7 +21,7 @@ Set-OBSCurrentPreviewScene calls the OBS WebSocket with a request of type SetCur
 
 ---
 ### Parameters
-#### **sceneName**
+#### **SceneName**
 
 Scene to set as the current preview scene
 
@@ -57,6 +57,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSCurrentPreviewScene [-sceneName] <String> [-PassThru] [<CommonParameters>]
+Set-OBSCurrentPreviewScene [-SceneName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -19,7 +19,7 @@ Get-OBSSourceFilter calls the OBS WebSocket with a request of type GetSourceFilt
 
 ---
 ### Parameters
-#### **sourceName**
+#### **SourceName**
 
 Name of the source
 
@@ -36,7 +36,7 @@ Name of the source
 
 
 ---
-#### **filterName**
+#### **FilterName**
 
 Name of the filter
 
@@ -72,6 +72,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Get-OBSSourceFilter [-sourceName] <String> [-filterName] <String> [-PassThru] [<CommonParameters>]
+Get-OBSSourceFilter [-SourceName] <String> [-FilterName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

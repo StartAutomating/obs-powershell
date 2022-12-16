@@ -19,7 +19,7 @@ Add-OBSScene calls the OBS WebSocket with a request of type CreateScene.
 
 ---
 ### Parameters
-#### **sceneName**
+#### **SceneName**
 
 Name for the new scene
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Add-OBSScene [-sceneName] <String> [-PassThru] [<CommonParameters>]
+Add-OBSScene [-SceneName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

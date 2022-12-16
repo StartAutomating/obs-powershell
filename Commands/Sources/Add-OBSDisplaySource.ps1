@@ -111,7 +111,11 @@ dynamicParam {
             inputKind = "monitor_capture"
             inputSettings = $myParameterData
         }
-        Add-OBSInput @addObsInputParams
+        $outputAddedResult = Add-OBSInput @addObsInputParams
+        if ($outputAddedResult) {
+            Get-OBSSceneItem -sceneName $myParameters["Scene"] |
+                Where-Object SourceName -eq $myParameters["Name"]
+        }
     
 }
 }

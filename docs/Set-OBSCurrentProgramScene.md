@@ -19,7 +19,7 @@ Set-OBSCurrentProgramScene calls the OBS WebSocket with a request of type SetCur
 
 ---
 ### Parameters
-#### **sceneName**
+#### **SceneName**
 
 Scene to set as the current program scene
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSCurrentProgramScene [-sceneName] <String> [-PassThru] [<CommonParameters>]
+Set-OBSCurrentProgramScene [-SceneName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

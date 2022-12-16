@@ -19,7 +19,7 @@ Get-OBSInputAudioTracks calls the OBS WebSocket with a request of type GetInputA
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Name of the input
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Get-OBSInputAudioTracks [-inputName] <String> [-PassThru] [<CommonParameters>]
+Get-OBSInputAudioTracks [-InputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

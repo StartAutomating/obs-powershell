@@ -19,7 +19,7 @@ Set-OBSInputAudioBalance calls the OBS WebSocket with a request of type SetInput
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Name of the input to set the audio balance of
 
@@ -36,7 +36,7 @@ Name of the input to set the audio balance of
 
 
 ---
-#### **inputAudioBalance**
+#### **InputAudioBalance**
 
 New audio balance value
 
@@ -72,6 +72,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSInputAudioBalance [-inputName] <String> [-inputAudioBalance] <Double> [-PassThru] [<CommonParameters>]
+Set-OBSInputAudioBalance [-InputName] <String> [-InputAudioBalance] <Double> [-PassThru] [<CommonParameters>]
 ```
 ---

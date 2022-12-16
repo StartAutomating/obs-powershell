@@ -30,7 +30,7 @@ Get-OBSMediaInputStatus calls the OBS WebSocket with a request of type GetMediaI
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Name of the media input
 
@@ -66,6 +66,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Get-OBSMediaInputStatus [-inputName] <String> [-PassThru] [<CommonParameters>]
+Get-OBSMediaInputStatus [-InputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

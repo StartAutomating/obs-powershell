@@ -19,7 +19,7 @@ Get-OBSSourceFilterDefaultSettings calls the OBS WebSocket with a request of typ
 
 ---
 ### Parameters
-#### **filterKind**
+#### **FilterKind**
 
 Filter kind to get the default settings for
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Get-OBSSourceFilterDefaultSettings [-filterKind] <String> [-PassThru] [<CommonParameters>]
+Get-OBSSourceFilterDefaultSettings [-FilterKind] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -8,7 +8,10 @@ function Add-OBSBrowserSource
     .EXAMPLE
         Add-OBSBrowserSource
     #>
-    [inherit("Add-OBSInput", Dynamic, Abstract, ExcludeParameter='inputKind','sceneName','inputName')]
+    [inherit(Command={
+        Import-Module ..\..\obs-powershell.psd1 -Global
+        "Add-OBSInput"
+    }, Dynamic, Abstract, ExcludeParameter='inputKind','sceneName','inputName')]
     param(
     # The uri or file path to display.
     # If the uri points to a local file, this will be preferred

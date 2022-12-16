@@ -22,12 +22,12 @@ param(
 [ComponentModel.DefaultBindingProperty('position')]
 [ValidateRange(0,1)]
 [double]
-$position,
+$Position,
 <# Whether to release the TBar. Only set `false` if you know that you will be sending another position update #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('release')]
 [switch]
-$release,
+$Release,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]

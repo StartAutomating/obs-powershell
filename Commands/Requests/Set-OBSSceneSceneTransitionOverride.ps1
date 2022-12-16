@@ -19,18 +19,18 @@ param(
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sceneName')]
 [string]
-$sceneName,
+$SceneName,
 <# Name of the scene transition to use as override. Specify `null` to remove #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('transitionName')]
 [string]
-$transitionName,
+$TransitionName,
 <# Duration to use for any overridden transition. Specify `null` to remove #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('transitionDuration')]
 [ValidateRange(50,20000)]
 [double]
-$transitionDuration,
+$TransitionDuration,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]

@@ -19,12 +19,12 @@ param(
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('transitionSettings')]
 [PSObject]
-$transitionSettings,
+$TransitionSettings,
 <# Whether to overlay over the current settings or replace them #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('overlay')]
 [switch]
-$overlay,
+$Overlay,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]

@@ -21,12 +21,12 @@ param(
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('streamServiceType')]
 [string]
-$streamServiceType,
+$StreamServiceType,
 <# Settings to apply to the service #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('streamServiceSettings')]
 [PSObject]
-$streamServiceSettings,
+$StreamServiceSettings,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]

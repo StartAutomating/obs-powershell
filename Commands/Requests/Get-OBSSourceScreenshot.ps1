@@ -24,30 +24,30 @@ param(
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sourceName')]
 [string]
-$sourceName,
+$SourceName,
 <# Image compression format to use. Use `GetVersion` to get compatible image formats #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('imageFormat')]
 [string]
-$imageFormat,
+$ImageFormat,
 <# Width to scale the screenshot to #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('imageWidth')]
 [ValidateRange(8,4096)]
 [double]
-$imageWidth,
+$ImageWidth,
 <# Height to scale the screenshot to #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('imageHeight')]
 [ValidateRange(8,4096)]
 [double]
-$imageHeight,
+$ImageHeight,
 <# Compression quality to use. 0 for high compression, 100 for uncompressed. -1 to use "default" (whatever that means, idk) #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('imageCompressionQuality')]
 [ValidateRange(-1,100)]
 [double]
-$imageCompressionQuality,
+$ImageCompressionQuality,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]

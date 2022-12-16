@@ -19,32 +19,32 @@ param(
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('keyId')]
 [string]
-$keyId,
+$KeyId,
 <# Object containing key modifiers to apply #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('keyModifiers')]
 [PSObject]
-$keyModifiers,
+$KeyModifiers,
 <# Press Shift #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('keyModifiers.shift')]
 [switch]
-$keyModifiersshift,
+$KeyModifiersshift,
 <# Press CTRL #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('keyModifiers.control')]
 [switch]
-$keyModifierscontrol,
+$KeyModifierscontrol,
 <# Press ALT #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('keyModifiers.alt')]
 [switch]
-$keyModifiersalt,
+$KeyModifiersalt,
 <# Press CMD (Mac) #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('keyModifiers.command')]
 [switch]
-$keyModifierscommand,
+$KeyModifierscommand,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]

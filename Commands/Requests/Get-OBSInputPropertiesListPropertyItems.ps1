@@ -21,12 +21,12 @@ param(
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('inputName')]
 [string]
-$inputName,
+$InputName,
 <# Name of the list property to get the items of #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('propertyName')]
 [string]
-$propertyName,
+$PropertyName,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]

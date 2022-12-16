@@ -22,37 +22,37 @@ param(
 [ComponentModel.DefaultBindingProperty('fpsNumerator')]
 [ValidateRange(1,[int]::MaxValue)]
 [double]
-$fpsNumerator,
+$FpsNumerator,
 <# Denominator of the fractional FPS value #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('fpsDenominator')]
 [ValidateRange(1,[int]::MaxValue)]
 [double]
-$fpsDenominator,
+$FpsDenominator,
 <# Width of the base (canvas) resolution in pixels #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('baseWidth')]
 [ValidateRange(1,4096)]
 [double]
-$baseWidth,
+$BaseWidth,
 <# Height of the base (canvas) resolution in pixels #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('baseHeight')]
 [ValidateRange(1,4096)]
 [double]
-$baseHeight,
+$BaseHeight,
 <# Width of the output resolution in pixels #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('outputWidth')]
 [ValidateRange(1,4096)]
 [double]
-$outputWidth,
+$OutputWidth,
 <# Height of the output resolution in pixels #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('outputHeight')]
 [ValidateRange(1,4096)]
 [double]
-$outputHeight,
+$OutputHeight,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]

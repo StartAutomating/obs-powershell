@@ -21,13 +21,13 @@ param(
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('inputName')]
 [string]
-$inputName,
+$InputName,
 <# New cursor position to set #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('mediaCursor')]
 [ValidateRange(0,[int]::MaxValue)]
 [double]
-$mediaCursor,
+$MediaCursor,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]

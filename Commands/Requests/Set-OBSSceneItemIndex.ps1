@@ -21,19 +21,19 @@ param(
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sceneName')]
 [string]
-$sceneName,
+$SceneName,
 <# Numeric ID of the scene item #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sceneItemId')]
 [ValidateRange(0,[int]::MaxValue)]
 [double]
-$sceneItemId,
+$SceneItemId,
 <# New index position of the scene item #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sceneItemIndex')]
 [ValidateRange(0,[int]::MaxValue)]
 [double]
-$sceneItemIndex,
+$SceneItemIndex,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]

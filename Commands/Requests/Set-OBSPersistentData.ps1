@@ -19,17 +19,17 @@ param(
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('realm')]
 [string]
-$realm,
+$Realm,
 <# The name of the slot to retrieve data from #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('slotName')]
 [string]
-$slotName,
+$SlotName,
 <# The value to apply to the slot #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('slotValue')]
 [PSObject]
-$slotValue,
+$SlotValue,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]

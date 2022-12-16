@@ -20,13 +20,13 @@ param(
 [ComponentModel.DefaultBindingProperty('sleepMillis')]
 [ValidateRange(0,50000)]
 [double]
-$sleepMillis,
+$SleepMillis,
 <# Number of frames to sleep for (if `SERIAL_FRAME` mode) #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sleepFrames')]
 [ValidateRange(0,10000)]
 [double]
-$sleepFrames,
+$SleepFrames,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]

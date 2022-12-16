@@ -160,6 +160,9 @@ foreach ($obsRequestInfo in $obsWebSocketProtocol.requests) {
         # Some field names contain periods, don't forget to get rid of those.
         $paramName = $requestField.valueName -replace '\.'
 
+        # PowerShell parameters should start with uppercase letters, so fix that.
+        $paramName = $paramName.Substring(0,1).ToUpper() + $paramName.Substring(1)
+
         $paramType = # map their parameter types to PowerShell parameter types
             if ($valueType -eq 'Boolean') { '[switch]'}
             elseif ($valueType -eq 'Number') { '[double]'}

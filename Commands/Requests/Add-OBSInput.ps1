@@ -19,27 +19,27 @@ param(
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sceneName')]
 [string]
-$sceneName,
+$SceneName,
 <# Name of the new input to created #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('inputName')]
 [string]
-$inputName,
+$InputName,
 <# The kind of input to be created #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('inputKind')]
 [string]
-$inputKind,
+$InputKind,
 <# Settings object to initialize the input with #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('inputSettings')]
 [PSObject]
-$inputSettings,
+$InputSettings,
 <# Whether to set the created scene item to enabled or disabled #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sceneItemEnabled')]
 [switch]
-$sceneItemEnabled,
+$SceneItemEnabled,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]

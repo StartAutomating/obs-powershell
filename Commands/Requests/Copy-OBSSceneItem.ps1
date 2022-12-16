@@ -21,18 +21,18 @@ param(
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sceneName')]
 [string]
-$sceneName,
+$SceneName,
 <# Numeric ID of the scene item #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sceneItemId')]
 [ValidateRange(0,[int]::MaxValue)]
 [double]
-$sceneItemId,
+$SceneItemId,
 <# Name of the scene to create the duplicated item in #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('destinationSceneName')]
 [string]
-$destinationSceneName,
+$DestinationSceneName,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]

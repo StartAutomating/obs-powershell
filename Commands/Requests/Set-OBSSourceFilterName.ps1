@@ -19,17 +19,17 @@ param(
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sourceName')]
 [string]
-$sourceName,
+$SourceName,
 <# Current name of the filter #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('filterName')]
 [string]
-$filterName,
+$FilterName,
 <# New name for the filter #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('newFilterName')]
 [string]
-$newFilterName,
+$NewFilterName,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]

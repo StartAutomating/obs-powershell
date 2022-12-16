@@ -22,17 +22,17 @@ param(
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('vendorName')]
 [string]
-$vendorName,
+$VendorName,
 <# The request type to call #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('requestType')]
 [string]
-$requestType,
+$RequestType,
 <# Object containing appropriate request data #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('requestData')]
 [PSObject]
-$requestData,
+$RequestData,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]

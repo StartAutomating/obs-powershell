@@ -21,18 +21,18 @@ param(
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sceneName')]
 [string]
-$sceneName,
+$SceneName,
 <# Numeric ID of the scene item #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sceneItemId')]
 [ValidateRange(0,[int]::MaxValue)]
 [double]
-$sceneItemId,
+$SceneItemId,
 <# New lock state of the scene item #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sceneItemLocked')]
 [switch]
-$sceneItemLocked,
+$SceneItemLocked,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]

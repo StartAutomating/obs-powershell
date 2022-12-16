@@ -19,19 +19,19 @@ param(
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('inputName')]
 [string]
-$inputName,
+$InputName,
 <# Volume setting in mul #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('inputVolumeMul')]
 [ValidateRange(0,20)]
 [double]
-$inputVolumeMul,
+$InputVolumeMul,
 <# Volume setting in dB #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('inputVolumeDb')]
 [ValidateRange(-100,26)]
 [double]
-$inputVolumeDb,
+$InputVolumeDb,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]

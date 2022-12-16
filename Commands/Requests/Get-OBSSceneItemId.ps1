@@ -21,18 +21,18 @@ param(
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sceneName')]
 [string]
-$sceneName,
+$SceneName,
 <# Name of the source to find #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sourceName')]
 [string]
-$sourceName,
+$SourceName,
 <# Number of matches to skip during search. >= 0 means first forward. -1 means last (top) item #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('searchOffset')]
 [ValidateRange(-1,[int]::MaxValue)]
 [double]
-$searchOffset,
+$SearchOffset,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]

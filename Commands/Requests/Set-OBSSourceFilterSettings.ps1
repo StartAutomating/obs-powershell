@@ -19,22 +19,22 @@ param(
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sourceName')]
 [string]
-$sourceName,
+$SourceName,
 <# Name of the filter to set the settings of #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('filterName')]
 [string]
-$filterName,
+$FilterName,
 <# Object of settings to apply #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('filterSettings')]
 [PSObject]
-$filterSettings,
+$FilterSettings,
 <# True == apply the settings on top of existing ones, False == reset the input to its defaults, then apply settings. #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('overlay')]
 [switch]
-$overlay,
+$Overlay,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]

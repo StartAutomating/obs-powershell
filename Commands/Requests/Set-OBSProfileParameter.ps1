@@ -19,17 +19,17 @@ param(
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('parameterCategory')]
 [string]
-$parameterCategory,
+$ParameterCategory,
 <# Name of the parameter to set #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('parameterName')]
 [string]
-$parameterName,
+$ParameterName,
 <# Value of the parameter to set. Use `null` to delete #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('parameterValue')]
 [string]
-$parameterValue,
+$ParameterValue,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]

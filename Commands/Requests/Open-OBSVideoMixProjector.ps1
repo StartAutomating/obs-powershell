@@ -27,17 +27,17 @@ param(
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('videoMixType')]
 [string]
-$videoMixType,
+$VideoMixType,
 <# Monitor index, use `GetMonitorList` to obtain index #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('monitorIndex')]
 [double]
-$monitorIndex,
+$MonitorIndex,
 <# Size/Position data for a windowed projector, in Qt Base64 encoded format. Mutually exclusive with `monitorIndex` #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('projectorGeometry')]
 [string]
-$projectorGeometry,
+$ProjectorGeometry,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]

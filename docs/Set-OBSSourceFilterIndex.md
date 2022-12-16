@@ -19,7 +19,7 @@ Set-OBSSourceFilterIndex calls the OBS WebSocket with a request of type SetSourc
 
 ---
 ### Parameters
-#### **sourceName**
+#### **SourceName**
 
 Name of the source the filter is on
 
@@ -36,7 +36,7 @@ Name of the source the filter is on
 
 
 ---
-#### **filterName**
+#### **FilterName**
 
 Name of the filter
 
@@ -53,7 +53,7 @@ Name of the filter
 
 
 ---
-#### **filterIndex**
+#### **FilterIndex**
 
 New index position of the filter
 
@@ -89,6 +89,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSSourceFilterIndex [-sourceName] <String> [-filterName] <String> [-filterIndex] <Double> [-PassThru] [<CommonParameters>]
+Set-OBSSourceFilterIndex [-SourceName] <String> [-FilterName] <String> [-FilterIndex] <Double> [-PassThru] [<CommonParameters>]
 ```
 ---

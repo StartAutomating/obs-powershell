@@ -19,7 +19,7 @@ Set-OBSInputAudioTracks calls the OBS WebSocket with a request of type SetInputA
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Name of the input
 
@@ -36,7 +36,7 @@ Name of the input
 
 
 ---
-#### **inputAudioTracks**
+#### **InputAudioTracks**
 
 Track settings to apply
 
@@ -72,6 +72,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSInputAudioTracks [-inputName] <String> [-inputAudioTracks] <PSObject> [-PassThru] [<CommonParameters>]
+Set-OBSInputAudioTracks [-InputName] <String> [-InputAudioTracks] <PSObject> [-PassThru] [<CommonParameters>]
 ```
 ---

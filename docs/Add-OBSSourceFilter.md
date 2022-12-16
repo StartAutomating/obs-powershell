@@ -19,7 +19,7 @@ Add-OBSSourceFilter calls the OBS WebSocket with a request of type CreateSourceF
 
 ---
 ### Parameters
-#### **sourceName**
+#### **SourceName**
 
 Name of the source to add the filter to
 
@@ -36,7 +36,7 @@ Name of the source to add the filter to
 
 
 ---
-#### **filterName**
+#### **FilterName**
 
 Name of the new filter to be created
 
@@ -53,7 +53,7 @@ Name of the new filter to be created
 
 
 ---
-#### **filterKind**
+#### **FilterKind**
 
 The kind of filter to be created
 
@@ -70,7 +70,7 @@ The kind of filter to be created
 
 
 ---
-#### **filterSettings**
+#### **FilterSettings**
 
 Settings object to initialize the filter with
 
@@ -106,6 +106,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Add-OBSSourceFilter [-sourceName] <String> [-filterName] <String> [-filterKind] <String> [[-filterSettings] <PSObject>] [-PassThru] [<CommonParameters>]
+Add-OBSSourceFilter [-SourceName] <String> [-FilterName] <String> [-FilterKind] <String> [[-FilterSettings] <PSObject>] [-PassThru] [<CommonParameters>]
 ```
 ---

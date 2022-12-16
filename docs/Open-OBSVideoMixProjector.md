@@ -27,7 +27,7 @@ Open-OBSVideoMixProjector calls the OBS WebSocket with a request of type OpenVid
 
 ---
 ### Parameters
-#### **videoMixType**
+#### **VideoMixType**
 
 Type of mix to open
 
@@ -44,7 +44,7 @@ Type of mix to open
 
 
 ---
-#### **monitorIndex**
+#### **MonitorIndex**
 
 Monitor index, use `GetMonitorList` to obtain index
 
@@ -61,7 +61,7 @@ Monitor index, use `GetMonitorList` to obtain index
 
 
 ---
-#### **projectorGeometry**
+#### **ProjectorGeometry**
 
 Size/Position data for a windowed projector, in Qt Base64 encoded format. Mutually exclusive with `monitorIndex`
 
@@ -97,6 +97,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Open-OBSVideoMixProjector [-videoMixType] <String> [[-monitorIndex] <Double>] [[-projectorGeometry] <String>] [-PassThru] [<CommonParameters>]
+Open-OBSVideoMixProjector [-VideoMixType] <String> [[-MonitorIndex] <Double>] [[-ProjectorGeometry] <String>] [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -19,7 +19,7 @@ Get-OBSInputVolume calls the OBS WebSocket with a request of type GetInputVolume
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Name of the input to get the volume of
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Get-OBSInputVolume [-inputName] <String> [-PassThru] [<CommonParameters>]
+Get-OBSInputVolume [-InputName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

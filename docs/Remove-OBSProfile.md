@@ -19,7 +19,7 @@ Remove-OBSProfile calls the OBS WebSocket with a request of type RemoveProfile.
 
 ---
 ### Parameters
-#### **profileName**
+#### **ProfileName**
 
 Name of the profile to remove
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Remove-OBSProfile [-profileName] <String> [-PassThru] [<CommonParameters>]
+Remove-OBSProfile [-ProfileName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

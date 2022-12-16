@@ -108,15 +108,12 @@ Because the obs-websocket cleanly documents it's protocol, most commands in obs-
 
 |Name                                                                                      |RequestType                                                                                                                                                  |
 |------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|[Add-OBSBrowserSource](Add-OBSBrowserSource.md)                                      |
-|[Add-OBSDisplaySource](Add-OBSDisplaySource.md)                                      |
 |[Add-OBSInput](Add-OBSInput.md)                                                      |[CreateInput](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createinput)                                                |
 |[Add-OBSProfile](Add-OBSProfile.md)                                                  |[CreateProfile](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createprofile)                                            |
 |[Add-OBSScene](Add-OBSScene.md)                                                      |[CreateScene](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createscene)                                                |
 |[Add-OBSSceneCollection](Add-OBSSceneCollection.md)                                  |[CreateSceneCollection](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createscenecollection)                            |
 |[Add-OBSSceneItem](Add-OBSSceneItem.md)                                              |[CreateSceneItem](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createsceneitem)                                        |
 |[Add-OBSSourceFilter](Add-OBSSourceFilter.md)                                        |[CreateSourceFilter](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createsourcefilter)                                  |
-|[Clear-OBSScene](Clear-OBSScene.md)                                                  |
 |[Copy-OBSSceneItem](Copy-OBSSceneItem.md)                                            |[DuplicateSceneItem](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#duplicatesceneitem)                                  |
 |[Get-OBSCurrentPreviewScene](Get-OBSCurrentPreviewScene.md)                          |[GetCurrentPreviewScene](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getcurrentpreviewscene)                          |
 |[Get-OBSCurrentProgramScene](Get-OBSCurrentProgramScene.md)                          |[GetCurrentProgramScene](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getcurrentprogramscene)                          |
@@ -178,7 +175,6 @@ Because the obs-websocket cleanly documents it's protocol, most commands in obs-
 |[Open-OBSInputPropertiesDialog](Open-OBSInputPropertiesDialog.md)                    |[OpenInputPropertiesDialog](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#openinputpropertiesdialog)                    |
 |[Open-OBSSourceProjector](Open-OBSSourceProjector.md)                                |[OpenSourceProjector](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#opensourceprojector)                                |
 |[Open-OBSVideoMixProjector](Open-OBSVideoMixProjector.md)                            |[OpenVideoMixProjector](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#openvideomixprojector)                            |
-|[Receive-OBS](Receive-OBS.md)                                                        |
 |[Remove-OBSInput](Remove-OBSInput.md)                                                |[RemoveInput](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#removeinput)                                                |
 |[Remove-OBSProfile](Remove-OBSProfile.md)                                            |[RemoveProfile](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#removeprofile)                                            |
 |[Remove-OBSScene](Remove-OBSScene.md)                                                |[RemoveScene](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#removescene)                                                |
@@ -187,7 +183,6 @@ Because the obs-websocket cleanly documents it's protocol, most commands in obs-
 |[Resume-OBSRecord](Resume-OBSRecord.md)                                              |[ResumeRecord](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#resumerecord)                                              |
 |[Save-OBSReplayBuffer](Save-OBSReplayBuffer.md)                                      |[SaveReplayBuffer](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#savereplaybuffer)                                      |
 |[Save-OBSSourceScreenshot](Save-OBSSourceScreenshot.md)                              |[SaveSourceScreenshot](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#savesourcescreenshot)                              |
-|[Send-OBS](Send-OBS.md)                                                              |
 |[Send-OBSCallVendorRequest](Send-OBSCallVendorRequest.md)                            |[CallVendorRequest](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#callvendorrequest)                                    |
 |[Send-OBSCustomEvent](Send-OBSCustomEvent.md)                                        |[BroadcastCustomEvent](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#broadcastcustomevent)                              |
 |[Send-OBSOffsetMediaInputCursor](Send-OBSOffsetMediaInputCursor.md)                  |[OffsetMediaInputCursor](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#offsetmediainputcursor)                          |
@@ -250,8 +245,6 @@ Because the obs-websocket cleanly documents it's protocol, most commands in obs-
 |[Switch-OBSReplayBuffer](Switch-OBSReplayBuffer.md)                                  |[ToggleReplayBuffer](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#togglereplaybuffer)                                  |
 |[Switch-OBSStream](Switch-OBSStream.md)                                              |[ToggleStream](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#togglestream)                                              |
 |[Switch-OBSVirtualCam](Switch-OBSVirtualCam.md)                                      |[ToggleVirtualCam](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#togglevirtualcam)                                      |
-|[Watch-OBS](Watch-OBS.md)                                                            |
-|[Add-OBSMonitorSource](Add-OBSMonitorSource.md)                                      |
 
 
 

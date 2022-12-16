@@ -19,7 +19,7 @@ Set-OBSInputMute calls the OBS WebSocket with a request of type SetInputMute.
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Name of the input to set the mute state of
 
@@ -36,7 +36,7 @@ Name of the input to set the mute state of
 
 
 ---
-#### **inputMuted**
+#### **InputMuted**
 
 Whether to mute the input or not
 
@@ -72,6 +72,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSInputMute [-inputName] <String> -inputMuted [-PassThru] [<CommonParameters>]
+Set-OBSInputMute [-InputName] <String> -InputMuted [-PassThru] [<CommonParameters>]
 ```
 ---

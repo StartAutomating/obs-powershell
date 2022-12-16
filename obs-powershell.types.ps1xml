@@ -5,6 +5,12 @@
     <Name>OBS.GetSceneItemList.Response</Name>
     <Members>
       <ScriptMethod>
+        <Name>Delete</Name>
+        <Script>
+                        $this.Remove()
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
         <Name>Disable</Name>
         <Script>
                         $this | Set-OBSSceneItemEnabled -sceneItemEnabled:$false
@@ -16,6 +22,12 @@
         <Script>
                         $this | Set-OBSSceneItemEnabled -sceneItemEnabled
 
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Remove</Name>
+        <Script>
+                        $this | Remove-OBSSceneItem
                     </Script>
       </ScriptMethod>
       <ScriptProperty>

@@ -181,6 +181,7 @@ Initial Release of obs-powershell
 'Switch-OBSRecordPause',
 'Switch-OBSReplayBuffer',
 'Switch-OBSStream',
-'Switch-OBSVirtualCam'
+'Switch-OBSVirtualCam',
+'Add-OBSBrowserSource'
 }
 

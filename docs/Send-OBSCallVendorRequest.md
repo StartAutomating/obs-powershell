@@ -22,7 +22,7 @@ Send-OBSCallVendorRequest calls the OBS WebSocket with a request of type CallVen
 
 ---
 ### Parameters
-#### **vendorName**
+#### **VendorName**
 
 Name of the vendor to use
 
@@ -39,7 +39,7 @@ Name of the vendor to use
 
 
 ---
-#### **requestType**
+#### **RequestType**
 
 The request type to call
 
@@ -56,7 +56,7 @@ The request type to call
 
 
 ---
-#### **requestData**
+#### **RequestData**
 
 Object containing appropriate request data
 
@@ -92,6 +92,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Send-OBSCallVendorRequest [-vendorName] <String> [-requestType] <String> [[-requestData] <PSObject>] [-PassThru] [<CommonParameters>]
+Send-OBSCallVendorRequest [-VendorName] <String> [-RequestType] <String> [[-RequestData] <PSObject>] [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -13,7 +13,6 @@ function Set-OBSCurrentProgramScene {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setcurrentprogramscene
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetCurrentProgramScene')]
-
 param(
 <# Scene to set as the current program scene #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

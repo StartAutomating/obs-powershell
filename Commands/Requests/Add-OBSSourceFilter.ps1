@@ -13,7 +13,6 @@ function Add-OBSSourceFilter {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createsourcefilter
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'CreateSourceFilter')]
-
 param(
 <# Name of the source to add the filter to #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

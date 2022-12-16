@@ -15,7 +15,6 @@ function Set-OBSCurrentSceneTransition {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setcurrentscenetransition
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetCurrentSceneTransition')]
-
 param(
 <# Name of the transition to make active #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

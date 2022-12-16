@@ -15,7 +15,6 @@ function Set-OBSVideoSettings {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setvideosettings
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetVideoSettings')]
-
 param(
 <# Numerator of the fractional FPS value #>
 [Parameter(ValueFromPipelineByPropertyName)]

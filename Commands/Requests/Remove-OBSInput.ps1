@@ -15,7 +15,6 @@ function Remove-OBSInput {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#removeinput
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'RemoveInput')]
-
 param(
 <# Name of the input to remove #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

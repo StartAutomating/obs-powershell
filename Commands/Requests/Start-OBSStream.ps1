@@ -15,7 +15,6 @@ function Start-OBSStream {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#startstream
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'StartStream')]
-
 param(
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]

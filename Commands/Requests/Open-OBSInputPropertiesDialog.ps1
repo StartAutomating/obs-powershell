@@ -13,7 +13,6 @@ function Open-OBSInputPropertiesDialog {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#openinputpropertiesdialog
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'OpenInputPropertiesDialog')]
-
 param(
 <# Name of the input to open the dialog of #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

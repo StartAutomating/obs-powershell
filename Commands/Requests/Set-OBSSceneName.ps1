@@ -13,7 +13,6 @@ function Set-OBSSceneName {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setscenename
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetSceneName')]
-
 param(
 <# Name of the scene to be renamed #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

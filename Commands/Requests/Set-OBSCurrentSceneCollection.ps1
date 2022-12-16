@@ -15,7 +15,6 @@ function Set-OBSCurrentSceneCollection {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setcurrentscenecollection
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetCurrentSceneCollection')]
-
 param(
 <# Name of the scene collection to switch to #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

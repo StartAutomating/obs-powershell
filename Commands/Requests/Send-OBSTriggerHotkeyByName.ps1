@@ -13,7 +13,6 @@ function Send-OBSTriggerHotkeyByName {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#triggerhotkeybyname
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'TriggerHotkeyByName')]
-
 param(
 <# Name of the hotkey to trigger #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

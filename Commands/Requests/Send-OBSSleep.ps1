@@ -13,7 +13,6 @@ function Send-OBSSleep {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#sleep
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'Sleep')]
-
 param(
 <# Number of milliseconds to sleep for (if `SERIAL_REALTIME` mode) #>
 [Parameter(ValueFromPipelineByPropertyName)]

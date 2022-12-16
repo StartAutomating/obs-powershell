@@ -15,7 +15,6 @@ function Send-OBSOffsetMediaInputCursor {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#offsetmediainputcursor
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'OffsetMediaInputCursor')]
-
 param(
 <# Name of the media input #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

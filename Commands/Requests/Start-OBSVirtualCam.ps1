@@ -15,7 +15,6 @@ function Start-OBSVirtualCam {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#startvirtualcam
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'StartVirtualCam')]
-
 param(
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]

@@ -19,7 +19,6 @@ function Send-OBSPressInputPropertiesButton {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#pressinputpropertiesbutton
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'PressInputPropertiesButton')]
-
 param(
 <# Name of the input #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

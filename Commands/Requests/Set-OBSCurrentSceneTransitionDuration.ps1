@@ -13,7 +13,6 @@ function Set-OBSCurrentSceneTransitionDuration {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setcurrentscenetransitionduration
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetCurrentSceneTransitionDuration')]
-
 param(
 <# Duration in milliseconds #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

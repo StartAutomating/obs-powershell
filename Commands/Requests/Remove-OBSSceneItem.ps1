@@ -15,7 +15,6 @@ function Remove-OBSSceneItem {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#removesceneitem
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'RemoveSceneItem')]
-
 param(
 <# Name of the scene the item is in #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

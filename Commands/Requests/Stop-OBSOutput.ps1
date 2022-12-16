@@ -13,7 +13,6 @@ function Stop-OBSOutput {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#stopoutput
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'StopOutput')]
-
 param(
 <# Output name #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

@@ -15,7 +15,6 @@ function Stop-OBSStream {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#stopstream
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'StopStream')]
-
 param(
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]

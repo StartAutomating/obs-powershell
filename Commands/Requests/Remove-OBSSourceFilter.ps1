@@ -13,7 +13,6 @@ function Remove-OBSSourceFilter {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#removesourcefilter
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'RemoveSourceFilter')]
-
 param(
 <# Name of the source the filter is on #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

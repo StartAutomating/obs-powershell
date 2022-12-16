@@ -15,7 +15,6 @@ function Set-OBSSceneItemBlendMode {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setsceneitemblendmode
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetSceneItemBlendMode')]
-
 param(
 <# Name of the scene the item is in #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

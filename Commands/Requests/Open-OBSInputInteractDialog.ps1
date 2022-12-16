@@ -13,7 +13,6 @@ function Open-OBSInputInteractDialog {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#openinputinteractdialog
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'OpenInputInteractDialog')]
-
 param(
 <# Name of the input to open the dialog of #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

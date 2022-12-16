@@ -15,7 +15,6 @@ function Set-OBSSceneItemLocked {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setsceneitemlocked
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetSceneItemLocked')]
-
 param(
 <# Name of the scene the item is in #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

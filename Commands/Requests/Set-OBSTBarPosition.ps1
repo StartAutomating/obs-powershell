@@ -15,7 +15,6 @@ function Set-OBSTBarPosition {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#settbarposition
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetTBarPosition')]
-
 param(
 <# New position #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

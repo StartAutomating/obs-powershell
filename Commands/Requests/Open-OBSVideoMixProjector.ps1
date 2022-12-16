@@ -21,7 +21,6 @@ function Open-OBSVideoMixProjector {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#openvideomixprojector
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'OpenVideoMixProjector')]
-
 param(
 <# Type of mix to open #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

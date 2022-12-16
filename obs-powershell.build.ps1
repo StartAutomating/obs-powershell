@@ -50,6 +50,10 @@ if (-not (Test-Path $requestsPath)) {
     $null = New-Item -ItemType Directory -Path $requestsPath -Force
 }
 
+$ToAlias = @{
+    "Add-OBSSceneItem" = "Add-OBSSceneSource"
+}
+
 # Declare the process block for all commands now
 $obsFunctionProcessBlock = {
 
@@ -220,16 +224,19 @@ foreach ($obsRequestInfo in $obsWebSocketProtocol.requests) {
         "[switch]"
         '$PassThru'
     )
+
+    $newFunctionAttributes = @(
+        "[Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', '$requestType')]"
+        if ($obsRequestInfo.responseFields.Count) {
+            "[Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', `$true)]"
+        }
+        if ($ToAlias[$obsFunctionName]) {
+            "[Alias('$($ToAlias[$obsFunctionName] -join "','")')]"
+        }
+    )
     
     $newFunc = 
-    New-PipeScript -FunctionName $obsFunctionName -Parameter $obsFunctionParameters -Process $obsFunctionProcessBlock -Attribute @"
-[Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', '$requestType')]
-$(
-    if ($obsRequestInfo.responseFields.Count) {
-"[Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', `$true)]"
-    }
-)
-"@ -Synopsis "
+    New-PipeScript -FunctionName $obsFunctionName -Parameter $obsFunctionParameters -Process $obsFunctionProcessBlock -Attribute $newFunctionAttributes -Synopsis "
 $obsFunctionName : $requestType
 " -Description @"
 $($obsRequestInfo.description)

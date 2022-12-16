@@ -15,7 +15,6 @@ function Open-OBSSourceProjector {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#opensourceprojector
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'OpenSourceProjector')]
-
 param(
 <# Name of the source to open a projector for #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

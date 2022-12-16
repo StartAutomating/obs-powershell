@@ -13,7 +13,6 @@ function Set-OBSCurrentProfile {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setcurrentprofile
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetCurrentProfile')]
-
 param(
 <# Name of the profile to switch to #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

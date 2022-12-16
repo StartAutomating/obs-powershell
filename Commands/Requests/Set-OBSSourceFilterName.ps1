@@ -13,7 +13,6 @@ function Set-OBSSourceFilterName {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setsourcefiltername
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetSourceFilterName')]
-
 param(
 <# Name of the source the filter is on #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

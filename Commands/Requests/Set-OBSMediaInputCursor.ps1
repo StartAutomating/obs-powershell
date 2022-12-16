@@ -15,7 +15,6 @@ function Set-OBSMediaInputCursor {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setmediainputcursor
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetMediaInputCursor')]
-
 param(
 <# Name of the media input #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

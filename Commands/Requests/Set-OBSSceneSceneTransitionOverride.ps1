@@ -13,7 +13,6 @@ function Set-OBSSceneSceneTransitionOverride {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setscenescenetransitionoverride
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetSceneSceneTransitionOverride')]
-
 param(
 <# Name of the scene #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

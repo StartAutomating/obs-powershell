@@ -13,7 +13,6 @@ function Set-OBSInputSettings {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setinputsettings
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetInputSettings')]
-
 param(
 <# Name of the input to set the settings of #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

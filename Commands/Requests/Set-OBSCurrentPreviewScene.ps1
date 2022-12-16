@@ -15,7 +15,6 @@ function Set-OBSCurrentPreviewScene {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setcurrentpreviewscene
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetCurrentPreviewScene')]
-
 param(
 <# Scene to set as the current preview scene #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

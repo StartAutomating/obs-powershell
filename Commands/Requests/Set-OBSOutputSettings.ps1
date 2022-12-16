@@ -13,7 +13,6 @@ function Set-OBSOutputSettings {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setoutputsettings
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetOutputSettings')]
-
 param(
 <# Output name #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

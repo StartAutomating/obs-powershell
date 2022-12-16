@@ -13,7 +13,6 @@ function Set-OBSInputAudioTracks {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setinputaudiotracks
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetInputAudioTracks')]
-
 param(
 <# Name of the input #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

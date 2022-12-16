@@ -13,7 +13,6 @@ function Set-OBSSceneItemTransform {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setsceneitemtransform
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetSceneItemTransform')]
-
 param(
 <# Name of the scene the item is in #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

@@ -13,7 +13,6 @@ function Set-OBSInputMute {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setinputmute
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetInputMute')]
-
 param(
 <# Name of the input to set the mute state of #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

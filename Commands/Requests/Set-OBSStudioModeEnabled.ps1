@@ -13,7 +13,6 @@ function Set-OBSStudioModeEnabled {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setstudiomodeenabled
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetStudioModeEnabled')]
-
 param(
 <# True == Enabled, False == Disabled #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

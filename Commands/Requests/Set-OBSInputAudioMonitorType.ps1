@@ -13,7 +13,6 @@ function Set-OBSInputAudioMonitorType {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setinputaudiomonitortype
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetInputAudioMonitorType')]
-
 param(
 <# Name of the input to set the audio monitor type of #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

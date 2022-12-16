@@ -13,7 +13,6 @@ function Set-OBSInputAudioSyncOffset {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setinputaudiosyncoffset
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetInputAudioSyncOffset')]
-
 param(
 <# Name of the input to set the audio sync offset of #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

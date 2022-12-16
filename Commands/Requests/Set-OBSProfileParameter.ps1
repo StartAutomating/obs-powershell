@@ -13,7 +13,6 @@ function Set-OBSProfileParameter {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setprofileparameter
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetProfileParameter')]
-
 param(
 <# Category of the parameter to set #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

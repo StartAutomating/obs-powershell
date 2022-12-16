@@ -13,7 +13,6 @@ function Send-OBSCustomEvent {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#broadcastcustomevent
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'BroadcastCustomEvent')]
-
 param(
 <# Data payload to emit to all receivers #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

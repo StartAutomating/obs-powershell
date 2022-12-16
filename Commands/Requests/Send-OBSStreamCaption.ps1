@@ -13,7 +13,6 @@ function Send-OBSStreamCaption {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#sendstreamcaption
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SendStreamCaption')]
-
 param(
 <# Caption text #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

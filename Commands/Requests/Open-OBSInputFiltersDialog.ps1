@@ -13,7 +13,6 @@ function Open-OBSInputFiltersDialog {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#openinputfiltersdialog
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'OpenInputFiltersDialog')]
-
 param(
 <# Name of the input to open the dialog of #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

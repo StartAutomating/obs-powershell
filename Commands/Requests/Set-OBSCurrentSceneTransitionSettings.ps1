@@ -13,7 +13,6 @@ function Set-OBSCurrentSceneTransitionSettings {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setcurrentscenetransitionsettings
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetCurrentSceneTransitionSettings')]
-
 param(
 <# Settings object to apply to the transition. Can be `{}` #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

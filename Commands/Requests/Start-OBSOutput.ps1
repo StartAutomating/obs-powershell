@@ -13,7 +13,6 @@ function Start-OBSOutput {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#startoutput
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'StartOutput')]
-
 param(
 <# Output name #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

@@ -15,7 +15,6 @@ function Stop-OBSVirtualCam {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#stopvirtualcam
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'StopVirtualCam')]
-
 param(
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]

@@ -13,7 +13,6 @@ function Set-OBSInputName {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setinputname
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetInputName')]
-
 param(
 <# Current input name #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

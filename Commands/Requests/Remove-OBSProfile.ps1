@@ -13,7 +13,6 @@ function Remove-OBSProfile {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#removeprofile
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'RemoveProfile')]
-
 param(
 <# Name of the profile to remove #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

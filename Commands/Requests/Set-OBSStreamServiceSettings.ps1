@@ -15,7 +15,6 @@ function Set-OBSStreamServiceSettings {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setstreamservicesettings
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetStreamServiceSettings')]
-
 param(
 <# Type of stream service to apply. Example: `rtmp_common` or `rtmp_custom` #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

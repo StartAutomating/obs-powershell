@@ -16,6 +16,7 @@ function Add-OBSSceneItem {
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'CreateSceneItem')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
+[Alias('Add-OBSSceneSource')]
 param(
 <# Name of the scene to create the new item in #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

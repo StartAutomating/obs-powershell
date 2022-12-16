@@ -15,7 +15,6 @@ function Start-OBSRecord {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#startrecord
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'StartRecord')]
-
 param(
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]

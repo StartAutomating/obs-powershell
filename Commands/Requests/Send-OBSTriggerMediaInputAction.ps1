@@ -13,7 +13,6 @@ function Send-OBSTriggerMediaInputAction {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#triggermediainputaction
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'TriggerMediaInputAction')]
-
 param(
 <# Name of the media input #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

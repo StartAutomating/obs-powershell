@@ -13,7 +13,6 @@ function Add-OBSScene {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createscene
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'CreateScene')]
-
 param(
 <# Name for the new scene #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

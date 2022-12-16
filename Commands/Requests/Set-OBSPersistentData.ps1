@@ -13,7 +13,6 @@ function Set-OBSPersistentData {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setpersistentdata
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetPersistentData')]
-
 param(
 <# The data realm to select. `OBS_WEBSOCKET_DATA_REALM_GLOBAL` or `OBS_WEBSOCKET_DATA_REALM_PROFILE` #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]

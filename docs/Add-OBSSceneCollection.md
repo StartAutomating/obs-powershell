@@ -21,7 +21,7 @@ Add-OBSSceneCollection calls the OBS WebSocket with a request of type CreateScen
 
 ---
 ### Parameters
-#### **sceneCollectionName**
+#### **SceneCollectionName**
 
 Name for the new scene collection
 
@@ -57,6 +57,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Add-OBSSceneCollection [-sceneCollectionName] <String> [-PassThru] [<CommonParameters>]
+Add-OBSSceneCollection [-SceneCollectionName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

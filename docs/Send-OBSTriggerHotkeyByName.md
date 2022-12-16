@@ -19,7 +19,7 @@ Send-OBSTriggerHotkeyByName calls the OBS WebSocket with a request of type Trigg
 
 ---
 ### Parameters
-#### **hotkeyName**
+#### **HotkeyName**
 
 Name of the hotkey to trigger
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Send-OBSTriggerHotkeyByName [-hotkeyName] <String> [-PassThru] [<CommonParameters>]
+Send-OBSTriggerHotkeyByName [-HotkeyName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

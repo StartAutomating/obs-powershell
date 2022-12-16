@@ -21,7 +21,7 @@ Set-OBSTBarPosition calls the OBS WebSocket with a request of type SetTBarPositi
 
 ---
 ### Parameters
-#### **position**
+#### **Position**
 
 New position
 
@@ -38,7 +38,7 @@ New position
 
 
 ---
-#### **release**
+#### **Release**
 
 Whether to release the TBar. Only set `false` if you know that you will be sending another position update
 
@@ -74,6 +74,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSTBarPosition [-position] <Double> [-release] [-PassThru] [<CommonParameters>]
+Set-OBSTBarPosition [-Position] <Double> [-Release] [-PassThru] [<CommonParameters>]
 ```
 ---

@@ -108,6 +108,7 @@ Because the obs-websocket cleanly documents it's protocol, most commands in obs-
 
 |Name                                                                                      |RequestType                                                                                                                                                  |
 |------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|[Add-OBSBrowserSource](Add-OBSBrowserSource.md)                                      |
 |[Add-OBSInput](Add-OBSInput.md)                                                      |[CreateInput](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createinput)                                                |
 |[Add-OBSProfile](Add-OBSProfile.md)                                                  |[CreateProfile](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createprofile)                                            |
 |[Add-OBSScene](Add-OBSScene.md)                                                      |[CreateScene](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createscene)                                                |

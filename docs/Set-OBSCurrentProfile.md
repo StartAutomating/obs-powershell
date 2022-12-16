@@ -19,7 +19,7 @@ Set-OBSCurrentProfile calls the OBS WebSocket with a request of type SetCurrentP
 
 ---
 ### Parameters
-#### **profileName**
+#### **ProfileName**
 
 Name of the profile to switch to
 
@@ -55,6 +55,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Set-OBSCurrentProfile [-profileName] <String> [-PassThru] [<CommonParameters>]
+Set-OBSCurrentProfile [-ProfileName] <String> [-PassThru] [<CommonParameters>]
 ```
 ---

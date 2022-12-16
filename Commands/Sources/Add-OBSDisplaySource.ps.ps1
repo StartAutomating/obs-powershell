@@ -86,6 +86,10 @@ function Add-OBSDisplaySource
             inputSettings = $myParameterData
         }
 
-        Add-OBSInput @addObsInputParams
+        $outputAddedResult = Add-OBSInput @addObsInputParams
+        if ($outputAddedResult) {
+            Get-OBSSceneItem -sceneName $myParameters["Scene"] |
+                Where-Object SourceName -eq $myParameters["Name"]
+        }
     }
 }

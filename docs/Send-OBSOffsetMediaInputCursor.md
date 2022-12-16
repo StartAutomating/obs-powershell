@@ -21,7 +21,7 @@ Send-OBSOffsetMediaInputCursor calls the OBS WebSocket with a request of type Of
 
 ---
 ### Parameters
-#### **inputName**
+#### **InputName**
 
 Name of the media input
 
@@ -38,7 +38,7 @@ Name of the media input
 
 
 ---
-#### **mediaCursorOffset**
+#### **MediaCursorOffset**
 
 Value to offset the current cursor position by
 
@@ -74,6 +74,6 @@ If set, will return the information that would otherwise be sent to OBS.
 ---
 ### Syntax
 ```PowerShell
-Send-OBSOffsetMediaInputCursor [-inputName] <String> [-mediaCursorOffset] <Double> [-PassThru] [<CommonParameters>]
+Send-OBSOffsetMediaInputCursor [-InputName] <String> [-MediaCursorOffset] <Double> [-PassThru] [<CommonParameters>]
 ```
 ---

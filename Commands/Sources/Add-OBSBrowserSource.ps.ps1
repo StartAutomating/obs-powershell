@@ -118,13 +118,19 @@ function Add-OBSBrowserSource
 
         if ($uri.Scheme -eq 'File') {
             if (Test-Path $uri.AbsolutePath) {
-                $myParameterData["local_file"] = "$uri"
+                $myParameterData["local_file"] = "$uri" -replace '[\\/]', '/'
                 $myParameterData["is_local_file"] = $true
             }
         }
         else
         {
-            $myParameterData["url"] = "$uri"
+            if (Test-Path $uri) {
+                $rp = $ExecutionContext.SessionState.Path.GetResolvedPSPathFromPSPath($uri)
+                $myParameterData["local_file"] = "$rp" -replace '[\\/]', '/'
+                $myParameterData["is_local_file"] = $true
+            } else {
+                $myParameterData["url"] = "$uri"
+            }            
         }
 
  

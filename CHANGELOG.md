@@ -1,3 +1,13 @@
+## obs-powershell 0.1.3:
+
+* Requiring ThreadJob Module (Thanks @nyanhp!) (Fixes #36)
+* Fixing Add-OBSBrowserSource (Fixes #34)
+* Improving Batch Processing Capabilities (Fixes #38)
+* Requiring PowerShell Version 7
+
+---
+
+
 ## obs-powershell 0.1.2:
 
 * New Commands

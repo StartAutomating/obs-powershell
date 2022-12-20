@@ -11,9 +11,25 @@ function Send-OBS
         Watch-OBS
     #>
     param(
+    # The data to send to the obs websocket.
     [Parameter(ValueFromPipeline,ValueFromPipelineByPropertyName)]
     [Alias('Payload')]
-    $MessageData
+    $MessageData,
+
+    # If provided, will sleep after each step.
+    # If -StepTime is less than 10000 ticks, it will be treated as frames per second.
+    # If -SerialFrame was provied, -StepTime will be the number of frames to wait.
+    [Parameter(ValueFromPipelineByPropertyName)]
+    [timespan]
+    $StepTime,
+
+    # If set, will process a batch of requests in parallel.
+    [switch]
+    $Parallel,
+
+    # If set, will process a batch of requests in parallel.
+    [switch]
+    $SerialFrame
     )
 
     begin {
@@ -103,6 +119,26 @@ function Send-OBS
 
     process {
         $allMessages.Enqueue($MessageData)
+        if ($StepTime.TotalMilliseconds -gt 0) {
+            if ($SerialFrame) {
+                $allMessages.Enqueue([PSCustomObject][Ordered]@{                
+                    requestType = 'Sleep'
+                    requestData = @{
+                        sleepFrames = [int]$StepTime.Ticks
+                    }
+                })
+            } else {
+                if ($StepTime.Ticks -lt 10000) {
+                    $StepTime = [TimeSpan]::FromMilliseconds(1000 / $StepTime.Ticks)
+                }
+                $allMessages.Enqueue([PSCustomObject][Ordered]@{                
+                    requestType = 'Sleep'
+                    requestData = @{
+                        sleepMillis = [int]$StepTime.TotalMilliseconds
+                    }
+                })
+            }
+        }
     }
 
     end {
@@ -119,7 +155,14 @@ function Send-OBS
             [PSCustomObject]@{
                 op = 8
                 d = [Ordered]@{
-                    requestID = "Batch.$($script:ObsRequestsCounts["Batch"])"
+                    requestId = "Batch.$([guid]::NewGuid())"                    
+                    executionType = if ($Parallel) {
+                        2
+                    } elseif ($SerialFrame) {
+                        1
+                    } else {
+                        0
+                    }
                     requests  = $allMessages.ToArray()
                 }
             } | SendSingleMessageToOBS            

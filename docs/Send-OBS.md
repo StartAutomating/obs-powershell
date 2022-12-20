@@ -22,6 +22,10 @@ Sends one or more messages to the OBS websocket.
 ### Parameters
 #### **MessageData**
 
+The data to send to the obs websocket.
+
+
+
 > **Type**: ```[Object]```
 
 > **Required**: false
@@ -33,8 +37,61 @@ Sends one or more messages to the OBS websocket.
 
 
 ---
+#### **StepTime**
+
+If provided, will sleep after each step.
+If -StepTime is less than 10000 ticks, it will be treated as frames per second.
+If -SerialFrame was provied, -StepTime will be the number of frames to wait.
+
+
+
+> **Type**: ```[TimeSpan]```
+
+> **Required**: false
+
+> **Position**: 2
+
+> **PipelineInput**:true (ByPropertyName)
+
+
+
+---
+#### **Parallel**
+
+If set, will process a batch of requests in parallel.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:false
+
+
+
+---
+#### **SerialFrame**
+
+If set, will process a batch of requests in parallel.
+
+
+
+> **Type**: ```[Switch]```
+
+> **Required**: false
+
+> **Position**: named
+
+> **PipelineInput**:false
+
+
+
+---
 ### Syntax
 ```PowerShell
-Send-OBS [[-MessageData] <Object>] [<CommonParameters>]
+Send-OBS [[-MessageData] <Object>] [[-StepTime] <TimeSpan>] [-Parallel] [-SerialFrame] [<CommonParameters>]
 ```
 ---

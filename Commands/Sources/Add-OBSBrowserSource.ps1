@@ -130,12 +130,12 @@ dynamicParam {
                 }
             }
         }
-        if ($fps -ne 30) {
+        if ($fps -and $fps -ne 30) {
             $myParameterData["custom_fps"] = $true            
         }
         if ($uri.Scheme -eq 'File') {
             if (Test-Path $uri.AbsolutePath) {
-                $myParameterData["local_file"] = "$uri" -replace '[\\/]', '/'
+                $myParameterData["local_file"] = "$uri" -replace '[\\/]', '/' -replace '^file:///'
                 $myParameterData["is_local_file"] = $true
             }
         }
@@ -143,7 +143,7 @@ dynamicParam {
         {
             if (Test-Path $uri) {
                 $rp = $ExecutionContext.SessionState.Path.GetResolvedPSPathFromPSPath($uri)
-                $myParameterData["local_file"] = "$rp" -replace '[\\/]', '/'
+                $myParameterData["local_file"] = "$rp" -replace '[\\/]', '/' -replace '^file:///'
                 $myParameterData["is_local_file"] = $true
             } else {
                 $myParameterData["url"] = "$uri"

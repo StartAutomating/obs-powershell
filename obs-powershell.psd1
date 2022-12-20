@@ -7,7 +7,8 @@
     CompanyName       = 'Start-Automating'
     Copyright         = '2022 Start-Automating'
     FormatsToProcess  = 'obs-powershell.format.ps1xml'
-    TypesToProcess    = 'obs-powershell.types.ps1xml'
+    TypesToProcess    = 'obs-powershell.types.ps1xml'    
+    RequiredModules   = 'ThreadJob'
     PrivateData = @{
         PSData = @{
             Tags = 'PowerShell', 'OBS'

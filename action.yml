@@ -207,7 +207,12 @@ runs:
         "::group::Installing OBS" | Out-Host
         sudo apt update && sudo apt install -y software-properties-common
         sudo add-apt-repository ppa:obsproject/obs-studio && sudo apt update && sudo apt install -y xserver-xorg-video-dummy ffmpeg obs-studio x11vnc xvfb
-        Get-command obs* -CommandType Application | Out-Host
+        
+        $guidPassword = [Guid]::newGuid().ToString()
+        $obsApp = Get-command obs* -CommandType Application 
+        & $obsApp --websocket_password $guidPassword
+        Connect-OBS -WebSocketToken $guidPassword
+        Get-OBSInputKind | Out-Host
         "::endgroup::" | Out-Host
         
         

@@ -579,9 +579,6 @@ jobs:
         uses: StartAutomating/PipeScript@main
       - name: UseEZOut
         uses: StartAutomating/EZOut@master
-      - name: OBS PowerShell
-        uses: StartAutomating/obs-powershell@obs-powershell-updates
-        id: obsps
       - name: Use GitPub Action
         uses: StartAutomating/GitPub@main
         id: GitPub

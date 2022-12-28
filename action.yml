@@ -209,8 +209,10 @@ runs:
         sudo add-apt-repository ppa:obsproject/obs-studio && sudo apt update && sudo apt install -y xserver-xorg-video-dummy ffmpeg obs-studio x11vnc xvfb
         
         $guidPassword = [Guid]::newGuid().ToString()
-        $obsApp = Get-command obs* -CommandType Application 
-        & $obsApp --websocket_password $guidPassword
+        $obsApp = Get-command obs* -CommandType Application
+        "Obs apps:" | Out-Host
+        $obsApp | Select-Object -ExpandProperty Source | Out-Host
+        & $obsApp[0] --websocket_password $guidPassword
         Connect-OBS -WebSocketToken $guidPassword
         Get-OBSInputKind | Out-Host
         "::endgroup::" | Out-Host

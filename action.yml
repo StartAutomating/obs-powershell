@@ -205,8 +205,8 @@ runs:
         #endregion Load Action Module
         
         "::group::Installing OBS" | Out-Host
-        apt update && apt install -y software-properties-common
-        add-apt-repository ppa:obsproject/obs-studio && apt update && apt install -y xserver-xorg-video-dummy ffmpeg obs-studio x11vnc xvfb
+        sudo apt update && sudo apt install -y software-properties-common
+        sudo add-apt-repository ppa:obsproject/obs-studio && sudo apt update && sudo apt install -y xserver-xorg-video-dummy ffmpeg obs-studio x11vnc xvfb
         Get-command obs* -CommandType Application | Out-Host
         "::endgroup::" | Out-Host
         

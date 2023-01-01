@@ -136,6 +136,9 @@ process {
                 Send-OBS
         }
 
+
+        Get-Item $paramCopy["imageFilePath"]
+    
 }
 
 } 

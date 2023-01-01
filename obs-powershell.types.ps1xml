@@ -51,6 +51,20 @@
                     </GetScriptBlock>
       </ScriptProperty>
       <ScriptProperty>
+        <Name>ImageHeight</Name>
+        <GetScriptBlock>
+                        $this.sceneItemTransform.sourceHeight
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ImageWidth</Name>
+        <GetScriptBlock>
+                        $this.sceneItemTransform.sourceWidth
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
         <Name>Layer</Name>
         <GetScriptBlock>
                         return $this.sceneItemIndex

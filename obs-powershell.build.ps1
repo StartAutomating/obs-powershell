@@ -54,6 +54,12 @@ $ToAlias = @{
     "Add-OBSSceneItem" = "Add-OBSSceneSource"
 }
 
+$PostProcess = @{
+    "Save-OBSSourceScreenshot" = {
+        Get-Item $paramCopy["imageFilePath"]
+    }
+}
+
 # Declare the process block for all commands now
 $obsFunctionProcessBlock = {
 
@@ -239,8 +245,18 @@ foreach ($obsRequestInfo in $obsWebSocketProtocol.requests) {
         }
     )
     
+
+    $processBlock = if ($PostProcess[$obsFunctionName]) {
+        [scriptblock]::Create(
+            '' + $obsFunctionProcessBlock + [Environment]::Newline + $PostProcess[$obsFunctionName]
+        )
+    } else {
+        $obsFunctionProcessBlock
+    }
+        
+
     $newFunc = 
-    New-PipeScript -FunctionName $obsFunctionName -Parameter $obsFunctionParameters -Process $obsFunctionProcessBlock -Attribute $newFunctionAttributes -Synopsis "
+    New-PipeScript -FunctionName $obsFunctionName -Parameter $obsFunctionParameters -Process $processBlock -Attribute $newFunctionAttributes -Synopsis "
 $obsFunctionName : $requestType
 " -Description @"
 $($obsRequestInfo.description)

@@ -174,7 +174,7 @@
 
             $sceneInfo.sceneName + ' ' + $(
                 if ($currentOrPreview) {
-                    "( $($currentOrPreview -join ' '))"
+                    "$($currentOrPreview -join ' ')"
                 }
             )
         }) -join [Environment]::Newline
@@ -235,7 +235,7 @@
 
             $sceneInfo.SceneName + ' ' + $(
                 if ($currentOrPreview) {
-                    "( $($currentOrPreview -join ' '))"
+                    "$($currentOrPreview -join ' ')"
                 }
             )
         }) -join [Environment]::Newline

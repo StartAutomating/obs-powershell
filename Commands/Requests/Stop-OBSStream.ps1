@@ -70,6 +70,10 @@ process {
                     if ($paramCopy[$attr.Name] -is [switch]) {
                         $paramCopy[$attr.Name] = [bool]$paramCopy[$attr.Name]
                     }
+                    if ($attr.Name -like '*path') {
+                        $paramCopy[$attr.Name] =
+                            "$($ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($paramCopy[$attr.Name]))"
+                    }
                     continue nextParam
                 }
             }

@@ -60,17 +60,17 @@ function Add-OBSColorSource
             }
             4 {
                 #short rgba                
-                $alpha = [byte]::Parse($hexColors[0],$hexColors[0] -join '', 'HexNumber')
-                $red   = [byte]::Parse($hexColors[1],$hexColors[1] -join '', 'HexNumber')
-                $green = [byte]::Parse($hexColors[2],$hexColors[2] -join '', 'HexNumber')
-                $blue  = [byte]::Parse($hexColors[3],$hexColors[3] -join '', 'HexNumber')
+                $alpha = [byte]::Parse(($hexColors[0],$hexColors[0] -join ''), 'HexNumber')
+                $red   = [byte]::Parse(($hexColors[1],$hexColors[1] -join ''), 'HexNumber')
+                $green = [byte]::Parse(($hexColors[2],$hexColors[2] -join ''), 'HexNumber')
+                $blue  = [byte]::Parse(($hexColors[3],$hexColors[3] -join ''), 'HexNumber')
             }
             3 {
                 #short rgb, assume f for alpha
                 $alpha = 0xff
-                $red   = [byte]::Parse($hexColors[0],$hexColors[0] -join '', 'HexNumber')
-                $green = [byte]::Parse($hexColors[1],$hexColors[1] -join '', 'HexNumber')
-                $blue  = [byte]::Parse($hexColors[2],$hexColors[2] -join '', 'HexNumber')
+                $red   = [byte]::Parse(($hexColors[0],$hexColors[0] -join ''), 'HexNumber')
+                $green = [byte]::Parse(($hexColors[1],$hexColors[1] -join ''), 'HexNumber')
+                $blue  = [byte]::Parse(($hexColors[2],$hexColors[2] -join ''), 'HexNumber')
             }
             0 {
                 # No color provided, default to transparent black
@@ -90,7 +90,7 @@ function Add-OBSColorSource
             $myParameters["Name"] = "#$hexColor"
         }
         
-        $myParameterData = [Ordered]@{}
+        $myParameterData = [Ordered]@{color=$realColor}
 
         $addObsInputParams = @{
             sceneName = $myParameters["Scene"]

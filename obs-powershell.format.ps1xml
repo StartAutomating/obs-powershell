@@ -3,6 +3,32 @@
 <Configuration>
   <ViewDefinitions>
     <View>
+      <Name>OBS.GetInputList.Response</Name>
+      <ViewSelectedBy>
+        <TypeName>OBS.GetInputList.Response</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+          </TableColumnHeader>
+          <TableColumnHeader>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>InputName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>InputKind</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
       <Name>OBS.GetMonitorList.Response</Name>
       <ViewSelectedBy>
         <TypeName>OBS.GetMonitorList.Response</TypeName>

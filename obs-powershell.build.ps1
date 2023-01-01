@@ -56,7 +56,10 @@ $ToAlias = @{
 
 $PostProcess = @{
     "Save-OBSSourceScreenshot" = {
-        Get-Item $paramCopy["imageFilePath"]
+        Get-Item $paramCopy["imageFilePath"] |
+            Add-Member NoteProperty SourceName $paramCopy["SourceName"] -Force -PassThru |
+            Add-Member NoteProperty ImageWidth $paramCopy["ImageWidth"] -Force -PassThru |
+            Add-Member NoteProperty ImageHeight $paramCopy["ImageHeight"] -Force -PassThru
     }
 }
 

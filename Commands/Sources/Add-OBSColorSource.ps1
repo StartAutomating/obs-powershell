@@ -109,7 +109,7 @@ dynamicParam {
             }
         }
         
-        $hexColor = ("{0:x2}{1:x2}{2:x2}{3:x2}" -f $alpha, $red, $green, $blue)
+        $hexColor = ("{0:x2}{1:x2}{2:x2}{3:x2}" -f $alpha, $blue, $green, $red)
         $realColor = [uint32]::Parse($hexColor,'HexNumber')
         
                 

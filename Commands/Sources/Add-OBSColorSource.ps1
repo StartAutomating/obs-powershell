@@ -110,7 +110,7 @@ dynamicParam {
         }
         
         $hexColor = ("{0:x2}{1:x2}{2:x2}{3:x2}" -f $alpha, $red, $green, $blue)
-        $realColor = [uint32]::Parse($hexColor,'HexColor')
+        $realColor = [uint32]::Parse($hexColor,'HexNumber')
         
                 
         if (-not $myParameters["Name"]) {

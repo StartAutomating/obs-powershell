@@ -5,6 +5,19 @@
     <Name>OBS.GetSceneItemList.Response</Name>
     <Members>
       <ScriptMethod>
+        <Name>Blend</Name>
+        <Script>
+                        param([string]$BlendMode)
+
+if ($blendMode -cnotmatch '^OBS_BLEND_') {
+    $blendMode = "OBS_BLEND_$($blendMode.ToUpper())"
+}
+$this |
+    Set-OBSSceneItemBlendMode -SceneItemBlendMode $blendMode
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
         <Name>Delete</Name>
         <Script>
                         $this.Remove()
@@ -43,6 +56,13 @@
 
                     </Script>
       </ScriptMethod>
+      <ScriptProperty>
+        <Name>BlendMode</Name>
+        <GetScriptBlock>
+                        $this.sceneItemBlendMode -replace '^OBS_BLEND_'
+
+                    </GetScriptBlock>
+      </ScriptProperty>
       <ScriptProperty>
         <Name>Enabled</Name>
         <GetScriptBlock>

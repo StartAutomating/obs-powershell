@@ -79,7 +79,7 @@ function Receive-OBS
         if ($PSCmdlet.ParameterSetName -eq 'WaitForResponse') {
             $myRequestId = $payloadObject.d.requestID
             $myRequestType = $payloadObject.d.requestType
-            if (-not $myRequestId -or -not $myRequestType) {
+            if (-not $myRequestId) {
                 Write-Error "No .RequestID to wait for"
                 return
             }
@@ -123,9 +123,13 @@ function Receive-OBS
                 }
     
                 # Otherwise, create a new PSObject out of the response
-                $responseObject = [PSObject]::new($responseObject)                    
+                $responseObject = [PSObject]::new($responseObject)
+                
+                if ($responseObject -isnot [string]) {
+                    $responseObject.pstypenames.clear()
+                }
                 # and decorate it with the command name and OBS.requestype.response
-                $responseObject.pstypenames.add("$myCmd")                        
+                $responseObject.pstypenames.add("$myCmd")
                 $responseObject.pstypenames.add("OBS.$myRequestType.Response")
     
                 # Now, walk thru all properties in our input payload

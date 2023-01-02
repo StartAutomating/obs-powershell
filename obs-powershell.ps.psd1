@@ -1,5 +1,5 @@
 @{
-    ModuleVersion     = '0.1.3'
+    ModuleVersion     = '0.1.4'
     RootModule        = 'obs-powershell.psm1'
     Description       = 'Script OBS with PowerShell'
     Guid              = '1417123e-a932-439f-9b68-a7313cf1e170'
@@ -16,6 +16,19 @@
             ProjectURI = 'https://github.com/StartAutomating/obs-powershell'
             LicenseURI = 'https://github.com/StartAutomating/obs-powershell/blob/main/LICENSE'
             ReleaseNotes = @'
+## obs-powershell 0.1.4:
+
+* Adding Add-OBSColorSource (Fixes #51)  
+* Save-OBSSourceScreenShot:
+  * Attaching .InputName, .SourceName, .ImageWidth, .ImageHeight to output (Fixes #50)
+  * Now returns a file (Fixes #49)
+* -Path parameters now attempt to resolve to an absolute path (Fixes #48)
+* All scene items can now:
+  * Blend() / get .BlendMode (Fixes #53)
+  * FitToScreen() (Fixes #46)
+* Color Sources can now .SetColor (Fixes #55)
+
+---
 
 ## obs-powershell 0.1.3:
 

@@ -38,6 +38,20 @@ $this |
                     </Script>
       </ScriptMethod>
       <ScriptMethod>
+        <Name>FitToScreen</Name>
+        <Script>
+                        $videoSettings = Get-OBSVideoSettings
+
+$this | Set-OBSSceneItemTransform -SceneItemTransform ([PSCustomObject][Ordered]@{
+    alignment = 0
+    height = $videoSettings.outputHeight    
+    positionX = [int]($videoSettings.outputWidth / 2)
+    positionY = [int]($videoSettings.outputHeight / 2)
+    width = $videoSettings.outputWidth
+})
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
         <Name>Lock</Name>
         <Script>
                         $this | Set-OBSSceneItemLocked -sceneItemLocked

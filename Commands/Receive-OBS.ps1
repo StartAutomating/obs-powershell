@@ -132,7 +132,7 @@ function Receive-OBS
                 }
 
                 if ($responseObject.inputKind) {
-                    $responseObject.pstypenames.add("OBS.Input.$($responseObject.inputKind)")
+                    $responseObject.pstypenames.add("OBS.Input.$($responseObject.inputKind -replace '_', '.')")
                 }
                 # Decorate the response with the command name and OBS.requestype.response
                 $responseObject.pstypenames.add("$myCmd")

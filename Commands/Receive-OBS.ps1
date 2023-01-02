@@ -125,10 +125,16 @@ function Receive-OBS
                 # Otherwise, create a new PSObject out of the response
                 $responseObject = [PSObject]::new($responseObject)
                 
+                # If the response is not a string
                 if ($responseObject -isnot [string]) {
+                    # clear the typename.
                     $responseObject.pstypenames.clear()
                 }
-                # and decorate it with the command name and OBS.requestype.response
+
+                if ($responseObject.inputKind) {
+                    $responseObject.pstypenames.add("OBS.Input.$($responseObject.inputKind)")
+                }
+                # Decorate the response with the command name and OBS.requestype.response
                 $responseObject.pstypenames.add("$myCmd")
                 $responseObject.pstypenames.add("OBS.$myRequestType.Response")
     

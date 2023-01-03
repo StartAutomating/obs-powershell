@@ -5,6 +5,58 @@
     <Name>OBS.GetSceneItemList.Response</Name>
     <Members>
       <ScriptMethod>
+        <Name>Blend</Name>
+        <Script>
+                        param([string]$BlendMode)
+
+if ($blendMode -cnotmatch '^OBS_BLEND_') {
+    $blendMode = "OBS_BLEND_$($blendMode.ToUpper())"
+}
+$this |
+    Set-OBSSceneItemBlendMode -SceneItemBlendMode $blendMode
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Crop</Name>
+        <Script>
+                        $cropTable = [Ordered]@{
+    cropBottom = 0
+    cropLeft   = 0
+    cropRight  = 0
+    cropTop    = 0
+}
+
+$MatchingKey = [Regex]::new("(?&gt;$(
+    @($cropTable.Keys -join '|'
+    '|'
+    $cropTable.Keys -replace '^crop' -join '|') -join ''
+))", 'IgnoreCase')
+
+
+$currentKey = ''
+foreach ($arg in $args) {
+    if ($arg -is [Collections.IDictionary]) {
+        foreach ($keyValue in $arg.GetEnumerator()) {
+            if ($keyValue.Key -match $MatchingKey) {
+                $cropTable[$matches.0 -replace '^crop' -replace '^', 'crop'] = $keyValue.Value
+            }        
+        }
+    }
+    if ($arg -is [string] -and $arg -match $MatchingKey) {
+        $currentKey = $matches.0 -replace '^crop' -replace '^', 'crop'
+    }
+    if ($arg -is [int] -and $currentKey) {
+        $cropTable[$currentKey] = $arg
+        $currentKey = ''
+    }
+}
+
+$this | Set-OBSSceneItemTransform -SceneItemTransform $cropTable
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
         <Name>Delete</Name>
         <Script>
                         $this.Remove()
@@ -25,6 +77,20 @@
                     </Script>
       </ScriptMethod>
       <ScriptMethod>
+        <Name>FitToScreen</Name>
+        <Script>
+                        $videoSettings = Get-OBSVideoSettings
+
+$this | Set-OBSSceneItemTransform -SceneItemTransform ([PSCustomObject][Ordered]@{
+    alignment = 0
+    height = $videoSettings.outputHeight    
+    positionX = [int]($videoSettings.outputWidth / 2)
+    positionY = [int]($videoSettings.outputHeight / 2)
+    width = $videoSettings.outputWidth
+})
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
         <Name>Lock</Name>
         <Script>
                         $this | Set-OBSSceneItemLocked -sceneItemLocked
@@ -37,6 +103,20 @@
                     </Script>
       </ScriptMethod>
       <ScriptMethod>
+        <Name>Rotate</Name>
+        <Script>
+                        param(
+[Alias('Degrees', 'Rotation')]
+[double]
+$Degree
+)
+
+$this | Set-OBSSceneItemTransform -SceneItemTransform @{
+    rotation = $Degree
+}
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
         <Name>Unlock</Name>
         <Script>
                         $this | Set-OBSSceneItemLocked -sceneItemLocked:$false
@@ -44,9 +124,30 @@
                     </Script>
       </ScriptMethod>
       <ScriptProperty>
+        <Name>BlendMode</Name>
+        <GetScriptBlock>
+                        $this.sceneItemBlendMode -replace '^OBS_BLEND_'
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
         <Name>Enabled</Name>
         <GetScriptBlock>
                         return $this.sceneItemEnabled
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ImageHeight</Name>
+        <GetScriptBlock>
+                        $this.sceneItemTransform.sourceHeight
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ImageWidth</Name>
+        <GetScriptBlock>
+                        $this.sceneItemTransform.sourceWidth
 
                     </GetScriptBlock>
       </ScriptProperty>
@@ -57,6 +158,72 @@
 
                     </GetScriptBlock>
       </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>OBS.Input.Color.Source.V3</Name>
+    <Members>
+      <ScriptMethod>
+        <Name>SetColor</Name>
+        <Script>
+                        param(
+[ValidatePattern('\#(?&gt;[0-9a-f]{8}|[0-9a-f]{6}|[0-9a-f]{4}|[0-9a-f]{3})')]
+[string]
+$Color
+)
+
+$hexChar = [Regex]::new('[0-9a-f]')
+$hexColors = @($hexChar.Matches($Color))
+
+switch ($hexColors.Length) {
+    8 {
+        #full rgba
+        $alpha = [byte]::Parse($hexColors[0..1] -join '', 'HexNumber')
+        $red   = [byte]::Parse($hexColors[2..3] -join '', 'HexNumber')
+        $green = [byte]::Parse($hexColors[4..5] -join '', 'HexNumber')
+        $blue  = [byte]::Parse($hexColors[6..7] -join '', 'HexNumber')
+    }
+    6 {
+        #rgb only, assume ff for alpha
+        $alpha = 0xff
+        $red   = [byte]::Parse($hexColors[0..1] -join '', 'HexNumber')
+        $green = [byte]::Parse($hexColors[2..3] -join '', 'HexNumber')
+        $blue  = [byte]::Parse($hexColors[4..5] -join '', 'HexNumber')
+    }
+    4 {
+        #short rgba                
+        $alpha = [byte]::Parse(($hexColors[0],$hexColors[0] -join ''), 'HexNumber')
+        $red   = [byte]::Parse(($hexColors[1],$hexColors[1] -join ''), 'HexNumber')
+        $green = [byte]::Parse(($hexColors[2],$hexColors[2] -join ''), 'HexNumber')
+        $blue  = [byte]::Parse(($hexColors[3],$hexColors[3] -join ''), 'HexNumber')
+    }
+    3 {
+        #short rgb, assume f for alpha
+        $alpha = 0xff
+        $red   = [byte]::Parse(($hexColors[0],$hexColors[0] -join ''), 'HexNumber')
+        $green = [byte]::Parse(($hexColors[1],$hexColors[1] -join ''), 'HexNumber')
+        $blue  = [byte]::Parse(($hexColors[2],$hexColors[2] -join ''), 'HexNumber')
+    }
+    0 {
+        # No color provided, default to transparent black
+        $alpha = 0
+        $red   = 0
+        $green = 0 
+        $blue  = 0
+    }
+}
+
+$hexColor = ("{0:x2}{1:x2}{2:x2}{3:x2}" -f $alpha, $blue, $green, $red)
+
+$realColor = [uint32]::Parse($hexColor,'HexNumber')
+
+$this | Set-OBSInputSettings -InputSettings ([Ordered]@{color=$realColor})
+
+
+
+
+                    </Script>
+      </ScriptMethod>
     </Members>
   </Type>
 </Types>

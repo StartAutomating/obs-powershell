@@ -107,6 +107,10 @@ process {
                     if ($paramCopy[$attr.Name] -is [switch]) {
                         $paramCopy[$attr.Name] = [bool]$paramCopy[$attr.Name]
                     }
+                    if ($attr.Name -like '*path') {
+                        $paramCopy[$attr.Name] =
+                            "$($ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($paramCopy[$attr.Name]))"
+                    }
                     continue nextParam
                 }
             }
@@ -132,6 +136,13 @@ process {
                 Send-OBS
         }
 
+
+        Get-Item $paramCopy["imageFilePath"] |
+            Add-Member NoteProperty InputName $paramCopy["SourceName"] -Force -PassThru  |
+            Add-Member NoteProperty SourceName $paramCopy["SourceName"] -Force -PassThru |
+            Add-Member NoteProperty ImageWidth $paramCopy["ImageWidth"] -Force -PassThru |
+            Add-Member NoteProperty ImageHeight $paramCopy["ImageHeight"] -Force -PassThru
+    
 }
 
 } 

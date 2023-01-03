@@ -54,6 +54,16 @@ $ToAlias = @{
     "Add-OBSSceneItem" = "Add-OBSSceneSource"
 }
 
+$PostProcess = @{
+    "Save-OBSSourceScreenshot" = {
+        Get-Item $paramCopy["imageFilePath"] |
+            Add-Member NoteProperty InputName $paramCopy["SourceName"] -Force -PassThru  |
+            Add-Member NoteProperty SourceName $paramCopy["SourceName"] -Force -PassThru |
+            Add-Member NoteProperty ImageWidth $paramCopy["ImageWidth"] -Force -PassThru |
+            Add-Member NoteProperty ImageHeight $paramCopy["ImageHeight"] -Force -PassThru
+    }
+}
+
 # Declare the process block for all commands now
 $obsFunctionProcessBlock = {
 
@@ -99,6 +109,10 @@ $obsFunctionProcessBlock = {
                     # (don't forget to turn switches into booleans)
                     if ($paramCopy[$attr.Name] -is [switch]) {
                         $paramCopy[$attr.Name] = [bool]$paramCopy[$attr.Name]
+                    }
+                    if ($attr.Name -like '*path') {
+                        $paramCopy[$attr.Name] =
+                            "$($ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($paramCopy[$attr.Name]))"
                     }
                     continue nextParam
                 }
@@ -235,8 +249,18 @@ foreach ($obsRequestInfo in $obsWebSocketProtocol.requests) {
         }
     )
     
+
+    $processBlock = if ($PostProcess[$obsFunctionName]) {
+        [scriptblock]::Create(
+            '' + $obsFunctionProcessBlock + [Environment]::Newline + $PostProcess[$obsFunctionName]
+        )
+    } else {
+        $obsFunctionProcessBlock
+    }
+        
+
     $newFunc = 
-    New-PipeScript -FunctionName $obsFunctionName -Parameter $obsFunctionParameters -Process $obsFunctionProcessBlock -Attribute $newFunctionAttributes -Synopsis "
+    New-PipeScript -FunctionName $obsFunctionName -Parameter $obsFunctionParameters -Process $processBlock -Attribute $newFunctionAttributes -Synopsis "
 $obsFunctionName : $requestType
 " -Description @"
 $($obsRequestInfo.description)

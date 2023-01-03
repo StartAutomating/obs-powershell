@@ -8,6 +8,8 @@
 * All scene items can now:
   * Blend() / get .BlendMode (Fixes #53)
   * FitToScreen() (Fixes #46)
+  * Crop() (Fixes #57)
+  * Rotate() (Fixes #35)
 * Color Sources can now .SetColor (Fixes #55)
 
 ---

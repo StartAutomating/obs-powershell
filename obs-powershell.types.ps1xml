@@ -64,6 +64,20 @@ $this | Set-OBSSceneItemTransform -SceneItemTransform ([PSCustomObject][Ordered]
                     </Script>
       </ScriptMethod>
       <ScriptMethod>
+        <Name>Rotate</Name>
+        <Script>
+                        param(
+[Alias('Degrees', 'Rotation')]
+[double]
+$Degree
+)
+
+$this | Set-OBSSceneItemTransform -SceneItemTransform @{
+    rotation = $Degree
+}
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
         <Name>Unlock</Name>
         <Script>
                         $this | Set-OBSSceneItemLocked -sceneItemLocked:$false

@@ -1,3 +1,9 @@
+## obs-powershell 0.1.5:
+
+* Adding OBS.SceneItem .Animate (Fixes #59)
+
+---
+
 ## obs-powershell 0.1.4:
 
 * Adding Add-OBSColorSource (Fixes #51)  

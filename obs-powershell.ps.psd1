@@ -20,6 +20,7 @@
 
 * Adding OBS.SceneItem .Animate (Fixes #59)
 
+
 ---
 
 ## obs-powershell 0.1.4:

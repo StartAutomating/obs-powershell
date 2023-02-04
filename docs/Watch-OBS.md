@@ -38,13 +38,12 @@ The OBS websocket URL.  If not provided, this will default to loopback on port 4
 
 
 
-> **Type**: ```[Uri]```
 
-> **Required**: false
 
-> **Position**: 1
 
-> **PipelineInput**:true (ByPropertyName)
+|Type   |Required|Position|PipelineInput        |
+|-------|--------|--------|---------------------|
+|`[Uri]`|false   |1       |true (ByPropertyName)|
 
 
 
@@ -56,13 +55,12 @@ You can see the websocket password in Tools -> obs-websocket settings -> show co
 
 
 
-> **Type**: ```[String]```
 
-> **Required**: false
 
-> **Position**: 2
 
-> **PipelineInput**:true (ByPropertyName)
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[String]`|false   |2       |true (ByPropertyName)|
 
 
 

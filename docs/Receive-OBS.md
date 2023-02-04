@@ -16,13 +16,12 @@ The message data that has been received
 
 
 
-> **Type**: ```[Object]```
 
-> **Required**: false
 
-> **Position**: named
 
-> **PipelineInput**:true (ByValue)
+|Type      |Required|Position|PipelineInput |
+|----------|--------|--------|--------------|
+|`[Object]`|false   |named   |true (ByValue)|
 
 
 
@@ -33,13 +32,12 @@ If set will wait for a response from the message and expand the results.
 
 
 
-> **Type**: ```[Switch]```
 
-> **Required**: false
 
-> **Position**: named
 
-> **PipelineInput**:false
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[Switch]`|false   |named   |false        |
 
 
 
@@ -50,13 +48,12 @@ If set, will responsd to known events, like 'hello', and resend other events as 
 
 
 
-> **Type**: ```[Switch]```
 
-> **Required**: false
 
-> **Position**: named
 
-> **PipelineInput**:false
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[Switch]`|false   |named   |false        |
 
 
 
@@ -67,13 +64,12 @@ The OBS websocket URL.  If not provided, this will default to loopback on port 4
 
 
 
-> **Type**: ```[Uri]```
 
-> **Required**: true
 
-> **Position**: named
 
-> **PipelineInput**:false
+|Type   |Required|Position|PipelineInput|
+|-------|--------|--------|-------------|
+|`[Uri]`|true    |named   |false        |
 
 
 
@@ -85,13 +81,12 @@ You can see the websocket password in Tools -> obs-websocket settings -> show co
 
 
 
-> **Type**: ```[String]```
 
-> **Required**: true
 
-> **Position**: named
 
-> **PipelineInput**:false
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|true    |named   |false        |
 
 
 

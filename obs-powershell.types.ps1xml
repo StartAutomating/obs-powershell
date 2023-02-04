@@ -183,13 +183,17 @@ $this | Set-OBSSceneItemTransform -SceneItemTransform $cropTable
         <Script>
                         $videoSettings = Get-OBSVideoSettings
 
-$this | Set-OBSSceneItemTransform -SceneItemTransform ([PSCustomObject][Ordered]@{
+$thisTransform = $this | Get-OBSSceneItemTransform
+
+$sceneItemTransform = ([Ordered]@{
     alignment = 0
-    height = $videoSettings.outputHeight    
+    scaleX    = ([double]$videoSettings.outputWidth / $thisTransform.sourceWidth )
     positionX = [int]($videoSettings.outputWidth / 2)
     positionY = [int]($videoSettings.outputHeight / 2)
-    width = $videoSettings.outputWidth
+    scaleY    = ([double]$videoSettings.outputHeight / $thisTransform.sourceHeight )
 })
+
+$this | Set-OBSSceneItemTransform -SceneItemTransform $sceneItemTransform
                     </Script>
       </ScriptMethod>
       <ScriptMethod>
@@ -216,6 +220,50 @@ $Degree
 $this | Set-OBSSceneItemTransform -SceneItemTransform @{
     rotation = $Degree
 }
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Scale</Name>
+        <Script>
+                        param(
+[double[]]
+$ScaleX = 1,
+
+[double[]]
+$ScaleY = 1,
+
+# The timespan the animation will take
+[TimeSpan]
+$TimeSpan = [timespan]::fromSeconds(1)
+)
+
+if ($scaleX.Length -eq 1 -and $scaleY.Length -eq 1) {
+    $this | Set-OBSSceneItemTransform -SceneItemTransform @{
+        scaleX = $ScaleX[0]
+        scaleY = $scaleY[0]
+    }
+    return
+}
+
+$thisTransform = $this | Get-OBSSceneItemTransform 
+
+$fromValue = [Ordered]@{
+    scaleX = $thisTransform.scaleX
+    scaleY = $thisTransform.scaleY
+}
+
+$durationPerStep = [TimeSpan]::FromMilliseconds($TimeSpan.TotalMilliseconds / $ScaleX.Length)
+
+for ($stepNumber = 0; $stepNumber -lt $ScaleX.Length; $stepNumber++) {
+    $toValue = [Ordered]@{
+        scaleX = $ScaleX[$stepNumber]
+        scaleY = $ScaleY[$stepNumber]
+    }
+    $this.Animate($fromValue, $toValue, $durationPerStep)
+    $fromValue = $toValue
+}
+
+
                     </Script>
       </ScriptMethod>
       <ScriptMethod>

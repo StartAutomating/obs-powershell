@@ -1,5 +1,5 @@
 @{
-    ModuleVersion     = '0.1.5'
+    ModuleVersion     = '0.1.6'
     RootModule        = 'obs-powershell.psm1'
     Description       = 'Script OBS with PowerShell'
     Guid              = '1417123e-a932-439f-9b68-a7313cf1e170'
@@ -16,6 +16,14 @@
             ProjectURI = 'https://github.com/StartAutomating/obs-powershell'
             LicenseURI = 'https://github.com/StartAutomating/obs-powershell/blob/main/LICENSE'
             ReleaseNotes = @'
+## obs-powershell 0.1.6:
+
+* Adding OBS.SceneItem .Scale (Fixes #64)
+* OBS.SceneItem .FitToScreen, adjusting .Scale (Fixes #63)
+* Add-OBSMediaSource: Fixing -InputSettings / -SceneItemEnabled (Fixes #62)
+
+---
+
 ## obs-powershell 0.1.5:
 
 * Adding OBS.SceneItem .Animate (Fixes #59)

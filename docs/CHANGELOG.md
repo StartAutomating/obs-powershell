@@ -1,3 +1,12 @@
+## obs-powershell 0.1.6:
+
+* Adding OBS.SceneItem .Scale (Fixes #64)
+* OBS.SceneItem .FitToScreen, adjusting .Scale (Fixes #63)
+* Add-OBSMediaSource: Fixing -InputSettings / -SceneItemEnabled (Fixes #62)
+
+---
+
+
 ## obs-powershell 0.1.5:
 
 * Adding OBS.SceneItem .Animate (Fixes #59)

@@ -128,11 +128,34 @@ dynamicParam {
         }
         $FilePathItem = Get-Item -Path $FilePath
         $myParameterData['local_file'] = $FilePathItem.FullName -replace '/', '\'
+        if ($myParameters['InputSettings']) {
+            $keys = 
+                @(if ($myParameters['InputSettings'] -is [Collections.IDictionary]) {
+                    $myParameters['InputSettings'].Keys
+                } else {
+                    foreach ($prop in $myParameters['InputSettings'].PSObject.Properties) {
+                        $prop.Name
+                    }
+                })
+            foreach ($key in $keys) {
+                $myParameterData[$key] = $myParameters['InputSettings'].$key
+            }
+            $myParameterData.remove('inputSettings')
+        }
  
         if (-not $Name) {
             $Name = $FilePathItem.Name
         }
-        $outputAddedResult = Add-OBSInput -sceneName $myParameters["Scene"] -inputKind "ffmpeg_source" -inputSettings $myParameterData -inputName $Name
+        $addSplat = [Ordered]@{
+            sceneName = $myParameters["Scene"]
+            inputKind = "ffmpeg_source"
+            inputSettings = $myParameterData
+            inputName = $Name
+        }
+        if ($myParameters.Contains('SceneItemEnabled')) {
+            $addSplat.SceneItemEnabled = $myParameters['SceneItemEnabled'] -as [bool]
+        }
+        $outputAddedResult = Add-OBSInput @addSplat
         if ($outputAddedResult) {
             Get-OBSSceneItem -sceneName $myParameters["Scene"] |
                 Where-Object SourceName -eq $name

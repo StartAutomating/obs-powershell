@@ -30,13 +30,12 @@ Name of the source to take a screenshot of
 
 
 
-> **Type**: ```[String]```
 
-> **Required**: true
 
-> **Position**: 1
 
-> **PipelineInput**:true (ByPropertyName)
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[String]`|true    |1       |true (ByPropertyName)|
 
 
 
@@ -47,13 +46,12 @@ Image compression format to use. Use `GetVersion` to get compatible image format
 
 
 
-> **Type**: ```[String]```
 
-> **Required**: true
 
-> **Position**: 2
 
-> **PipelineInput**:true (ByPropertyName)
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[String]`|true    |2       |true (ByPropertyName)|
 
 
 
@@ -64,13 +62,12 @@ Path to save the screenshot file to. Eg. `C:\Users\user\Desktop\screenshot.png`
 
 
 
-> **Type**: ```[String]```
 
-> **Required**: true
 
-> **Position**: 3
 
-> **PipelineInput**:true (ByPropertyName)
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[String]`|true    |3       |true (ByPropertyName)|
 
 
 
@@ -81,13 +78,12 @@ Width to scale the screenshot to
 
 
 
-> **Type**: ```[Double]```
 
-> **Required**: false
 
-> **Position**: 4
 
-> **PipelineInput**:true (ByPropertyName)
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[Double]`|false   |4       |true (ByPropertyName)|
 
 
 
@@ -98,13 +94,12 @@ Height to scale the screenshot to
 
 
 
-> **Type**: ```[Double]```
 
-> **Required**: false
 
-> **Position**: 5
 
-> **PipelineInput**:true (ByPropertyName)
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[Double]`|false   |5       |true (ByPropertyName)|
 
 
 
@@ -115,13 +110,12 @@ Compression quality to use. 0 for high compression, 100 for uncompressed. -1 to 
 
 
 
-> **Type**: ```[Double]```
 
-> **Required**: false
 
-> **Position**: 6
 
-> **PipelineInput**:true (ByPropertyName)
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[Double]`|false   |6       |true (ByPropertyName)|
 
 
 
@@ -132,13 +126,12 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-> **Type**: ```[Switch]```
 
-> **Required**: false
 
-> **Position**: named
 
-> **PipelineInput**:true (ByPropertyName)
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|
 
 
 

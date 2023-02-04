@@ -25,13 +25,12 @@ Name of the source to add the filter to
 
 
 
-> **Type**: ```[String]```
 
-> **Required**: true
 
-> **Position**: 1
 
-> **PipelineInput**:true (ByPropertyName)
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[String]`|true    |1       |true (ByPropertyName)|
 
 
 
@@ -42,13 +41,12 @@ Name of the new filter to be created
 
 
 
-> **Type**: ```[String]```
 
-> **Required**: true
 
-> **Position**: 2
 
-> **PipelineInput**:true (ByPropertyName)
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[String]`|true    |2       |true (ByPropertyName)|
 
 
 
@@ -59,13 +57,12 @@ The kind of filter to be created
 
 
 
-> **Type**: ```[String]```
 
-> **Required**: true
 
-> **Position**: 3
 
-> **PipelineInput**:true (ByPropertyName)
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[String]`|true    |3       |true (ByPropertyName)|
 
 
 
@@ -76,13 +73,12 @@ Settings object to initialize the filter with
 
 
 
-> **Type**: ```[PSObject]```
 
-> **Required**: false
 
-> **Position**: 4
 
-> **PipelineInput**:true (ByPropertyName)
+|Type        |Required|Position|PipelineInput        |
+|------------|--------|--------|---------------------|
+|`[PSObject]`|false   |4       |true (ByPropertyName)|
 
 
 
@@ -93,13 +89,12 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-> **Type**: ```[Switch]```
 
-> **Required**: false
 
-> **Position**: named
 
-> **PipelineInput**:true (ByPropertyName)
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|
 
 
 

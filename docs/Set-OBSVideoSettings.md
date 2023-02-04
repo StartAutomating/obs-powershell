@@ -27,13 +27,12 @@ Numerator of the fractional FPS value
 
 
 
-> **Type**: ```[Double]```
 
-> **Required**: false
 
-> **Position**: 1
 
-> **PipelineInput**:true (ByPropertyName)
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[Double]`|false   |1       |true (ByPropertyName)|
 
 
 
@@ -44,13 +43,12 @@ Denominator of the fractional FPS value
 
 
 
-> **Type**: ```[Double]```
 
-> **Required**: false
 
-> **Position**: 2
 
-> **PipelineInput**:true (ByPropertyName)
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[Double]`|false   |2       |true (ByPropertyName)|
 
 
 
@@ -61,13 +59,12 @@ Width of the base (canvas) resolution in pixels
 
 
 
-> **Type**: ```[Double]```
 
-> **Required**: false
 
-> **Position**: 3
 
-> **PipelineInput**:true (ByPropertyName)
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[Double]`|false   |3       |true (ByPropertyName)|
 
 
 
@@ -78,13 +75,12 @@ Height of the base (canvas) resolution in pixels
 
 
 
-> **Type**: ```[Double]```
 
-> **Required**: false
 
-> **Position**: 4
 
-> **PipelineInput**:true (ByPropertyName)
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[Double]`|false   |4       |true (ByPropertyName)|
 
 
 
@@ -95,13 +91,12 @@ Width of the output resolution in pixels
 
 
 
-> **Type**: ```[Double]```
 
-> **Required**: false
 
-> **Position**: 5
 
-> **PipelineInput**:true (ByPropertyName)
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[Double]`|false   |5       |true (ByPropertyName)|
 
 
 
@@ -112,13 +107,12 @@ Height of the output resolution in pixels
 
 
 
-> **Type**: ```[Double]```
 
-> **Required**: false
 
-> **Position**: 6
 
-> **PipelineInput**:true (ByPropertyName)
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[Double]`|false   |6       |true (ByPropertyName)|
 
 
 
@@ -129,13 +123,12 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-> **Type**: ```[Switch]```
 
-> **Required**: false
 
-> **Position**: named
 
-> **PipelineInput**:true (ByPropertyName)
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|
 
 
 

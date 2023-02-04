@@ -27,13 +27,12 @@ Name of the scene the item is in
 
 
 
-> **Type**: ```[String]```
 
-> **Required**: true
 
-> **Position**: 1
 
-> **PipelineInput**:true (ByPropertyName)
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[String]`|true    |1       |true (ByPropertyName)|
 
 
 
@@ -44,13 +43,12 @@ Numeric ID of the scene item
 
 
 
-> **Type**: ```[Double]```
 
-> **Required**: true
 
-> **Position**: 2
 
-> **PipelineInput**:true (ByPropertyName)
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[Double]`|true    |2       |true (ByPropertyName)|
 
 
 
@@ -61,13 +59,12 @@ New blend mode
 
 
 
-> **Type**: ```[String]```
 
-> **Required**: true
 
-> **Position**: 3
 
-> **PipelineInput**:true (ByPropertyName)
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[String]`|true    |3       |true (ByPropertyName)|
 
 
 
@@ -78,13 +75,12 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-> **Type**: ```[Switch]```
 
-> **Required**: false
 
-> **Position**: named
 
-> **PipelineInput**:true (ByPropertyName)
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|
 
 
 

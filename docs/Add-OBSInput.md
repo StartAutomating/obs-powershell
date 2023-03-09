@@ -1,9 +1,17 @@
 Add-OBSInput
 ------------
+
+
+
+
 ### Synopsis
 Add-OBSInput : CreateInput
 
+
+
 ---
+
+
 ### Description
 
 Creates a new input, adding it as a scene item to the specified scene.
@@ -11,13 +19,21 @@ Creates a new input, adding it as a scene item to the specified scene.
 
 Add-OBSInput calls the OBS WebSocket with a request of type CreateInput.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createinput](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createinput)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **SceneName**
 
@@ -34,7 +50,6 @@ Name of the scene to add the input to as a scene item
 
 
 
----
 #### **InputName**
 
 Name of the new input to created
@@ -50,7 +65,6 @@ Name of the new input to created
 
 
 
----
 #### **InputKind**
 
 The kind of input to be created
@@ -66,7 +80,6 @@ The kind of input to be created
 
 
 
----
 #### **InputSettings**
 
 Settings object to initialize the input with
@@ -82,7 +95,6 @@ Settings object to initialize the input with
 
 
 
----
 #### **SceneItemEnabled**
 
 Whether to set the created scene item to enabled or disabled
@@ -98,7 +110,6 @@ Whether to set the created scene item to enabled or disabled
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -108,15 +119,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Add-OBSInput [-SceneName] <String> [-InputName] <String> [-InputKind] <String> [[-InputSettings] <PSObject>] [-SceneItemEnabled] [-PassThru] [<CommonParameters>]
 ```
----

@@ -1,9 +1,17 @@
 Set-OBSCurrentProfile
 ---------------------
+
+
+
+
 ### Synopsis
 Set-OBSCurrentProfile : SetCurrentProfile
 
+
+
 ---
+
+
 ### Description
 
 Switches to a profile.
@@ -11,13 +19,21 @@ Switches to a profile.
 
 Set-OBSCurrentProfile calls the OBS WebSocket with a request of type SetCurrentProfile.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setcurrentprofile](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setcurrentprofile)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **ProfileName**
 
@@ -34,7 +50,6 @@ Name of the profile to switch to
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -44,15 +59,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Set-OBSCurrentProfile [-ProfileName] <String> [-PassThru] [<CommonParameters>]
 ```
----

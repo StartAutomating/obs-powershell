@@ -1,9 +1,17 @@
 Set-OBSSourceFilterSettings
 ---------------------------
+
+
+
+
 ### Synopsis
 Set-OBSSourceFilterSettings : SetSourceFilterSettings
 
+
+
 ---
+
+
 ### Description
 
 Sets the settings of a source filter.
@@ -11,13 +19,21 @@ Sets the settings of a source filter.
 
 Set-OBSSourceFilterSettings calls the OBS WebSocket with a request of type SetSourceFilterSettings.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setsourcefiltersettings](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setsourcefiltersettings)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **SourceName**
 
@@ -34,7 +50,6 @@ Name of the source the filter is on
 
 
 
----
 #### **FilterName**
 
 Name of the filter to set the settings of
@@ -50,7 +65,6 @@ Name of the filter to set the settings of
 
 
 
----
 #### **FilterSettings**
 
 Object of settings to apply
@@ -66,7 +80,6 @@ Object of settings to apply
 
 
 
----
 #### **Overlay**
 
 True == apply the settings on top of existing ones, False == reset the input to its defaults, then apply settings.
@@ -82,7 +95,6 @@ True == apply the settings on top of existing ones, False == reset the input to 
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -92,15 +104,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Set-OBSSourceFilterSettings [-SourceName] <String> [-FilterName] <String> [-FilterSettings] <PSObject> [-Overlay] [-PassThru] [<CommonParameters>]
 ```
----

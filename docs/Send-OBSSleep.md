@@ -1,9 +1,17 @@
 Send-OBSSleep
 -------------
+
+
+
+
 ### Synopsis
 Send-OBSSleep : Sleep
 
+
+
 ---
+
+
 ### Description
 
 Sleeps for a time duration or number of frames. Only available in request batches with types `SERIAL_REALTIME` or `SERIAL_FRAME`.
@@ -11,13 +19,21 @@ Sleeps for a time duration or number of frames. Only available in request batche
 
 Send-OBSSleep calls the OBS WebSocket with a request of type Sleep.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#sleep](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#sleep)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **SleepMillis**
 
@@ -34,7 +50,6 @@ Number of milliseconds to sleep for (if `SERIAL_REALTIME` mode)
 
 
 
----
 #### **SleepFrames**
 
 Number of frames to sleep for (if `SERIAL_FRAME` mode)
@@ -50,7 +65,6 @@ Number of frames to sleep for (if `SERIAL_FRAME` mode)
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -60,15 +74,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Send-OBSSleep [[-SleepMillis] <Double>] [[-SleepFrames] <Double>] [-PassThru] [<CommonParameters>]
 ```
----

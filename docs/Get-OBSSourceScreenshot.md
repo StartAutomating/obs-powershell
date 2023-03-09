@@ -1,9 +1,17 @@
 Get-OBSSourceScreenshot
 -----------------------
+
+
+
+
 ### Synopsis
 Get-OBSSourceScreenshot : GetSourceScreenshot
 
+
+
 ---
+
+
 ### Description
 
 Gets a Base64-encoded screenshot of a source.
@@ -16,13 +24,21 @@ If `imageWidth` and `imageHeight` are not specified, the compressed image will u
 
 Get-OBSSourceScreenshot calls the OBS WebSocket with a request of type GetSourceScreenshot.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getsourcescreenshot](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getsourcescreenshot)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **SourceName**
 
@@ -39,7 +55,6 @@ Name of the source to take a screenshot of
 
 
 
----
 #### **ImageFormat**
 
 Image compression format to use. Use `GetVersion` to get compatible image formats
@@ -55,7 +70,6 @@ Image compression format to use. Use `GetVersion` to get compatible image format
 
 
 
----
 #### **ImageWidth**
 
 Width to scale the screenshot to
@@ -71,7 +85,6 @@ Width to scale the screenshot to
 
 
 
----
 #### **ImageHeight**
 
 Height to scale the screenshot to
@@ -87,7 +100,6 @@ Height to scale the screenshot to
 
 
 
----
 #### **ImageCompressionQuality**
 
 Compression quality to use. 0 for high compression, 100 for uncompressed. -1 to use "default" (whatever that means, idk)
@@ -103,7 +115,6 @@ Compression quality to use. 0 for high compression, 100 for uncompressed. -1 to 
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -113,15 +124,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Get-OBSSourceScreenshot [-SourceName] <String> [-ImageFormat] <String> [[-ImageWidth] <Double>] [[-ImageHeight] <Double>] [[-ImageCompressionQuality] <Double>] [-PassThru] [<CommonParameters>]
 ```
----

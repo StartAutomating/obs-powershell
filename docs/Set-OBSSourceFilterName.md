@@ -1,9 +1,17 @@
 Set-OBSSourceFilterName
 -----------------------
+
+
+
+
 ### Synopsis
 Set-OBSSourceFilterName : SetSourceFilterName
 
+
+
 ---
+
+
 ### Description
 
 Sets the name of a source filter (rename).
@@ -11,13 +19,21 @@ Sets the name of a source filter (rename).
 
 Set-OBSSourceFilterName calls the OBS WebSocket with a request of type SetSourceFilterName.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setsourcefiltername](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setsourcefiltername)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **SourceName**
 
@@ -34,7 +50,6 @@ Name of the source the filter is on
 
 
 
----
 #### **FilterName**
 
 Current name of the filter
@@ -50,7 +65,6 @@ Current name of the filter
 
 
 
----
 #### **NewFilterName**
 
 New name for the filter
@@ -66,7 +80,6 @@ New name for the filter
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -76,15 +89,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Set-OBSSourceFilterName [-SourceName] <String> [-FilterName] <String> [-NewFilterName] <String> [-PassThru] [<CommonParameters>]
 ```
----

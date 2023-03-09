@@ -1,9 +1,17 @@
 Set-OBSCurrentSceneTransitionDuration
 -------------------------------------
+
+
+
+
 ### Synopsis
 Set-OBSCurrentSceneTransitionDuration : SetCurrentSceneTransitionDuration
 
+
+
 ---
+
+
 ### Description
 
 Sets the duration of the current scene transition, if it is not fixed.
@@ -11,13 +19,21 @@ Sets the duration of the current scene transition, if it is not fixed.
 
 Set-OBSCurrentSceneTransitionDuration calls the OBS WebSocket with a request of type SetCurrentSceneTransitionDuration.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setcurrentscenetransitionduration](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setcurrentscenetransitionduration)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **TransitionDuration**
 
@@ -34,7 +50,6 @@ Duration in milliseconds
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -44,15 +59,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Set-OBSCurrentSceneTransitionDuration [-TransitionDuration] <Double> [-PassThru] [<CommonParameters>]
 ```
----

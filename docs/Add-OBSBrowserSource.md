@@ -1,21 +1,37 @@
 Add-OBSBrowserSource
 --------------------
+
+
+
+
 ### Synopsis
 Adds a browser source
 
+
+
 ---
+
+
 ### Description
 
 Adds a browser source to OBS.
 
+
+
 ---
+
+
 ### Examples
 #### EXAMPLE 1
 ```PowerShell
 Add-OBSBrowserSource
 ```
 
+
+
 ---
+
+
 ### Parameters
 #### **Uri**
 
@@ -27,13 +43,12 @@ If the uri points to a local file, this will be preferred
 
 
 
-|Type   |Required|Position|PipelineInput        |
-|-------|--------|--------|---------------------|
-|`[Uri]`|false   |1       |true (ByPropertyName)|
+|Type   |Required|Position|PipelineInput        |Aliases                                        |
+|-------|--------|--------|---------------------|-----------------------------------------------|
+|`[Uri]`|false   |1       |true (ByPropertyName)|Url<br/>Href<br/>Path<br/>FilePath<br/>FullName|
 
 
 
----
 #### **Width**
 
 The width of the browser source.
@@ -50,7 +65,6 @@ If none is provided, this will be the output width of the video settings.
 
 
 
----
 #### **Height**
 
 The width of the browser source.
@@ -67,7 +81,6 @@ If none is provided, this will be the output height of the video settings.
 
 
 
----
 #### **CSS**
 
 The css style used to render the browser page.
@@ -83,7 +96,6 @@ The css style used to render the browser page.
 
 
 
----
 #### **ShutdownWhenHidden**
 
 If set, the browser source will shutdown when it is hidden
@@ -99,7 +111,6 @@ If set, the browser source will shutdown when it is hidden
 
 
 
----
 #### **RestartWhenActived**
 
 If set, the browser source will restart when it is activated.
@@ -115,7 +126,6 @@ If set, the browser source will restart when it is activated.
 
 
 
----
 #### **RerouteAudio**
 
 If set, audio from the browser source will be rerouted into OBS.
@@ -131,7 +141,6 @@ If set, audio from the browser source will be rerouted into OBS.
 
 
 
----
 #### **FramesPerSecond**
 
 If provided, the browser source will render at a custom frame rate.
@@ -141,13 +150,12 @@ If provided, the browser source will render at a custom frame rate.
 
 
 
-|Type     |Required|Position|PipelineInput        |
-|---------|--------|--------|---------------------|
-|`[Int32]`|false   |5       |true (ByPropertyName)|
+|Type     |Required|Position|PipelineInput        |Aliases|
+|---------|--------|--------|---------------------|-------|
+|`[Int32]`|false   |5       |true (ByPropertyName)|FPS    |
 
 
 
----
 #### **Scene**
 
 The name of the scene.
@@ -164,7 +172,6 @@ If no scene name is provided, the current program scene will be used.
 
 
 
----
 #### **Name**
 
 The name of the input.
@@ -181,9 +188,28 @@ If no name is provided, the last segment of the URI or file path will be the inp
 
 
 
+#### **Force**
+
+If set, will check if the source exists in the scene before creating it and removing any existing sources found.
+If not set, you will get an error if a source with the same name exists.
+
+
+
+
+
+
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|
+
+
+
+
+
 ---
+
+
 ### Syntax
 ```PowerShell
-Add-OBSBrowserSource [[-Uri] <Uri>] [[-Width] <Int32>] [[-Height] <Int32>] [[-CSS] <String>] [-ShutdownWhenHidden] [-RestartWhenActived] [-RerouteAudio] [[-FramesPerSecond] <Int32>] [[-Scene] <String>] [[-Name] <String>] [<CommonParameters>]
+Add-OBSBrowserSource [[-Uri] <Uri>] [[-Width] <Int32>] [[-Height] <Int32>] [[-CSS] <String>] [-ShutdownWhenHidden] [-RestartWhenActived] [-RerouteAudio] [[-FramesPerSecond] <Int32>] [[-Scene] <String>] [[-Name] <String>] [-Force] [<CommonParameters>]
 ```
----

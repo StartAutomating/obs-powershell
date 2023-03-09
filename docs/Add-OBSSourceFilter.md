@@ -1,9 +1,17 @@
 Add-OBSSourceFilter
 -------------------
+
+
+
+
 ### Synopsis
 Add-OBSSourceFilter : CreateSourceFilter
 
+
+
 ---
+
+
 ### Description
 
 Creates a new filter, adding it to the specified source.
@@ -11,13 +19,21 @@ Creates a new filter, adding it to the specified source.
 
 Add-OBSSourceFilter calls the OBS WebSocket with a request of type CreateSourceFilter.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createsourcefilter](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createsourcefilter)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **SourceName**
 
@@ -34,7 +50,6 @@ Name of the source to add the filter to
 
 
 
----
 #### **FilterName**
 
 Name of the new filter to be created
@@ -50,7 +65,6 @@ Name of the new filter to be created
 
 
 
----
 #### **FilterKind**
 
 The kind of filter to be created
@@ -66,7 +80,6 @@ The kind of filter to be created
 
 
 
----
 #### **FilterSettings**
 
 Settings object to initialize the filter with
@@ -82,7 +95,6 @@ Settings object to initialize the filter with
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -92,15 +104,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Add-OBSSourceFilter [-SourceName] <String> [-FilterName] <String> [-FilterKind] <String> [[-FilterSettings] <PSObject>] [-PassThru] [<CommonParameters>]
 ```
----

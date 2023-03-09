@@ -1,9 +1,17 @@
 Get-OBSSourceFilterList
 -----------------------
+
+
+
+
 ### Synopsis
 Get-OBSSourceFilterList : GetSourceFilterList
 
+
+
 ---
+
+
 ### Description
 
 Gets an array of all of a source's filters.
@@ -11,13 +19,21 @@ Gets an array of all of a source's filters.
 
 Get-OBSSourceFilterList calls the OBS WebSocket with a request of type GetSourceFilterList.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getsourcefilterlist](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getsourcefilterlist)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **SourceName**
 
@@ -34,7 +50,6 @@ Name of the source
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -44,15 +59,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Get-OBSSourceFilterList [-SourceName] <String> [-PassThru] [<CommonParameters>]
 ```
----

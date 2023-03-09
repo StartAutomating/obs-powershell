@@ -1,9 +1,17 @@
 Set-OBSSceneItemTransform
 -------------------------
+
+
+
+
 ### Synopsis
 Set-OBSSceneItemTransform : SetSceneItemTransform
 
+
+
 ---
+
+
 ### Description
 
 Sets the transform and crop info of a scene item.
@@ -11,13 +19,21 @@ Sets the transform and crop info of a scene item.
 
 Set-OBSSceneItemTransform calls the OBS WebSocket with a request of type SetSceneItemTransform.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setsceneitemtransform](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setsceneitemtransform)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **SceneName**
 
@@ -34,7 +50,6 @@ Name of the scene the item is in
 
 
 
----
 #### **SceneItemId**
 
 Numeric ID of the scene item
@@ -50,7 +65,6 @@ Numeric ID of the scene item
 
 
 
----
 #### **SceneItemTransform**
 
 Object containing scene item transform info to update
@@ -66,7 +80,6 @@ Object containing scene item transform info to update
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -76,15 +89,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Set-OBSSceneItemTransform [-SceneName] <String> [-SceneItemId] <Double> [-SceneItemTransform] <PSObject> [-PassThru] [<CommonParameters>]
 ```
----

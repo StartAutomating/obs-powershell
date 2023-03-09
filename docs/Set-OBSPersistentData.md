@@ -1,9 +1,17 @@
 Set-OBSPersistentData
 ---------------------
+
+
+
+
 ### Synopsis
 Set-OBSPersistentData : SetPersistentData
 
+
+
 ---
+
+
 ### Description
 
 Sets the value of a "slot" from the selected persistent data realm.
@@ -11,13 +19,21 @@ Sets the value of a "slot" from the selected persistent data realm.
 
 Set-OBSPersistentData calls the OBS WebSocket with a request of type SetPersistentData.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setpersistentdata](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setpersistentdata)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **Realm**
 
@@ -34,7 +50,6 @@ The data realm to select. `OBS_WEBSOCKET_DATA_REALM_GLOBAL` or `OBS_WEBSOCKET_DA
 
 
 
----
 #### **SlotName**
 
 The name of the slot to retrieve data from
@@ -50,7 +65,6 @@ The name of the slot to retrieve data from
 
 
 
----
 #### **SlotValue**
 
 The value to apply to the slot
@@ -66,7 +80,6 @@ The value to apply to the slot
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -76,15 +89,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Set-OBSPersistentData [-Realm] <String> [-SlotName] <String> [-SlotValue] <PSObject> [-PassThru] [<CommonParameters>]
 ```
----

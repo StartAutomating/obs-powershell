@@ -39,7 +39,12 @@ function Add-OBSDisplaySource {
     [Parameter(ValueFromPipelineByPropertyName)]
     [Alias('InputName')]
     [string]
-    $Name
+    $Name,
+# If set, will check if the source exists in the scene before creating it and removing any existing sources found.
+    # If not set, you will get an error if a source with the same name exists.
+    [Parameter(ValueFromPipelineByPropertyName)]
+    [switch]
+    $Force
     )
 dynamicParam {
     $baseCommand = 
@@ -111,6 +116,14 @@ dynamicParam {
             inputKind = "monitor_capture"
             inputSettings = $myParameterData
         }
+        # If -Force is provided
+        if ($Force) {
+            # Clear any items from that scene
+            Get-OBSSceneItem -sceneName $myParameters["Scene"] |
+                Where-Object SourceName -eq $myParameters["Name"] |
+                Remove-OBSInput -InputName { $_.SourceName }
+        }
+        
         $outputAddedResult = Add-OBSInput @addObsInputParams
         if ($outputAddedResult) {
             Get-OBSSceneItem -sceneName $myParameters["Scene"] |

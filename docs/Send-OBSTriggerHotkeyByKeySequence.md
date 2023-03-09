@@ -1,9 +1,17 @@
 Send-OBSTriggerHotkeyByKeySequence
 ----------------------------------
+
+
+
+
 ### Synopsis
 Send-OBSTriggerHotkeyByKeySequence : TriggerHotkeyByKeySequence
 
+
+
 ---
+
+
 ### Description
 
 Triggers a hotkey using a sequence of keys.
@@ -11,13 +19,21 @@ Triggers a hotkey using a sequence of keys.
 
 Send-OBSTriggerHotkeyByKeySequence calls the OBS WebSocket with a request of type TriggerHotkeyByKeySequence.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#triggerhotkeybykeysequence](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#triggerhotkeybykeysequence)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **KeyId**
 
@@ -34,7 +50,6 @@ The OBS key ID to use. See https://github.com/obsproject/obs-studio/blob/master/
 
 
 
----
 #### **KeyModifiers**
 
 Object containing key modifiers to apply
@@ -50,7 +65,6 @@ Object containing key modifiers to apply
 
 
 
----
 #### **KeyModifiersshift**
 
 Press Shift
@@ -66,7 +80,6 @@ Press Shift
 
 
 
----
 #### **KeyModifierscontrol**
 
 Press CTRL
@@ -82,7 +95,6 @@ Press CTRL
 
 
 
----
 #### **KeyModifiersalt**
 
 Press ALT
@@ -98,7 +110,6 @@ Press ALT
 
 
 
----
 #### **KeyModifierscommand**
 
 Press CMD (Mac)
@@ -114,7 +125,6 @@ Press CMD (Mac)
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -124,15 +134,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Send-OBSTriggerHotkeyByKeySequence [[-KeyId] <String>] [[-KeyModifiers] <PSObject>] [-KeyModifiersshift] [-KeyModifierscontrol] [-KeyModifiersalt] [-KeyModifierscommand] [-PassThru] [<CommonParameters>]
 ```
----

@@ -164,7 +164,7 @@ dynamicParam {
         if ($Force) {
             # Clear any items from that scene
             Get-OBSSceneItem -sceneName $myParameters["Scene"] |
-                Where-Object SourceName -eq $myParameters["Name"] |
+                Where-Object SourceName -eq $name |
                 Remove-OBSInput -InputName { $_.SourceName }
         }        
         $outputAddedResult = Add-OBSInput @addSplat

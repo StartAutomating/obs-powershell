@@ -1,9 +1,17 @@
 Set-OBSSourceFilterIndex
 ------------------------
+
+
+
+
 ### Synopsis
 Set-OBSSourceFilterIndex : SetSourceFilterIndex
 
+
+
 ---
+
+
 ### Description
 
 Sets the index position of a filter on a source.
@@ -11,13 +19,21 @@ Sets the index position of a filter on a source.
 
 Set-OBSSourceFilterIndex calls the OBS WebSocket with a request of type SetSourceFilterIndex.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setsourcefilterindex](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setsourcefilterindex)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **SourceName**
 
@@ -34,7 +50,6 @@ Name of the source the filter is on
 
 
 
----
 #### **FilterName**
 
 Name of the filter
@@ -50,7 +65,6 @@ Name of the filter
 
 
 
----
 #### **FilterIndex**
 
 New index position of the filter
@@ -66,7 +80,6 @@ New index position of the filter
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -76,15 +89,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Set-OBSSourceFilterIndex [-SourceName] <String> [-FilterName] <String> [-FilterIndex] <Double> [-PassThru] [<CommonParameters>]
 ```
----

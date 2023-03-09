@@ -30,7 +30,13 @@ function Add-OBSColorSource
     [ValidatePattern('\#(?>[0-9a-f]{8}|[0-9a-f]{6}|[0-9a-f]{4}|[0-9a-f]{3})')]
     [Parameter(ValueFromPipelineByPropertyName)]
     [string]
-    $Color
+    $Color,
+
+    # If set, will check if the source exists in the scene before creating it and removing any existing sources found.
+    # If not set, you will get an error if a source with the same name exists.
+    [Parameter(ValueFromPipelineByPropertyName)]
+    [switch]
+    $Force
     )
     
     process {
@@ -97,6 +103,14 @@ function Add-OBSColorSource
             inputName = $myParameters["Name"]
             inputKind = "color_source_v3"
             inputSettings = $myParameterData
+        }
+
+        # If -Force is provided
+        if ($Force) {
+            # Clear any items from that scene
+            Get-OBSSceneItem -sceneName $myParameters["Scene"] |
+                Where-Object SourceName -eq $myParameters["Name"] |
+                Remove-OBSInput -InputName { $_.SourceName }
         }
 
         $outputAddedResult = Add-OBSInput @addObsInputParams

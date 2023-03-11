@@ -105,11 +105,13 @@ function Show-OBS {
             $SourceParameter.Force = $Force
         }
 
+        # If we do not want to create a media source, 
         if (-not $IsMediaSource) {
-            # Create a browser source
+            # we create a browser source.
             $SourceParameter.Uri = $FilePath
+            # If the path was not already HTML,
             if ($RootPath -and $FilePath -notmatch '\.html{0,1}$') {
-                # Make a minimal frame in a .html file
+                # we make a minimal frame in a .html file
                 $relativePath = $FilePath.Substring($RootPath.Length + 1)
                 $htmlFrame = "<html>
                 <body style='width:100%;height:100%'>
@@ -121,7 +123,8 @@ function Show-OBS {
                 $htmlPath = Join-Path $RootPath "$($leafPath).html"
 
                 $htmlFrame | Set-Content -Path $htmlPath
-                # And set up the CSS for that frame.
+                # And set up the CSS for that frame, passing down -Opacity.
+                # (this may not work for all images)
                 $css = "
                 body { 
                     background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden;                    
@@ -134,7 +137,7 @@ function Show-OBS {
                 "
                 $SourceParameter.Uri = $htmlPath
                 $SourceParameter.CSS = $css
-                Add-OBSBrowserSource @SourceParameter    
+                Add-OBSBrowserSource @SourceParameter
             } else {
                 Add-OBSBrowserSource @SourceParameter    
             }

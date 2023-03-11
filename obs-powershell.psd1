@@ -103,6 +103,7 @@ Initial Release of obs-powershell
 'Connect-OBS',
 'Disconnect-OBS',
 'Receive-OBS',
+'Remove-OBS',
 'Send-OBS',
 'Watch-OBS',
 'Add-OBSBrowserSource',

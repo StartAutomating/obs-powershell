@@ -54,8 +54,22 @@ function Show-OBS {
     # If not set, you will get an error if a source with the same name exists.
     [Parameter(ValueFromPipelineByPropertyName)]
     [switch]
-    $Force
+    $Force,
+
+    # If set, will make the input become the size of the screen.
+    [Parameter(ValueFromPipelineByPropertyName)]
+    [switch]
+    $FitToScreen
     )
+
+    begin {
+        filter FitToScreenAndOutput {
+            if ($FitToScreen -and $_.FitToScreen) {
+                $_.FitToScreen()
+            }
+            $_
+        }
+    }
 
     process {
         # If we had a -RootPath
@@ -137,14 +151,14 @@ function Show-OBS {
                 "
                 $SourceParameter.Uri = $htmlPath
                 $SourceParameter.CSS = $css
-                Add-OBSBrowserSource @SourceParameter
+                Add-OBSBrowserSource @SourceParameter | FitToScreenAndOutput
             } else {
-                Add-OBSBrowserSource @SourceParameter    
+                Add-OBSBrowserSource @SourceParameter | FitToScreenAndOutput
             }
 
         } else {
             $SourceParameter.FilePath = $FilePath
-            Add-OBSMediaSource @SourceParameter
+            Add-OBSMediaSource @SourceParameter | FitToScreenAndOutput
         }
     }
 }

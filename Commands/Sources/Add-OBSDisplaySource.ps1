@@ -123,7 +123,11 @@ dynamicParam {
                 Where-Object SourceName -eq $myParameters["Name"] |
                 Remove-OBSInput -InputName { $_.SourceName }
         }
-        
+        # If -SceneItemEnabled was passed,
+        if ($myParameters.Contains('SceneItemEnabled')) {
+            # propagate it to Add-OBSInput.
+            $addSplat.SceneItemEnabled = $myParameters['SceneItemEnabled'] -as [bool]
+        }
         $outputAddedResult = Add-OBSInput @addObsInputParams
         if ($outputAddedResult) {
             Get-OBSSceneItem -sceneName $myParameters["Scene"] |

@@ -67,7 +67,11 @@ function Add-OBSMediaSource {
     # If not set, you will get an error if a source with the same name exists.
     [Parameter(ValueFromPipelineByPropertyName)]
     [switch]
-    $Force
+    $Force,
+# If set, will fit the input to the screen.
+    [Parameter(ValueFromPipelineByPropertyName)]
+    [switch]
+    $FitToScreen
     )
 dynamicParam {
     $baseCommand = 
@@ -170,7 +174,13 @@ dynamicParam {
         $outputAddedResult = Add-OBSInput @addSplat
         if ($outputAddedResult) {
             Get-OBSSceneItem -sceneName $myParameters["Scene"] |
-                Where-Object SourceName -eq $name
+                Where-Object SourceName -eq $name |
+                Foreach-Object {
+                    if ($FitToScreen) {
+                        $_.FitToScreen()
+                    }
+                    $_
+                }
         }
     
 }

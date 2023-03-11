@@ -1,11 +1,11 @@
-Clear-OBSScene
---------------
+Hide-OBS
+--------
 
 
 
 
 ### Synopsis
-Clears a Scene in OBS
+Hide OBS
 
 
 
@@ -14,11 +14,17 @@ Clears a Scene in OBS
 
 ### Description
 
-Clears a Scene in OBS.
+Hides items in OBS
 
-All inputs will be removed from the scene.
 
-This cannot be undone, so you will be prompted for confirmation.
+
+---
+
+
+### Related Links
+* [Set-OBSSceneItemEnabled](Set-OBSSceneItemEnabled.md)
+
+
 
 
 
@@ -28,7 +34,7 @@ This cannot be undone, so you will be prompted for confirmation.
 ### Examples
 #### EXAMPLE 1
 ```PowerShell
-Clear-OBSScene -SceneName Scene
+Hide-OBS -SourceName "foo"
 ```
 
 
@@ -37,9 +43,24 @@ Clear-OBSScene -SceneName Scene
 
 
 ### Parameters
+#### **ItemName**
+
+The name of the item we want to Hide
+
+
+
+
+
+
+|Type      |Required|Position|PipelineInput        |Aliases                 |
+|----------|--------|--------|---------------------|------------------------|
+|`[Object]`|true    |1       |true (ByPropertyName)|SourceName<br/>InputName|
+
+
+
 #### **SceneName**
 
-Name of the scene.
+The name of the scene.  If not provided, the current program scene will be used.
 
 
 
@@ -48,7 +69,7 @@ Name of the scene.
 
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
-|`[String]`|false   |1       |true (ByPropertyName)|
+|`[String]`|false   |2       |true (ByPropertyName)|
 
 
 
@@ -71,5 +92,5 @@ If the command sets a ```[ConfirmImpact("Medium")]``` which is lower than ```$co
 
 ### Syntax
 ```PowerShell
-Clear-OBSScene [[-SceneName] <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Hide-OBS [-ItemName] <Object> [[-SceneName] <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```

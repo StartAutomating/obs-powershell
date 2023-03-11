@@ -1,14 +1,26 @@
 Send-OBS
 --------
+
+
+
+
 ### Synopsis
 Sends messages to the OBS websocket.
 
+
+
 ---
+
+
 ### Description
 
 Sends one or more messages to the OBS websocket.
 
+
+
 ---
+
+
 ### Related Links
 * [Receive-OBS](Receive-OBS.md)
 
@@ -18,7 +30,11 @@ Sends one or more messages to the OBS websocket.
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **MessageData**
 
@@ -29,13 +45,12 @@ The data to send to the obs websocket.
 
 
 
-|Type      |Required|Position|PipelineInput                 |
-|----------|--------|--------|------------------------------|
-|`[Object]`|false   |1       |true (ByValue, ByPropertyName)|
+|Type      |Required|Position|PipelineInput                 |Aliases|
+|----------|--------|--------|------------------------------|-------|
+|`[Object]`|false   |1       |true (ByValue, ByPropertyName)|Payload|
 
 
 
----
 #### **StepTime**
 
 If provided, will sleep after each step.
@@ -53,7 +68,6 @@ If -SerialFrame was provied, -StepTime will be the number of frames to wait.
 
 
 
----
 #### **Parallel**
 
 If set, will process a batch of requests in parallel.
@@ -69,7 +83,6 @@ If set, will process a batch of requests in parallel.
 
 
 
----
 #### **SerialFrame**
 
 If set, will process a batch of requests in parallel.
@@ -85,9 +98,12 @@ If set, will process a batch of requests in parallel.
 
 
 
+
+
 ---
+
+
 ### Syntax
 ```PowerShell
 Send-OBS [[-MessageData] <Object>] [[-StepTime] <TimeSpan>] [-Parallel] [-SerialFrame] [<CommonParameters>]
 ```
----

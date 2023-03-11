@@ -1,9 +1,17 @@
 Add-OBSSceneItem
 ----------------
+
+
+
+
 ### Synopsis
 Add-OBSSceneItem : CreateSceneItem
 
+
+
 ---
+
+
 ### Description
 
 Creates a new scene item using a source.
@@ -13,13 +21,21 @@ Scenes only
 
 Add-OBSSceneItem calls the OBS WebSocket with a request of type CreateSceneItem.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createsceneitem](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createsceneitem)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **SceneName**
 
@@ -36,7 +52,6 @@ Name of the scene to create the new item in
 
 
 
----
 #### **SourceName**
 
 Name of the source to add to the scene
@@ -52,7 +67,6 @@ Name of the source to add to the scene
 
 
 
----
 #### **SceneItemEnabled**
 
 Enable state to apply to the scene item on creation
@@ -68,7 +82,6 @@ Enable state to apply to the scene item on creation
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -78,15 +91,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Add-OBSSceneItem [-SceneName] <String> [-SourceName] <String> [-SceneItemEnabled] [-PassThru] [<CommonParameters>]
 ```
----

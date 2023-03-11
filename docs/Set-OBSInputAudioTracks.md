@@ -1,9 +1,17 @@
 Set-OBSInputAudioTracks
 -----------------------
+
+
+
+
 ### Synopsis
 Set-OBSInputAudioTracks : SetInputAudioTracks
 
+
+
 ---
+
+
 ### Description
 
 Sets the enable state of audio tracks of an input.
@@ -11,13 +19,21 @@ Sets the enable state of audio tracks of an input.
 
 Set-OBSInputAudioTracks calls the OBS WebSocket with a request of type SetInputAudioTracks.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setinputaudiotracks](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setinputaudiotracks)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **InputName**
 
@@ -34,7 +50,6 @@ Name of the input
 
 
 
----
 #### **InputAudioTracks**
 
 Track settings to apply
@@ -50,7 +65,6 @@ Track settings to apply
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -60,15 +74,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Set-OBSInputAudioTracks [-InputName] <String> [-InputAudioTracks] <PSObject> [-PassThru] [<CommonParameters>]
 ```
----

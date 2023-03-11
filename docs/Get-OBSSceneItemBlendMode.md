@@ -1,9 +1,17 @@
 Get-OBSSceneItemBlendMode
 -------------------------
+
+
+
+
 ### Synopsis
 Get-OBSSceneItemBlendMode : GetSceneItemBlendMode
 
+
+
 ---
+
+
 ### Description
 
 Gets the blend mode of a scene item.
@@ -23,13 +31,21 @@ Scenes and Groups
 
 Get-OBSSceneItemBlendMode calls the OBS WebSocket with a request of type GetSceneItemBlendMode.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getsceneitemblendmode](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getsceneitemblendmode)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **SceneName**
 
@@ -46,7 +62,6 @@ Name of the scene the item is in
 
 
 
----
 #### **SceneItemId**
 
 Numeric ID of the scene item
@@ -62,7 +77,6 @@ Numeric ID of the scene item
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -72,15 +86,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Get-OBSSceneItemBlendMode [-SceneName] <String> [-SceneItemId] <Double> [-PassThru] [<CommonParameters>]
 ```
----

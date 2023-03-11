@@ -1,9 +1,17 @@
 Set-OBSOutputSettings
 ---------------------
+
+
+
+
 ### Synopsis
 Set-OBSOutputSettings : SetOutputSettings
 
+
+
 ---
+
+
 ### Description
 
 Sets the settings of an output.
@@ -11,13 +19,21 @@ Sets the settings of an output.
 
 Set-OBSOutputSettings calls the OBS WebSocket with a request of type SetOutputSettings.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setoutputsettings](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setoutputsettings)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **OutputName**
 
@@ -34,7 +50,6 @@ Output name
 
 
 
----
 #### **OutputSettings**
 
 Output settings
@@ -50,7 +65,6 @@ Output settings
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -60,15 +74,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Set-OBSOutputSettings [-OutputName] <String> [-OutputSettings] <PSObject> [-PassThru] [<CommonParameters>]
 ```
----

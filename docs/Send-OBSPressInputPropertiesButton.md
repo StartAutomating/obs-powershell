@@ -1,9 +1,17 @@
 Send-OBSPressInputPropertiesButton
 ----------------------------------
+
+
+
+
 ### Synopsis
 Send-OBSPressInputPropertiesButton : PressInputPropertiesButton
 
+
+
 ---
+
+
 ### Description
 
 Presses a button in the properties of an input.
@@ -17,13 +25,21 @@ Note: Use this in cases where there is a button in the properties of an input th
 
 Send-OBSPressInputPropertiesButton calls the OBS WebSocket with a request of type PressInputPropertiesButton.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#pressinputpropertiesbutton](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#pressinputpropertiesbutton)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **InputName**
 
@@ -40,7 +56,6 @@ Name of the input
 
 
 
----
 #### **PropertyName**
 
 Name of the button property to press
@@ -56,7 +71,6 @@ Name of the button property to press
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -66,15 +80,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Send-OBSPressInputPropertiesButton [-InputName] <String> [-PropertyName] <String> [-PassThru] [<CommonParameters>]
 ```
----

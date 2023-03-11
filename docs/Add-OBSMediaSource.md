@@ -1,27 +1,47 @@
 Add-OBSMediaSource
 ------------------
+
+
+
+
 ### Synopsis
 Adds a media source
 
+
+
 ---
+
+
 ### Description
 
 Adds a media source to OBS.
 
+
+
 ---
+
+
 ### Related Links
 * [Add-OBSInput](Add-OBSInput.md)
 
 
 
+
+
 ---
+
+
 ### Examples
 #### EXAMPLE 1
 ```PowerShell
 Add-OBSMediaSource -FilePath My.mp4
 ```
 
+
+
 ---
+
+
 ### Parameters
 #### **FilePath**
 
@@ -32,13 +52,12 @@ The path to the media file.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[String]`|true    |1       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                              |
+|----------|--------|--------|---------------------|-------------------------------------|
+|`[String]`|true    |1       |true (ByPropertyName)|FullName<br/>LocalFile<br/>local_file|
 
 
 
----
 #### **CloseWhenInactive**
 
 If set, the source will close when it is inactive.
@@ -56,7 +75,6 @@ To explicitly set it to false, use -CloseWhenInactive:$false
 
 
 
----
 #### **Loop**
 
 If set, the source will automatically restart.
@@ -66,13 +84,12 @@ If set, the source will automatically restart.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases|
+|----------|--------|--------|---------------------|-------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|Looping|
 
 
 
----
 #### **UseHardwareDecoding**
 
 If set, will use hardware decoding, if available.
@@ -82,13 +99,12 @@ If set, will use hardware decoding, if available.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                       |
+|----------|--------|--------|---------------------|------------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|HardwareDecoding<br/>hw_decode|
 
 
 
----
 #### **ClearOnMediaEnd**
 
 If set, will clear the output on the end of the media.
@@ -101,13 +117,12 @@ To explicitly set to false, use -ClearMediaEnd:$false
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                          |
+|----------|--------|--------|---------------------|---------------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|ClearOnEnd<br/>NoFreezeFrameOnEnd|
 
 
 
----
 #### **FFMpegOption**
 
 Any FFMpeg demuxer options.
@@ -117,13 +132,12 @@ Any FFMpeg demuxer options.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[String]`|false   |2       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                         |
+|----------|--------|--------|---------------------|--------------------------------|
+|`[String]`|false   |2       |true (ByPropertyName)|FFMpegOptions<br/>FFMpeg_Options|
 
 
 
----
 #### **Scene**
 
 The name of the scene.
@@ -140,7 +154,6 @@ If no scene name is provided, the current program scene will be used.
 
 
 
----
 #### **Name**
 
 The name of the input.
@@ -157,9 +170,43 @@ If no name is provided, the last segment of the URI or file path will be the inp
 
 
 
+#### **Force**
+
+If set, will check if the source exists in the scene before creating it and removing any existing sources found.
+If not set, you will get an error if a source with the same name exists.
+
+
+
+
+
+
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|
+
+
+
+#### **FitToScreen**
+
+If set, will fit the input to the screen.
+
+
+
+
+
+
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|
+
+
+
+
+
 ---
+
+
 ### Syntax
 ```PowerShell
-Add-OBSMediaSource [-FilePath] <String> [-CloseWhenInactive] [-Loop] [-UseHardwareDecoding] [-ClearOnMediaEnd] [[-FFMpegOption] <String>] [[-Scene] <String>] [[-Name] <String>] [<CommonParameters>]
+Add-OBSMediaSource [-FilePath] <String> [-CloseWhenInactive] [-Loop] [-UseHardwareDecoding] [-ClearOnMediaEnd] [[-FFMpegOption] <String>] [[-Scene] <String>] [[-Name] <String>] [-Force] [-FitToScreen] [<CommonParameters>]
 ```
----

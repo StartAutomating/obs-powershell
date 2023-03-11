@@ -1,9 +1,17 @@
 Set-OBSSceneItemBlendMode
 -------------------------
+
+
+
+
 ### Synopsis
 Set-OBSSceneItemBlendMode : SetSceneItemBlendMode
 
+
+
 ---
+
+
 ### Description
 
 Sets the blend mode of a scene item.
@@ -13,13 +21,21 @@ Scenes and Groups
 
 Set-OBSSceneItemBlendMode calls the OBS WebSocket with a request of type SetSceneItemBlendMode.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setsceneitemblendmode](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setsceneitemblendmode)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **SceneName**
 
@@ -36,7 +52,6 @@ Name of the scene the item is in
 
 
 
----
 #### **SceneItemId**
 
 Numeric ID of the scene item
@@ -52,7 +67,6 @@ Numeric ID of the scene item
 
 
 
----
 #### **SceneItemBlendMode**
 
 New blend mode
@@ -68,7 +82,6 @@ New blend mode
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -78,15 +91,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Set-OBSSceneItemBlendMode [-SceneName] <String> [-SceneItemId] <Double> [-SceneItemBlendMode] <String> [-PassThru] [<CommonParameters>]
 ```
----

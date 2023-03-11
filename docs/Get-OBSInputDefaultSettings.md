@@ -1,9 +1,17 @@
 Get-OBSInputDefaultSettings
 ---------------------------
+
+
+
+
 ### Synopsis
 Get-OBSInputDefaultSettings : GetInputDefaultSettings
 
+
+
 ---
+
+
 ### Description
 
 Gets the default settings for an input kind.
@@ -11,13 +19,21 @@ Gets the default settings for an input kind.
 
 Get-OBSInputDefaultSettings calls the OBS WebSocket with a request of type GetInputDefaultSettings.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getinputdefaultsettings](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getinputdefaultsettings)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **InputKind**
 
@@ -34,7 +50,6 @@ Input kind to get the default settings for
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -44,15 +59,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Get-OBSInputDefaultSettings [-InputKind] <String> [-PassThru] [<CommonParameters>]
 ```
----

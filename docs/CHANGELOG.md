@@ -1,3 +1,16 @@
+## obs-powershell 0.1.7:
+
+* New Commands:
+  * Show-OBS (Fixes #66)
+  * Hide-OBS (Fixes #67)
+  * Remove-OBS (Fixes #68)
+
+* Adding -Force to Add-OBS*Source commands (Fixes #69)
+* Add-OBS*Source Commands:  Supporting -SceneItemEnabled (Fixes #70)
+* Add-OBSMediaSource, adding -FitToScreen (Fixes #71)
+
+---
+
 ## obs-powershell 0.1.6:
 
 * Adding OBS.SceneItem .Scale (Fixes #64)

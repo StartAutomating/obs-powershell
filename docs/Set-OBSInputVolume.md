@@ -1,9 +1,17 @@
 Set-OBSInputVolume
 ------------------
+
+
+
+
 ### Synopsis
 Set-OBSInputVolume : SetInputVolume
 
+
+
 ---
+
+
 ### Description
 
 Sets the volume setting of an input.
@@ -11,13 +19,21 @@ Sets the volume setting of an input.
 
 Set-OBSInputVolume calls the OBS WebSocket with a request of type SetInputVolume.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setinputvolume](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setinputvolume)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **InputName**
 
@@ -34,7 +50,6 @@ Name of the input to set the volume of
 
 
 
----
 #### **InputVolumeMul**
 
 Volume setting in mul
@@ -50,7 +65,6 @@ Volume setting in mul
 
 
 
----
 #### **InputVolumeDb**
 
 Volume setting in dB
@@ -66,7 +80,6 @@ Volume setting in dB
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -76,15 +89,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Set-OBSInputVolume [-InputName] <String> [[-InputVolumeMul] <Double>] [[-InputVolumeDb] <Double>] [-PassThru] [<CommonParameters>]
 ```
----

@@ -1,9 +1,17 @@
 Set-OBSVideoSettings
 --------------------
+
+
+
+
 ### Synopsis
 Set-OBSVideoSettings : SetVideoSettings
 
+
+
 ---
+
+
 ### Description
 
 Sets the current video settings.
@@ -13,13 +21,21 @@ Note: Fields must be specified in pairs. For example, you cannot set only `baseW
 
 Set-OBSVideoSettings calls the OBS WebSocket with a request of type SetVideoSettings.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setvideosettings](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setvideosettings)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **FpsNumerator**
 
@@ -36,7 +52,6 @@ Numerator of the fractional FPS value
 
 
 
----
 #### **FpsDenominator**
 
 Denominator of the fractional FPS value
@@ -52,7 +67,6 @@ Denominator of the fractional FPS value
 
 
 
----
 #### **BaseWidth**
 
 Width of the base (canvas) resolution in pixels
@@ -68,7 +82,6 @@ Width of the base (canvas) resolution in pixels
 
 
 
----
 #### **BaseHeight**
 
 Height of the base (canvas) resolution in pixels
@@ -84,7 +97,6 @@ Height of the base (canvas) resolution in pixels
 
 
 
----
 #### **OutputWidth**
 
 Width of the output resolution in pixels
@@ -100,7 +112,6 @@ Width of the output resolution in pixels
 
 
 
----
 #### **OutputHeight**
 
 Height of the output resolution in pixels
@@ -116,7 +127,6 @@ Height of the output resolution in pixels
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -126,15 +136,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Set-OBSVideoSettings [[-FpsNumerator] <Double>] [[-FpsDenominator] <Double>] [[-BaseWidth] <Double>] [[-BaseHeight] <Double>] [[-OutputWidth] <Double>] [[-OutputHeight] <Double>] [-PassThru] [<CommonParameters>]
 ```
----

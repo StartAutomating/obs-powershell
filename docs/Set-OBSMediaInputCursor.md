@@ -1,9 +1,17 @@
 Set-OBSMediaInputCursor
 -----------------------
+
+
+
+
 ### Synopsis
 Set-OBSMediaInputCursor : SetMediaInputCursor
 
+
+
 ---
+
+
 ### Description
 
 Sets the cursor position of a media input.
@@ -13,13 +21,21 @@ This request does not perform bounds checking of the cursor position.
 
 Set-OBSMediaInputCursor calls the OBS WebSocket with a request of type SetMediaInputCursor.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setmediainputcursor](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setmediainputcursor)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **InputName**
 
@@ -36,7 +52,6 @@ Name of the media input
 
 
 
----
 #### **MediaCursor**
 
 New cursor position to set
@@ -52,7 +67,6 @@ New cursor position to set
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -62,15 +76,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Set-OBSMediaInputCursor [-InputName] <String> [-MediaCursor] <Double> [-PassThru] [<CommonParameters>]
 ```
----

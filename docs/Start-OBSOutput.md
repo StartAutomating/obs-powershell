@@ -1,9 +1,17 @@
 Start-OBSOutput
 ---------------
+
+
+
+
 ### Synopsis
 Start-OBSOutput : StartOutput
 
+
+
 ---
+
+
 ### Description
 
 Starts an output.
@@ -11,13 +19,21 @@ Starts an output.
 
 Start-OBSOutput calls the OBS WebSocket with a request of type StartOutput.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#startoutput](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#startoutput)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **OutputName**
 
@@ -34,7 +50,6 @@ Output name
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -44,15 +59,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Start-OBSOutput [-OutputName] <String> [-PassThru] [<CommonParameters>]
 ```
----

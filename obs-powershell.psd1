@@ -1,11 +1,11 @@
 @{
-    ModuleVersion     = '0.1.6'
+    ModuleVersion     = '0.1.7'
     RootModule        = 'obs-powershell.psm1'
     Description       = 'Script OBS with PowerShell'
     Guid              = '1417123e-a932-439f-9b68-a7313cf1e170'
     Author            = 'James Brundage'
     CompanyName       = 'Start-Automating'
-    Copyright         = '2022 Start-Automating'
+    Copyright         = '2022-2023 Start-Automating'
     FormatsToProcess  = 'obs-powershell.format.ps1xml'
     TypesToProcess    = 'obs-powershell.types.ps1xml'    
     RequiredModules   = 'ThreadJob'
@@ -16,6 +16,19 @@
             ProjectURI = 'https://github.com/StartAutomating/obs-powershell'
             LicenseURI = 'https://github.com/StartAutomating/obs-powershell/blob/main/LICENSE'
             ReleaseNotes = @'
+## obs-powershell 0.1.7:
+
+* New Commands:
+  * Show-OBS (Fixes #66)
+  * Hide-OBS (Fixes #67)
+  * Remove-OBS (Fixes #68)
+
+* Adding -Force to Add-OBS*Source commands (Fixes #69)
+* Add-OBS*Source Commands:  Supporting -SceneItemEnabled (Fixes #70)
+* Add-OBSMediaSource, adding -FitToScreen (Fixes #71)
+
+---
+
 ## obs-powershell 0.1.6:
 
 * Adding OBS.SceneItem .Scale (Fixes #64)
@@ -102,8 +115,11 @@ Initial Release of obs-powershell
     FunctionsToExport = 'Clear-OBSScene',
 'Connect-OBS',
 'Disconnect-OBS',
+'Hide-OBS',
 'Receive-OBS',
+'Remove-OBS',
 'Send-OBS',
+'Show-OBS',
 'Watch-OBS',
 'Add-OBSBrowserSource',
 'Add-OBSColorSource',

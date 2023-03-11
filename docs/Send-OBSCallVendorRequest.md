@@ -1,9 +1,17 @@
 Send-OBSCallVendorRequest
 -------------------------
+
+
+
+
 ### Synopsis
 Send-OBSCallVendorRequest : CallVendorRequest
 
+
+
 ---
+
+
 ### Description
 
 Call a request registered to a vendor.
@@ -14,13 +22,21 @@ If a plugin or script implements vendor requests or events, documentation is exp
 
 Send-OBSCallVendorRequest calls the OBS WebSocket with a request of type CallVendorRequest.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#callvendorrequest](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#callvendorrequest)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **VendorName**
 
@@ -37,7 +53,6 @@ Name of the vendor to use
 
 
 
----
 #### **RequestType**
 
 The request type to call
@@ -53,7 +68,6 @@ The request type to call
 
 
 
----
 #### **RequestData**
 
 Object containing appropriate request data
@@ -69,7 +83,6 @@ Object containing appropriate request data
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -79,15 +92,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Send-OBSCallVendorRequest [-VendorName] <String> [-RequestType] <String> [[-RequestData] <PSObject>] [-PassThru] [<CommonParameters>]
 ```
----

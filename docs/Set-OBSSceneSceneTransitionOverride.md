@@ -1,9 +1,17 @@
 Set-OBSSceneSceneTransitionOverride
 -----------------------------------
+
+
+
+
 ### Synopsis
 Set-OBSSceneSceneTransitionOverride : SetSceneSceneTransitionOverride
 
+
+
 ---
+
+
 ### Description
 
 Gets the scene transition overridden for a scene.
@@ -11,13 +19,21 @@ Gets the scene transition overridden for a scene.
 
 Set-OBSSceneSceneTransitionOverride calls the OBS WebSocket with a request of type SetSceneSceneTransitionOverride.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setscenescenetransitionoverride](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setscenescenetransitionoverride)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **SceneName**
 
@@ -34,7 +50,6 @@ Name of the scene
 
 
 
----
 #### **TransitionName**
 
 Name of the scene transition to use as override. Specify `null` to remove
@@ -50,7 +65,6 @@ Name of the scene transition to use as override. Specify `null` to remove
 
 
 
----
 #### **TransitionDuration**
 
 Duration to use for any overridden transition. Specify `null` to remove
@@ -66,7 +80,6 @@ Duration to use for any overridden transition. Specify `null` to remove
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -76,15 +89,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Set-OBSSceneSceneTransitionOverride [-SceneName] <String> [[-TransitionName] <String>] [[-TransitionDuration] <Double>] [-PassThru] [<CommonParameters>]
 ```
----

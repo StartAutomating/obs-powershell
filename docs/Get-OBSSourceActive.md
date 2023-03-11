@@ -1,9 +1,17 @@
 Get-OBSSourceActive
 -------------------
+
+
+
+
 ### Synopsis
 Get-OBSSourceActive : GetSourceActive
 
+
+
 ---
+
+
 ### Description
 
 Gets the active and show state of a source.
@@ -13,13 +21,21 @@ Gets the active and show state of a source.
 
 Get-OBSSourceActive calls the OBS WebSocket with a request of type GetSourceActive.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getsourceactive](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getsourceactive)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **SourceName**
 
@@ -36,7 +52,6 @@ Name of the source to get the active state of
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -46,15 +61,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Get-OBSSourceActive [-SourceName] <String> [-PassThru] [<CommonParameters>]
 ```
----

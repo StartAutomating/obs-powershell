@@ -68,7 +68,18 @@ function Add-OBSMediaSource
     # If no name is provided, the last segment of the URI or file path will be the input name.
     [Parameter(ValueFromPipelineByPropertyName)]
     [string]
-    $Name
+    $Name,
+
+    # If set, will check if the source exists in the scene before creating it and removing any existing sources found.
+    # If not set, you will get an error if a source with the same name exists.
+    [Parameter(ValueFromPipelineByPropertyName)]
+    [switch]
+    $Force,
+
+    # If set, will fit the input to the screen.
+    [Parameter(ValueFromPipelineByPropertyName)]
+    [switch]
+    $FitToScreen
     )
     
     process {
@@ -138,10 +149,24 @@ function Add-OBSMediaSource
             $addSplat.SceneItemEnabled = $myParameters['SceneItemEnabled'] -as [bool]
         }
 
+        # If -Force is provided
+        if ($Force) {
+            # Clear any items from that scene
+            Get-OBSSceneItem -sceneName $myParameters["Scene"] |
+                Where-Object SourceName -eq $name |
+                Remove-OBSInput -InputName { $_.SourceName }
+        }        
+
         $outputAddedResult = Add-OBSInput @addSplat
         if ($outputAddedResult) {
             Get-OBSSceneItem -sceneName $myParameters["Scene"] |
-                Where-Object SourceName -eq $name
+                Where-Object SourceName -eq $name |
+                Foreach-Object {
+                    if ($FitToScreen) {
+                        $_.FitToScreen()
+                    }
+                    $_
+                }
         }
     }
 }

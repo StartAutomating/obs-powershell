@@ -1,9 +1,17 @@
 Set-OBSCurrentSceneTransitionSettings
 -------------------------------------
+
+
+
+
 ### Synopsis
 Set-OBSCurrentSceneTransitionSettings : SetCurrentSceneTransitionSettings
 
+
+
 ---
+
+
 ### Description
 
 Sets the settings of the current scene transition.
@@ -11,13 +19,21 @@ Sets the settings of the current scene transition.
 
 Set-OBSCurrentSceneTransitionSettings calls the OBS WebSocket with a request of type SetCurrentSceneTransitionSettings.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setcurrentscenetransitionsettings](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setcurrentscenetransitionsettings)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **TransitionSettings**
 
@@ -34,7 +50,6 @@ Settings object to apply to the transition. Can be `{}`
 
 
 
----
 #### **Overlay**
 
 Whether to overlay over the current settings or replace them
@@ -50,7 +65,6 @@ Whether to overlay over the current settings or replace them
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -60,15 +74,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Set-OBSCurrentSceneTransitionSettings [-TransitionSettings] <PSObject> [-Overlay] [-PassThru] [<CommonParameters>]
 ```
----

@@ -1,9 +1,17 @@
 Set-OBSTBarPosition
 -------------------
+
+
+
+
 ### Synopsis
 Set-OBSTBarPosition : SetTBarPosition
 
+
+
 ---
+
+
 ### Description
 
 Sets the position of the TBar.
@@ -13,13 +21,21 @@ Sets the position of the TBar.
 
 Set-OBSTBarPosition calls the OBS WebSocket with a request of type SetTBarPosition.
 
+
+
 ---
+
+
 ### Related Links
 * [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#settbarposition](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#settbarposition)
 
 
 
+
+
 ---
+
+
 ### Parameters
 #### **Position**
 
@@ -36,7 +52,6 @@ New position
 
 
 
----
 #### **Release**
 
 Whether to release the TBar. Only set `false` if you know that you will be sending another position update
@@ -52,7 +67,6 @@ Whether to release the TBar. Only set `false` if you know that you will be sendi
 
 
 
----
 #### **PassThru**
 
 If set, will return the information that would otherwise be sent to OBS.
@@ -62,15 +76,18 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[Switch]`|false   |named   |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
 
 
 
 ---
+
+
 ### Syntax
 ```PowerShell
 Set-OBSTBarPosition [-Position] <Double> [-Release] [-PassThru] [<CommonParameters>]
 ```
----

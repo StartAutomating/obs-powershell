@@ -1,11 +1,11 @@
-Clear-OBSScene
---------------
+Remove-OBS
+----------
 
 
 
 
 ### Synopsis
-Clears a Scene in OBS
+Remove OBS
 
 
 
@@ -14,11 +14,21 @@ Clears a Scene in OBS
 
 ### Description
 
-Clears a Scene in OBS.
+Removes items from OBS
 
-All inputs will be removed from the scene.
 
-This cannot be undone, so you will be prompted for confirmation.
+
+---
+
+
+### Related Links
+* [Remove-OBSInput](Remove-OBSInput.md)
+
+
+
+* [Remove-OBSScene](Remove-OBSScene.md)
+
+
 
 
 
@@ -28,7 +38,12 @@ This cannot be undone, so you will be prompted for confirmation.
 ### Examples
 #### EXAMPLE 1
 ```PowerShell
-Clear-OBSScene -SceneName Scene
+Remove-OBS -SourceName "foo"
+```
+
+#### EXAMPLE 2
+```PowerShell
+Remove-OBS -SceneName "bar"
 ```
 
 
@@ -37,18 +52,18 @@ Clear-OBSScene -SceneName Scene
 
 
 ### Parameters
-#### **SceneName**
+#### **ItemName**
 
-Name of the scene.
-
-
+The name of the item we want to remove
 
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[String]`|false   |1       |true (ByPropertyName)|
+
+
+|Type      |Required|Position|PipelineInput        |Aliases                               |
+|----------|--------|--------|---------------------|--------------------------------------|
+|`[Object]`|true    |1       |true (ByPropertyName)|SourceName<br/>InputName<br/>SceneName|
 
 
 
@@ -71,5 +86,5 @@ If the command sets a ```[ConfirmImpact("Medium")]``` which is lower than ```$co
 
 ### Syntax
 ```PowerShell
-Clear-OBSScene [[-SceneName] <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-OBS [-ItemName] <Object> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```

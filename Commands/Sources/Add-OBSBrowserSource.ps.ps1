@@ -75,7 +75,13 @@ function Add-OBSBrowserSource
     # If no name is provided, the last segment of the URI or file path will be the input name.
     [Parameter(ValueFromPipelineByPropertyName)]
     [string]
-    $Name
+    $Name,
+
+    # If set, will check if the source exists in the scene before creating it and removing any existing sources found.
+    # If not set, you will get an error if a source with the same name exists.
+    [Parameter(ValueFromPipelineByPropertyName)]
+    [switch]
+    $Force
     )
     
     process {
@@ -144,8 +150,29 @@ function Add-OBSBrowserSource
                 }
         }
 
+        # If -Force is provided
+        if ($Force) {
+            # Clear any items from that scene
+            Get-OBSSceneItem -sceneName $myParameters["Scene"] |
+                Where-Object SourceName -eq $name |
+                Remove-OBSInput -InputName { $_.SourceName }
+        }
+
+
+        $addObsInputParams = [Ordered]@{
+            sceneName = $myParameters["Scene"]
+            inputKind = "browser_source"
+            inputSettings = $myParameterData
+            inputName = $Name
+        }
+        # If -SceneItemEnabled was passed,
+        if ($myParameters.Contains('SceneItemEnabled')) {
+            # propagate it to Add-OBSInput.
+            $addObsInputParams.SceneItemEnabled = $myParameters['SceneItemEnabled'] -as [bool]
+        }
+        
         $outputAddedResult = 
-            Add-OBSInput -sceneName $myParameters["Scene"] -inputKind "browser_source" -inputSettings $myParameterData -inputName $Name
+            Add-OBSInput @addObsInputParams
 
         if ($outputAddedResult) {
             Get-OBSSceneItem -sceneName $myParameters["Scene"] |

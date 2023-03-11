@@ -32,7 +32,7 @@ function Hide-OBS {
         # Walk over all items in the scene
         foreach ($sceneItem in Get-OBSSceneItem -SceneName $SceneName) {
             # If the match our wildcard and we confirm, remove it.
-            if ($sceneItem.SourceName -like $sourceName -and
+            if ($sceneItem.SourceName -like $ItemName -and
                 $PSCmdlet.ShouldProcess("Hide input $($sceneItem.SourceName)")) {
                 # Hide it.
                 $sceneItem | Set-OBSSceneItemEnabled -SceneItemEnabled:$false

@@ -102,6 +102,7 @@ Initial Release of obs-powershell
     FunctionsToExport = 'Clear-OBSScene',
 'Connect-OBS',
 'Disconnect-OBS',
+'Hide-OBS',
 'Receive-OBS',
 'Remove-OBS',
 'Send-OBS',

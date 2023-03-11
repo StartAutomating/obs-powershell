@@ -152,6 +152,21 @@ If not set, you will get an error if a source with the same name exists.
 
 
 
+#### **FitToScreen**
+
+If set, will make the input become the size of the screen.
+
+
+
+
+
+
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|
+
+
+
 
 
 ---
@@ -159,5 +174,5 @@ If not set, you will get an error if a source with the same name exists.
 
 ### Syntax
 ```PowerShell
-Show-OBS [-FilePath] <String> [[-Name] <String>] [[-RootPath] <String>] [[-Scene] <String>] [[-Opacity] <Double>] [[-SourceParameter] <IDictionary>] [-Force] [<CommonParameters>]
+Show-OBS [-FilePath] <String> [[-Name] <String>] [[-RootPath] <String>] [[-Scene] <String>] [[-Opacity] <Double>] [[-SourceParameter] <IDictionary>] [-Force] [-FitToScreen] [<CommonParameters>]
 ```

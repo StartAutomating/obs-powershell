@@ -13,7 +13,7 @@ function Hide-OBS {
     param(
     # The name of the item we want to Hide
     [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
-    [Alias('SourceName','InputName','SceneName')]
+    [Alias('SourceName','InputName')]
     $ItemName,
 
     # The name of the scene.  If not provided, the current program scene will be used.

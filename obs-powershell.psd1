@@ -106,6 +106,7 @@ Initial Release of obs-powershell
 'Receive-OBS',
 'Remove-OBS',
 'Send-OBS',
+'Show-OBS',
 'Watch-OBS',
 'Add-OBSBrowserSource',
 'Add-OBSColorSource',

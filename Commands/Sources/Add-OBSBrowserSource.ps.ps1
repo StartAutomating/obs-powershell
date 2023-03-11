@@ -158,8 +158,21 @@ function Add-OBSBrowserSource
                 Remove-OBSInput -InputName { $_.SourceName }
         }
 
+
+        $addObsInputParams = [Ordered]@{
+            sceneName = $myParameters["Scene"]
+            inputKind = "browser_source"
+            inputSettings = $myParameterData
+            inputName = $Name
+        }
+        # If -SceneItemEnabled was passed,
+        if ($myParameters.Contains('SceneItemEnabled')) {
+            # propagate it to Add-OBSInput.
+            $addObsInputParams.SceneItemEnabled = $myParameters['SceneItemEnabled'] -as [bool]
+        }
+        
         $outputAddedResult = 
-            Add-OBSInput -sceneName $myParameters["Scene"] -inputKind "browser_source" -inputSettings $myParameterData -inputName $Name
+            Add-OBSInput @addObsInputParams
 
         if ($outputAddedResult) {
             Get-OBSSceneItem -sceneName $myParameters["Scene"] |

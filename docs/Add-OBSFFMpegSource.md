@@ -186,6 +186,21 @@ If not set, you will get an error if a source with the same name exists.
 
 
 
+#### **FitToScreen**
+
+If set, will fit the input to the screen.
+
+
+
+
+
+
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|
+
+
+
 
 
 ---
@@ -193,5 +208,5 @@ If not set, you will get an error if a source with the same name exists.
 
 ### Syntax
 ```PowerShell
-Add-OBSMediaSource [-FilePath] <String> [-CloseWhenInactive] [-Loop] [-UseHardwareDecoding] [-ClearOnMediaEnd] [[-FFMpegOption] <String>] [[-Scene] <String>] [[-Name] <String>] [-Force] [<CommonParameters>]
+Add-OBSMediaSource [-FilePath] <String> [-CloseWhenInactive] [-Loop] [-UseHardwareDecoding] [-ClearOnMediaEnd] [[-FFMpegOption] <String>] [[-Scene] <String>] [[-Name] <String>] [-Force] [-FitToScreen] [<CommonParameters>]
 ```

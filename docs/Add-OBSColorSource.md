@@ -35,7 +35,7 @@ Add-OBSColorSource
 ### Parameters
 #### **Scene**
 
-The name of the scene.
+The name of the scene.    
 If no scene name is provided, the current program scene will be used.
 
 
@@ -51,7 +51,7 @@ If no scene name is provided, the current program scene will be used.
 
 #### **Name**
 
-The name of the input.
+The name of the input.    
 If no name is provided, "Display $($Monitor + 1)" will be the input source name.
 
 
@@ -78,7 +78,7 @@ If no name is provided, "Display $($Monitor + 1)" will be the input source name.
 
 #### **Force**
 
-If set, will check if the source exists in the scene before creating it and removing any existing sources found.
+If set, will check if the source exists in the scene before creating it and removing any existing sources found.    
 If not set, you will get an error if a source with the same name exists.
 
 

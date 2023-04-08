@@ -1,40 +1,41 @@
 function Add-OBSColorSource {
-<#
-    .SYNOPSIS
-        Adds a color source
-    .DESCRIPTION
-        Adds a color source to OBS.  This displays a single 32-bit color (RGBA).
-    .EXAMPLE
-        Add-OBSColorSource
+    <#
     
-#>
+    .SYNOPSIS    
+        Adds a color source    
+    .DESCRIPTION    
+        Adds a color source to OBS.  This displays a single 32-bit color (RGBA).    
+    .EXAMPLE    
+        Add-OBSColorSource    
     
-    [Alias('Add-OBSMonitorSource')]
-[CmdletBinding()]
+    #>
+            
+    [Alias('Add-OBSMonitorSource')]    
+    [CmdletBinding()]
     param(
-# The name of the scene.
-    # If no scene name is provided, the current program scene will be used.
+    # The name of the scene.    
+    # If no scene name is provided, the current program scene will be used.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [Alias('SceneName')]
     [string]
     $Scene,
-# The name of the input.
-    # If no name is provided, "Display $($Monitor + 1)" will be the input source name.
+    # The name of the input.    
+    # If no name is provided, "Display $($Monitor + 1)" will be the input source name.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [Alias('InputName')]
     [string]
     $Name,
-[ValidatePattern('\#(?>[0-9a-f]{8}|[0-9a-f]{6}|[0-9a-f]{4}|[0-9a-f]{3})')]
+    [ValidatePattern('\#(?>[0-9a-f]{8}|[0-9a-f]{6}|[0-9a-f]{4}|[0-9a-f]{3})')]
     [Parameter(ValueFromPipelineByPropertyName)]
     [string]
     $Color,
-# If set, will check if the source exists in the scene before creating it and removing any existing sources found.
-    # If not set, you will get an error if a source with the same name exists.
+    # If set, will check if the source exists in the scene before creating it and removing any existing sources found.    
+    # If not set, you will get an error if a source with the same name exists.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [switch]
     $Force
     )
-dynamicParam {
+    dynamicParam {
     $baseCommand = 
         if (-not $script:AddOBSInput) {
             $script:AddOBSInput = 
@@ -67,8 +68,8 @@ dynamicParam {
         ))
     }
     $DynamicParameters
-}
-    process {
+    }
+        process {
         $myParameters = [Ordered]@{} + $PSBoundParameters
         
         if (-not $myParameters["Scene"]) {
@@ -147,6 +148,6 @@ dynamicParam {
                 Where-Object SourceName -eq $myParameters["Name"]
         }
     
-}
+    }
 }
 

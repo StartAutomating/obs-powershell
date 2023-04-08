@@ -35,7 +35,7 @@ Add-OBSBrowserSource
 ### Parameters
 #### **Uri**
 
-The uri or file path to display.
+The uri or file path to display.    
 If the uri points to a local file, this will be preferred
 
 
@@ -51,7 +51,7 @@ If the uri points to a local file, this will be preferred
 
 #### **Width**
 
-The width of the browser source.
+The width of the browser source.    
 If none is provided, this will be the output width of the video settings.
 
 
@@ -67,7 +67,7 @@ If none is provided, this will be the output width of the video settings.
 
 #### **Height**
 
-The width of the browser source.
+The width of the browser source.    
 If none is provided, this will be the output height of the video settings.
 
 
@@ -158,7 +158,7 @@ If provided, the browser source will render at a custom frame rate.
 
 #### **Scene**
 
-The name of the scene.
+The name of the scene.    
 If no scene name is provided, the current program scene will be used.
 
 
@@ -174,7 +174,7 @@ If no scene name is provided, the current program scene will be used.
 
 #### **Name**
 
-The name of the input.
+The name of the input.    
 If no name is provided, the last segment of the URI or file path will be the input name.
 
 
@@ -190,7 +190,7 @@ If no name is provided, the last segment of the URI or file path will be the inp
 
 #### **Force**
 
-If set, will check if the source exists in the scene before creating it and removing any existing sources found.
+If set, will check if the source exists in the scene before creating it and removing any existing sources found.    
 If not set, you will get an error if a source with the same name exists.
 
 

@@ -175,6 +175,7 @@ foreach ($arg in $args) {
 }
 
 $this | Set-OBSSceneItemTransform -SceneItemTransform $cropTable
+
                     </Script>
       </ScriptMethod>
       <ScriptMethod>

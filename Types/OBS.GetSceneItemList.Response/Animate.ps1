@@ -59,7 +59,7 @@ $realTo =
 $keyNames = 'positionX', 'positionY', 'scaleX','scaleY', 'cropBottom', 'cropLeft', 'cropRight', 'cropTop'
 
 $badKey = 
-    @(foreach ($k in @($realFrom.Keys) + @($realTo.Keys)). {
+    @(foreach ($k in @($realFrom.Keys) + @($realTo.Keys)) {
         if ($k -notin $keyNames) {
             $k      
         }

@@ -1,77 +1,78 @@
 function Add-OBSBrowserSource {
-<#
-    .SYNOPSIS
-        Adds a browser source
-    .DESCRIPTION
-        Adds a browser source to OBS.
-    .EXAMPLE
-        Add-OBSBrowserSource
+    <#
     
-#>
+    .SYNOPSIS    
+        Adds a browser source    
+    .DESCRIPTION    
+        Adds a browser source to OBS.    
+    .EXAMPLE    
+        Add-OBSBrowserSource    
     
-[CmdletBinding()]
+    #>
+            
+    [CmdletBinding()]
     param(
-# The uri or file path to display.
-    # If the uri points to a local file, this will be preferred
+    # The uri or file path to display.    
+    # If the uri points to a local file, this will be preferred    
     [Parameter(ValueFromPipelineByPropertyName)]    
     [Alias('Url', 'Href','Path','FilePath','FullName')]
     [uri]
     $Uri,
-# The width of the browser source.
-    # If none is provided, this will be the output width of the video settings.
+    # The width of the browser source.    
+    # If none is provided, this will be the output width of the video settings.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("width")]
     [int]
     $Width,
-# The width of the browser source.
-    # If none is provided, this will be the output height of the video settings.
+    # The width of the browser source.    
+    # If none is provided, this will be the output height of the video settings.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("height")]
     [int]
     $Height,
-# The css style used to render the browser page. 
+    # The css style used to render the browser page.     
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("css")]
     [string]
     $CSS = "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
-# If set, the browser source will shutdown when it is hidden
+    # If set, the browser source will shutdown when it is hidden    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("shutdown")]
     [switch]
     $ShutdownWhenHidden,
-# If set, the browser source will restart when it is activated.
+    # If set, the browser source will restart when it is activated.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("restart_when_active")]
     [switch]
     $RestartWhenActived,
-# If set, audio from the browser source will be rerouted into OBS.
+    # If set, audio from the browser source will be rerouted into OBS.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("reroute_audio")]
     [switch]
     $RerouteAudio,
-# If provided, the browser source will render at a custom frame rate.
+    # If provided, the browser source will render at a custom frame rate.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("fps")]
     [Alias('FPS')]    
     [int]
     $FramesPerSecond,
-# The name of the scene.
-    # If no scene name is provided, the current program scene will be used.
+    # The name of the scene.    
+    # If no scene name is provided, the current program scene will be used.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [string]
     $Scene,
-# The name of the input.
-    # If no name is provided, the last segment of the URI or file path will be the input name.
+    # The name of the input.    
+    # If no name is provided, the last segment of the URI or file path will be the input name.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [string]
     $Name,
-# If set, will check if the source exists in the scene before creating it and removing any existing sources found.
-    # If not set, you will get an error if a source with the same name exists.
+    # If set, will check if the source exists in the scene before creating it and removing any existing sources found.    
+    # If not set, you will get an error if a source with the same name exists.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [switch]
     $Force
     )
-dynamicParam {
+    dynamicParam {
     $baseCommand = 
         if (-not $script:AddOBSInput) {
             $script:AddOBSInput = 
@@ -104,8 +105,8 @@ dynamicParam {
         ))
     }
     $DynamicParameters
-}
-    process {
+    }
+        process {
         $myParameters = [Ordered]@{} + $PSBoundParameters
         
         if ((-not $width) -or (-not $height)) {
@@ -191,5 +192,5 @@ dynamicParam {
                 Where-Object SourceName -eq $name
         }
     
-}
+    }
 }

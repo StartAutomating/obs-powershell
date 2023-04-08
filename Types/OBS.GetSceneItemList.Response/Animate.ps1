@@ -1,3 +1,10 @@
+<#
+.SYNOPSIS
+    Animates scene items
+.DESCRIPTION
+    Animates the motion of scene items within a frame.
+.EXAMPLE
+#>
 param(
 # The set of values that you're animating from.
 # Aka, the starting positions of the animation.
@@ -48,6 +55,19 @@ $realTo =
         }
         $newTo
     }
+
+$keyNames = 'positionX', 'positionY', 'scaleX','scaleY', 'cropBottom', 'cropLeft', 'cropRight', 'cropTop'
+
+$badKey = 
+    @(foreach ($k in @($realFrom.Keys) + @($realTo.Keys)). {
+        if ($k -notin $keyNames) {
+            $k      
+        }
+    })
+
+if ($badKey) {
+    throw "Cannot animate '$($badKey -join "','")' : Can only animate $($keyNames -join ',')"
+}
 
 # Compare the two sets of keys to determine the base data object
 $BaseObject = [Ordered]@{}

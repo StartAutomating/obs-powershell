@@ -1,79 +1,80 @@
 function Add-OBSMediaSource {
-<#
-    .SYNOPSIS
-        Adds a media source
-    .DESCRIPTION
-        Adds a media source to OBS.
-    .EXAMPLE
-        Add-OBSMediaSource -FilePath My.mp4
-    .LINK
-        Add-OBSInput    
+    <#
     
-#>
+    .SYNOPSIS    
+        Adds a media source    
+    .DESCRIPTION    
+        Adds a media source to OBS.    
+    .EXAMPLE    
+        Add-OBSMediaSource -FilePath My.mp4    
+    .LINK    
+        Add-OBSInput        
     
-    [Alias('Add-OBSFFMpegSource')]
-[CmdletBinding()]
+    #>
+            
+    [Alias('Add-OBSFFMpegSource')]    
+    [CmdletBinding()]
     param(
-# The path to the media file.
+    # The path to the media file.    
     [Parameter(Mandatory,ValueFromPipelineByPropertyName)]    
     [Alias('FullName','LocalFile','local_file')]
     [string]
     $FilePath,
-# If set, the source will close when it is inactive.
-    # By default, this will be set to true.
-    # To explicitly set it to false, use -CloseWhenInactive:$false
+    # If set, the source will close when it is inactive.    
+    # By default, this will be set to true.    
+    # To explicitly set it to false, use -CloseWhenInactive:$false    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("close_when_inactive")]
     [switch]
     $CloseWhenInactive,
-# If set, the source will automatically restart.
+    # If set, the source will automatically restart.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("looping")]
     [Alias('Looping')]
     [switch]
     $Loop,
-# If set, will use hardware decoding, if available.
+    # If set, will use hardware decoding, if available.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("hw_decode")]
     [Alias('HardwareDecoding','hw_decode')]
     [switch]
     $UseHardwareDecoding,
-# If set, will clear the output on the end of the media.
-    # If this is set to false, the media will freeze on the last frame.
-    # This is set to true by default.
-    # To explicitly set to false, use -ClearMediaEnd:$false
+    # If set, will clear the output on the end of the media.    
+    # If this is set to false, the media will freeze on the last frame.    
+    # This is set to true by default.    
+    # To explicitly set to false, use -ClearMediaEnd:$false    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("clear_on_media_end")]
     [Alias('ClearOnEnd','NoFreezeFrameOnEnd')]
     [switch]
     $ClearOnMediaEnd,
-# Any FFMpeg demuxer options.
+    # Any FFMpeg demuxer options.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("ffmpeg_options")]
     [Alias('FFMpegOptions', 'FFMpeg_Options')]
     [string]
     $FFMpegOption,
-# The name of the scene.
-    # If no scene name is provided, the current program scene will be used.
+    # The name of the scene.    
+    # If no scene name is provided, the current program scene will be used.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [string]
     $Scene,
-# The name of the input.
-    # If no name is provided, the last segment of the URI or file path will be the input name.
+    # The name of the input.    
+    # If no name is provided, the last segment of the URI or file path will be the input name.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [string]
     $Name,
-# If set, will check if the source exists in the scene before creating it and removing any existing sources found.
-    # If not set, you will get an error if a source with the same name exists.
+    # If set, will check if the source exists in the scene before creating it and removing any existing sources found.    
+    # If not set, you will get an error if a source with the same name exists.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [switch]
     $Force,
-# If set, will fit the input to the screen.
+    # If set, will fit the input to the screen.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [switch]
     $FitToScreen
     )
-dynamicParam {
+    dynamicParam {
     $baseCommand = 
         if (-not $script:AddOBSInput) {
             $script:AddOBSInput = 
@@ -106,8 +107,8 @@ dynamicParam {
         ))
     }
     $DynamicParameters
-}
-    process {
+    }
+        process {
         $myParameters = [Ordered]@{} + $PSBoundParameters
         
         if (-not $myParameters["Scene"]) {
@@ -183,5 +184,5 @@ dynamicParam {
                 }
         }
     
-}
+    }
 }

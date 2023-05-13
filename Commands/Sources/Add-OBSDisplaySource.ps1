@@ -1,52 +1,53 @@
 function Add-OBSDisplaySource {
-<#
-    .SYNOPSIS
-        Adds a display source
-    .DESCRIPTION
-        Adds a display source to OBS.  This captures the contents of the display.
-    .EXAMPLE
-        Add-OBSMonitorSource  # Adds a display source of the primary monitor
-    .EXAMPLE
-        Add-OBSMonitorSource -Display 2 # Adds a display source of the second monitor
+    <#
     
-#>
+    .SYNOPSIS    
+        Adds a display source    
+    .DESCRIPTION    
+        Adds a display source to OBS.  This captures the contents of the display.    
+    .EXAMPLE    
+        Add-OBSMonitorSource  # Adds a display source of the primary monitor    
+    .EXAMPLE    
+        Add-OBSMonitorSource -Display 2 # Adds a display source of the second monitor    
     
-    [Alias('Add-OBSMonitorSource')]
-[CmdletBinding()]
+    #>
+            
+    [Alias('Add-OBSMonitorSource')]    
+    [CmdletBinding()]
     param(
-# The monitor number.
-    # This the number of the monitor you would like to capture.
+    # The monitor number.    
+    # This the number of the monitor you would like to capture.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("monitor")]
     [Alias('MonitorNumber','Display','DisplayNumber')]
     [int]
     $Monitor = 1,
-# If set, will capture the cursor.
-    # This will be set by default.
-    # If explicitly set to false, the cursor will not be captured.
+    # If set, will capture the cursor.    
+    # This will be set by default.    
+    # If explicitly set to false, the cursor will not be captured.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("capture_cursor")]
     [switch]
     $CaptureCursor,
-# The name of the scene.
-    # If no scene name is provided, the current program scene will be used.
+    # The name of the scene.    
+    # If no scene name is provided, the current program scene will be used.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [Alias('SceneName')]
     [string]
     $Scene,
-# The name of the input.
-    # If no name is provided, "Display $($Monitor + 1)" will be the input source name.
+    # The name of the input.    
+    # If no name is provided, "Display $($Monitor + 1)" will be the input source name.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [Alias('InputName')]
     [string]
     $Name,
-# If set, will check if the source exists in the scene before creating it and removing any existing sources found.
-    # If not set, you will get an error if a source with the same name exists.
+    # If set, will check if the source exists in the scene before creating it and removing any existing sources found.    
+    # If not set, you will get an error if a source with the same name exists.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [switch]
     $Force
     )
-dynamicParam {
+    dynamicParam {
     $baseCommand = 
         if (-not $script:AddOBSInput) {
             $script:AddOBSInput = 
@@ -79,8 +80,8 @@ dynamicParam {
         ))
     }
     $DynamicParameters
-}
-    process {
+    }
+        process {
         $myParameters = [Ordered]@{} + $PSBoundParameters
         
         if (-not $myParameters["Scene"]) {
@@ -134,5 +135,5 @@ dynamicParam {
                 Where-Object SourceName -eq $myParameters["Name"]
         }
     
-}
+    }
 }

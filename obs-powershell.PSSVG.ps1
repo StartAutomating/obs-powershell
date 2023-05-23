@@ -32,7 +32,7 @@ svg @(
     svg.text -Content "obs-powershell" -Fill '#4488ff' -TextAnchor 'middle' -X 50% -y 65% -FontSize 72 -AlignmentBaseline 'middle' -FontFamily 'sans-serif'
 ) -ViewBox 1000,1000 -OutputPath (Join-Path $assetsPath obs-powershell.svg)
 
-foreach ($variant in 'icon','icon-animated') {
+foreach ($variant in 'icon','animated-icon','text-and-animated-icon','text-and-icon') {
 
     svg @(
         svg.symbol -ViewBox $powerShellChevron.svg.viewBox -Content $powerShellChevron.svg.symbol.InnerXml -Id psChevron
@@ -51,5 +51,8 @@ foreach ($variant in 'icon','icon-animated') {
                 svg.animatetransform -AttributeName transform -From "0 250 250"  -To "360 250 250" -dur "5s" -RepeatCount indefinite -AttributeType xml -type rotate
             }
         )
+        if ($variant -like '*text*') {
+            svg.text -Content "obs-powershell" -Fill '#4488ff' -TextAnchor 'middle' -X 50% -y 75% -FontSize 1.75em -AlignmentBaseline 'middle' -FontFamily 'sans-serif'
+        }
     ) -ViewBox 500,500 -OutputPath (Join-Path $assetsPath "obs-powershell-$variant.svg")
 }

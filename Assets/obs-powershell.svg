@@ -7,9 +7,17 @@
     <circle cx="50%" cy="50%" r="10%" fill="#4488ff" />
     <circle cx="50%" cy="50%" r="9.5%" fill="white" />
     <circle cx="50%" cy="50%" r="9%" fill="#4488ff" />
-    <use href="#psChevron" fill="white" height="20%" y="40%" x="0%" />
+    <use href="#psChevron" fill="black" height="20%" y="40%" x="0%" transform="rotate(30)" />
   </symbol>
-  <use href="#combinedLogo" />
-  <text fill="#4488ff" text-anchor="end" x="40%" y="50%" font-size="72" alignment-baseline="middle" font-family="sans-serif">OBS</text>
-  <text fill="#4488ff" text-anchor="start" x="60%" y="50%" font-size="72" alignment-baseline="middle" font-family="sans-serif">PowerShell</text>
+  <mask id="psChevronMask">
+    <rect x="400" y="400" height="200" width="200" fill="white" />
+    <circle cx="500" cy="500" r="90" fill="black" />
+    <use href="#psChevron" fill="white" height="75" y="42.5%" x="0" transform="rotate(0, 500, 500)" />
+    <use href="#psChevron" fill="white" height="75" y="42.5%" x="0" transform="rotate(120, 500, 500)" />
+    <use href="#psChevron" fill="white" height="75" y="42.5%" x="0" transform="rotate(240, 500, 500)" />
+  </mask>
+  <circle fill="#4488ff" cx="500" cy="500" r="100" mask="url(#psChevronMask)">
+    <animateTransform attributeName="transform" from="0 500 500" to="360 500 500" dur="5s" repeatCount="indefinite" attributeType="xml" type="rotate" />
+  </circle>
+  <text fill="#4488ff" text-anchor="middle" x="50%" y="65%" font-size="72" alignment-baseline="middle" font-family="sans-serif">obs-powershell</text>
 </svg>

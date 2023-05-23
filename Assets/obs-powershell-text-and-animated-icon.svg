@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <symbol viewBox="0 0 100 100" id="psChevron">
+    <polygon points="40,20 45,20 60,50 35,80 32.5,80 55,50" xmlns="http://www.w3.org/2000/svg" />
+  </symbol>
+  <mask id="psChevronMask">
+    <rect x="150" y="150" height="200" width="200" fill="white" />
+    <circle cx="250" cy="250" r="90" fill="black" />
+    <use href="#psChevron" fill="white" height="75" y="35%" x="0" transform="rotate(0, 250, 250)" />
+    <use href="#psChevron" fill="white" height="75" y="35%" x="0" transform="rotate(120, 250, 250)" />
+    <use href="#psChevron" fill="white" height="75" y="35%" x="0" transform="rotate(240, 250, 250)" />
+  </mask>
+  <circle fill="#4488ff" cx="250" cy="250" r="100" mask="url(#psChevronMask)">
+    <animateTransform attributeName="transform" from="0 250 250" to="360 250 250" dur="5s" repeatCount="indefinite" attributeType="xml" type="rotate" />
+  </circle>
+  <text fill="#4488ff" text-anchor="middle" x="50%" y="75%" font-size="1.75em" alignment-baseline="middle" font-family="sans-serif">obs-powershell</text>
+</svg>

@@ -88,8 +88,12 @@ $($ExecutionContext.SessionState.InvokeCommand.GetCommand('Send-OBS', 'Function'
                 [Text.Encoding]::UTF8.GetString($buffer, 0, $receiveTask.Result.Count).Trim() -replace '\s+$'
             
             if ($msg) {
-                $messageData = ConvertFrom-Json $msg
-                $messageData | Receive-OBS -WebSocketToken $WebSocketToken -WebSocketUri $webSocketUri -SendEvent
+                $messageData = try { ConvertFrom-Json $msg -ErrorAction Ignore} catch { $_ }
+                if ($messageData -isnot [Management.Automation.ErrorRecord]) {
+                    $messageData | Receive-OBS -WebSocketToken $WebSocketToken -WebSocketUri $webSocketUri -SendEvent
+                } else {
+                    $messageData
+                }
             }
     
             $buffer.Clear()
@@ -97,7 +101,7 @@ $($ExecutionContext.SessionState.InvokeCommand.GetCommand('Send-OBS', 'Function'
         }
     
     } catch {
-        Write-Error -Exception $_.Exception -Message "StreamDeck Exception: $($_ | Out-String)" -ErrorId "WebSocket.State.$($Websocket.State)"
+        Write-Error -Exception $_.Exception -Message "Exception: $($_ | Out-String)" -ErrorId "WebSocket.State.$($Websocket.State)"
     }
         }
 

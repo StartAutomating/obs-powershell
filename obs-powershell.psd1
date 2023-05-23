@@ -121,6 +121,10 @@ Initial Release of obs-powershell
 'Send-OBS',
 'Show-OBS',
 'Watch-OBS',
+'Add-OBSBrowserSource',
+'Add-OBSColorSource',
+'Add-OBSDisplaySource',
+'Add-OBSMediaSource',
 'Add-OBSInput',
 'Add-OBSProfile',
 'Add-OBSScene',
@@ -257,10 +261,6 @@ Initial Release of obs-powershell
 'Switch-OBSRecordPause',
 'Switch-OBSReplayBuffer',
 'Switch-OBSStream',
-'Switch-OBSVirtualCam',
-'Add-OBSBrowserSource',
-'Add-OBSColorSource',
-'Add-OBSDisplaySource',
-'Add-OBSMediaSource'
+'Switch-OBSVirtualCam'
 }
 

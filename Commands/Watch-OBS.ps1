@@ -68,8 +68,11 @@ $($ExecutionContext.SessionState.InvokeCommand.GetCommand('Send-OBS', 'Function'
             }
             $script:ObsConnections[$webSocketUri] = $Websocket
     
-            $Websocket            
-   
+            [PSCustomObject][Ordered]@{
+                PSTypename = 'obs.websocket'
+                Uri = $webSocketUri
+                WebSocket = $Websocket
+            }
     try {
              
         while ($true) {
@@ -143,11 +146,12 @@ $($ExecutionContext.SessionState.InvokeCommand.GetCommand('Send-OBS', 'Function'
                     $messageData = $dataAdded.MessageData
                     New-Event @newEventSplat
                 }
-                elseif ($dataAdded -is [Net.WebSockets.ClientWebSocket]) {
-                    $eventSubscriber | Add-Member NoteProperty WebSocket $dataAdded -Force -PassThru
+                elseif ($dataAdded.pstypenames -contains 'obs.websocket') {
+                    New-Event -SourceIdentifier obs.powershell.websocket -MessageData $dataAdded
+                    $eventSubscriber | Add-Member NoteProperty WebSocket $dataAdded.WebSocket -Force -PassThru
                 }
                 else {
-
+                    
                 }
             }
 
@@ -159,7 +163,9 @@ $($ExecutionContext.SessionState.InvokeCommand.GetCommand('Send-OBS', 'Function'
                     $subscriber;break
                 }
             }
-        )
+        )        
+
+        Start-Sleep -Milliseconds 1 # Do the smallest of sleeps, so that the thread job actually has a chance to start.
 
         $obsWatcher | Add-Member NoteProperty WhenOutputAddedHandler $whenOutputAddedHandler -Force
         $obsWatcher | Add-Member NoteProperty WhenOutputAdded $whenOutputAdded -Force

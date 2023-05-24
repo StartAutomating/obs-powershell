@@ -83,14 +83,29 @@ function Receive-OBS
                 Write-Error "No .RequestID to wait for"
                 return
             }
-            # wait a second for that event
+                                
+            # Normally, we can just wait for the event
             $eventResponse = Wait-Event -SourceIdentifier $myRequestId -Timeout 1 |
                 Select-Object -ExpandProperty MessageData
-    
+            
+            # however, if we are in the event pump we need to look at the output of the connection.            
+            if (-not $eventResponse -and 
+                $obsConnection -is [Management.Automation.Job]) {                
+                for ($outputIndex = $obsConnection.Output.Count - 1; $outputIndex -ge 0; $outputIndex--) {
+                    $obsOutput = $obsConnection.Output[$outputIndex]
+                    if ($obsOutput.SourceIdentifier -eq $myRequestId) {                        
+                        $eventResponse = $obsOutput.MessageData
+                        break
+                    }
+                }
+            }        
+            
             if ($eventResponse -is [Management.Automation.ErrorRecord]) {
                 Write-Error -ErrorRecord $eventResponse
-                continue
+                return
             }
+
+            if ($null -eq $eventResponse) { return }
             # Collect all properties from the response
             $eventResponseProperties = @($eventResponse.psobject.properties)
             
@@ -154,7 +169,7 @@ function Receive-OBS
     
                 # finally, emit our response object
                 $responseObject
-            }
+            }            
         }
         
         if ($PSCmdlet.ParameterSetName -eq 'SendEvent') {

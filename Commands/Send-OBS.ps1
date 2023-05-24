@@ -41,6 +41,10 @@ function Send-OBS
             $script:ObsRequestsCounts = @{}
         }
 
+        if (-not $script:ObsWebSockets) {
+            $script:ObsWebSockets = [Ordered]@{}        
+        }
+
         function SendSingleMessageToOBS {
             param(
             [Parameter(ValueFromPipeline)]
@@ -97,20 +101,47 @@ function Send-OBS
                     # error out
                     Write-Error "Not connected to OBS.  Use Connect-OBS."
                     return
-                }
-    
+                }                
                 # Otherwise, walk over each connection
-                foreach ($obsConnection in $script:ObsConnections.Values) {
-                    $OBSWebSocket = $obsConnection.Websocket
+                foreach ($obsConnectionInfo in @($script:ObsConnections.GetEnumerator())) {
+                    $obsConnection   = $obsConnectionInfo.Value
+                    $OBSWebSocketUri = $obsConnectionInfo.Key
+                    $OBSWebSocket    = $obsConnection.Websocket
                     if ($VerbosePreference -notin 'silentlyContinue', 'ignore') {
                         Write-Verbose "Sending $payloadJSON"
                     }
-                    # and send the payload
+
+                    # In event-driven contexts, the websocket attachment may not work due to the accessibility of ScriptMethods.
+                    if ($OBSWebSocket -eq $null) {                        
+                        # to work around this, we can find our websocket by looking at the event it generated on connection
+                        if (-not $script:OBSWebSockets[$OBSWebSocketUri] -or $script:OBSWebSockets[$OBSWebSocketUri].State -ne 'Open') {
+                            $webSocketEvents = @(Get-Event -SourceIdentifier obs.powershell.websocket)
+                            [Array]::Reverse($webSocketEvents) 
+                            foreach ($webSocketEvent in $webSocketEvents) {
+                                if ($webSocketEvent.MessageData.Uri -eq $OBSWebSocketUri -and 
+                                    $webSocketEvent.WebSocket.State -eq 'Open'
+                                ) {
+                                    # Once we find an open socket, cache it.
+                                    $script:OBSWebSockets[$webSocketEvent.MessageData.Uri] = $webSocketEvent.MessageData.WebSocket
+                                    break
+                                }
+                            }
+                        }
+                        # set the socket to what is in the cache.
+                        $OBSWebSocket = $script:OBSWebSockets[$OBSWebSocketUri]
+
+                        # If there was still no socket
+                        if (-not $OBSWebSocket) {
+                            # write an error 
+                            Write-Error "No websocket for $obsWebSocketUri"
+                            continue # and continue.
+                        }
+                    }
+                    # Since we have a working websocket, send the payload to it.
                     $null = $OBSWebSocket.SendAsync($SendSegment,'Text', $true, [Threading.CancellationToken]::new($false))
-    
                     # If a response was expected
                     if ($payloadObject.d.requestID) {
-                        $payloadObject | Receive-OBS
+                        $payloadObject | . Receive-OBS                        
                     }
                 }
             }

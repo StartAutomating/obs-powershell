@@ -47,11 +47,11 @@ $totalTimeSpan = [timespan]0
 
 # We want to walk over every argument and turn them into a series of animations
 
-$IsFirstArg = $true
 $PassThru   = $false
 
 $AllArgs = @($args)
 
+$allSteps = @(
 :NextArgument for ($argIndex = 0 ; $argIndex -lt $allArgs.Length; $argIndex++) {
     $arg = $allArgs[$argIndex]
     # If the arg is a timespan, we want to track this
@@ -112,7 +112,7 @@ $AllArgs = @($args)
         if ($lastFrom -and $nextTimeSpan) {
             $StepCount = [Math]::Ceiling($NextTimeSpan.TotalMilliseconds / ([timespan]::fromSeconds(1/30).TotalMilliseconds)) * 2            
             if (-not $StepCount) {
-                $allSteps += $this | Set-OBSSceneItemTransform -SceneItemTransform $currentTo -PassThru
+                $this | Set-OBSSceneItemTransform -SceneItemTransform $currentTo -PassThru
                 $newLastFrom = [Ordered]@{} + $currentTo
                 foreach ($kv in $lastFrom.GetEnumerator()) {
                     if ($currentTo.Contains($kv.Key)) { continue }
@@ -150,19 +150,18 @@ $AllArgs = @($args)
                 }
             }
 
-            $allSteps += 
-                foreach ($stepNumber in 1..($stepCount)) {
-                    $stepObject = [Ordered]@{}
-                    foreach ($key in $BaseObject.Keys) {
-                        $stepObject[$key] = $BaseObject[$key] + ($eachStepValue[$key] * $stepNumber)
-                    }
-                    $this | Set-OBSSceneItemTransform -SceneItemTransform $stepObject -PassThru
-                    Send-OBSSleep -SleepMillis $stepMilliseconds -PassThru
+            
+            foreach ($stepNumber in 1..($stepCount)) {
+                $stepObject = [Ordered]@{}
+                foreach ($key in $BaseObject.Keys) {
+                    $stepObject[$key] = $BaseObject[$key] + ($eachStepValue[$key] * $stepNumber)
                 }
+                $this | Set-OBSSceneItemTransform -SceneItemTransform $stepObject -PassThru
+                Send-OBSSleep -SleepMillis $stepMilliseconds -PassThru
+            }
 
         } else {
-            $allSteps += 
-                $this | Set-OBSSceneItemTransform -SceneItemTransform $currentTo -PassThru
+            $this | Set-OBSSceneItemTransform -SceneItemTransform $currentTo -PassThru
         }
         $newLastFrom = [Ordered]@{} + $currentTo
         foreach ($kv in $lastFrom.GetEnumerator()) {
@@ -177,6 +176,7 @@ $AllArgs = @($args)
 
     $IsFirstArg = $false
 }
+)
 
 if ($allSteps) {
     Write-Debug "Sending $($allSteps.Count) messages to OBS"
@@ -185,7 +185,7 @@ if ($allSteps) {
         $allSteps
     } else {
         # Send all of the steps to OBS.
-        $allSteps | Send-OBS
+        Send-OBS -MessageData $allSteps
     }
     
 }

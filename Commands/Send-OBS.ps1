@@ -149,27 +149,30 @@ function Send-OBS
     }
 
     process {
-        $allMessages.Enqueue($MessageData)
-        if ($StepTime.TotalMilliseconds -gt 0) {
-            if ($SerialFrame) {
-                $allMessages.Enqueue([PSCustomObject][Ordered]@{                
-                    requestType = 'Sleep'
-                    requestData = @{
-                        sleepFrames = [int]$StepTime.Ticks
+        foreach ($message in $MessageData) {
+            $allMessages.Enqueue($Message)
+            if ($StepTime.TotalMilliseconds -gt 0) {
+                if ($SerialFrame) {
+                    $allMessages.Enqueue([PSCustomObject][Ordered]@{                
+                        requestType = 'Sleep'
+                        requestData = @{
+                            sleepFrames = [int]$StepTime.Ticks
+                        }
+                    })
+                } else {
+                    if ($StepTime.Ticks -lt 10000) {
+                        $StepTime = [TimeSpan]::FromMilliseconds(1000 / $StepTime.Ticks)
                     }
-                })
-            } else {
-                if ($StepTime.Ticks -lt 10000) {
-                    $StepTime = [TimeSpan]::FromMilliseconds(1000 / $StepTime.Ticks)
+                    $allMessages.Enqueue([PSCustomObject][Ordered]@{                
+                        requestType = 'Sleep'
+                        requestData = @{
+                            sleepMillis = [int]$StepTime.TotalMilliseconds
+                        }
+                    })
                 }
-                $allMessages.Enqueue([PSCustomObject][Ordered]@{                
-                    requestType = 'Sleep'
-                    requestData = @{
-                        sleepMillis = [int]$StepTime.TotalMilliseconds
-                    }
-                })
             }
         }
+        
     }
 
     end {

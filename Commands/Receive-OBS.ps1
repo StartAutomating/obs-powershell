@@ -101,7 +101,9 @@ function Receive-OBS
             }        
             
             if ($eventResponse -is [Management.Automation.ErrorRecord]) {
-                Write-Error -ErrorRecord $eventResponse
+                if ($eventResponse.Exception.Message) {
+                    Write-Error -ErrorRecord $eventResponse
+                }
                 return
             }
 

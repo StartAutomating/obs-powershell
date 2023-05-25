@@ -4,6 +4,14 @@
   <Type>
     <Name>OBS.GetSceneItemList.Response</Name>
     <Members>
+      <AliasProperty>
+        <Name>Hide</Name>
+        <ReferencedMemberName>Disable</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>Show</Name>
+        <ReferencedMemberName>Enable</ReferencedMemberName>
+      </AliasProperty>
       <ScriptMethod>
         <Name>Animate</Name>
         <Script>

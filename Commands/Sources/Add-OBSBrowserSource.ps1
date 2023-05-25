@@ -110,7 +110,10 @@ function Add-OBSBrowserSource {
         $myParameters = [Ordered]@{} + $PSBoundParameters
         
         if ((-not $width) -or (-not $height)) {
-            $videoSettings = Get-OBSVideoSettings
+            if (-not $script:CachedOBSVideoSettings) {
+                $script:CachedOBSVideoSettings = Get-OBSVideoSettings
+            }
+            $videoSettings = $script:CachedOBSVideoSettings
             $myParameters["Width"]  = $width = $videoSettings.outputWidth
             $myParameters["Height"] = $height = $videoSettings.outputHeight
         }

@@ -106,10 +106,36 @@ function Add-OBSDisplaySource
             $addSplat.SceneItemEnabled = $myParameters['SceneItemEnabled'] -as [bool]
         }
 
-        $outputAddedResult = Add-OBSInput @addObsInputParams
-        if ($outputAddedResult) {
+        # Add the input.
+        $outputAddedResult = Add-OBSInput @addObsInputParams *>&1
+
+        # If we got back an error
+        if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
+            # and that error was saying the source already exists, 
+            if ($outputAddedResult.TargetObject.d.requestStatus.code -eq 601) {
+                # then check if we use the -Force.
+                if ($Force)  { # If we do, remove the input                    
+                    Remove-OBSInput -InputName $addObsInputParams.inputName
+                    # and re-add our result.
+                    $outputAddedResult = Add-OBSInput @addObsInputParams *>&1
+                } else {
+                    # Otherwise, get the input from the scene.
+                    Get-OBSSceneItem -sceneName $myParameters["Scene"] |
+                        Where-Object SourceName -eq $myParameters["Name"]
+                }
+            }
+
+            # If the output was still an error
+            if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
+                # use $psCmdlet.WriteError so that it shows the error correctly.
+                $psCmdlet.WriteError($outputAddedResult)
+            }            
+        }
+        # Otherwise, if we had a result
+        elseif ($outputAddedResult) {
+            # get the input from the scene.
             Get-OBSSceneItem -sceneName $myParameters["Scene"] |
-                Where-Object SourceName -eq $myParameters["Name"]
+                Where-Object SourceName -eq $name
         }
     }
 }

@@ -81,6 +81,15 @@ function Add-OBSMediaSource
     [switch]
     $FitToScreen
     )
+
+    begin {
+        filter OutputAndFitToScreen {
+            if ($FitToScreen -and $_.FitToScreen) {
+                $_.FitToScreen()
+            }
+            $_
+        }
+    }
     
     process {
         $myParameters = [Ordered]@{} + $PSBoundParameters
@@ -149,24 +158,37 @@ function Add-OBSMediaSource
             $addSplat.SceneItemEnabled = $myParameters['SceneItemEnabled'] -as [bool]
         }
 
-        # If -Force is provided
-        if ($Force) {
-            # Clear any items from that scene
-            Get-OBSSceneItem -sceneName $myParameters["Scene"] |
-                Where-Object SourceName -eq $name |
-                Remove-OBSInput -InputName { $_.SourceName }
-        }        
+        # Add the input.
+        $outputAddedResult = Add-OBSInput @addSplat *>&1
 
-        $outputAddedResult = Add-OBSInput @addSplat
-        if ($outputAddedResult) {
+        # If we got back an error
+        if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
+            # and that error was saying the source already exists, 
+            if ($outputAddedResult.TargetObject.d.requestStatus.code -eq 601) {
+                # then check if we use the -Force.
+                if ($Force)  { # If we do, remove the input                    
+                    Remove-OBSInput -InputName $addObsInputParams.inputName
+                    # and re-add our result.
+                    $outputAddedResult = Add-OBSInput @addSplat *>&1
+                } else {
+                    # Otherwise, get the input from the scene.
+                    Get-OBSSceneItem -sceneName $myParameters["Scene"] |
+                        Where-Object SourceName -eq $myParameters["Name"]
+                }
+            }
+
+            # If the output was still an error
+            if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
+                # use $psCmdlet.WriteError so that it shows the error correctly.
+                $psCmdlet.WriteError($outputAddedResult)
+            }
+        }
+        # Otherwise, if we had a result
+        elseif ($outputAddedResult) {
+            # get the input from the scene and optionally fit it to the screen.
             Get-OBSSceneItem -sceneName $myParameters["Scene"] |
                 Where-Object SourceName -eq $name |
-                Foreach-Object {
-                    if ($FitToScreen) {
-                        $_.FitToScreen()
-                    }
-                    $_
-                }
+                OutputAndFitToScreen
         }
     }
 }

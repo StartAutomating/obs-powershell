@@ -246,6 +246,53 @@
         </CustomEntries>
       </CustomControl>
     </View>
+    <View>
+      <Name>OBS.GetVideoSettings.Response</Name>
+      <ViewSelectedBy>
+        <TypeName>OBS.GetVideoSettings.Response</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <AutoSize />
+        <TableHeaders>
+          <TableColumnHeader>
+          </TableColumnHeader>
+          <TableColumnHeader>
+          </TableColumnHeader>
+          <TableColumnHeader>
+          </TableColumnHeader>
+          <TableColumnHeader>
+          </TableColumnHeader>
+          <TableColumnHeader>
+          </TableColumnHeader>
+          <TableColumnHeader>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>BaseWidth</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BaseHeight</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>OutputWidth</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>OutputHeight</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>FPSDenominator</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>FPSNumerator</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
   </ViewDefinitions>
   <Controls>
     <Control>

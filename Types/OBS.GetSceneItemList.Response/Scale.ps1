@@ -1,39 +1,37 @@
 param()
 
-filter ToScale {
-    if ($_ -is [string] -and $_ -match '%$') {
-        $_ = $_ -replace '%$' -as [double]
-        $_/100
-    }
-    elseif ($_ -is [double] -or $_ -is [int]) {
-        if ($_ -is [double] -and $_ -ge 0 -and $_ -le 1) {
-            $_
-        } else {
-            [double]$_/100
-        }
-    }
-}
-
 $allArguments = @($args)
 $animateArguments = @(
 foreach ($arg in $allArguments) {    
     if ($arg -is [double] -or $arg -is [int] -or 
         ($arg -is [string] -and $arg -match '\%$')
     ) {
-        $scale = $arg | numToScale
-        @{scaleX=$scale;scaleY=$scale}        
-    } elseif ($arg.X -or $arg.Y) {
+        $scale = $arg
+        @{scaleX=$scale;scaleY=$scale}
+    } elseif ($null -ne $arg.X -or $null -ne $arg.Y) {
         $scaleInfo = @{}
+        
         if ($null -ne $arg.X) {
-            $scaleInfo.scaleX = $arg.X | numToScale
+            $scaleInfo.scaleX = $arg.X
         }
+        elseif ($null -ne $arg.scaleX) {
+            $scaleInfo.scaleX = $arg.scaleX
+        }
+
         if ($null -ne $arg.Y) {
-            $scaleInfo.scaleY = $arg.Y | numToScale
+            $scaleInfo.scaleY = $arg.Y
         }
+        elseif ($null -ne $arg.scaleY) {
+            $scaleInfo.scaleY = $arg.scaleY
+        }
+        
         $scaleInfo
-    } elseif ($arg -as [timespan]) {
+    }    
+    elseif ($arg -as [timespan]) {
         $arg
     } elseif ($arg -is [bool]) {
+        $arg
+    } else {
         $arg
     }
 })

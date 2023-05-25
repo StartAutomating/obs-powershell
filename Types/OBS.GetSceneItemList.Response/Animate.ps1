@@ -12,6 +12,63 @@
 param(
 )
 
+filter ToPosition {
+    param(
+    [switch]
+    $Width,
+
+    [switch]
+    $Height
+    )
+
+    
+    if ($_ -is [string] -and $_ -match '%$') {
+        $_ = $_ -replace '%$' -as [double]
+        if (-not $script:CachedOBSVideoSettings) {
+            $script:CachedOBSVideoSettings = Get-OBSVideoSettings
+        }
+        $videoSettings = $script:CachedOBSVideoSettings
+        if ($Width) {
+            $_/100 * $videoSettings.baseWidth
+        }
+        if ($Height) {
+            $_/100 * $videoSettings.baseHeight
+        }
+        
+    }
+    elseif ($_ -is [double] -or $_ -is [int]) {
+        if ($_ -is [double] -and $_ -ge 0 -and $_ -lt 1) {
+            if (-not $script:CachedOBSVideoSettings) {
+                $script:CachedOBSVideoSettings = Get-OBSVideoSettings
+            }
+            $videoSettings = $script:CachedOBSVideoSettings
+            if ($Width) {
+                $_ * $videoSettings.baseWidth
+            }
+            if ($Height) {
+                $_ * $videoSettings.baseHeight
+            }
+            
+        } else {
+            [int]$_
+        }
+    }
+}
+
+filter ToScale {
+    if ($_ -is [string] -and $_ -match '%$') {
+        $_ = $_ -replace '%$' -as [double]
+        $_/100
+    }
+    elseif ($_ -is [double] -or $_ -is [int]) {
+        if ($_ -is [double] -and $_ -ge 0 -and $_ -le 1) {
+            $_
+        } else {
+            [double]$_/100
+        }
+    }
+}
+
 $nextTimeSpan = [timespan]0
 
 $keyNames = 'positionX', 'positionY', 'scaleX','scaleY', 'cropBottom', 'cropLeft', 'cropRight', 'cropTop', 'rotation'
@@ -96,6 +153,26 @@ $allSteps = @(
                     }
                 }
             })
+
+        foreach ($checkKeyValue in @($currentTo.GetEnumerator())) {
+            
+            $newValue = 
+                switch ($checkKeyValue.Key) {
+                    positionX { $checkKeyValue.Value | ToPosition -Width }
+                    positionY { $checkKeyValue.Value | ToPosition -Height }
+                    cropLeft { $checkKeyValue.Value | ToPosition -Width }
+                    cropRight { $checkKeyValue.Value | ToPosition -Width }
+                    cropTop { $checkKeyValue.Value | ToPosition -Height }
+                    cropBottom { $checkKeyValue.Value | ToPosition -Height }
+                    scaleX { $checkKeyValue.Value | ToScale  }
+                    scaleY { $checkKeyValue.Value | ToScale  }
+                }
+
+            if ($null -ne $newValue) {
+                $currentTo[$checkKeyValue.Key] = $newValue
+            }
+            
+        }
         
         if ($badKey) {
             throw "Cannot animate '$($badKey -join "','")' : Can only animate $($keyNames -join ',')"

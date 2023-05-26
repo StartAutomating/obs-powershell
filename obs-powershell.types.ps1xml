@@ -390,12 +390,13 @@ $allArguments = @($args)
 $animateArguments = @(
 foreach ($arg in $allArguments) {    
     if (
-        ($arg -is [string] -and $arg -match '\%$') -or 
-        ($arg -is [double] -and $arg -ge 0 -and $arg -le 1)
+        $arg -is [double] -or 
+        $arg -is [int] -or
+        ($arg -is [string] -and $arg -match '\%$')                
     ) {        
         $positionTransform = @{
-            positionX = $arg | . ToPosition -Width
-            positionY = $arg | . ToPosition -Height
+            positionX = $arg
+            positionY = $arg
         }
         $positionTransform
     } elseif ($arg.X,$arg.Y -ne $null) {

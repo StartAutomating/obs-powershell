@@ -164,7 +164,7 @@ function Add-OBSMediaSource {
         }
  
         if (-not $Name) {
-            $Name = $FilePathItem.Name
+            $Name = $myParameters["Name"] = $FilePathItem.Name
         }
         $addSplat = [Ordered]@{
             sceneName = $myParameters["Scene"]
@@ -190,6 +190,7 @@ function Add-OBSMediaSource {
                     # Otherwise, get the input from the scene.
                     Get-OBSSceneItem -sceneName $myParameters["Scene"] |
                         Where-Object SourceName -eq $myParameters["Name"]
+                    $outputAddedResult = $null
                 }
             }
             # If the output was still an error

@@ -5,6 +5,7 @@
     Animates the motion of scene items within a frame.
 .EXAMPLE
     $stars = Add-OBSBrowserSource -URI https://pssvg.start-automating.com/Examples/Stars.svg
+    $stars.FitToScreen()
     $stars.Animate(@{
         scale = 0.1        
     },"00:00:01")

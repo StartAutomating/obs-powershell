@@ -1,4 +1,21 @@
+<#
+.SYNOPSIS
+    Moves a scene item
+.DESCRIPTION
+    Moves a scene item throughout the screen.
 
+    This converts it's arguments to .Animate arguments.  Any single values will be assumed to be positionX/positionY
+.EXAMPLE
+    # Load a source
+    $stars = Add-OBSBrowserSource -URI https://pssvg.start-automating.com/Examples/Stars.svg
+    # fit it to the screen
+    $stars.FitToScreen()
+    # Move it diagonally across the screen
+    $stars.Move("-50%","150%", "00:00:05")
+.LINK
+    OBS.GetSceneItemList.Response.Animate
+#>
+param()
 $allArguments = @($args)
 $animateArguments = @(
 foreach ($arg in $allArguments) {    

@@ -160,7 +160,7 @@ function Add-OBSBrowserSource {
         }
  
         if (-not $Name) {
-            $Name =
+            $Name = $myParameters['Name'] =
                 if ($uri.Segments) {
                     $uri.Segments[-1]
                 } elseif ($uri -match '[\\/]') {
@@ -196,6 +196,7 @@ function Add-OBSBrowserSource {
                     # Otherwise, get the input from the scene.
                     Get-OBSSceneItem -sceneName $myParameters["Scene"] |
                         Where-Object SourceName -eq $myParameters["Name"]
+                    $outputAddedResult = $null
                 }
             }
             # If the output was still an error

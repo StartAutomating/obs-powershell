@@ -151,6 +151,7 @@ function Add-OBSColorSource {
                     # Otherwise, get the input from the scene.
                     Get-OBSSceneItem -sceneName $myParameters["Scene"] |
                         Where-Object SourceName -eq $myParameters["Name"]
+                    $outputAddedResult = $null
                 }
             }
             # If the output was still an error

@@ -116,14 +116,7 @@ function Add-OBSDisplaySource {
             inputName = $myParameters["Name"]
             inputKind = "monitor_capture"
             inputSettings = $myParameterData
-        }
-        # If -Force is provided
-        if ($Force) {
-            # Clear any items from that scene
-            Get-OBSSceneItem -sceneName $myParameters["Scene"] |
-                Where-Object SourceName -eq $myParameters["Name"] |
-                Remove-OBSInput -InputName { $_.SourceName }
-        }
+        }        
         # If -SceneItemEnabled was passed,
         if ($myParameters.Contains('SceneItemEnabled')) {
             # propagate it to Add-OBSInput.
@@ -144,6 +137,7 @@ function Add-OBSDisplaySource {
                     # Otherwise, get the input from the scene.
                     Get-OBSSceneItem -sceneName $myParameters["Scene"] |
                         Where-Object SourceName -eq $myParameters["Name"]
+                    $outputAddedResult = $null
                 }
             }
             # If the output was still an error

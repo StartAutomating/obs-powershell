@@ -25,8 +25,8 @@ This allows you to scroll horizontally or vertically.
 ### Examples
 #### EXAMPLE 1
 ```PowerShell
-$stars = Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg -Force    
-$stars | Set-OBSScrollFilter -HorizontalSpeed 100 -VerticalSpeed 100
+Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg |    
+    Set-OBSScrollFilter -HorizontalSpeed 100 -VerticalSpeed 100
 ```
 
 

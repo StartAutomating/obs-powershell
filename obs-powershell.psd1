@@ -230,6 +230,7 @@ Initial Release of obs-powershell
 'Set-OBSOutputSettings',
 'Set-OBSPersistentData',
 'Set-OBSProfileParameter',
+'Set-OBSRecordDirectory',
 'Set-OBSSceneItemBlendMode',
 'Set-OBSSceneItemEnabled',
 'Set-OBSSceneItemIndex',

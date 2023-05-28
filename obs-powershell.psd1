@@ -264,6 +264,7 @@ Initial Release of obs-powershell
 'Switch-OBSVirtualCam',
 'Set-OBSColorFilter',
 'Set-OBSGainFilter',
-'Set-OBSScrollFilter'
+'Set-OBSScrollFilter',
+'Set-OBSSharpnessFilter'
 }
 

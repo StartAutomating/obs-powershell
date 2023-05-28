@@ -8,8 +8,8 @@ function Set-OBSScrollFilter
 
         This allows you to scroll horizontally or vertically.
     .EXAMPLE
-        $stars = Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg -Force
-        $stars | Set-OBSScrollFilter -HorizontalSpeed 100 -VerticalSpeed 100
+        Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg |
+            Set-OBSScrollFilter -HorizontalSpeed 100 -VerticalSpeed 100
     #>
     [inherit(Command={
         Import-Module ..\..\obs-powershell.psd1 -Global
@@ -127,8 +127,13 @@ function Set-OBSScrollFilter
                     # and re-add our result.
                     $outputAddedResult = Add-OBSInput @addSplat *>&1
                 } else {
-                    # Otherwise, get the input from the filters.
-                    Get-OBSSourceFilter -SourceName $addSplat.SourceName -FilterName $addSplat.FilterName 
+                    # Otherwise, get the existing filter.
+                    $existingFilter = Get-OBSSourceFilter -SourceName $addSplat.SourceName -FilterName $addSplat.FilterName
+                    # then apply the settings
+                    $existingFilter.Set($addSplat.filterSettings)
+                    # and output them
+                    $existingFilter
+                    # (don't forget to null the result, so we don't show this error)
                     $outputAddedResult = $null
                 }
             }

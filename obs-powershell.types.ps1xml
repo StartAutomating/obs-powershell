@@ -564,6 +564,232 @@ $this.Animate.Invoke($animateArguments)
     </Members>
   </Type>
   <Type>
+    <Name>OBS.GetSourceFilterList.Response</Name>
+    <Members>
+      <ScriptMethod>
+        <Name>Disable</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Disables a filter
+.DESCRIPTION
+    Disables an OBS filter.
+.LINK
+    Set-OBSSourceFilterEnabled
+#&gt;
+param(
+# If set, will return the request that would enable a filter.
+[switch]
+$PassThru
+)
+$this | Set-OBSSourceFilterEnabled -FilterEnabled:$false -PassThru $PassThru
+if (-not $PassThru) {
+    $this | Add-Member filterEnabled $false -Force -PassThru
+}
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Enable</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Enables a filter
+.DESCRIPTION
+    Enables an OBS filter.
+.LINK
+    Set-OBSSourceFilterEnabled
+#&gt;
+param(
+# If set, will return the request that would enable a filter.
+[switch]
+$PassThru
+)
+
+$this | Set-OBSSourceFilterEnabled -FilterEnabled:$true -PassThru:$PassThru
+if (-not $PassThru) {
+    $this | Add-Member filterEnabled $true -Force -PassThru
+}
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Remove</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Removes a filter
+.DESCRIPTION
+    Removes a filter from an OBS source.
+.LINK
+    Remove-OBSSourceFilter
+.LINK
+    Get-OBSSourceFilterList
+#&gt;
+$this | Remove-OBSSourceFilter
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Set</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Sets a filter
+.DESCRIPTION
+    Changes a filter's settings.
+#&gt;
+param(
+# The settings that can be changed.
+[Alias('Setting')]
+$Settings,
+
+# Return the message that would be sent to OBS, rather than changing the filter settings.
+[switch]
+$PassThru
+)
+
+$this | 
+    Set-OBSSourceFilterSettings -FilterSettings $Settings -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptProperty>
+        <Name>Enabled</Name>
+        <GetScriptBlock>
+                        return $this.filterEnabled
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Index</Name>
+        <GetScriptBlock>
+                        return $this.filterIndex
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Kind</Name>
+        <GetScriptBlock>
+                        return $this.filterKind
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Settings</Name>
+        <GetScriptBlock>
+                        ,$this.filterSettings
+                    </GetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>OBS.GetSourceFilter.Response</Name>
+    <Members>
+      <ScriptMethod>
+        <Name>Disable</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Disables a filter
+.DESCRIPTION
+    Disables an OBS filter.
+.LINK
+    Set-OBSSourceFilterEnabled
+#&gt;
+param(
+# If set, will return the request that would enable a filter.
+[switch]
+$PassThru
+)
+$this | Set-OBSSourceFilterEnabled -FilterEnabled:$false -PassThru $PassThru
+if (-not $PassThru) {
+    $this | Add-Member filterEnabled $false -Force -PassThru
+}
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Enable</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Enables a filter
+.DESCRIPTION
+    Enables an OBS filter.
+.LINK
+    Set-OBSSourceFilterEnabled
+#&gt;
+param(
+# If set, will return the request that would enable a filter.
+[switch]
+$PassThru
+)
+
+$this | Set-OBSSourceFilterEnabled -FilterEnabled:$true -PassThru:$PassThru
+if (-not $PassThru) {
+    $this | Add-Member filterEnabled $true -Force -PassThru
+}
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Remove</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Removes a filter
+.DESCRIPTION
+    Removes a filter from an OBS source.
+.LINK
+    Remove-OBSSourceFilter
+.LINK
+    Get-OBSSourceFilterList
+#&gt;
+$this | Remove-OBSSourceFilter
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Set</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Sets a filter
+.DESCRIPTION
+    Changes a filter's settings.
+#&gt;
+param(
+# The settings that can be changed.
+[Alias('Setting')]
+$Settings,
+
+# Return the message that would be sent to OBS, rather than changing the filter settings.
+[switch]
+$PassThru
+)
+
+$this | 
+    Set-OBSSourceFilterSettings -FilterSettings $Settings -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptProperty>
+        <Name>Enabled</Name>
+        <GetScriptBlock>
+                        return $this.filterEnabled
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Index</Name>
+        <GetScriptBlock>
+                        return $this.filterIndex
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Kind</Name>
+        <GetScriptBlock>
+                        return $this.filterKind
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Settings</Name>
+        <GetScriptBlock>
+                        ,$this.filterSettings
+                    </GetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
     <Name>OBS.Input.Color.Source.V3</Name>
     <Members>
       <ScriptMethod>

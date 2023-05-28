@@ -432,15 +432,13 @@ $allSteps = @(
 )
 
 if ($allSteps) {
-    Write-Debug "Sending $($allSteps.Count) messages to OBS"
     # If any boolean true was in the arguments, we're passing thru
     if ($PassThru) {
         $allSteps
     } else {
         # Send all of the steps to OBS.
-        Send-OBS -MessageData $allSteps
-    }
-    
+        $allSteps | Send-OBS 
+    }    
 }
 
                     </Script>

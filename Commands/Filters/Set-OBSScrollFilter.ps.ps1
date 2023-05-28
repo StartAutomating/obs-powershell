@@ -25,7 +25,7 @@ function Set-OBSScrollFilter
 
     # The vertical scroll speed.
     [Parameter(ValueFromPipelineByPropertyName)]    
-    [ComponentModel.DefaultBindingProperty("speed_x")]
+    [ComponentModel.DefaultBindingProperty("speed_y")]
     [Alias('SpeedY', 'Speed_Y','VSpeed')]
     [double]
     $VerticalSpeed,
@@ -143,8 +143,8 @@ function Set-OBSScrollFilter
         # Otherwise, if we had a result
         elseif ($outputAddedResult) {
             # Otherwise, get the input from the filters.
-            Get-OBSSourceFilter -SourceName $addSplat.SourceName |
-                Where-Object FilterName -eq $addSplat.FilterName
+            Get-OBSSourceFilter -SourceName $addSplat.SourceName -FilterName $addSplat.FilterName
+                
         }
     }
 }

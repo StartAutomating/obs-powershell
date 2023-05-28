@@ -26,7 +26,7 @@ This allows you to make the audio louder or softer.
 #### EXAMPLE 1
 ```PowerShell
 Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg |    
-    Set-OBSGainFilter -HorizontalSpeed 100 -VerticalSpeed 100
+    Set-OBSGainFilter -Gain 1.1 # Gains Audio by 1.1 decibels
 ```
 
 
@@ -37,7 +37,7 @@ Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg |
 ### Parameters
 #### **Gain**
 
-The horizontal Gain speed.
+The Audio Gain, in decibels.
 
 
 

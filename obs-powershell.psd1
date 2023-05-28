@@ -262,6 +262,7 @@ Initial Release of obs-powershell
 'Switch-OBSReplayBuffer',
 'Switch-OBSStream',
 'Switch-OBSVirtualCam',
-'Set-OBSColorFilter'
+'Set-OBSColorFilter',
+'Set-OBSScrollFilter'
 }
 

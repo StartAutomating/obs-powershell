@@ -12,9 +12,13 @@ function Set-OBSColorFilter {
         * Saturate or Desaturate an image    
         * Change the contrast    
         * Brighten the image    
+        * Multiply pixels by a color    
+        * Add a color to all pixels    
     .EXAMPLE    
-        $obsPowerShellIcon = Show-OBS -Uri .\Assets\obs-powershell-animated-icon.svg    
-        $obsPowerShellIcon | Set-OBSColorFilter -Opacity .5    
+        Show-OBS -Uri .\Assets\obs-powershell-animated-icon.svg |    
+            Set-OBSColorFilter -Opacity .5    
+    .EXAMPLE    
+        Show-OBS -Uri     
     
     #>
             
@@ -106,6 +110,24 @@ function Set-OBSColorFilter {
     }
     $DynamicParameters
     }
+        begin {
+        filter ToOBSColor {
+                    if ($_ -is [uint32]) { $_ }
+                    elseif ($_ -is [string]) {                
+                        if ($_ -match '^\#[a-f0-9]{3,4}$') {                    
+                            $_ = $_ -replace '[a-f0-9]','$0$0'                    
+                        }                
+                        if ($_ -match '^#[a-f0-9]{8}$') {                    
+                            $_ -replace '#','0x' -as [UInt32]
+                        }
+                        elseif ($_ -match '^#[a-f0-9]{6}$') {                    
+                            $_ -replace '#','0xff' -as [UInt32]
+                        }
+                    }            
+                
+        }
+    
+    }
         process {
         $myParameters = [Ordered]@{} + $PSBoundParameters
         
@@ -130,7 +152,14 @@ function Set-OBSColorFilter {
                     $myParameterData[$bindToPropertyName] = $parameter.Name -as [bool]
                 }
             }
-        }        
+        }
+        
+        if ($myParameterData.color_add) {
+            $myParameterData.color_add = $myParameterData.color_add | ToOBSColor
+        }
+        if ($myParameterData.color_multiply) {
+            $myParameterData.color_multiply = $myParameterData.color_multiply | ToOBSColor
+        }
         
         $addSplat = @{            
             filterName = $filterName
@@ -141,12 +170,7 @@ function Set-OBSColorFilter {
         
         if ($PassThru) {
             $addSplat.Passthru = $true
-        }
-        # If -SceneItemEnabled was passed,
-        if ($myParameters.Contains('SceneItemEnabled')) {
-            # propagate it to Add-OBSInput.
-            $addSplat.SceneItemEnabled = $myParameters['SceneItemEnabled'] -as [bool]
-        }
+        }        
         # Add the input.
         $outputAddedResult = Add-OBSSourceFilter @addSplat *>&1
         if ($PassThru) {
@@ -162,9 +186,13 @@ function Set-OBSColorFilter {
                     # and re-add our result.
                     $outputAddedResult = Add-OBSSourceFilter @addSplat *>&1
                 } else {
-                    # Otherwise, get the input from the filters.
+                    # Otherwise, get the existing filter.
                     $existingFilter = Get-OBSSourceFilter -SourceName $addSplat.SourceName -FilterName $addSplat.FilterName
+                    # then apply the settings
                     $existingFilter.Set($addSplat.filterSettings)
+                    # and output them
+                    $existingFilter
+                    # (don't forget to null the result, so we don't show this error)
                     $outputAddedResult = $null
                 }
             }
@@ -178,8 +206,7 @@ function Set-OBSColorFilter {
         # Otherwise, if we had a result
         elseif ($outputAddedResult) {
             # Otherwise, get the input from the filters.
-            Get-OBSSourceFilter -SourceName $addSplat.SourceName |
-                Where-Object FilterName -eq $addSplat.FilterName
+            Get-OBSSourceFilter -SourceName $addSplat.SourceName -FilterName $addSplat.FilterName
         }
     
     }

@@ -2,6 +2,164 @@
 <!-- Generated with EZOut 1.9.9: Install-Module EZOut or https://github.com/StartAutomating/EZOut -->
 <Types>
   <Type>
+    <Name>OBS.GetInputList.Response</Name>
+    <Members>
+      <ScriptMethod>
+        <Name>Next</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Nexts an input
+.DESCRIPTION
+    Sends a "Next" message to an input.   
+.LINK
+    Send-OBSTriggerMediaInputAction
+#&gt;
+param(
+# If set, will return the message instead of sending it now.
+[switch]
+$PassThru
+)
+
+$this | Send-OBSTriggerMediaInputAction -MediaAction "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_NEXT" -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Pause</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Pauses an input
+.DESCRIPTION
+    Sends a "Pause" message to an input.   
+.LINK
+    Send-OBSTriggerMediaInputAction
+#&gt;
+param(
+# If set, will return the message instead of sending it now.
+[switch]
+$PassThru
+)
+
+$this | Send-OBSTriggerMediaInputAction -MediaAction "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_PAUSE" -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Play</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Plays an input
+.DESCRIPTION
+    Sends a "Play" message to an input.   
+.LINK
+    Send-OBSTriggerMediaInputAction
+#&gt;
+param(
+# If set, will return the message instead of sending it now.
+[switch]
+$PassThru
+)
+
+$this | Send-OBSTriggerMediaInputAction -MediaAction "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_PLAY" -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Previous</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Previouss an input
+.DESCRIPTION
+    Sends a "Previous" message to an input.   
+.LINK
+    Send-OBSTriggerMediaInputAction
+#&gt;
+param(
+# If set, will return the message instead of sending it now.
+[switch]
+$PassThru
+)
+
+$this | Send-OBSTriggerMediaInputAction -MediaAction "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_PREVIOUS" -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Restart</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Restarts an input
+.DESCRIPTION
+    Sends a "Restart" message to an input.   
+.LINK
+    Send-OBSTriggerMediaInputAction
+#&gt;
+param(
+# If set, will return the message instead of sending it now.
+[switch]
+$PassThru
+)
+
+$this | Send-OBSTriggerMediaInputAction -MediaAction "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_RESTART" -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Stop</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Stops an input
+.DESCRIPTION
+    Sends a "Stop" message to an input.   
+.LINK
+    Send-OBSTriggerMediaInputAction
+#&gt;
+param(
+# If set, will return the message instead of sending it now.
+[switch]
+$PassThru
+)
+
+$this | Send-OBSTriggerMediaInputAction -MediaAction "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_STOP" -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptProperty>
+        <Name>Filters</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets an input's filters
+.DESCRIPTION
+    Gets the filters related to an OBS input.
+.EXAMPLE
+     $obsPowerShellIcon = Show-OBS -Uri https://obs-powershell.start-automating.com/Assets/obs-powershell-animated-icon.svg
+     $obsPowerShellIcon | Set-OBSColorFilter -Opacity .5
+     $obsPowerShellIcon.Input.Filters
+.LINK
+    Get-OBSSourceFilterList
+#&gt;
+Get-OBSSourceFilterList -SourceName $this.InputName
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Status</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets an input's status
+.DESCRIPTION
+    Gets the media status of an OBS input.
+.LINK
+    Get-OBSMediaInputStatus
+#&gt;
+param()
+$this | Get-OBSMediaInputStatus
+                    </GetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
     <Name>OBS.GetSceneItemList.Response</Name>
     <Members>
       <AliasProperty>

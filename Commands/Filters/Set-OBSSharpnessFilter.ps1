@@ -109,10 +109,13 @@ function Set-OBSSharpnessFilter {
                     # and re-add our result.
                     $outputAddedResult = Add-OBSInput @addSplat *>&1
                 } else {
-                    # Otherwise, get the input from the filters.
-                    $existingFilter = Get-OBSSourceFilter -SourceName $addSplat.SourceName -FilterName $addSplat.FilterName 
+                    # Otherwise, get the existing filter.
+                    $existingFilter = Get-OBSSourceFilter -SourceName $addSplat.SourceName -FilterName $addSplat.FilterName
+                    # then apply the settings
                     $existingFilter.Set($addSplat.filterSettings)
+                    # and output them
                     $existingFilter
+                    # (don't forget to null the result, so we don't show this error)
                     $outputAddedResult = $null
                 }
             }

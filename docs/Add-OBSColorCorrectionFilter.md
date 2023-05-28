@@ -21,7 +21,9 @@ This allows you to:
 * Spin the hue    
 * Saturate or Desaturate an image    
 * Change the contrast    
-* Brighten the image
+* Brighten the image    
+* Multiply pixels by a color    
+* Add a color to all pixels
 
 
 
@@ -31,8 +33,13 @@ This allows you to:
 ### Examples
 #### EXAMPLE 1
 ```PowerShell
-$obsPowerShellIcon = Show-OBS -Uri .\Assets\obs-powershell-animated-icon.svg    
-$obsPowerShellIcon | Set-OBSColorFilter -Opacity .5
+Show-OBS -Uri .\Assets\obs-powershell-animated-icon.svg |    
+    Set-OBSColorFilter -Opacity .5
+```
+
+#### EXAMPLE 2
+```PowerShell
+Show-OBS -Uri
 ```
 
 

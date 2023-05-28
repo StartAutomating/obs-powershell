@@ -8,14 +8,14 @@ function Set-OBSGainFilter {
         This allows you to make the audio louder or softer.    
     .EXAMPLE    
         Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg |    
-            Set-OBSGainFilter -HorizontalSpeed 100 -VerticalSpeed 100    
+            Set-OBSGainFilter -Gain 1.1 # Gains Audio by 1.1 decibels    
     
     #>
             
     [Alias('Add-OBSGainFilter')]        
     [CmdletBinding()]
     param(
-    # The horizontal Gain speed.    
+    # The Audio Gain, in decibels.    
     [Parameter(ValueFromPipelineByPropertyName)]    
     [ComponentModel.DefaultBindingProperty("db")]    
     [double]
@@ -65,37 +65,13 @@ function Set-OBSGainFilter {
         if (-not $myParameters["FilterName"]) {
             $filterName = $myParameters["FilterName"] = "Gain"
         }
-                
-        $myParameterData = [Ordered]@{}
-        foreach ($parameter in $MyInvocation.MyCommand.Parameters.Values) {
-            $bindToPropertyName = $null            
-            
-            foreach ($attribute in $parameter.Attributes) {
-                if ($attribute -is [ComponentModel.DefaultBindingPropertyAttribute]) {
-                    $bindToPropertyName = $attribute.Name
-                    break
-                }
-            }
-            if (-not $bindToPropertyName) { continue }
-            if ($myParameters.Contains($parameter.Name)) {
-                $myParameterData[$bindToPropertyName] = $myParameters[$parameter.Name]
-                if ($myParameters[$parameter.Name] -is [switch]) {
-                    $myParameterData[$bindToPropertyName] = $parameter.Name -as [bool]
-                }
-            }
-        }        
         
         $addSplat = @{            
             filterName = $myParameters["FilterName"]
             SourceName = $myParameters["SourceName"]
             filterKind = "gain_filter"
-            filterSettings = $myParameterData
+            filterSettings = [Ordered]@{db=$Gain}
         }        
-        # If -SceneItemEnabled was passed,
-        if ($myParameters.Contains('SceneItemEnabled')) {
-            # propagate it to Add-OBSInput.
-            $addSplat.SceneItemEnabled = $myParameters['SceneItemEnabled'] -as [bool]
-        }
         # Add the input.
         $outputAddedResult = Add-OBSSourceFilter @addSplat *>&1
         # If we got back an error
@@ -108,10 +84,13 @@ function Set-OBSGainFilter {
                     # and re-add our result.
                     $outputAddedResult = Add-OBSInput @addSplat *>&1
                 } else {
-                    # Otherwise, get the input from the filters.
-                    $existingFilter = Get-OBSSourceFilter -SourceName $addSplat.SourceName -FilterName $addSplat.FilterName 
+                    # Otherwise, get the existing filter.
+                    $existingFilter = Get-OBSSourceFilter -SourceName $addSplat.SourceName -FilterName $addSplat.FilterName
+                    # then apply the settings
                     $existingFilter.Set($addSplat.filterSettings)
+                    # and output them
                     $existingFilter
+                    # (don't forget to null the result, so we don't show this error)
                     $outputAddedResult = $null
                 }
             }

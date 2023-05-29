@@ -1,11 +1,11 @@
-Add-OBSBrowserSource
+Set-OBSBrowserSource
 --------------------
 
 
 
 
 ### Synopsis
-Adds a browser source
+Sets a browser source
 
 
 
@@ -14,7 +14,7 @@ Adds a browser source
 
 ### Description
 
-Adds a browser source to OBS.
+Adds or changes a browser source in OBS.
 
 
 
@@ -24,7 +24,7 @@ Adds a browser source to OBS.
 ### Examples
 #### EXAMPLE 1
 ```PowerShell
-Add-OBSBrowserSource
+Set-OBSBrowserSource -Uri https://pssvg.start-automating.com/Examples/Stars.svg
 ```
 
 
@@ -211,5 +211,5 @@ If not set, you will get an error if a source with the same name exists.
 
 ### Syntax
 ```PowerShell
-Add-OBSBrowserSource [[-Uri] <Uri>] [[-Width] <Int32>] [[-Height] <Int32>] [[-CSS] <String>] [-ShutdownWhenHidden] [-RestartWhenActived] [-RerouteAudio] [[-FramesPerSecond] <Int32>] [[-Scene] <String>] [[-Name] <String>] [-Force] [<CommonParameters>]
+Set-OBSBrowserSource [[-Uri] <Uri>] [[-Width] <Int32>] [[-Height] <Int32>] [[-CSS] <String>] [-ShutdownWhenHidden] [-RestartWhenActived] [-RerouteAudio] [[-FramesPerSecond] <Int32>] [[-Scene] <String>] [[-Name] <String>] [-Force] [<CommonParameters>]
 ```

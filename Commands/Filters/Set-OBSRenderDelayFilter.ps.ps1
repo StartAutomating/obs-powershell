@@ -53,7 +53,18 @@ function Set-OBSRenderDelayFilter
             SourceName = $myParameters["SourceName"]
             filterKind = "gpu_delay"
             filterSettings = $myParameterData
-        }        
+        }
+        
+        if ($MyParameters["PassThru"]) {
+            $addSplat.Passthru = $MyParameters["PassThru"]
+            if ($MyInvocation.InvocationName -like 'Add-*') {
+                Add-OBSSourceFilter @addSplat
+            } else {
+                $addSplat.Remove('FilterKind')
+                Set-OBSSourceFilterSettings @addSplat
+            }
+            return            
+        }
 
         # Add the input.
         $outputAddedResult = Add-OBSSourceFilter @addSplat *>&1

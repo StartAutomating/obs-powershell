@@ -19,8 +19,6 @@ function Set-OBSColorFilter
     .EXAMPLE
         Show-OBS -Uri .\Assets\obs-powershell-animated-icon.svg |
             Set-OBSColorFilter -Opacity .5
-    .EXAMPLE
-        Show-OBS -Uri 
     #>
     [inherit(Command={
         Import-Module ..\..\obs-powershell.psd1 -Global
@@ -155,8 +153,15 @@ function Set-OBSColorFilter
             filterSettings = $myParameterData
         }
         
-        if ($PassThru) {
-            $addSplat.Passthru = $true
+        if ($MyParameters["PassThru"]) {
+            $addSplat.Passthru = $MyParameters["PassThru"]
+            if ($MyInvocation.InvocationName -like 'Add-*') {
+                Add-OBSSourceFilter @addSplat
+            } else {
+                $addSplat.Remove('FilterKind')
+                Set-OBSSourceFilterSettings @addSplat
+            }
+            return            
         }        
 
         # Add the input.

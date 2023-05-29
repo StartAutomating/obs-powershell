@@ -1,18 +1,18 @@
-function Add-OBSColorSource
+function Set-OBSColorSource
 {
     <#
     .SYNOPSIS
         Adds a color source
     .DESCRIPTION
         Adds a color source to OBS.  This displays a single 32-bit color (RGBA).
-    .EXAMPLE
-        Add-OBSColorSource
+    .LINK
+        Add-OBSInput
+    .LINK
+        Set-OBSInputSettings
     #>
     [inherit("Add-OBSInput", Dynamic, Abstract, ExcludeParameter='inputKind','sceneName','inputName')]
-    [Alias('Add-OBSMonitorSource')]
+    [Alias('Add-OBSColorSource')]
     param(
-    
-
     # The name of the scene.
     # If no scene name is provided, the current program scene will be used.
     [Parameter(ValueFromPipelineByPropertyName)]
@@ -98,7 +98,7 @@ function Add-OBSColorSource
         
         $myParameterData = [Ordered]@{color=$realColor}
 
-        $addObsInputParams = @{
+        $addSplat = @{
             sceneName = $myParameters["Scene"]
             inputName = $myParameters["Name"]
             inputKind = "color_source_v3"
@@ -108,11 +108,29 @@ function Add-OBSColorSource
         # If -SceneItemEnabled was passed,
         if ($myParameters.Contains('SceneItemEnabled')) {
             # propagate it to Add-OBSInput.
-            $addObsInputParams.SceneItemEnabled = $myParameters['SceneItemEnabled'] -as [bool]
+            $addSplat.SceneItemEnabled = $myParameters['SceneItemEnabled'] -as [bool]
+        }
+
+        # If -PassThru was passed
+        if ($MyParameters["PassThru"]) {
+            # pass it down to each command
+            $addSplat.Passthru = $MyParameters["PassThru"]
+            # If we were called with Add-
+            if ($MyInvocation.InvocationName -like 'Add-*') {
+                Add-OBSInput @addSplat # passthru Add-OBSInput
+            } else {
+                # Otherwise, remove SceneItemEnabled, InputKind, and SceneName
+                $addSplat.Remove('SceneItemEnabled')
+                $addSplat.Remove('inputKind')
+                $addSplat.Remove('sceneName')
+                # and passthru Set-OBSInputSettings.
+                Set-OBSInputSettings @addSplat
+            }
+            return
         }
 
         # Add the input.
-        $outputAddedResult = Add-OBSInput @addObsInputParams *>&1
+        $outputAddedResult = Add-OBSInput @addSplat *>&1
 
         # If we got back an error
         if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
@@ -120,13 +138,16 @@ function Add-OBSColorSource
             if ($outputAddedResult.TargetObject.d.requestStatus.code -eq 601) {
                 # then check if we use the -Force.
                 if ($Force)  { # If we do, remove the input                    
-                    Remove-OBSInput -InputName $addObsInputParams.inputName
+                    Remove-OBSInput -InputName $addSplat.inputName
                     # and re-add our result.
-                    $outputAddedResult = Add-OBSInput @addObsInputParams *>&1
+                    $outputAddedResult = Add-OBSInput @addSplat *>&1
                 } else {
-                    # Otherwise, get the input from the scene.
-                    Get-OBSSceneItem -sceneName $myParameters["Scene"] |
+                    # Otherwise, get the input from the scene,
+                    $sceneItem = Get-OBSSceneItem -sceneName $myParameters["Scene"] |
                         Where-Object SourceName -eq $myParameters["Name"]
+                    # update the input settings
+                    $sceneItem.Input.Settings = $addSplat.inputSettings
+                    $sceneItem # and return the scene item.
                     $outputAddedResult = $null
                 }
             }
@@ -141,7 +162,7 @@ function Add-OBSColorSource
         elseif ($outputAddedResult) {
             # get the input from the scene.
             Get-OBSSceneItem -sceneName $myParameters["Scene"] |
-                Where-Object SourceName -eq $name
+                Where-Object SourceName -eq $myParameters["Name"]
         }        
     }
 }

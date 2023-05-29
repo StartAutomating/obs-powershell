@@ -1,17 +1,18 @@
-function Add-OBSBrowserSource
+function Set-OBSBrowserSource
 {
     <#
     .SYNOPSIS
-        Adds a browser source
+        Sets a browser source
     .DESCRIPTION
-        Adds a browser source to OBS.
+        Adds or changes a browser source in OBS.
     .EXAMPLE
-        Add-OBSBrowserSource
+        Set-OBSBrowserSource -Uri https://pssvg.start-automating.com/Examples/Stars.svg
     #>
     [inherit(Command={
         Import-Module ..\..\obs-powershell.psd1 -Global
         "Add-OBSInput"
     }, Dynamic, Abstract, ExcludeParameter='inputKind','sceneName','inputName')]
+    [Alias('Add-OBSBrowserSource')]
     param(
     # The uri or file path to display.
     # If the uri points to a local file, this will be preferred
@@ -153,7 +154,7 @@ function Add-OBSBrowserSource
                 }
         }        
 
-        $addObsInputParams = [Ordered]@{
+        $addSplat = [Ordered]@{
             sceneName = $myParameters["Scene"]
             inputKind = "browser_source"
             inputSettings = $myParameterData
@@ -162,11 +163,29 @@ function Add-OBSBrowserSource
         # If -SceneItemEnabled was passed,
         if ($myParameters.Contains('SceneItemEnabled')) {
             # propagate it to Add-OBSInput.
-            $addObsInputParams.SceneItemEnabled = $myParameters['SceneItemEnabled'] -as [bool]
+            $addSplat.SceneItemEnabled = $myParameters['SceneItemEnabled'] -as [bool]
+        }
+
+        # If -PassThru was passed
+        if ($MyParameters["PassThru"]) {
+            # pass it down to each command
+            $addSplat.Passthru = $MyParameters["PassThru"]
+            # If we were called with Add-
+            if ($MyInvocation.InvocationName -like 'Add-*') {
+                Add-OBSInput @addSplat # passthru Add-OBSInput
+            } else {
+                # Otherwise, remove SceneItemEnabled, InputKind, and SceneName
+                $addSplat.Remove('SceneItemEnabled')
+                $addSplat.Remove('inputKind')
+                $addSplat.Remove('sceneName')
+                # and passthru Set-OBSInputSettings.
+                Set-OBSInputSettings @addSplat
+            }
+            return
         }
         
         # Add the input.
-        $outputAddedResult = Add-OBSInput @addObsInputParams *>&1
+        $outputAddedResult = Add-OBSInput @addSplat *>&1
 
         # If we got back an error
         if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
@@ -174,13 +193,16 @@ function Add-OBSBrowserSource
             if ($outputAddedResult.TargetObject.d.requestStatus.code -eq 601) {
                 # then check if we use the -Force.
                 if ($Force)  { # If we do, remove the input                    
-                    Remove-OBSInput -InputName $addObsInputParams.inputName
+                    Remove-OBSInput -InputName $addSplat.inputName
                     # and re-add our result.
-                    $outputAddedResult = Add-OBSInput @addObsInputParams *>&1
+                    $outputAddedResult = Add-OBSInput @addSplat *>&1
                 } else {
-                    # Otherwise, get the input from the scene.
-                    Get-OBSSceneItem -sceneName $myParameters["Scene"] |
+                    # Otherwise, get the input from the scene,
+                    $sceneItem = Get-OBSSceneItem -sceneName $myParameters["Scene"] |
                         Where-Object SourceName -eq $myParameters["Name"]
+                    # update the input settings
+                    $sceneItem.Input.Settings = $addSplat.inputSettings
+                    $sceneItem # and return the scene item.
                     $outputAddedResult = $null
                 }
             }
@@ -195,7 +217,7 @@ function Add-OBSBrowserSource
         elseif ($outputAddedResult) {
             # get the input from the scene.
             Get-OBSSceneItem -sceneName $myParameters["Scene"] |
-                Where-Object SourceName -eq $name
+                Where-Object SourceName -eq $myParameters["Name"]
         }
     }
 }

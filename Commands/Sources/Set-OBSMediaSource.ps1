@@ -1,4 +1,4 @@
-function Add-OBSMediaSource {
+function Set-OBSMediaSource {
     <#
     
     .SYNOPSIS    
@@ -6,13 +6,15 @@ function Add-OBSMediaSource {
     .DESCRIPTION    
         Adds a media source to OBS.    
     .EXAMPLE    
-        Add-OBSMediaSource -FilePath My.mp4    
+        Set-OBSMediaSource -FilePath My.mp4    
     .LINK    
-        Add-OBSInput        
+        Add-OBSInput    
+    .LINK    
+        Set-OBSInputSettings    
     
     #>
             
-    [Alias('Add-OBSFFMpegSource')]    
+    [Alias('Add-OBSFFMpegSource','Add-OBSMediaSource','Set-OBSFFMpegSource')]    
     [CmdletBinding()]
     param(
     # The path to the media file.    
@@ -175,6 +177,23 @@ function Add-OBSMediaSource {
         if ($myParameters.Contains('SceneItemEnabled')) {
             $addSplat.SceneItemEnabled = $myParameters['SceneItemEnabled'] -as [bool]
         }
+        # If -PassThru was passed
+        if ($MyParameters["PassThru"]) {
+            # pass it down to each command
+            $addSplat.Passthru = $MyParameters["PassThru"]
+            # If we were called with Add-
+            if ($MyInvocation.InvocationName -like 'Add-*') {
+                Add-OBSInput @addSplat # passthru Add-OBSInput
+            } else {
+                # Otherwise, remove SceneItemEnabled, InputKind, and SceneName
+                $addSplat.Remove('SceneItemEnabled')
+                $addSplat.Remove('inputKind')
+                $addSplat.Remove('sceneName')
+                # and passthru Set-OBSInputSettings.
+                Set-OBSInputSettings @addSplat
+            }
+            return
+        }
         # Add the input.
         $outputAddedResult = Add-OBSInput @addSplat *>&1
         # If we got back an error
@@ -183,13 +202,16 @@ function Add-OBSMediaSource {
             if ($outputAddedResult.TargetObject.d.requestStatus.code -eq 601) {
                 # then check if we use the -Force.
                 if ($Force)  { # If we do, remove the input                    
-                    Remove-OBSInput -InputName $addObsInputParams.inputName
+                    Remove-OBSInput -InputName $addSplat.inputName
                     # and re-add our result.
                     $outputAddedResult = Add-OBSInput @addSplat *>&1
                 } else {
-                    # Otherwise, get the input from the scene.
-                    Get-OBSSceneItem -sceneName $myParameters["Scene"] |
+                    # Otherwise, get the input from the scene,
+                    $sceneItem = Get-OBSSceneItem -sceneName $myParameters["Scene"] |
                         Where-Object SourceName -eq $myParameters["Name"]
+                    # update the input settings
+                    $sceneItem.Input.Settings = $addSplat.inputSettings
+                    $sceneItem # and return the scene item.
                     $outputAddedResult = $null
                 }
             }

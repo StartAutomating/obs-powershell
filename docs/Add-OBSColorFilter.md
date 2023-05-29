@@ -37,11 +37,6 @@ Show-OBS -Uri .\Assets\obs-powershell-animated-icon.svg |
     Set-OBSColorFilter -Opacity .5
 ```
 
-#### EXAMPLE 2
-```PowerShell
-Show-OBS -Uri
-```
-
 
 
 ---

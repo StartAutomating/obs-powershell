@@ -1,4 +1,4 @@
-Add-OBSMediaSource
+Set-OBSMediaSource
 ------------------
 
 
@@ -26,6 +26,10 @@ Adds a media source to OBS.
 
 
 
+* [Set-OBSInputSettings](Set-OBSInputSettings.md)
+
+
+
 
 
 ---
@@ -34,7 +38,7 @@ Adds a media source to OBS.
 ### Examples
 #### EXAMPLE 1
 ```PowerShell
-Add-OBSMediaSource -FilePath My.mp4
+Set-OBSMediaSource -FilePath My.mp4
 ```
 
 
@@ -208,5 +212,5 @@ If set, will fit the input to the screen.
 
 ### Syntax
 ```PowerShell
-Add-OBSMediaSource [-FilePath] <String> [-CloseWhenInactive] [-Loop] [-UseHardwareDecoding] [-ClearOnMediaEnd] [[-FFMpegOption] <String>] [[-Scene] <String>] [[-Name] <String>] [-Force] [-FitToScreen] [<CommonParameters>]
+Set-OBSMediaSource [-FilePath] <String> [-CloseWhenInactive] [-Loop] [-UseHardwareDecoding] [-ClearOnMediaEnd] [[-FFMpegOption] <String>] [[-Scene] <String>] [[-Name] <String>] [-Force] [-FitToScreen] [<CommonParameters>]
 ```

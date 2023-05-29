@@ -5,6 +5,27 @@
     <Name>OBS.GetInputList.Response</Name>
     <Members>
       <ScriptMethod>
+        <Name>Mute</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Mutes an input
+.DESCRIPTION
+    Mutes the audio of an OBS Input
+.LINK
+    Set-OBSInputMute
+#&gt;
+param(
+# If set, returns the message used to mute
+[switch]
+$PassThru
+)
+
+$this |
+    Set-OBSInputMute -InputMuted -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
         <Name>Next</Name>
         <Script>
                         &lt;#
@@ -124,6 +145,27 @@ $PassThru
 $this | Send-OBSTriggerMediaInputAction -MediaAction "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_STOP" -PassThru:$PassThru
                     </Script>
       </ScriptMethod>
+      <ScriptMethod>
+        <Name>Unmute</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Mutes an input
+.DESCRIPTION
+    Mutes the audio of an OBS Input
+.LINK
+    Set-OBSInputMute
+#&gt;
+param(
+# If set, returns the message used to unmute.
+[switch]
+$PassThru
+)
+
+$this |
+    Set-OBSInputMute -InputMuted:$false -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
       <ScriptProperty>
         <Name>Filters</Name>
         <GetScriptBlock>
@@ -140,6 +182,23 @@ $this | Send-OBSTriggerMediaInputAction -MediaAction "OBS_WEBSOCKET_MEDIA_INPUT_
     Get-OBSSourceFilterList
 #&gt;
 Get-OBSSourceFilterList -SourceName $this.InputName
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Settings</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets an input's settings
+.DESCRIPTION
+    Gets the current settings for an OBS input.
+.EXAMPLE
+     $obsPowerShellIcon = Show-OBS -Uri https://obs-powershell.start-automating.com/Assets/obs-powershell-animated-icon.svg
+     $obsPowerShellIcon.Input.Settings     
+.LINK
+    Get-OBSInputSettings
+#&gt;
+(Get-OBSInputSettings -InputName $this.InputName).inputSettings
                     </GetScriptBlock>
       </ScriptProperty>
       <ScriptProperty>

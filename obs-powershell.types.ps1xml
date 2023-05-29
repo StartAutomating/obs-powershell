@@ -167,6 +167,51 @@ $this |
                     </Script>
       </ScriptMethod>
       <ScriptProperty>
+        <Name>CurrentTime</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets an input's current time
+.DESCRIPTION
+    Gets an input's current time, if applicable
+.LINK
+    Get-OBSMediaInputStatus
+#&gt;
+param()
+
+$mediaCursor = ($this | Get-OBSMediaInputStatus).mediaCursor -as [double]
+if (-not $mediaCursor) { $mediaCursor = [double]0}
+[timespan]::FromMilliseconds($mediaCursor)
+                    </GetScriptBlock>
+        <SetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Sets an input's current time
+.DESCRIPTION
+    Sets an input's current time.
+.LINK
+    Send-OBSMediaInputCursor
+#&gt;
+param()
+
+$mediaCursor = 0
+
+$PassThru = $false
+foreach ($arg in $args) {
+    if ($arg -is [double]) {
+        $mediaCursor = $arg
+    }
+    elseif ($arg -as [timespan]) {
+        $mediaCursor = $arg -as [timespan].TotalMilliseconds
+    }
+    if ($arg -is [bool]) {
+        $PassThru = $true
+    }
+}
+$this | Set-OBSMediaInputCursor -MediaCursor $mediaCursor  -PassThru:$PassThru
+                    </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
         <Name>Filters</Name>
         <GetScriptBlock>
                         &lt;#

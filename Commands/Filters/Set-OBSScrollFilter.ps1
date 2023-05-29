@@ -125,10 +125,15 @@ function Set-OBSScrollFilter {
             filterKind = "scroll_filter"
             filterSettings = $myParameterData
         }        
-        # If -SceneItemEnabled was passed,
-        if ($myParameters.Contains('SceneItemEnabled')) {
-            # propagate it to Add-OBSInput.
-            $addSplat.SceneItemEnabled = $myParameters['SceneItemEnabled'] -as [bool]
+        if ($MyParameters["PassThru"]) {
+            $addSplat.Passthru = $MyParameters["PassThru"]
+            if ($MyInvocation.InvocationName -like 'Add-*') {
+                Add-OBSSourceFilter @addSplat
+            } else {
+                $addSplat.Remove('FilterKind')
+                Set-OBSSourceFilterSettings @addSplat
+            }
+            return            
         }
         # Add the input.
         $outputAddedResult = Add-OBSSourceFilter @addSplat *>&1

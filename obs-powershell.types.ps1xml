@@ -245,6 +245,18 @@ Get-OBSSourceFilterList -SourceName $this.InputName
 #&gt;
 (Get-OBSInputSettings -InputName $this.InputName).inputSettings
                     </GetScriptBlock>
+        <SetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Sets an input's settings
+.DESCRIPTION
+    Changes the settings for an OBS input.
+.LINK
+    Set-OBSInputSettings
+#&gt;
+param()
+Set-OBSInputSettings -InputName $this.InputName -InputSettings $args[0]
+                    </SetScriptBlock>
       </ScriptProperty>
       <ScriptProperty>
         <Name>Status</Name>

@@ -125,6 +125,7 @@ Initial Release of obs-powershell
 'Set-OBSColorSource',
 'Set-OBSDisplaySource',
 'Set-OBSMediaSource',
+'Set-OBSVLCSource',
 'Add-OBSInput',
 'Add-OBSProfile',
 'Add-OBSScene',

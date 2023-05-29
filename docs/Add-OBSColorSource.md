@@ -1,4 +1,4 @@
-Add-OBSColorSource
+Set-OBSColorSource
 ------------------
 
 
@@ -21,11 +21,14 @@ Adds a color source to OBS.  This displays a single 32-bit color (RGBA).
 ---
 
 
-### Examples
-#### EXAMPLE 1
-```PowerShell
-Add-OBSColorSource
-```
+### Related Links
+* [Add-OBSInput](Add-OBSInput.md)
+
+
+
+* [Set-OBSInputSettings](Set-OBSInputSettings.md)
+
+
 
 
 
@@ -99,5 +102,5 @@ If not set, you will get an error if a source with the same name exists.
 
 ### Syntax
 ```PowerShell
-Add-OBSColorSource [[-Scene] <String>] [[-Name] <String>] [[-Color] <String>] [-Force] [<CommonParameters>]
+Set-OBSColorSource [[-Scene] <String>] [[-Name] <String>] [[-Color] <String>] [-Force] [<CommonParameters>]
 ```

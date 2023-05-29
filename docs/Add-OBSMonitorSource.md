@@ -1,4 +1,4 @@
-Add-OBSDisplaySource
+Set-OBSDisplaySource
 --------------------
 
 
@@ -24,12 +24,12 @@ Adds a display source to OBS.  This captures the contents of the display.
 ### Examples
 #### EXAMPLE 1
 ```PowerShell
-Add-OBSMonitorSource  # Adds a display source of the primary monitor
+Add-OBSDisplaySource  # Adds a display source of the primary monitor
 ```
 
 #### EXAMPLE 2
 ```PowerShell
-Add-OBSMonitorSource -Display 2 # Adds a display source of the second monitor
+Add-OBSDisplaySource -Display 2 # Adds a display source of the second monitor
 ```
 
 
@@ -126,5 +126,5 @@ If not set, you will get an error if a source with the same name exists.
 
 ### Syntax
 ```PowerShell
-Add-OBSDisplaySource [[-Monitor] <Int32>] [-CaptureCursor] [[-Scene] <String>] [[-Name] <String>] [-Force] [<CommonParameters>]
+Set-OBSDisplaySource [[-Monitor] <Int32>] [-CaptureCursor] [[-Scene] <String>] [[-Name] <String>] [-Force] [<CommonParameters>]
 ```

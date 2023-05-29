@@ -71,7 +71,18 @@ function Set-OBSGainFilter {
             SourceName = $myParameters["SourceName"]
             filterKind = "gain_filter"
             filterSettings = [Ordered]@{db=$Gain}
-        }        
+        }
+        
+        if ($MyParameters["PassThru"]) {
+            $addSplat.Passthru = $MyParameters["PassThru"]
+            if ($MyInvocation.InvocationName -like 'Add-*') {
+                Add-OBSSourceFilter @addSplat
+            } else {
+                $addSplat.Remove('FilterKind')
+                Set-OBSSourceFilterSettings @addSplat
+            }
+            return            
+        }
         # Add the input.
         $outputAddedResult = Add-OBSSourceFilter @addSplat *>&1
         # If we got back an error

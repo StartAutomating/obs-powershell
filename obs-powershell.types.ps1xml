@@ -106,6 +106,20 @@ $this | Send-OBSTriggerMediaInputAction -MediaAction "OBS_WEBSOCKET_MEDIA_INPUT_
                     </Script>
       </ScriptMethod>
       <ScriptMethod>
+        <Name>Remove</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Removes an input
+.DESCRIPTION
+    Removes an OBS Input
+.LINK
+    Remove-OBSInput
+#&gt;
+$this | Remove-OBSInput
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
         <Name>Restart</Name>
         <Script>
                         &lt;#
@@ -228,6 +242,35 @@ $this | Set-OBSMediaInputCursor -MediaCursor $mediaCursor  -PassThru:$PassThru
 #&gt;
 Get-OBSSourceFilterList -SourceName $this.InputName
                     </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>MonitorType</Name>
+        <GetScriptBlock>
+                        $this | Get-OBSInputAudioMonitorType
+                    </GetScriptBlock>
+        <SetScriptBlock>
+                        param(
+[string]
+$MonitorType
+)
+$validValues = "Monitor", "MonitorAndOutput", "None","Off","OBS_MONITORING_TYPE_MONITOR_ONLY","OBS_MONITORING_TYPE_MONITOR_AND_OUTPUT","OBS_MONITORING_TYPE_MONITOR_ONLY"
+
+if ($MonitorType -notin $validValues) {
+    throw "Invalid Value: '$MonitorType' is not in '$($validValues -join "','")'"
+}
+
+$realMonitorType = if ($MonitorType -like 'obs*') {
+    $MonitorType.ToUpper()
+} elseif ($MonitorType -eq 'Monitor') {
+    "OBS_MONITORING_TYPE_MONITOR_ONLY"
+} elseif ($MonitorType -eq 'MonitorAndOutput') {
+    "OBS_MONITORING_TYPE_MONITOR_AND_OUTPUT"
+} else {
+    "OBS_MONITORING_TYPE_NONE"
+}
+
+$this | Set-OBSInputAudioMonitorType -MonitorType $realMonitorType
+                    </SetScriptBlock>
       </ScriptProperty>
       <ScriptProperty>
         <Name>Settings</Name>

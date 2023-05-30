@@ -270,6 +270,7 @@ Initial Release of obs-powershell
 'Set-OBSEqualizerFilter',
 'Set-OBSGainFilter',
 'Set-OBSRenderDelayFilter',
+'Set-OBSScaleFilter',
 'Set-OBSScrollFilter',
 'Set-OBSSharpnessFilter'
 }

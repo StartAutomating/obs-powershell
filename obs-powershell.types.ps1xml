@@ -1169,4 +1169,213 @@ $this | Set-OBSInputSettings -InputSettings ([Ordered]@{color=$realColor})
       </ScriptMethod>
     </Members>
   </Type>
+  <Type>
+    <Name>OBS.PowerShell</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>Commands</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets obs-powershell commands
+.DESCRIPTION
+    Gets the commands in obs-powershell.
+.EXAMPLE
+    (Get-OBS).Commands
+#&gt;
+if (-not $this.'.Commands') {
+    $this | Add-Member NoteProperty '.Commands' (Get-Command -Module obs-powershell)
+}
+
+$this.'.Commands'
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>CurrentScene</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the current scene
+.DESCRIPTION
+    Gets the current scene in OBS.
+.EXAMPLE
+    Get-OBS | Select-Object -ExpandProperty CurrentScene
+#&gt;
+Get-OBSCurrentProgramScene
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Inputs</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the loaded OBS inputs.
+.DESCRIPTION
+    Gets the currently loaded inputs in OBS.
+.LINK
+    Get-OBSInput
+#&gt;
+Get-OBSInput
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>OBSPowerShellVersion</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the obs-powershell version.
+.DESCRIPTION
+    Gets the version of obs-powershell.
+.EXAMPLE
+    Get-OBS | Select-Object -ExpandProperty OBSPowerShellVersion
+#&gt;
+Get-Module obs-powershell | Select-Object -ExpandProperty Version
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>OBSVersion</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the obs version.
+.DESCRIPTION
+    Gets the version of obs.
+.EXAMPLE
+    Get-OBS | Select-Object -ExpandProperty OBSVersion
+#&gt;
+if (-not $this.'.OBSVersionInfo') {
+    $this | Add-Member NoteProperty '.OBSVersionInfo' (Get-OBSVersion) -Force
+}
+
+$this.'.OBSVersionInfo'.OBSVersion -as [version]
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>OBSWebSocketVersion</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the obs version.
+.DESCRIPTION
+    Gets the version of obs.
+.EXAMPLE
+    Get-OBS | Select-Object -ExpandProperty OBSVersion
+#&gt;
+if (-not $this.'.OBSVersionInfo') {
+    $this | Add-Member NoteProperty '.OBSVersionInfo' (Get-OBSVersion) -Force
+}
+
+$this.'.OBSVersionInfo'.OBSWebSocketVersion -as [version]
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Outputs</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the loaded OBS outputs.
+.DESCRIPTION
+    Gets the currently loaded outputs in OBS.
+.LINK
+    Get-OBSOutput
+#&gt;
+Get-OBSOutput
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>RandomExample</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+
+.DESCRIPTION
+
+#&gt;
+$foundAnExample = $false
+do {
+    $helpObject = $this.Commands | Get-Random | Get-Help
+    if (-not $helpObject.Examples) { continue }
+    $foundAnExample = $helpObject.Examples[0] | Get-Random | Select-Object -ExpandProperty Example
+} until ($foundAnExample)
+
+$foundAnExample
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>RecordStatus</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets OBS record status.
+.DESCRIPTION
+    Gets the record status of OBS.
+.LINK
+    Get-OBSRecordStatus
+#&gt;
+Get-OBSRecordStatus
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>SceneItems</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets all obs scene items.
+.DESCRIPTION
+    Gets every item in every scene in OBS.
+.LINK
+    Get-OBSScene
+.LINK
+    Get-OBSSceneItem
+#&gt;
+$this.Scenes | Get-OBSSceneItem
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Scenes</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the loaded OBS scenes.
+.DESCRIPTION
+    Gets the currently loaded scenes in OBS.
+.LINK
+    Get-OBSScene
+#&gt;
+(Get-OBSScene).Scenes
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Stats</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets OBS stats.
+.DESCRIPTION
+    Gets OBS statistics
+.LINK
+    Get-OBSStats
+#&gt;
+Get-OBSStats
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>StreamStatus</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets OBS stream status.
+.DESCRIPTION
+    Gets the stream status of OBS.
+.LINK
+    Get-OBSStreamStatus
+#&gt;
+Get-OBSStreamStatus
+                    </GetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
 </Types>

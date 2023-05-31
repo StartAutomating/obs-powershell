@@ -13,6 +13,7 @@ function Stop-OBSOutput {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#stopoutput
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'StopOutput')]
+[Alias('obs.powershell.websocket.StopOutput')]
 param(
 <# Output name #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -91,7 +92,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

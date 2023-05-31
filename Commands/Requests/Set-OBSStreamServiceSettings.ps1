@@ -15,6 +15,7 @@ function Set-OBSStreamServiceSettings {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setstreamservicesettings
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetStreamServiceSettings')]
+[Alias('obs.powershell.websocket.SetStreamServiceSettings')]
 param(
 <# Type of stream service to apply. Example: `rtmp_common` or `rtmp_custom` #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -98,7 +99,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

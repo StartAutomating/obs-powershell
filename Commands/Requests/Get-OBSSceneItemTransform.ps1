@@ -15,6 +15,7 @@ function Get-OBSSceneItemTransform {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getsceneitemtransform
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetSceneItemTransform')]
+[Alias('obs.powershell.websocket.GetSceneItemTransform')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Name of the scene the item is in #>
@@ -100,7 +101,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

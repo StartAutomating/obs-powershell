@@ -12,7 +12,7 @@ function Send-OBS
     #>
     param(
     # The data to send to the obs websocket.
-    [Parameter(ValueFromPipeline,ValueFromPipelineByPropertyName)]
+    [Parameter(ValueFromPipeline,ValueFromPipelineByPropertyName)]    
     [Alias('Payload')]
     $MessageData,
 
@@ -29,7 +29,17 @@ function Send-OBS
 
     # If set, will process a batch of requests in parallel.
     [switch]
-    $SerialFrame
+    $SerialFrame,
+
+    # If set, will receive responses from batches of requests
+    [Alias('ReceiveBatches')]
+    [switch]
+    $ReceiveBatch,
+
+    # If set, will never attempt to receive a response.
+    [Alias('NoReceive','IgnoreResponse','IgnoreReceive')]
+    [switch]
+    $DoNotReceive
     )
 
     begin {
@@ -90,8 +100,8 @@ function Send-OBS
                         }
                     }
                 }
-                $PayloadJson =  $payloadObject |            
-                    ConvertTo-Json -Depth 100        
+                $PayloadJson = ConvertTo-Json -Depth 100 -InputObject $payloadObject
+                    
             
                 # And create a byte segment to send it off.
                 $SendSegment  = [ArraySegment[Byte]]::new([Text.Encoding]::UTF8.GetBytes($PayloadJson))
@@ -139,9 +149,13 @@ function Send-OBS
                     }
                     # Since we have a working websocket, send the payload to it.
                     $null = $OBSWebSocket.SendAsync($SendSegment,'Text', $true, [Threading.CancellationToken]::new($false))
-                    # If a response was expected
-                    if ($payloadObject.d.requestID) {
-                        $payloadObject | . Receive-OBS                        
+                    # If a response was expected (and we did explicitly say to ignore responses)
+                    if ($payloadObject.d.requestID -and 
+                        (-not $DoNotReceive)
+                    ) {
+                        if ($payloadObject.op -ne 8 -or $ReceiveBatch) {
+                            $payloadObject | . Receive-OBS
+                        }
                     }
                 }
             }
@@ -150,6 +164,7 @@ function Send-OBS
 
     process {
         foreach ($message in $MessageData) {
+            if ($null -eq $message) { continue }
             $allMessages.Enqueue($Message)
             if ($StepTime.TotalMilliseconds -gt 0) {
                 if ($SerialFrame) {
@@ -179,8 +194,8 @@ function Send-OBS
         if ($allMessages.Count -eq 1) {
             $payloadObject = $allMessages[0]
             $payloadObject | SendSingleMessageToOBS
-        }
-        elseif ($allMessages.ToArray().RequestType) {
+        }        
+        elseif ($allMessages.Count -gt 0 -and $allMessages.ToArray().RequestType) {
             if (-not $script:ObsRequestsCounts["Batch"]) {
                 $script:ObsRequestsCounts["Batch"] = 0
             }

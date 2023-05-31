@@ -13,6 +13,7 @@ function Set-OBSInputVolume {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setinputvolume
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetInputVolume')]
+[Alias('obs.powershell.websocket.SetInputVolume')]
 param(
 <# Name of the input to set the volume of #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -103,7 +104,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

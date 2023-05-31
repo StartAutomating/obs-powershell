@@ -15,6 +15,7 @@ function Switch-OBSRecordPause {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#togglerecordpause
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'ToggleRecordPause')]
+[Alias('obs.powershell.websocket.ToggleRecordPause')]
 param(
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
@@ -88,7 +89,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

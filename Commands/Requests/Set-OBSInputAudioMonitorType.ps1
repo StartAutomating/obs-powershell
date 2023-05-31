@@ -13,6 +13,7 @@ function Set-OBSInputAudioMonitorType {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setinputaudiomonitortype
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetInputAudioMonitorType')]
+[Alias('obs.powershell.websocket.SetInputAudioMonitorType')]
 param(
 <# Name of the input to set the audio monitor type of #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -96,7 +97,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

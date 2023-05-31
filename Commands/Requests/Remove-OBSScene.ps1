@@ -13,6 +13,7 @@ function Remove-OBSScene {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#removescene
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'RemoveScene')]
+[Alias('obs.powershell.websocket.RemoveScene')]
 param(
 <# Name of the scene to remove #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -91,7 +92,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

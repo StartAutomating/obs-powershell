@@ -17,6 +17,7 @@ function Get-OBSVideoSettings {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getvideosettings
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetVideoSettings')]
+[Alias('obs.powershell.websocket.GetVideoSettings')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 # If set, will return the information that would otherwise be sent to OBS.
@@ -91,7 +92,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

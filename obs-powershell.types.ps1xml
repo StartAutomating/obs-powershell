@@ -316,6 +316,45 @@ param()
 $this | Get-OBSMediaInputStatus
                     </GetScriptBlock>
       </ScriptProperty>
+      <ScriptProperty>
+        <Name>Volume</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets an input's volume
+.DESCRIPTION
+    Gets an OBS input's volume mulitplier
+.LINK
+    Get-OBSInputVolume
+#&gt;
+($this | Get-OBSInputVolume).inputVolumeMul
+                    </GetScriptBlock>
+        <SetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Sets an input's volume
+.DESCRIPTION
+    Sets an OBS input's volume mulitplier.
+
+    This is normally between 0 (no sound) and 1 (normal levels).
+    
+    A source can be made up to 20 times the original volume.
+.LINK
+    Set-OBSInputVolume
+#&gt;
+param(
+[double]
+$Multiple
+)
+
+# If multiple is less than zero, clamp it to avoid errors
+if ($Multiple -lt 0) { $Multiple = 0}
+# If multiple is greater than 20, claim it to avoid errors (and check your hearing)
+if ($Multiple -gt 20) { $Multiple = 20} 
+
+$this | Set-OBSInputVolume -InputVolumeMul $Multiple
+                    </SetScriptBlock>
+      </ScriptProperty>
     </Members>
   </Type>
   <Type>

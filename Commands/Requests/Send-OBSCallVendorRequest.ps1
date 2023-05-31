@@ -16,6 +16,7 @@ function Send-OBSCallVendorRequest {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#callvendorrequest
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'CallVendorRequest')]
+[Alias('obs.powershell.websocket.CallVendorRequest')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Name of the vendor to use #>
@@ -105,7 +106,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

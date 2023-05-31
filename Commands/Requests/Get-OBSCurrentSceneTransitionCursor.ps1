@@ -17,6 +17,7 @@ function Get-OBSCurrentSceneTransitionCursor {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getcurrentscenetransitioncursor
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetCurrentSceneTransitionCursor')]
+[Alias('obs.powershell.websocket.GetCurrentSceneTransitionCursor')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 # If set, will return the information that would otherwise be sent to OBS.
@@ -91,7 +92,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

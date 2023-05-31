@@ -13,6 +13,7 @@ function Set-OBSInputAudioBalance {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setinputaudiobalance
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetInputAudioBalance')]
+[Alias('obs.powershell.websocket.SetInputAudioBalance')]
 param(
 <# Name of the input to set the audio balance of #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -97,7 +98,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

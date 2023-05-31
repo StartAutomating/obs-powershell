@@ -15,6 +15,7 @@ function Stop-OBSVirtualCam {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#stopvirtualcam
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'StopVirtualCam')]
+[Alias('obs.powershell.websocket.StopVirtualCam')]
 param(
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
@@ -88,7 +89,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

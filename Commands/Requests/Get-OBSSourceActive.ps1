@@ -15,6 +15,7 @@ function Get-OBSSourceActive {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getsourceactive
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetSourceActive')]
+[Alias('obs.powershell.websocket.GetSourceActive')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Name of the source to get the active state of #>
@@ -94,7 +95,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

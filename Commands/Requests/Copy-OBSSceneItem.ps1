@@ -15,6 +15,7 @@ function Copy-OBSSceneItem {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#duplicatesceneitem
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'DuplicateSceneItem')]
+[Alias('obs.powershell.websocket.DuplicateSceneItem')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Name of the scene the item is in #>
@@ -105,7 +106,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

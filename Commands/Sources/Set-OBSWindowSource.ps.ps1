@@ -1,4 +1,4 @@
-function Set-OBSDisplaySource
+function Set-OBSWindowSource
 {
     <#
     .SYNOPSIS
@@ -93,8 +93,6 @@ function Set-OBSDisplaySource
         # In order to get the WindowTitle to match that OBS needs, we need to look thru the input properties list.
         # and for that, an input needs to exist.
         if (-not $myParameters["Name"]) {
-
-            
             if ($myParameters["WindowTitle"]) {
                 $Name = $myParameters["Name"] = "WindowCapture-" + $myParameters["WindowTitle"]
             }
@@ -154,6 +152,7 @@ function Set-OBSDisplaySource
         $outputAddedResult = Add-OBSInput @addSplat *>&1        
         $possibleWindows = Get-OBSInputPropertiesListPropertyItems -InputName $addSplat.inputName -PropertyName window
         foreach ($windowInfo in $possibleWindows) {
+            if (-not $WindowTitle) { continue }
             if (
                 ($windowInfo.itemName -eq $WindowTitle) -or
                 ($windowInfo.ItemValue -eq $WindowTitle) -or
@@ -170,6 +169,7 @@ function Set-OBSDisplaySource
         if ($MyParameters["PassThru"]) {
             # pass it down to each command            
             # Otherwise, remove SceneItemEnabled, InputKind, and SceneName
+            $addSplat.PassThru = $true
             $addSplat.Remove('SceneItemEnabled')
             $addSplat.Remove('inputKind')
             $addSplat.Remove('sceneName')

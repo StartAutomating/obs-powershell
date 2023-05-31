@@ -15,6 +15,7 @@ function Resume-OBSRecord {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#resumerecord
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'ResumeRecord')]
+[Alias('obs.powershell.websocket.ResumeRecord')]
 param(
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
@@ -88,7 +89,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

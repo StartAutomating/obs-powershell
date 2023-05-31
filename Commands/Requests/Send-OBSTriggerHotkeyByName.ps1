@@ -13,6 +13,7 @@ function Send-OBSTriggerHotkeyByName {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#triggerhotkeybyname
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'TriggerHotkeyByName')]
+[Alias('obs.powershell.websocket.TriggerHotkeyByName')]
 param(
 <# Name of the hotkey to trigger #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -91,7 +92,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

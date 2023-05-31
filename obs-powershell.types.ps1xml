@@ -584,6 +584,12 @@ $allSteps = @(
 
         $totalTimeSpan += $nextTimeSpan
         $nextTimeSpan = [timespan]0
+
+        if (($argIndex -lt ($AllArgs.Length - 1)) -and 
+            $AllArgs[$argIndex + 1] -as [timespan]
+        ) {
+            Send-OBSSleep -SleepMillis ($AllArgs[$argIndex + 1] -as [timespan]).TotalMilliseconds -PassThru
+        }
     }
 
     $IsFirstArg = $false
@@ -670,14 +676,35 @@ $this | Set-OBSSceneItemTransform -SceneItemTransform $cropTable
       <ScriptMethod>
         <Name>Enable</Name>
         <Script>
-                        $this | Set-OBSSceneItemEnabled -sceneItemEnabled
+                        param(
+[switch]
+$PassThru
+)
+
+$this | Set-OBSSceneItemEnabled -sceneItemEnabled -PassThru:$PassThru
 
                     </Script>
       </ScriptMethod>
       <ScriptMethod>
         <Name>FitToScreen</Name>
         <Script>
-                        $videoSettings = Get-OBSVideoSettings
+                        &lt;#
+.SYNOPSIS
+    Fits an item to the screen
+.DESCRIPTION
+    Centers an item and makes it fit to the screen.
+.LINK
+    Get-OBSVideoSettings
+.LINK
+    Get-OBSSceneItemTransform
+.LINK
+    Set-OBSSceneItemTransform
+#&gt;
+param()
+if (-not $script:CachedOBSVideoSettings) {
+    $script:CachedOBSVideoSettings = Get-OBSVideoSettings
+}
+$videoSettings = $script:CachedOBSVideoSettings
 
 $thisTransform = $this | Get-OBSSceneItemTransform
 
@@ -835,6 +862,13 @@ $this.Animate.Invoke($animateArguments)
                     </Script>
       </ScriptMethod>
       <ScriptMethod>
+        <Name>SetZIndex</Name>
+        <Script>
+                        $this | Set-OBSSceneItemIndex -SceneItemIndex ($args[0])
+$this | Add-Member NoteProperty "sceneItemIndex" $args[0] -Force 
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
         <Name>Unlock</Name>
         <Script>
                         $this | Set-OBSSceneItemLocked -sceneItemLocked:$false
@@ -916,6 +950,18 @@ $this.'.Input'
         <GetScriptBlock>
                         return $this.sceneItemIndex
 
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ZIndex</Name>
+        <GetScriptBlock>
+                        $indexInfo = $this | Get-OBSSceneItemIndex
+if ($indexInfo.SceneItemIndex) {
+    $indexInfo.SceneItemIndex
+}
+elseif ($indexInfo -is [int]) {
+    $indexInfo
+}
                     </GetScriptBlock>
       </ScriptProperty>
     </Members>

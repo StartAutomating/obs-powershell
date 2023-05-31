@@ -15,6 +15,7 @@ function Add-OBSSceneCollection {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createscenecollection
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'CreateSceneCollection')]
+[Alias('obs.powershell.websocket.CreateSceneCollection')]
 param(
 <# Name for the new scene collection #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -93,7 +94,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

@@ -15,6 +15,7 @@ function Get-OBSSceneItemLocked {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getsceneitemlocked
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetSceneItemLocked')]
+[Alias('obs.powershell.websocket.GetSceneItemLocked')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Name of the scene the item is in #>
@@ -100,7 +101,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

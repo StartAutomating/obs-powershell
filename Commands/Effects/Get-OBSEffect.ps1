@@ -10,14 +10,16 @@ function Get-OBSEffect
 
         Those messages can be defined in a .json file or a script, in any module that tags OBS.
 
-        They can also be defined in a function named like:
+        They can also be defined in a function or script named like:
         
-        * `OBS.Effect.*`
-        * `OBS.FX.*`
-        * `OBS.PowerShell.Effect*`
-        * `OBS.PowerShell.FX*`
+        * `*.OBS.FX.*`
+        * `*.OBS.Effect.*`
+        * `*.OBS.Effects.*`
+        
     .LINK
-        Add-OBSEffect
+        Import-OBSEffect
+    .LINK
+        Remove-OBSEffect
     #>
     param(
     # The name of the effect.

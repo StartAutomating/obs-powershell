@@ -114,13 +114,14 @@ function Import-OBSEffect
 
             if ($from -is [Management.Automation.ApplicationInfo]) {
                 $effectName = $from.Name -replace '\.obs\.(?>fx|effects?).(?>ps1|json)$'
-                $script:OBSFX[$effectName] = [PSCustomObject][Ordered]@{
+                $newEffect  = [PSCustomObject][Ordered]@{
                     PSTypeName = 'OBS.PowerShell.Effect'
                     Messages   = Get-Content -Raw -Path $From.Source | ConvertFrom-Json
                     EffectName = $effectName
                     TypeName   = $TypeName
                 }
-                $newEffects += $script:OBSFX[-1]
+                $script:OBSFX[$effectName] = $newEffect
+                $newEffects += $newEffect
                 $script:OBSFX[-1]
             } else {
                 if ($from.pstypenames -notcontains 'OBS.PowerShell.Effect.Command') {

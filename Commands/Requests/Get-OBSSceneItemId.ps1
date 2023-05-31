@@ -15,6 +15,7 @@ function Get-OBSSceneItemId {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getsceneitemid
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetSceneItemId')]
+[Alias('obs.powershell.websocket.GetSceneItemId')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Name of the scene or group to search in #>
@@ -105,7 +106,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

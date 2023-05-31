@@ -17,6 +17,7 @@ function Get-OBSGroupSceneItem {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getgroupsceneitemlist
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetGroupSceneItemList')]
+[Alias('obs.powershell.websocket.GetGroupSceneItemList')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Name of the group to get the items of #>
@@ -96,7 +97,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

@@ -13,6 +13,7 @@ function Switch-OBSOutput {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#toggleoutput
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'ToggleOutput')]
+[Alias('obs.powershell.websocket.ToggleOutput')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Output name #>
@@ -92,7 +93,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

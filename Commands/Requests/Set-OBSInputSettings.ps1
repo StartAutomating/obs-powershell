@@ -13,6 +13,7 @@ function Set-OBSInputSettings {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setinputsettings
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetInputSettings')]
+[Alias('obs.powershell.websocket.SetInputSettings')]
 param(
 <# Name of the input to set the settings of #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -101,7 +102,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

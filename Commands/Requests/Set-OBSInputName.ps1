@@ -13,6 +13,7 @@ function Set-OBSInputName {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setinputname
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetInputName')]
+[Alias('obs.powershell.websocket.SetInputName')]
 param(
 <# Current input name #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -96,7 +97,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

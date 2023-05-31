@@ -115,8 +115,8 @@ function Receive-OBS
                 # If there was only one property
                 if ($eventResponseProperties.Length -eq 1) {
                     $typeName = "$($eventResponseProperties.TypeNameOfValue)"
-                    # and it was a string or an array
-                    if ($typeName -eq 'System.String' -or $typeName -eq 'System.Object[]')  {
+                    # and it was a string, array, or PSCustomObject
+                    if ($typeName -eq 'System.String' -or $typeName -eq 'System.Object[]' -or $typeName -eq 'System.Management.Automation.PSCustomObject')  {
                         # expand it
                         $eventResponse.psobject.properties.value
                     } else {

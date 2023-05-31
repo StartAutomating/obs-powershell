@@ -13,6 +13,7 @@ function Get-OBSSourceFilterDefaultSettings {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getsourcefilterdefaultsettings
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetSourceFilterDefaultSettings')]
+[Alias('obs.powershell.websocket.GetSourceFilterDefaultSettings')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Filter kind to get the default settings for #>
@@ -92,7 +93,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

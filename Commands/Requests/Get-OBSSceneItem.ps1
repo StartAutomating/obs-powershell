@@ -15,6 +15,7 @@ function Get-OBSSceneItem {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getsceneitemlist
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetSceneItemList')]
+[Alias('obs.powershell.websocket.GetSceneItemList')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Name of the scene to get the items of #>
@@ -94,7 +95,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

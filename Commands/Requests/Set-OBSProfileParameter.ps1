@@ -13,6 +13,7 @@ function Set-OBSProfileParameter {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setprofileparameter
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetProfileParameter')]
+[Alias('obs.powershell.websocket.SetProfileParameter')]
 param(
 <# Category of the parameter to set #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -101,7 +102,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

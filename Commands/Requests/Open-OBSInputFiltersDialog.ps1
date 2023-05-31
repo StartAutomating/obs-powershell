@@ -13,6 +13,7 @@ function Open-OBSInputFiltersDialog {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#openinputfiltersdialog
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'OpenInputFiltersDialog')]
+[Alias('obs.powershell.websocket.OpenInputFiltersDialog')]
 param(
 <# Name of the input to open the dialog of #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -91,7 +92,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

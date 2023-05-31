@@ -250,6 +250,12 @@ $allSteps = @(
 
         $totalTimeSpan += $nextTimeSpan
         $nextTimeSpan = [timespan]0
+
+        if (($argIndex -lt ($AllArgs.Length - 1)) -and 
+            $AllArgs[$argIndex + 1] -as [timespan]
+        ) {
+            Send-OBSSleep -SleepMillis ($AllArgs[$argIndex + 1] -as [timespan]).TotalMilliseconds -PassThru
+        }
     }
 
     $IsFirstArg = $false

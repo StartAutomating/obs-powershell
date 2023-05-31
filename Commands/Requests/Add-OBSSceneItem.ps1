@@ -15,6 +15,7 @@ function Add-OBSSceneItem {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createsceneitem
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'CreateSceneItem')]
+[Alias('obs.powershell.websocket.CreateSceneItem')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 [Alias('Add-OBSSceneSource')]
 param(
@@ -105,7 +106,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

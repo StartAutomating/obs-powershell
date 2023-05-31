@@ -13,6 +13,7 @@ function Send-OBSTriggerMediaInputAction {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#triggermediainputaction
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'TriggerMediaInputAction')]
+[Alias('obs.powershell.websocket.TriggerMediaInputAction')]
 param(
 <# Name of the media input #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -96,7 +97,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

@@ -15,6 +15,7 @@ function Send-OBSPauseRecord {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#pauserecord
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'PauseRecord')]
+[Alias('obs.powershell.websocket.PauseRecord')]
 param(
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
@@ -88,7 +89,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

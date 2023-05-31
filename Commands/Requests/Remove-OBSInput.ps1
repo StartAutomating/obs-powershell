@@ -15,6 +15,7 @@ function Remove-OBSInput {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#removeinput
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'RemoveInput')]
+[Alias('obs.powershell.websocket.RemoveInput')]
 param(
 <# Name of the input to remove #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -93,7 +94,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

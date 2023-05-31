@@ -126,7 +126,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS -DoNotReceive:$responseExpected
+                Send-OBS -NoResponse:(-not $responseExpected)
         }
         Get-Item $paramCopy["imageFilePath"] |
             Add-Member NoteProperty InputName $paramCopy["SourceName"] -Force -PassThru  |

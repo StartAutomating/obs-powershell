@@ -15,6 +15,7 @@ function Open-OBSSourceProjector {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#opensourceprojector
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'OpenSourceProjector')]
+[Alias('obs.powershell.websocket.OpenSourceProjector')]
 param(
 <# Name of the source to open a projector for #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -103,7 +104,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

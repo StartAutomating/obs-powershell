@@ -1,0 +1,91 @@
+Send-OBSTriggerMediaInputAction
+-------------------------------
+
+
+
+
+### Synopsis
+Send-OBSTriggerMediaInputAction : TriggerMediaInputAction
+
+
+
+---
+
+
+### Description
+
+Triggers an action on a media input.
+
+
+Send-OBSTriggerMediaInputAction calls the OBS WebSocket with a request of type TriggerMediaInputAction.
+
+
+
+---
+
+
+### Related Links
+* [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#triggermediainputaction](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#triggermediainputaction)
+
+
+
+
+
+---
+
+
+### Parameters
+#### **InputName**
+
+Name of the media input
+
+
+
+
+
+
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[String]`|true    |1       |true (ByPropertyName)|
+
+
+
+#### **MediaAction**
+
+Identifier of the `ObsMediaInputAction` enum
+
+
+
+
+
+
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[String]`|true    |2       |true (ByPropertyName)|
+
+
+
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+
+
+
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
+
+
+
+---
+
+
+### Syntax
+```PowerShell
+Send-OBSTriggerMediaInputAction [-InputName] <String> [-MediaAction] <String> [-PassThru] [<CommonParameters>]
+```

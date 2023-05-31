@@ -15,6 +15,7 @@ function Get-OBSInputAudioSyncOffset {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getinputaudiosyncoffset
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetInputAudioSyncOffset')]
+[Alias('obs.powershell.websocket.GetInputAudioSyncOffset')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Name of the input to get the audio sync offset of #>
@@ -94,7 +95,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

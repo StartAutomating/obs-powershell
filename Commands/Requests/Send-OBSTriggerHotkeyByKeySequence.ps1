@@ -13,6 +13,7 @@ function Send-OBSTriggerHotkeyByKeySequence {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#triggerhotkeybykeysequence
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'TriggerHotkeyByKeySequence')]
+[Alias('obs.powershell.websocket.TriggerHotkeyByKeySequence')]
 param(
 <# The OBS key ID to use. See https://github.com/obsproject/obs-studio/blob/master/libobs/obs-hotkeys.h #>
 [Parameter(ValueFromPipelineByPropertyName)]
@@ -116,7 +117,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

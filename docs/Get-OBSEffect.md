@@ -20,12 +20,11 @@ An effect can be thought of as a name with a series of messages to OBS.
 
 Those messages can be defined in a .json file or a script, in any module that tags OBS.
 
-They can also be defined in a function named like:
+They can also be defined in a function or script named like:
 
-* `OBS.Effect.*`
-* `OBS.FX.*`
-* `OBS.PowerShell.Effect*`
-* `OBS.PowerShell.FX*`
+* `*.OBS.FX.*`
+* `*.OBS.Effect.*`
+* `*.OBS.Effects.*`
 
 
 
@@ -33,7 +32,11 @@ They can also be defined in a function named like:
 
 
 ### Related Links
-* [Add-OBSEffect](Add-OBSEffect.md)
+* [Import-OBSEffect](Import-OBSEffect.md)
+
+
+
+* [Remove-OBSEffect](Remove-OBSEffect.md)
 
 
 

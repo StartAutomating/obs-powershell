@@ -112,9 +112,17 @@ function Receive-OBS
             $eventResponseProperties = @($eventResponse.psobject.properties)
             
             $expandedResponse =
-                # If there was only one, expand that property
+                # If there was only one property
                 if ($eventResponseProperties.Length -eq 1) {
-                    $eventResponse.psobject.properties.value
+                    $typeName = "$($eventResponseProperties.TypeNameOfValue)"
+                    # and it was a string or an array
+                    if ($typeName -eq 'System.String' -or $typeName -eq 'System.Object[]')  {
+                        # expand it
+                        $eventResponse.psobject.properties.value
+                    } else {
+                        # otherwise, return it as is.
+                        $eventResponse
+                    }
                 } else {
                     $eventResponse
                 }
@@ -151,7 +159,7 @@ function Receive-OBS
                 if ($responseObject.inputKind) {
                     $responseObject.pstypenames.add("OBS.Input.$($responseObject.inputKind -replace '_', '.')")
                 }
-                # Decorate the response with the command name and OBS.requestype.response
+                # Decorate the response with the command name and OBS.requestype.response                
                 $responseObject.pstypenames.add("$myCmd")
                 $responseObject.pstypenames.add("OBS.$myRequestType.Response")
     
@@ -249,7 +257,7 @@ function Receive-OBS
                         [Management.Automation.ErrorRecord]::new(
                             # using the comment as the error message
                             [Exception]::new($MessageData.d.requestStatus.comment),
-                            $messageData.d.requestId, 'NotSpecified', $messageData
+                            ($messageData.d.requestId -replace '\.[0-9a-f\-]+$') + ".$($MessageData.d.requestStatus.code)", 'NotSpecified', $messageData
                         )
                                                 
                     $newEventSplat.MessageData.pstypenames.insert(0,"OBS.$($MessageData.d.requestType).error")

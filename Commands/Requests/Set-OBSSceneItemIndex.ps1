@@ -15,6 +15,7 @@ function Set-OBSSceneItemIndex {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setsceneitemindex
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetSceneItemIndex')]
+[Alias('obs.powershell.websocket.SetSceneItemIndex')]
 param(
 <# Name of the scene the item is in #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -105,7 +106,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

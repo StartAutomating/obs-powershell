@@ -13,6 +13,7 @@ function Set-OBSSceneName {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setscenename
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetSceneName')]
+[Alias('obs.powershell.websocket.SetSceneName')]
 param(
 <# Name of the scene to be renamed #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -96,7 +97,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

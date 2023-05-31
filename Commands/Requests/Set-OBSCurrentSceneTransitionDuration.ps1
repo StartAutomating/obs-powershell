@@ -13,6 +13,7 @@ function Set-OBSCurrentSceneTransitionDuration {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setcurrentscenetransitionduration
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetCurrentSceneTransitionDuration')]
+[Alias('obs.powershell.websocket.SetCurrentSceneTransitionDuration')]
 param(
 <# Duration in milliseconds #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -92,7 +93,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

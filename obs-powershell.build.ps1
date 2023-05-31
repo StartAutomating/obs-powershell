@@ -136,7 +136,7 @@ $obsFunctionProcessBlock = {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 
@@ -241,6 +241,7 @@ foreach ($obsRequestInfo in $obsWebSocketProtocol.requests) {
 
     $newFunctionAttributes = @(
         "[Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', '$requestType')]"
+        "[Alias('obs.powershell.websocket.$RequestType')]"
         if ($obsRequestInfo.responseFields.Count) {
             "[Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', `$true)]"
         }

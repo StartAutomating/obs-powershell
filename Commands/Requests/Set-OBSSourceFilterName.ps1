@@ -13,6 +13,7 @@ function Set-OBSSourceFilterName {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setsourcefiltername
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetSourceFilterName')]
+[Alias('obs.powershell.websocket.SetSourceFilterName')]
 param(
 <# Name of the source the filter is on #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -101,7 +102,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

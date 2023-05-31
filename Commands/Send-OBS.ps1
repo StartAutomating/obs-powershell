@@ -31,15 +31,15 @@ function Send-OBS
     [switch]
     $SerialFrame,
 
-    # If set, will receive responses from batches of requests
+    # If set, will receive responses from batches of requests.
     [Alias('ReceiveBatches')]
     [switch]
     $ReceiveBatch,
 
     # If set, will never attempt to receive a response.
-    [Alias('NoReceive','IgnoreResponse','IgnoreReceive')]
+    [Alias('NoReceive','IgnoreResponse','IgnoreReceive','DoNotReceiveResponse')]
     [switch]
-    $DoNotReceive
+    $NoResponse
     )
 
     begin {
@@ -151,7 +151,7 @@ function Send-OBS
                     $null = $OBSWebSocket.SendAsync($SendSegment,'Text', $true, [Threading.CancellationToken]::new($false))
                     # If a response was expected (and we did explicitly say to ignore responses)
                     if ($payloadObject.d.requestID -and 
-                        (-not $DoNotReceive)
+                        (-not $NoResponse)
                     ) {
                         if ($payloadObject.op -ne 8 -or $ReceiveBatch) {
                             $payloadObject | . Receive-OBS

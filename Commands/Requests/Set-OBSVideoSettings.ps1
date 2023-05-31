@@ -15,6 +15,7 @@ function Set-OBSVideoSettings {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setvideosettings
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetVideoSettings')]
+[Alias('obs.powershell.websocket.SetVideoSettings')]
 param(
 <# Numerator of the fractional FPS value #>
 [Parameter(ValueFromPipelineByPropertyName)]
@@ -124,7 +125,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

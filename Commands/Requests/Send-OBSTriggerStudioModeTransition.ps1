@@ -15,6 +15,7 @@ function Send-OBSTriggerStudioModeTransition {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#triggerstudiomodetransition
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'TriggerStudioModeTransition')]
+[Alias('obs.powershell.websocket.TriggerStudioModeTransition')]
 param(
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
@@ -88,7 +89,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

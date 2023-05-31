@@ -15,6 +15,7 @@ function Get-OBSStreamServiceSettings {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getstreamservicesettings
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetStreamServiceSettings')]
+[Alias('obs.powershell.websocket.GetStreamServiceSettings')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 # If set, will return the information that would otherwise be sent to OBS.
@@ -89,7 +90,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

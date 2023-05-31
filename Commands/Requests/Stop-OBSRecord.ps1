@@ -15,6 +15,7 @@ function Stop-OBSRecord {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#stoprecord
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'StopRecord')]
+[Alias('obs.powershell.websocket.StopRecord')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 # If set, will return the information that would otherwise be sent to OBS.
@@ -89,7 +90,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

@@ -93,7 +93,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS -DoNotReceive:$responseExpected
+                Send-OBS -NoResponse:(-not $responseExpected)
         }
 }
 } 

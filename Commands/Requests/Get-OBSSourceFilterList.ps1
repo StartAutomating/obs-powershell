@@ -13,6 +13,7 @@ function Get-OBSSourceFilterList {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getsourcefilterlist
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetSourceFilterList')]
+[Alias('obs.powershell.websocket.GetSourceFilterList')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Name of the source #>
@@ -92,7 +93,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

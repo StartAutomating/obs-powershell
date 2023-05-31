@@ -15,6 +15,7 @@ function Set-OBSCurrentSceneCollection {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setcurrentscenecollection
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetCurrentSceneCollection')]
+[Alias('obs.powershell.websocket.SetCurrentSceneCollection')]
 param(
 <# Name of the scene collection to switch to #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -93,7 +94,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

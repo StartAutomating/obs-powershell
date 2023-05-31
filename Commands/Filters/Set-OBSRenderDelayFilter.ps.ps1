@@ -14,18 +14,13 @@ function Set-OBSRenderDelayFilter
     [inherit(Command={
         Import-Module ..\..\obs-powershell.psd1 -Global
         "Add-OBSSourceFilter"
-    }, Dynamic, Abstract, ExcludeParameter='FilterKind','FilterName','FilterSettings')]
+    }, Dynamic, Abstract, ExcludeParameter='FilterKind','FilterSettings')]
     [Alias('Add-OBSRenderDelayFilter')]    
     param(
     # The RenderDelay.
     [Parameter(ValueFromPipelineByPropertyName)]
     [timespan]
-    $RenderDelay,
-    
-    # The name of the filter.  It will default to "ColorCorrection".
-    [Parameter(ValueFromPipelineByPropertyName)]    
-    [string]
-    $FilterName,
+    $RenderDelay,    
 
     # If set, will remove a filter if one already exists.
     # If this is not provided and the filter already exists, the settings of the filter will be changed.

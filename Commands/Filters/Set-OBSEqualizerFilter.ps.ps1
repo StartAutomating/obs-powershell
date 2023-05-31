@@ -9,7 +9,7 @@ function Set-OBSEqualizerFilter
     [inherit(Command={
         Import-Module ..\..\obs-powershell.psd1 -Global
         "Add-OBSSourceFilter"
-    }, Dynamic, Abstract, ExcludeParameter='FilterKind','FilterName','FilterSettings')]
+    }, Dynamic, Abstract, ExcludeParameter='FilterKind','FilterSettings')]
     [Alias('Add-OBSEqualizierFilter','Add-OBS3BandEqualizerFilter','Set-OBS3BandEqualizerFilter')]
     param(
     # The change in low frequencies.
@@ -31,12 +31,7 @@ function Set-OBSEqualizerFilter
     [ComponentModel.DefaultBindingProperty("high")]
     [ValidateRange(-20,20)]
     [double]
-    $High,
-
-    # The name of the filter.  It will default to "ColorCorrection".
-    [Parameter(ValueFromPipelineByPropertyName)]    
-    [string]
-    $FilterName,
+    $High,    
 
     # If set, will remove a filter if one already exists.
     # If this is not provided and the filter already exists, the settings of the filter will be changed.

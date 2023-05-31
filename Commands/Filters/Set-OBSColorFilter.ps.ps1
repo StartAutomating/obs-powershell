@@ -23,7 +23,7 @@ function Set-OBSColorFilter
     [inherit(Command={
         Import-Module ..\..\obs-powershell.psd1 -Global
         "Add-OBSSourceFilter"
-    }, Abstract, Dynamic, ExcludeParameter='FilterKind','FilterSettings','FilterName')]
+    }, Abstract, Dynamic, ExcludeParameter='FilterKind','FilterSettings')]
     [Alias('Add-OBSColorFilter','Add-OBSColorCorrectionFilter','Set-OBSColorCorrectionFilter')]
     param(
     # The opacity, as a number between 0 and 1.
@@ -79,11 +79,6 @@ function Set-OBSColorFilter
     [ComponentModel.DefaultBindingProperty("color_add")]
     [string]
     $AddColor,
-
-    # The name of the filter.  It will default to "ColorCorrection".
-    [Parameter(ValueFromPipelineByPropertyName)]    
-    [string]
-    $FilterName,
 
     # If set, will remove a filter if one already exists.
     # If this is not provided and the filter already exists, the settings of the filter will be changed.
@@ -147,7 +142,7 @@ function Set-OBSColorFilter
 
         
         $addSplat = @{            
-            filterName = $filterName
+            filterName = $myParameters["FilterName"]
             SourceName = $myParameters["SourceName"]
             filterKind = "color_filter_v2"
             filterSettings = $myParameterData

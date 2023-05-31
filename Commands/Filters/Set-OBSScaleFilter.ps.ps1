@@ -14,7 +14,7 @@ function Set-OBSScaleFilter
     [inherit(Command={
         Import-Module ..\..\obs-powershell.psd1 -Global
         "Add-OBSSourceFilter"
-    }, Dynamic, Abstract, ExcludeParameter='FilterKind','FilterName','FilterSettings')]
+    }, Dynamic, Abstract, ExcludeParameter='FilterKind','FilterSettings')]
     [Alias('Add-OBSScaleFilter')]    
     param(
     # The Resolution.  Can either width x height (e.g. 1920x1080) or an aspect ratio (16:9).
@@ -37,11 +37,6 @@ function Set-OBSScaleFilter
     [Alias('Undistort')]
     [switch]
     $KeepAspectRatio,
-
-    # The name of the filter.  It will default to "scale".
-    [Parameter(ValueFromPipelineByPropertyName)]    
-    [string]
-    $FilterName,
     
     # If set, will remove a filter if one already exists.
     # If this is not provided and the filter already exists, the settings of the filter will be changed.

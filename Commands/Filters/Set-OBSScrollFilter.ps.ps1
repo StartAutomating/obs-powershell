@@ -14,7 +14,7 @@ function Set-OBSScrollFilter
     [inherit(Command={
         Import-Module ..\..\obs-powershell.psd1 -Global
         "Add-OBSSourceFilter"
-    }, Dynamic, Abstract, ExcludeParameter='FilterKind','FilterName','FilterSettings')]    
+    }, Dynamic, Abstract, ExcludeParameter='FilterKind','FilterSettings')]    
     param(
     # The horizontal scroll speed.
     [Parameter(ValueFromPipelineByPropertyName)]    
@@ -51,11 +51,6 @@ function Set-OBSScrollFilter
     [Alias('LimitY', 'Limit_CY','HeightLimit')]    
     [double]
     $LimitHeight,
-
-    # The name of the filter.  It will default to "ColorCorrection".
-    [Parameter(ValueFromPipelineByPropertyName)]    
-    [string]
-    $FilterName,
 
     # If set, will remove a filter if one already exists.
     # If this is not provided and the filter already exists, the settings of the filter will be changed.

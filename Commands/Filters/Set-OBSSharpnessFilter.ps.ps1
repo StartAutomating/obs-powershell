@@ -14,7 +14,7 @@ function Set-OBSSharpnessFilter
     [inherit(Command={
         Import-Module ..\..\obs-powershell.psd1 -Global
         "Add-OBSSourceFilter"
-    }, Dynamic, Abstract, ExcludeParameter='FilterKind','FilterName','FilterSettings')]
+    }, Dynamic, Abstract, ExcludeParameter='FilterKind','FilterSettings')]
     [Alias('Add-OBSSharpnessFilter')]    
     param(
     # The Sharpness.
@@ -22,12 +22,7 @@ function Set-OBSSharpnessFilter
     [ComponentModel.DefaultBindingProperty("sharpness")]
     [ValidateRange(0,1)]
     [double]
-    $Sharpness,
-    
-    # The name of the filter.  It will default to "ColorCorrection".
-    [Parameter(ValueFromPipelineByPropertyName)]    
-    [string]
-    $FilterName,
+    $Sharpness,    
 
     # If set, will remove a filter if one already exists.
     # If this is not provided and the filter already exists, the settings of the filter will be changed.

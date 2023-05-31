@@ -1467,4 +1467,25 @@ Get-OBSStreamStatus
       </ScriptProperty>
     </Members>
   </Type>
+  <Type>
+    <Name>OBS.Powershell.Effect.Command</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>EffectName</Name>
+        <GetScriptBlock>
+                        $obsEffectsPattern = [Regex]::new('
+(?&gt;
+    ^OBS.(?&gt;fx|effects?)\p{P}
+    |
+    [\p{P}-[-]]OBS\.(?&gt;fx|effects?)$
+    |
+    \p{P}OBS.(?&gt;fx|effects?)\.(?&gt;ps1|json)
+)
+','IgnoreCase,IgnorePatternWhitespace')
+
+$this.Name -replace $obsEffectsPattern
+                    </GetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
 </Types>

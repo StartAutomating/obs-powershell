@@ -13,6 +13,7 @@ function Set-OBSRecordDirectory {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setrecorddirectory
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetRecordDirectory')]
+[Alias('obs.powershell.websocket.SetRecordDirectory')]
 param(
 <# Output directory #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -91,7 +92,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

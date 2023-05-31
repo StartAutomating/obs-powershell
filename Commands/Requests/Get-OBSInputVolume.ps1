@@ -13,6 +13,7 @@ function Get-OBSInputVolume {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getinputvolume
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetInputVolume')]
+[Alias('obs.powershell.websocket.GetInputVolume')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Name of the input to get the volume of #>
@@ -92,7 +93,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

@@ -13,6 +13,7 @@ function Add-OBSInput {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createinput
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'CreateInput')]
+[Alias('obs.powershell.websocket.CreateInput')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Name of the scene to add the input to as a scene item #>
@@ -112,7 +113,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

@@ -35,7 +35,7 @@ function Set-OBSGainFilter {
             $script:AddOBSSourceFilter
         }
     $IncludeParameter = @()
-    $ExcludeParameter = 'FilterKind','FilterName','FilterSettings'
+    $ExcludeParameter = 'FilterKind','FilterSettings'
     $DynamicParameters = [Management.Automation.RuntimeDefinedParameterDictionary]::new()            
     :nextInputParameter foreach ($paramName in ([Management.Automation.CommandMetaData]$baseCommand).Parameters.Keys) {
         if ($ExcludeParameter) {

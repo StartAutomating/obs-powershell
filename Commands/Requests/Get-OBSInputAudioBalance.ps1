@@ -13,6 +13,7 @@ function Get-OBSInputAudioBalance {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getinputaudiobalance
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetInputAudioBalance')]
+[Alias('obs.powershell.websocket.GetInputAudioBalance')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Name of the input to get the audio balance of #>
@@ -92,7 +93,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

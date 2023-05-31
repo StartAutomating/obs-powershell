@@ -13,6 +13,7 @@ function Get-OBSSceneSceneTransitionOverride {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getscenescenetransitionoverride
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetSceneSceneTransitionOverride')]
+[Alias('obs.powershell.websocket.GetSceneSceneTransitionOverride')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Name of the scene #>
@@ -92,7 +93,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

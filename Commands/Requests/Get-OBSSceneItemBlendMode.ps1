@@ -25,6 +25,7 @@ function Get-OBSSceneItemBlendMode {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getsceneitemblendmode
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetSceneItemBlendMode')]
+[Alias('obs.powershell.websocket.GetSceneItemBlendMode')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Name of the scene the item is in #>
@@ -110,7 +111,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

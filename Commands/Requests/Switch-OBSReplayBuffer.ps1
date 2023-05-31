@@ -15,6 +15,7 @@ function Switch-OBSReplayBuffer {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#togglereplaybuffer
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'ToggleReplayBuffer')]
+[Alias('obs.powershell.websocket.ToggleReplayBuffer')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 # If set, will return the information that would otherwise be sent to OBS.
@@ -89,7 +90,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

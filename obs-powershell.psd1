@@ -122,6 +122,7 @@ Initial Release of obs-powershell
 'Send-OBS',
 'Show-OBS',
 'Watch-OBS',
+'Set-OBSAudioOutputSource',
 'Set-OBSBrowserSource',
 'Set-OBSColorSource',
 'Set-OBSDisplaySource',

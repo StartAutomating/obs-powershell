@@ -13,6 +13,7 @@ function Get-OBSInput {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getinputlist
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetInputList')]
+[Alias('obs.powershell.websocket.GetInputList')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Restrict the array to only inputs of the specified kind #>
@@ -92,7 +93,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

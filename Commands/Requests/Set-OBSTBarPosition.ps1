@@ -15,6 +15,7 @@ function Set-OBSTBarPosition {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#settbarposition
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetTBarPosition')]
+[Alias('obs.powershell.websocket.SetTBarPosition')]
 param(
 <# New position #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -99,7 +100,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

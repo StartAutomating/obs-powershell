@@ -116,7 +116,9 @@ Initial Release of obs-powershell
 'Connect-OBS',
 'Disconnect-OBS',
 'Get-OBS',
+'Get-OBSEffect',
 'Hide-OBS',
+'Import-OBSEffect',
 'Receive-OBS',
 'Remove-OBS',
 'Send-OBS',
@@ -129,6 +131,13 @@ Initial Release of obs-powershell
 'Set-OBSMediaSource',
 'Set-OBSVLCSource',
 'Set-OBSWindowSource',
+'Set-OBSColorFilter',
+'Set-OBSEqualizerFilter',
+'Set-OBSGainFilter',
+'Set-OBSRenderDelayFilter',
+'Set-OBSScaleFilter',
+'Set-OBSScrollFilter',
+'Set-OBSSharpnessFilter',
 'Add-OBSInput',
 'Add-OBSProfile',
 'Add-OBSScene',
@@ -266,13 +275,6 @@ Initial Release of obs-powershell
 'Switch-OBSRecordPause',
 'Switch-OBSReplayBuffer',
 'Switch-OBSStream',
-'Switch-OBSVirtualCam',
-'Set-OBSColorFilter',
-'Set-OBSEqualizerFilter',
-'Set-OBSGainFilter',
-'Set-OBSRenderDelayFilter',
-'Set-OBSScaleFilter',
-'Set-OBSScrollFilter',
-'Set-OBSSharpnessFilter'
+'Switch-OBSVirtualCam'
 }
 

@@ -13,6 +13,7 @@ function Set-OBSSceneSceneTransitionOverride {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setscenescenetransitionoverride
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetSceneSceneTransitionOverride')]
+[Alias('obs.powershell.websocket.SetSceneSceneTransitionOverride')]
 param(
 <# Name of the scene #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -102,7 +103,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

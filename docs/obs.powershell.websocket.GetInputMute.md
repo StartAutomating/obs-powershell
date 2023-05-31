@@ -1,0 +1,76 @@
+Get-OBSInputMute
+----------------
+
+
+
+
+### Synopsis
+Get-OBSInputMute : GetInputMute
+
+
+
+---
+
+
+### Description
+
+Gets the audio mute state of an input.
+
+
+Get-OBSInputMute calls the OBS WebSocket with a request of type GetInputMute.
+
+
+
+---
+
+
+### Related Links
+* [https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getinputmute](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getinputmute)
+
+
+
+
+
+---
+
+
+### Parameters
+#### **InputName**
+
+Name of input to get the mute state of
+
+
+
+
+
+
+|Type      |Required|Position|PipelineInput        |
+|----------|--------|--------|---------------------|
+|`[String]`|true    |1       |true (ByPropertyName)|
+
+
+
+#### **PassThru**
+
+If set, will return the information that would otherwise be sent to OBS.
+
+
+
+
+
+
+|Type      |Required|Position|PipelineInput        |Aliases                      |
+|----------|--------|--------|---------------------|-----------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|OutputRequest<br/>OutputInput|
+
+
+
+
+
+---
+
+
+### Syntax
+```PowerShell
+Get-OBSInputMute [-InputName] <String> [-PassThru] [<CommonParameters>]
+```

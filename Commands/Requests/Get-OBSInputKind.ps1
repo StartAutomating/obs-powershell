@@ -13,6 +13,7 @@ function Get-OBSInputKind {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getinputkindlist
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetInputKindList')]
+[Alias('obs.powershell.websocket.GetInputKindList')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# True == Return all kinds as unversioned, False == Return with version suffixes (if available) #>
@@ -92,7 +93,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

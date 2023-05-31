@@ -13,6 +13,7 @@ function Get-OBSPersistentData {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getpersistentdata
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetPersistentData')]
+[Alias('obs.powershell.websocket.GetPersistentData')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# The data realm to select. `OBS_WEBSOCKET_DATA_REALM_GLOBAL` or `OBS_WEBSOCKET_DATA_REALM_PROFILE` #>
@@ -97,7 +98,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

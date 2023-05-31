@@ -15,6 +15,7 @@ function Set-OBSSceneItemLocked {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setsceneitemlocked
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetSceneItemLocked')]
+[Alias('obs.powershell.websocket.SetSceneItemLocked')]
 param(
 <# Name of the scene the item is in #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -104,7 +105,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

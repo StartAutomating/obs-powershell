@@ -13,6 +13,7 @@ function Open-OBSInputInteractDialog {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#openinputinteractdialog
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'OpenInputInteractDialog')]
+[Alias('obs.powershell.websocket.OpenInputInteractDialog')]
 param(
 <# Name of the input to open the dialog of #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -91,7 +92,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

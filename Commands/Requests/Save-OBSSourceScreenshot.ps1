@@ -18,6 +18,7 @@ function Save-OBSSourceScreenshot {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#savesourcescreenshot
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SaveSourceScreenshot')]
+[Alias('obs.powershell.websocket.SaveSourceScreenshot')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Name of the source to take a screenshot of #>
@@ -125,7 +126,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
         Get-Item $paramCopy["imageFilePath"] |
             Add-Member NoteProperty InputName $paramCopy["SourceName"] -Force -PassThru  |

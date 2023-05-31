@@ -13,6 +13,7 @@ function Get-OBSOutputStatus {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getoutputstatus
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetOutputStatus')]
+[Alias('obs.powershell.websocket.GetOutputStatus')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Output name #>
@@ -92,7 +93,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

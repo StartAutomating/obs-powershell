@@ -13,6 +13,7 @@ function Set-OBSOutputSettings {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setoutputsettings
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetOutputSettings')]
+[Alias('obs.powershell.websocket.SetOutputSettings')]
 param(
 <# Output name #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -96,7 +97,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

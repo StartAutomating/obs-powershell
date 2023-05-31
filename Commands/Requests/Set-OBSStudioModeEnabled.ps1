@@ -13,6 +13,7 @@ function Set-OBSStudioModeEnabled {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setstudiomodeenabled
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetStudioModeEnabled')]
+[Alias('obs.powershell.websocket.SetStudioModeEnabled')]
 param(
 <# True == Enabled, False == Disabled #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -91,7 +92,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

@@ -13,6 +13,7 @@ function Get-OBSInputMute {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getinputmute
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetInputMute')]
+[Alias('obs.powershell.websocket.GetInputMute')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Name of input to get the mute state of #>
@@ -92,7 +93,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

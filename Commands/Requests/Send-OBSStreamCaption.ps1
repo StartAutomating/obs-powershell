@@ -13,6 +13,7 @@ function Send-OBSStreamCaption {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#sendstreamcaption
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SendStreamCaption')]
+[Alias('obs.powershell.websocket.SendStreamCaption')]
 param(
 <# Caption text #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -91,7 +92,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

@@ -15,6 +15,7 @@ function Set-OBSCurrentPreviewScene {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setcurrentpreviewscene
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetCurrentPreviewScene')]
+[Alias('obs.powershell.websocket.SetCurrentPreviewScene')]
 param(
 <# Scene to set as the current preview scene #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -93,7 +94,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

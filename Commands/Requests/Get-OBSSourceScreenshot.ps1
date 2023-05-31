@@ -18,6 +18,7 @@ function Get-OBSSourceScreenshot {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getsourcescreenshot
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetSourceScreenshot')]
+[Alias('obs.powershell.websocket.GetSourceScreenshot')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Name of the source to take a screenshot of #>
@@ -120,7 +121,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

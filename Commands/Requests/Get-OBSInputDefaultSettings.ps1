@@ -13,6 +13,7 @@ function Get-OBSInputDefaultSettings {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getinputdefaultsettings
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetInputDefaultSettings')]
+[Alias('obs.powershell.websocket.GetInputDefaultSettings')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Input kind to get the default settings for #>
@@ -92,7 +93,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

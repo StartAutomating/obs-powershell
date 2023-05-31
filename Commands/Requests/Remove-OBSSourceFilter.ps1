@@ -13,6 +13,7 @@ function Remove-OBSSourceFilter {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#removesourcefilter
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'RemoveSourceFilter')]
+[Alias('obs.powershell.websocket.RemoveSourceFilter')]
 param(
 <# Name of the source the filter is on #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -96,7 +97,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

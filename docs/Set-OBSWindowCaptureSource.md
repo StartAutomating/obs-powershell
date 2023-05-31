@@ -1,5 +1,5 @@
-Set-OBSDisplaySource
---------------------
+Set-OBSWindowSource
+-------------------
 
 
 
@@ -190,5 +190,5 @@ If not set, you will get an error if a source with the same name exists.
 
 ### Syntax
 ```PowerShell
-Set-OBSDisplaySource [[-WindowTitle] <String>] [[-CaptureMethod] <Int32>] [[-CapturePriority] <String>] [-CaptureCursor] [-ClientArea] [-ForceSDR] [[-Scene] <String>] [[-Name] <String>] [-Force] [<CommonParameters>]
+Set-OBSWindowSource [[-WindowTitle] <String>] [[-CaptureMethod] <Int32>] [[-CapturePriority] <String>] [-CaptureCursor] [-ClientArea] [-ForceSDR] [[-Scene] <String>] [[-Name] <String>] [-Force] [<CommonParameters>]
 ```

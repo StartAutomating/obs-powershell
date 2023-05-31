@@ -13,6 +13,7 @@ function Set-OBSCurrentSceneTransitionSettings {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setcurrentscenetransitionsettings
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetCurrentSceneTransitionSettings')]
+[Alias('obs.powershell.websocket.SetCurrentSceneTransitionSettings')]
 param(
 <# Settings object to apply to the transition. Can be `{}` #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -96,7 +97,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

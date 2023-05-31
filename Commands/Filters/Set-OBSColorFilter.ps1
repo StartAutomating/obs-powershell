@@ -84,7 +84,7 @@ function Set-OBSColorFilter {
             $script:AddOBSSourceFilter
         }
     $IncludeParameter = @()
-    $ExcludeParameter = 'FilterKind','FilterSettings','FilterName'
+    $ExcludeParameter = 'FilterKind','FilterSettings'
     $DynamicParameters = [Management.Automation.RuntimeDefinedParameterDictionary]::new()            
     :nextInputParameter foreach ($paramName in ([Management.Automation.CommandMetaData]$baseCommand).Parameters.Keys) {
         if ($ExcludeParameter) {
@@ -160,7 +160,7 @@ function Set-OBSColorFilter {
         }
         
         $addSplat = @{            
-            filterName = $filterName
+            filterName = $myParameters["FilterName"]
             SourceName = $myParameters["SourceName"]
             filterKind = "color_filter_v2"
             filterSettings = $myParameterData

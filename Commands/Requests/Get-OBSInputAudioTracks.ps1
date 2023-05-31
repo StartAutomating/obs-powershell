@@ -13,6 +13,7 @@ function Get-OBSInputAudioTracks {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getinputaudiotracks
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetInputAudioTracks')]
+[Alias('obs.powershell.websocket.GetInputAudioTracks')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Name of the input #>
@@ -92,7 +93,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

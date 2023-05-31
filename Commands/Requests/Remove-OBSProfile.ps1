@@ -13,6 +13,7 @@ function Remove-OBSProfile {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#removeprofile
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'RemoveProfile')]
+[Alias('obs.powershell.websocket.RemoveProfile')]
 param(
 <# Name of the profile to remove #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -91,7 +92,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

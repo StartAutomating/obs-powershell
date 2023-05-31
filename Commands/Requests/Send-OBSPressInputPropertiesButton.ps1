@@ -19,6 +19,7 @@ function Send-OBSPressInputPropertiesButton {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#pressinputpropertiesbutton
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'PressInputPropertiesButton')]
+[Alias('obs.powershell.websocket.PressInputPropertiesButton')]
 param(
 <# Name of the input #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -102,7 +103,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

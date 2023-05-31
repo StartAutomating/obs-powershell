@@ -13,6 +13,7 @@ function Add-OBSProfile {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createprofile
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'CreateProfile')]
+[Alias('obs.powershell.websocket.CreateProfile')]
 param(
 <# Name for the new profile #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
@@ -91,7 +92,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

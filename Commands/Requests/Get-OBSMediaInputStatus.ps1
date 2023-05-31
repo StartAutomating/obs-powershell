@@ -24,6 +24,7 @@ function Get-OBSMediaInputStatus {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getmediainputstatus
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetMediaInputStatus')]
+[Alias('obs.powershell.websocket.GetMediaInputStatus')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Name of the media input #>
@@ -103,7 +104,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -DoNotReceive:$responseExpected
         }
 }
 } 

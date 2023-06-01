@@ -1,0 +1,39 @@
+obs-powershell-commands
+-----------------------
+
+obs-powershell exports `|{($importedModule = Import-Module ..\ -Global -PassThru).ExportedCommands.Count}|` commands
+(`|{$importedModule.ExportedFunctions.Count}|` functions and `|{$importedModule.ExportedAliases.Count}|` aliases)
+
+A good number of these commands directly correspond to an obs-websocket message.
+For a complete list, see [obs-powershell-websocket-commands](docs/obs-powershell-websocket-commands.md).
+
+
+Functions
+=========
+
+~~~PipeScript{
+    [PSCustomObject]@{
+        Table =
+            $importedModule.ExportedFunctions.Values |
+                Sort-Object Name |
+                .Name {
+                   "[$($_.Name)]($("docs/$($_.Name).md"))"
+                } .Synopsis                
+    }
+}
+~~~
+
+
+Aliases
+=======
+~~~PipeScript{
+    [PSCustomObject]@{
+        Table =
+            $importedModule.ExportedFunctions.Values |
+                Sort-Object Name |
+                .Name {
+                   "[$($_.Name)]($("docs/$($_.Name).md"))"
+                } .ResolvedCommand                
+    }
+}
+~~~

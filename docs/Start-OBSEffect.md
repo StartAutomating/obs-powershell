@@ -88,9 +88,9 @@ If provided, will step thru running
 
 
 
-|Type     |Required|Position|PipelineInput        |
-|---------|--------|--------|---------------------|
-|`[Int32]`|false   |named   |true (ByPropertyName)|
+|Type     |Required|Position|PipelineInput        |Aliases|
+|---------|--------|--------|---------------------|-------|
+|`[Int32]`|false   |named   |true (ByPropertyName)|ticks  |
 
 
 

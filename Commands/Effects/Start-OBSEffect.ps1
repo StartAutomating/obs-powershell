@@ -14,7 +14,7 @@ function Start-OBSEffect
     param(
     # The name of the effect.
     [Parameter(Mandatory)]
-    [string]
+    [string[]]
     $EffectName,
 
     # The parameters passed to the effect.
@@ -65,63 +65,66 @@ function Start-OBSEffect
     )
 
     process {
-        $obsEffect = Get-OBSEffect -EffectName $EffectName
+        foreach ($NameOfEffect in $EffectName) {
+            $obsEffect = Get-OBSEffect -EffectName $NameOfEffect
 
-        if (-not $obsEffect) { return }
-
-        if ($loop -or $Bounce) {
-            $obsEffect | Add-Member -MemberType NoteProperty Mode "$(if ($Bounce) {"Bounce"})$(if ($loop) {"Loop"})" -Force
-        } else {
-            $obsEffect | Add-Member -MemberType NoteProperty Mode "Once" -Force
-        }
-
-        if ($obsEffect -isnot [Management.Automation.CommandInfo]) {
-            if ($step -and $obsEffect.Messages) {
-                $obsEffect.Step($step)
-                return
+            if (-not $obsEffect) { continue  }
+    
+            if ($loop -or $Bounce) {
+                $obsEffect | Add-Member -MemberType NoteProperty Mode "$(if ($Bounce) {"Bounce"})$(if ($loop) {"Loop"})" -Force
+            } else {
+                $obsEffect | Add-Member -MemberType NoteProperty Mode "Once" -Force
             }
-
-            $obsEffect.Start()
-            
-        } else {
-            if ($step -and $obsEffect.Messages) {
-                $obsEffect.Step($step)
-                return
-            }
-            
-            if (-not $this) {
-                if ($_.pstypenames -like '*.GetSourceFilter*') {
-                    $this = $_
-                } elseif ($FilterName -and $SourceName) {
-                    $this = Get-OBSSourceFilter -SourceName $SourceName -FilterName $FilterName
-                }
-
-                if ($_.pstypenames -like '*.GetSceneItem*') {
-                    $this = $_
-                } elseif ($SceneName -and ($SceneItemID -or $SourceName)) {
-                    $this = 
-                        foreach ($sceneItem in Get-OBSSceneItem -SceneName $SceneName) {
-                            if ($SceneItemID -and $sceneItem.SceneItemID -eq $SceneItemID) {
-                                $sceneItem;break
-                            }
-                            elseif ($SceneName -and $sceneItem.SceneName -eq $SceneName) {
-                                $sceneItem;break
-                            }
-                        }                    
-                }            
-            }
-
-            $obsEffectOutput = & $obsEffect @EffectParameter @EffectArgument
-            if ($obsEffectOutput) {                
-                $obsEffect | Add-Member NoteProperty Messages $obsEffectOutput -Force
-                if ($step) {
+    
+            if ($obsEffect -isnot [Management.Automation.CommandInfo]) {
+                if ($step -and $obsEffect.Messages) {
                     $obsEffect.Step($step)
-                } else {
-                    $obsEffect.Start()
+                    continue
+                }
+    
+                $obsEffect.Start()
+                
+            } else {
+                if ($step -and $obsEffect.Messages) {
+                    $obsEffect.Step($step)
+                    continue
+                }
+                
+                if (-not $this) {
+                    if ($_.pstypenames -like '*.GetSourceFilter*') {
+                        $this = $_
+                    } elseif ($FilterName -and $SourceName) {
+                        $this = Get-OBSSourceFilter -SourceName $SourceName -FilterName $FilterName
+                    }
+    
+                    if ($_.pstypenames -like '*.GetSceneItem*') {
+                        $this = $_
+                    } elseif ($SceneName -and ($SceneItemID -or $SourceName)) {
+                        $this = 
+                            foreach ($sceneItem in Get-OBSSceneItem -SceneName $SceneName) {
+                                if ($SceneItemID -and $sceneItem.SceneItemID -eq $SceneItemID) {
+                                    $sceneItem;break
+                                }
+                                elseif ($SceneName -and $sceneItem.SceneName -eq $SceneName) {
+                                    $sceneItem;break
+                                }
+                            }                    
+                    }            
+                }
+    
+                $obsEffectOutput = . $obsEffect @EffectParameter @EffectArgument
+                if ($obsEffectOutput) {                
+                    $obsEffect | Add-Member NoteProperty Messages $obsEffectOutput -Force
+                    if ($step) {
+                        $obsEffect.Step($step)
+                    } else {
+                        $obsEffect.Start()
+                    }
                 }
             }
+            $obsEffect
         }
-        $obsEffect
+        
     
     }
 }

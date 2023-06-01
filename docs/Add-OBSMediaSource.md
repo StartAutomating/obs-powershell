@@ -1,4 +1,4 @@
-Add-OBSMediaSource
+Set-OBSMediaSource
 ------------------
 
 
@@ -26,6 +26,10 @@ Adds a media source to OBS.
 
 
 
+* [Set-OBSInputSettings](Set-OBSInputSettings.md)
+
+
+
 
 
 ---
@@ -34,7 +38,7 @@ Adds a media source to OBS.
 ### Examples
 #### EXAMPLE 1
 ```PowerShell
-Add-OBSMediaSource -FilePath My.mp4
+Set-OBSMediaSource -FilePath My.mp4
 ```
 
 
@@ -60,8 +64,8 @@ The path to the media file.
 
 #### **CloseWhenInactive**
 
-If set, the source will close when it is inactive.
-By default, this will be set to true.
+If set, the source will close when it is inactive.    
+By default, this will be set to true.    
 To explicitly set it to false, use -CloseWhenInactive:$false
 
 
@@ -107,9 +111,9 @@ If set, will use hardware decoding, if available.
 
 #### **ClearOnMediaEnd**
 
-If set, will clear the output on the end of the media.
-If this is set to false, the media will freeze on the last frame.
-This is set to true by default.
+If set, will clear the output on the end of the media.    
+If this is set to false, the media will freeze on the last frame.    
+This is set to true by default.    
 To explicitly set to false, use -ClearMediaEnd:$false
 
 
@@ -140,7 +144,7 @@ Any FFMpeg demuxer options.
 
 #### **Scene**
 
-The name of the scene.
+The name of the scene.    
 If no scene name is provided, the current program scene will be used.
 
 
@@ -156,7 +160,7 @@ If no scene name is provided, the current program scene will be used.
 
 #### **Name**
 
-The name of the input.
+The name of the input.    
 If no name is provided, the last segment of the URI or file path will be the input name.
 
 
@@ -172,7 +176,7 @@ If no name is provided, the last segment of the URI or file path will be the inp
 
 #### **Force**
 
-If set, will check if the source exists in the scene before creating it and removing any existing sources found.
+If set, will check if the source exists in the scene before creating it and removing any existing sources found.    
 If not set, you will get an error if a source with the same name exists.
 
 
@@ -208,5 +212,5 @@ If set, will fit the input to the screen.
 
 ### Syntax
 ```PowerShell
-Add-OBSMediaSource [-FilePath] <String> [-CloseWhenInactive] [-Loop] [-UseHardwareDecoding] [-ClearOnMediaEnd] [[-FFMpegOption] <String>] [[-Scene] <String>] [[-Name] <String>] [-Force] [-FitToScreen] [<CommonParameters>]
+Set-OBSMediaSource [-FilePath] <String> [-CloseWhenInactive] [-Loop] [-UseHardwareDecoding] [-ClearOnMediaEnd] [[-FFMpegOption] <String>] [[-Scene] <String>] [[-Name] <String>] [-Force] [-FitToScreen] [<CommonParameters>]
 ```

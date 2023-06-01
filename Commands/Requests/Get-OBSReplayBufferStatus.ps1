@@ -15,30 +15,31 @@ function Get-OBSReplayBufferStatus {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getreplaybufferstatus
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'GetReplayBufferStatus')]
+[Alias('obs.powershell.websocket.GetReplayBufferStatus')]
 [Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
 [switch]
-$PassThru
+$PassThru,
+# If set, will not attempt to receive a response from OBS.
+# This can increase performance, and also silently ignore critical errors
+[Parameter(ValueFromPipelineByPropertyName)]
+[Alias('NoReceive','IgnoreResponse','IgnoreReceive','DoNotReceiveResponse')]
+[switch]
+$NoResponse
 )
-
-
 process {
-
-
         # Create a copy of the parameters (that are part of the payload)
         $paramCopy = [Ordered]@{}
         # get a reference to this command
         $myCmd = $MyInvocation.MyCommand
-
         # Keep track of how many requests we have done of a given type
         # (this makes creating RequestIDs easy)
         if (-not $script:ObsRequestsCounts) {
             $script:ObsRequestsCounts = @{}
         }
-
         # Set my requestType to blank
         $myRequestType = ''
         # and indicate we are not expecting a response
@@ -58,7 +59,6 @@ process {
                 }
             }
         }
-
         # Walk over each parameter
         :nextParam foreach ($keyValue in $PSBoundParameters.GetEnumerator()) {
             # and walk over each of it's attributes to see if it part of the payload
@@ -92,15 +92,12 @@ process {
             # and optional data
             requestData = $paramCopy
         }
-
         if ($PassThru) {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -NoResponse:$NoResponse
         }
-
 }
-
 } 
 

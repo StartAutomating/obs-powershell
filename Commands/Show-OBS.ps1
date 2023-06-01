@@ -113,6 +113,12 @@ function Show-OBS {
             $SourceParameter.Scene = $Scene
         }
 
+        # If we provided a name
+        if ($Name) {
+            # pass it down.
+            $SourceParameter.Name = $Name
+        }
+
         # If we want to use -Force
         if ($Force) {
             # pass it down
@@ -133,10 +139,9 @@ function Show-OBS {
                 <body>
                 </html>"
                 
-                $leafPath = $filePath | Split-Path -Leaf
+                $leafPath = Split-Path -Path $FilePath -Leaf
                 $htmlPath = Join-Path $RootPath "$($leafPath).html"
-
-                $htmlFrame | Set-Content -Path $htmlPath
+                [IO.File]::WriteAllText($htmlPath, $htmlFrame)                
                 # And set up the CSS for that frame, passing down -Opacity.
                 # (this may not work for all images)
                 $css = "
@@ -146,7 +151,7 @@ function Show-OBS {
                 img {
                     width: 100%
                     height: 100%;
-                    opacity: $opacity;
+                    opacity: $([float]$opacity);
                 }
                 "
                 $SourceParameter.Uri = $htmlPath

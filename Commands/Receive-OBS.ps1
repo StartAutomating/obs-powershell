@@ -83,21 +83,46 @@ function Receive-OBS
                 Write-Error "No .RequestID to wait for"
                 return
             }
-            # wait a second for that event
+                                
+            # Normally, we can just wait for the event
             $eventResponse = Wait-Event -SourceIdentifier $myRequestId -Timeout 1 |
                 Select-Object -ExpandProperty MessageData
-    
+            
+            # however, if we are in the event pump we need to look at the output of the connection.            
+            if (-not $eventResponse -and 
+                $obsConnection -is [Management.Automation.Job]) {                
+                for ($outputIndex = $obsConnection.Output.Count - 1; $outputIndex -ge 0; $outputIndex--) {
+                    $obsOutput = $obsConnection.Output[$outputIndex]
+                    if ($obsOutput.SourceIdentifier -eq $myRequestId) {                        
+                        $eventResponse = $obsOutput.MessageData
+                        break
+                    }
+                }
+            }        
+            
             if ($eventResponse -is [Management.Automation.ErrorRecord]) {
-                Write-Error -ErrorRecord $eventResponse
-                continue
+                if ($eventResponse.Exception.Message) {
+                    Write-Error -ErrorRecord $eventResponse
+                }
+                return
             }
+
+            if ($null -eq $eventResponse) { return }
             # Collect all properties from the response
             $eventResponseProperties = @($eventResponse.psobject.properties)
             
             $expandedResponse =
-                # If there was only one, expand that property
+                # If there was only one property
                 if ($eventResponseProperties.Length -eq 1) {
-                    $eventResponse.psobject.properties.value
+                    $typeName = "$($eventResponseProperties.TypeNameOfValue)"
+                    # and it was a string, array, or PSCustomObject
+                    if ($typeName -eq 'System.String' -or $typeName -eq 'System.Object[]' -or $typeName -eq 'System.Management.Automation.PSCustomObject')  {
+                        # expand it
+                        $eventResponse.psobject.properties.value
+                    } else {
+                        # otherwise, return it as is.
+                        $eventResponse
+                    }
                 } else {
                     $eventResponse
                 }
@@ -134,7 +159,7 @@ function Receive-OBS
                 if ($responseObject.inputKind) {
                     $responseObject.pstypenames.add("OBS.Input.$($responseObject.inputKind -replace '_', '.')")
                 }
-                # Decorate the response with the command name and OBS.requestype.response
+                # Decorate the response with the command name and OBS.requestype.response                
                 $responseObject.pstypenames.add("$myCmd")
                 $responseObject.pstypenames.add("OBS.$myRequestType.Response")
     
@@ -154,7 +179,7 @@ function Receive-OBS
     
                 # finally, emit our response object
                 $responseObject
-            }
+            }            
         }
         
         if ($PSCmdlet.ParameterSetName -eq 'SendEvent') {
@@ -232,7 +257,7 @@ function Receive-OBS
                         [Management.Automation.ErrorRecord]::new(
                             # using the comment as the error message
                             [Exception]::new($MessageData.d.requestStatus.comment),
-                            $messageData.d.requestId, 'NotSpecified', $messageData
+                            ($messageData.d.requestId -replace '\.[0-9a-f\-]+$') + ".$($MessageData.d.requestStatus.code)", 'NotSpecified', $messageData
                         )
                                                 
                     $newEventSplat.MessageData.pstypenames.insert(0,"OBS.$($MessageData.d.requestType).error")

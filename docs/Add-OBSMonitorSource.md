@@ -1,4 +1,4 @@
-Add-OBSDisplaySource
+Set-OBSDisplaySource
 --------------------
 
 
@@ -24,12 +24,12 @@ Adds a display source to OBS.  This captures the contents of the display.
 ### Examples
 #### EXAMPLE 1
 ```PowerShell
-Add-OBSMonitorSource  # Adds a display source of the primary monitor
+Add-OBSDisplaySource  # Adds a display source of the primary monitor
 ```
 
 #### EXAMPLE 2
 ```PowerShell
-Add-OBSMonitorSource -Display 2 # Adds a display source of the second monitor
+Add-OBSDisplaySource -Display 2 # Adds a display source of the second monitor
 ```
 
 
@@ -40,7 +40,7 @@ Add-OBSMonitorSource -Display 2 # Adds a display source of the second monitor
 ### Parameters
 #### **Monitor**
 
-The monitor number.
+The monitor number.    
 This the number of the monitor you would like to capture.
 
 
@@ -56,8 +56,8 @@ This the number of the monitor you would like to capture.
 
 #### **CaptureCursor**
 
-If set, will capture the cursor.
-This will be set by default.
+If set, will capture the cursor.    
+This will be set by default.    
 If explicitly set to false, the cursor will not be captured.
 
 
@@ -73,7 +73,7 @@ If explicitly set to false, the cursor will not be captured.
 
 #### **Scene**
 
-The name of the scene.
+The name of the scene.    
 If no scene name is provided, the current program scene will be used.
 
 
@@ -89,7 +89,7 @@ If no scene name is provided, the current program scene will be used.
 
 #### **Name**
 
-The name of the input.
+The name of the input.    
 If no name is provided, "Display $($Monitor + 1)" will be the input source name.
 
 
@@ -105,7 +105,7 @@ If no name is provided, "Display $($Monitor + 1)" will be the input source name.
 
 #### **Force**
 
-If set, will check if the source exists in the scene before creating it and removing any existing sources found.
+If set, will check if the source exists in the scene before creating it and removing any existing sources found.    
 If not set, you will get an error if a source with the same name exists.
 
 
@@ -126,5 +126,5 @@ If not set, you will get an error if a source with the same name exists.
 
 ### Syntax
 ```PowerShell
-Add-OBSDisplaySource [[-Monitor] <Int32>] [-CaptureCursor] [[-Scene] <String>] [[-Name] <String>] [-Force] [<CommonParameters>]
+Set-OBSDisplaySource [[-Monitor] <Int32>] [-CaptureCursor] [[-Scene] <String>] [[-Name] <String>] [-Force] [<CommonParameters>]
 ```

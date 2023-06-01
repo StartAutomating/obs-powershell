@@ -2,108 +2,649 @@
 <!-- Generated with EZOut 1.9.9: Install-Module EZOut or https://github.com/StartAutomating/EZOut -->
 <Types>
   <Type>
+    <Name>OBS.GetInputList.Response</Name>
+    <Members>
+      <ScriptMethod>
+        <Name>Mute</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Mutes an input
+.DESCRIPTION
+    Mutes the audio of an OBS Input
+.LINK
+    Set-OBSInputMute
+#&gt;
+param(
+# If set, returns the message used to mute
+[switch]
+$PassThru
+)
+
+$this |
+    Set-OBSInputMute -InputMuted -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Next</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Nexts an input
+.DESCRIPTION
+    Sends a "Next" message to an input.   
+.LINK
+    Send-OBSTriggerMediaInputAction
+#&gt;
+param(
+# If set, will return the message instead of sending it now.
+[switch]
+$PassThru
+)
+
+$this | Send-OBSTriggerMediaInputAction -MediaAction "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_NEXT" -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Pause</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Pauses an input
+.DESCRIPTION
+    Sends a "Pause" message to an input.   
+.LINK
+    Send-OBSTriggerMediaInputAction
+#&gt;
+param(
+# If set, will return the message instead of sending it now.
+[switch]
+$PassThru
+)
+
+$this | Send-OBSTriggerMediaInputAction -MediaAction "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_PAUSE" -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Play</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Plays an input
+.DESCRIPTION
+    Sends a "Play" message to an input.   
+.LINK
+    Send-OBSTriggerMediaInputAction
+#&gt;
+param(
+# If set, will return the message instead of sending it now.
+[switch]
+$PassThru
+)
+
+$this | Send-OBSTriggerMediaInputAction -MediaAction "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_PLAY" -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Previous</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Previouss an input
+.DESCRIPTION
+    Sends a "Previous" message to an input.   
+.LINK
+    Send-OBSTriggerMediaInputAction
+#&gt;
+param(
+# If set, will return the message instead of sending it now.
+[switch]
+$PassThru
+)
+
+$this | Send-OBSTriggerMediaInputAction -MediaAction "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_PREVIOUS" -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Remove</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Removes an input
+.DESCRIPTION
+    Removes an OBS Input
+.LINK
+    Remove-OBSInput
+#&gt;
+$this | Remove-OBSInput
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Restart</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Restarts an input
+.DESCRIPTION
+    Sends a "Restart" message to an input.   
+.LINK
+    Send-OBSTriggerMediaInputAction
+#&gt;
+param(
+# If set, will return the message instead of sending it now.
+[switch]
+$PassThru
+)
+
+$this | Send-OBSTriggerMediaInputAction -MediaAction "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_RESTART" -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Stop</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Stops an input
+.DESCRIPTION
+    Sends a "Stop" message to an input.   
+.LINK
+    Send-OBSTriggerMediaInputAction
+#&gt;
+param(
+# If set, will return the message instead of sending it now.
+[switch]
+$PassThru
+)
+
+$this | Send-OBSTriggerMediaInputAction -MediaAction "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_STOP" -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Unmute</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Mutes an input
+.DESCRIPTION
+    Mutes the audio of an OBS Input
+.LINK
+    Set-OBSInputMute
+#&gt;
+param(
+# If set, returns the message used to unmute.
+[switch]
+$PassThru
+)
+
+$this |
+    Set-OBSInputMute -InputMuted:$false -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptProperty>
+        <Name>CurrentTime</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets an input's current time
+.DESCRIPTION
+    Gets an input's current time, if applicable
+.LINK
+    Get-OBSMediaInputStatus
+#&gt;
+param()
+
+$mediaCursor = ($this | Get-OBSMediaInputStatus).mediaCursor -as [double]
+if (-not $mediaCursor) { $mediaCursor = [double]0}
+[timespan]::FromMilliseconds($mediaCursor)
+                    </GetScriptBlock>
+        <SetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Sets an input's current time
+.DESCRIPTION
+    Sets an input's current time.
+.LINK
+    Send-OBSMediaInputCursor
+#&gt;
+param()
+
+$mediaCursor = 0
+
+$PassThru = $false
+foreach ($arg in $args) {
+    if ($arg -is [double]) {
+        $mediaCursor = $arg
+    }
+    elseif ($arg -as [timespan]) {
+        $mediaCursor = $arg -as [timespan].TotalMilliseconds
+    }
+    if ($arg -is [bool]) {
+        $PassThru = $true
+    }
+}
+$this | Set-OBSMediaInputCursor -MediaCursor $mediaCursor  -PassThru:$PassThru
+                    </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Filters</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets an input's filters
+.DESCRIPTION
+    Gets the filters related to an OBS input.
+.EXAMPLE
+     $obsPowerShellIcon = Show-OBS -Uri https://obs-powershell.start-automating.com/Assets/obs-powershell-animated-icon.svg
+     $obsPowerShellIcon | Set-OBSColorFilter -Opacity .5
+     $obsPowerShellIcon.Input.Filters
+.LINK
+    Get-OBSSourceFilterList
+#&gt;
+Get-OBSSourceFilterList -SourceName $this.InputName
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>MonitorType</Name>
+        <GetScriptBlock>
+                        $this | Get-OBSInputAudioMonitorType
+                    </GetScriptBlock>
+        <SetScriptBlock>
+                        param(
+[string]
+$MonitorType
+)
+$validValues = "Monitor", "MonitorAndOutput", "None","Off","OBS_MONITORING_TYPE_MONITOR_ONLY","OBS_MONITORING_TYPE_MONITOR_AND_OUTPUT","OBS_MONITORING_TYPE_MONITOR_ONLY"
+
+if ($MonitorType -notin $validValues) {
+    throw "Invalid Value: '$MonitorType' is not in '$($validValues -join "','")'"
+}
+
+$realMonitorType = if ($MonitorType -like 'obs*') {
+    $MonitorType.ToUpper()
+} elseif ($MonitorType -eq 'Monitor') {
+    "OBS_MONITORING_TYPE_MONITOR_ONLY"
+} elseif ($MonitorType -eq 'MonitorAndOutput') {
+    "OBS_MONITORING_TYPE_MONITOR_AND_OUTPUT"
+} else {
+    "OBS_MONITORING_TYPE_NONE"
+}
+
+$this | Set-OBSInputAudioMonitorType -MonitorType $realMonitorType
+                    </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Settings</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets an input's settings
+.DESCRIPTION
+    Gets the current settings for an OBS input.
+.EXAMPLE
+     $obsPowerShellIcon = Show-OBS -Uri https://obs-powershell.start-automating.com/Assets/obs-powershell-animated-icon.svg
+     $obsPowerShellIcon.Input.Settings     
+.LINK
+    Get-OBSInputSettings
+#&gt;
+(Get-OBSInputSettings -InputName $this.InputName).inputSettings
+                    </GetScriptBlock>
+        <SetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Sets an input's settings
+.DESCRIPTION
+    Changes the settings for an OBS input.
+.LINK
+    Set-OBSInputSettings
+#&gt;
+param()
+Set-OBSInputSettings -InputName $this.InputName -InputSettings $args[0]
+                    </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Status</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets an input's status
+.DESCRIPTION
+    Gets the media status of an OBS input.
+.LINK
+    Get-OBSMediaInputStatus
+#&gt;
+param()
+$this | Get-OBSMediaInputStatus
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Volume</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets an input's volume
+.DESCRIPTION
+    Gets an OBS input's volume mulitplier
+.LINK
+    Get-OBSInputVolume
+#&gt;
+($this | Get-OBSInputVolume).inputVolumeMul
+                    </GetScriptBlock>
+        <SetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Sets an input's volume
+.DESCRIPTION
+    Sets an OBS input's volume mulitplier.
+
+    This is normally between 0 (no sound) and 1 (normal levels).
+    
+    A source can be made up to 20 times the original volume.
+.LINK
+    Set-OBSInputVolume
+#&gt;
+param(
+[double]
+$Multiple
+)
+
+# If multiple is less than zero, clamp it to avoid errors
+if ($Multiple -lt 0) { $Multiple = 0}
+# If multiple is greater than 20, claim it to avoid errors (and check your hearing)
+if ($Multiple -gt 20) { $Multiple = 20} 
+
+$this | Set-OBSInputVolume -InputVolumeMul $Multiple
+                    </SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
     <Name>OBS.GetSceneItemList.Response</Name>
     <Members>
+      <AliasProperty>
+        <Name>Hide</Name>
+        <ReferencedMemberName>Disable</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>Show</Name>
+        <ReferencedMemberName>Enable</ReferencedMemberName>
+      </AliasProperty>
       <ScriptMethod>
         <Name>Animate</Name>
         <Script>
-                        param(
-# The set of values that you're animating from.
-# Aka, the starting positions of the animation.
-# Can be either a dictionary or an object.
-# These take the values found in Set-OBSSceneItemTransform
-$From,
-
-# The set of values that you're animating to.
-# Aka, the ending positions of the animation.
-# Can be either a dictionary or an object.
-# These take the values found in Set-OBSSceneItemTransform
-$To,
-
-# The timespan the animation will take.
-[TimeSpan]
-$TimeSpan = [timespan]::fromSeconds(1),
-
-# The number of steps in the animation.
-[int]
-$StepCount
+                        &lt;#
+.SYNOPSIS
+    Animates scene items
+.DESCRIPTION
+    Animates the motion of scene items within a frame.
+.EXAMPLE
+    $stars = Add-OBSBrowserSource -URI https://pssvg.start-automating.com/Examples/Stars.svg
+    $stars.FitToScreen()
+    $stars.Animate(@{
+        scale = 0.1        
+    },"00:00:01")
+#&gt;
+param(
 )
 
-# If there's no step count
-if (-not $StepCount) {
-    $StepCount = [Math]::Ceiling($TimeSpan.TotalMilliseconds / ([timespan]::fromSeconds(1/30).TotalMilliseconds)) * 2
+filter ToPosition {
+    param(
+    [switch]
+    $Width,
+
+    [switch]
+    $Height
+    )
+
+    
+    if ($_ -is [string] -and $_ -match '%$') {
+        $_ = $_ -replace '%$' -as [double]
+        if (-not $script:CachedOBSVideoSettings) {
+            $script:CachedOBSVideoSettings = Get-OBSVideoSettings
+        }
+        $videoSettings = $script:CachedOBSVideoSettings
+        if ($Width) {
+            $_/100 * $videoSettings.baseWidth
+        }
+        if ($Height) {
+            $_/100 * $videoSettings.baseHeight
+        }
+        
+    }
+    elseif ($_ -is [double] -or $_ -is [int]) {
+        if ($_ -is [double] -and $_ -ge 0 -and $_ -lt 1) {
+            if (-not $script:CachedOBSVideoSettings) {
+                $script:CachedOBSVideoSettings = Get-OBSVideoSettings
+            }
+            $videoSettings = $script:CachedOBSVideoSettings
+            if ($Width) {
+                $_ * $videoSettings.baseWidth
+            }
+            if ($Height) {
+                $_ * $videoSettings.baseHeight
+            }
+            
+        } else {
+            [int]$_
+        }
+    }
 }
 
-# Convert -From to a dictionary
-$realFrom = 
-    if ($from -is [Collections.IDictionary]) {
+filter ToScale {
+    if ($_ -is [string] -and $_ -match '%$') {
+        $_ = $_ -replace '%$' -as [double]
+        $_/100
+    }
+    elseif ($_ -is [double] -or $_ -is [int]) {
+        if ($_ -is [double] -and $_ -ge 0 -and $_ -le 1) {
+            $_
+        } else {
+            [double]$_/100
+        }
+    }
+}
+
+$nextTimeSpan = [timespan]0
+
+$keyNames = 'positionX', 'positionY', 'scaleX','scaleY', 'cropBottom', 'cropLeft', 'cropRight', 'cropTop', 'rotation'
+$keyAliases = [Ordered]@{'Rotate'='rotation'}
+$duplicatedKeyAliases = [Ordered]@{
+    'position' = 'positionX', 'positionY'
+    'scale' = 'scaleX', 'scaleY'
+    'crop' = 'cropBottom', 'cropLeft', 'cropRight', 'cropTop'
+}
+foreach ($position in 'X','Y') {
+    $keyAliases[$position] = "position$position"
+}
+foreach ($cropType in 'Bottom','Left', 'Right', 'Top') {
+    $keyAliases[$cropType] = "crop$cropType"
+}
+   
+$allSteps = @()
+
+
+$originalTransform = $this | Get-OBSSceneItemTransform
+$lastFrom = 
+    if ($originalTransform -is [Collections.IDictionary]) {
         [Ordered]@{} + $from
     } else {
         $newFrom = [Ordered]@{}
-        foreach ($property in $from.psobject.properties) {
+        foreach ($property in $originalTransform.psobject.properties) {
             $newFrom[$property.Name] = $property.Value
         }
         $newFrom
     }
-    
-# Convert -To to a dictionary
-$realTo =
-    if ($to -is [Collections.IDictionary]) {
-        [Ordered]@{} + $to
-    } else {
-        $newTo = [Ordered]@{}
-        foreach ($property in $to.psobject.properties) {
-            $newTo[$property.Name] = $property.Value
-        }
-        $newTo
-    }
 
-# Compare the two sets of keys to determine the base data object
-$BaseObject = [Ordered]@{}
-foreach ($key in $realTo.Keys) {
-    if (-not $BaseObject[$key]) {
-        $BaseObject[$key] = 
-            if ($realFrom[$key]) {
-                $realFrom[$key]
+$totalTimeSpan = [timespan]0
+
+# We want to walk over every argument and turn them into a series of animations
+
+$PassThru   = $false
+
+$AllArgs = @($args)
+
+$allSteps = @(
+:NextArgument for ($argIndex = 0 ; $argIndex -lt $allArgs.Length; $argIndex++) {
+    $arg = $allArgs[$argIndex]
+    # If the arg is a timespan, we want to track this
+    if ($arg -as [timespan]) {
+        $nextTimeSpan = $arg -as [timespan]
+    } elseif ($arg -is [double] -or $arg -is [int]) {
+        $nextTimeSpan = [timespan]::fromSeconds($arg)
+    }
+    elseif ($arg -is [bool]) {
+        if ($arg) {
+            $PassThru = $true
+        }
+    }
+    else {
+        $currentTo = 
+            if ($arg -isnot [Collections.IDictionary]) {
+                $newTo = [Ordered]@{}
+                foreach ($property in $arg.psobject.properties) {
+                    $newTo[$property.Name] = $property.Value
+                }
+                $newTo
             } else {
-                $realTo[$key]
+                [Ordered]@{} + $arg
             }
-    }
-}
 
-# Check for properties only defined in -From
-foreach ($key in $realFrom.Keys) {
-    if (-not $BaseObject[$key]) {
-        $BaseObject[$key] = $realFrom[$key]
-        $realTo[$key]     = $realFrom[$key]
-    }
-}
+        $badKey = 
+            @(foreach ($k in @($currentTo.Keys)) {
+                if ($k -notin $keyNames) {
+                    if ($keyAliases[$k]) {
+                        $currentTo[$keyAliases[$k]] = $currentTo[$k]
+                        $currentTo.Remove($k)
+                    } 
+                    elseif ($duplicatedKeyAliases[$k]) {
+                        foreach ($duplicateKey in $duplicatedKeyAliases[$k]) {
+                            $currentTo[$duplicateKey] = $currentTo[$k]
+                        }
+                        
+                        $currentTo.Remove($k)
+                    }
+                    else {
+                        $k
+                    }
+                }
+            })
 
-# Determine the animation change per step.
-$eachStepValue = [Ordered]@{}
-foreach ($key in $baseObject.Keys) {
-    $distance = try { $realTo[$key] - $baseObject[$key] } catch { $null }
-    if ($null -ne $distance) {
-        $eachStepValue[$key] = [float]$distance / $StepCount
-    }
-}
+        foreach ($checkKeyValue in @($currentTo.GetEnumerator())) {
+            
+            $newValue = 
+                switch ($checkKeyValue.Key) {
+                    positionX { $checkKeyValue.Value | ToPosition -Width }
+                    positionY { $checkKeyValue.Value | ToPosition -Height }
+                    cropLeft { $checkKeyValue.Value | ToPosition -Width }
+                    cropRight { $checkKeyValue.Value | ToPosition -Width }
+                    cropTop { $checkKeyValue.Value | ToPosition -Height }
+                    cropBottom { $checkKeyValue.Value | ToPosition -Height }
+                    scaleX { $checkKeyValue.Value | ToScale  }
+                    scaleY { $checkKeyValue.Value | ToScale  }
+                }
 
-
-# Get all of the steps
-$allSteps = 
-    foreach ($stepNumber in 0..($stepCount - 1)) {
-        $stepObject = [Ordered]@{}
-        foreach ($key in $BaseObject.Keys) {
-            $stepObject[$key] = $BaseObject[$key] + ($eachStepValue[$key] * $stepNumber)
+            if ($null -ne $newValue) {
+                $currentTo[$checkKeyValue.Key] = $newValue
+            }
+            
         }
-        $this | Set-OBSSceneItemTransform -SceneItemTransform $stepObject -PassThru
+        
+        if ($badKey) {
+            throw "Cannot animate '$($badKey -join "','")' : Can only animate $($keyNames -join ',')"
+        }
+
+        if (-not $nextTimeSpan.TotalMilliseconds -and 
+            ($argIndex -lt ($AllArgs.Length - 1)) -and 
+            $AllArgs[$argIndex + 1] -as [timespan]
+        ) {
+            $nextTimeSpan = $AllArgs[$argIndex + 1] -as [timespan]
+            $argIndex++
+        }
+
+        if ($lastFrom -and $nextTimeSpan) {
+            $StepCount = [Math]::Ceiling($NextTimeSpan.TotalMilliseconds / ([timespan]::fromSeconds(1/30).TotalMilliseconds)) * 2            
+            if (-not $StepCount) {
+                $this | Set-OBSSceneItemTransform -SceneItemTransform $currentTo -PassThru
+                $newLastFrom = [Ordered]@{} + $currentTo
+                foreach ($kv in $lastFrom.GetEnumerator()) {
+                    if ($currentTo.Contains($kv.Key)) { continue }
+                    $newLastFrom[$kv.Key] = $kv.Value
+                }
+                $lastFrom = $newLastFrom # May need to join this with the remaining properties in from
+
+                $totalTimeSpan += $nextTimeSpan
+                $nextTimeSpan = [timespan]0
+                continue NextArgument
+            }
+
+            $stepMilliseconds  = $nextTimeSpan.TotalMilliseconds / $StepCount
+
+            
+            # Compare the two sets of keys to determine the base data object
+            $BaseObject = [Ordered]@{}
+            foreach ($key in $currentTo.Keys) {
+                if (-not $BaseObject[$key]) {
+                    $BaseObject[$key] = 
+                        if ($null -ne $lastFrom[$key]) {
+                            $lastFrom[$key]
+                        } else {
+                            $currentTo[$key]
+                        }
+                }
+            }                    
+
+            # Determine the animation change per step.
+            $eachStepValue = [Ordered]@{}
+            foreach ($key in $baseObject.Keys) {
+                $distance = try { $currentTo[$key] - $baseObject[$key] } catch { $null }
+                if ($null -ne $distance) {
+                    $eachStepValue[$key] = [float]$distance / $StepCount
+                }
+            }
+
+            
+            foreach ($stepNumber in 1..($stepCount)) {
+                $stepObject = [Ordered]@{}
+                foreach ($key in $BaseObject.Keys) {
+                    $stepObject[$key] = $BaseObject[$key] + ($eachStepValue[$key] * $stepNumber)
+                }
+                $this | Set-OBSSceneItemTransform -SceneItemTransform $stepObject -PassThru
+                Send-OBSSleep -SleepMillis $stepMilliseconds -PassThru
+            }
+
+        } else {
+            $this | Set-OBSSceneItemTransform -SceneItemTransform $currentTo -PassThru
+        }
+        $newLastFrom = [Ordered]@{} + $currentTo
+        foreach ($kv in $lastFrom.GetEnumerator()) {
+            if ($currentTo.Contains($kv.Key)) { continue }
+            $newLastFrom[$kv.Key] = $kv.Value
+        }
+        $lastFrom = $newLastFrom # May need to join this with the remaining properties in from
+
+        $totalTimeSpan += $nextTimeSpan
+        $nextTimeSpan = [timespan]0
+
+        if (($argIndex -lt ($AllArgs.Length - 1)) -and 
+            $AllArgs[$argIndex + 1] -as [timespan]
+        ) {
+            Send-OBSSleep -SleepMillis ($AllArgs[$argIndex + 1] -as [timespan]).TotalMilliseconds -PassThru
+        }
     }
 
-# Determine the time to wait per step.
-$stepTime = [TimeSpan]::FromMilliseconds($TimeSpan.TotalMilliseconds / $StepCount)
+    $IsFirstArg = $false
+}
+)
 
-# Send all of the steps to OBS.
-$allSteps | Send-OBS -StepTime $stepTime
+if ($allSteps) {
+    # If any boolean true was in the arguments, we're passing thru
+    if ($PassThru) {
+        $allSteps
+    } else {
+        # Send all of the steps to OBS.
+        $allSteps | Send-OBS 
+    }    
+}
+
                     </Script>
       </ScriptMethod>
       <ScriptMethod>
@@ -174,14 +715,35 @@ $this | Set-OBSSceneItemTransform -SceneItemTransform $cropTable
       <ScriptMethod>
         <Name>Enable</Name>
         <Script>
-                        $this | Set-OBSSceneItemEnabled -sceneItemEnabled
+                        param(
+[switch]
+$PassThru
+)
+
+$this | Set-OBSSceneItemEnabled -sceneItemEnabled -PassThru:$PassThru
 
                     </Script>
       </ScriptMethod>
       <ScriptMethod>
         <Name>FitToScreen</Name>
         <Script>
-                        $videoSettings = Get-OBSVideoSettings
+                        &lt;#
+.SYNOPSIS
+    Fits an item to the screen
+.DESCRIPTION
+    Centers an item and makes it fit to the screen.
+.LINK
+    Get-OBSVideoSettings
+.LINK
+    Get-OBSSceneItemTransform
+.LINK
+    Set-OBSSceneItemTransform
+#&gt;
+param()
+if (-not $script:CachedOBSVideoSettings) {
+    $script:CachedOBSVideoSettings = Get-OBSVideoSettings
+}
+$videoSettings = $script:CachedOBSVideoSettings
 
 $thisTransform = $this | Get-OBSSceneItemTransform
 
@@ -203,6 +765,68 @@ $this | Set-OBSSceneItemTransform -SceneItemTransform $sceneItemTransform
                     </Script>
       </ScriptMethod>
       <ScriptMethod>
+        <Name>Move</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Moves a scene item
+.DESCRIPTION
+    Moves a scene item throughout the screen.
+
+    This converts it's arguments to .Animate arguments.  Any single values will be assumed to be positionX/positionY
+.EXAMPLE
+    # Load a source
+    $stars = Add-OBSBrowserSource -URI https://pssvg.start-automating.com/Examples/Stars.svg
+    # fit it to the screen
+    $stars.FitToScreen()
+    # Move it diagonally across the screen
+    $stars.Move("-50%","150%", "00:00:05")
+.LINK
+    OBS.GetSceneItemList.Response.Animate
+#&gt;
+param()
+$allArguments = @($args)
+$animateArguments = @(
+foreach ($arg in $allArguments) {    
+    if (
+        $arg -is [double] -or 
+        $arg -is [int] -or
+        ($arg -is [string] -and $arg -match '\%$')                
+    ) {        
+        $positionTransform = @{
+            positionX = $arg
+            positionY = $arg
+        }
+        $positionTransform
+    } elseif ($arg.X,$arg.Y -ne $null) {
+        $scaleInfo = @{}
+                
+        if ($null -ne $arg.X) {
+            $scaleInfo.positionX = $arg.X
+        }        
+
+        if ($null -ne $arg.Y) {
+            $scaleInfo.positionY = $arg.Y
+        }        
+        
+        $scaleInfo
+    }    
+    elseif ($arg -as [timespan]) {
+        $arg
+    } elseif ($arg -is [bool]) {
+        $arg
+    }
+    else {
+        $arg
+    }
+})
+
+$this.Animate.Invoke($animateArguments)
+
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
         <Name>Remove</Name>
         <Script>
                         $this | Remove-OBSSceneItem
@@ -211,59 +835,76 @@ $this | Set-OBSSceneItemTransform -SceneItemTransform $sceneItemTransform
       <ScriptMethod>
         <Name>Rotate</Name>
         <Script>
-                        param(
-[Alias('Degrees', 'Rotation')]
-[double]
-$Degree
+                        param()
+$allArguments = @($args)
+
+$animateArguments  = @(
+    foreach ($argument in $allArguments) {
+        if ($argument -is [double] -or $argument -is [int]) {
+            @{
+                rotation = $argument
+            }
+        } elseif ($argument -as [timespan]) {
+            $argument
+        } elseif ($argument -is [bool]) {
+            $argument
+        }
+    }
 )
 
-$this | Set-OBSSceneItemTransform -SceneItemTransform @{
-    rotation = $Degree
-}
+$this.Animate.Invoke($animateArguments)
                     </Script>
       </ScriptMethod>
       <ScriptMethod>
         <Name>Scale</Name>
         <Script>
-                        param(
-[double[]]
-$ScaleX = 1,
+                        param()
 
-[double[]]
-$ScaleY = 1,
+$allArguments = @($args)
+$animateArguments = @(
+foreach ($arg in $allArguments) {    
+    if ($arg -is [double] -or $arg -is [int] -or 
+        ($arg -is [string] -and $arg -match '\%$')
+    ) {
+        $scale = $arg
+        @{scaleX=$scale;scaleY=$scale}
+    } elseif ($null -ne $arg.X -or $null -ne $arg.Y) {
+        $scaleInfo = @{}
+        
+        if ($null -ne $arg.X) {
+            $scaleInfo.scaleX = $arg.X
+        }
+        elseif ($null -ne $arg.scaleX) {
+            $scaleInfo.scaleX = $arg.scaleX
+        }
 
-# The timespan the animation will take
-[TimeSpan]
-$TimeSpan = [timespan]::fromSeconds(1)
-)
-
-if ($scaleX.Length -eq 1 -and $scaleY.Length -eq 1) {
-    $this | Set-OBSSceneItemTransform -SceneItemTransform @{
-        scaleX = $ScaleX[0]
-        scaleY = $scaleY[0]
+        if ($null -ne $arg.Y) {
+            $scaleInfo.scaleY = $arg.Y
+        }
+        elseif ($null -ne $arg.scaleY) {
+            $scaleInfo.scaleY = $arg.scaleY
+        }
+        
+        $scaleInfo
+    }    
+    elseif ($arg -as [timespan]) {
+        $arg
+    } elseif ($arg -is [bool]) {
+        $arg
+    } else {
+        $arg
     }
-    return
-}
+})
 
-$thisTransform = $this | Get-OBSSceneItemTransform 
+$this.Animate.Invoke($animateArguments)
 
-$fromValue = [Ordered]@{
-    scaleX = $thisTransform.scaleX
-    scaleY = $thisTransform.scaleY
-}
-
-$durationPerStep = [TimeSpan]::FromMilliseconds($TimeSpan.TotalMilliseconds / $ScaleX.Length)
-
-for ($stepNumber = 0; $stepNumber -lt $ScaleX.Length; $stepNumber++) {
-    $toValue = [Ordered]@{
-        scaleX = $ScaleX[$stepNumber]
-        scaleY = $ScaleY[$stepNumber]
-    }
-    $this.Animate($fromValue, $toValue, $durationPerStep)
-    $fromValue = $toValue
-}
-
-
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>SetZIndex</Name>
+        <Script>
+                        $this | Set-OBSSceneItemIndex -SceneItemIndex ($args[0])
+$this | Add-Member NoteProperty "sceneItemIndex" $args[0] -Force 
                     </Script>
       </ScriptMethod>
       <ScriptMethod>
@@ -288,6 +929,24 @@ for ($stepNumber = 0; $stepNumber -lt $ScaleX.Length; $stepNumber++) {
                     </GetScriptBlock>
       </ScriptProperty>
       <ScriptProperty>
+        <Name>Filters</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets a Scene Item's filters
+.DESCRIPTION
+    Gets the filters related to an OBS input.
+.EXAMPLE
+     $obsPowerShellIcon = Show-OBS -Uri https://obs-powershell.start-automating.com/Assets/obs-powershell-animated-icon.svg
+     $obsPowerShellIcon | Set-OBSColorFilter -Opacity .5
+     $obsPowerShellIcon.Filters
+.LINK
+    Get-OBSSourceFilterList
+#&gt;
+Get-OBSSourceFilterList -SourceName $this.SourceName
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
         <Name>ImageHeight</Name>
         <GetScriptBlock>
                         $this.sceneItemTransform.sourceHeight
@@ -302,10 +961,272 @@ for ($stepNumber = 0; $stepNumber -lt $ScaleX.Length; $stepNumber++) {
                     </GetScriptBlock>
       </ScriptProperty>
       <ScriptProperty>
+        <Name>Input</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets a Scene Item's Input
+.DESCRIPTION
+    Gets the OBS Input related to the current scene item.
+
+    This value is cached upon first request, as it will never change as long as the source item exists.
+.EXAMPLE
+    $stars = Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg
+    $stars.Input
+#&gt;
+if (-not $this.'.Input') {
+    $this | Add-Member NoteProperty '.Input' (
+        $this | Get-OBSInput | Where-Object InputName -eq $this.SourceName
+    ) -Force
+}
+
+$this.'.Input'
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
         <Name>Layer</Name>
         <GetScriptBlock>
                         return $this.sceneItemIndex
 
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ZIndex</Name>
+        <GetScriptBlock>
+                        $indexInfo = $this | Get-OBSSceneItemIndex
+if ($indexInfo.SceneItemIndex) {
+    $indexInfo.SceneItemIndex
+}
+elseif ($indexInfo -is [int]) {
+    $indexInfo
+}
+                    </GetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>OBS.GetSourceFilterList.Response</Name>
+    <Members>
+      <ScriptMethod>
+        <Name>Disable</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Disables a filter
+.DESCRIPTION
+    Disables an OBS filter.
+.LINK
+    Set-OBSSourceFilterEnabled
+#&gt;
+param(
+# If set, will return the request that would enable a filter.
+[switch]
+$PassThru
+)
+$this | Set-OBSSourceFilterEnabled -FilterEnabled:$false -PassThru $PassThru
+if (-not $PassThru) {
+    $this | Add-Member filterEnabled $false -Force -PassThru
+}
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Enable</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Enables a filter
+.DESCRIPTION
+    Enables an OBS filter.
+.LINK
+    Set-OBSSourceFilterEnabled
+#&gt;
+param(
+# If set, will return the request that would enable a filter.
+[switch]
+$PassThru
+)
+
+$this | Set-OBSSourceFilterEnabled -FilterEnabled:$true -PassThru:$PassThru
+if (-not $PassThru) {
+    $this | Add-Member filterEnabled $true -Force -PassThru
+}
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Remove</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Removes a filter
+.DESCRIPTION
+    Removes a filter from an OBS source.
+.LINK
+    Remove-OBSSourceFilter
+.LINK
+    Get-OBSSourceFilterList
+#&gt;
+$this | Remove-OBSSourceFilter
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Set</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Sets a filter
+.DESCRIPTION
+    Changes a filter's settings.
+#&gt;
+param(
+# The settings that can be changed.
+[Alias('Setting')]
+$Settings,
+
+# Return the message that would be sent to OBS, rather than changing the filter settings.
+[switch]
+$PassThru
+)
+
+$this | 
+    Set-OBSSourceFilterSettings -FilterSettings $Settings -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptProperty>
+        <Name>Enabled</Name>
+        <GetScriptBlock>
+                        return $this.filterEnabled
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Index</Name>
+        <GetScriptBlock>
+                        return $this.filterIndex
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Kind</Name>
+        <GetScriptBlock>
+                        return $this.filterKind
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Settings</Name>
+        <GetScriptBlock>
+                        ,$this.filterSettings
+                    </GetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>OBS.GetSourceFilter.Response</Name>
+    <Members>
+      <ScriptMethod>
+        <Name>Disable</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Disables a filter
+.DESCRIPTION
+    Disables an OBS filter.
+.LINK
+    Set-OBSSourceFilterEnabled
+#&gt;
+param(
+# If set, will return the request that would enable a filter.
+[switch]
+$PassThru
+)
+$this | Set-OBSSourceFilterEnabled -FilterEnabled:$false -PassThru $PassThru
+if (-not $PassThru) {
+    $this | Add-Member filterEnabled $false -Force -PassThru
+}
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Enable</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Enables a filter
+.DESCRIPTION
+    Enables an OBS filter.
+.LINK
+    Set-OBSSourceFilterEnabled
+#&gt;
+param(
+# If set, will return the request that would enable a filter.
+[switch]
+$PassThru
+)
+
+$this | Set-OBSSourceFilterEnabled -FilterEnabled:$true -PassThru:$PassThru
+if (-not $PassThru) {
+    $this | Add-Member filterEnabled $true -Force -PassThru
+}
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Remove</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Removes a filter
+.DESCRIPTION
+    Removes a filter from an OBS source.
+.LINK
+    Remove-OBSSourceFilter
+.LINK
+    Get-OBSSourceFilterList
+#&gt;
+$this | Remove-OBSSourceFilter
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Set</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Sets a filter
+.DESCRIPTION
+    Changes a filter's settings.
+#&gt;
+param(
+# The settings that can be changed.
+[Alias('Setting')]
+$Settings,
+
+# Return the message that would be sent to OBS, rather than changing the filter settings.
+[switch]
+$PassThru
+)
+
+$this | 
+    Set-OBSSourceFilterSettings -FilterSettings $Settings -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptProperty>
+        <Name>Enabled</Name>
+        <GetScriptBlock>
+                        return $this.filterEnabled
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Index</Name>
+        <GetScriptBlock>
+                        return $this.filterIndex
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Kind</Name>
+        <GetScriptBlock>
+                        return $this.filterKind
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Settings</Name>
+        <GetScriptBlock>
+                        ,$this.filterSettings
                     </GetScriptBlock>
       </ScriptProperty>
     </Members>
@@ -374,6 +1295,550 @@ $this | Set-OBSInputSettings -InputSettings ([Ordered]@{color=$realColor})
 
                     </Script>
       </ScriptMethod>
+    </Members>
+  </Type>
+  <Type>
+    <Name>OBS.PowerShell</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>Commands</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets obs-powershell commands
+.DESCRIPTION
+    Gets the commands in obs-powershell.
+.EXAMPLE
+    (Get-OBS).Commands
+#&gt;
+if (-not $this.'.Commands') {
+    $this | Add-Member NoteProperty '.Commands' (Get-Command -Module obs-powershell)
+}
+
+$this.'.Commands'
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>CurrentScene</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the current scene
+.DESCRIPTION
+    Gets the current scene in OBS.
+.EXAMPLE
+    Get-OBS | Select-Object -ExpandProperty CurrentScene
+#&gt;
+Get-OBSCurrentProgramScene
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Inputs</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the loaded OBS inputs.
+.DESCRIPTION
+    Gets the currently loaded inputs in OBS.
+.LINK
+    Get-OBSInput
+#&gt;
+Get-OBSInput
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>OBSPowerShellVersion</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the obs-powershell version.
+.DESCRIPTION
+    Gets the version of obs-powershell.
+.EXAMPLE
+    Get-OBS | Select-Object -ExpandProperty OBSPowerShellVersion
+#&gt;
+Get-Module obs-powershell | Select-Object -ExpandProperty Version
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>OBSVersion</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the obs version.
+.DESCRIPTION
+    Gets the version of obs.
+.EXAMPLE
+    Get-OBS | Select-Object -ExpandProperty OBSVersion
+#&gt;
+if (-not $this.'.OBSVersionInfo') {
+    $this | Add-Member NoteProperty '.OBSVersionInfo' (Get-OBSVersion) -Force
+}
+
+$this.'.OBSVersionInfo'.OBSVersion -as [version]
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>OBSWebSocketVersion</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the obs version.
+.DESCRIPTION
+    Gets the version of obs.
+.EXAMPLE
+    Get-OBS | Select-Object -ExpandProperty OBSVersion
+#&gt;
+if (-not $this.'.OBSVersionInfo') {
+    $this | Add-Member NoteProperty '.OBSVersionInfo' (Get-OBSVersion) -Force
+}
+
+$this.'.OBSVersionInfo'.OBSWebSocketVersion -as [version]
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Outputs</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the loaded OBS outputs.
+.DESCRIPTION
+    Gets the currently loaded outputs in OBS.
+.LINK
+    Get-OBSOutput
+#&gt;
+Get-OBSOutput
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>RandomExample</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+
+.DESCRIPTION
+
+#&gt;
+$foundAnExample = $false
+do {
+    $helpObject = $this.Commands | Get-Random | Get-Help
+    if (-not $helpObject.Examples) { continue }
+    $foundAnExample = $helpObject.Examples[0] | Get-Random | Select-Object -ExpandProperty Example
+} until ($foundAnExample)
+
+$foundAnExample
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>RecordStatus</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets OBS record status.
+.DESCRIPTION
+    Gets the record status of OBS.
+.LINK
+    Get-OBSRecordStatus
+#&gt;
+Get-OBSRecordStatus
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>SceneItems</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets all obs scene items.
+.DESCRIPTION
+    Gets every item in every scene in OBS.
+.LINK
+    Get-OBSScene
+.LINK
+    Get-OBSSceneItem
+#&gt;
+$this.Scenes | Get-OBSSceneItem
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Scenes</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the loaded OBS scenes.
+.DESCRIPTION
+    Gets the currently loaded scenes in OBS.
+.LINK
+    Get-OBSScene
+#&gt;
+(Get-OBSScene).Scenes
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Stats</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets OBS stats.
+.DESCRIPTION
+    Gets OBS statistics
+.LINK
+    Get-OBSStats
+#&gt;
+Get-OBSStats
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>StreamStatus</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets OBS stream status.
+.DESCRIPTION
+    Gets the stream status of OBS.
+.LINK
+    Get-OBSStreamStatus
+#&gt;
+Get-OBSStreamStatus
+                    </GetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>OBS.PowerShell.Effect</Name>
+    <Members>
+      <AliasProperty>
+        <Name>Play</Name>
+        <ReferencedMemberName>Start</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptMethod>
+        <Name>Reverse</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Toggles Reversed and Starts an Effect
+.DESCRIPTION
+    Toggles an Effect's Reversed bool, and starts the effect.
+#&gt;
+$this.Reversed = -not $this.Reversed
+$this.Start()
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Start</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Stars an Effect
+.DESCRIPTION
+    Stars an Effect in obs-powershell.
+#&gt;
+# If the effect has no messages
+if (-not $this.Messages -and 
+    # and it is a command
+    $this.pstypenames -like '*Command*') {
+    # then get read to run it.
+    $null = New-Event -SourceIdentifier "OBS.PowerShell.Effect.Command.Started" -MessageData $this
+    
+    $thisOutput = 
+        # If this method had args
+        if ($args) {
+            $splat = [Ordered]@{}
+            $argSplat = @(
+                foreach ($arg in $args) {
+                    # find and join all of the dictionaries into a splat
+                    if ($arg -is [Collections.IDictionary]) {
+                        try { $splat += $arg} catch { 
+                            foreach ($kv in $arg.GetEnumerator()) {
+                                if (-not $splat.Contains($kv.Key)) {
+                                    $splat[$kv.Key] = $kv.Value
+                                }
+                            }
+                        }
+                    }
+                    else {
+                        # and pass everything else positionally
+                        $arg
+                    }
+                }                
+            )
+            # Cache these values
+            $This | Add-Member -MemberType NoteProperty LastParameters $splat -Force
+            $This | Add-Member -MemberType NoteProperty LastArguments $argSplat -Force
+            # and run this
+            &amp; $this @Splat @argSplat
+        } else {
+            $lastParameters = 
+                if ($this.LastParameters) {
+                    $this.LastParameters
+                } else {
+                    @{}
+                }
+            $lastArguments = 
+                if ($this.LastArguments) {
+                    @($this.LastArguments)
+                } else {
+                    @()
+                }
+            &amp; $this @LastParameters @lastArguments
+        }
+    
+    $null = New-Event -SourceIdentifier "OBS.PowerShell.Effect.Command.Completed" -MessageData $this
+    if ($thisOutput) {
+        $this | Add-Member -MemberType NoteProperty Messages $thisOutput -Force
+        $this | Add-Member -MemberType NoteProperty '.Changes' $null -Force
+    }
+}
+
+if ($this.Messages) {
+    $totalMS  = [double]0
+    $messages = @($This.Messages)
+    if ($this.Reversed) {
+        [Array]::Reverse($messages)
+    }
+    foreach ($msg in $messages) {
+        if ($msg.RequestType -eq 'Sleep') {
+            $totalMS += $msg.RequestData.sleepMillis
+        }
+    }
+    $null = New-Event -SourceIdentifier "OBS.PowerShell.Effect.Started" -MessageData $this    
+    $messages | Send-OBS -NoResponse
+    $this | Add-Member NoteProperty Status "Started" -Force
+    if ($totalMS) {
+        $Timer = [Timers.Timer]::new($totalMS)
+        $Timer.AutoReset = $false
+        Add-Member -MemberType NoteProperty -InputObject $this -Name Subscription -Value (
+            Register-ObjectEvent -InputObject $timer -EventName Elapsed -Action {
+            
+                $null = New-Event -SourceIdentifier "OBS.PowerShell.Effect.Ended" -MessageData $event.MessageData
+                $effectInfo = $event.MessageData
+                $effectInfo  | 
+                    Add-Member -MemberType NoteProperty Status 'Ended' -Force
+                if ($effectInfo.Mode -match 'Bounce' -and $effectInfo.Mode -match 'Loop') {
+                    $effectInfo.Reversed = -not $effectInfo.Reversed
+                    $effectInfo.Start()
+                } elseif ($effectInfo.Mode -match 'Loop') {
+                    $effectInfo.Start()
+                } elseif ($effectInfo.Mode -match 'Bounce') {
+                    $effectInfo.Reversed = -not $effectInfo.Reversed
+                    $effectInfo.Mode = 'Twice'
+                    $effectInfo.Start()
+                } else {
+                    $effectInfo | Add-Member -MemberType NoteProperty Mode 'Once' -Force
+                }                
+            } -MessageData $this
+        )         
+        $Timer.Start()
+    } else {
+        $this | Add-Member -MemberType NoteProperty Status "Ended" -Force
+        New-Event -SourceIdentifier "OBS.PowerShell.EffectEnded" -MessageData $this        
+    }    
+}
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Step</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Steps thru an effect
+.DESCRIPTION
+    Steps thru an effect.
+    
+    This will send individual messages from an effect, without sleeps.
+#&gt;
+param(
+# The step count
+[Alias('Ticks')]
+[int]
+$StepCount = 1
+)
+if (-not $this.Messages) {
+    return
+}
+
+$currentIndex = $this.Index
+$messages = @($this.Messages)
+
+$stepToIndex = $currentIndex + $StepCount
+if ($stepToIndex -lt 0) {
+    $messages[0] | Send-OBS -NoResponse
+    $this.Index = 0
+} elseif ($stepToIndex -gt $messages.Length) {
+    $messages[-1] | Send-OBS -NoResponse
+    $this.Index = $messages.Length - 1
+} else {
+    while (
+        $stepToIndex -ge 0 -and        
+        $messages[$stepToIndex] -and 
+        $messages[$stepToIndex].RequestType -eq 'Sleep') {
+        if ($StepCount -gt 0) {
+            $stepToIndex++
+        } else {
+            $stepToIndex--
+        }
+    }
+    if ($messages[$stepToIndex]) {
+        $messages[$stepToIndex] | Send-obs -NoResponse
+    }
+    $this.Index = $stepToIndex
+}
+
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Stop</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Stops an effect
+.DESCRIPTION
+    Stops an effect, or more properly, prevents an effect from looping
+#&gt;
+$this | Add-Member -MemberType NoteProperty Mode "Stopped" -Force
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptProperty>
+        <Name>Changes</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the Effect's Changes
+.DESCRIPTION
+    Gets the changes the effect will make, without a timespan.
+#&gt;
+,@(if ($this.Messages) {
+        
+    foreach ($msg in $this.Messages) {
+        if ($msg.RequestType -eq 'Sleep') {
+            continue
+        }
+        $msg
+    }
+})
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Duration</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets an Effect's Duration
+.DESCRIPTION
+    Gets the total time the effect will sleep.
+#&gt;
+
+$totalMS = [double]0
+foreach ($msg in $this.Messages) {
+    if ($msg.RequestType -eq 'Sleep') {
+        $totalMS += $msg.RequestData.sleepMillis
+    }
+}
+[timespan]::FromMilliseconds($totalMS)
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>EffectType</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets an obs-powershell effect's type
+.DESCRIPTION
+    Gets the type of an obs-powershell effect.
+
+    Current can be either 'Command' or 'Messages'
+#&gt;
+if ($this.pstypenames -like 'OBS.PowerShell.Effect.Command*') {
+    'Command'
+} else {
+    'Messages'
+}
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Index</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the index of the effect
+.DESCRIPTION
+    Gets the current index of the effect.  This is only used for to .Step thru an effect.
+#&gt;
+if (-not $this.'.Index') {
+    Add-Member -MemberType NoteProperty -Name '.Index' -Value 0 -InputObject $this -Force
+}
+
+$this.'.Index'
+
+
+                    </GetScriptBlock>
+        <SetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Updates the Effect's Index
+.DESCRIPTION
+    Updates an effect's index.  This is only used to .Step()
+#&gt;
+Add-Member -MemberType NoteProperty -Name '.Index' -Value ($args[0] -as [int]) -InputObject $this -Force
+
+
+
+                    </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Reversed</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets if an effect is reversed.
+.DESCRIPTION
+    Gets if an effect is currently set to Reverse.
+
+    Whenever reverse is set, effect messages will be reversed before being sent.
+#&gt;
+if (-not $this.'.Reversed') {
+    $this | Add-Member NoteProperty '.Reversed' $false -Force
+}
+
+$this.'.Reversed'
+                    </GetScriptBlock>
+        <SetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Sets if an effect should be reversed.
+.DESCRIPTION
+    Sets if an effect should be played in reverse.
+#&gt;
+$this | Add-Member NoteProperty '.Reversed' ($args[0] -as [bool]) -Force
+
+                    </SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>OBS.Powershell.Effect.Command</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>EffectName</Name>
+        <GetScriptBlock>
+                        $obsEffectsPattern = [Regex]::new('
+(?&gt;
+    ^OBS.(?&gt;fx|effects?)\p{P}
+    |
+    [\p{P}-[-]]OBS\.(?&gt;fx|effects?)$
+    |
+    \p{P}OBS.(?&gt;fx|effects?)\.(?&gt;ps1|json)
+)
+','IgnoreCase,IgnorePatternWhitespace')
+
+$this.Name -replace $obsEffectsPattern
+                    </GetScriptBlock>
+      </ScriptProperty>
     </Members>
   </Type>
 </Types>

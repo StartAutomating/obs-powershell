@@ -1,38 +1,39 @@
-param(
-[double[]]
-$ScaleX = 1,
+param()
 
-[double[]]
-$ScaleY = 1,
+$allArguments = @($args)
+$animateArguments = @(
+foreach ($arg in $allArguments) {    
+    if ($arg -is [double] -or $arg -is [int] -or 
+        ($arg -is [string] -and $arg -match '\%$')
+    ) {
+        $scale = $arg
+        @{scaleX=$scale;scaleY=$scale}
+    } elseif ($null -ne $arg.X -or $null -ne $arg.Y) {
+        $scaleInfo = @{}
+        
+        if ($null -ne $arg.X) {
+            $scaleInfo.scaleX = $arg.X
+        }
+        elseif ($null -ne $arg.scaleX) {
+            $scaleInfo.scaleX = $arg.scaleX
+        }
 
-# The timespan the animation will take
-[TimeSpan]
-$TimeSpan = [timespan]::fromSeconds(1)
-)
-
-if ($scaleX.Length -eq 1 -and $scaleY.Length -eq 1) {
-    $this | Set-OBSSceneItemTransform -SceneItemTransform @{
-        scaleX = $ScaleX[0]
-        scaleY = $scaleY[0]
+        if ($null -ne $arg.Y) {
+            $scaleInfo.scaleY = $arg.Y
+        }
+        elseif ($null -ne $arg.scaleY) {
+            $scaleInfo.scaleY = $arg.scaleY
+        }
+        
+        $scaleInfo
+    }    
+    elseif ($arg -as [timespan]) {
+        $arg
+    } elseif ($arg -is [bool]) {
+        $arg
+    } else {
+        $arg
     }
-    return
-}
+})
 
-$thisTransform = $this | Get-OBSSceneItemTransform 
-
-$fromValue = [Ordered]@{
-    scaleX = $thisTransform.scaleX
-    scaleY = $thisTransform.scaleY
-}
-
-$durationPerStep = [TimeSpan]::FromMilliseconds($TimeSpan.TotalMilliseconds / $ScaleX.Length)
-
-for ($stepNumber = 0; $stepNumber -lt $ScaleX.Length; $stepNumber++) {
-    $toValue = [Ordered]@{
-        scaleX = $ScaleX[$stepNumber]
-        scaleY = $ScaleY[$stepNumber]
-    }
-    $this.Animate($fromValue, $toValue, $durationPerStep)
-    $fromValue = $toValue
-}
-
+$this.Animate.Invoke($animateArguments)

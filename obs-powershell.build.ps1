@@ -136,7 +136,7 @@ $obsFunctionProcessBlock = {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -NoResponse:$NoResponse
         }
 }
 
@@ -239,8 +239,18 @@ foreach ($obsRequestInfo in $obsWebSocketProtocol.requests) {
         '$PassThru'
     )
 
+    $obsFunctionParameters['NoResponse'] = @(
+        "# If set, will not attempt to receive a response from OBS."
+        "# This can increase performance, and also silently ignore critical errors"
+        "[Parameter(ValueFromPipelineByPropertyName)]"
+        "[Alias('NoReceive','IgnoreResponse','IgnoreReceive','DoNotReceiveResponse')]"
+        "[switch]"
+        '$NoResponse'
+    )
+
     $newFunctionAttributes = @(
         "[Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', '$requestType')]"
+        "[Alias('obs.powershell.websocket.$RequestType')]"
         if ($obsRequestInfo.responseFields.Count) {
             "[Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', `$true)]"
         }

@@ -1,3 +1,39 @@
+## obs-powershell 0.1.8:
+
+* Added Sponsorship, Please support obs-powershell (#78)
+* Added OBS-PowerShell Effects (#109)
+  * Effect Commands
+    * Get-OBSEffect
+    * Import-OBSEffect
+    * Start-OBSEffect
+    * Stop-OBSEffect
+    * Remove-OBSEffect
+  * ColorLoop (#113)
+  * FadeIn (#112)
+  * FadeOut (#114) (thanks @I-Am-Jakoby !)  
+* Adding Commands for Filtering  
+  * Set/Add-OBSGainFilter (#94) 
+  * Set/Add-OBSColorFilter (#92)
+  * Set/Add-OBSScrollFilter (#93)
+  * Set/Add-OBSSharpnessFilter (#95)
+  * Set/Add-OBSRenderDelayFilter (#96)
+  * Set/Add-OBSEqualizerFilter (#97)
+* New Easy Sources
+  * Set/Add-OBSAudioOutputSource (#110)
+  * Set/Add-OBSWindowSource (#104)
+  * Set/Add-OBSVLCSource (#102)
+* Scene Items Can Now Do A Lot More
+  * Animate allows for multiple steps and is more careful (#75 and #73)
+  * Move, Scale, Rotate are written using animate (#80, #81, #89)
+* Extending Inputs (#99)
+* Autogenerating help for extended types, thanks to a new version of [HelpOut](https://github.com/StartAutomating/HelpOut)
+* Improving Performance and Stability of Send/Receive/Watch-OBS (#77, #90, #86, #106, #107)
+
+
+* Also, new logo (#76)
+
+---
+
 ## obs-powershell 0.1.7:
 
 * New Commands:
@@ -94,4 +130,3 @@ Initial Release of obs-powershell
 * Connect-OBS/Disconnect-OBS let you connect and disconnect.
 * Commands exist for every request in the websocket.
 * OBS Events are broadcast to the the runspace.
-

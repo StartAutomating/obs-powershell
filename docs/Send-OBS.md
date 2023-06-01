@@ -98,6 +98,36 @@ If set, will process a batch of requests in parallel.
 
 
 
+#### **ReceiveBatch**
+
+If set, will receive responses from batches of requests.
+
+
+
+
+
+
+|Type      |Required|Position|PipelineInput|Aliases       |
+|----------|--------|--------|-------------|--------------|
+|`[Switch]`|false   |named   |false        |ReceiveBatches|
+
+
+
+#### **NoResponse**
+
+If set, will never attempt to receive a response.
+
+
+
+
+
+
+|Type      |Required|Position|PipelineInput|Aliases                                                                |
+|----------|--------|--------|-------------|-----------------------------------------------------------------------|
+|`[Switch]`|false   |named   |false        |NoReceive<br/>IgnoreResponse<br/>IgnoreReceive<br/>DoNotReceiveResponse|
+
+
+
 
 
 ---
@@ -105,5 +135,5 @@ If set, will process a batch of requests in parallel.
 
 ### Syntax
 ```PowerShell
-Send-OBS [[-MessageData] <Object>] [[-StepTime] <TimeSpan>] [-Parallel] [-SerialFrame] [<CommonParameters>]
+Send-OBS [[-MessageData] <Object>] [[-StepTime] <TimeSpan>] [-Parallel] [-SerialFrame] [-ReceiveBatch] [-NoResponse] [<CommonParameters>]
 ```

@@ -1,4 +1,20 @@
-$videoSettings = Get-OBSVideoSettings
+<#
+.SYNOPSIS
+    Fits an item to the screen
+.DESCRIPTION
+    Centers an item and makes it fit to the screen.
+.LINK
+    Get-OBSVideoSettings
+.LINK
+    Get-OBSSceneItemTransform
+.LINK
+    Set-OBSSceneItemTransform
+#>
+param()
+if (-not $script:CachedOBSVideoSettings) {
+    $script:CachedOBSVideoSettings = Get-OBSVideoSettings
+}
+$videoSettings = $script:CachedOBSVideoSettings
 
 $thisTransform = $this | Get-OBSSceneItemTransform
 

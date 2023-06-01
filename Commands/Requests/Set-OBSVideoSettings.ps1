@@ -15,6 +15,7 @@ function Set-OBSVideoSettings {
     https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setvideosettings
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetVideoSettings')]
+[Alias('obs.powershell.websocket.SetVideoSettings')]
 param(
 <# Numerator of the fractional FPS value #>
 [Parameter(ValueFromPipelineByPropertyName)]
@@ -56,24 +57,24 @@ $OutputHeight,
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
 [switch]
-$PassThru
+$PassThru,
+# If set, will not attempt to receive a response from OBS.
+# This can increase performance, and also silently ignore critical errors
+[Parameter(ValueFromPipelineByPropertyName)]
+[Alias('NoReceive','IgnoreResponse','IgnoreReceive','DoNotReceiveResponse')]
+[switch]
+$NoResponse
 )
-
-
 process {
-
-
         # Create a copy of the parameters (that are part of the payload)
         $paramCopy = [Ordered]@{}
         # get a reference to this command
         $myCmd = $MyInvocation.MyCommand
-
         # Keep track of how many requests we have done of a given type
         # (this makes creating RequestIDs easy)
         if (-not $script:ObsRequestsCounts) {
             $script:ObsRequestsCounts = @{}
         }
-
         # Set my requestType to blank
         $myRequestType = ''
         # and indicate we are not expecting a response
@@ -93,7 +94,6 @@ process {
                 }
             }
         }
-
         # Walk over each parameter
         :nextParam foreach ($keyValue in $PSBoundParameters.GetEnumerator()) {
             # and walk over each of it's attributes to see if it part of the payload
@@ -127,15 +127,12 @@ process {
             # and optional data
             requestData = $paramCopy
         }
-
         if ($PassThru) {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS
+                Send-OBS -NoResponse:$NoResponse
         }
-
 }
-
 } 
 

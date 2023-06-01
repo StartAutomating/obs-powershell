@@ -1,7 +1,7 @@
 @{
-    ModuleVersion     = '0.1.7'
+    ModuleVersion     = '0.1.8'
     RootModule        = 'obs-powershell.psm1'
-    Description       = 'Script OBS with PowerShell'
+    Description       = 'Script your streams'
     Guid              = '1417123e-a932-439f-9b68-a7313cf1e170'
     Author            = 'James Brundage'
     CompanyName       = 'Start-Automating'
@@ -16,6 +16,42 @@
             ProjectURI = 'https://github.com/StartAutomating/obs-powershell'
             LicenseURI = 'https://github.com/StartAutomating/obs-powershell/blob/main/LICENSE'
             ReleaseNotes = @'
+## obs-powershell 0.1.8:
+
+* Added Sponsorship, Please support obs-powershell (#78)
+* Added OBS-PowerShell Effects (#109)
+  * Effect Commands
+    * Get-OBSEffect
+    * Import-OBSEffect
+    * Start-OBSEffect
+    * Stop-OBSEffect
+    * Remove-OBSEffect
+  * ColorLoop (#113)
+  * FadeIn (#112)
+  * FadeOut (#114) (thanks @I-Am-Jakoby !)  
+* Adding Commands for Filtering  
+  * Set/Add-OBSGainFilter (#94) 
+  * Set/Add-OBSColorFilter (#92)
+  * Set/Add-OBSScrollFilter (#93)
+  * Set/Add-OBSSharpnessFilter (#95)
+  * Set/Add-OBSRenderDelayFilter (#96)
+  * Set/Add-OBSEqualizerFilter (#97)
+* New Easy Sources
+  * Set/Add-OBSAudioOutputSource (#110)
+  * Set/Add-OBSWindowSource (#104)
+  * Set/Add-OBSVLCSource (#102)
+* Scene Items Can Now Do A Lot More
+  * Animate allows for multiple steps and is more careful (#75 and #73)
+  * Move, Scale, Rotate are written using animate (#80, #81, #89)
+* Extending Inputs (#99)
+* Autogenerating help for extended types, thanks to a new version of [HelpOut](https://github.com/StartAutomating/HelpOut)
+* Improving Performance and Stability of Send/Receive/Watch-OBS (#77, #90, #86, #106, #107)
+
+
+* Also, new logo (#76)
+
+---
+
 ## obs-powershell 0.1.7:
 
 * New Commands:
@@ -115,16 +151,25 @@ Initial Release of obs-powershell
     FunctionsToExport = 'Clear-OBSScene',
 'Connect-OBS',
 'Disconnect-OBS',
+'Get-OBS',
 'Hide-OBS',
 'Receive-OBS',
 'Remove-OBS',
 'Send-OBS',
 'Show-OBS',
 'Watch-OBS',
-'Add-OBSBrowserSource',
-'Add-OBSColorSource',
-'Add-OBSDisplaySource',
-'Add-OBSMediaSource',
+'Set-OBSAudioOutputSource',
+'Set-OBSBrowserSource',
+'Set-OBSColorSource',
+'Set-OBSDisplaySource',
+'Set-OBSMediaSource',
+'Set-OBSVLCSource',
+'Set-OBSWindowSource',
+'Get-OBSEffect',
+'Import-OBSEffect',
+'Remove-OBSEffect',
+'Start-OBSEffect',
+'Stop-OBSEffect',
 'Add-OBSInput',
 'Add-OBSProfile',
 'Add-OBSScene',
@@ -230,6 +275,7 @@ Initial Release of obs-powershell
 'Set-OBSOutputSettings',
 'Set-OBSPersistentData',
 'Set-OBSProfileParameter',
+'Set-OBSRecordDirectory',
 'Set-OBSSceneItemBlendMode',
 'Set-OBSSceneItemEnabled',
 'Set-OBSSceneItemIndex',
@@ -261,6 +307,13 @@ Initial Release of obs-powershell
 'Switch-OBSRecordPause',
 'Switch-OBSReplayBuffer',
 'Switch-OBSStream',
-'Switch-OBSVirtualCam'
+'Switch-OBSVirtualCam',
+'Set-OBSColorFilter',
+'Set-OBSEqualizerFilter',
+'Set-OBSGainFilter',
+'Set-OBSRenderDelayFilter',
+'Set-OBSScaleFilter',
+'Set-OBSScrollFilter',
+'Set-OBSSharpnessFilter'
 }
 

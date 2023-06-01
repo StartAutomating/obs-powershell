@@ -15,12 +15,104 @@ Install-Module obs-powershell -Scope CurrentUser -Force
 Import-Module obs-powershell -PassThru -Force
 ~~~
 
-## Examples
+### Getting Connected
 
-### Getting all monitors
+Before you can use obs-powershell, you'll need to Connect-OBS.
+
+You should only need to do this once: obs-powershell will cache this information.
+
+You can find your WebSocketToken in obs studio in Tools -> WebSocket Server Settings -> Show Connect Info.
+
+Copy the Server Password and set it into a variable, $myToken
 
 ~~~PowerShell
-Get-OBSMonitor
+Connect-OBS -WebSocketToken $myToken
+~~~
+
+After you've done this once, obs-powershell will attempt to connect every time the module is loaded.
+
+### A Quick Example
+
+Once you're connected, check out this nifty short sample of what you can do:
+
+~~~PowerShell
+# Show-OBS lets you show all sorts of things.
+# It will return a scene item.
+$Stars = Show-OBS -Uri "https://pssvg.start-automating.com/Examples/Stars.svg"
+Start-Sleep -Milliseconds 50
+# We can .Hide/.Disable scene items
+$Stars.Hide()
+Start-Sleep -Milliseconds 50
+# We can .Show/.Enable scene items
+$Stars.Show()
+Start-Sleep -Milliseconds 50
+# We can make an item small
+$Stars.Scale(0.1)
+Start-Sleep -Milliseconds 50
+# We can fit it to the screen
+$stars.FitToScreen()
+Start-Sleep -Milliseconds 50
+# and we can make it big again, with an animation
+$Stars.Scale("1%","100%","00:00:01")
+Start-Sleep -Seconds 1
+
+# We can do even more broad animations, like moving things across the screen.
+$Stars.Animate(@{
+    X = "-25%"
+    Y = "50%"
+    Scale = "20%"
+}, @{
+    X = "125%"
+    Y = "50%"
+    Scale = "50%"
+    Rotation = 180
+}, "00:00:05")
+Start-Sleep -Seconds 1
+
+# To see what any object can do in obs-powershell, run Get-Member.
+$stars | Get-Member
+~~~
+
+## OBS-PowerShell Effects
+
+obs-powershell gives you the ability to store and create effects that run over time.
+
+For instance, we can FadeIn our stars
+
+~~~PowerShell
+# Start the FadeIn effect on 'Stars.svg'
+$Stars | Start-OBSEffect -EffectName "FadeIn"
+Start-sleep -seconds 1
+
+# Start the FadeOut effect on 'Stars.svg'
+$Stars | Start-OBSEffect -EffectName "FadeOut"
+Start-sleep -seconds 1
+
+# Start the Colorloop effect on 'Stars.svg'
+$Stars | Start-OBSEffect -EffectName "ColorLoop"
+Start-sleep -seconds 1
+
+# You can get all loaded effects with Get-OBSEffect
+Get-OBSEffect
+~~~
+
+## Examples
+
+### Getting all scenes
+
+~~~PowerShell
+Get-OBSScene
+~~~
+
+### Getting all inputs
+
+~~~PowerShell
+Get-OBSInput
+~~~
+
+### Getting OBS Stats
+~~~PowerShell
+Get-OBSStats
 ~~~
 
 ### Getting all kinds of available inputs
@@ -28,9 +120,10 @@ Get-OBSMonitor
 Get-OBSInputKind
 ~~~
 
-### Getting OBS Starts
+### Getting all monitors
+
 ~~~PowerShell
-Get-OBSStats
+Get-OBSMonitor
 ~~~
 
 ### Getting Recording Status
@@ -40,12 +133,12 @@ Get-OBSRecordStatus
 
 ### Starting Recording
 ~~~PowerShell
-Start-OBSRecord
+Start-Recording # an alias to Start-OBSRecord 
 ~~~
 
 ### Stopping Recording
 ~~~PowerShell
-Stop-OBSRecord
+Stop-Recording # an alias to Stop-OBSRecord
 ~~~
 
 ### Start Recording, Wait 5 seconds, Stop Recording, and Play the Recording.
@@ -56,12 +149,6 @@ Start-Sleep -Seconds 5
 
 Stop-OBSRecord |
     Invoke-Item
-~~~
-
-### Listing scenes
-
-~~~Powershell
-Get-OBSScene
 ~~~
 
 ### Enabling all sources in all scenes
@@ -80,18 +167,6 @@ Get-OBSScene |
     Set-OBSSceneItemEnabled -sceneItemEnabled:$false
 ~~~
 
-### Adding a Browser Input to all scenes
-~~~PowerShell
-Get-OBSScene | 
-    Add-OBSInput -inputName "Browser Input 2" -inputKind browser_source -inputSettings @{
-        width=1920
-        height=1080
-        url='https://pssvg.start-automating.com/Examples/SpinningSpiral901.svg'
-    }
-~~~
-
-
-
 ## How it Works
 
 obs-powershell communicates with OBS with the obs websocket.
@@ -100,28 +175,5 @@ obs-powershell has a command for every websocket request.
 
 Because the obs-websocket cleanly documents it's protocol, most commands in obs-powershell are automatically generated with [PipeScript](https://github.com/StartAutomating/PipeScript).
 
-### obs-powershell websocket commands
-
-~~~PipeScript {
-    $importedModule = Import-Module .\obs-powershell.psd1 -Passthru
-    $exportedCmds = $importedModule.ExportedCommands.Values | 
-        Where-Object {
-            $_.ScriptBlock.Attributes.Key -eq 'OBS.WebSocket.RequestType'
-        }
-    [PSCustomObject]@{
-        Table = $exportedCmds |
-            .Name {
-                "[$($_.Name)]($("docs/$($_.Name).md"))"
-            } .RequestType {
-                $cmd = $_
-                foreach ($attr in $cmd.ScriptBlock.Attributes) {
-                    if ($attr.Key -eq 'OBS.WebSocket.RequestType') {
-                        "[$($attr.Value)](https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#$($attr.Value.ToLower()))"
-                    }
-                }
-            }
-    }    
-}
-~~~
-
-
+* [Full List Of Commands](docs/obs-powershell-commands.md)
+* [Full list of websocket commands](docs/obs-powershell-websocket-commands.md)

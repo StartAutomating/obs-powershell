@@ -55,7 +55,7 @@ function Set-OBSColorFilter {
     $Saturation,
     # The change in hue, as represented in degrees around a color cicrle    
     [Parameter(ValueFromPipelineByPropertyName)]    
-    [ComponentModel.DefaultBindingProperty("hue")]
+    [ComponentModel.DefaultBindingProperty("hue_shift")]
     [Alias('Spin')]
     [double]
     $Hue,
@@ -129,7 +129,7 @@ function Set-OBSColorFilter {
         process {
         $myParameters = [Ordered]@{} + $PSBoundParameters
         
-        if (-not $FilterName) {
+        if (-not $myParameters["FilterName"]) {
             $FilterName = $myParameters["FilterName"] = "ColorCorrection"
         }
                 

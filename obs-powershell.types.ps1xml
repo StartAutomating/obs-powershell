@@ -1507,6 +1507,320 @@ Get-OBSStreamStatus
     </Members>
   </Type>
   <Type>
+    <Name>OBS.PowerShell.Effect</Name>
+    <Members>
+      <AliasProperty>
+        <Name>Play</Name>
+        <ReferencedMemberName>Start</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptMethod>
+        <Name>Reverse</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Toggles Reversed and Starts an Effect
+.DESCRIPTION
+    Toggles an Effect's Reversed bool, and starts the effect.
+#&gt;
+$this.Reversed = -not $this.Reversed
+$this.Start()
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Start</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Stars an Effect
+.DESCRIPTION
+    Stars an Effect in obs-powershell.
+#&gt;
+# If the effect has no messages
+if (-not $this.Messages -and 
+    # and it is a command
+    $this.pstypenames -like '*Command*') {
+    # then get read to run it.
+    $null = New-Event -SourceIdentifier "OBS.PowerShell.Effect.Command.Started" -MessageData $this
+    
+    $thisOutput = 
+        # If this method had args
+        if ($args) {
+            $splat = [Ordered]@{}
+            $argSplat = @(
+                foreach ($arg in $args) {
+                    # find and join all of the dictionaries into a splat
+                    if ($arg -is [Collections.IDictionary]) {
+                        try { $splat += $arg} catch { 
+                            foreach ($kv in $arg.GetEnumerator()) {
+                                if (-not $splat.Contains($kv.Key)) {
+                                    $splat[$kv.Key] = $kv.Value
+                                }
+                            }
+                        }
+                    }
+                    else {
+                        # and pass everything else positionally
+                        $arg
+                    }
+                }                
+            )
+            # Cache these values
+            $This | Add-Member -MemberType NoteProperty LastParameters $splat -Force
+            $This | Add-Member -MemberType NoteProperty LastArguments $argSplat -Force
+            # and run this
+            &amp; $this @Splat @argSplat
+        } else {
+            $lastParameters = 
+                if ($this.LastParameters) {
+                    $this.LastParameters
+                } else {
+                    @{}
+                }
+            $lastArguments = 
+                if ($this.LastArguments) {
+                    @($this.LastArguments)
+                } else {
+                    @()
+                }
+            &amp; $this @LastParameters @lastArguments
+        }
+    
+    $null = New-Event -SourceIdentifier "OBS.PowerShell.Effect.Command.Completed" -MessageData $this
+    if ($thisOutput) {
+        $this | Add-Member -MemberType NoteProperty Messages $thisOutput -Force
+        $this | Add-Member -MemberType NoteProperty '.Changes' $null -Force
+    }
+}
+
+if ($this.Messages) {
+    $totalMS  = [double]0
+    $messages = @($This.Messages)
+    if ($this.Reversed) {
+        [Array]::Reverse($messages)
+    }
+    foreach ($msg in $messages) {
+        if ($msg.RequestType -eq 'Sleep') {
+            $totalMS += $msg.RequestData.sleepMillis
+        }
+    }
+    $null = New-Event -SourceIdentifier "OBS.PowerShell.Effect.Started" -MessageData $this    
+    $messages | Send-OBS -NoResponse
+    $this | Add-Member NoteProperty Status "Started" -Force
+    if ($totalMS) {
+        $Timer = [Timers.Timer]::new($totalMS)
+        $Timer.AutoReset = $false
+        Add-Member -MemberType NoteProperty -InputObject $this -Name Subscription -Value (
+            Register-ObjectEvent -InputObject $timer -EventName Elapsed -Action {
+            
+                $null = New-Event -SourceIdentifier "OBS.PowerShell.Effect.Ended" -MessageData $event.MessageData
+                $effectInfo = $event.MessageData
+                $effectInfo  | 
+                    Add-Member -MemberType NoteProperty Status 'Ended' -Force
+                if ($effectInfo.Mode -match 'Bounce' -and $effectInfo.Mode -match 'Loop') {
+                    $effectInfo.Reversed = -not $effectInfo.Reversed
+                    $effectInfo.Start()
+                } elseif ($effectInfo.Mode -match 'Loop') {
+                    $effectInfo.Start()
+                } elseif ($effectInfo.Mode -match 'Bounce') {
+                    $effectInfo.Reversed = -not $effectInfo.Reversed
+                    $effectInfo.Mode = 'Twice'
+                    $effectInfo.Start()
+                } else {
+                    $effectInfo | Add-Member -MemberType NoteProperty Mode 'Once' -Force
+                }                
+            } -MessageData $this
+        )         
+        $Timer.Start()
+    } else {
+        $this | Add-Member -MemberType NoteProperty Status "Ended" -Force
+        New-Event -SourceIdentifier "OBS.PowerShell.EffectEnded" -MessageData $this        
+    }    
+}
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Step</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Steps thru an effect
+.DESCRIPTION
+    Steps thru an effect.
+    
+    This will send individual messages from an effect, without sleeps.
+#&gt;
+param(
+# The step count
+[Alias('Ticks')]
+[int]
+$StepCount = 1
+)
+if (-not $this.Messages) {
+    return
+}
+
+$currentIndex = $this.Index
+$messages = @($this.Messages)
+
+$stepToIndex = $currentIndex + $StepCount
+if ($stepToIndex -lt 0) {
+    $messages[0] | Send-OBS -NoResponse
+    $this.Index = 0
+} elseif ($stepToIndex -gt $messages.Length) {
+    $messages[-1] | Send-OBS -NoResponse
+    $this.Index = $messages.Length - 1
+} else {
+    while (
+        $stepToIndex -ge 0 -and        
+        $messages[$stepToIndex] -and 
+        $messages[$stepToIndex].RequestType -eq 'Sleep') {
+        if ($StepCount -gt 0) {
+            $stepToIndex++
+        } else {
+            $stepToIndex--
+        }
+    }
+    if ($messages[$stepToIndex]) {
+        $messages[$stepToIndex] | Send-obs -NoResponse
+    }
+    $this.Index = $stepToIndex
+}
+
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Stop</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Stops an effect
+.DESCRIPTION
+    Stops an effect, or more properly, prevents an effect from looping
+#&gt;
+$this | Add-Member -MemberType NoteProperty Mode "Stopped" -Force
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptProperty>
+        <Name>Changes</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the Effect's Changes
+.DESCRIPTION
+    Gets the changes the effect will make, without a timespan.
+#&gt;
+,@(if ($this.Messages) {
+        
+    foreach ($msg in $this.Messages) {
+        if ($msg.RequestType -eq 'Sleep') {
+            continue
+        }
+        $msg
+    }
+})
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Duration</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets an Effect's Duration
+.DESCRIPTION
+    Gets the total time the effect will sleep.
+#&gt;
+
+$totalMS = [double]0
+foreach ($msg in $this.Messages) {
+    if ($msg.RequestType -eq 'Sleep') {
+        $totalMS += $msg.RequestData.sleepMillis
+    }
+}
+[timespan]::FromMilliseconds($totalMS)
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>EffectType</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets an obs-powershell effect's type
+.DESCRIPTION
+    Gets the type of an obs-powershell effect.
+
+    Current can be either 'Command' or 'Messages'
+#&gt;
+if ($this.pstypenames -like 'OBS.PowerShell.Effect.Command*') {
+    'Command'
+} else {
+    'Messages'
+}
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Index</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the index of the effect
+.DESCRIPTION
+    Gets the current index of the effect.  This is only used for to .Step thru an effect.
+#&gt;
+if (-not $this.'.Index') {
+    Add-Member -MemberType NoteProperty -Name '.Index' -Value 0 -InputObject $this -Force
+}
+
+$this.'.Index'
+
+
+                    </GetScriptBlock>
+        <SetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Updates the Effect's Index
+.DESCRIPTION
+    Updates an effect's index.  This is only used to .Step()
+#&gt;
+Add-Member -MemberType NoteProperty -Name '.Index' -Value ($args[0] -as [int]) -InputObject $this -Force
+
+
+
+                    </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Reversed</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets if an effect is reversed.
+.DESCRIPTION
+    Gets if an effect is currently set to Reverse.
+
+    Whenever reverse is set, effect messages will be reversed before being sent.
+#&gt;
+if (-not $this.'.Reversed') {
+    $this | Add-Member NoteProperty '.Reversed' $false -Force
+}
+
+$this.'.Reversed'
+                    </GetScriptBlock>
+        <SetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Sets if an effect should be reversed.
+.DESCRIPTION
+    Sets if an effect should be played in reverse.
+#&gt;
+$this | Add-Member NoteProperty '.Reversed' ($args[0] -as [bool]) -Force
+
+                    </SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
     <Name>OBS.Powershell.Effect.Command</Name>
     <Members>
       <ScriptProperty>

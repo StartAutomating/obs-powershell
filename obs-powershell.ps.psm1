@@ -1,6 +1,7 @@
 [Include('*-*.ps1')]$PSScriptRoot
 
 $MyInvocation.MyCommand.ScriptBlock.Module.OnRemove = {
+    Get-OBSEffect | Stop-OBSEffect
     Disconnect-OBS
 }
 

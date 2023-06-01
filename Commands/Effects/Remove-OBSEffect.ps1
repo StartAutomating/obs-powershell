@@ -26,6 +26,7 @@ function Remove-OBSEffect
 
     process {
         if ($script:OBSFX[$name]) {
+            $script:OBSFX.Stop()
             $script:OBSFX.Remove($name)
         }
     }

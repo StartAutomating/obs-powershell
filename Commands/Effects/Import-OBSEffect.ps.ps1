@@ -122,7 +122,7 @@ function Import-OBSEffect
                 }
                 $script:OBSFX[$effectName] = $newEffect
                 $newEffects += $newEffect
-                $script:OBSFX[-1]
+                $newEffect
             } else {
                 if ($from.pstypenames -notcontains 'OBS.PowerShell.Effect.Command') {
                     $from.pstypenames.insert(0,'OBS.PowerShell.Effect.Command')                

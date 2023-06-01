@@ -375,6 +375,32 @@
       </TableControl>
     </View>
     <View>
+      <Name>OBS.PowerShell.Effect</Name>
+      <ViewSelectedBy>
+        <TypeName>OBS.PowerShell.Effect</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+          </TableColumnHeader>
+          <TableColumnHeader>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>EffectName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>EffectType</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
       <Name>Default</Name>
       <ViewSelectedBy>
         <TypeName>OBS.PowerShell</TypeName>

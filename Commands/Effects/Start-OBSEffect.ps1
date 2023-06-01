@@ -31,6 +31,7 @@ function Start-OBSEffect
 
     # If provided, will step thru running
     [Parameter(ValueFromPipelineByPropertyName)]
+    [Alias('ticks')]
     [int]
     $Step,
 
@@ -75,6 +76,11 @@ function Start-OBSEffect
         }
 
         if ($obsEffect -isnot [Management.Automation.CommandInfo]) {
+            if ($step -and $obsEffect.Messages) {
+                $obsEffect.Step($step)
+                return
+            }
+
             $obsEffect.Start()
             
         } else {
@@ -109,11 +115,10 @@ function Start-OBSEffect
             if ($obsEffectOutput) {                
                 $obsEffect | Add-Member NoteProperty Messages $obsEffectOutput -Force
                 if ($step) {
-
+                    $obsEffect.Step($step)
                 } else {
-
+                    $obsEffect.Start()
                 }
-                $obsEffect.Start()
             }
         }
         $obsEffect

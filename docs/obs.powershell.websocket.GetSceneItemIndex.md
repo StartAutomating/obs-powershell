@@ -84,6 +84,22 @@ If set, will return the information that would otherwise be sent to OBS.
 
 
 
+#### **NoResponse**
+
+If set, will not attempt to receive a response from OBS.
+This can increase performance, and also silently ignore critical errors
+
+
+
+
+
+
+|Type      |Required|Position|PipelineInput        |Aliases                                                                |
+|----------|--------|--------|---------------------|-----------------------------------------------------------------------|
+|`[Switch]`|false   |named   |true (ByPropertyName)|NoReceive<br/>IgnoreResponse<br/>IgnoreReceive<br/>DoNotReceiveResponse|
+
+
+
 
 
 ---
@@ -91,5 +107,5 @@ If set, will return the information that would otherwise be sent to OBS.
 
 ### Syntax
 ```PowerShell
-Get-OBSSceneItemIndex [-SceneName] <String> [-SceneItemId] <Double> [-PassThru] [<CommonParameters>]
+Get-OBSSceneItemIndex [-SceneName] <String> [-SceneItemId] <Double> [-PassThru] [-NoResponse] [<CommonParameters>]
 ```

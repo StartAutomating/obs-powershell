@@ -10,6 +10,7 @@
 }
 
 $MyInvocation.MyCommand.ScriptBlock.Module.OnRemove = {
+    Get-OBSEffect | Stop-OBSEffect
     Disconnect-OBS
 }
 

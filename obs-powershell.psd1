@@ -132,6 +132,8 @@ Initial Release of obs-powershell
 'Get-OBSEffect',
 'Import-OBSEffect',
 'Remove-OBSEffect',
+'Start-OBSEffect',
+'Stop-OBSEffect',
 'Add-OBSInput',
 'Add-OBSProfile',
 'Add-OBSScene',

@@ -43,9 +43,9 @@ The name of the effect.
 
 
 
-|Type      |Required|Position|PipelineInput|
-|----------|--------|--------|-------------|
-|`[String]`|true    |named   |false        |
+|Type        |Required|Position|PipelineInput|
+|------------|--------|--------|-------------|
+|`[String[]]`|true    |named   |false        |
 
 
 
@@ -191,5 +191,5 @@ If set, will bounce the effect
 
 ### Syntax
 ```PowerShell
-Start-OBSEffect -EffectName <String> [-EffectParameter <IDictionary>] [-EffectArgument <PSObject[]>] [-Step <Int32>] [-SceneItemID <Int32>] [-SceneName <String>] [-FilterName <String>] [-SourceName <String>] [-Loop] [-Bounce] [<CommonParameters>]
+Start-OBSEffect -EffectName <String[]> [-EffectParameter <IDictionary>] [-EffectArgument <PSObject[]>] [-Step <Int32>] [-SceneItemID <Int32>] [-SceneName <String>] [-FilterName <String>] [-SourceName <String>] [-Loop] [-Bounce] [<CommonParameters>]
 ```

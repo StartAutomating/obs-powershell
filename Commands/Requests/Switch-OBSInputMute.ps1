@@ -25,7 +25,13 @@ $InputName,
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
 [switch]
-$PassThru
+$PassThru,
+# If set, will not attempt to receive a response from OBS.
+# This can increase performance, and also silently ignore critical errors
+[Parameter(ValueFromPipelineByPropertyName)]
+[Alias('NoReceive','IgnoreResponse','IgnoreReceive','DoNotReceiveResponse')]
+[switch]
+$NoResponse
 )
 process {
         # Create a copy of the parameters (that are part of the payload)
@@ -93,7 +99,7 @@ process {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
-                Send-OBS -NoResponse:(-not $responseExpected)
+                Send-OBS -NoResponse:$NoResponse
         }
 }
 } 

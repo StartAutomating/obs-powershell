@@ -21,4 +21,4 @@ foreach ($noun in 'Streaming','Recording') {
 
 Connect-OBS
 
-$MyInvocation.MyCommand.Module | Import-OBSEffect
+$MyInvocation.MyCommand.ScriptBlock.Module | Import-OBSEffect

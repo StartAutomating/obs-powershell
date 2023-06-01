@@ -29,7 +29,7 @@ $StepCount = [Math]::Ceiling($Duration.TotalMilliseconds / ([timespan]::fromSeco
 
 $stepSleep = $Duration.TotalMilliseconds / $StepCount
 
-$opacity = 100
+$opacity = 1
 $stepOpacity = [double]1/$StepCount
 @(foreach ($stepNum in 1..$StepCount) {
     $opacity -= $stepOpacity

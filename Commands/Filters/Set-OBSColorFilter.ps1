@@ -20,8 +20,7 @@ function Set-OBSColorFilter {
     
     #>
             
-    [Alias('Add-OBSColorFilter','Add-OBSColorCorrectionFilter','Set-OBSColorCorrectionFilter')]    
-    [CmdletBinding()]
+    [Alias('Add-OBSColorFilter','Add-OBSColorCorrectionFilter','Set-OBSColorCorrectionFilter')]
     param(
     # The opacity, as a number between 0 and 1.    
     [Parameter(ValueFromPipelineByPropertyName)]

@@ -16,8 +16,7 @@ function Set-OBSAudioOutputSource {
     #>
             
     #>    
-    [Alias('Add-OBSAudioOutputSource')]    
-    [CmdletBinding()]
+    [Alias('Add-OBSAudioOutputSource')]
     param(
     # The name of the audio device.    
     # This name or device ID of the audio device that should be captured.    

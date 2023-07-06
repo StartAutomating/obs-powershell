@@ -10,8 +10,7 @@ function Set-OBSBrowserSource {
     
     #>
             
-    [Alias('Add-OBSBrowserSource')]    
-    [CmdletBinding()]
+    [Alias('Add-OBSBrowserSource')]
     param(
     # The uri or file path to display.    
     # If the uri points to a local file, this will be preferred    

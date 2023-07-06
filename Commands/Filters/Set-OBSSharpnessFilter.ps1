@@ -12,8 +12,7 @@ function Set-OBSSharpnessFilter {
     
     #>
             
-    [Alias('Add-OBSSharpnessFilter')]        
-    [CmdletBinding()]
+    [Alias('Add-OBSSharpnessFilter')]    
     param(
     # The Sharpness.    
     [Parameter(ValueFromPipelineByPropertyName)]    

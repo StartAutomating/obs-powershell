@@ -12,8 +12,7 @@ function Set-OBSDisplaySource {
     
     #>
             
-    [Alias('Add-OBSMonitorSource','Set-OBSMonitorSource','Add-OBSDisplaySource')]    
-    [CmdletBinding()]
+    [Alias('Add-OBSMonitorSource','Set-OBSMonitorSource','Add-OBSDisplaySource')]
     param(
     # The monitor number.    
     # This the number of the monitor you would like to capture.    

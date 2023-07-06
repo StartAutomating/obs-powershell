@@ -12,8 +12,7 @@ function Set-OBSColorSource {
     
     #>
             
-    [Alias('Add-OBSColorSource')]    
-    [CmdletBinding()]
+    [Alias('Add-OBSColorSource')]
     param(
     # The name of the scene.    
     # If no scene name is provided, the current program scene will be used.    

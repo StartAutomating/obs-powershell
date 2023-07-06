@@ -12,8 +12,7 @@ function Set-OBSGainFilter {
     
     #>
             
-    [Alias('Add-OBSGainFilter')]        
-    [CmdletBinding()]
+    [Alias('Add-OBSGainFilter')]    
     param(
     # The Audio Gain, in decibels.    
     [Parameter(ValueFromPipelineByPropertyName)]    

@@ -12,8 +12,7 @@ function Set-OBSScaleFilter {
     
     #>
             
-    [Alias('Add-OBSScaleFilter')]        
-    [CmdletBinding()]
+    [Alias('Add-OBSScaleFilter')]    
     param(
     # The Resolution.  Can either width x height (e.g. 1920x1080) or an aspect ratio (16:9).    
     [Parameter(ValueFromPipelineByPropertyName)]    

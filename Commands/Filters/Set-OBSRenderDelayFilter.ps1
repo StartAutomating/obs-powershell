@@ -12,8 +12,7 @@ function Set-OBSRenderDelayFilter {
     
     #>
             
-    [Alias('Add-OBSRenderDelayFilter')]        
-    [CmdletBinding()]
+    [Alias('Add-OBSRenderDelayFilter')]    
     param(
     # The RenderDelay.    
     [Parameter(ValueFromPipelineByPropertyName)]

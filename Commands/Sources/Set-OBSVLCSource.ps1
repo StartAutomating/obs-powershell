@@ -15,8 +15,7 @@ function Set-OBSVLCSource {
     
     #>
             
-    [Alias('Add-OBSVLCSource','Set-OBSPlaylistSource','Add-OBSPlaylistSource')]    
-    [CmdletBinding()]
+    [Alias('Add-OBSVLCSource','Set-OBSPlaylistSource','Add-OBSPlaylistSource')]
     param(
     # The path to the media file.    
     [Parameter(Mandatory,ValueFromPipelineByPropertyName)]    

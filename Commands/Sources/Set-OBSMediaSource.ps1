@@ -14,8 +14,7 @@ function Set-OBSMediaSource {
     
     #>
             
-    [Alias('Add-OBSFFMpegSource','Add-OBSMediaSource','Set-OBSFFMpegSource')]    
-    [CmdletBinding()]
+    [Alias('Add-OBSFFMpegSource','Add-OBSMediaSource','Set-OBSFFMpegSource')]
     param(
     # The path to the media file.    
     [Parameter(Mandatory,ValueFromPipelineByPropertyName)]    

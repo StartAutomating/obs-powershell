@@ -10,8 +10,7 @@ function Set-OBSWindowSource {
     
     #>
             
-    [Alias('Add-OBSWindowSource','Set-OBSWindowCaptureSource','Add-OBSWindowCaptureSource')]    
-    [CmdletBinding()]
+    [Alias('Add-OBSWindowSource','Set-OBSWindowCaptureSource','Add-OBSWindowCaptureSource')]
     param(
     # The monitor number.    
     # This the number of the monitor you would like to capture.    

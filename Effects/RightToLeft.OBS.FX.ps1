@@ -2,24 +2,24 @@
 .SYNOPSIS
     Moves an item from left to right
 .DESCRIPTION
-    Moves an item from -50% to 150% width.
-
-    (just off the edge of the left side of the screen to just past the edge of the right)
+    Moves an item from 150% to -50% width.
+    
+    (just off the edge of the right side of the screen to just past the edge of the left)
 #>
 param(
-# The name of the scene.
+# The name of the input
 [string]
 $SceneName,
 
-# The name 
+# The scene item ID.
 [string]
 $SceneItemID,
 
-# The start position.  By default, -50% (just off the left edge of the screen)
-$StartX = "-50%",
+# The start position.  By default, 150% (just off the left edge of the screen)
+$StartX = "150%",
 
-# The end position.  By default, 150% (just off the right edge of the screen)
-$EndX = "150%",
+# The end position.  By default, -50% (just off the left edge of the screen)
+$EndX = "-50%",
 
 # The duration (by default, one second)
 [timespan]

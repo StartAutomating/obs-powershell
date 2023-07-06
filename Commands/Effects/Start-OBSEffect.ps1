@@ -13,6 +13,21 @@ function Start-OBSEffect
     [CmdletBinding(PositionalBinding=$false)]
     param(
     # The name of the effect.
+    [ArgumentCompleter({
+        param ( $commandName,
+            $parameterName,
+            $wordToComplete,
+            $commandAst,
+            $fakeBoundParameters )
+        $effectNames = @(Get-OBSEffect|
+            Select-Object -Unique -ExpandProperty EffectName)
+        if ($wordToComplete) {
+            $toComplete = $wordToComplete -replace "^'" -replace "'$"
+            return @($effectNames -like "$toComplete*" -replace '^', "'" -replace '$',"'")
+        } else {
+            return @($effectNames -replace '^', "'" -replace '$',"'")
+        }
+    })]
     [Parameter(Mandatory)]
     [string[]]
     $EffectName,

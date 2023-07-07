@@ -12,8 +12,7 @@ function Set-OBSSharpnessFilter {
     
     #>
             
-    [Alias('Add-OBSSharpnessFilter')]        
-    [CmdletBinding()]
+    [Alias('Add-OBSSharpnessFilter')]    
     param(
     # The Sharpness.    
     [Parameter(ValueFromPipelineByPropertyName)]    
@@ -91,6 +90,7 @@ function Set-OBSSharpnessFilter {
             SourceName = $myParameters["SourceName"]
             filterKind = "Sharpness_filter"
             filterSettings = $myParameterData
+            NoResponse = $myParameters["NoResponse"]
         }        
         if ($MyParameters["PassThru"]) {
             $addSplat.Passthru = $MyParameters["PassThru"]

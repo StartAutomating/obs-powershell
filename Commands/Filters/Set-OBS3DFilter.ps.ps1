@@ -1,114 +1,84 @@
-function Set-OBSColorFilter
+function Set-OBS3DFilter
 {
     <#
     .SYNOPSIS
-        Sets a color filter
+        Sets an OBS 3D Filter.
     .DESCRIPTION
-        Adds or Changes a Color Correction Filter on an OBS Input.
+        Adds or Changes a 3D Filter on an OBS Input.
 
-        This allows you to:
-        
-        * Change Opacity on any source
-        * Correct gamma
-        * Spin the hue
-        * Saturate or Desaturate an image
-        * Change the contrast
-        * Brighten the image
-        * Multiply pixels by a color
-        * Add a color to all pixels
-    .EXAMPLE
-        Show-OBS -Uri .\Assets\obs-powershell-animated-icon.svg |
-            Set-OBSColorFilter -Opacity .5
+        This requires the [3D Effect](https://github.com/exeldro/obs-3d-effect).        
     #>
     [inherit(Command={
         Import-Module ..\..\obs-powershell.psd1 -Global
         "Add-OBSSourceFilter"
-    }, Abstract, Dynamic, ExcludeParameter='FilterKind','FilterSettings')]
-    [Alias('Add-OBSColorFilter','Add-OBSColorCorrectionFilter','Set-OBSColorCorrectionFilter')]
+    }, Dynamic, Abstract, ExcludeParameter='FilterKind','FilterSettings')]
+    [Alias('Add-OBS3DFilter')]
     param(
-    # The opacity, as a number between 0 and 1.
-    [Parameter(ValueFromPipelineByPropertyName)]
-    [ValidateRange(0,1)]    
-    [ComponentModel.DefaultBindingProperty("opacity")]
-    [double]
-    $Opacity,
-
-    # The brightness, as a number between -1 and 1.
-    [Parameter(ValueFromPipelineByPropertyName)]
-    [ValidateRange(-1,1)]    
-    [ComponentModel.DefaultBindingProperty("brightness")]
-    [double]
-    $Brightness,
-
-    # The constrast, as a number between -4 and 4.
-    [Parameter(ValueFromPipelineByPropertyName)]
-    [ValidateRange(-4,4)]    
-    [ComponentModel.DefaultBindingProperty("contrast")]
-    [double]
-    $Contrast,
-
-    # The gamma correction, as a number between -3 and 3.
-    [Parameter(ValueFromPipelineByPropertyName)]
-    [ValidateRange(-3,3)]
-    [ComponentModel.DefaultBindingProperty("gamma")]
-    [double]
-    $Gamma,
-
-    # The saturation, as a number between -1 and 5.
-    [Parameter(ValueFromPipelineByPropertyName)]
-    [ValidateRange(-1,5)]
-    [ComponentModel.DefaultBindingProperty("saturation")]
-    [double]
-    $Saturation,
-
-    # The change in hue, as represented in degrees around a color cicrle
+    # The Field of View
     [Parameter(ValueFromPipelineByPropertyName)]    
-    [ComponentModel.DefaultBindingProperty("hue_shift")]
-    [Alias('Spin')]
+    [ComponentModel.DefaultBindingProperty("fov")]    
     [double]
-    $Hue,
+    $FieldOfView,
 
-    # Multiply this color by all pixels within the source.
-    [Parameter(ValueFromPipelineByPropertyName)]
-    [ComponentModel.DefaultBindingProperty("color_multiply")]
-    [string]
-    $MultiplyColor,
+    # The Rotation along the X-axis
+    [Parameter(ValueFromPipelineByPropertyName)]    
+    [ComponentModel.DefaultBindingProperty("rot_x")]   
+    [double]
+    $RotationX,
 
-    # Add all this color to all pixels within the source.
-    [Parameter(ValueFromPipelineByPropertyName)]
-    [ComponentModel.DefaultBindingProperty("color_add")]
-    [string]
-    $AddColor,
+    # The Rotation along the Y-axis
+    [Parameter(ValueFromPipelineByPropertyName)]    
+    [ComponentModel.DefaultBindingProperty("rot_y")]
+    [double]
+    $RotationY,
+
+    # The Rotation along the Z-axis
+    [Parameter(ValueFromPipelineByPropertyName)]    
+    [ComponentModel.DefaultBindingProperty("rot_z")]
+    [double]
+    $RotationZ,
+
+    # The Position along the X-axis
+    [Parameter(ValueFromPipelineByPropertyName)]    
+    [ComponentModel.DefaultBindingProperty("pos_x")]
+    [double]
+    $PositionX,
+
+    # The Position along the Y-axis
+    [Parameter(ValueFromPipelineByPropertyName)]    
+    [ComponentModel.DefaultBindingProperty("pos_y")]
+    [double]
+    $PositionY,
+
+    # The Position along the Z-axis
+    [Parameter(ValueFromPipelineByPropertyName)]    
+    [ComponentModel.DefaultBindingProperty("pos_z")]
+    [double]
+    $PositionZ,
+
+    # The scale of the source along the X-axis
+    [Parameter(ValueFromPipelineByPropertyName)]    
+    [ComponentModel.DefaultBindingProperty("scale_x")]
+    [double]
+    $ScaleX,
+
+    # The scale of the source along the Y-axis
+    [Parameter(ValueFromPipelineByPropertyName)]    
+    [ComponentModel.DefaultBindingProperty("scale_y")]
+    [double]
+    $ScaleY,
 
     # If set, will remove a filter if one already exists.
     # If this is not provided and the filter already exists, the settings of the filter will be changed.
     [switch]
     $Force
     )
-
-    begin {
-        filter ToOBSColor {
-            if ($_ -is [uint32]) { $_ }
-            elseif ($_ -is [string]) {                
-                if ($_ -match '^\#[a-f0-9]{3,4}$') {                    
-                    $_ = $_ -replace '[a-f0-9]','$0$0'                    
-                }                
-
-                if ($_ -match '^#[a-f0-9]{8}$') {                    
-                    $_ -replace '#','0x' -as [UInt32]
-                }
-                elseif ($_ -match '^#[a-f0-9]{6}$') {                    
-                    $_ -replace '#','0xff' -as [UInt32]
-                }
-            }            
-        }
-    }
-        
+    
     process {
         $myParameters = [Ordered]@{} + $PSBoundParameters
         
         if (-not $myParameters["FilterName"]) {
-            $FilterName = $myParameters["FilterName"] = "ColorCorrection"
+            $filterName = $myParameters["FilterName"] = "3Band3D"
         }
                 
         $myParameterData = [Ordered]@{}
@@ -131,24 +101,15 @@ function Set-OBSColorFilter
                 }
             }
         }
-        
-        if ($myParameterData.color_add) {
-            $myParameterData.color_add = $myParameterData.color_add | ToOBSColor
-        }
-
-        if ($myParameterData.color_multiply) {
-            $myParameterData.color_multiply = $myParameterData.color_multiply | ToOBSColor
-        }
-
-        
+                
         $addSplat = @{            
             filterName = $myParameters["FilterName"]
             SourceName = $myParameters["SourceName"]
-            filterKind = "color_filter_v2"
+            filterKind = "3d_effect_filter"
             filterSettings = $myParameterData
             NoResponse = $myParameters["NoResponse"]
         }
-        
+
         if ($MyParameters["PassThru"]) {
             $addSplat.Passthru = $MyParameters["PassThru"]
             if ($MyInvocation.InvocationName -like 'Add-*') {
@@ -158,14 +119,11 @@ function Set-OBSColorFilter
                 Set-OBSSourceFilterSettings @addSplat
             }
             return            
-        }        
+        }
 
         # Add the input.
         $outputAddedResult = Add-OBSSourceFilter @addSplat *>&1
-
-        if ($PassThru) {
-            return $outputAddedResult
-        }
+        
 
         # If we got back an error
         if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
@@ -175,7 +133,7 @@ function Set-OBSColorFilter
                 if ($Force)  { # If we do, remove the input                    
                     Remove-OBSSourceFilter -FilterName $addSplat.FilterName -SourceName $addSplat.SourceName
                     # and re-add our result.
-                    $outputAddedResult = Add-OBSSourceFilter @addSplat *>&1
+                    $outputAddedResult = Add-OBSInput @addSplat *>&1
                 } else {
                     # Otherwise, get the existing filter.
                     $existingFilter = Get-OBSSourceFilter -SourceName $addSplat.SourceName -FilterName $addSplat.FilterName
@@ -199,6 +157,7 @@ function Set-OBSColorFilter
         elseif ($outputAddedResult) {
             # Otherwise, get the input from the filters.
             Get-OBSSourceFilter -SourceName $addSplat.SourceName -FilterName $addSplat.FilterName
+                
         }
     }
 }

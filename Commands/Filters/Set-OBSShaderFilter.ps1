@@ -1,23 +1,36 @@
-function Set-OBSRenderDelayFilter {
+function Set-OBSShaderFilter {
     <#
     
     .SYNOPSIS    
-        Sets a RenderDelay filter.    
+        Sets a Shader filter.    
     .DESCRIPTION    
-        Adds or Changes a RenderDelay Filter on an OBS Input.    
-        This changes the RenderDelay of an image.    
+        Adds or Changes a Shader Filter on an OBS Input.    
+        This requires that the [OBS Shader Filter](https://github.com/exeldro/obs-shaderfilter) is installed.    
     .EXAMPLE    
         Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg |    
-            Set-OBSRenderDelayFilter -RenderDelay .75    
+            Set-OBSShaderFilter -FilterName "Shader" -ShaderFile fisheye-xy -ShaderSetting @{    
+                center_x_percent=30    
+                center_y_percent=70    
+            }    
     
     #>
             
-    [Alias('Add-OBSRenderDelayFilter')]    
+    [Alias('Add-OBSShaderFilter')]
     param(
-    # The RenderDelay.    
+    # The text of the shader    
     [Parameter(ValueFromPipelineByPropertyName)]
-    [timespan]
-    $RenderDelay,
+    [string]$ShaderText,
+    # The file path to the shader, or the short file name of the shader.    
+    [Parameter(ValueFromPipelineByPropertyName)]
+    [Alias('ShaderName')]
+    [string]
+    $ShaderFile,
+    # Any other settings for the shader.    
+    # To see what the name of a shader setting is, change it in the user interface and then get the input's filters.    
+    [Parameter(ValueFromPipelineByPropertyName)]
+    [Alias('ShaderSettings')]
+    [PSObject]
+    $ShaderSetting,
     # If set, will remove a filter if one already exists.    
     # If this is not provided and the filter already exists, the settings of the filter will be changed.    
     [switch]
@@ -61,25 +74,57 @@ function Set-OBSRenderDelayFilter {
         $myParameters = [Ordered]@{} + $PSBoundParameters
         
         if (-not $myParameters["FilterName"]) {
-            $filterName = $myParameters["FilterName"] = "RenderDelay"
+            $filterName = $myParameters["FilterName"] = "Shader"
         }
-                
-                
-        $myParameterData = [Ordered]@{
-            delay_ms = if ($RenderDelay.Ticks -lt 10kb) {
-                [int]$RenderDelay.Ticks
+        $shaderSettings = [Ordered]@{}
+        if ($ShaderText) {
+            $shaderSettings.shader_text = $ShaderText
+        }
+        elseif ($ShaderFile) {
+            if ($ShaderFile -match '[\\/]') {
+                $shaderSettings.shader_file_name = $shaderSettings.$ExecutionContext.SessionState.Path.GetResolvedProviderPathFromPSPath($ShaderFile) -replace "\\", "/"
             } else {
-                [int]$RenderDelay.TotalMilliseconds
+                if (-not $script:CachedOBSShaderFilters) {
+                    $script:CachedOBSShaderFilters = 
+                        Get-OBS | # Get the OBS object
+                            Select-Object -ExpandProperty Process | # which has a process
+                            Split-Path | Split-Path | Split-Path  | # from it's parent path, we go up three levels.
+                            Join-Path -ChildPath data | Join-Path -ChildPath obs-plugins | # then down into plugin data.
+                            Get-ChildItem -Filter obs-shaderfilter |
+                            Get-ChildItem -Filter examples |
+                            Get-ChildItem -File # get all of the files in this directory
+                }
+                $foundShaderFile = $script:CachedOBSShaderFilters |
+                    Where-Object Name -Like "$shaderFile*" |
+                    Select-Object -First 1
+                if ($foundShaderFile) {
+                    $shaderSettings.shader_file_name = $foundShaderFile.FullName -replace "\\", "/"
+                }
             }
         }
+        if ($shaderSetting) {
+            if ($shaderSetting -is [Collections.IDictionary]) {
+                foreach ($kv in $shaderSetting.GetEnumerator()) {
+                    $shaderSettings[$kv.Key] = $kv.Value
+                }
+            } elseif ($shaderSetting -is [psobject]) {
+                foreach ($prop in $shaderSetting.psobject.properties) {
+                    $shaderSettings[$prop.Name] = $prop.Value
+                }
+            }
+        }
+        if ($shaderSettings.shader_file_name) {
+            $shaderSettings.from_file = $true
+        }
+                            
+        
         $addSplat = @{            
             filterName = $myParameters["FilterName"]
             SourceName = $myParameters["SourceName"]
-            filterKind = "gpu_delay"
-            filterSettings = $myParameterData
+            filterKind = "shader_filter"
+            filterSettings = $shaderSettings
             NoResponse = $myParameters["NoResponse"]
-        }
-        
+        }        
         if ($MyParameters["PassThru"]) {
             $addSplat.Passthru = $MyParameters["PassThru"]
             if ($MyInvocation.InvocationName -like 'Add-*') {
@@ -90,7 +135,7 @@ function Set-OBSRenderDelayFilter {
             }
             return            
         }
-        # Add the input.
+        # Add the filter.
         $outputAddedResult = Add-OBSSourceFilter @addSplat *>&1
         # If we got back an error
         if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {

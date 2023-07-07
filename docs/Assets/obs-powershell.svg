@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Generated with PSSVG 0.2.9 <https://github.com/StartAutomating/PSSVG> -->
 <svg viewBox="0 0 1000 1000" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-  <symbol viewBox="0 0 100 100" id="psChevron">
+  <symbol viewBox="0 0  " id="psChevron">
     <polygon points="40,20 45,20 60,50 35,80 32.5,80 55,50" xmlns="http://www.w3.org/2000/svg" />
   </symbol>
   <symbol viewBox="0 0 500 250" id="combinedLogo">

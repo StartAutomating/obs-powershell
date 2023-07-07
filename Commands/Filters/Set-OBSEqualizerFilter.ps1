@@ -8,8 +8,7 @@ function Set-OBSEqualizerFilter {
     
     #>
             
-    [Alias('Add-OBSEqualizierFilter','Add-OBS3BandEqualizerFilter','Set-OBS3BandEqualizerFilter')]    
-    [CmdletBinding()]
+    [Alias('Add-OBSEqualizierFilter','Add-OBS3BandEqualizerFilter','Set-OBS3BandEqualizerFilter')]
     param(
     # The change in low frequencies.    
     [Parameter(ValueFromPipelineByPropertyName)]    

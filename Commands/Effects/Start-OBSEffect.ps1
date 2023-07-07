@@ -13,9 +13,30 @@ function Start-OBSEffect
     [CmdletBinding(PositionalBinding=$false)]
     param(
     # The name of the effect.
+    [ArgumentCompleter({
+        param ( $commandName,
+            $parameterName,
+            $wordToComplete,
+            $commandAst,
+            $fakeBoundParameters )
+        $effectNames = @(Get-OBSEffect|
+            Select-Object -Unique -ExpandProperty EffectName)
+        if ($wordToComplete) {
+            $toComplete = $wordToComplete -replace "^'" -replace "'$"
+            return @($effectNames -like "$toComplete*" -replace '^', "'" -replace '$',"'")
+        } else {
+            return @($effectNames -replace '^', "'" -replace '$',"'")
+        }
+    })]
     [Parameter(Mandatory)]
     [string[]]
     $EffectName,
+
+    # The duration of the effect.
+    # If provided, all effects should use this duration.
+    # If not provided, each effect should use it's own duration.
+    [Timespan]
+    $Duration,
 
     # The parameters passed to the effect.
     [Parameter(ValueFromPipelineByPropertyName)]
@@ -59,7 +80,11 @@ function Start-OBSEffect
     [switch]
     $Loop,
 
-    # If set, will bounce the effect
+    # If provided, will loop the effect a number of times.
+    [int]
+    $LoopCount,
+
+    # If set, will bounce the effect (flip it / reverse it)    
     [switch]
     $Bounce
     )
@@ -68,10 +93,20 @@ function Start-OBSEffect
         foreach ($NameOfEffect in $EffectName) {
             $obsEffect = Get-OBSEffect -EffectName $NameOfEffect
 
-            if (-not $obsEffect) { continue  }
+            if (-not $obsEffect) { 
+                Write-Warning "No Effect named '$NameOfEffect'"
+                continue
+            }
+
+            if ($LoopCount) {
+                $obsEffect | Add-Member -MemberType NoteProperty LoopCount $LoopCount -Force
+            }
     
             if ($loop -or $Bounce) {
                 $obsEffect | Add-Member -MemberType NoteProperty Mode "$(if ($Bounce) {"Bounce"})$(if ($loop) {"Loop"})" -Force
+                if (-not $LoopCount) {
+                    $obsEffect | Add-Member -MemberType NoteProperty LoopCount -1 -Force
+                }
             } else {
                 $obsEffect | Add-Member -MemberType NoteProperty Mode "Once" -Force
             }
@@ -111,7 +146,11 @@ function Start-OBSEffect
                             }                    
                     }            
                 }
-    
+
+                if ($Duration -and $obsEffect.Parameters.Duration) {
+                    $EffectParameter.Duration = $Duration
+                }
+
                 $obsEffectOutput = . $obsEffect @EffectParameter @EffectArgument
                 if ($obsEffectOutput) {                
                     $obsEffect | Add-Member NoteProperty Messages $obsEffectOutput -Force

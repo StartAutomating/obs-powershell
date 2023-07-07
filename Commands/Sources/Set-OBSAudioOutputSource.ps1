@@ -16,8 +16,7 @@ function Set-OBSAudioOutputSource {
     #>
             
     #>    
-    [Alias('Add-OBSAudioOutputSource')]    
-    [CmdletBinding()]
+    [Alias('Add-OBSAudioOutputSource')]
     param(
     # The name of the audio device.    
     # This name or device ID of the audio device that should be captured.    
@@ -124,6 +123,7 @@ function Set-OBSAudioOutputSource {
             inputName = $myParameters["Name"]
             inputKind = "wasapi_output_capture"
             inputSettings = $myParameterData
+            NoResponse = $myParameters["NoResponse"]
         }        
         # If -SceneItemEnabled was passed,
         if ($myParameters.Contains('SceneItemEnabled')) {

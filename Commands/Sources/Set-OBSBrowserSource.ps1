@@ -10,8 +10,7 @@ function Set-OBSBrowserSource {
     
     #>
             
-    [Alias('Add-OBSBrowserSource')]    
-    [CmdletBinding()]
+    [Alias('Add-OBSBrowserSource')]
     param(
     # The uri or file path to display.    
     # If the uri points to a local file, this will be preferred    
@@ -175,6 +174,7 @@ function Set-OBSBrowserSource {
             inputKind = "browser_source"
             inputSettings = $myParameterData
             inputName = $Name
+            NoResponse = $myParameters["NoResponse"]
         }
         # If -SceneItemEnabled was passed,
         if ($myParameters.Contains('SceneItemEnabled')) {
@@ -227,7 +227,8 @@ function Set-OBSBrowserSource {
             }            
         }
         # Otherwise, if we had a result
-        elseif ($outputAddedResult) {
+        if ($outputAddedResult -and 
+            $outputAddedResult -isnot [Management.Automation.ErrorRecord]) {
             # get the input from the scene.
             Get-OBSSceneItem -sceneName $myParameters["Scene"] |
                 Where-Object SourceName -eq $myParameters["Name"]

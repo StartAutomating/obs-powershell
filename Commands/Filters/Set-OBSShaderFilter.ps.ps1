@@ -1,56 +1,41 @@
-function Set-OBSScrollFilter
+function Set-OBSShaderFilter
 {
     <#
     .SYNOPSIS
-        Sets a scroll filter.
+        Sets a Shader filter.
     .DESCRIPTION
-        Adds or Changes a Scroll Filter on an OBS Input.
-
-        This allows you to scroll horizontally or vertically.
+        Adds or Changes a Shader Filter on an OBS Input.
+        
+        This requires that the [OBS Shader Filter](https://github.com/exeldro/obs-shaderfilter) is installed.
     .EXAMPLE
         Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg |
-            Set-OBSScrollFilter -HorizontalSpeed 100 -VerticalSpeed 100
+            Set-OBSShaderFilter -FilterName "Shader" -ShaderFile fisheye-xy -ShaderSetting @{
+                center_x_percent=30
+                center_y_percent=70
+            }
     #>
     [inherit(Command={
         Import-Module ..\..\obs-powershell.psd1 -Global
         "Add-OBSSourceFilter"
-    }, Dynamic, Abstract, ExcludeParameter='FilterKind','FilterSettings')]    
+    }, Dynamic, Abstract, ExcludeParameter='FilterKind','FilterSettings')]
+    [Alias('Add-OBSShaderFilter')]
     param(
-    # The horizontal scroll speed.
-    [Parameter(ValueFromPipelineByPropertyName)]    
-    [ComponentModel.DefaultBindingProperty("speed_x")]
-    [Alias('SpeedX', 'Speed_X','HSpeed')]
-    [double]
-    $HorizontalSpeed,
-
-    # The vertical scroll speed.
-    [Parameter(ValueFromPipelineByPropertyName)]    
-    [ComponentModel.DefaultBindingProperty("speed_y")]
-    [Alias('SpeedY', 'Speed_Y','VSpeed')]
-    [double]
-    $VerticalSpeed,
-
-    # If set, will not loop
-    [Parameter(ValueFromPipelineByPropertyName)]    
-    [ComponentModel.DefaultBindingProperty("loop")]
-    [switch]
-    $NoLoop,
-
-    # If provided, will limit the width.
+    # The text of the shader
     [Parameter(ValueFromPipelineByPropertyName)]
-    [ValidateRange(-500, 500)]
-    [ComponentModel.DefaultBindingProperty("cx")]
-    [Alias('LimitX', 'Limit_CX','WidthLimit')]    
-    [double]
-    $LimitWidth,
+    [string]$ShaderText,
 
-    # If provided, will limit the height.
+    # The file path to the shader, or the short file name of the shader.
     [Parameter(ValueFromPipelineByPropertyName)]
-    [ValidateRange(-500, 500)]
-    [ComponentModel.DefaultBindingProperty("cy")]
-    [Alias('LimitY', 'Limit_CY','HeightLimit')]    
-    [double]
-    $LimitHeight,
+    [Alias('ShaderName')]
+    [string]
+    $ShaderFile,
+
+    # Any other settings for the shader.
+    # To see what the name of a shader setting is, change it in the user interface and then get the input's filters.
+    [Parameter(ValueFromPipelineByPropertyName)]
+    [Alias('ShaderSettings')]
+    [PSObject]
+    $ShaderSetting,
 
     # If set, will remove a filter if one already exists.
     # If this is not provided and the filter already exists, the settings of the filter will be changed.
@@ -62,45 +47,61 @@ function Set-OBSScrollFilter
         $myParameters = [Ordered]@{} + $PSBoundParameters
         
         if (-not $myParameters["FilterName"]) {
-            $filterName = $myParameters["FilterName"] = "Scroll"
+            $filterName = $myParameters["FilterName"] = "Shader"
         }
-                
-        $myParameterData = [Ordered]@{}
-        foreach ($parameter in $MyInvocation.MyCommand.Parameters.Values) {
 
-            $bindToPropertyName = $null            
-            
-            foreach ($attribute in $parameter.Attributes) {
-                if ($attribute -is [ComponentModel.DefaultBindingPropertyAttribute]) {
-                    $bindToPropertyName = $attribute.Name
-                    break
+        $shaderSettings = [Ordered]@{}
+        if ($ShaderText) {
+            $shaderSettings.shader_text = $ShaderText
+        }
+        elseif ($ShaderFile) {
+            if ($ShaderFile -match '[\\/]') {
+                $shaderSettings.shader_file_name = $shaderSettings.$ExecutionContext.SessionState.Path.GetResolvedProviderPathFromPSPath($ShaderFile) -replace "\\", "/"
+            } else {
+                if (-not $script:CachedOBSShaderFilters) {
+                    $script:CachedOBSShaderFilters = 
+                        Get-OBS | # Get the OBS object
+                            Select-Object -ExpandProperty Process | # which has a process
+                            Split-Path | Split-Path | Split-Path  | # from it's parent path, we go up three levels.
+                            Join-Path -ChildPath data | Join-Path -ChildPath obs-plugins | # then down into plugin data.
+                            Get-ChildItem -Filter obs-shaderfilter |
+                            Get-ChildItem -Filter examples |
+                            Get-ChildItem -File # get all of the files in this directory
+
+                }
+
+                $foundShaderFile = $script:CachedOBSShaderFilters |
+                    Where-Object Name -Like "$shaderFile*" |
+                    Select-Object -First 1
+
+                if ($foundShaderFile) {
+                    $shaderSettings.shader_file_name = $foundShaderFile.FullName -replace "\\", "/"
                 }
             }
+        }
 
-            if (-not $bindToPropertyName) { continue }
-            if ($myParameters.Contains($parameter.Name)) {
-                $myParameterData[$bindToPropertyName] = $myParameters[$parameter.Name]
-                if ($myParameters[$parameter.Name] -is [switch]) {
-                    $myParameterData[$bindToPropertyName] = $parameter.Name -as [bool]
+        if ($shaderSetting) {
+            if ($shaderSetting -is [Collections.IDictionary]) {
+                foreach ($kv in $shaderSetting.GetEnumerator()) {
+                    $shaderSettings[$kv.Key] = $kv.Value
+                }
+            } elseif ($shaderSetting -is [psobject]) {
+                foreach ($prop in $shaderSetting.psobject.properties) {
+                    $shaderSettings[$prop.Name] = $prop.Value
                 }
             }
         }
 
-        if ($myParameterData["loop"]) {
-            $myParameterData["loop"] = -not $myParameterData["loop"]
+        if ($shaderSettings.shader_file_name) {
+            $shaderSettings.from_file = $true
         }
-        if ($myParameterData["cx"]) {
-            $myParameterData["limit_cx"] = $true
-        }
-        if ($myParameterData["cy"]) {
-            $myParameterData["limit_cy"] = $true
-        }
+                            
         
         $addSplat = @{            
             filterName = $myParameters["FilterName"]
             SourceName = $myParameters["SourceName"]
-            filterKind = "scroll_filter"
-            filterSettings = $myParameterData
+            filterKind = "shader_filter"
+            filterSettings = $shaderSettings
             NoResponse = $myParameters["NoResponse"]
         }        
 
@@ -115,7 +116,7 @@ function Set-OBSScrollFilter
             return            
         }
 
-        # Add the input.
+        # Add the filter.
         $outputAddedResult = Add-OBSSourceFilter @addSplat *>&1
 
         # If we got back an error
@@ -154,3 +155,4 @@ function Set-OBSScrollFilter
         }
     }
 }
+

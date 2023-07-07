@@ -63,6 +63,7 @@ function Set-OBSSharpnessFilter
             SourceName = $myParameters["SourceName"]
             filterKind = "Sharpness_filter"
             filterSettings = $myParameterData
+            NoResponse = $myParameters["NoResponse"]
         }        
 
         if ($MyParameters["PassThru"]) {

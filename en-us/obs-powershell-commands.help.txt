@@ -1,8 +1,8 @@
 obs-powershell-commands
 -----------------------
 
-obs-powershell exports 335 commands
-(167 functions and 168 aliases)
+obs-powershell exports 339 commands
+(169 functions and 170 aliases)
 
 A good number of these commands directly correspond to an obs-websocket message.
 For a complete list, see [obs-powershell-websocket-commands](docs/obs-powershell-websocket-commands.md).
@@ -111,6 +111,7 @@ Functions
 |[Send-OBSTriggerHotkeyByName](docs/Send-OBSTriggerHotkeyByName.md)                        |Send-OBSTriggerHotkeyByName : TriggerHotkeyByName                            |
 |[Send-OBSTriggerMediaInputAction](docs/Send-OBSTriggerMediaInputAction.md)                |Send-OBSTriggerMediaInputAction : TriggerMediaInputAction                    |
 |[Send-OBSTriggerStudioModeTransition](docs/Send-OBSTriggerStudioModeTransition.md)        |Send-OBSTriggerStudioModeTransition : TriggerStudioModeTransition            |
+|[Set-OBS3DFilter](docs/Set-OBS3DFilter.md)                                                |Sets an OBS 3D Filter.                                                       |
 |[Set-OBSAudioOutputSource](docs/Set-OBSAudioOutputSource.md)                              |Adds or sets an audio output source                                          |
 |[Set-OBSBrowserSource](docs/Set-OBSBrowserSource.md)                                      |Sets a browser source                                                        |
 |[Set-OBSColorFilter](docs/Set-OBSColorFilter.md)                                          |Sets a color filter                                                          |
@@ -149,6 +150,7 @@ Functions
 |[Set-OBSSceneName](docs/Set-OBSSceneName.md)                                              |Set-OBSSceneName : SetSceneName                                              |
 |[Set-OBSSceneSceneTransitionOverride](docs/Set-OBSSceneSceneTransitionOverride.md)        |Set-OBSSceneSceneTransitionOverride : SetSceneSceneTransitionOverride        |
 |[Set-OBSScrollFilter](docs/Set-OBSScrollFilter.md)                                        |Sets a scroll filter.                                                        |
+|[Set-OBSShaderFilter](docs/Set-OBSShaderFilter.md)                                        |Sets a Shader filter.                                                        |
 |[Set-OBSSharpnessFilter](docs/Set-OBSSharpnessFilter.md)                                  |Sets a Sharpness filter.                                                     |
 |[Set-OBSSourceFilterEnabled](docs/Set-OBSSourceFilterEnabled.md)                          |Set-OBSSourceFilterEnabled : SetSourceFilterEnabled                          |
 |[Set-OBSSourceFilterIndex](docs/Set-OBSSourceFilterIndex.md)                              |Set-OBSSourceFilterIndex : SetSourceFilterIndex                              |
@@ -287,6 +289,7 @@ Aliases
 |[Send-OBSTriggerHotkeyByName](docs/Send-OBSTriggerHotkeyByName.md)                        |
 |[Send-OBSTriggerMediaInputAction](docs/Send-OBSTriggerMediaInputAction.md)                |
 |[Send-OBSTriggerStudioModeTransition](docs/Send-OBSTriggerStudioModeTransition.md)        |
+|[Set-OBS3DFilter](docs/Set-OBS3DFilter.md)                                                |
 |[Set-OBSAudioOutputSource](docs/Set-OBSAudioOutputSource.md)                              |
 |[Set-OBSBrowserSource](docs/Set-OBSBrowserSource.md)                                      |
 |[Set-OBSColorFilter](docs/Set-OBSColorFilter.md)                                          |
@@ -325,6 +328,7 @@ Aliases
 |[Set-OBSSceneName](docs/Set-OBSSceneName.md)                                              |
 |[Set-OBSSceneSceneTransitionOverride](docs/Set-OBSSceneSceneTransitionOverride.md)        |
 |[Set-OBSScrollFilter](docs/Set-OBSScrollFilter.md)                                        |
+|[Set-OBSShaderFilter](docs/Set-OBSShaderFilter.md)                                        |
 |[Set-OBSSharpnessFilter](docs/Set-OBSSharpnessFilter.md)                                  |
 |[Set-OBSSourceFilterEnabled](docs/Set-OBSSourceFilterEnabled.md)                          |
 |[Set-OBSSourceFilterIndex](docs/Set-OBSSourceFilterIndex.md)                              |

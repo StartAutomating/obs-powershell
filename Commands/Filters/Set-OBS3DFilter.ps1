@@ -1,23 +1,61 @@
-function Set-OBSRenderDelayFilter {
+function Set-OBS3DFilter {
     <#
     
     .SYNOPSIS    
-        Sets a RenderDelay filter.    
+        Sets an OBS 3D Filter.    
     .DESCRIPTION    
-        Adds or Changes a RenderDelay Filter on an OBS Input.    
-        This changes the RenderDelay of an image.    
-    .EXAMPLE    
-        Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg |    
-            Set-OBSRenderDelayFilter -RenderDelay .75    
+        Adds or Changes a 3D Filter on an OBS Input.    
+        This requires the [3D Effect](https://github.com/exeldro/obs-3d-effect).            
     
     #>
             
-    [Alias('Add-OBSRenderDelayFilter')]    
+    [Alias('Add-OBS3DFilter')]
     param(
-    # The RenderDelay.    
-    [Parameter(ValueFromPipelineByPropertyName)]
-    [timespan]
-    $RenderDelay,
+    # The Field of View    
+    [Parameter(ValueFromPipelineByPropertyName)]    
+    [ComponentModel.DefaultBindingProperty("fov")]    
+    [double]
+    $FieldOfView,
+    # The Rotation along the X-axis    
+    [Parameter(ValueFromPipelineByPropertyName)]    
+    [ComponentModel.DefaultBindingProperty("rot_x")]   
+    [double]
+    $RotationX,
+    # The Rotation along the Y-axis    
+    [Parameter(ValueFromPipelineByPropertyName)]    
+    [ComponentModel.DefaultBindingProperty("rot_y")]
+    [double]
+    $RotationY,
+    # The Rotation along the Z-axis    
+    [Parameter(ValueFromPipelineByPropertyName)]    
+    [ComponentModel.DefaultBindingProperty("rot_z")]
+    [double]
+    $RotationZ,
+    # The Position along the X-axis    
+    [Parameter(ValueFromPipelineByPropertyName)]    
+    [ComponentModel.DefaultBindingProperty("pos_x")]
+    [double]
+    $PositionX,
+    # The Position along the Y-axis    
+    [Parameter(ValueFromPipelineByPropertyName)]    
+    [ComponentModel.DefaultBindingProperty("pos_y")]
+    [double]
+    $PositionY,
+    # The Position along the Z-axis    
+    [Parameter(ValueFromPipelineByPropertyName)]    
+    [ComponentModel.DefaultBindingProperty("pos_z")]
+    [double]
+    $PositionZ,
+    # The scale of the source along the X-axis    
+    [Parameter(ValueFromPipelineByPropertyName)]    
+    [ComponentModel.DefaultBindingProperty("scale_x")]
+    [double]
+    $ScaleX,
+    # The scale of the source along the Y-axis    
+    [Parameter(ValueFromPipelineByPropertyName)]    
+    [ComponentModel.DefaultBindingProperty("scale_y")]
+    [double]
+    $ScaleY,
     # If set, will remove a filter if one already exists.    
     # If this is not provided and the filter already exists, the settings of the filter will be changed.    
     [switch]
@@ -61,25 +99,35 @@ function Set-OBSRenderDelayFilter {
         $myParameters = [Ordered]@{} + $PSBoundParameters
         
         if (-not $myParameters["FilterName"]) {
-            $filterName = $myParameters["FilterName"] = "RenderDelay"
+            $filterName = $myParameters["FilterName"] = "3Band3D"
         }
                 
-                
-        $myParameterData = [Ordered]@{
-            delay_ms = if ($RenderDelay.Ticks -lt 10kb) {
-                [int]$RenderDelay.Ticks
-            } else {
-                [int]$RenderDelay.TotalMilliseconds
+        $myParameterData = [Ordered]@{}
+        foreach ($parameter in $MyInvocation.MyCommand.Parameters.Values) {
+            $bindToPropertyName = $null            
+            
+            foreach ($attribute in $parameter.Attributes) {
+                if ($attribute -is [ComponentModel.DefaultBindingPropertyAttribute]) {
+                    $bindToPropertyName = $attribute.Name
+                    break
+                }
+            }
+            if (-not $bindToPropertyName) { continue }
+            if ($myParameters.Contains($parameter.Name)) {
+                $myParameterData[$bindToPropertyName] = $myParameters[$parameter.Name]
+                if ($myParameters[$parameter.Name] -is [switch]) {
+                    $myParameterData[$bindToPropertyName] = $parameter.Name -as [bool]
+                }
             }
         }
+                
         $addSplat = @{            
             filterName = $myParameters["FilterName"]
             SourceName = $myParameters["SourceName"]
-            filterKind = "gpu_delay"
+            filterKind = "3d_effect_filter"
             filterSettings = $myParameterData
             NoResponse = $myParameters["NoResponse"]
         }
-        
         if ($MyParameters["PassThru"]) {
             $addSplat.Passthru = $MyParameters["PassThru"]
             if ($MyInvocation.InvocationName -like 'Add-*') {
@@ -92,6 +140,7 @@ function Set-OBSRenderDelayFilter {
         }
         # Add the input.
         $outputAddedResult = Add-OBSSourceFilter @addSplat *>&1
+        
         # If we got back an error
         if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
             # and that error was saying the source already exists, 
@@ -128,5 +177,4 @@ function Set-OBSRenderDelayFilter {
     
     }
 }
-
 

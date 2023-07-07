@@ -11,8 +11,7 @@ function Set-OBSScrollFilter {
             Set-OBSScrollFilter -HorizontalSpeed 100 -VerticalSpeed 100    
     
     #>
-            
-    [CmdletBinding()]
+        
     param(
     # The horizontal scroll speed.    
     [Parameter(ValueFromPipelineByPropertyName)]    
@@ -124,6 +123,7 @@ function Set-OBSScrollFilter {
             SourceName = $myParameters["SourceName"]
             filterKind = "scroll_filter"
             filterSettings = $myParameterData
+            NoResponse = $myParameters["NoResponse"]
         }        
         if ($MyParameters["PassThru"]) {
             $addSplat.Passthru = $MyParameters["PassThru"]

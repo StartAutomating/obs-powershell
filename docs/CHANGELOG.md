@@ -1,3 +1,20 @@
+## obs-powershell 0.1.9:
+
+* New Filters!
+  * @exeldro makes some excellent obs plugins
+  * obs-powershell now supports a couple of them:
+  * Set-OBS3DFilter (#137) - Transform an object in 3D!
+  * Set-OBSShaderFilter (#134) - Apply _any_ PixelShader!
+* New Effects!
+  * LeftToRight (#125) / RightToLeft (#126)
+  * TopToBottom (#127) / BottomToTop (#128)
+  * ZoomIn (#129) / ZoomOut (#130)
+* Effect Fixes
+  * Start-OBSEffect - Adding -LoopCount (#133)
+  * FadeIn/FadeOut no longer conflict (#119) (thanks @I-Am-Jakoby)!
+
+---
+
 ## obs-powershell 0.1.8:
 
 * Added Sponsorship, Please support obs-powershell (#78)

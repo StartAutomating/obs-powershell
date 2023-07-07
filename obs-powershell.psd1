@@ -1,5 +1,5 @@
 @{
-    ModuleVersion     = '0.1.8'
+    ModuleVersion     = '0.1.9'
     RootModule        = 'obs-powershell.psm1'
     Description       = 'Script your streams'
     Guid              = '1417123e-a932-439f-9b68-a7313cf1e170'
@@ -16,6 +16,23 @@
             ProjectURI = 'https://github.com/StartAutomating/obs-powershell'
             LicenseURI = 'https://github.com/StartAutomating/obs-powershell/blob/main/LICENSE'
             ReleaseNotes = @'
+## obs-powershell 0.1.9:
+
+* New Filters!
+  * @exeldro makes some excellent obs plugins
+  * obs-powershell now supports a couple of them:
+  * Set-OBS3DFilter (#137) - Transform an object in 3D!
+  * Set-OBSShaderFilter (#134) - Apply _any_ PixelShader!
+* New Effects!
+  * LeftToRight (#125) / RightToLeft (#126)
+  * TopToBottom (#127) / BottomToTop (#128)
+  * ZoomIn (#129) / ZoomOut (#130)
+* Effect Fixes
+  * Start-OBSEffect - Adding -LoopCount (#133)
+  * FadeIn/FadeOut no longer conflict (#119) (thanks @I-Am-Jakoby)!
+
+---
+
 ## obs-powershell 0.1.8:
 
 * Added Sponsorship, Please support obs-powershell (#78)
@@ -158,18 +175,15 @@ Initial Release of obs-powershell
 'Send-OBS',
 'Show-OBS',
 'Watch-OBS',
-'Set-OBSAudioOutputSource',
-'Set-OBSBrowserSource',
-'Set-OBSColorSource',
-'Set-OBSDisplaySource',
-'Set-OBSMediaSource',
-'Set-OBSVLCSource',
-'Set-OBSWindowSource',
-'Get-OBSEffect',
-'Import-OBSEffect',
-'Remove-OBSEffect',
-'Start-OBSEffect',
-'Stop-OBSEffect',
+'Set-OBS3DFilter',
+'Set-OBSColorFilter',
+'Set-OBSEqualizerFilter',
+'Set-OBSGainFilter',
+'Set-OBSRenderDelayFilter',
+'Set-OBSScaleFilter',
+'Set-OBSScrollFilter',
+'Set-OBSShaderFilter',
+'Set-OBSSharpnessFilter',
 'Add-OBSInput',
 'Add-OBSProfile',
 'Add-OBSScene',
@@ -308,12 +322,17 @@ Initial Release of obs-powershell
 'Switch-OBSReplayBuffer',
 'Switch-OBSStream',
 'Switch-OBSVirtualCam',
-'Set-OBSColorFilter',
-'Set-OBSEqualizerFilter',
-'Set-OBSGainFilter',
-'Set-OBSRenderDelayFilter',
-'Set-OBSScaleFilter',
-'Set-OBSScrollFilter',
-'Set-OBSSharpnessFilter'
+'Set-OBSAudioOutputSource',
+'Set-OBSBrowserSource',
+'Set-OBSColorSource',
+'Set-OBSDisplaySource',
+'Set-OBSMediaSource',
+'Set-OBSVLCSource',
+'Set-OBSWindowSource',
+'Get-OBSEffect',
+'Import-OBSEffect',
+'Remove-OBSEffect',
+'Start-OBSEffect',
+'Stop-OBSEffect'
 }
 

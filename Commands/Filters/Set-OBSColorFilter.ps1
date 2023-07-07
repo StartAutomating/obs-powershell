@@ -20,8 +20,7 @@ function Set-OBSColorFilter {
     
     #>
             
-    [Alias('Add-OBSColorFilter','Add-OBSColorCorrectionFilter','Set-OBSColorCorrectionFilter')]    
-    [CmdletBinding()]
+    [Alias('Add-OBSColorFilter','Add-OBSColorCorrectionFilter','Set-OBSColorCorrectionFilter')]
     param(
     # The opacity, as a number between 0 and 1.    
     [Parameter(ValueFromPipelineByPropertyName)]
@@ -164,6 +163,7 @@ function Set-OBSColorFilter {
             SourceName = $myParameters["SourceName"]
             filterKind = "color_filter_v2"
             filterSettings = $myParameterData
+            NoResponse = $myParameters["NoResponse"]
         }
         
         if ($MyParameters["PassThru"]) {

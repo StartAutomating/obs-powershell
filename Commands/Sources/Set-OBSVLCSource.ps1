@@ -15,8 +15,7 @@ function Set-OBSVLCSource {
     
     #>
             
-    [Alias('Add-OBSVLCSource','Set-OBSPlaylistSource','Add-OBSPlaylistSource')]    
-    [CmdletBinding()]
+    [Alias('Add-OBSVLCSource','Set-OBSPlaylistSource','Add-OBSPlaylistSource')]
     param(
     # The path to the media file.    
     [Parameter(Mandatory,ValueFromPipelineByPropertyName)]    
@@ -193,6 +192,7 @@ function Set-OBSVLCSource {
             inputKind = "vlc_source"
             inputSettings = $myParameterData
             inputName = $Name
+            NoResponse = $myParameters["NoResponse"]
         }
         if ($myParameters.Contains('SceneItemEnabled')) {
             $addSplat.SceneItemEnabled = $myParameters['SceneItemEnabled'] -as [bool]
@@ -241,8 +241,10 @@ function Set-OBSVLCSource {
                 $psCmdlet.WriteError($outputAddedResult)
             }
         }
+        
         # Otherwise, if we had a result
-        elseif ($outputAddedResult) {
+        if ($outputAddedResult -and 
+            $outputAddedResult -isnot [Management.Automation.ErrorRecord]) {
             # get the input from the scene and optionally fit it to the screen.
             Get-OBSSceneItem -sceneName $myParameters["Scene"] |
                 Where-Object SourceName -eq $name |

@@ -104,6 +104,9 @@ function Start-OBSEffect
     
             if ($loop -or $Bounce) {
                 $obsEffect | Add-Member -MemberType NoteProperty Mode "$(if ($Bounce) {"Bounce"})$(if ($loop) {"Loop"})" -Force
+                if (-not $LoopCount) {
+                    $obsEffect | Add-Member -MemberType NoteProperty LoopCount -1 -Force
+                }
             } else {
                 $obsEffect | Add-Member -MemberType NoteProperty Mode "Once" -Force
             }

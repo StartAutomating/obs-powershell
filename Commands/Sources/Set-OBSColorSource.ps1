@@ -130,6 +130,7 @@ function Set-OBSColorSource {
             inputName = $myParameters["Name"]
             inputKind = "color_source_v3"
             inputSettings = $myParameterData
+            NoResponse = $myParameters["NoResponse"]
         }
         
         # If -SceneItemEnabled was passed,
@@ -182,7 +183,8 @@ function Set-OBSColorSource {
             }            
         }
         # Otherwise, if we had a result
-        elseif ($outputAddedResult) {
+        if ($outputAddedResult -and 
+            $outputAddedResult -isnot [Management.Automation.ErrorRecord]) {
             # get the input from the scene.
             Get-OBSSceneItem -sceneName $myParameters["Scene"] |
                 Where-Object SourceName -eq $myParameters["Name"]

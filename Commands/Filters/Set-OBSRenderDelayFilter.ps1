@@ -77,6 +77,7 @@ function Set-OBSRenderDelayFilter {
             SourceName = $myParameters["SourceName"]
             filterKind = "gpu_delay"
             filterSettings = $myParameterData
+            NoResponse = $myParameters["NoResponse"]
         }
         
         if ($MyParameters["PassThru"]) {

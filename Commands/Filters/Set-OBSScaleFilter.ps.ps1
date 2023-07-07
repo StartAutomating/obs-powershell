@@ -56,6 +56,7 @@ function Set-OBSScaleFilter
             SourceName = $myParameters["SourceName"]
             filterKind = "scale_filter"
             filterSettings = [Ordered]@{resolution=$Resolution;sampling=$Sampling;undistort=$KeepAspectRatio -as [bool]}
+            NoResponse = $myParameters["NoResponse"]
         }
         
         if ($MyParameters["PassThru"]) {

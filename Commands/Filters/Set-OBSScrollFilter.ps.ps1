@@ -101,6 +101,7 @@ function Set-OBSScrollFilter
             SourceName = $myParameters["SourceName"]
             filterKind = "scroll_filter"
             filterSettings = $myParameterData
+            NoResponse = $myParameters["NoResponse"]
         }        
 
         if ($MyParameters["PassThru"]) {

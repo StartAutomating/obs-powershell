@@ -146,6 +146,7 @@ function Set-OBSColorFilter
             SourceName = $myParameters["SourceName"]
             filterKind = "color_filter_v2"
             filterSettings = $myParameterData
+            NoResponse = $myParameters["NoResponse"]
         }
         
         if ($MyParameters["PassThru"]) {

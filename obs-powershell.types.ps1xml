@@ -1612,16 +1612,23 @@ if ($this.Messages) {
         $Timer.AutoReset = $false
         Add-Member -MemberType NoteProperty -InputObject $this -Name Subscription -Value (
             Register-ObjectEvent -InputObject $timer -EventName Elapsed -Action {
-            
+                
                 $null = New-Event -SourceIdentifier "OBS.PowerShell.Effect.Ended" -MessageData $event.MessageData
                 $effectInfo = $event.MessageData
+                if ($effectInfo.LoopCount) {
+                    $effectInfo.LoopCount = $effectInfo.LoopCount - 1
+                }
+                
                 $effectInfo  | 
                     Add-Member -MemberType NoteProperty Status 'Ended' -Force
                 if ($effectInfo.Mode -match 'Bounce' -and $effectInfo.Mode -match 'Loop') {
                     $effectInfo.Reversed = -not $effectInfo.Reversed
                     $effectInfo.Start()
                 } elseif ($effectInfo.Mode -match 'Loop') {
-                    $effectInfo.Start()
+                    if (($null -eq $effectInfo.LoopCount) -or 
+                        $effectInfo.LoopCount) {
+                        $effectInfo.Start()
+                    }                    
                 } elseif ($effectInfo.Mode -match 'Bounce') {
                     $effectInfo.Reversed = -not $effectInfo.Reversed
                     $effectInfo.Mode = 'Twice'
@@ -1629,19 +1636,7 @@ if ($this.Messages) {
                 } else {
                     $effectInfo | Add-Member -MemberType NoteProperty Mode 'Once' -Force
                 }                
-            } -MessageData $this -MaxTriggerCount $(
-                if (-not $this.Mode -or $this.Mode -eq 'Once') {
-                    1
-                } elseif ($this.Mode -match 'Bounce' -and $this.Mode -notmatch 'Loop') {
-                    2
-                } else {
-                    if ($this.LoopCount) {
-                        $this.LoopCount
-                    } else {
-                        0
-                    }
-                }
-            )
+            } -MessageData $this -MaxTriggerCount 1
         )         
         $Timer.Start()
     } else {

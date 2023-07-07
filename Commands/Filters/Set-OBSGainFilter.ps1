@@ -70,6 +70,7 @@ function Set-OBSGainFilter {
             SourceName = $myParameters["SourceName"]
             filterKind = "gain_filter"
             filterSettings = [Ordered]@{db=$Gain}
+            NoResponse = $myParameters["NoResponse"]
         }
         
         if ($MyParameters["PassThru"]) {

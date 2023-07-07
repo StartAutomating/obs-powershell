@@ -164,6 +164,7 @@ Initial Release of obs-powershell
 'Set-OBSRenderDelayFilter',
 'Set-OBSScaleFilter',
 'Set-OBSScrollFilter',
+'Set-OBSShaderFilter',
 'Set-OBSSharpnessFilter',
 'Add-OBSInput',
 'Add-OBSProfile',

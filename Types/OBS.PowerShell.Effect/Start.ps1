@@ -39,6 +39,7 @@ if (-not $this.Messages -and
             # and run this
             & $this @Splat @argSplat
         } else {
+            # If we had no args, use the last parameters.
             $lastParameters = 
                 if ($this.LastParameters) {
                     $this.LastParameters
@@ -97,7 +98,19 @@ if ($this.Messages) {
                 } else {
                     $effectInfo | Add-Member -MemberType NoteProperty Mode 'Once' -Force
                 }                
-            } -MessageData $this
+            } -MessageData $this -MaxTriggerCount $(
+                if (-not $this.Mode -or $this.Mode -eq 'Once') {
+                    1
+                } elseif ($this.Mode -match 'Bounce' -and $this.Mode -notmatch 'Loop') {
+                    2
+                } else {
+                    if ($this.LoopCount) {
+                        $this.LoopCount
+                    } else {
+                        0
+                    }
+                }
+            )
         )         
         $Timer.Start()
     } else {

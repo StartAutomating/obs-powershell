@@ -1,8 +1,8 @@
 obs-powershell-commands
 -----------------------
 
-obs-powershell exports 337 commands
-(168 functions and 169 aliases)
+obs-powershell exports 339 commands
+(169 functions and 170 aliases)
 
 A good number of these commands directly correspond to an obs-websocket message.
 For a complete list, see [obs-powershell-websocket-commands](obs-powershell-websocket-commands.md).
@@ -111,6 +111,7 @@ Functions
 |[Send-OBSTriggerHotkeyByName](Send-OBSTriggerHotkeyByName.md)                        |Send-OBSTriggerHotkeyByName : TriggerHotkeyByName                            |
 |[Send-OBSTriggerMediaInputAction](Send-OBSTriggerMediaInputAction.md)                |Send-OBSTriggerMediaInputAction : TriggerMediaInputAction                    |
 |[Send-OBSTriggerStudioModeTransition](Send-OBSTriggerStudioModeTransition.md)        |Send-OBSTriggerStudioModeTransition : TriggerStudioModeTransition            |
+|[Set-OBS3DFilter](Set-OBS3DFilter.md)                                                |Sets an OBS 3D Filter.                                                       |
 |[Set-OBSAudioOutputSource](Set-OBSAudioOutputSource.md)                              |Adds or sets an audio output source                                          |
 |[Set-OBSBrowserSource](Set-OBSBrowserSource.md)                                      |Sets a browser source                                                        |
 |[Set-OBSColorFilter](Set-OBSColorFilter.md)                                          |Sets a color filter                                                          |
@@ -288,6 +289,7 @@ Aliases
 |[Send-OBSTriggerHotkeyByName](Send-OBSTriggerHotkeyByName.md)                        |
 |[Send-OBSTriggerMediaInputAction](Send-OBSTriggerMediaInputAction.md)                |
 |[Send-OBSTriggerStudioModeTransition](Send-OBSTriggerStudioModeTransition.md)        |
+|[Set-OBS3DFilter](Set-OBS3DFilter.md)                                                |
 |[Set-OBSAudioOutputSource](Set-OBSAudioOutputSource.md)                              |
 |[Set-OBSBrowserSource](Set-OBSBrowserSource.md)                                      |
 |[Set-OBSColorFilter](Set-OBSColorFilter.md)                                          |

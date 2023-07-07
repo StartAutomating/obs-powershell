@@ -115,6 +115,7 @@ function Set-OBSDisplaySource {
             inputName = $myParameters["Name"]
             inputKind = "monitor_capture"
             inputSettings = $myParameterData
+            NoResponse = $myParameters["NoResponse"]
         }        
         # If -SceneItemEnabled was passed,
         if ($myParameters.Contains('SceneItemEnabled')) {
@@ -156,7 +157,7 @@ function Set-OBSDisplaySource {
                     # update the input settings
                     $sceneItem.Input.Settings = $addSplat.inputSettings
                     $sceneItem # and return the scene item.
-                    $outputAddedResult = $null                    
+                    $outputAddedResult = $null
                 }
             }
             # If the output was still an error
@@ -166,7 +167,8 @@ function Set-OBSDisplaySource {
             }            
         }
         # Otherwise, if we had a result
-        elseif ($outputAddedResult) {
+        if ($outputAddedResult -and 
+            $outputAddedResult -isnot [Management.Automation.ErrorRecord]) {
             # get the input from the scene.
             Get-OBSSceneItem -sceneName $myParameters["Scene"] |
                 Where-Object SourceName -eq $name

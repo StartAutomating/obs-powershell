@@ -1615,7 +1615,7 @@ if ($this.Messages) {
                 
                 $null = New-Event -SourceIdentifier "OBS.PowerShell.Effect.Ended" -MessageData $event.MessageData
                 $effectInfo = $event.MessageData
-                if ($effectInfo.LoopCount) {
+                if ($effectInfo.LoopCount -is [int] -and $effectInfo.LoopCount -ge 1) {
                     $effectInfo.LoopCount = $effectInfo.LoopCount - 1
                 }
                 
@@ -1625,8 +1625,9 @@ if ($this.Messages) {
                     $effectInfo.Reversed = -not $effectInfo.Reversed
                     $effectInfo.Start()
                 } elseif ($effectInfo.Mode -match 'Loop') {
-                    if (($null -eq $effectInfo.LoopCount) -or 
-                        $effectInfo.LoopCount) {
+                    if ($effectInfo.LoopCount -is [int] -and $effectInfo.LoopCount -ge 1) {
+                        $effectInfo.Start()
+                    } elseif ($effectInfo.LoopCount -isnot [int] -or $effectInfo.LoopCount -lt 0) {
                         $effectInfo.Start()
                     }                    
                 } elseif ($effectInfo.Mode -match 'Bounce') {

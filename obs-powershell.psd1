@@ -158,6 +158,7 @@ Initial Release of obs-powershell
 'Send-OBS',
 'Show-OBS',
 'Watch-OBS',
+'Set-OBS3DFilter',
 'Set-OBSColorFilter',
 'Set-OBSEqualizerFilter',
 'Set-OBSGainFilter',

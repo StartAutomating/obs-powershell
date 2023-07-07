@@ -158,6 +158,7 @@ function Set-OBSWindowSource {
             inputName = $myParameters["Name"]
             inputKind = "window_capture"
             inputSettings = $myParameterData
+            NoResponse = $myParameters["NoResponse"]
         }        
         # If -SceneItemEnabled was passed,
         if ($myParameters.Contains('SceneItemEnabled')) {

@@ -49,6 +49,23 @@ The name of the effect.
 
 
 
+#### **Duration**
+
+The duration of the effect.
+If provided, all effects should use this duration.
+If not provided, each effect should use it's own duration.
+
+
+
+
+
+
+|Type        |Required|Position|PipelineInput|
+|------------|--------|--------|-------------|
+|`[TimeSpan]`|false   |named   |false        |
+
+
+
 #### **EffectParameter**
 
 The parameters passed to the effect.
@@ -169,9 +186,24 @@ If set, will loop the effect.
 
 
 
+#### **LoopCount**
+
+If provided, will loop the effect a number of times.
+
+
+
+
+
+
+|Type     |Required|Position|PipelineInput|
+|---------|--------|--------|-------------|
+|`[Int32]`|false   |named   |false        |
+
+
+
 #### **Bounce**
 
-If set, will bounce the effect
+If set, will bounce the effect (flip it / reverse it)
 
 
 
@@ -191,5 +223,5 @@ If set, will bounce the effect
 
 ### Syntax
 ```PowerShell
-Start-OBSEffect -EffectName <String[]> [-EffectParameter <IDictionary>] [-EffectArgument <PSObject[]>] [-Step <Int32>] [-SceneItemID <Int32>] [-SceneName <String>] [-FilterName <String>] [-SourceName <String>] [-Loop] [-Bounce] [<CommonParameters>]
+Start-OBSEffect -EffectName <String[]> [-Duration <TimeSpan>] [-EffectParameter <IDictionary>] [-EffectArgument <PSObject[]>] [-Step <Int32>] [-SceneItemID <Int32>] [-SceneName <String>] [-FilterName <String>] [-SourceName <String>] [-Loop] [-LoopCount <Int32>] [-Bounce] [<CommonParameters>]
 ```

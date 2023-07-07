@@ -1,8 +1,8 @@
 obs-powershell-commands
 -----------------------
 
-obs-powershell exports 337 commands
-(168 functions and 169 aliases)
+obs-powershell exports 339 commands
+(169 functions and 170 aliases)
 
 A good number of these commands directly correspond to an obs-websocket message.
 For a complete list, see [obs-powershell-websocket-commands](docs/obs-powershell-websocket-commands.md).
@@ -111,6 +111,7 @@ Functions
 |[Send-OBSTriggerHotkeyByName](docs/Send-OBSTriggerHotkeyByName.md)                        |Send-OBSTriggerHotkeyByName : TriggerHotkeyByName                            |
 |[Send-OBSTriggerMediaInputAction](docs/Send-OBSTriggerMediaInputAction.md)                |Send-OBSTriggerMediaInputAction : TriggerMediaInputAction                    |
 |[Send-OBSTriggerStudioModeTransition](docs/Send-OBSTriggerStudioModeTransition.md)        |Send-OBSTriggerStudioModeTransition : TriggerStudioModeTransition            |
+|[Set-OBS3DFilter](docs/Set-OBS3DFilter.md)                                                |Sets an OBS 3D Filter.                                                       |
 |[Set-OBSAudioOutputSource](docs/Set-OBSAudioOutputSource.md)                              |Adds or sets an audio output source                                          |
 |[Set-OBSBrowserSource](docs/Set-OBSBrowserSource.md)                                      |Sets a browser source                                                        |
 |[Set-OBSColorFilter](docs/Set-OBSColorFilter.md)                                          |Sets a color filter                                                          |
@@ -288,6 +289,7 @@ Aliases
 |[Send-OBSTriggerHotkeyByName](docs/Send-OBSTriggerHotkeyByName.md)                        |
 |[Send-OBSTriggerMediaInputAction](docs/Send-OBSTriggerMediaInputAction.md)                |
 |[Send-OBSTriggerStudioModeTransition](docs/Send-OBSTriggerStudioModeTransition.md)        |
+|[Set-OBS3DFilter](docs/Set-OBS3DFilter.md)                                                |
 |[Set-OBSAudioOutputSource](docs/Set-OBSAudioOutputSource.md)                              |
 |[Set-OBSBrowserSource](docs/Set-OBSBrowserSource.md)                                      |
 |[Set-OBSColorFilter](docs/Set-OBSColorFilter.md)                                          |

@@ -177,3 +177,18 @@ Because the obs-websocket cleanly documents it's protocol, most commands in obs-
 
 * [Full List Of Commands](docs/obs-powershell-commands.md)
 * [Full list of websocket commands](docs/obs-powershell-websocket-commands.md)
+
+
+## Depdendencies
+
+To use obs-powershell, you'll need OBS and PowerShell Core.  You can run both of these on any operating system.
+
+### Specific Command Requirements
+
+Some commands in obs-powershell will not work unless you have additional software installed.
+
+|Commands|Dependency|
+|-|-|
+|Add/Set-OBSVLCSource|[VLC](https://www.videolan.org/vlc/)|
+|Add/Set-OBS3DFilter |[VLC](https://obsproject.com/forum/resources/3d-effect.1692/)|
+|Add/Set-OBSShaderFilter|[obs-shaderfilter 2.0+](https://obsproject.com/forum/resources/obs-shaderfilter.1736/)

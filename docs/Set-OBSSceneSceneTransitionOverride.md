@@ -14,7 +14,7 @@ Set-OBSSceneSceneTransitionOverride : SetSceneSceneTransitionOverride
 
 ### Description
 
-Gets the scene transition overridden for a scene.
+Sets the scene transition overridden for a scene.
 
 
 Set-OBSSceneSceneTransitionOverride calls the OBS WebSocket with a request of type SetSceneSceneTransitionOverride.

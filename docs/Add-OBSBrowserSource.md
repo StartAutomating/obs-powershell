@@ -182,9 +182,9 @@ If no name is provided, the last segment of the URI or file path will be the inp
 
 
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[String]`|false   |7       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases                 |
+|----------|--------|--------|---------------------|------------------------|
+|`[String]`|false   |7       |true (ByPropertyName)|InputName<br/>SourceName|
 
 
 

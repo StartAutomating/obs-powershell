@@ -191,4 +191,5 @@ Some commands in obs-powershell will not work unless you have additional softwar
 |Add/Set-OBSVLCSource|[VLC](https://www.videolan.org/vlc/)|
 |Add/Set-OBS3DFilter |[3D Effect](https://obsproject.com/forum/resources/3d-effect.1692/)|
 |Add/Set-OBSShaderFilter|[obs-shaderfilter 2.0+](https://obsproject.com/forum/resources/obs-shaderfilter.1736/)
+|Add/Set/Get-OBSWaveformSource|[waveform source](https://obsproject.com/forum/resources/waveform.1423/)
 

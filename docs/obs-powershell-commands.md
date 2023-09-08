@@ -1,8 +1,8 @@
 obs-powershell-commands
 -----------------------
 
-obs-powershell exports 339 commands
-(169 functions and 170 aliases)
+obs-powershell exports 342 commands
+(170 functions and 172 aliases)
 
 A good number of these commands directly correspond to an obs-websocket message.
 For a complete list, see [obs-powershell-websocket-commands](obs-powershell-websocket-commands.md).
@@ -161,6 +161,7 @@ Functions
 |[Set-OBSTBarPosition](Set-OBSTBarPosition.md)                                        |Set-OBSTBarPosition : SetTBarPosition                                        |
 |[Set-OBSVideoSettings](Set-OBSVideoSettings.md)                                      |Set-OBSVideoSettings : SetVideoSettings                                      |
 |[Set-OBSVLCSource](Set-OBSVLCSource.md)                                              |Adds a VLC playlist source                                                   |
+|[Set-OBSWaveformSource](Set-OBSWaveformSource.md)                                    |OBS Waveform Source                                                          |
 |[Set-OBSWindowSource](Set-OBSWindowSource.md)                                        |Adds or sets a window capture source                                         |
 |[Show-OBS](Show-OBS.md)                                                              |Shows content in OBS                                                         |
 |[Start-OBSEffect](Start-OBSEffect.md)                                                |Starts obs-powershell effects.                                               |
@@ -339,6 +340,7 @@ Aliases
 |[Set-OBSTBarPosition](Set-OBSTBarPosition.md)                                        |
 |[Set-OBSVideoSettings](Set-OBSVideoSettings.md)                                      |
 |[Set-OBSVLCSource](Set-OBSVLCSource.md)                                              |
+|[Set-OBSWaveformSource](Set-OBSWaveformSource.md)                                    |
 |[Set-OBSWindowSource](Set-OBSWindowSource.md)                                        |
 |[Show-OBS](Show-OBS.md)                                                              |
 |[Start-OBSEffect](Start-OBSEffect.md)                                                |

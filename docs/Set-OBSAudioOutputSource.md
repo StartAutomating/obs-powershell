@@ -80,9 +80,9 @@ If no name is provided, "AudioOutput$($AudioDevice)" will be the input source na
 
 
 
-|Type      |Required|Position|PipelineInput        |Aliases  |
-|----------|--------|--------|---------------------|---------|
-|`[String]`|false   |3       |true (ByPropertyName)|InputName|
+|Type      |Required|Position|PipelineInput        |Aliases                 |
+|----------|--------|--------|---------------------|------------------------|
+|`[String]`|false   |3       |true (ByPropertyName)|InputName<br/>SourceName|
 
 
 

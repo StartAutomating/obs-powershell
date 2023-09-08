@@ -1,8 +1,8 @@
 obs-powershell-commands
 -----------------------
 
-obs-powershell exports 339 commands
-(169 functions and 170 aliases)
+obs-powershell exports 342 commands
+(170 functions and 172 aliases)
 
 A good number of these commands directly correspond to an obs-websocket message.
 For a complete list, see [obs-powershell-websocket-commands](docs/obs-powershell-websocket-commands.md).
@@ -161,6 +161,7 @@ Functions
 |[Set-OBSTBarPosition](docs/Set-OBSTBarPosition.md)                                        |Set-OBSTBarPosition : SetTBarPosition                                        |
 |[Set-OBSVideoSettings](docs/Set-OBSVideoSettings.md)                                      |Set-OBSVideoSettings : SetVideoSettings                                      |
 |[Set-OBSVLCSource](docs/Set-OBSVLCSource.md)                                              |Adds a VLC playlist source                                                   |
+|[Set-OBSWaveformSource](docs/Set-OBSWaveformSource.md)                                    |OBS Waveform Source                                                          |
 |[Set-OBSWindowSource](docs/Set-OBSWindowSource.md)                                        |Adds or sets a window capture source                                         |
 |[Show-OBS](docs/Show-OBS.md)                                                              |Shows content in OBS                                                         |
 |[Start-OBSEffect](docs/Start-OBSEffect.md)                                                |Starts obs-powershell effects.                                               |
@@ -339,6 +340,7 @@ Aliases
 |[Set-OBSTBarPosition](docs/Set-OBSTBarPosition.md)                                        |
 |[Set-OBSVideoSettings](docs/Set-OBSVideoSettings.md)                                      |
 |[Set-OBSVLCSource](docs/Set-OBSVLCSource.md)                                              |
+|[Set-OBSWaveformSource](docs/Set-OBSWaveformSource.md)                                    |
 |[Set-OBSWindowSource](docs/Set-OBSWindowSource.md)                                        |
 |[Show-OBS](docs/Show-OBS.md)                                                              |
 |[Start-OBSEffect](docs/Start-OBSEffect.md)                                                |

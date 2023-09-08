@@ -59,7 +59,7 @@ The path to the media file.
 
 |Type        |Required|Position|PipelineInput        |Aliases                                           |
 |------------|--------|--------|---------------------|--------------------------------------------------|
-|`[String[]]`|true    |1       |true (ByPropertyName)|FullName<br/>LocalFile<br/>local_file<br/>Playlist|
+|`[String[]]`|false   |1       |true (ByPropertyName)|FullName<br/>LocalFile<br/>local_file<br/>Playlist|
 
 
 
@@ -226,5 +226,5 @@ If set, will fit the input to the screen.
 
 ### Syntax
 ```PowerShell
-Set-OBSVLCSource [-FilePath] <String[]> [[-Select] <Object>] [-Shuffle] [-Loop] [-Subtitle] [[-AudioTrack] <Int32>] [[-SubtitleTrack] <Int32>] [[-Scene] <String>] [[-Name] <String>] [-Force] [-FitToScreen] [<CommonParameters>]
+Set-OBSVLCSource [[-FilePath] <String[]>] [[-Select] <Object>] [-Shuffle] [-Loop] [-Subtitle] [[-AudioTrack] <Int32>] [[-SubtitleTrack] <Int32>] [[-Scene] <String>] [[-Name] <String>] [-Force] [-FitToScreen] [<CommonParameters>]
 ```

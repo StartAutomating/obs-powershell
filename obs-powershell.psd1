@@ -333,6 +333,7 @@ Initial Release of obs-powershell
 'Set-OBSDisplaySource',
 'Set-OBSMediaSource',
 'Set-OBSVLCSource',
+'Set-OBSWaveformSource',
 'Set-OBSWindowSource'
 }
 

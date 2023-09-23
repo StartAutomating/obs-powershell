@@ -23,11 +23,11 @@ Waveform sources require the [Waveform Plugin](https://obsproject.com/forum/reso
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Add-OBSWaveformSource -Name "SpeakerWaveform"
 ```
-
 
 
 ---

@@ -26,11 +26,11 @@ This cannot be undone, so you will be prompted for confirmation.
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Clear-OBSScene -SceneName Scene
 ```
-
 
 
 ---

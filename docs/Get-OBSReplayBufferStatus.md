@@ -35,11 +35,11 @@ Get-OBSReplayBufferStatus calls the OBS WebSocket with a request of type GetRepl
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Get-OBSReplayBufferStatus
 ```
-
 
 
 ---

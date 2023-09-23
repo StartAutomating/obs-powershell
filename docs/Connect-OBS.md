@@ -34,11 +34,11 @@ This must occur at least once to use obs-powershell.
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Connect-OBS
 ```
-
 
 
 ---

@@ -32,11 +32,11 @@ Imports obs-powershell effects
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Import-OBSEffect -Path (Get-Module obs-powershell)
 ```
-
 
 
 ---

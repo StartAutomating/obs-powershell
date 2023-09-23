@@ -37,11 +37,11 @@ Get-OBSGroup calls the OBS WebSocket with a request of type GetGroupList.
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Get-OBSGroup
 ```
-
 
 
 ---

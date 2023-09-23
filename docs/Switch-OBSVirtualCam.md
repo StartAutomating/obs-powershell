@@ -35,11 +35,11 @@ Switch-OBSVirtualCam calls the OBS WebSocket with a request of type ToggleVirtua
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Switch-OBSVirtualCam
 ```
-
 
 
 ---

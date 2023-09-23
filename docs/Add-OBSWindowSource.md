@@ -22,11 +22,11 @@ Adds or sets a windows capture source in OBS.  This captures the contents of a w
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Get-Process -id $PID | Set-OBSWindowCaptureSource -Name CurrentWindow
 ```
-
 
 
 ---

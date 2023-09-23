@@ -35,11 +35,11 @@ Send-OBSTriggerStudioModeTransition calls the OBS WebSocket with a request of ty
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Send-OBSTriggerStudioModeTransition
 ```
-
 
 
 ---

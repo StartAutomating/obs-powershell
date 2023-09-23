@@ -35,11 +35,11 @@ Start-OBSRecord calls the OBS WebSocket with a request of type StartRecord.
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Start-OBSRecord
 ```
-
 
 
 ---

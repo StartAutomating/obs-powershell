@@ -36,16 +36,16 @@ Watches the OBS websocket for events.
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Watch-OBS -WebSocketToken 12345  # Obviously, replace this with your password.
 ```
+> EXAMPLE 2
 
-#### EXAMPLE 2
 ```PowerShell
 Watch-OBS    # If you turn off authentication on OBS
 ```
-
 
 
 ---

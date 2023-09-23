@@ -322,18 +322,19 @@ Initial Release of obs-powershell
 'Set-OBSScrollFilter',
 'Set-OBSShaderFilter',
 'Set-OBSSharpnessFilter',
-'Get-OBSEffect',
-'Import-OBSEffect',
-'Remove-OBSEffect',
-'Start-OBSEffect',
-'Stop-OBSEffect',
 'Set-OBSAudioOutputSource',
 'Set-OBSBrowserSource',
 'Set-OBSColorSource',
 'Set-OBSDisplaySource',
+'Set-OBSMarkdownSource',
 'Set-OBSMediaSource',
 'Set-OBSVLCSource',
 'Set-OBSWaveformSource',
-'Set-OBSWindowSource'
+'Set-OBSWindowSource',
+'Get-OBSEffect',
+'Import-OBSEffect',
+'Remove-OBSEffect',
+'Start-OBSEffect',
+'Stop-OBSEffect'
 }
 

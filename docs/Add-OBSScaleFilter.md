@@ -23,12 +23,12 @@ This allows you to resize the image source.
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg |    
     Set-OBSScaleFilter -Resolution "16:9"
 ```
-
 
 
 ---

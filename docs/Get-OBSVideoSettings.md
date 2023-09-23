@@ -37,11 +37,11 @@ Get-OBSVideoSettings calls the OBS WebSocket with a request of type GetVideoSett
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Get-OBSVideoSettings
 ```
-
 
 
 ---

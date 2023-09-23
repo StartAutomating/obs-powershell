@@ -36,16 +36,16 @@ Removes items from OBS
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Remove-OBS -SourceName "foo"
 ```
+> EXAMPLE 2
 
-#### EXAMPLE 2
 ```PowerShell
 Remove-OBS -SceneName "bar"
 ```
-
 
 
 ---

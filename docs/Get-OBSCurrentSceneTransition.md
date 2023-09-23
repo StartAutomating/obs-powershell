@@ -35,11 +35,11 @@ Get-OBSCurrentSceneTransition calls the OBS WebSocket with a request of type Get
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Get-OBSCurrentSceneTransition
 ```
-
 
 
 ---

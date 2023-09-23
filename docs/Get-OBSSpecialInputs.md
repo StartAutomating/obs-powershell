@@ -35,11 +35,11 @@ Get-OBSSpecialInputs calls the OBS WebSocket with a request of type GetSpecialIn
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Get-OBSSpecialInputs
 ```
-
 
 
 ---

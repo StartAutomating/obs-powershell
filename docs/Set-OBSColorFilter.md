@@ -31,12 +31,12 @@ This allows you to:
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Show-OBS -Uri .\Assets\obs-powershell-animated-icon.svg |    
     Set-OBSColorFilter -Opacity .5
 ```
-
 
 
 ---

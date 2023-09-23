@@ -34,11 +34,11 @@ All websockets will be disconnected.
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Disconnect-OBS
 ```
-
 
 
 ---

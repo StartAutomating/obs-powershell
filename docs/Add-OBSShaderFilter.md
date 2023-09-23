@@ -23,7 +23,8 @@ This requires that the [OBS Shader Filter](https://github.com/exeldro/obs-shader
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg |    
     Set-OBSShaderFilter -FilterName "Shader" -ShaderFile fisheye-xy -ShaderSetting @{    
@@ -31,7 +32,6 @@ Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg |
         center_y_percent=70    
     }
 ```
-
 
 
 ---

@@ -22,11 +22,11 @@ Adds or changes a browser source in OBS.
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Set-OBSBrowserSource -Uri https://pssvg.start-automating.com/Examples/Stars.svg
 ```
-
 
 
 ---

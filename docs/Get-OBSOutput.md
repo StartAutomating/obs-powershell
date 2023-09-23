@@ -35,11 +35,11 @@ Get-OBSOutput calls the OBS WebSocket with a request of type GetOutputList.
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Get-OBSOutput
 ```
-
 
 
 ---

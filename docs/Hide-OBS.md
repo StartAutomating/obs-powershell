@@ -32,11 +32,11 @@ Hides items in OBS
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Hide-OBS -SourceName "foo"
 ```
-
 
 
 ---

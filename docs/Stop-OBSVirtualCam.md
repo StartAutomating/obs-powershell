@@ -35,11 +35,11 @@ Stop-OBSVirtualCam calls the OBS WebSocket with a request of type StopVirtualCam
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Stop-OBSVirtualCam
 ```
-
 
 
 ---

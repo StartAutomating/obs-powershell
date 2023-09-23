@@ -37,11 +37,11 @@ VLC must be installed for this to work.
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Set-OBSVLCSource -FilePath .\*.mp3 # Creates a playlist of all MP3s in the current directory
 ```
-
 
 
 ---

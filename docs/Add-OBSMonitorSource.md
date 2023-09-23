@@ -22,16 +22,16 @@ Adds a display source to OBS.  This captures the contents of the display.
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Add-OBSDisplaySource  # Adds a display source of the primary monitor
 ```
+> EXAMPLE 2
 
-#### EXAMPLE 2
 ```PowerShell
 Add-OBSDisplaySource -Display 2 # Adds a display source of the second monitor
 ```
-
 
 
 ---

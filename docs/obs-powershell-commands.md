@@ -1,8 +1,8 @@
 obs-powershell-commands
 -----------------------
 
-obs-powershell exports 349 commands
-(170 functions and 179 aliases)
+obs-powershell exports 354 commands
+(171 functions and 183 aliases)
 
 A good number of these commands directly correspond to an obs-websocket message.
 For a complete list, see [obs-powershell-websocket-commands](obs-powershell-websocket-commands.md).
@@ -134,6 +134,7 @@ Functions
 |[Set-OBSInputName](Set-OBSInputName.md)                                              |Set-OBSInputName : SetInputName                                              |
 |[Set-OBSInputSettings](Set-OBSInputSettings.md)                                      |Set-OBSInputSettings : SetInputSettings                                      |
 |[Set-OBSInputVolume](Set-OBSInputVolume.md)                                          |Set-OBSInputVolume : SetInputVolume                                          |
+|[Set-OBSMarkdownSource](Set-OBSMarkdownSource.md)                                    |Sets a markdown source                                                       |
 |[Set-OBSMediaInputCursor](Set-OBSMediaInputCursor.md)                                |Set-OBSMediaInputCursor : SetMediaInputCursor                                |
 |[Set-OBSMediaSource](Set-OBSMediaSource.md)                                          |Adds a media source                                                          |
 |[Set-OBSOutputSettings](Set-OBSOutputSettings.md)                                    |Set-OBSOutputSettings : SetOutputSettings                                    |
@@ -313,6 +314,7 @@ Aliases
 |[Set-OBSInputName](Set-OBSInputName.md)                                              |
 |[Set-OBSInputSettings](Set-OBSInputSettings.md)                                      |
 |[Set-OBSInputVolume](Set-OBSInputVolume.md)                                          |
+|[Set-OBSMarkdownSource](Set-OBSMarkdownSource.md)                                    |
 |[Set-OBSMediaInputCursor](Set-OBSMediaInputCursor.md)                                |
 |[Set-OBSMediaSource](Set-OBSMediaSource.md)                                          |
 |[Set-OBSOutputSettings](Set-OBSOutputSettings.md)                                    |

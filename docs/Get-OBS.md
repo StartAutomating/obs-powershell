@@ -22,11 +22,11 @@ Outputs OBS connection information and state.
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Get-OBS
 ```
-
 
 
 ---

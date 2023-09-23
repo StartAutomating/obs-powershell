@@ -35,11 +35,11 @@ Start-OBSStream calls the OBS WebSocket with a request of type StartStream.
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Start-OBSStream
 ```
-
 
 
 ---

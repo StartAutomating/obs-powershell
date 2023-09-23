@@ -35,11 +35,11 @@ Resume-OBSRecord calls the OBS WebSocket with a request of type ResumeRecord.
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Resume-OBSRecord
 ```
-
 
 
 ---

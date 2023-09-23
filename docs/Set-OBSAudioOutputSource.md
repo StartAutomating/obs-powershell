@@ -22,16 +22,16 @@ Adds or sets an audio output source in OBS.  This captures the audio that is bei
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Add-OBSAudioOutputSource
 ```
+> EXAMPLE 2
 
-#### EXAMPLE 2
 ```PowerShell
 Set-OBSAudioOutputSource -AudioDevice Speakers
 ```
-
 
 
 ---

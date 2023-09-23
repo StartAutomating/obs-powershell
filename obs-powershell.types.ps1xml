@@ -1237,7 +1237,13 @@ $this |
       <ScriptMethod>
         <Name>SetColor</Name>
         <Script>
-                        param(
+                        &lt;#
+.SYNOPSIS
+    Sets the color.
+.DESCRIPTION
+    Changes the color of a color source.
+#&gt;
+param(
 [ValidatePattern('\#(?&gt;[0-9a-f]{8}|[0-9a-f]{6}|[0-9a-f]{4}|[0-9a-f]{3})')]
 [string]
 $Color
@@ -1835,7 +1841,13 @@ $this | Add-Member NoteProperty '.Reversed' ($args[0] -as [bool]) -Force
       <ScriptProperty>
         <Name>EffectName</Name>
         <GetScriptBlock>
-                        $obsEffectsPattern = [Regex]::new('
+                        &lt;#
+.SYNOPSIS
+    Gets the Effect Name
+.DESCRIPTION
+    Gets the name of an Effect.
+#&gt;
+$obsEffectsPattern = [Regex]::new('
 (?&gt;
     ^OBS.(?&gt;fx|effects?)\p{P}
     |

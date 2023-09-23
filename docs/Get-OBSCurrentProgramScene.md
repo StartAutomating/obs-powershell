@@ -35,11 +35,11 @@ Get-OBSCurrentProgramScene calls the OBS WebSocket with a request of type GetCur
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Get-OBSCurrentProgramScene
 ```
-
 
 
 ---

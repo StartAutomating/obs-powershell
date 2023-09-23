@@ -22,18 +22,16 @@ Shows content in Open Broadcasting Studio
 
 
 ### Examples
-#### EXAMPLE 1
-```PowerShell
+> EXAMPLE 1
+
 <polygon points="0 0 0 1 1 1 1 0" fill="blue" />
 </svg>' | Set-Content .\BlueRect.svg
 Show-OBS -FilePath .\BlueRect.svg
-```
+> EXAMPLE 2
 
-#### EXAMPLE 2
 ```PowerShell
 Show-OBS -FilePath *excited* -RootPath $home\Pictures\Gif
 ```
-
 
 
 ---

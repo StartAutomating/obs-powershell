@@ -35,11 +35,11 @@ Get-OBSStreamStatus calls the OBS WebSocket with a request of type GetStreamStat
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Get-OBSStreamStatus
 ```
-
 
 
 ---

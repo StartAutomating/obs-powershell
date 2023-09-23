@@ -23,12 +23,12 @@ This allows you to make the audio louder or softer.
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg |    
     Set-OBSGainFilter -Gain 1.1 # Gains Audio by 1.1 decibels
 ```
-
 
 
 ---

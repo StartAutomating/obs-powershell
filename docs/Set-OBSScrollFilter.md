@@ -23,12 +23,12 @@ This allows you to scroll horizontally or vertically.
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg |    
     Set-OBSScrollFilter -HorizontalSpeed 100 -VerticalSpeed 100
 ```
-
 
 
 ---

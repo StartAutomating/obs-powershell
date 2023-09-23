@@ -36,11 +36,11 @@ Adds a media source to OBS.
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Set-OBSMediaSource -FilePath My.mp4
 ```
-
 
 
 ---

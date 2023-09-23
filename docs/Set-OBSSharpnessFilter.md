@@ -23,12 +23,12 @@ This changes the sharpness of an image.
 
 
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg |    
     Set-OBSSharpnessFilter -Sharpness .75
 ```
-
 
 
 ---

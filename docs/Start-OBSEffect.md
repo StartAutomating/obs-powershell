@@ -216,6 +216,21 @@ If set, will bounce the effect (flip it / reverse it)
 
 
 
+#### **Reverse**
+
+If set, will reverse an effect.
+
+
+
+
+
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[Switch]`|false   |named   |false        |
+
+
+
 
 
 ---
@@ -223,5 +238,5 @@ If set, will bounce the effect (flip it / reverse it)
 
 ### Syntax
 ```PowerShell
-Start-OBSEffect -EffectName <String[]> [-Duration <TimeSpan>] [-EffectParameter <IDictionary>] [-EffectArgument <PSObject[]>] [-Step <Int32>] [-SceneItemID <Int32>] [-SceneName <String>] [-FilterName <String>] [-SourceName <String>] [-Loop] [-LoopCount <Int32>] [-Bounce] [<CommonParameters>]
+Start-OBSEffect -EffectName <String[]> [-Duration <TimeSpan>] [-EffectParameter <IDictionary>] [-EffectArgument <PSObject[]>] [-Step <Int32>] [-SceneItemID <Int32>] [-SceneName <String>] [-FilterName <String>] [-SourceName <String>] [-Loop] [-LoopCount <Int32>] [-Bounce] [-Reverse] [<CommonParameters>]
 ```

@@ -16,6 +16,7 @@
 * [get_CurrentTime](get_CurrentTime.md)
 * [set_CurrentTime](set_CurrentTime.md)
 * [get_Filters](get_Filters.md)
+* [get_SceneItem](get_SceneItem.md)
 * [get_Settings](get_Settings.md)
 * [set_Settings](set_Settings.md)
 * [get_Status](get_Status.md)

@@ -17,6 +17,6 @@ $script:OBS = ${script:OBS-PowerShell} = $MyInvocation.MyCommand.ScriptBlock.Mod
 
 $script:OBS | Import-OBSEffect
 
-$script:OBS.pstypenames.insert(0,'obs-powershell')
+$script:OBS.pstypenames.insert(0,'obs.powershell')
 
 Export-ModuleMember -Function * -Variable obs,obs-powershell -Alias *

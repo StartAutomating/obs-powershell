@@ -1,8 +1,8 @@
 obs-powershell-commands
 -----------------------
 
-obs-powershell exports 354 commands
-(171 functions and 183 aliases)
+obs-powershell exports 357 commands
+(172 functions and 185 aliases)
 
 A good number of these commands directly correspond to an obs-websocket message.
 For a complete list, see [obs-powershell-websocket-commands](obs-powershell-websocket-commands.md).
@@ -159,6 +159,7 @@ Functions
 |[Set-OBSSourceFilterSettings](Set-OBSSourceFilterSettings.md)                        |Set-OBSSourceFilterSettings : SetSourceFilterSettings                        |
 |[Set-OBSStreamServiceSettings](Set-OBSStreamServiceSettings.md)                      |Set-OBSStreamServiceSettings : SetStreamServiceSettings                      |
 |[Set-OBSStudioModeEnabled](Set-OBSStudioModeEnabled.md)                              |Set-OBSStudioModeEnabled : SetStudioModeEnabled                              |
+|[Set-OBSSwitchSource](Set-OBSSwitchSource.md)                                        |Adds a VLC playlist source                                                   |
 |[Set-OBSTBarPosition](Set-OBSTBarPosition.md)                                        |Set-OBSTBarPosition : SetTBarPosition                                        |
 |[Set-OBSVideoSettings](Set-OBSVideoSettings.md)                                      |Set-OBSVideoSettings : SetVideoSettings                                      |
 |[Set-OBSVLCSource](Set-OBSVLCSource.md)                                              |Adds a VLC playlist source                                                   |
@@ -339,6 +340,7 @@ Aliases
 |[Set-OBSSourceFilterSettings](Set-OBSSourceFilterSettings.md)                        |
 |[Set-OBSStreamServiceSettings](Set-OBSStreamServiceSettings.md)                      |
 |[Set-OBSStudioModeEnabled](Set-OBSStudioModeEnabled.md)                              |
+|[Set-OBSSwitchSource](Set-OBSSwitchSource.md)                                        |
 |[Set-OBSTBarPosition](Set-OBSTBarPosition.md)                                        |
 |[Set-OBSVideoSettings](Set-OBSVideoSettings.md)                                      |
 |[Set-OBSVLCSource](Set-OBSVLCSource.md)                                              |

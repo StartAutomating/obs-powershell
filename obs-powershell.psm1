@@ -22,4 +22,10 @@ foreach ($noun in 'Streaming','Recording') {
 
 Connect-OBS
 
-$MyInvocation.MyCommand.ScriptBlock.Module | Import-OBSEffect
+$script:OBS = ${script:OBS-PowerShell} = $MyInvocation.MyCommand.ScriptBlock.Module
+
+$script:OBS | Import-OBSEffect
+
+$script:OBS.pstypenames.insert(0,'obs-powershell')
+
+Export-ModuleMember -Function * -Variable obs,obs-powershell -Alias *

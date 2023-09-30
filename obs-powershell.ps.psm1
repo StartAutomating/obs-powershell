@@ -19,4 +19,10 @@ $script:OBS | Import-OBSEffect
 
 $script:OBS.pstypenames.insert(0,'obs.powershell')
 
-Export-ModuleMember -Function * -Variable obs,obs-powershell -Alias *
+$ModuleProfilePath = $Profile | Split-Path | Join-Path -ChildPath "$($script:OBS.Name).profile.ps1"
+$script:variablesToExport = @('obs','obs-powershell')
+if (Test-Path $ModuleProfilePath) {
+    . $ModuleProfilePath
+}
+
+Export-ModuleMember -Function * -Variable $script:variablesToExport -Alias *

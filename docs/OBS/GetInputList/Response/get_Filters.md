@@ -1,35 +1,21 @@
 OBS.GetInputList.Response.get_Filters()
 ---------------------------------------
 
-
-
-
 ### Synopsis
 Gets an input's filters
 
-
-
 ---
-
 
 ### Description
 
 Gets the filters related to an OBS input.
 
-
-
 ---
-
 
 ### Related Links
 * Get-OBSSourceFilterList
 
-
-
-
-
 ---
-
 
 ### Examples
 > EXAMPLE 1
@@ -39,6 +25,5 @@ $obsPowerShellIcon = Show-OBS -Uri https://obs-powershell.start-automating.com/A
 $obsPowerShellIcon | Set-OBSColorFilter -Opacity .5
 $obsPowerShellIcon.Input.Filters
 ```
-
 
 ---

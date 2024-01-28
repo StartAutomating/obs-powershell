@@ -22,12 +22,14 @@ function Set-OBSSwitchSource {
     [Alias('Sources')]
     [string[]]
     $SourceList,
+
     # What to select in the playlist.    
     # If a number is provided, this will select an index.    
     # If a string is provided, this will select the whole name or last part of a name, accepting wildcards.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ValidateScript({
     $validTypeList = [System.Int32],[System.String]
+    
     $thisType = $_.GetType()
     $IsTypeOk =
         $(@( foreach ($validType in $validTypeList) {
@@ -35,6 +37,7 @@ function Set-OBSSwitchSource {
                 $true;break
             }
         }))
+    
     if (-not $isTypeOk) {
         throw "Unexpected type '$(@($thisType)[0])'.  Must be 'int','string'."
     }
@@ -43,12 +46,14 @@ function Set-OBSSwitchSource {
     
     [Alias('SelectIndex','SelectName')]
     $Select,
+
     # If set, the list of sources will loop.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("loop")]
     [Alias('Looping')]
     [switch]
     $Loop,
+
     # If set, will switch between sources.    
     # Sources will be displayed for a -Duration.    
     # No source wil be displayed for an -Interval.        
@@ -56,21 +61,25 @@ function Set-OBSSwitchSource {
     [ComponentModel.DefaultBindingProperty("time_switch")]
     [switch]
     $TimeSwitch,
+
     # The interval between sources    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("time_switch_between")]
     [timespan]
     $Interval,
+
     # The duration between sources that are switching at a time.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("time_switch_duration")]
     [timespan]
     $Duration,
+
     # The item that will be switched in a TimeSwitch, after -Duration and -Interval.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ValidateSet("None","Next","Previous","First","Last","Random")]
     [string]
     $TimeSwitchTo = "Next",
+
     # If set, will switch on the underlying source's media state events.    
     # Sources will be displayed for a -Duration.    
     # No source wil be displayed for an -Interval.        
@@ -78,15 +87,18 @@ function Set-OBSSwitchSource {
     [ComponentModel.DefaultBindingProperty("media_state_switch")]
     [switch]
     $MediaStateSwitch,
+
     # The change in media state that should trigger a switch    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ValidateSet("Playing","Opening","Buffering","Paused","Stopped","Ended", "Error","Playing","NotOpening","NotBuffering","NotPaused","NotStopped","NotEnded", "NotError")]
     $MediaStateChange,
+
     # When the source switcher is trigger by media end, this determines the next source that will be switched to.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ValidateSet("None","Next","Previous","First","Last","Random")]
     [string]
     $MediaSwitchTo = "Next",
+
     # The name of the transition between sources.    
     [ArgumentCompleter({
         param ( $commandName,
@@ -108,11 +120,13 @@ function Set-OBSSwitchSource {
     [Parameter(ValueFromPipelineByPropertyName)]
     [string]
     $TransitionName,
+
     # The properties sent to the transition.    
     # Notice: this current requires confirmation in the UI.     
     [Parameter(ValueFromPipelineByPropertyName)]
     [PSObject]
     $TransitionProperty,
+
     # The name of the transition used to show a source.    
     [ArgumentCompleter({
         param ( $commandName,
@@ -134,11 +148,13 @@ function Set-OBSSwitchSource {
     [Parameter(ValueFromPipelineByPropertyName)]
     [string]
     $ShowTransition,
+
     # The properties sent to the show transition.    
     # Notice: this current requires confirmation in the UI.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [PSObject]
     $ShowTransitionProperty,
+
     # The transition used to hide a source.    
     [ArgumentCompleter({
         param ( $commandName,
@@ -160,27 +176,32 @@ function Set-OBSSwitchSource {
     [Parameter(ValueFromPipelineByPropertyName)]
     [string]
     $HideTransition,
+
     # The properties sent to the hide transition.    
     # Notice: this current requires confirmation in the UI.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [PSObject]
     $HideTransitionProperty,
+
     # The name of the scene.    
     # If no scene name is provided, the current program scene will be used.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [string]
     $Scene,
+
     # The name of the input.    
     # If no name is provided, the last segment of the URI or file path will be the input name.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [Alias('InputName','SourceName')]
     [string]
     $Name,
+
     # If set, will check if the source exists in the scene before creating it and removing any existing sources found.    
     # If not set, you will get an error if a source with the same name exists.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [switch]
     $Force,
+
     # If set, will fit the input to the screen.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [switch]
@@ -197,6 +218,8 @@ function Set-OBSSwitchSource {
         }
     $IncludeParameter = @()
     $ExcludeParameter = 'inputKind','sceneName','inputName'
+
+
     $DynamicParameters = [Management.Automation.RuntimeDefinedParameterDictionary]::new()            
     :nextInputParameter foreach ($paramName in ([Management.Automation.CommandMetaData]$baseCommand).Parameters.Keys) {
         if ($ExcludeParameter) {
@@ -219,9 +242,11 @@ function Set-OBSSwitchSource {
         ))
     }
     $DynamicParameters
+
     }
         begin {
         filter OutputAndFitToScreen {
+        
                     if ($FitToScreen -and $_.FitToScreen) {
                         $_.FitToScreen()
                     }
@@ -246,6 +271,7 @@ function Set-OBSSwitchSource {
         $NoVerb            = $MyInvocationName -match '^[^\.\&][^-]+$'
         # and if there were any other parameters then name
         $NonNameParameters = @($PSBoundParameters.Keys) -ne 'Name'
+
         # If it is a get or there was no verb
         if ($IsGet -or $NoVerb) {
             $inputsOfKind = # Get all inputs of this kind
@@ -279,6 +305,7 @@ function Set-OBSSwitchSource {
                 
         $myParameterData = [Ordered]@{}
         foreach ($parameter in $MyInvocation.MyCommand.Parameters.Values) {
+
             $bindToPropertyName = $null            
             
             foreach ($attribute in $parameter.Attributes) {
@@ -287,6 +314,7 @@ function Set-OBSSwitchSource {
                     break
                 }
             }
+
             if (-not $bindToPropertyName) { continue }
             if ($myParameters.Contains($parameter.Name)) {
                 $myParameterData[$bindToPropertyName] = $myParameters[$parameter.Name]
@@ -317,6 +345,7 @@ function Set-OBSSwitchSource {
                 [PSCustomObject][Ordered]@{hidden=$false;selected=$selected;value=$sourceName}
             }
         )
+
         if ($sourcesObject) {
             $myParameterData['sources'] = $sourcesObject
             if ($selectedIndex -gt 0) {
@@ -327,6 +356,7 @@ function Set-OBSSwitchSource {
             $myParameterData['current_index'] = $Select
         }
         
+
         
         if ($TransitionName) {
             if ($TransitionName -notlike '*_transition') {
@@ -338,24 +368,29 @@ function Set-OBSSwitchSource {
         if ($TransitionProperty) {
             $myParameterData["transition_properties"] = $TransitionProperty
         }
+
         if ($ShowTransition) {
             if ($ShowTransition -notlike '*_transition') {
                 $ShowTransition = "${ShowTransition}_transition"
             }
             $myParameterData["show_transition"] = $ShowTransition
         }
+
         if ($ShowTransitionProperty) {
             $myParameterData["show_transition_properties"] = $ShowTransitionProperty
         }
+
         if ($HideTransition) {
             if ($HideTransition -notlike '*_transition') {
                 $HideTransition = "${HideTransition}_transition"
             }
             $myParameterData["hide_transition"] = $ShowTransition
         }
+
         if ($HideTransitionProperty) {
             $myParameterData["hide_transition_properties"] = $HideTransitionProperty
         }    
+
         if ($TimeSwitchTo) {
             $validValues = $MyInvocation.MyCommand.Parameters["TimeSwitchTo"].Attributes.ValidValues
             for ($vvi = 0; $vvi -lt $validValues.Length;$vvi++) {
@@ -365,6 +400,7 @@ function Set-OBSSwitchSource {
                 }
             }            
         }
+
         if ($MediaSwitchTo) {
             $validValues = $MyInvocation.MyCommand.Parameters["MediaSwitchTo"].Attributes.ValidValues
             for ($vvi = 0; $vvi -lt $validValues.Length;$vvi++) {
@@ -374,6 +410,7 @@ function Set-OBSSwitchSource {
                 }
             }
         }
+
         if ($MediaStateChange) {
             $validValues = $MyInvocation.MyCommand.Parameters["MediaStateChange"].Attributes.ValidValues
             for ($vvi = 0; $vvi -lt $validValues.Length;$vvi++) {
@@ -387,7 +424,9 @@ function Set-OBSSwitchSource {
         if (-not $Name) {
             $Name = $myParameters["Name"] = "Source Switcher"
         }
+
         
+
         $addSplat = [Ordered]@{
             sceneName = $myParameters["Scene"]
             inputKind = $InputKind
@@ -395,9 +434,11 @@ function Set-OBSSwitchSource {
             inputName = $Name
             NoResponse = $myParameters["NoResponse"]
         }
+
         if ($myParameters.Contains('SceneItemEnabled')) {
             $addSplat.SceneItemEnabled = $myParameters['SceneItemEnabled'] -as [bool]
         }
+
         # If -PassThru was passed
         if ($MyParameters["PassThru"]) {
             # pass it down to each command
@@ -415,8 +456,10 @@ function Set-OBSSwitchSource {
             }
             return
         }
+
         # Add the input.
         $outputAddedResult = Add-OBSInput @addSplat *>&1
+
         # If we got back an error
         if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
             # and that error was saying the source already exists, 
@@ -438,6 +481,7 @@ function Set-OBSSwitchSource {
                     }                    
                 }
             }
+
             # If the output was still an error
             if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
                 # use $psCmdlet.WriteError so that it shows the error correctly.

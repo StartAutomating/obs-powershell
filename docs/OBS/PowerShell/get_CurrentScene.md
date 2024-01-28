@@ -1,25 +1,16 @@
 OBS.PowerShell.get_CurrentScene()
 ---------------------------------
 
-
-
-
 ### Synopsis
 Gets the current scene
 
-
-
 ---
-
 
 ### Description
 
 Gets the current scene in OBS.
 
-
-
 ---
-
 
 ### Examples
 > EXAMPLE 1
@@ -27,6 +18,5 @@ Gets the current scene in OBS.
 ```PowerShell
 Get-OBS | Select-Object -ExpandProperty CurrentScene
 ```
-
 
 ---

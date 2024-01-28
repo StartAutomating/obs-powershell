@@ -1,8 +1,8 @@
 obs-powershell-commands
 -----------------------
 
-obs-powershell exports 359 commands
-(172 functions and 187 aliases)
+obs-powershell exports 361 commands
+(174 functions and 187 aliases)
 
 A good number of these commands directly correspond to an obs-websocket message.
 For a complete list, see [obs-powershell-websocket-commands](docs/obs-powershell-websocket-commands.md).
@@ -64,12 +64,14 @@ Functions
 |[Get-OBSSceneItemId](docs/Get-OBSSceneItemId.md)                                          |Get-OBSSceneItemId : GetSceneItemId                                          |
 |[Get-OBSSceneItemIndex](docs/Get-OBSSceneItemIndex.md)                                    |Get-OBSSceneItemIndex : GetSceneItemIndex                                    |
 |[Get-OBSSceneItemLocked](docs/Get-OBSSceneItemLocked.md)                                  |Get-OBSSceneItemLocked : GetSceneItemLocked                                  |
+|[Get-OBSSceneItemSource](docs/Get-OBSSceneItemSource.md)                                  |Get-OBSSceneItemSource : GetSceneItemSource                                  |
 |[Get-OBSSceneItemTransform](docs/Get-OBSSceneItemTransform.md)                            |Get-OBSSceneItemTransform : GetSceneItemTransform                            |
 |[Get-OBSSceneSceneTransitionOverride](docs/Get-OBSSceneSceneTransitionOverride.md)        |Get-OBSSceneSceneTransitionOverride : GetSceneSceneTransitionOverride        |
 |[Get-OBSSceneTransition](docs/Get-OBSSceneTransition.md)                                  |Get-OBSSceneTransition : GetSceneTransitionList                              |
 |[Get-OBSSourceActive](docs/Get-OBSSourceActive.md)                                        |Get-OBSSourceActive : GetSourceActive                                        |
 |[Get-OBSSourceFilter](docs/Get-OBSSourceFilter.md)                                        |Get-OBSSourceFilter : GetSourceFilter                                        |
 |[Get-OBSSourceFilterDefaultSettings](docs/Get-OBSSourceFilterDefaultSettings.md)          |Get-OBSSourceFilterDefaultSettings : GetSourceFilterDefaultSettings          |
+|[Get-OBSSourceFilterKind](docs/Get-OBSSourceFilterKind.md)                                |Get-OBSSourceFilterKind : GetSourceFilterKindList                            |
 |[Get-OBSSourceFilterList](docs/Get-OBSSourceFilterList.md)                                |Get-OBSSourceFilterList : GetSourceFilterList                                |
 |[Get-OBSSourceScreenshot](docs/Get-OBSSourceScreenshot.md)                                |Get-OBSSourceScreenshot : GetSourceScreenshot                                |
 |[Get-OBSSpecialInputs](docs/Get-OBSSpecialInputs.md)                                      |Get-OBSSpecialInputs : GetSpecialInputs                                      |
@@ -245,12 +247,14 @@ Aliases
 |[Get-OBSSceneItemId](docs/Get-OBSSceneItemId.md)                                          |
 |[Get-OBSSceneItemIndex](docs/Get-OBSSceneItemIndex.md)                                    |
 |[Get-OBSSceneItemLocked](docs/Get-OBSSceneItemLocked.md)                                  |
+|[Get-OBSSceneItemSource](docs/Get-OBSSceneItemSource.md)                                  |
 |[Get-OBSSceneItemTransform](docs/Get-OBSSceneItemTransform.md)                            |
 |[Get-OBSSceneSceneTransitionOverride](docs/Get-OBSSceneSceneTransitionOverride.md)        |
 |[Get-OBSSceneTransition](docs/Get-OBSSceneTransition.md)                                  |
 |[Get-OBSSourceActive](docs/Get-OBSSourceActive.md)                                        |
 |[Get-OBSSourceFilter](docs/Get-OBSSourceFilter.md)                                        |
 |[Get-OBSSourceFilterDefaultSettings](docs/Get-OBSSourceFilterDefaultSettings.md)          |
+|[Get-OBSSourceFilterKind](docs/Get-OBSSourceFilterKind.md)                                |
 |[Get-OBSSourceFilterList](docs/Get-OBSSourceFilterList.md)                                |
 |[Get-OBSSourceScreenshot](docs/Get-OBSSourceScreenshot.md)                                |
 |[Get-OBSSpecialInputs](docs/Get-OBSSpecialInputs.md)                                      |

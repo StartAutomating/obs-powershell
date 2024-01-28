@@ -1,4 +1,5 @@
 function Save-OBSSourceScreenshot {
+
 <#
 .Synopsis
     
@@ -19,13 +20,17 @@ function Save-OBSSourceScreenshot {
 #>
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SaveSourceScreenshot')]
 [Alias('obs.powershell.websocket.SaveSourceScreenshot')]
-[Reflection.AssemblyMetadata('OBS.WebSocket.ExpectingResponse', $true)]
 param(
 <# Name of the source to take a screenshot of #>
-[Parameter(Mandatory,ValueFromPipelineByPropertyName)]
+[Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sourceName')]
 [string]
 $SourceName,
+<# UUID of the source to take a screenshot of #>
+[Parameter(ValueFromPipelineByPropertyName)]
+[ComponentModel.DefaultBindingProperty('sourceUuid')]
+[string]
+$SourceUuid,
 <# Image compression format to use. Use `GetVersion` to get compatible image formats #>
 [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('imageFormat')]
@@ -66,16 +71,22 @@ $PassThru,
 [switch]
 $NoResponse
 )
+
+
 process {
+
+
         # Create a copy of the parameters (that are part of the payload)
         $paramCopy = [Ordered]@{}
         # get a reference to this command
         $myCmd = $MyInvocation.MyCommand
+
         # Keep track of how many requests we have done of a given type
         # (this makes creating RequestIDs easy)
         if (-not $script:ObsRequestsCounts) {
             $script:ObsRequestsCounts = @{}
         }
+
         # Set my requestType to blank
         $myRequestType = ''
         # and indicate we are not expecting a response
@@ -95,6 +106,7 @@ process {
                 }
             }
         }
+
         # Walk over each parameter
         :nextParam foreach ($keyValue in $PSBoundParameters.GetEnumerator()) {
             # and walk over each of it's attributes to see if it part of the payload
@@ -128,12 +140,15 @@ process {
             # and optional data
             requestData = $paramCopy
         }
+
         if ($PassThru) {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
                 Send-OBS -NoResponse:$NoResponse
         }
+
+
         Get-Item $paramCopy["imageFilePath"] |
             Add-Member NoteProperty InputName $paramCopy["SourceName"] -Force -PassThru  |
             Add-Member NoteProperty SourceName $paramCopy["SourceName"] -Force -PassThru |
@@ -141,5 +156,7 @@ process {
             Add-Member NoteProperty ImageHeight $paramCopy["ImageHeight"] -Force -PassThru
     
 }
+
+
 } 
 

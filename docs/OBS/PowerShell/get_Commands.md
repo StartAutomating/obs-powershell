@@ -1,25 +1,16 @@
 OBS.PowerShell.get_Commands()
 -----------------------------
 
-
-
-
 ### Synopsis
 Gets obs-powershell commands
 
-
-
 ---
-
 
 ### Description
 
 Gets the commands in obs-powershell.
 
-
-
 ---
-
 
 ### Examples
 > EXAMPLE 1
@@ -27,6 +18,5 @@ Gets the commands in obs-powershell.
 ```PowerShell
 (Get-OBS).Commands
 ```
-
 
 ---

@@ -1,4 +1,5 @@
 function Add-OBSSceneItem {
+
 <#
 .Synopsis
     
@@ -20,15 +21,25 @@ function Add-OBSSceneItem {
 [Alias('Add-OBSSceneSource')]
 param(
 <# Name of the scene to create the new item in #>
-[Parameter(Mandatory,ValueFromPipelineByPropertyName)]
+[Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sceneName')]
 [string]
 $SceneName,
+<# UUID of the scene to create the new item in #>
+[Parameter(ValueFromPipelineByPropertyName)]
+[ComponentModel.DefaultBindingProperty('sceneUuid')]
+[string]
+$SceneUuid,
 <# Name of the source to add to the scene #>
-[Parameter(Mandatory,ValueFromPipelineByPropertyName)]
+[Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sourceName')]
 [string]
 $SourceName,
+<# UUID of the source to add to the scene #>
+[Parameter(ValueFromPipelineByPropertyName)]
+[ComponentModel.DefaultBindingProperty('sourceUuid')]
+[string]
+$SourceUuid,
 <# Enable state to apply to the scene item on creation #>
 [Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sceneItemEnabled')]
@@ -46,16 +57,22 @@ $PassThru,
 [switch]
 $NoResponse
 )
+
+
 process {
+
+
         # Create a copy of the parameters (that are part of the payload)
         $paramCopy = [Ordered]@{}
         # get a reference to this command
         $myCmd = $MyInvocation.MyCommand
+
         # Keep track of how many requests we have done of a given type
         # (this makes creating RequestIDs easy)
         if (-not $script:ObsRequestsCounts) {
             $script:ObsRequestsCounts = @{}
         }
+
         # Set my requestType to blank
         $myRequestType = ''
         # and indicate we are not expecting a response
@@ -75,6 +92,7 @@ process {
                 }
             }
         }
+
         # Walk over each parameter
         :nextParam foreach ($keyValue in $PSBoundParameters.GetEnumerator()) {
             # and walk over each of it's attributes to see if it part of the payload
@@ -108,12 +126,16 @@ process {
             # and optional data
             requestData = $paramCopy
         }
+
         if ($PassThru) {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
                 Send-OBS -NoResponse:$NoResponse
         }
+
 }
+
+
 } 
 

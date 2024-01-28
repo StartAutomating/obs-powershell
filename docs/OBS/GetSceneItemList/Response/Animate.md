@@ -1,25 +1,16 @@
 OBS.GetSceneItemList.Response.Animate()
 ---------------------------------------
 
-
-
-
 ### Synopsis
 Animates scene items
 
-
-
 ---
-
 
 ### Description
 
 Animates the motion of scene items within a frame.
 
-
-
 ---
-
 
 ### Examples
 > EXAMPLE 1
@@ -31,6 +22,5 @@ $stars.Animate(@{
     scale = 0.1        
 },"00:00:01")
 ```
-
 
 ---

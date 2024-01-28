@@ -1,25 +1,16 @@
 Get-OBS
 -------
 
-
-
-
 ### Synopsis
 Gets OBS
 
-
-
 ---
-
 
 ### Description
 
 Outputs OBS connection information and state.
 
-
-
 ---
-
 
 ### Examples
 > EXAMPLE 1
@@ -28,9 +19,7 @@ Outputs OBS connection information and state.
 Get-OBS
 ```
 
-
 ---
-
 
 ### Syntax
 ```PowerShell

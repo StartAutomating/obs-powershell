@@ -18,16 +18,19 @@ function Set-OBSWindowSource {
     [Alias('ItemValue','ItemName','WindowName','MainWindowTitle')]
     [string]
     $WindowTitle,
+
     # The number of the capture method.  By default, automatic (0).    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("method")]
     [int]
     $CaptureMethod,
+
     # The capture priority.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ValidateSet('ExactMatch','SameType','SameExecutable')]
     [string]
     $CapturePriority,
+
     # If set, will capture the cursor.    
     # This will be set by default.    
     # If explicitly set to false, the cursor will not be captured.    
@@ -35,29 +38,34 @@ function Set-OBSWindowSource {
     [ComponentModel.DefaultBindingProperty("cursor")]    
     [switch]
     $CaptureCursor,
+
     # If set, will capture the client area.    
     # This will be set by default.        
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("client_area")]    
     [switch]
     $ClientArea,
+
     # If set, will force SDR.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("force_sdr")]    
     [switch]
     $ForceSDR,
+
     # The name of the scene.    
     # If no scene name is provided, the current program scene will be used.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [Alias('SceneName')]
     [string]
     $Scene,
+
     # The name of the input.    
     # If no name is provided, "Display $($Monitor + 1)" will be the input source name.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [Alias('InputName')]
     [string]
     $Name,
+
     # If set, will check if the source exists in the scene before creating it and removing any existing sources found.    
     # If not set, you will get an error if a source with the same name exists.    
     [Parameter(ValueFromPipelineByPropertyName)]
@@ -75,6 +83,8 @@ function Set-OBSWindowSource {
         }
     $IncludeParameter = @()
     $ExcludeParameter = 'inputKind','sceneName','inputName'
+
+
     $DynamicParameters = [Management.Automation.RuntimeDefinedParameterDictionary]::new()            
     :nextInputParameter foreach ($paramName in ([Management.Automation.CommandMetaData]$baseCommand).Parameters.Keys) {
         if ($ExcludeParameter) {
@@ -97,6 +107,7 @@ function Set-OBSWindowSource {
         ))
     }
     $DynamicParameters
+
     }
         begin {
         $InputKind = "window_capture"
@@ -117,6 +128,7 @@ function Set-OBSWindowSource {
         $NoVerb            = $MyInvocationName -match '^[^\.\&][^-]+$'
         # and if there were any other parameters then name
         $NonNameParameters = @($PSBoundParameters.Keys) -ne 'Name'
+
         # If it is a get or there was no verb
         if ($IsGet -or $NoVerb) {
             $inputsOfKind = # Get all inputs of this kind
@@ -147,6 +159,7 @@ function Set-OBSWindowSource {
         if (-not $myParameters["Scene"]) {
             $myParameters["Scene"] = Get-OBSCurrentProgramScene
         }
+
         
         if (-not $myParameters["WindowTitle"]) {
             while ($_ -is [Diagnostics.Process] -and -not $_.MainWindowTitle) {
@@ -156,6 +169,7 @@ function Set-OBSWindowSource {
                 $WindowTitle = $myParameters["WindowTitle"] = "$($_.MainWindowTitle)"
             }
         }
+
         # Window capture is a bit of a tricky one.
         # In order to get the WindowTitle to match that OBS needs, we need to look thru the input properties list.
         # and for that, an input needs to exist.
@@ -167,10 +181,13 @@ function Set-OBSWindowSource {
                 $Name = "WindowCapture"
             }
         }
+
         
+
                                                 
         $myParameterData = [Ordered]@{}
         foreach ($parameter in $MyInvocation.MyCommand.Parameters.Values) {
+
             $bindToPropertyName = $null            
             
             foreach ($attribute in $parameter.Attributes) {
@@ -179,6 +196,7 @@ function Set-OBSWindowSource {
                     break
                 }
             }
+
             if (-not $bindToPropertyName) { continue }
             if ($myParameters.Contains($parameter.Name)) {
                 $myParameterData[$bindToPropertyName] = $myParameters[$parameter.Name]
@@ -187,6 +205,7 @@ function Set-OBSWindowSource {
                 }
             }
         }
+
         if ($null -ne $CaptureMethod) {
             $myParameterData["method"] = $CaptureMethod
         }
@@ -199,6 +218,7 @@ function Set-OBSWindowSource {
         elseif ($CapturePriority -eq 'SameExecutable') {
             $myParameterData["priority"] = 2
         }
+
         $addSplat = @{
             sceneName = $myParameters["Scene"]
             inputName = $myParameters["Name"]
@@ -206,11 +226,13 @@ function Set-OBSWindowSource {
             inputSettings = $myParameterData
             NoResponse = $myParameters["NoResponse"]
         }        
+
         # If -SceneItemEnabled was passed,
         if ($myParameters.Contains('SceneItemEnabled')) {
             # propagate it to Add-OBSInput.
             $addSplat.SceneItemEnabled = $myParameters['SceneItemEnabled'] -as [bool]
         }
+
         # Add the input.
         $outputAddedResult = Add-OBSInput @addSplat *>&1        
         $possibleWindows = Get-OBSInputPropertiesListPropertyItems -InputName $addSplat.inputName -PropertyName window
@@ -227,6 +249,7 @@ function Set-OBSWindowSource {
                 break
             }
         }
+
         # If -PassThru was passed
         if ($MyParameters["PassThru"]) {
             # pass it down to each command            
@@ -240,6 +263,7 @@ function Set-OBSWindowSource {
             
             return
         }
+
         if ($Force)  { # If we do, remove the input                    
             Remove-OBSInput -InputName $addSplat.inputName
             # and re-add our result.

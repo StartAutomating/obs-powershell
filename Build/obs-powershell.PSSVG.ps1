@@ -2,7 +2,7 @@
 
 $powerShellChevron = Invoke-RestMethod https://pssvg.start-automating.com/Examples/PowerShellChevron.svg
 
-$assetsPath = Join-Path $PSScriptRoot Assets
+$assetsPath = Join-Path ($PSScriptRoot | Split-Path) Assets
 
 if (-not (Test-Path $assetsPath)) {
     $null = New-Item -ItemType Directory -Path $assetsPath

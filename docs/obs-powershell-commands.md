@@ -1,8 +1,8 @@
 obs-powershell-commands
 -----------------------
 
-obs-powershell exports 359 commands
-(172 functions and 187 aliases)
+obs-powershell exports 361 commands
+(174 functions and 187 aliases)
 
 A good number of these commands directly correspond to an obs-websocket message.
 For a complete list, see [obs-powershell-websocket-commands](obs-powershell-websocket-commands.md).
@@ -64,12 +64,14 @@ Functions
 |[Get-OBSSceneItemId](Get-OBSSceneItemId.md)                                          |Get-OBSSceneItemId : GetSceneItemId                                          |
 |[Get-OBSSceneItemIndex](Get-OBSSceneItemIndex.md)                                    |Get-OBSSceneItemIndex : GetSceneItemIndex                                    |
 |[Get-OBSSceneItemLocked](Get-OBSSceneItemLocked.md)                                  |Get-OBSSceneItemLocked : GetSceneItemLocked                                  |
+|[Get-OBSSceneItemSource](Get-OBSSceneItemSource.md)                                  |Get-OBSSceneItemSource : GetSceneItemSource                                  |
 |[Get-OBSSceneItemTransform](Get-OBSSceneItemTransform.md)                            |Get-OBSSceneItemTransform : GetSceneItemTransform                            |
 |[Get-OBSSceneSceneTransitionOverride](Get-OBSSceneSceneTransitionOverride.md)        |Get-OBSSceneSceneTransitionOverride : GetSceneSceneTransitionOverride        |
 |[Get-OBSSceneTransition](Get-OBSSceneTransition.md)                                  |Get-OBSSceneTransition : GetSceneTransitionList                              |
 |[Get-OBSSourceActive](Get-OBSSourceActive.md)                                        |Get-OBSSourceActive : GetSourceActive                                        |
 |[Get-OBSSourceFilter](Get-OBSSourceFilter.md)                                        |Get-OBSSourceFilter : GetSourceFilter                                        |
 |[Get-OBSSourceFilterDefaultSettings](Get-OBSSourceFilterDefaultSettings.md)          |Get-OBSSourceFilterDefaultSettings : GetSourceFilterDefaultSettings          |
+|[Get-OBSSourceFilterKind](Get-OBSSourceFilterKind.md)                                |Get-OBSSourceFilterKind : GetSourceFilterKindList                            |
 |[Get-OBSSourceFilterList](Get-OBSSourceFilterList.md)                                |Get-OBSSourceFilterList : GetSourceFilterList                                |
 |[Get-OBSSourceScreenshot](Get-OBSSourceScreenshot.md)                                |Get-OBSSourceScreenshot : GetSourceScreenshot                                |
 |[Get-OBSSpecialInputs](Get-OBSSpecialInputs.md)                                      |Get-OBSSpecialInputs : GetSpecialInputs                                      |
@@ -245,12 +247,14 @@ Aliases
 |[Get-OBSSceneItemId](Get-OBSSceneItemId.md)                                          |
 |[Get-OBSSceneItemIndex](Get-OBSSceneItemIndex.md)                                    |
 |[Get-OBSSceneItemLocked](Get-OBSSceneItemLocked.md)                                  |
+|[Get-OBSSceneItemSource](Get-OBSSceneItemSource.md)                                  |
 |[Get-OBSSceneItemTransform](Get-OBSSceneItemTransform.md)                            |
 |[Get-OBSSceneSceneTransitionOverride](Get-OBSSceneSceneTransitionOverride.md)        |
 |[Get-OBSSceneTransition](Get-OBSSceneTransition.md)                                  |
 |[Get-OBSSourceActive](Get-OBSSourceActive.md)                                        |
 |[Get-OBSSourceFilter](Get-OBSSourceFilter.md)                                        |
 |[Get-OBSSourceFilterDefaultSettings](Get-OBSSourceFilterDefaultSettings.md)          |
+|[Get-OBSSourceFilterKind](Get-OBSSourceFilterKind.md)                                |
 |[Get-OBSSourceFilterList](Get-OBSSourceFilterList.md)                                |
 |[Get-OBSSourceScreenshot](Get-OBSSourceScreenshot.md)                                |
 |[Get-OBSSpecialInputs](Get-OBSSpecialInputs.md)                                      |

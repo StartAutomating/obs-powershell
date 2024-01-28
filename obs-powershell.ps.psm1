@@ -1,4 +1,5 @@
-[Include('*-*.ps1')]$PSScriptRoot
+$CommandsPath = (Join-Path $PSScriptRoot "Commands")
+[Include('*-*.ps1')]$CommandsPath
 
 $MyInvocation.MyCommand.ScriptBlock.Module.OnRemove = {
     Get-OBSEffect | Stop-OBSEffect

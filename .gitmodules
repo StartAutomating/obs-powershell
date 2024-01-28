@@ -1,0 +1,3 @@
+[submodule "obs-shaderfilter"]
+	path = obs-shaderfilter
+	url = https://github.com/exeldro/obs-shaderfilter.git

@@ -40,9 +40,9 @@ $maxRangeRestriction = "\<=\s{0,}(?<max>[\d\.-]+)"
 $obsFunctions = @()
 # and files we build.
 $filesBuilt   = @()
-
+Push-Location ($PSScriptRoot | Split-Path)
 # And determine where we want to store them
-$commandsPath = Join-Path $PSScriptRoot Commands
+$commandsPath = Join-Path $pwd Commands
 $requestsPath = Join-Path $commandsPath Requests
 
 # (create the directory if it didn't already exist)
@@ -61,6 +61,55 @@ $PostProcess = @{
             Add-Member NoteProperty SourceName $paramCopy["SourceName"] -Force -PassThru |
             Add-Member NoteProperty ImageWidth $paramCopy["ImageWidth"] -Force -PassThru |
             Add-Member NoteProperty ImageHeight $paramCopy["ImageHeight"] -Force -PassThru
+    }
+}
+
+$AdditionalParameter = @{
+    "Set-OBSVideoSettings" = {
+        param(
+        [ValidateScript({
+            $resolutionPresets = "4K", "1080p","720p"
+            if ($_ -notin $resolutionPresets -and 
+                $_ -notmatch "\d+x\d+") {
+                throw "Resolution must be '$($resolutionPresets -join "','")' or WidthxHeight"
+            }
+        })]
+        $Resolution
+        )
+    }
+}
+
+$PreProcess = @{
+    "Set-OBSVideoSettings" = {
+        if ($Resolution) {
+            $resolutionPresets = "4K", "1080p","720p"
+            $width, $height = 
+                switch ($resolution) {
+                    4K {
+                        3840
+                        2160
+                    }
+                    1080p {
+                        1920
+                        1080
+                    }
+                    720p {
+                        1280
+                        720
+                    }
+                    default {
+                        $_ -split 'x'
+                    }
+                }
+
+            $BaseWidth = $OutputWidth = 
+                $PSBoundParameters["BaseWidth"] = $PSBoundParameters["OutputWidth"] =
+                    $width
+
+            $BaseHeight = $OutputHeight = 
+                $PSBoundParameters["BaseHeight"] = $PSBoundParameters["OutputHeight"] =
+                    $height
+        }
     }
 }
 
@@ -352,3 +401,5 @@ $filesBuilt |
                 Add-Member NoteProperty Contents $file.Contents -Force -PassThru
         }
     }
+
+Pop-Location

@@ -16,18 +16,21 @@ function Set-OBSEqualizerFilter {
     [ValidateRange(-20,20)]
     [double]
     $Low,
+
     # The change in mid frequencies.    
     [Parameter(ValueFromPipelineByPropertyName)]    
     [ComponentModel.DefaultBindingProperty("mid")]
     [ValidateRange(-20,20)]
     [double]
     $Mid,
+
     # The change in high frequencies.    
     [Parameter(ValueFromPipelineByPropertyName)]    
     [ComponentModel.DefaultBindingProperty("high")]
     [ValidateRange(-20,20)]
     [double]
     $High,
+
     # If set, will remove a filter if one already exists.    
     # If this is not provided and the filter already exists, the settings of the filter will be changed.    
     [switch]
@@ -44,6 +47,8 @@ function Set-OBSEqualizerFilter {
         }
     $IncludeParameter = @()
     $ExcludeParameter = 'FilterKind','FilterSettings'
+
+
     $DynamicParameters = [Management.Automation.RuntimeDefinedParameterDictionary]::new()            
     :nextInputParameter foreach ($paramName in ([Management.Automation.CommandMetaData]$baseCommand).Parameters.Keys) {
         if ($ExcludeParameter) {
@@ -66,6 +71,7 @@ function Set-OBSEqualizerFilter {
         ))
     }
     $DynamicParameters
+
     }
         process {
         $myParameters = [Ordered]@{} + $PSBoundParameters
@@ -76,6 +82,7 @@ function Set-OBSEqualizerFilter {
                 
         $myParameterData = [Ordered]@{}
         foreach ($parameter in $MyInvocation.MyCommand.Parameters.Values) {
+
             $bindToPropertyName = $null            
             
             foreach ($attribute in $parameter.Attributes) {
@@ -84,6 +91,7 @@ function Set-OBSEqualizerFilter {
                     break
                 }
             }
+
             if (-not $bindToPropertyName) { continue }
             if ($myParameters.Contains($parameter.Name)) {
                 $myParameterData[$bindToPropertyName] = $myParameters[$parameter.Name]
@@ -99,6 +107,7 @@ function Set-OBSEqualizerFilter {
             filterKind = "basic_eq_filter"
             filterSettings = $myParameterData
         }
+
         if ($MyParameters["PassThru"]) {
             $addSplat.Passthru = $MyParameters["PassThru"]
             if ($MyInvocation.InvocationName -like 'Add-*') {
@@ -109,9 +118,11 @@ function Set-OBSEqualizerFilter {
             }
             return            
         }
+
         # Add the input.
         $outputAddedResult = Add-OBSSourceFilter @addSplat *>&1
         
+
         # If we got back an error
         if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
             # and that error was saying the source already exists, 
@@ -132,6 +143,7 @@ function Set-OBSEqualizerFilter {
                     $outputAddedResult = $null
                 }
             }
+
             # If the output was still an error
             if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
                 # use $psCmdlet.WriteError so that it shows the error correctly.

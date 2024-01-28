@@ -22,6 +22,7 @@ function Set-OBSVLCSource {
     [Alias('FullName','LocalFile','local_file','Playlist')]
     [string[]]
     $FilePath,
+
     # What to select in the playlist.    
     # If a number is provided, this will select an index.    
     # If a string is provided, this will select the whole name or last part of a name, accepting wildcards.    
@@ -29,6 +30,7 @@ function Set-OBSVLCSource {
     [Parameter(ValueFromPipelineByPropertyName)]
     [ValidateScript({
     $validTypeList = [System.Int32],[System.String],[System.IO.FileInfo]
+    
     $thisType = $_.GetType()
     $IsTypeOk =
         $(@( foreach ($validType in $validTypeList) {
@@ -36,6 +38,7 @@ function Set-OBSVLCSource {
                 $true;break
             }
         }))
+    
     if (-not $isTypeOk) {
         throw "Unexpected type '$(@($thisType)[0])'.  Must be 'int','string','System.IO.FileInfo'."
     }
@@ -44,48 +47,57 @@ function Set-OBSVLCSource {
     
     [Alias('SelectIndex','SelectName')]
     $Select,
+
     # If set, will shuffle the playlist            
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("shuffle")]
     [switch]
     $Shuffle,
+
     # If set, the playlist will loop.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("loop")]
     [Alias('Looping')]
     [switch]
     $Loop,
+
     # If set, will show subtitles, if available.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("subtitle_enable")]
     [Alias('ShowSubtitles','Subtitles')]
     [switch]
     $Subtitle,
+
     # The selected audio track number.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("track")]    
     [int]
     $AudioTrack,
+
     # The selected subtitle track number.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("subtitle")]    
     [int]
     $SubtitleTrack,
+
     # The name of the scene.    
     # If no scene name is provided, the current program scene will be used.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [string]
     $Scene,
+
     # The name of the input.    
     # If no name is provided, the last segment of the URI or file path will be the input name.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [string]
     $Name,
+
     # If set, will check if the source exists in the scene before creating it and removing any existing sources found.    
     # If not set, you will get an error if a source with the same name exists.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [switch]
     $Force,
+
     # If set, will fit the input to the screen.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [switch]
@@ -102,6 +114,8 @@ function Set-OBSVLCSource {
         }
     $IncludeParameter = @()
     $ExcludeParameter = 'inputKind','sceneName','inputName'
+
+
     $DynamicParameters = [Management.Automation.RuntimeDefinedParameterDictionary]::new()            
     :nextInputParameter foreach ($paramName in ([Management.Automation.CommandMetaData]$baseCommand).Parameters.Keys) {
         if ($ExcludeParameter) {
@@ -124,9 +138,11 @@ function Set-OBSVLCSource {
         ))
     }
     $DynamicParameters
+
     }
         begin {
         filter OutputAndFitToScreen {
+        
                     if ($FitToScreen -and $_.FitToScreen) {
                         $_.FitToScreen()
                     }
@@ -151,6 +167,7 @@ function Set-OBSVLCSource {
         $NoVerb            = $MyInvocationName -match '^[^\.\&][^-]+$'
         # and if there were any other parameters then name
         $NonNameParameters = @($PSBoundParameters.Keys) -ne 'Name'
+
         # If it is a get or there was no verb
         if ($IsGet -or $NoVerb) {
             $inputsOfKind = # Get all inputs of this kind
@@ -184,6 +201,7 @@ function Set-OBSVLCSource {
                 
         $myParameterData = [Ordered]@{}
         foreach ($parameter in $MyInvocation.MyCommand.Parameters.Values) {
+
             $bindToPropertyName = $null            
             
             foreach ($attribute in $parameter.Attributes) {
@@ -192,6 +210,7 @@ function Set-OBSVLCSource {
                     break
                 }
             }
+
             if (-not $bindToPropertyName) { continue }
             if ($myParameters.Contains($parameter.Name)) {
                 $myParameterData[$bindToPropertyName] = $myParameters[$parameter.Name]
@@ -225,6 +244,7 @@ function Set-OBSVLCSource {
         if (-not $Name) {
             $Name = $myParameters["Name"] = $FilePathItem.Name
         }
+
         $addSplat = [Ordered]@{
             sceneName = $myParameters["Scene"]
             inputKind = $InputKind
@@ -232,9 +252,11 @@ function Set-OBSVLCSource {
             inputName = $Name
             NoResponse = $myParameters["NoResponse"]
         }
+
         if ($myParameters.Contains('SceneItemEnabled')) {
             $addSplat.SceneItemEnabled = $myParameters['SceneItemEnabled'] -as [bool]
         }
+
         # If -PassThru was passed
         if ($MyParameters["PassThru"]) {
             # pass it down to each command
@@ -252,8 +274,10 @@ function Set-OBSVLCSource {
             }
             return
         }
+
         # Add the input.
         $outputAddedResult = Add-OBSInput @addSplat *>&1
+
         # If we got back an error
         if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
             # and that error was saying the source already exists, 
@@ -273,6 +297,7 @@ function Set-OBSVLCSource {
                     $outputAddedResult = $null
                 }
             }
+
             # If the output was still an error
             if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
                 # use $psCmdlet.WriteError so that it shows the error correctly.

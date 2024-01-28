@@ -14,33 +14,39 @@ function Set-OBSMarkdownSource {
     [Parameter(ValueFromPipelineByPropertyName)]
     [string]
     $Markdown,
+
     # The width of the browser source.    
     # If none is provided, this will be the output width of the video settings.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("width")]
     [int]
     $Width,
+
     # The width of the browser source.    
     # If none is provided, this will be the output height of the video settings.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("height")]
     [int]
     $Height,
+
     # The css style used to render the markdown.     
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("css")]
     [string]
     $CSS = "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+
     # The name of the scene.    
     # If no scene name is provided, the current program scene will be used.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [string]
     $Scene,
+
     # The name of the input.    
     # If no name is provided, the last segment of the URI or file path will be the input name.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [string]
     $Name,
+
     # If set, will check if the source exists in the scene before creating it and removing any existing sources found.    
     # If not set, you will get an error if a source with the same name exists.    
     [Parameter(ValueFromPipelineByPropertyName)]
@@ -58,6 +64,8 @@ function Set-OBSMarkdownSource {
         }
     $IncludeParameter = @()
     $ExcludeParameter = 'inputKind','sceneName','inputName'
+
+
     $DynamicParameters = [Management.Automation.RuntimeDefinedParameterDictionary]::new()            
     :nextInputParameter foreach ($paramName in ([Management.Automation.CommandMetaData]$baseCommand).Parameters.Keys) {
         if ($ExcludeParameter) {
@@ -80,6 +88,7 @@ function Set-OBSMarkdownSource {
         ))
     }
     $DynamicParameters
+
     }
         begin {
         $inputKind = "markdown_source"
@@ -87,9 +96,11 @@ function Set-OBSMarkdownSource {
     }
         process {
         $myParameters = [Ordered]@{} + $PSBoundParameters
+
         $IsGet             = $MyInvocation.InvocationName -like "Get-*"
         $NoVerb            = $MyInvocation.InvocationName -match '^[^-]+$'
         $NonNameParameters = @($PSBoundParameters.Keys) -ne 'Name'
+
         if (
             $IsGet -or 
             ($NoVerb -and -not $NonNameParameters)
@@ -113,12 +124,14 @@ function Set-OBSMarkdownSource {
             $myParameters["Width"]  = $width = $videoSettings.outputWidth
             $myParameters["Height"] = $height = $videoSettings.outputHeight
         }
+
         if (-not $myParameters["Scene"]) {
             $myParameters["Scene"] = Get-OBSCurrentProgramScene
         }
                 
         $myParameterData = [Ordered]@{}
         foreach ($parameter in $MyInvocation.MyCommand.Parameters.Values) {
+
             $bindToPropertyName = $null            
             
             foreach ($attribute in $parameter.Attributes) {
@@ -127,6 +140,7 @@ function Set-OBSMarkdownSource {
                     break
                 }
             }
+
             if (-not $bindToPropertyName) { continue }
             if ($myParameters.Contains($parameter.Name)) {
                 $myParameterData[$bindToPropertyName] = $myParameters[$parameter.Name]
@@ -135,6 +149,7 @@ function Set-OBSMarkdownSource {
                 }
             }
         }
+
         $markdownAsUri = $null
         if ($Markdown -like '*.md') {
             $markdownAsUri = $markdown -as [uri]
@@ -143,6 +158,7 @@ function Set-OBSMarkdownSource {
                 $myParameterData["markdown_source"] = 1
             }
             else {
+
             }
         } else {
             $myParameterData["text"] = $Markdown
@@ -161,6 +177,7 @@ function Set-OBSMarkdownSource {
                     "Markdown"
                 }
         }            
+
         $addSplat = [Ordered]@{
             sceneName = $myParameters["Scene"]
             inputKind = "markdown_source"
@@ -173,6 +190,7 @@ function Set-OBSMarkdownSource {
             # propagate it to Add-OBSInput.
             $addSplat.SceneItemEnabled = $myParameters['SceneItemEnabled'] -as [bool]
         }
+
         # If -PassThru was passed
         if ($MyParameters["PassThru"]) {
             # pass it down to each command
@@ -193,6 +211,7 @@ function Set-OBSMarkdownSource {
         
         # Add the input.
         $outputAddedResult = Add-OBSInput @addSplat *>&1
+
         # If we got back an error
         if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
             # and that error was saying the source already exists, 
@@ -212,6 +231,7 @@ function Set-OBSMarkdownSource {
                     $outputAddedResult = $null
                 }
             }
+
             # If the output was still an error
             if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
                 # use $psCmdlet.WriteError so that it shows the error correctly.

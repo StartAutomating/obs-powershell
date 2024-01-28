@@ -21,6 +21,7 @@ function Set-OBSMediaSource {
     [Alias('FullName','LocalFile','local_file')]
     [string]
     $FilePath,
+
     # If set, the source will close when it is inactive.    
     # By default, this will be set to true.    
     # To explicitly set it to false, use -CloseWhenInactive:$false    
@@ -28,18 +29,21 @@ function Set-OBSMediaSource {
     [ComponentModel.DefaultBindingProperty("close_when_inactive")]
     [switch]
     $CloseWhenInactive,
+
     # If set, the source will automatically restart.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("looping")]
     [Alias('Looping')]
     [switch]
     $Loop,
+
     # If set, will use hardware decoding, if available.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("hw_decode")]
     [Alias('HardwareDecoding','hw_decode')]
     [switch]
     $UseHardwareDecoding,
+
     # If set, will clear the output on the end of the media.    
     # If this is set to false, the media will freeze on the last frame.    
     # This is set to true by default.    
@@ -49,27 +53,32 @@ function Set-OBSMediaSource {
     [Alias('ClearOnEnd','NoFreezeFrameOnEnd')]
     [switch]
     $ClearOnMediaEnd,
+
     # Any FFMpeg demuxer options.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("ffmpeg_options")]
     [Alias('FFMpegOptions', 'FFMpeg_Options')]
     [string]
     $FFMpegOption,
+
     # The name of the scene.    
     # If no scene name is provided, the current program scene will be used.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [string]
     $Scene,
+
     # The name of the input.    
     # If no name is provided, the last segment of the URI or file path will be the input name.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [string]
     $Name,
+
     # If set, will check if the source exists in the scene before creating it and removing any existing sources found.    
     # If not set, you will get an error if a source with the same name exists.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [switch]
     $Force,
+
     # If set, will fit the input to the screen.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [switch]
@@ -86,6 +95,8 @@ function Set-OBSMediaSource {
         }
     $IncludeParameter = @()
     $ExcludeParameter = 'inputKind','sceneName','inputName'
+
+
     $DynamicParameters = [Management.Automation.RuntimeDefinedParameterDictionary]::new()            
     :nextInputParameter foreach ($paramName in ([Management.Automation.CommandMetaData]$baseCommand).Parameters.Keys) {
         if ($ExcludeParameter) {
@@ -108,9 +119,11 @@ function Set-OBSMediaSource {
         ))
     }
     $DynamicParameters
+
     }
         begin {
         filter OutputAndFitToScreen {
+        
                     if ($FitToScreen -and $_.FitToScreen) {
                         $_.FitToScreen()
                     }
@@ -135,6 +148,7 @@ function Set-OBSMediaSource {
         $NoVerb            = $MyInvocationName -match '^[^\.\&][^-]+$'
         # and if there were any other parameters then name
         $NonNameParameters = @($PSBoundParameters.Keys) -ne 'Name'
+
         # If it is a get or there was no verb
         if ($IsGet -or $NoVerb) {
             $inputsOfKind = # Get all inputs of this kind
@@ -168,6 +182,7 @@ function Set-OBSMediaSource {
                 
         $myParameterData = [Ordered]@{}
         foreach ($parameter in $MyInvocation.MyCommand.Parameters.Values) {
+
             $bindToPropertyName = $null            
             
             foreach ($attribute in $parameter.Attributes) {
@@ -176,6 +191,7 @@ function Set-OBSMediaSource {
                     break
                 }
             }
+
             if (-not $bindToPropertyName) { continue }
             if ($myParameters.Contains($parameter.Name)) {
                 $myParameterData[$bindToPropertyName] = $myParameters[$parameter.Name]
@@ -184,11 +200,14 @@ function Set-OBSMediaSource {
                 }
             }
         }
+
         if ((Test-Path $FilePath)) {
             $FilePathItem = Get-Item -Path $FilePath
             $myParameterData['local_file'] = $FilePathItem.FullName -replace '/', '\'            
         }
+
         
+
         if ($myParameters['InputSettings']) {
             $keys = 
                 @(if ($myParameters['InputSettings'] -is [Collections.IDictionary]) {
@@ -198,9 +217,11 @@ function Set-OBSMediaSource {
                         $prop.Name
                     }
                 })
+
             foreach ($key in $keys) {
                 $myParameterData[$key] = $myParameters['InputSettings'].$key
             }
+
             $myParameterData.remove('inputSettings')
         }
  
@@ -214,6 +235,7 @@ function Set-OBSMediaSource {
                 }
             
         }
+
         $addSplat = [Ordered]@{
             sceneName = $myParameters["Scene"]
             inputKind = $InputKind
@@ -221,9 +243,11 @@ function Set-OBSMediaSource {
             inputName = $Name
             NoResponse = $myParameters["NoResponse"]
         }
+
         if ($myParameters.Contains('SceneItemEnabled')) {
             $addSplat.SceneItemEnabled = $myParameters['SceneItemEnabled'] -as [bool]
         }
+
         # If -PassThru was passed
         if ($MyParameters["PassThru"]) {
             # pass it down to each command
@@ -241,8 +265,10 @@ function Set-OBSMediaSource {
             }
             return
         }
+
         # Add the input.
         $outputAddedResult = Add-OBSInput @addSplat *>&1
+
         # If we got back an error
         if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
             # and that error was saying the source already exists, 
@@ -262,6 +288,7 @@ function Set-OBSMediaSource {
                     $outputAddedResult = $null
                 }
             }
+
             # If the output was still an error
             if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
                 # use $psCmdlet.WriteError so that it shows the error correctly.

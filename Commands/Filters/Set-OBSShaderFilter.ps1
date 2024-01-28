@@ -20,17 +20,20 @@ function Set-OBSShaderFilter {
     # The text of the shader    
     [Parameter(ValueFromPipelineByPropertyName)]
     [string]$ShaderText,
+
     # The file path to the shader, or the short file name of the shader.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [Alias('ShaderName')]
     [string]
     $ShaderFile,
+
     # Any other settings for the shader.    
     # To see what the name of a shader setting is, change it in the user interface and then get the input's filters.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [Alias('ShaderSettings')]
     [PSObject]
     $ShaderSetting,
+
     # If set, will remove a filter if one already exists.    
     # If this is not provided and the filter already exists, the settings of the filter will be changed.    
     [switch]
@@ -47,6 +50,8 @@ function Set-OBSShaderFilter {
         }
     $IncludeParameter = @()
     $ExcludeParameter = 'FilterKind','FilterSettings'
+
+
     $DynamicParameters = [Management.Automation.RuntimeDefinedParameterDictionary]::new()            
     :nextInputParameter foreach ($paramName in ([Management.Automation.CommandMetaData]$baseCommand).Parameters.Keys) {
         if ($ExcludeParameter) {
@@ -69,6 +74,7 @@ function Set-OBSShaderFilter {
         ))
     }
     $DynamicParameters
+
     }
         process {
         $myParameters = [Ordered]@{} + $PSBoundParameters
@@ -76,6 +82,7 @@ function Set-OBSShaderFilter {
         if (-not $myParameters["FilterName"]) {
             $filterName = $myParameters["FilterName"] = "Shader"
         }
+
         $shaderSettings = [Ordered]@{}
         if ($ShaderText) {
             $shaderSettings.shader_text = $ShaderText
@@ -93,15 +100,19 @@ function Set-OBSShaderFilter {
                             Get-ChildItem -Filter obs-shaderfilter |
                             Get-ChildItem -Filter examples |
                             Get-ChildItem -File # get all of the files in this directory
+
                 }
+
                 $foundShaderFile = $script:CachedOBSShaderFilters |
                     Where-Object Name -Like "$shaderFile*" |
                     Select-Object -First 1
+
                 if ($foundShaderFile) {
                     $shaderSettings.shader_file_name = $foundShaderFile.FullName -replace "\\", "/"
                 }
             }
         }
+
         if ($shaderSetting) {
             if ($shaderSetting -is [Collections.IDictionary]) {
                 foreach ($kv in $shaderSetting.GetEnumerator()) {
@@ -113,6 +124,7 @@ function Set-OBSShaderFilter {
                 }
             }
         }
+
         if ($shaderSettings.shader_file_name) {
             $shaderSettings.from_file = $true
         }
@@ -125,6 +137,7 @@ function Set-OBSShaderFilter {
             filterSettings = $shaderSettings
             NoResponse = $myParameters["NoResponse"]
         }        
+
         if ($MyParameters["PassThru"]) {
             $addSplat.Passthru = $MyParameters["PassThru"]
             if ($MyInvocation.InvocationName -like 'Add-*') {
@@ -135,8 +148,10 @@ function Set-OBSShaderFilter {
             }
             return            
         }
+
         # Add the filter.
         $outputAddedResult = Add-OBSSourceFilter @addSplat *>&1
+
         # If we got back an error
         if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
             # and that error was saying the source already exists, 
@@ -157,6 +172,7 @@ function Set-OBSShaderFilter {
                     $outputAddedResult = $null
                 }
             }
+
             # If the output was still an error
             if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
                 # use $psCmdlet.WriteError so that it shows the error correctly.

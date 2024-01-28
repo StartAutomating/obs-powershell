@@ -1,16 +1,10 @@
 Get-OBSEffect
 -------------
 
-
-
-
 ### Synopsis
 Gets OBS Effects
 
-
-
 ---
-
 
 ### Description
 
@@ -26,45 +20,24 @@ They can also be defined in a function or script named like:
 * `*.OBS.Effect.*`
 * `*.OBS.Effects.*`
 
-
-
 ---
-
 
 ### Related Links
 * [Import-OBSEffect](Import-OBSEffect.md)
 
-
-
 * [Remove-OBSEffect](Remove-OBSEffect.md)
-
-
-
-
 
 ---
 
-
 ### Parameters
 #### **Name**
-
 The name of the effect.
-
-
-
-
-
 
 |Type      |Required|Position|PipelineInput        |Aliases   |
 |----------|--------|--------|---------------------|----------|
 |`[String]`|false   |1       |true (ByPropertyName)|EffectName|
 
-
-
-
-
 ---
-
 
 ### Syntax
 ```PowerShell

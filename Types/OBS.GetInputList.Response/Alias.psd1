@@ -1,0 +1,3 @@
+@{
+    SourceName = 'inputName'
+}

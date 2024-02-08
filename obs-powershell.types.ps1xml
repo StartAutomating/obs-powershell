@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-16"?>
-<!-- Generated with EZOut 2.0.3: Install-Module EZOut or https://github.com/StartAutomating/EZOut -->
+<!-- Generated with EZOut 2.0.4: Install-Module EZOut or https://github.com/StartAutomating/EZOut -->
 <Types>
   <Type>
     <Name>OBS.GetInputList.Response</Name>
     <Members>
+      <AliasProperty>
+        <Name>SourceName</Name>
+        <ReferencedMemberName>inputName</ReferencedMemberName>
+      </AliasProperty>
       <ScriptMethod>
         <Name>Mute</Name>
         <Script>

@@ -717,6 +717,382 @@ $this | Set-OBSInputVolume -InputVolumeMul $Multiple
     </Members>
   </Type>
   <Type>
+    <Name>OBS.Input</Name>
+    <Members>
+      <AliasProperty>
+        <Name>SourceName</Name>
+        <ReferencedMemberName>inputName</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptMethod>
+        <Name>Mute</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Mutes an input
+.DESCRIPTION
+    Mutes the audio of an OBS Input
+.LINK
+    Set-OBSInputMute
+#&gt;
+param(
+# If set, returns the message used to mute
+[switch]
+$PassThru
+)
+
+$this |
+    Set-OBSInputMute -InputMuted -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Next</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Nexts an input
+.DESCRIPTION
+    Sends a "Next" message to an input.   
+.LINK
+    Send-OBSTriggerMediaInputAction
+#&gt;
+param(
+# If set, will return the message instead of sending it now.
+[switch]
+$PassThru
+)
+
+$this | Send-OBSTriggerMediaInputAction -MediaAction "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_NEXT" -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Pause</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Pauses an input
+.DESCRIPTION
+    Sends a "Pause" message to an input.   
+.LINK
+    Send-OBSTriggerMediaInputAction
+#&gt;
+param(
+# If set, will return the message instead of sending it now.
+[switch]
+$PassThru
+)
+
+$this | Send-OBSTriggerMediaInputAction -MediaAction "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_PAUSE" -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Play</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Plays an input
+.DESCRIPTION
+    Sends a "Play" message to an input.   
+.LINK
+    Send-OBSTriggerMediaInputAction
+#&gt;
+param(
+# If set, will return the message instead of sending it now.
+[switch]
+$PassThru
+)
+
+$this | Send-OBSTriggerMediaInputAction -MediaAction "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_PLAY" -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Previous</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Previouss an input
+.DESCRIPTION
+    Sends a "Previous" message to an input.   
+.LINK
+    Send-OBSTriggerMediaInputAction
+#&gt;
+param(
+# If set, will return the message instead of sending it now.
+[switch]
+$PassThru
+)
+
+$this | Send-OBSTriggerMediaInputAction -MediaAction "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_PREVIOUS" -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Remove</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Removes an input
+.DESCRIPTION
+    Removes an OBS Input
+.LINK
+    Remove-OBSInput
+#&gt;
+$this | Remove-OBSInput
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Restart</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Restarts an input
+.DESCRIPTION
+    Sends a "Restart" message to an input.   
+.LINK
+    Send-OBSTriggerMediaInputAction
+#&gt;
+param(
+# If set, will return the message instead of sending it now.
+[switch]
+$PassThru
+)
+
+$this | Send-OBSTriggerMediaInputAction -MediaAction "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_RESTART" -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Stop</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Stops an input
+.DESCRIPTION
+    Sends a "Stop" message to an input.   
+.LINK
+    Send-OBSTriggerMediaInputAction
+#&gt;
+param(
+# If set, will return the message instead of sending it now.
+[switch]
+$PassThru
+)
+
+$this | Send-OBSTriggerMediaInputAction -MediaAction "OBS_WEBSOCKET_MEDIA_INPUT_ACTION_STOP" -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Unmute</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Mutes an input
+.DESCRIPTION
+    Mutes the audio of an OBS Input
+.LINK
+    Set-OBSInputMute
+#&gt;
+param(
+# If set, returns the message used to unmute.
+[switch]
+$PassThru
+)
+
+$this |
+    Set-OBSInputMute -InputMuted:$false -PassThru:$PassThru
+                    </Script>
+      </ScriptMethod>
+      <ScriptProperty>
+        <Name>CurrentTime</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets an input's current time
+.DESCRIPTION
+    Gets an input's current time, if applicable
+.LINK
+    Get-OBSMediaInputStatus
+#&gt;
+param()
+
+$mediaCursor = ($this | Get-OBSMediaInputStatus).mediaCursor -as [double]
+if (-not $mediaCursor) { $mediaCursor = [double]0}
+[timespan]::FromMilliseconds($mediaCursor)
+                    </GetScriptBlock>
+        <SetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Sets an input's current time
+.DESCRIPTION
+    Sets an input's current time.
+.LINK
+    Send-OBSMediaInputCursor
+#&gt;
+param()
+
+$mediaCursor = 0
+
+$PassThru = $false
+foreach ($arg in $args) {
+    if ($arg -is [double]) {
+        $mediaCursor = $arg
+    }
+    elseif ($arg -as [timespan]) {
+        $mediaCursor = $arg -as [timespan].TotalMilliseconds
+    }
+    if ($arg -is [bool]) {
+        $PassThru = $true
+    }
+}
+$this | Set-OBSMediaInputCursor -MediaCursor $mediaCursor  -PassThru:$PassThru
+                    </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Filters</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets an input's filters
+.DESCRIPTION
+    Gets the filters related to an OBS input.
+.EXAMPLE
+     $obsPowerShellIcon = Show-OBS -Uri https://obs-powershell.start-automating.com/Assets/obs-powershell-animated-icon.svg
+     $obsPowerShellIcon | Set-OBSColorFilter -Opacity .5
+     $obsPowerShellIcon.Input.Filters
+.LINK
+    Get-OBSSourceFilterList
+#&gt;
+Get-OBSSourceFilterList -SourceName $this.InputName
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>MonitorType</Name>
+        <GetScriptBlock>
+                        $this | Get-OBSInputAudioMonitorType
+                    </GetScriptBlock>
+        <SetScriptBlock>
+                        param(
+[string]
+$MonitorType
+)
+$validValues = "Monitor", "MonitorAndOutput", "None","Off","OBS_MONITORING_TYPE_MONITOR_ONLY","OBS_MONITORING_TYPE_MONITOR_AND_OUTPUT","OBS_MONITORING_TYPE_MONITOR_ONLY"
+
+if ($MonitorType -notin $validValues) {
+    throw "Invalid Value: '$MonitorType' is not in '$($validValues -join "','")'"
+}
+
+$realMonitorType = if ($MonitorType -like 'obs*') {
+    $MonitorType.ToUpper()
+} elseif ($MonitorType -eq 'Monitor') {
+    "OBS_MONITORING_TYPE_MONITOR_ONLY"
+} elseif ($MonitorType -eq 'MonitorAndOutput') {
+    "OBS_MONITORING_TYPE_MONITOR_AND_OUTPUT"
+} else {
+    "OBS_MONITORING_TYPE_NONE"
+}
+
+$this | Set-OBSInputAudioMonitorType -MonitorType $realMonitorType
+                    </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>SceneItem</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets an input's scene items
+.DESCRIPTION
+    Gets the scene items associated with an input.
+#&gt;
+Get-obsscene | 
+    Select-Object -ExpandProperty Scenes | 
+    Get-OBSSceneItem |    
+    Where-Object SourceName -EQ $this.InputName |
+    Where-Object InputKind -EQ $this.InputKind
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Settings</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets an input's settings
+.DESCRIPTION
+    Gets the current settings for an OBS input.
+.EXAMPLE
+     $obsPowerShellIcon = Show-OBS -Uri https://obs-powershell.start-automating.com/Assets/obs-powershell-animated-icon.svg
+     $obsPowerShellIcon.Input.Settings     
+.LINK
+    Get-OBSInputSettings
+#&gt;
+(Get-OBSInputSettings -InputName $this.InputName).inputSettings
+                    </GetScriptBlock>
+        <SetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Sets an input's settings
+.DESCRIPTION
+    Changes the settings for an OBS input.
+.LINK
+    Set-OBSInputSettings
+#&gt;
+param()
+Set-OBSInputSettings -InputName $this.InputName -InputSettings $args[0]
+                    </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Status</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets an input's status
+.DESCRIPTION
+    Gets the media status of an OBS input.
+.LINK
+    Get-OBSMediaInputStatus
+#&gt;
+param()
+$this | Get-OBSMediaInputStatus
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Volume</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets an input's volume
+.DESCRIPTION
+    Gets an OBS input's volume mulitplier
+.LINK
+    Get-OBSInputVolume
+#&gt;
+($this | Get-OBSInputVolume).inputVolumeMul
+                    </GetScriptBlock>
+        <SetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Sets an input's volume
+.DESCRIPTION
+    Sets an OBS input's volume mulitplier.
+
+    This is normally between 0 (no sound) and 1 (normal levels).
+    
+    A source can be made up to 20 times the original volume.
+.LINK
+    Set-OBSInputVolume
+#&gt;
+param(
+[double]
+$Multiple
+)
+
+# If multiple is less than zero, clamp it to avoid errors
+if ($Multiple -lt 0) { $Multiple = 0}
+# If multiple is greater than 20, claim it to avoid errors (and check your hearing)
+if ($Multiple -gt 20) { $Multiple = 20} 
+
+$this | Set-OBSInputVolume -InputVolumeMul $Multiple
+                    </SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
     <Name>OBS.Input.Color.Source.V3</Name>
     <Members>
       <ScriptMethod>

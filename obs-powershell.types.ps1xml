@@ -378,754 +378,6 @@ $this | Set-OBSInputVolume -InputVolumeMul $Multiple
     </Members>
   </Type>
   <Type>
-    <Name>OBS.GetSceneItemList.Response</Name>
-    <Members>
-      <AliasProperty>
-        <Name>Hide</Name>
-        <ReferencedMemberName>Disable</ReferencedMemberName>
-      </AliasProperty>
-      <AliasProperty>
-        <Name>Show</Name>
-        <ReferencedMemberName>Enable</ReferencedMemberName>
-      </AliasProperty>
-      <ScriptMethod>
-        <Name>Animate</Name>
-        <Script>
-                        &lt;#
-.SYNOPSIS
-    Animates scene items
-.DESCRIPTION
-    Animates the motion of scene items within a frame.
-.EXAMPLE
-    $stars = Add-OBSBrowserSource -URI https://pssvg.start-automating.com/Examples/Stars.svg
-    $stars.FitToScreen()
-    $stars.Animate(@{
-        scale = 0.1        
-    },"00:00:01")
-#&gt;
-param(
-)
-
-filter ToPosition {
-    param(
-    [switch]
-    $Width,
-
-    [switch]
-    $Height
-    )
-
-    
-    if ($_ -is [string] -and $_ -match '%$') {
-        $_ = $_ -replace '%$' -as [double]
-        if (-not $script:CachedOBSVideoSettings) {
-            $script:CachedOBSVideoSettings = Get-OBSVideoSettings
-        }
-        $videoSettings = $script:CachedOBSVideoSettings
-        if ($Width) {
-            $_/100 * $videoSettings.baseWidth
-        }
-        if ($Height) {
-            $_/100 * $videoSettings.baseHeight
-        }
-        
-    }
-    elseif ($_ -is [double] -or $_ -is [int]) {
-        if ($_ -is [double] -and $_ -ge 0 -and $_ -lt 1) {
-            if (-not $script:CachedOBSVideoSettings) {
-                $script:CachedOBSVideoSettings = Get-OBSVideoSettings
-            }
-            $videoSettings = $script:CachedOBSVideoSettings
-            if ($Width) {
-                $_ * $videoSettings.baseWidth
-            }
-            if ($Height) {
-                $_ * $videoSettings.baseHeight
-            }
-            
-        } else {
-            [int]$_
-        }
-    }
-}
-
-filter ToScale {
-    if ($_ -is [string] -and $_ -match '%$') {
-        $_ = $_ -replace '%$' -as [double]
-        $_/100
-    }
-    elseif ($_ -is [double] -or $_ -is [int]) {
-        if ($_ -is [double] -and $_ -ge 0 -and $_ -le 1) {
-            $_
-        } else {
-            [double]$_/100
-        }
-    }
-}
-
-$nextTimeSpan = [timespan]0
-
-$keyNames = 'positionX', 'positionY', 'scaleX','scaleY', 'cropBottom', 'cropLeft', 'cropRight', 'cropTop', 'rotation'
-$keyAliases = [Ordered]@{'Rotate'='rotation'}
-$duplicatedKeyAliases = [Ordered]@{
-    'position' = 'positionX', 'positionY'
-    'scale' = 'scaleX', 'scaleY'
-    'crop' = 'cropBottom', 'cropLeft', 'cropRight', 'cropTop'
-}
-foreach ($position in 'X','Y') {
-    $keyAliases[$position] = "position$position"
-}
-foreach ($cropType in 'Bottom','Left', 'Right', 'Top') {
-    $keyAliases[$cropType] = "crop$cropType"
-}
-   
-$allSteps = @()
-
-
-$originalTransform = $this | Get-OBSSceneItemTransform
-$lastFrom = 
-    if ($originalTransform -is [Collections.IDictionary]) {
-        [Ordered]@{} + $from
-    } else {
-        $newFrom = [Ordered]@{}
-        foreach ($property in $originalTransform.psobject.properties) {
-            $newFrom[$property.Name] = $property.Value
-        }
-        $newFrom
-    }
-
-$totalTimeSpan = [timespan]0
-
-# We want to walk over every argument and turn them into a series of animations
-
-$PassThru   = $false
-
-$AllArgs = @($args)
-
-$allSteps = @(
-:NextArgument for ($argIndex = 0 ; $argIndex -lt $allArgs.Length; $argIndex++) {
-    $arg = $allArgs[$argIndex]
-    # If the arg is a timespan, we want to track this
-    if ($arg -as [timespan]) {
-        $nextTimeSpan = $arg -as [timespan]
-    } elseif ($arg -is [double] -or $arg -is [int]) {
-        $nextTimeSpan = [timespan]::fromSeconds($arg)
-    }
-    elseif ($arg -is [bool]) {
-        if ($arg) {
-            $PassThru = $true
-        }
-    }
-    else {
-        $currentTo = 
-            if ($arg -isnot [Collections.IDictionary]) {
-                $newTo = [Ordered]@{}
-                foreach ($property in $arg.psobject.properties) {
-                    $newTo[$property.Name] = $property.Value
-                }
-                $newTo
-            } else {
-                [Ordered]@{} + $arg
-            }
-
-        $badKey = 
-            @(foreach ($k in @($currentTo.Keys)) {
-                if ($k -notin $keyNames) {
-                    if ($keyAliases[$k]) {
-                        $currentTo[$keyAliases[$k]] = $currentTo[$k]
-                        $currentTo.Remove($k)
-                    } 
-                    elseif ($duplicatedKeyAliases[$k]) {
-                        foreach ($duplicateKey in $duplicatedKeyAliases[$k]) {
-                            $currentTo[$duplicateKey] = $currentTo[$k]
-                        }
-                        
-                        $currentTo.Remove($k)
-                    }
-                    else {
-                        $k
-                    }
-                }
-            })
-
-        foreach ($checkKeyValue in @($currentTo.GetEnumerator())) {
-            
-            $newValue = 
-                switch ($checkKeyValue.Key) {
-                    positionX { $checkKeyValue.Value | ToPosition -Width }
-                    positionY { $checkKeyValue.Value | ToPosition -Height }
-                    cropLeft { $checkKeyValue.Value | ToPosition -Width }
-                    cropRight { $checkKeyValue.Value | ToPosition -Width }
-                    cropTop { $checkKeyValue.Value | ToPosition -Height }
-                    cropBottom { $checkKeyValue.Value | ToPosition -Height }
-                    scaleX { $checkKeyValue.Value | ToScale  }
-                    scaleY { $checkKeyValue.Value | ToScale  }
-                }
-
-            if ($null -ne $newValue) {
-                $currentTo[$checkKeyValue.Key] = $newValue
-            }
-            
-        }
-        
-        if ($badKey) {
-            throw "Cannot animate '$($badKey -join "','")' : Can only animate $($keyNames -join ',')"
-        }
-
-        if (-not $nextTimeSpan.TotalMilliseconds -and 
-            ($argIndex -lt ($AllArgs.Length - 1)) -and 
-            $AllArgs[$argIndex + 1] -as [timespan]
-        ) {
-            $nextTimeSpan = $AllArgs[$argIndex + 1] -as [timespan]
-            $argIndex++
-        }
-
-        if ($lastFrom -and $nextTimeSpan) {
-            $StepCount = [Math]::Ceiling($NextTimeSpan.TotalMilliseconds / ([timespan]::fromSeconds(1/30).TotalMilliseconds)) * 2            
-            if (-not $StepCount) {
-                $this | Set-OBSSceneItemTransform -SceneItemTransform $currentTo -PassThru
-                $newLastFrom = [Ordered]@{} + $currentTo
-                foreach ($kv in $lastFrom.GetEnumerator()) {
-                    if ($currentTo.Contains($kv.Key)) { continue }
-                    $newLastFrom[$kv.Key] = $kv.Value
-                }
-                $lastFrom = $newLastFrom # May need to join this with the remaining properties in from
-
-                $totalTimeSpan += $nextTimeSpan
-                $nextTimeSpan = [timespan]0
-                continue NextArgument
-            }
-
-            $stepMilliseconds  = $nextTimeSpan.TotalMilliseconds / $StepCount
-
-            
-            # Compare the two sets of keys to determine the base data object
-            $BaseObject = [Ordered]@{}
-            foreach ($key in $currentTo.Keys) {
-                if (-not $BaseObject[$key]) {
-                    $BaseObject[$key] = 
-                        if ($null -ne $lastFrom[$key]) {
-                            $lastFrom[$key]
-                        } else {
-                            $currentTo[$key]
-                        }
-                }
-            }                    
-
-            # Determine the animation change per step.
-            $eachStepValue = [Ordered]@{}
-            foreach ($key in $baseObject.Keys) {
-                $distance = try { $currentTo[$key] - $baseObject[$key] } catch { $null }
-                if ($null -ne $distance) {
-                    $eachStepValue[$key] = [float]$distance / $StepCount
-                }
-            }
-
-            
-            foreach ($stepNumber in 1..($stepCount)) {
-                $stepObject = [Ordered]@{}
-                foreach ($key in $BaseObject.Keys) {
-                    $stepObject[$key] = $BaseObject[$key] + ($eachStepValue[$key] * $stepNumber)
-                }
-                $this | Set-OBSSceneItemTransform -SceneItemTransform $stepObject -PassThru
-                Send-OBSSleep -SleepMillis $stepMilliseconds -PassThru
-            }
-
-        } else {
-            $this | Set-OBSSceneItemTransform -SceneItemTransform $currentTo -PassThru
-        }
-        $newLastFrom = [Ordered]@{} + $currentTo
-        foreach ($kv in $lastFrom.GetEnumerator()) {
-            if ($currentTo.Contains($kv.Key)) { continue }
-            $newLastFrom[$kv.Key] = $kv.Value
-        }
-        $lastFrom = $newLastFrom # May need to join this with the remaining properties in from
-
-        $totalTimeSpan += $nextTimeSpan
-        $nextTimeSpan = [timespan]0
-
-        if (($argIndex -lt ($AllArgs.Length - 1)) -and 
-            $AllArgs[$argIndex + 1] -as [timespan]
-        ) {
-            Send-OBSSleep -SleepMillis ($AllArgs[$argIndex + 1] -as [timespan]).TotalMilliseconds -PassThru
-        }
-    }
-
-    $IsFirstArg = $false
-}
-)
-
-if ($allSteps) {
-    # If any boolean true was in the arguments, we're passing thru
-    if ($PassThru) {
-        $allSteps
-    } else {
-        # Send all of the steps to OBS.
-        $allSteps | Send-OBS 
-    }    
-}
-
-                    </Script>
-      </ScriptMethod>
-      <ScriptMethod>
-        <Name>Blend</Name>
-        <Script>
-                        param([string]$BlendMode)
-
-if ($blendMode -cnotmatch '^OBS_BLEND_') {
-    $blendMode = "OBS_BLEND_$($blendMode.ToUpper())"
-}
-$this |
-    Set-OBSSceneItemBlendMode -SceneItemBlendMode $blendMode
-
-                    </Script>
-      </ScriptMethod>
-      <ScriptMethod>
-        <Name>Center</Name>
-        <Script>
-                        &lt;#
-.SYNOPSIS
-    Centers a scene item
-.DESCRIPTION
-    Sets the scene item alignment to center
-.NOTES
-    Also corrects the position so that the image does not only appear in a quadrant. 
-
-    If a boolean argument is passed, and it is true, then this will PassThru instead of run.
-    (this can be used for animations)
-
-    If an explicit null argument is passed, then the command will not wait for an OBS response.
-    (this will be slightly faster)
-#&gt;
-param()
-
-$passingThru = $false
-$NoResponse  = $false
-
-foreach ($arg in $args) {
-    if ($arg -is [bool]) {
-        if ($arg) {
-            $passingThru= $true
-        }
-    }
-    if ($null -eq $arg) {
-        $NoResponse = $true
-    }
-}
-
-$sceneItemTransform = $this | Get-OBSSceneItemTransform
-
-$sceneItemTransform.alignment = 0 # 0 means center
-$sceneItemTransform.positionX = $sceneItemTransform.boundsWidth/2
-$sceneItemTransform.positionY = $sceneItemTransform.boundsHeight/2
-
-$this | Set-OBSSceneItemTransform -SceneItemTransform $sceneItemTransform -PassThru:$passingThru -NoResponse:$NoResponse
-                    </Script>
-      </ScriptMethod>
-      <ScriptMethod>
-        <Name>Crop</Name>
-        <Script>
-                        $cropTable = [Ordered]@{
-    cropBottom = 0
-    cropLeft   = 0
-    cropRight  = 0
-    cropTop    = 0
-}
-
-$MatchingKey = [Regex]::new("(?&gt;$(
-    @($cropTable.Keys -join '|'
-    '|'
-    $cropTable.Keys -replace '^crop' -join '|') -join ''
-))", 'IgnoreCase')
-
-
-$currentKey = ''
-foreach ($arg in $args) {
-    if ($arg -is [Collections.IDictionary]) {
-        foreach ($keyValue in $arg.GetEnumerator()) {
-            if ($keyValue.Key -match $MatchingKey) {
-                $cropTable[$matches.0 -replace '^crop' -replace '^', 'crop'] = $keyValue.Value
-            }        
-        }
-    }
-    if ($arg -is [string] -and $arg -match $MatchingKey) {
-        $currentKey = $matches.0 -replace '^crop' -replace '^', 'crop'
-    }
-    if ($arg -is [int] -and $currentKey) {
-        $cropTable[$currentKey] = $arg
-        $currentKey = ''
-    }
-}
-
-$this | Set-OBSSceneItemTransform -SceneItemTransform $cropTable
-
-                    </Script>
-      </ScriptMethod>
-      <ScriptMethod>
-        <Name>Delete</Name>
-        <Script>
-                        $this.Remove()
-                    </Script>
-      </ScriptMethod>
-      <ScriptMethod>
-        <Name>Disable</Name>
-        <Script>
-                        $this | Set-OBSSceneItemEnabled -sceneItemEnabled:$false
-
-                    </Script>
-      </ScriptMethod>
-      <ScriptMethod>
-        <Name>Enable</Name>
-        <Script>
-                        param(
-[switch]
-$PassThru
-)
-
-$this | Set-OBSSceneItemEnabled -sceneItemEnabled -PassThru:$PassThru
-
-                    </Script>
-      </ScriptMethod>
-      <ScriptMethod>
-        <Name>FitToScreen</Name>
-        <Script>
-                        &lt;#
-.SYNOPSIS
-    Fits an item to the screen
-.DESCRIPTION
-    Centers an item and makes it fit to the screen.
-.LINK
-    Get-OBSVideoSettings
-.LINK
-    Get-OBSSceneItemTransform
-.LINK
-    Set-OBSSceneItemTransform
-#&gt;
-param()
-if (-not $script:CachedOBSVideoSettings) {
-    $script:CachedOBSVideoSettings = Get-OBSVideoSettings
-}
-$videoSettings = $script:CachedOBSVideoSettings
-
-$thisTransform = $this | Get-OBSSceneItemTransform
-
-$sceneItemTransform = ([Ordered]@{
-    alignment = 0
-    scaleX    = ([double]$videoSettings.outputWidth / $thisTransform.sourceWidth )
-    positionX = [int]($videoSettings.outputWidth / 2)
-    positionY = [int]($videoSettings.outputHeight / 2)
-    scaleY    = ([double]$videoSettings.outputHeight / $thisTransform.sourceHeight )
-})
-
-$this | Set-OBSSceneItemTransform -SceneItemTransform $sceneItemTransform
-                    </Script>
-      </ScriptMethod>
-      <ScriptMethod>
-        <Name>Lock</Name>
-        <Script>
-                        $this | Set-OBSSceneItemLocked -sceneItemLocked
-                    </Script>
-      </ScriptMethod>
-      <ScriptMethod>
-        <Name>Move</Name>
-        <Script>
-                        &lt;#
-.SYNOPSIS
-    Moves a scene item
-.DESCRIPTION
-    Moves a scene item throughout the screen.
-
-    This converts it's arguments to .Animate arguments.  Any single values will be assumed to be positionX/positionY
-.EXAMPLE
-    # Load a source
-    $stars = Add-OBSBrowserSource -URI https://pssvg.start-automating.com/Examples/Stars.svg
-    # fit it to the screen
-    $stars.FitToScreen()
-    # Move it diagonally across the screen
-    $stars.Move("-50%","150%", "00:00:05")
-.LINK
-    OBS.GetSceneItemList.Response.Animate
-#&gt;
-param()
-$allArguments = @($args)
-$animateArguments = @(
-foreach ($arg in $allArguments) {    
-    if (
-        $arg -is [double] -or 
-        $arg -is [int] -or
-        ($arg -is [string] -and $arg -match '\%$')                
-    ) {        
-        $positionTransform = @{
-            positionX = $arg
-            positionY = $arg
-        }
-        $positionTransform
-    } elseif ($arg.X,$arg.Y -ne $null) {
-        $scaleInfo = @{}
-                
-        if ($null -ne $arg.X) {
-            $scaleInfo.positionX = $arg.X
-        }        
-
-        if ($null -ne $arg.Y) {
-            $scaleInfo.positionY = $arg.Y
-        }        
-        
-        $scaleInfo
-    }    
-    elseif ($arg -as [timespan]) {
-        $arg
-    } elseif ($arg -is [bool]) {
-        $arg
-    }
-    else {
-        $arg
-    }
-})
-
-$this.Animate.Invoke($animateArguments)
-
-
-                    </Script>
-      </ScriptMethod>
-      <ScriptMethod>
-        <Name>Remove</Name>
-        <Script>
-                        $this | Remove-OBSSceneItem
-                    </Script>
-      </ScriptMethod>
-      <ScriptMethod>
-        <Name>Rotate</Name>
-        <Script>
-                        param()
-$allArguments = @($args)
-
-$animateArguments  = @(
-    foreach ($argument in $allArguments) {
-        if ($argument -is [double] -or $argument -is [int]) {
-            @{
-                rotation = $argument
-            }
-        } elseif ($argument -as [timespan]) {
-            $argument
-        } elseif ($argument -is [bool]) {
-            $argument
-        }
-    }
-)
-
-$this.Animate.Invoke($animateArguments)
-                    </Script>
-      </ScriptMethod>
-      <ScriptMethod>
-        <Name>Scale</Name>
-        <Script>
-                        param()
-
-$allArguments = @($args)
-$animateArguments = @(
-foreach ($arg in $allArguments) {    
-    if ($arg -is [double] -or $arg -is [int] -or 
-        ($arg -is [string] -and $arg -match '\%$')
-    ) {
-        $scale = $arg
-        @{scaleX=$scale;scaleY=$scale}
-    } elseif ($null -ne $arg.X -or $null -ne $arg.Y) {
-        $scaleInfo = @{}
-        
-        if ($null -ne $arg.X) {
-            $scaleInfo.scaleX = $arg.X
-        }
-        elseif ($null -ne $arg.scaleX) {
-            $scaleInfo.scaleX = $arg.scaleX
-        }
-
-        if ($null -ne $arg.Y) {
-            $scaleInfo.scaleY = $arg.Y
-        }
-        elseif ($null -ne $arg.scaleY) {
-            $scaleInfo.scaleY = $arg.scaleY
-        }
-        
-        $scaleInfo
-    }    
-    elseif ($arg -as [timespan]) {
-        $arg
-    } elseif ($arg -is [bool]) {
-        $arg
-    } else {
-        $arg
-    }
-})
-
-$this.Animate.Invoke($animateArguments)
-
-                    </Script>
-      </ScriptMethod>
-      <ScriptMethod>
-        <Name>SetZIndex</Name>
-        <Script>
-                        $this | Set-OBSSceneItemIndex -SceneItemIndex ($args[0])
-$this | Add-Member NoteProperty "sceneItemIndex" $args[0] -Force 
-                    </Script>
-      </ScriptMethod>
-      <ScriptMethod>
-        <Name>Stretch</Name>
-        <Script>
-                        &lt;#
-.SYNOPSIS
-    Stretches a scene item
-.DESCRIPTION
-    Stretches a scene item by changing it's bounds.   
-#&gt;
-param()
-
-$PassingThru = $false
-$allArguments = @($args)
-$animateArguments = @(
-foreach ($arg in $allArguments) {    
-    if ($arg -is [double] -or $arg -is [int] -or 
-        ($arg -is [string] -and $arg -match '\%$')
-    ) {
-        $scale = $arg
-        @{scaleX=$scale;scaleY=$scale}
-    }    
-    elseif ($arg -as [timespan]) {
-        $arg
-    } elseif ($arg -is [bool]) {
-        if ($arg) {
-            $PassingThru = $true
-        }
-        $arg
-    } else {
-        $scaleInfo = @{}
-        
-        if ($null -ne $arg.Width) {
-            $scaleInfo.boundsWidth = $arg.Width
-        }
-        elseif ($null -ne $arg.X) {
-            $scaleInfo.boundsWidth = $arg.X
-        }        
-
-        if ($null -ne $arg.Height) {
-            $scaleInfo.boundsHeight = $arg.Height
-        }
-        elseif ($null -ne $arg.Y) {
-            $scaleInfo.boundsHeight = $arg.Y
-        }
-        
-        if ($scaleInfo.Count) {
-            $scaleInfo
-        } else {
-            $arg
-        }            
-    }
-})
-
-$this | Set-OBSSceneItemTransform -SceneItemTransform @{boundsType='OBS_BOUNDS_STRETCH'} -NoResponse -PassThru:$PassingThru
-$this.Animate.Invoke($animateArguments)
-
-                    </Script>
-      </ScriptMethod>
-      <ScriptMethod>
-        <Name>Unlock</Name>
-        <Script>
-                        $this | Set-OBSSceneItemLocked -sceneItemLocked:$false
-
-                    </Script>
-      </ScriptMethod>
-      <ScriptProperty>
-        <Name>BlendMode</Name>
-        <GetScriptBlock>
-                        $this.sceneItemBlendMode -replace '^OBS_BLEND_'
-
-                    </GetScriptBlock>
-      </ScriptProperty>
-      <ScriptProperty>
-        <Name>Enabled</Name>
-        <GetScriptBlock>
-                        return $this.sceneItemEnabled
-
-                    </GetScriptBlock>
-      </ScriptProperty>
-      <ScriptProperty>
-        <Name>Filters</Name>
-        <GetScriptBlock>
-                        &lt;#
-.SYNOPSIS
-    Gets a Scene Item's filters
-.DESCRIPTION
-    Gets the filters related to an OBS input.
-.EXAMPLE
-     $obsPowerShellIcon = Show-OBS -Uri https://obs-powershell.start-automating.com/Assets/obs-powershell-animated-icon.svg
-     $obsPowerShellIcon | Set-OBSColorFilter -Opacity .5
-     $obsPowerShellIcon.Filters
-.LINK
-    Get-OBSSourceFilterList
-#&gt;
-Get-OBSSourceFilterList -SourceName $this.SourceName
-                    </GetScriptBlock>
-      </ScriptProperty>
-      <ScriptProperty>
-        <Name>ImageHeight</Name>
-        <GetScriptBlock>
-                        $this.sceneItemTransform.sourceHeight
-
-                    </GetScriptBlock>
-      </ScriptProperty>
-      <ScriptProperty>
-        <Name>ImageWidth</Name>
-        <GetScriptBlock>
-                        $this.sceneItemTransform.sourceWidth
-
-                    </GetScriptBlock>
-      </ScriptProperty>
-      <ScriptProperty>
-        <Name>Input</Name>
-        <GetScriptBlock>
-                        &lt;#
-.SYNOPSIS
-    Gets a Scene Item's Input
-.DESCRIPTION
-    Gets the OBS Input related to the current scene item.
-
-    This value is cached upon first request, as it will never change as long as the source item exists.
-.EXAMPLE
-    $stars = Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg
-    $stars.Input
-#&gt;
-if (-not $this.'.Input') {
-    $this | Add-Member NoteProperty '.Input' (
-        $this | Get-OBSInput | Where-Object InputName -eq $this.SourceName
-    ) -Force
-}
-
-$this.'.Input'
-
-                    </GetScriptBlock>
-      </ScriptProperty>
-      <ScriptProperty>
-        <Name>Layer</Name>
-        <GetScriptBlock>
-                        return $this.sceneItemIndex
-
-                    </GetScriptBlock>
-      </ScriptProperty>
-      <ScriptProperty>
-        <Name>ZIndex</Name>
-        <GetScriptBlock>
-                        $indexInfo = $this | Get-OBSSceneItemIndex
-if ($indexInfo.SceneItemIndex) {
-    $indexInfo.SceneItemIndex
-}
-elseif ($indexInfo -is [int]) {
-    $indexInfo
-}
-                    </GetScriptBlock>
-      </ScriptProperty>
-    </Members>
-  </Type>
-  <Type>
     <Name>OBS.GetSourceFilterList.Response</Name>
     <Members>
       <ScriptMethod>
@@ -1993,6 +1245,2250 @@ $obsEffectsPattern = [Regex]::new('
 ','IgnoreCase,IgnorePatternWhitespace')
 
 $this.Name -replace $obsEffectsPattern
+                    </GetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>OBS.GetSceneItemList.Response</Name>
+    <Members>
+      <AliasProperty>
+        <Name>Hide</Name>
+        <ReferencedMemberName>Disable</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>Show</Name>
+        <ReferencedMemberName>Enable</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptMethod>
+        <Name>Animate</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Animates scene items
+.DESCRIPTION
+    Animates the motion of scene items within a frame.
+.EXAMPLE
+    $stars = Add-OBSBrowserSource -URI https://pssvg.start-automating.com/Examples/Stars.svg
+    $stars.FitToScreen()
+    $stars.Animate(@{
+        scale = 0.1        
+    },"00:00:01")
+#&gt;
+param(
+)
+
+filter ToPosition {
+    param(
+    [switch]
+    $Width,
+
+    [switch]
+    $Height
+    )
+
+    
+    if ($_ -is [string] -and $_ -match '%$') {
+        $_ = $_ -replace '%$' -as [double]
+        if (-not $script:CachedOBSVideoSettings) {
+            $script:CachedOBSVideoSettings = Get-OBSVideoSettings
+        }
+        $videoSettings = $script:CachedOBSVideoSettings
+        if ($Width) {
+            $_/100 * $videoSettings.baseWidth
+        }
+        if ($Height) {
+            $_/100 * $videoSettings.baseHeight
+        }
+        
+    }
+    elseif ($_ -is [double] -or $_ -is [int]) {
+        if ($_ -is [double] -and $_ -ge 0 -and $_ -lt 1) {
+            if (-not $script:CachedOBSVideoSettings) {
+                $script:CachedOBSVideoSettings = Get-OBSVideoSettings
+            }
+            $videoSettings = $script:CachedOBSVideoSettings
+            if ($Width) {
+                $_ * $videoSettings.baseWidth
+            }
+            if ($Height) {
+                $_ * $videoSettings.baseHeight
+            }
+            
+        } else {
+            [int]$_
+        }
+    }
+}
+
+filter ToScale {
+    if ($_ -is [string] -and $_ -match '%$') {
+        $_ = $_ -replace '%$' -as [double]
+        $_/100
+    }
+    elseif ($_ -is [double] -or $_ -is [int]) {
+        if ($_ -is [double] -and $_ -ge 0 -and $_ -le 1) {
+            $_
+        } else {
+            [double]$_/100
+        }
+    }
+}
+
+$nextTimeSpan = [timespan]0
+
+$keyNames = 'positionX', 'positionY', 'scaleX','scaleY', 'cropBottom', 'cropLeft', 'cropRight', 'cropTop', 'rotation'
+$keyAliases = [Ordered]@{'Rotate'='rotation'}
+$duplicatedKeyAliases = [Ordered]@{
+    'position' = 'positionX', 'positionY'
+    'scale' = 'scaleX', 'scaleY'
+    'crop' = 'cropBottom', 'cropLeft', 'cropRight', 'cropTop'
+}
+foreach ($position in 'X','Y') {
+    $keyAliases[$position] = "position$position"
+}
+foreach ($cropType in 'Bottom','Left', 'Right', 'Top') {
+    $keyAliases[$cropType] = "crop$cropType"
+}
+   
+$allSteps = @()
+
+
+$originalTransform = $this | Get-OBSSceneItemTransform
+$lastFrom = 
+    if ($originalTransform -is [Collections.IDictionary]) {
+        [Ordered]@{} + $from
+    } else {
+        $newFrom = [Ordered]@{}
+        foreach ($property in $originalTransform.psobject.properties) {
+            $newFrom[$property.Name] = $property.Value
+        }
+        $newFrom
+    }
+
+$totalTimeSpan = [timespan]0
+
+# We want to walk over every argument and turn them into a series of animations
+
+$PassThru   = $false
+
+$AllArgs = @($args)
+
+$allSteps = @(
+:NextArgument for ($argIndex = 0 ; $argIndex -lt $allArgs.Length; $argIndex++) {
+    $arg = $allArgs[$argIndex]
+    # If the arg is a timespan, we want to track this
+    if ($arg -as [timespan]) {
+        $nextTimeSpan = $arg -as [timespan]
+    } elseif ($arg -is [double] -or $arg -is [int]) {
+        $nextTimeSpan = [timespan]::fromSeconds($arg)
+    }
+    elseif ($arg -is [bool]) {
+        if ($arg) {
+            $PassThru = $true
+        }
+    }
+    else {
+        $currentTo = 
+            if ($arg -isnot [Collections.IDictionary]) {
+                $newTo = [Ordered]@{}
+                foreach ($property in $arg.psobject.properties) {
+                    $newTo[$property.Name] = $property.Value
+                }
+                $newTo
+            } else {
+                [Ordered]@{} + $arg
+            }
+
+        $badKey = 
+            @(foreach ($k in @($currentTo.Keys)) {
+                if ($k -notin $keyNames) {
+                    if ($keyAliases[$k]) {
+                        $currentTo[$keyAliases[$k]] = $currentTo[$k]
+                        $currentTo.Remove($k)
+                    } 
+                    elseif ($duplicatedKeyAliases[$k]) {
+                        foreach ($duplicateKey in $duplicatedKeyAliases[$k]) {
+                            $currentTo[$duplicateKey] = $currentTo[$k]
+                        }
+                        
+                        $currentTo.Remove($k)
+                    }
+                    else {
+                        $k
+                    }
+                }
+            })
+
+        foreach ($checkKeyValue in @($currentTo.GetEnumerator())) {
+            
+            $newValue = 
+                switch ($checkKeyValue.Key) {
+                    positionX { $checkKeyValue.Value | ToPosition -Width }
+                    positionY { $checkKeyValue.Value | ToPosition -Height }
+                    cropLeft { $checkKeyValue.Value | ToPosition -Width }
+                    cropRight { $checkKeyValue.Value | ToPosition -Width }
+                    cropTop { $checkKeyValue.Value | ToPosition -Height }
+                    cropBottom { $checkKeyValue.Value | ToPosition -Height }
+                    scaleX { $checkKeyValue.Value | ToScale  }
+                    scaleY { $checkKeyValue.Value | ToScale  }
+                }
+
+            if ($null -ne $newValue) {
+                $currentTo[$checkKeyValue.Key] = $newValue
+            }
+            
+        }
+        
+        if ($badKey) {
+            throw "Cannot animate '$($badKey -join "','")' : Can only animate $($keyNames -join ',')"
+        }
+
+        if (-not $nextTimeSpan.TotalMilliseconds -and 
+            ($argIndex -lt ($AllArgs.Length - 1)) -and 
+            $AllArgs[$argIndex + 1] -as [timespan]
+        ) {
+            $nextTimeSpan = $AllArgs[$argIndex + 1] -as [timespan]
+            $argIndex++
+        }
+
+        if ($lastFrom -and $nextTimeSpan) {
+            $StepCount = [Math]::Ceiling($NextTimeSpan.TotalMilliseconds / ([timespan]::fromSeconds(1/30).TotalMilliseconds)) * 2            
+            if (-not $StepCount) {
+                $this | Set-OBSSceneItemTransform -SceneItemTransform $currentTo -PassThru
+                $newLastFrom = [Ordered]@{} + $currentTo
+                foreach ($kv in $lastFrom.GetEnumerator()) {
+                    if ($currentTo.Contains($kv.Key)) { continue }
+                    $newLastFrom[$kv.Key] = $kv.Value
+                }
+                $lastFrom = $newLastFrom # May need to join this with the remaining properties in from
+
+                $totalTimeSpan += $nextTimeSpan
+                $nextTimeSpan = [timespan]0
+                continue NextArgument
+            }
+
+            $stepMilliseconds  = $nextTimeSpan.TotalMilliseconds / $StepCount
+
+            
+            # Compare the two sets of keys to determine the base data object
+            $BaseObject = [Ordered]@{}
+            foreach ($key in $currentTo.Keys) {
+                if (-not $BaseObject[$key]) {
+                    $BaseObject[$key] = 
+                        if ($null -ne $lastFrom[$key]) {
+                            $lastFrom[$key]
+                        } else {
+                            $currentTo[$key]
+                        }
+                }
+            }                    
+
+            # Determine the animation change per step.
+            $eachStepValue = [Ordered]@{}
+            foreach ($key in $baseObject.Keys) {
+                $distance = try { $currentTo[$key] - $baseObject[$key] } catch { $null }
+                if ($null -ne $distance) {
+                    $eachStepValue[$key] = [float]$distance / $StepCount
+                }
+            }
+
+            
+            foreach ($stepNumber in 1..($stepCount)) {
+                $stepObject = [Ordered]@{}
+                foreach ($key in $BaseObject.Keys) {
+                    $stepObject[$key] = $BaseObject[$key] + ($eachStepValue[$key] * $stepNumber)
+                }
+                $this | Set-OBSSceneItemTransform -SceneItemTransform $stepObject -PassThru
+                Send-OBSSleep -SleepMillis $stepMilliseconds -PassThru
+            }
+
+        } else {
+            $this | Set-OBSSceneItemTransform -SceneItemTransform $currentTo -PassThru
+        }
+        $newLastFrom = [Ordered]@{} + $currentTo
+        foreach ($kv in $lastFrom.GetEnumerator()) {
+            if ($currentTo.Contains($kv.Key)) { continue }
+            $newLastFrom[$kv.Key] = $kv.Value
+        }
+        $lastFrom = $newLastFrom # May need to join this with the remaining properties in from
+
+        $totalTimeSpan += $nextTimeSpan
+        $nextTimeSpan = [timespan]0
+
+        if (($argIndex -lt ($AllArgs.Length - 1)) -and 
+            $AllArgs[$argIndex + 1] -as [timespan]
+        ) {
+            Send-OBSSleep -SleepMillis ($AllArgs[$argIndex + 1] -as [timespan]).TotalMilliseconds -PassThru
+        }
+    }
+
+    $IsFirstArg = $false
+}
+)
+
+if ($allSteps) {
+    # If any boolean true was in the arguments, we're passing thru
+    if ($PassThru) {
+        $allSteps
+    } else {
+        # Send all of the steps to OBS.
+        $allSteps | Send-OBS 
+    }    
+}
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Blend</Name>
+        <Script>
+                        param([string]$BlendMode)
+
+if ($blendMode -cnotmatch '^OBS_BLEND_') {
+    $blendMode = "OBS_BLEND_$($blendMode.ToUpper())"
+}
+$this |
+    Set-OBSSceneItemBlendMode -SceneItemBlendMode $blendMode
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Center</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Centers a scene item
+.DESCRIPTION
+    Sets the scene item alignment to center
+.NOTES
+    Also corrects the position so that the image does not only appear in a quadrant. 
+
+    If a boolean argument is passed, and it is true, then this will PassThru instead of run.
+    (this can be used for animations)
+
+    If an explicit null argument is passed, then the command will not wait for an OBS response.
+    (this will be slightly faster)
+#&gt;
+param()
+
+$passingThru = $false
+$NoResponse  = $false
+
+foreach ($arg in $args) {
+    if ($arg -is [bool]) {
+        if ($arg) {
+            $passingThru= $true
+        }
+    }
+    if ($null -eq $arg) {
+        $NoResponse = $true
+    }
+}
+
+$sceneItemTransform = $this | Get-OBSSceneItemTransform
+
+$sceneItemTransform.alignment = 0 # 0 means center
+$sceneItemTransform.positionX = $sceneItemTransform.boundsWidth/2
+$sceneItemTransform.positionY = $sceneItemTransform.boundsHeight/2
+
+$this | Set-OBSSceneItemTransform -SceneItemTransform $sceneItemTransform -PassThru:$passingThru -NoResponse:$NoResponse
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Crop</Name>
+        <Script>
+                        $cropTable = [Ordered]@{
+    cropBottom = 0
+    cropLeft   = 0
+    cropRight  = 0
+    cropTop    = 0
+}
+
+$MatchingKey = [Regex]::new("(?&gt;$(
+    @($cropTable.Keys -join '|'
+    '|'
+    $cropTable.Keys -replace '^crop' -join '|') -join ''
+))", 'IgnoreCase')
+
+
+$currentKey = ''
+foreach ($arg in $args) {
+    if ($arg -is [Collections.IDictionary]) {
+        foreach ($keyValue in $arg.GetEnumerator()) {
+            if ($keyValue.Key -match $MatchingKey) {
+                $cropTable[$matches.0 -replace '^crop' -replace '^', 'crop'] = $keyValue.Value
+            }        
+        }
+    }
+    if ($arg -is [string] -and $arg -match $MatchingKey) {
+        $currentKey = $matches.0 -replace '^crop' -replace '^', 'crop'
+    }
+    if ($arg -is [int] -and $currentKey) {
+        $cropTable[$currentKey] = $arg
+        $currentKey = ''
+    }
+}
+
+$this | Set-OBSSceneItemTransform -SceneItemTransform $cropTable
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Delete</Name>
+        <Script>
+                        $this.Remove()
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Disable</Name>
+        <Script>
+                        $this | Set-OBSSceneItemEnabled -sceneItemEnabled:$false
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Enable</Name>
+        <Script>
+                        param(
+[switch]
+$PassThru
+)
+
+$this | Set-OBSSceneItemEnabled -sceneItemEnabled -PassThru:$PassThru
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>FitToScreen</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Fits an item to the screen
+.DESCRIPTION
+    Centers an item and makes it fit to the screen.
+.LINK
+    Get-OBSVideoSettings
+.LINK
+    Get-OBSSceneItemTransform
+.LINK
+    Set-OBSSceneItemTransform
+#&gt;
+param()
+if (-not $script:CachedOBSVideoSettings) {
+    $script:CachedOBSVideoSettings = Get-OBSVideoSettings
+}
+$videoSettings = $script:CachedOBSVideoSettings
+
+$thisTransform = $this | Get-OBSSceneItemTransform
+
+$sceneItemTransform = ([Ordered]@{
+    alignment = 0
+    scaleX    = ([double]$videoSettings.outputWidth / $thisTransform.sourceWidth )
+    positionX = [int]($videoSettings.outputWidth / 2)
+    positionY = [int]($videoSettings.outputHeight / 2)
+    scaleY    = ([double]$videoSettings.outputHeight / $thisTransform.sourceHeight )
+})
+
+$this | Set-OBSSceneItemTransform -SceneItemTransform $sceneItemTransform
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Lock</Name>
+        <Script>
+                        $this | Set-OBSSceneItemLocked -sceneItemLocked
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Move</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Moves a scene item
+.DESCRIPTION
+    Moves a scene item throughout the screen.
+
+    This converts it's arguments to .Animate arguments.  Any single values will be assumed to be positionX/positionY
+.EXAMPLE
+    # Load a source
+    $stars = Add-OBSBrowserSource -URI https://pssvg.start-automating.com/Examples/Stars.svg
+    # fit it to the screen
+    $stars.FitToScreen()
+    # Move it diagonally across the screen
+    $stars.Move("-50%","150%", "00:00:05")
+.LINK
+    OBS.GetSceneItemList.Response.Animate
+#&gt;
+param()
+$allArguments = @($args)
+$animateArguments = @(
+foreach ($arg in $allArguments) {    
+    if (
+        $arg -is [double] -or 
+        $arg -is [int] -or
+        ($arg -is [string] -and $arg -match '\%$')                
+    ) {        
+        $positionTransform = @{
+            positionX = $arg
+            positionY = $arg
+        }
+        $positionTransform
+    } elseif ($arg.X,$arg.Y -ne $null) {
+        $scaleInfo = @{}
+                
+        if ($null -ne $arg.X) {
+            $scaleInfo.positionX = $arg.X
+        }        
+
+        if ($null -ne $arg.Y) {
+            $scaleInfo.positionY = $arg.Y
+        }        
+        
+        $scaleInfo
+    }    
+    elseif ($arg -as [timespan]) {
+        $arg
+    } elseif ($arg -is [bool]) {
+        $arg
+    }
+    else {
+        $arg
+    }
+})
+
+$this.Animate.Invoke($animateArguments)
+
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Remove</Name>
+        <Script>
+                        $this | Remove-OBSSceneItem
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Rotate</Name>
+        <Script>
+                        param()
+$allArguments = @($args)
+
+$animateArguments  = @(
+    foreach ($argument in $allArguments) {
+        if ($argument -is [double] -or $argument -is [int]) {
+            @{
+                rotation = $argument
+            }
+        } elseif ($argument -as [timespan]) {
+            $argument
+        } elseif ($argument -is [bool]) {
+            $argument
+        }
+    }
+)
+
+$this.Animate.Invoke($animateArguments)
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Scale</Name>
+        <Script>
+                        param()
+
+$allArguments = @($args)
+$animateArguments = @(
+foreach ($arg in $allArguments) {    
+    if ($arg -is [double] -or $arg -is [int] -or 
+        ($arg -is [string] -and $arg -match '\%$')
+    ) {
+        $scale = $arg
+        @{scaleX=$scale;scaleY=$scale}
+    } elseif ($null -ne $arg.X -or $null -ne $arg.Y) {
+        $scaleInfo = @{}
+        
+        if ($null -ne $arg.X) {
+            $scaleInfo.scaleX = $arg.X
+        }
+        elseif ($null -ne $arg.scaleX) {
+            $scaleInfo.scaleX = $arg.scaleX
+        }
+
+        if ($null -ne $arg.Y) {
+            $scaleInfo.scaleY = $arg.Y
+        }
+        elseif ($null -ne $arg.scaleY) {
+            $scaleInfo.scaleY = $arg.scaleY
+        }
+        
+        $scaleInfo
+    }    
+    elseif ($arg -as [timespan]) {
+        $arg
+    } elseif ($arg -is [bool]) {
+        $arg
+    } else {
+        $arg
+    }
+})
+
+$this.Animate.Invoke($animateArguments)
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>SetZIndex</Name>
+        <Script>
+                        $this | Set-OBSSceneItemIndex -SceneItemIndex ($args[0])
+$this | Add-Member NoteProperty "sceneItemIndex" $args[0] -Force 
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Stretch</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Stretches a scene item
+.DESCRIPTION
+    Stretches a scene item by changing it's bounds.   
+#&gt;
+param()
+
+$PassingThru = $false
+$allArguments = @($args)
+$animateArguments = @(
+foreach ($arg in $allArguments) {    
+    if ($arg -is [double] -or $arg -is [int] -or 
+        ($arg -is [string] -and $arg -match '\%$')
+    ) {
+        $scale = $arg
+        @{scaleX=$scale;scaleY=$scale}
+    }    
+    elseif ($arg -as [timespan]) {
+        $arg
+    } elseif ($arg -is [bool]) {
+        if ($arg) {
+            $PassingThru = $true
+        }
+        $arg
+    } else {
+        $scaleInfo = @{}
+        
+        if ($null -ne $arg.Width) {
+            $scaleInfo.boundsWidth = $arg.Width
+        }
+        elseif ($null -ne $arg.X) {
+            $scaleInfo.boundsWidth = $arg.X
+        }        
+
+        if ($null -ne $arg.Height) {
+            $scaleInfo.boundsHeight = $arg.Height
+        }
+        elseif ($null -ne $arg.Y) {
+            $scaleInfo.boundsHeight = $arg.Y
+        }
+        
+        if ($scaleInfo.Count) {
+            $scaleInfo
+        } else {
+            $arg
+        }            
+    }
+})
+
+$this | Set-OBSSceneItemTransform -SceneItemTransform @{boundsType='OBS_BOUNDS_STRETCH'} -NoResponse -PassThru:$PassingThru
+$this.Animate.Invoke($animateArguments)
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Unlock</Name>
+        <Script>
+                        $this | Set-OBSSceneItemLocked -sceneItemLocked:$false
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptProperty>
+        <Name>BlendMode</Name>
+        <GetScriptBlock>
+                        $this.sceneItemBlendMode -replace '^OBS_BLEND_'
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Enabled</Name>
+        <GetScriptBlock>
+                        return $this.sceneItemEnabled
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Filters</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets a Scene Item's filters
+.DESCRIPTION
+    Gets the filters related to an OBS input.
+.EXAMPLE
+     $obsPowerShellIcon = Show-OBS -Uri https://obs-powershell.start-automating.com/Assets/obs-powershell-animated-icon.svg
+     $obsPowerShellIcon | Set-OBSColorFilter -Opacity .5
+     $obsPowerShellIcon.Filters
+.LINK
+    Get-OBSSourceFilterList
+#&gt;
+Get-OBSSourceFilterList -SourceName $this.SourceName
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ImageHeight</Name>
+        <GetScriptBlock>
+                        $this.sceneItemTransform.sourceHeight
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ImageWidth</Name>
+        <GetScriptBlock>
+                        $this.sceneItemTransform.sourceWidth
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Input</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets a Scene Item's Input
+.DESCRIPTION
+    Gets the OBS Input related to the current scene item.
+
+    This value is cached upon first request, as it will never change as long as the source item exists.
+.EXAMPLE
+    $stars = Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg
+    $stars.Input
+#&gt;
+if (-not $this.'.Input') {
+    $this | Add-Member NoteProperty '.Input' (
+        $this | Get-OBSInput | Where-Object InputName -eq $this.SourceName
+    ) -Force
+}
+
+$this.'.Input'
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Layer</Name>
+        <GetScriptBlock>
+                        return $this.sceneItemIndex
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ZIndex</Name>
+        <GetScriptBlock>
+                        $indexInfo = $this | Get-OBSSceneItemIndex
+if ($indexInfo.SceneItemIndex) {
+    $indexInfo.SceneItemIndex
+}
+elseif ($indexInfo -is [int]) {
+    $indexInfo
+}
+                    </GetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>OBS.GetSceneItemId.Response</Name>
+    <Members>
+      <AliasProperty>
+        <Name>Hide</Name>
+        <ReferencedMemberName>Disable</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>Show</Name>
+        <ReferencedMemberName>Enable</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptMethod>
+        <Name>Animate</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Animates scene items
+.DESCRIPTION
+    Animates the motion of scene items within a frame.
+.EXAMPLE
+    $stars = Add-OBSBrowserSource -URI https://pssvg.start-automating.com/Examples/Stars.svg
+    $stars.FitToScreen()
+    $stars.Animate(@{
+        scale = 0.1        
+    },"00:00:01")
+#&gt;
+param(
+)
+
+filter ToPosition {
+    param(
+    [switch]
+    $Width,
+
+    [switch]
+    $Height
+    )
+
+    
+    if ($_ -is [string] -and $_ -match '%$') {
+        $_ = $_ -replace '%$' -as [double]
+        if (-not $script:CachedOBSVideoSettings) {
+            $script:CachedOBSVideoSettings = Get-OBSVideoSettings
+        }
+        $videoSettings = $script:CachedOBSVideoSettings
+        if ($Width) {
+            $_/100 * $videoSettings.baseWidth
+        }
+        if ($Height) {
+            $_/100 * $videoSettings.baseHeight
+        }
+        
+    }
+    elseif ($_ -is [double] -or $_ -is [int]) {
+        if ($_ -is [double] -and $_ -ge 0 -and $_ -lt 1) {
+            if (-not $script:CachedOBSVideoSettings) {
+                $script:CachedOBSVideoSettings = Get-OBSVideoSettings
+            }
+            $videoSettings = $script:CachedOBSVideoSettings
+            if ($Width) {
+                $_ * $videoSettings.baseWidth
+            }
+            if ($Height) {
+                $_ * $videoSettings.baseHeight
+            }
+            
+        } else {
+            [int]$_
+        }
+    }
+}
+
+filter ToScale {
+    if ($_ -is [string] -and $_ -match '%$') {
+        $_ = $_ -replace '%$' -as [double]
+        $_/100
+    }
+    elseif ($_ -is [double] -or $_ -is [int]) {
+        if ($_ -is [double] -and $_ -ge 0 -and $_ -le 1) {
+            $_
+        } else {
+            [double]$_/100
+        }
+    }
+}
+
+$nextTimeSpan = [timespan]0
+
+$keyNames = 'positionX', 'positionY', 'scaleX','scaleY', 'cropBottom', 'cropLeft', 'cropRight', 'cropTop', 'rotation'
+$keyAliases = [Ordered]@{'Rotate'='rotation'}
+$duplicatedKeyAliases = [Ordered]@{
+    'position' = 'positionX', 'positionY'
+    'scale' = 'scaleX', 'scaleY'
+    'crop' = 'cropBottom', 'cropLeft', 'cropRight', 'cropTop'
+}
+foreach ($position in 'X','Y') {
+    $keyAliases[$position] = "position$position"
+}
+foreach ($cropType in 'Bottom','Left', 'Right', 'Top') {
+    $keyAliases[$cropType] = "crop$cropType"
+}
+   
+$allSteps = @()
+
+
+$originalTransform = $this | Get-OBSSceneItemTransform
+$lastFrom = 
+    if ($originalTransform -is [Collections.IDictionary]) {
+        [Ordered]@{} + $from
+    } else {
+        $newFrom = [Ordered]@{}
+        foreach ($property in $originalTransform.psobject.properties) {
+            $newFrom[$property.Name] = $property.Value
+        }
+        $newFrom
+    }
+
+$totalTimeSpan = [timespan]0
+
+# We want to walk over every argument and turn them into a series of animations
+
+$PassThru   = $false
+
+$AllArgs = @($args)
+
+$allSteps = @(
+:NextArgument for ($argIndex = 0 ; $argIndex -lt $allArgs.Length; $argIndex++) {
+    $arg = $allArgs[$argIndex]
+    # If the arg is a timespan, we want to track this
+    if ($arg -as [timespan]) {
+        $nextTimeSpan = $arg -as [timespan]
+    } elseif ($arg -is [double] -or $arg -is [int]) {
+        $nextTimeSpan = [timespan]::fromSeconds($arg)
+    }
+    elseif ($arg -is [bool]) {
+        if ($arg) {
+            $PassThru = $true
+        }
+    }
+    else {
+        $currentTo = 
+            if ($arg -isnot [Collections.IDictionary]) {
+                $newTo = [Ordered]@{}
+                foreach ($property in $arg.psobject.properties) {
+                    $newTo[$property.Name] = $property.Value
+                }
+                $newTo
+            } else {
+                [Ordered]@{} + $arg
+            }
+
+        $badKey = 
+            @(foreach ($k in @($currentTo.Keys)) {
+                if ($k -notin $keyNames) {
+                    if ($keyAliases[$k]) {
+                        $currentTo[$keyAliases[$k]] = $currentTo[$k]
+                        $currentTo.Remove($k)
+                    } 
+                    elseif ($duplicatedKeyAliases[$k]) {
+                        foreach ($duplicateKey in $duplicatedKeyAliases[$k]) {
+                            $currentTo[$duplicateKey] = $currentTo[$k]
+                        }
+                        
+                        $currentTo.Remove($k)
+                    }
+                    else {
+                        $k
+                    }
+                }
+            })
+
+        foreach ($checkKeyValue in @($currentTo.GetEnumerator())) {
+            
+            $newValue = 
+                switch ($checkKeyValue.Key) {
+                    positionX { $checkKeyValue.Value | ToPosition -Width }
+                    positionY { $checkKeyValue.Value | ToPosition -Height }
+                    cropLeft { $checkKeyValue.Value | ToPosition -Width }
+                    cropRight { $checkKeyValue.Value | ToPosition -Width }
+                    cropTop { $checkKeyValue.Value | ToPosition -Height }
+                    cropBottom { $checkKeyValue.Value | ToPosition -Height }
+                    scaleX { $checkKeyValue.Value | ToScale  }
+                    scaleY { $checkKeyValue.Value | ToScale  }
+                }
+
+            if ($null -ne $newValue) {
+                $currentTo[$checkKeyValue.Key] = $newValue
+            }
+            
+        }
+        
+        if ($badKey) {
+            throw "Cannot animate '$($badKey -join "','")' : Can only animate $($keyNames -join ',')"
+        }
+
+        if (-not $nextTimeSpan.TotalMilliseconds -and 
+            ($argIndex -lt ($AllArgs.Length - 1)) -and 
+            $AllArgs[$argIndex + 1] -as [timespan]
+        ) {
+            $nextTimeSpan = $AllArgs[$argIndex + 1] -as [timespan]
+            $argIndex++
+        }
+
+        if ($lastFrom -and $nextTimeSpan) {
+            $StepCount = [Math]::Ceiling($NextTimeSpan.TotalMilliseconds / ([timespan]::fromSeconds(1/30).TotalMilliseconds)) * 2            
+            if (-not $StepCount) {
+                $this | Set-OBSSceneItemTransform -SceneItemTransform $currentTo -PassThru
+                $newLastFrom = [Ordered]@{} + $currentTo
+                foreach ($kv in $lastFrom.GetEnumerator()) {
+                    if ($currentTo.Contains($kv.Key)) { continue }
+                    $newLastFrom[$kv.Key] = $kv.Value
+                }
+                $lastFrom = $newLastFrom # May need to join this with the remaining properties in from
+
+                $totalTimeSpan += $nextTimeSpan
+                $nextTimeSpan = [timespan]0
+                continue NextArgument
+            }
+
+            $stepMilliseconds  = $nextTimeSpan.TotalMilliseconds / $StepCount
+
+            
+            # Compare the two sets of keys to determine the base data object
+            $BaseObject = [Ordered]@{}
+            foreach ($key in $currentTo.Keys) {
+                if (-not $BaseObject[$key]) {
+                    $BaseObject[$key] = 
+                        if ($null -ne $lastFrom[$key]) {
+                            $lastFrom[$key]
+                        } else {
+                            $currentTo[$key]
+                        }
+                }
+            }                    
+
+            # Determine the animation change per step.
+            $eachStepValue = [Ordered]@{}
+            foreach ($key in $baseObject.Keys) {
+                $distance = try { $currentTo[$key] - $baseObject[$key] } catch { $null }
+                if ($null -ne $distance) {
+                    $eachStepValue[$key] = [float]$distance / $StepCount
+                }
+            }
+
+            
+            foreach ($stepNumber in 1..($stepCount)) {
+                $stepObject = [Ordered]@{}
+                foreach ($key in $BaseObject.Keys) {
+                    $stepObject[$key] = $BaseObject[$key] + ($eachStepValue[$key] * $stepNumber)
+                }
+                $this | Set-OBSSceneItemTransform -SceneItemTransform $stepObject -PassThru
+                Send-OBSSleep -SleepMillis $stepMilliseconds -PassThru
+            }
+
+        } else {
+            $this | Set-OBSSceneItemTransform -SceneItemTransform $currentTo -PassThru
+        }
+        $newLastFrom = [Ordered]@{} + $currentTo
+        foreach ($kv in $lastFrom.GetEnumerator()) {
+            if ($currentTo.Contains($kv.Key)) { continue }
+            $newLastFrom[$kv.Key] = $kv.Value
+        }
+        $lastFrom = $newLastFrom # May need to join this with the remaining properties in from
+
+        $totalTimeSpan += $nextTimeSpan
+        $nextTimeSpan = [timespan]0
+
+        if (($argIndex -lt ($AllArgs.Length - 1)) -and 
+            $AllArgs[$argIndex + 1] -as [timespan]
+        ) {
+            Send-OBSSleep -SleepMillis ($AllArgs[$argIndex + 1] -as [timespan]).TotalMilliseconds -PassThru
+        }
+    }
+
+    $IsFirstArg = $false
+}
+)
+
+if ($allSteps) {
+    # If any boolean true was in the arguments, we're passing thru
+    if ($PassThru) {
+        $allSteps
+    } else {
+        # Send all of the steps to OBS.
+        $allSteps | Send-OBS 
+    }    
+}
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Blend</Name>
+        <Script>
+                        param([string]$BlendMode)
+
+if ($blendMode -cnotmatch '^OBS_BLEND_') {
+    $blendMode = "OBS_BLEND_$($blendMode.ToUpper())"
+}
+$this |
+    Set-OBSSceneItemBlendMode -SceneItemBlendMode $blendMode
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Center</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Centers a scene item
+.DESCRIPTION
+    Sets the scene item alignment to center
+.NOTES
+    Also corrects the position so that the image does not only appear in a quadrant. 
+
+    If a boolean argument is passed, and it is true, then this will PassThru instead of run.
+    (this can be used for animations)
+
+    If an explicit null argument is passed, then the command will not wait for an OBS response.
+    (this will be slightly faster)
+#&gt;
+param()
+
+$passingThru = $false
+$NoResponse  = $false
+
+foreach ($arg in $args) {
+    if ($arg -is [bool]) {
+        if ($arg) {
+            $passingThru= $true
+        }
+    }
+    if ($null -eq $arg) {
+        $NoResponse = $true
+    }
+}
+
+$sceneItemTransform = $this | Get-OBSSceneItemTransform
+
+$sceneItemTransform.alignment = 0 # 0 means center
+$sceneItemTransform.positionX = $sceneItemTransform.boundsWidth/2
+$sceneItemTransform.positionY = $sceneItemTransform.boundsHeight/2
+
+$this | Set-OBSSceneItemTransform -SceneItemTransform $sceneItemTransform -PassThru:$passingThru -NoResponse:$NoResponse
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Crop</Name>
+        <Script>
+                        $cropTable = [Ordered]@{
+    cropBottom = 0
+    cropLeft   = 0
+    cropRight  = 0
+    cropTop    = 0
+}
+
+$MatchingKey = [Regex]::new("(?&gt;$(
+    @($cropTable.Keys -join '|'
+    '|'
+    $cropTable.Keys -replace '^crop' -join '|') -join ''
+))", 'IgnoreCase')
+
+
+$currentKey = ''
+foreach ($arg in $args) {
+    if ($arg -is [Collections.IDictionary]) {
+        foreach ($keyValue in $arg.GetEnumerator()) {
+            if ($keyValue.Key -match $MatchingKey) {
+                $cropTable[$matches.0 -replace '^crop' -replace '^', 'crop'] = $keyValue.Value
+            }        
+        }
+    }
+    if ($arg -is [string] -and $arg -match $MatchingKey) {
+        $currentKey = $matches.0 -replace '^crop' -replace '^', 'crop'
+    }
+    if ($arg -is [int] -and $currentKey) {
+        $cropTable[$currentKey] = $arg
+        $currentKey = ''
+    }
+}
+
+$this | Set-OBSSceneItemTransform -SceneItemTransform $cropTable
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Delete</Name>
+        <Script>
+                        $this.Remove()
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Disable</Name>
+        <Script>
+                        $this | Set-OBSSceneItemEnabled -sceneItemEnabled:$false
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Enable</Name>
+        <Script>
+                        param(
+[switch]
+$PassThru
+)
+
+$this | Set-OBSSceneItemEnabled -sceneItemEnabled -PassThru:$PassThru
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>FitToScreen</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Fits an item to the screen
+.DESCRIPTION
+    Centers an item and makes it fit to the screen.
+.LINK
+    Get-OBSVideoSettings
+.LINK
+    Get-OBSSceneItemTransform
+.LINK
+    Set-OBSSceneItemTransform
+#&gt;
+param()
+if (-not $script:CachedOBSVideoSettings) {
+    $script:CachedOBSVideoSettings = Get-OBSVideoSettings
+}
+$videoSettings = $script:CachedOBSVideoSettings
+
+$thisTransform = $this | Get-OBSSceneItemTransform
+
+$sceneItemTransform = ([Ordered]@{
+    alignment = 0
+    scaleX    = ([double]$videoSettings.outputWidth / $thisTransform.sourceWidth )
+    positionX = [int]($videoSettings.outputWidth / 2)
+    positionY = [int]($videoSettings.outputHeight / 2)
+    scaleY    = ([double]$videoSettings.outputHeight / $thisTransform.sourceHeight )
+})
+
+$this | Set-OBSSceneItemTransform -SceneItemTransform $sceneItemTransform
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Lock</Name>
+        <Script>
+                        $this | Set-OBSSceneItemLocked -sceneItemLocked
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Move</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Moves a scene item
+.DESCRIPTION
+    Moves a scene item throughout the screen.
+
+    This converts it's arguments to .Animate arguments.  Any single values will be assumed to be positionX/positionY
+.EXAMPLE
+    # Load a source
+    $stars = Add-OBSBrowserSource -URI https://pssvg.start-automating.com/Examples/Stars.svg
+    # fit it to the screen
+    $stars.FitToScreen()
+    # Move it diagonally across the screen
+    $stars.Move("-50%","150%", "00:00:05")
+.LINK
+    OBS.GetSceneItemList.Response.Animate
+#&gt;
+param()
+$allArguments = @($args)
+$animateArguments = @(
+foreach ($arg in $allArguments) {    
+    if (
+        $arg -is [double] -or 
+        $arg -is [int] -or
+        ($arg -is [string] -and $arg -match '\%$')                
+    ) {        
+        $positionTransform = @{
+            positionX = $arg
+            positionY = $arg
+        }
+        $positionTransform
+    } elseif ($arg.X,$arg.Y -ne $null) {
+        $scaleInfo = @{}
+                
+        if ($null -ne $arg.X) {
+            $scaleInfo.positionX = $arg.X
+        }        
+
+        if ($null -ne $arg.Y) {
+            $scaleInfo.positionY = $arg.Y
+        }        
+        
+        $scaleInfo
+    }    
+    elseif ($arg -as [timespan]) {
+        $arg
+    } elseif ($arg -is [bool]) {
+        $arg
+    }
+    else {
+        $arg
+    }
+})
+
+$this.Animate.Invoke($animateArguments)
+
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Remove</Name>
+        <Script>
+                        $this | Remove-OBSSceneItem
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Rotate</Name>
+        <Script>
+                        param()
+$allArguments = @($args)
+
+$animateArguments  = @(
+    foreach ($argument in $allArguments) {
+        if ($argument -is [double] -or $argument -is [int]) {
+            @{
+                rotation = $argument
+            }
+        } elseif ($argument -as [timespan]) {
+            $argument
+        } elseif ($argument -is [bool]) {
+            $argument
+        }
+    }
+)
+
+$this.Animate.Invoke($animateArguments)
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Scale</Name>
+        <Script>
+                        param()
+
+$allArguments = @($args)
+$animateArguments = @(
+foreach ($arg in $allArguments) {    
+    if ($arg -is [double] -or $arg -is [int] -or 
+        ($arg -is [string] -and $arg -match '\%$')
+    ) {
+        $scale = $arg
+        @{scaleX=$scale;scaleY=$scale}
+    } elseif ($null -ne $arg.X -or $null -ne $arg.Y) {
+        $scaleInfo = @{}
+        
+        if ($null -ne $arg.X) {
+            $scaleInfo.scaleX = $arg.X
+        }
+        elseif ($null -ne $arg.scaleX) {
+            $scaleInfo.scaleX = $arg.scaleX
+        }
+
+        if ($null -ne $arg.Y) {
+            $scaleInfo.scaleY = $arg.Y
+        }
+        elseif ($null -ne $arg.scaleY) {
+            $scaleInfo.scaleY = $arg.scaleY
+        }
+        
+        $scaleInfo
+    }    
+    elseif ($arg -as [timespan]) {
+        $arg
+    } elseif ($arg -is [bool]) {
+        $arg
+    } else {
+        $arg
+    }
+})
+
+$this.Animate.Invoke($animateArguments)
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>SetZIndex</Name>
+        <Script>
+                        $this | Set-OBSSceneItemIndex -SceneItemIndex ($args[0])
+$this | Add-Member NoteProperty "sceneItemIndex" $args[0] -Force 
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Stretch</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Stretches a scene item
+.DESCRIPTION
+    Stretches a scene item by changing it's bounds.   
+#&gt;
+param()
+
+$PassingThru = $false
+$allArguments = @($args)
+$animateArguments = @(
+foreach ($arg in $allArguments) {    
+    if ($arg -is [double] -or $arg -is [int] -or 
+        ($arg -is [string] -and $arg -match '\%$')
+    ) {
+        $scale = $arg
+        @{scaleX=$scale;scaleY=$scale}
+    }    
+    elseif ($arg -as [timespan]) {
+        $arg
+    } elseif ($arg -is [bool]) {
+        if ($arg) {
+            $PassingThru = $true
+        }
+        $arg
+    } else {
+        $scaleInfo = @{}
+        
+        if ($null -ne $arg.Width) {
+            $scaleInfo.boundsWidth = $arg.Width
+        }
+        elseif ($null -ne $arg.X) {
+            $scaleInfo.boundsWidth = $arg.X
+        }        
+
+        if ($null -ne $arg.Height) {
+            $scaleInfo.boundsHeight = $arg.Height
+        }
+        elseif ($null -ne $arg.Y) {
+            $scaleInfo.boundsHeight = $arg.Y
+        }
+        
+        if ($scaleInfo.Count) {
+            $scaleInfo
+        } else {
+            $arg
+        }            
+    }
+})
+
+$this | Set-OBSSceneItemTransform -SceneItemTransform @{boundsType='OBS_BOUNDS_STRETCH'} -NoResponse -PassThru:$PassingThru
+$this.Animate.Invoke($animateArguments)
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Unlock</Name>
+        <Script>
+                        $this | Set-OBSSceneItemLocked -sceneItemLocked:$false
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptProperty>
+        <Name>BlendMode</Name>
+        <GetScriptBlock>
+                        $this.sceneItemBlendMode -replace '^OBS_BLEND_'
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Enabled</Name>
+        <GetScriptBlock>
+                        return $this.sceneItemEnabled
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Filters</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets a Scene Item's filters
+.DESCRIPTION
+    Gets the filters related to an OBS input.
+.EXAMPLE
+     $obsPowerShellIcon = Show-OBS -Uri https://obs-powershell.start-automating.com/Assets/obs-powershell-animated-icon.svg
+     $obsPowerShellIcon | Set-OBSColorFilter -Opacity .5
+     $obsPowerShellIcon.Filters
+.LINK
+    Get-OBSSourceFilterList
+#&gt;
+Get-OBSSourceFilterList -SourceName $this.SourceName
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ImageHeight</Name>
+        <GetScriptBlock>
+                        $this.sceneItemTransform.sourceHeight
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ImageWidth</Name>
+        <GetScriptBlock>
+                        $this.sceneItemTransform.sourceWidth
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Input</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets a Scene Item's Input
+.DESCRIPTION
+    Gets the OBS Input related to the current scene item.
+
+    This value is cached upon first request, as it will never change as long as the source item exists.
+.EXAMPLE
+    $stars = Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg
+    $stars.Input
+#&gt;
+if (-not $this.'.Input') {
+    $this | Add-Member NoteProperty '.Input' (
+        $this | Get-OBSInput | Where-Object InputName -eq $this.SourceName
+    ) -Force
+}
+
+$this.'.Input'
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Layer</Name>
+        <GetScriptBlock>
+                        return $this.sceneItemIndex
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ZIndex</Name>
+        <GetScriptBlock>
+                        $indexInfo = $this | Get-OBSSceneItemIndex
+if ($indexInfo.SceneItemIndex) {
+    $indexInfo.SceneItemIndex
+}
+elseif ($indexInfo -is [int]) {
+    $indexInfo
+}
+                    </GetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>OBS.SceneItem</Name>
+    <Members>
+      <AliasProperty>
+        <Name>Hide</Name>
+        <ReferencedMemberName>Disable</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>Show</Name>
+        <ReferencedMemberName>Enable</ReferencedMemberName>
+      </AliasProperty>
+      <ScriptMethod>
+        <Name>Animate</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Animates scene items
+.DESCRIPTION
+    Animates the motion of scene items within a frame.
+.EXAMPLE
+    $stars = Add-OBSBrowserSource -URI https://pssvg.start-automating.com/Examples/Stars.svg
+    $stars.FitToScreen()
+    $stars.Animate(@{
+        scale = 0.1        
+    },"00:00:01")
+#&gt;
+param(
+)
+
+filter ToPosition {
+    param(
+    [switch]
+    $Width,
+
+    [switch]
+    $Height
+    )
+
+    
+    if ($_ -is [string] -and $_ -match '%$') {
+        $_ = $_ -replace '%$' -as [double]
+        if (-not $script:CachedOBSVideoSettings) {
+            $script:CachedOBSVideoSettings = Get-OBSVideoSettings
+        }
+        $videoSettings = $script:CachedOBSVideoSettings
+        if ($Width) {
+            $_/100 * $videoSettings.baseWidth
+        }
+        if ($Height) {
+            $_/100 * $videoSettings.baseHeight
+        }
+        
+    }
+    elseif ($_ -is [double] -or $_ -is [int]) {
+        if ($_ -is [double] -and $_ -ge 0 -and $_ -lt 1) {
+            if (-not $script:CachedOBSVideoSettings) {
+                $script:CachedOBSVideoSettings = Get-OBSVideoSettings
+            }
+            $videoSettings = $script:CachedOBSVideoSettings
+            if ($Width) {
+                $_ * $videoSettings.baseWidth
+            }
+            if ($Height) {
+                $_ * $videoSettings.baseHeight
+            }
+            
+        } else {
+            [int]$_
+        }
+    }
+}
+
+filter ToScale {
+    if ($_ -is [string] -and $_ -match '%$') {
+        $_ = $_ -replace '%$' -as [double]
+        $_/100
+    }
+    elseif ($_ -is [double] -or $_ -is [int]) {
+        if ($_ -is [double] -and $_ -ge 0 -and $_ -le 1) {
+            $_
+        } else {
+            [double]$_/100
+        }
+    }
+}
+
+$nextTimeSpan = [timespan]0
+
+$keyNames = 'positionX', 'positionY', 'scaleX','scaleY', 'cropBottom', 'cropLeft', 'cropRight', 'cropTop', 'rotation'
+$keyAliases = [Ordered]@{'Rotate'='rotation'}
+$duplicatedKeyAliases = [Ordered]@{
+    'position' = 'positionX', 'positionY'
+    'scale' = 'scaleX', 'scaleY'
+    'crop' = 'cropBottom', 'cropLeft', 'cropRight', 'cropTop'
+}
+foreach ($position in 'X','Y') {
+    $keyAliases[$position] = "position$position"
+}
+foreach ($cropType in 'Bottom','Left', 'Right', 'Top') {
+    $keyAliases[$cropType] = "crop$cropType"
+}
+   
+$allSteps = @()
+
+
+$originalTransform = $this | Get-OBSSceneItemTransform
+$lastFrom = 
+    if ($originalTransform -is [Collections.IDictionary]) {
+        [Ordered]@{} + $from
+    } else {
+        $newFrom = [Ordered]@{}
+        foreach ($property in $originalTransform.psobject.properties) {
+            $newFrom[$property.Name] = $property.Value
+        }
+        $newFrom
+    }
+
+$totalTimeSpan = [timespan]0
+
+# We want to walk over every argument and turn them into a series of animations
+
+$PassThru   = $false
+
+$AllArgs = @($args)
+
+$allSteps = @(
+:NextArgument for ($argIndex = 0 ; $argIndex -lt $allArgs.Length; $argIndex++) {
+    $arg = $allArgs[$argIndex]
+    # If the arg is a timespan, we want to track this
+    if ($arg -as [timespan]) {
+        $nextTimeSpan = $arg -as [timespan]
+    } elseif ($arg -is [double] -or $arg -is [int]) {
+        $nextTimeSpan = [timespan]::fromSeconds($arg)
+    }
+    elseif ($arg -is [bool]) {
+        if ($arg) {
+            $PassThru = $true
+        }
+    }
+    else {
+        $currentTo = 
+            if ($arg -isnot [Collections.IDictionary]) {
+                $newTo = [Ordered]@{}
+                foreach ($property in $arg.psobject.properties) {
+                    $newTo[$property.Name] = $property.Value
+                }
+                $newTo
+            } else {
+                [Ordered]@{} + $arg
+            }
+
+        $badKey = 
+            @(foreach ($k in @($currentTo.Keys)) {
+                if ($k -notin $keyNames) {
+                    if ($keyAliases[$k]) {
+                        $currentTo[$keyAliases[$k]] = $currentTo[$k]
+                        $currentTo.Remove($k)
+                    } 
+                    elseif ($duplicatedKeyAliases[$k]) {
+                        foreach ($duplicateKey in $duplicatedKeyAliases[$k]) {
+                            $currentTo[$duplicateKey] = $currentTo[$k]
+                        }
+                        
+                        $currentTo.Remove($k)
+                    }
+                    else {
+                        $k
+                    }
+                }
+            })
+
+        foreach ($checkKeyValue in @($currentTo.GetEnumerator())) {
+            
+            $newValue = 
+                switch ($checkKeyValue.Key) {
+                    positionX { $checkKeyValue.Value | ToPosition -Width }
+                    positionY { $checkKeyValue.Value | ToPosition -Height }
+                    cropLeft { $checkKeyValue.Value | ToPosition -Width }
+                    cropRight { $checkKeyValue.Value | ToPosition -Width }
+                    cropTop { $checkKeyValue.Value | ToPosition -Height }
+                    cropBottom { $checkKeyValue.Value | ToPosition -Height }
+                    scaleX { $checkKeyValue.Value | ToScale  }
+                    scaleY { $checkKeyValue.Value | ToScale  }
+                }
+
+            if ($null -ne $newValue) {
+                $currentTo[$checkKeyValue.Key] = $newValue
+            }
+            
+        }
+        
+        if ($badKey) {
+            throw "Cannot animate '$($badKey -join "','")' : Can only animate $($keyNames -join ',')"
+        }
+
+        if (-not $nextTimeSpan.TotalMilliseconds -and 
+            ($argIndex -lt ($AllArgs.Length - 1)) -and 
+            $AllArgs[$argIndex + 1] -as [timespan]
+        ) {
+            $nextTimeSpan = $AllArgs[$argIndex + 1] -as [timespan]
+            $argIndex++
+        }
+
+        if ($lastFrom -and $nextTimeSpan) {
+            $StepCount = [Math]::Ceiling($NextTimeSpan.TotalMilliseconds / ([timespan]::fromSeconds(1/30).TotalMilliseconds)) * 2            
+            if (-not $StepCount) {
+                $this | Set-OBSSceneItemTransform -SceneItemTransform $currentTo -PassThru
+                $newLastFrom = [Ordered]@{} + $currentTo
+                foreach ($kv in $lastFrom.GetEnumerator()) {
+                    if ($currentTo.Contains($kv.Key)) { continue }
+                    $newLastFrom[$kv.Key] = $kv.Value
+                }
+                $lastFrom = $newLastFrom # May need to join this with the remaining properties in from
+
+                $totalTimeSpan += $nextTimeSpan
+                $nextTimeSpan = [timespan]0
+                continue NextArgument
+            }
+
+            $stepMilliseconds  = $nextTimeSpan.TotalMilliseconds / $StepCount
+
+            
+            # Compare the two sets of keys to determine the base data object
+            $BaseObject = [Ordered]@{}
+            foreach ($key in $currentTo.Keys) {
+                if (-not $BaseObject[$key]) {
+                    $BaseObject[$key] = 
+                        if ($null -ne $lastFrom[$key]) {
+                            $lastFrom[$key]
+                        } else {
+                            $currentTo[$key]
+                        }
+                }
+            }                    
+
+            # Determine the animation change per step.
+            $eachStepValue = [Ordered]@{}
+            foreach ($key in $baseObject.Keys) {
+                $distance = try { $currentTo[$key] - $baseObject[$key] } catch { $null }
+                if ($null -ne $distance) {
+                    $eachStepValue[$key] = [float]$distance / $StepCount
+                }
+            }
+
+            
+            foreach ($stepNumber in 1..($stepCount)) {
+                $stepObject = [Ordered]@{}
+                foreach ($key in $BaseObject.Keys) {
+                    $stepObject[$key] = $BaseObject[$key] + ($eachStepValue[$key] * $stepNumber)
+                }
+                $this | Set-OBSSceneItemTransform -SceneItemTransform $stepObject -PassThru
+                Send-OBSSleep -SleepMillis $stepMilliseconds -PassThru
+            }
+
+        } else {
+            $this | Set-OBSSceneItemTransform -SceneItemTransform $currentTo -PassThru
+        }
+        $newLastFrom = [Ordered]@{} + $currentTo
+        foreach ($kv in $lastFrom.GetEnumerator()) {
+            if ($currentTo.Contains($kv.Key)) { continue }
+            $newLastFrom[$kv.Key] = $kv.Value
+        }
+        $lastFrom = $newLastFrom # May need to join this with the remaining properties in from
+
+        $totalTimeSpan += $nextTimeSpan
+        $nextTimeSpan = [timespan]0
+
+        if (($argIndex -lt ($AllArgs.Length - 1)) -and 
+            $AllArgs[$argIndex + 1] -as [timespan]
+        ) {
+            Send-OBSSleep -SleepMillis ($AllArgs[$argIndex + 1] -as [timespan]).TotalMilliseconds -PassThru
+        }
+    }
+
+    $IsFirstArg = $false
+}
+)
+
+if ($allSteps) {
+    # If any boolean true was in the arguments, we're passing thru
+    if ($PassThru) {
+        $allSteps
+    } else {
+        # Send all of the steps to OBS.
+        $allSteps | Send-OBS 
+    }    
+}
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Blend</Name>
+        <Script>
+                        param([string]$BlendMode)
+
+if ($blendMode -cnotmatch '^OBS_BLEND_') {
+    $blendMode = "OBS_BLEND_$($blendMode.ToUpper())"
+}
+$this |
+    Set-OBSSceneItemBlendMode -SceneItemBlendMode $blendMode
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Center</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Centers a scene item
+.DESCRIPTION
+    Sets the scene item alignment to center
+.NOTES
+    Also corrects the position so that the image does not only appear in a quadrant. 
+
+    If a boolean argument is passed, and it is true, then this will PassThru instead of run.
+    (this can be used for animations)
+
+    If an explicit null argument is passed, then the command will not wait for an OBS response.
+    (this will be slightly faster)
+#&gt;
+param()
+
+$passingThru = $false
+$NoResponse  = $false
+
+foreach ($arg in $args) {
+    if ($arg -is [bool]) {
+        if ($arg) {
+            $passingThru= $true
+        }
+    }
+    if ($null -eq $arg) {
+        $NoResponse = $true
+    }
+}
+
+$sceneItemTransform = $this | Get-OBSSceneItemTransform
+
+$sceneItemTransform.alignment = 0 # 0 means center
+$sceneItemTransform.positionX = $sceneItemTransform.boundsWidth/2
+$sceneItemTransform.positionY = $sceneItemTransform.boundsHeight/2
+
+$this | Set-OBSSceneItemTransform -SceneItemTransform $sceneItemTransform -PassThru:$passingThru -NoResponse:$NoResponse
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Crop</Name>
+        <Script>
+                        $cropTable = [Ordered]@{
+    cropBottom = 0
+    cropLeft   = 0
+    cropRight  = 0
+    cropTop    = 0
+}
+
+$MatchingKey = [Regex]::new("(?&gt;$(
+    @($cropTable.Keys -join '|'
+    '|'
+    $cropTable.Keys -replace '^crop' -join '|') -join ''
+))", 'IgnoreCase')
+
+
+$currentKey = ''
+foreach ($arg in $args) {
+    if ($arg -is [Collections.IDictionary]) {
+        foreach ($keyValue in $arg.GetEnumerator()) {
+            if ($keyValue.Key -match $MatchingKey) {
+                $cropTable[$matches.0 -replace '^crop' -replace '^', 'crop'] = $keyValue.Value
+            }        
+        }
+    }
+    if ($arg -is [string] -and $arg -match $MatchingKey) {
+        $currentKey = $matches.0 -replace '^crop' -replace '^', 'crop'
+    }
+    if ($arg -is [int] -and $currentKey) {
+        $cropTable[$currentKey] = $arg
+        $currentKey = ''
+    }
+}
+
+$this | Set-OBSSceneItemTransform -SceneItemTransform $cropTable
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Delete</Name>
+        <Script>
+                        $this.Remove()
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Disable</Name>
+        <Script>
+                        $this | Set-OBSSceneItemEnabled -sceneItemEnabled:$false
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Enable</Name>
+        <Script>
+                        param(
+[switch]
+$PassThru
+)
+
+$this | Set-OBSSceneItemEnabled -sceneItemEnabled -PassThru:$PassThru
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>FitToScreen</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Fits an item to the screen
+.DESCRIPTION
+    Centers an item and makes it fit to the screen.
+.LINK
+    Get-OBSVideoSettings
+.LINK
+    Get-OBSSceneItemTransform
+.LINK
+    Set-OBSSceneItemTransform
+#&gt;
+param()
+if (-not $script:CachedOBSVideoSettings) {
+    $script:CachedOBSVideoSettings = Get-OBSVideoSettings
+}
+$videoSettings = $script:CachedOBSVideoSettings
+
+$thisTransform = $this | Get-OBSSceneItemTransform
+
+$sceneItemTransform = ([Ordered]@{
+    alignment = 0
+    scaleX    = ([double]$videoSettings.outputWidth / $thisTransform.sourceWidth )
+    positionX = [int]($videoSettings.outputWidth / 2)
+    positionY = [int]($videoSettings.outputHeight / 2)
+    scaleY    = ([double]$videoSettings.outputHeight / $thisTransform.sourceHeight )
+})
+
+$this | Set-OBSSceneItemTransform -SceneItemTransform $sceneItemTransform
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Lock</Name>
+        <Script>
+                        $this | Set-OBSSceneItemLocked -sceneItemLocked
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Move</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Moves a scene item
+.DESCRIPTION
+    Moves a scene item throughout the screen.
+
+    This converts it's arguments to .Animate arguments.  Any single values will be assumed to be positionX/positionY
+.EXAMPLE
+    # Load a source
+    $stars = Add-OBSBrowserSource -URI https://pssvg.start-automating.com/Examples/Stars.svg
+    # fit it to the screen
+    $stars.FitToScreen()
+    # Move it diagonally across the screen
+    $stars.Move("-50%","150%", "00:00:05")
+.LINK
+    OBS.GetSceneItemList.Response.Animate
+#&gt;
+param()
+$allArguments = @($args)
+$animateArguments = @(
+foreach ($arg in $allArguments) {    
+    if (
+        $arg -is [double] -or 
+        $arg -is [int] -or
+        ($arg -is [string] -and $arg -match '\%$')                
+    ) {        
+        $positionTransform = @{
+            positionX = $arg
+            positionY = $arg
+        }
+        $positionTransform
+    } elseif ($arg.X,$arg.Y -ne $null) {
+        $scaleInfo = @{}
+                
+        if ($null -ne $arg.X) {
+            $scaleInfo.positionX = $arg.X
+        }        
+
+        if ($null -ne $arg.Y) {
+            $scaleInfo.positionY = $arg.Y
+        }        
+        
+        $scaleInfo
+    }    
+    elseif ($arg -as [timespan]) {
+        $arg
+    } elseif ($arg -is [bool]) {
+        $arg
+    }
+    else {
+        $arg
+    }
+})
+
+$this.Animate.Invoke($animateArguments)
+
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Remove</Name>
+        <Script>
+                        $this | Remove-OBSSceneItem
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Rotate</Name>
+        <Script>
+                        param()
+$allArguments = @($args)
+
+$animateArguments  = @(
+    foreach ($argument in $allArguments) {
+        if ($argument -is [double] -or $argument -is [int]) {
+            @{
+                rotation = $argument
+            }
+        } elseif ($argument -as [timespan]) {
+            $argument
+        } elseif ($argument -is [bool]) {
+            $argument
+        }
+    }
+)
+
+$this.Animate.Invoke($animateArguments)
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Scale</Name>
+        <Script>
+                        param()
+
+$allArguments = @($args)
+$animateArguments = @(
+foreach ($arg in $allArguments) {    
+    if ($arg -is [double] -or $arg -is [int] -or 
+        ($arg -is [string] -and $arg -match '\%$')
+    ) {
+        $scale = $arg
+        @{scaleX=$scale;scaleY=$scale}
+    } elseif ($null -ne $arg.X -or $null -ne $arg.Y) {
+        $scaleInfo = @{}
+        
+        if ($null -ne $arg.X) {
+            $scaleInfo.scaleX = $arg.X
+        }
+        elseif ($null -ne $arg.scaleX) {
+            $scaleInfo.scaleX = $arg.scaleX
+        }
+
+        if ($null -ne $arg.Y) {
+            $scaleInfo.scaleY = $arg.Y
+        }
+        elseif ($null -ne $arg.scaleY) {
+            $scaleInfo.scaleY = $arg.scaleY
+        }
+        
+        $scaleInfo
+    }    
+    elseif ($arg -as [timespan]) {
+        $arg
+    } elseif ($arg -is [bool]) {
+        $arg
+    } else {
+        $arg
+    }
+})
+
+$this.Animate.Invoke($animateArguments)
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>SetZIndex</Name>
+        <Script>
+                        $this | Set-OBSSceneItemIndex -SceneItemIndex ($args[0])
+$this | Add-Member NoteProperty "sceneItemIndex" $args[0] -Force 
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Stretch</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Stretches a scene item
+.DESCRIPTION
+    Stretches a scene item by changing it's bounds.   
+#&gt;
+param()
+
+$PassingThru = $false
+$allArguments = @($args)
+$animateArguments = @(
+foreach ($arg in $allArguments) {    
+    if ($arg -is [double] -or $arg -is [int] -or 
+        ($arg -is [string] -and $arg -match '\%$')
+    ) {
+        $scale = $arg
+        @{scaleX=$scale;scaleY=$scale}
+    }    
+    elseif ($arg -as [timespan]) {
+        $arg
+    } elseif ($arg -is [bool]) {
+        if ($arg) {
+            $PassingThru = $true
+        }
+        $arg
+    } else {
+        $scaleInfo = @{}
+        
+        if ($null -ne $arg.Width) {
+            $scaleInfo.boundsWidth = $arg.Width
+        }
+        elseif ($null -ne $arg.X) {
+            $scaleInfo.boundsWidth = $arg.X
+        }        
+
+        if ($null -ne $arg.Height) {
+            $scaleInfo.boundsHeight = $arg.Height
+        }
+        elseif ($null -ne $arg.Y) {
+            $scaleInfo.boundsHeight = $arg.Y
+        }
+        
+        if ($scaleInfo.Count) {
+            $scaleInfo
+        } else {
+            $arg
+        }            
+    }
+})
+
+$this | Set-OBSSceneItemTransform -SceneItemTransform @{boundsType='OBS_BOUNDS_STRETCH'} -NoResponse -PassThru:$PassingThru
+$this.Animate.Invoke($animateArguments)
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>Unlock</Name>
+        <Script>
+                        $this | Set-OBSSceneItemLocked -sceneItemLocked:$false
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptProperty>
+        <Name>BlendMode</Name>
+        <GetScriptBlock>
+                        $this.sceneItemBlendMode -replace '^OBS_BLEND_'
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Enabled</Name>
+        <GetScriptBlock>
+                        return $this.sceneItemEnabled
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Filters</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets a Scene Item's filters
+.DESCRIPTION
+    Gets the filters related to an OBS input.
+.EXAMPLE
+     $obsPowerShellIcon = Show-OBS -Uri https://obs-powershell.start-automating.com/Assets/obs-powershell-animated-icon.svg
+     $obsPowerShellIcon | Set-OBSColorFilter -Opacity .5
+     $obsPowerShellIcon.Filters
+.LINK
+    Get-OBSSourceFilterList
+#&gt;
+Get-OBSSourceFilterList -SourceName $this.SourceName
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ImageHeight</Name>
+        <GetScriptBlock>
+                        $this.sceneItemTransform.sourceHeight
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ImageWidth</Name>
+        <GetScriptBlock>
+                        $this.sceneItemTransform.sourceWidth
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Input</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets a Scene Item's Input
+.DESCRIPTION
+    Gets the OBS Input related to the current scene item.
+
+    This value is cached upon first request, as it will never change as long as the source item exists.
+.EXAMPLE
+    $stars = Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg
+    $stars.Input
+#&gt;
+if (-not $this.'.Input') {
+    $this | Add-Member NoteProperty '.Input' (
+        $this | Get-OBSInput | Where-Object InputName -eq $this.SourceName
+    ) -Force
+}
+
+$this.'.Input'
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>Layer</Name>
+        <GetScriptBlock>
+                        return $this.sceneItemIndex
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
+        <Name>ZIndex</Name>
+        <GetScriptBlock>
+                        $indexInfo = $this | Get-OBSSceneItemIndex
+if ($indexInfo.SceneItemIndex) {
+    $indexInfo.SceneItemIndex
+}
+elseif ($indexInfo -is [int]) {
+    $indexInfo
+}
                     </GetScriptBlock>
       </ScriptProperty>
     </Members>

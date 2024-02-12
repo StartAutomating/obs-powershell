@@ -15,5 +15,5 @@
 * [get_RecordStatus](get_RecordStatus.md)
 * [get_SceneItems](get_SceneItems.md)
 * [get_Scenes](get_Scenes.md)
-* [get_Stats](get_Stats.md)
+* [get_Statistics](get_Statistics.md)
 * [get_StreamStatus](get_StreamStatus.md)

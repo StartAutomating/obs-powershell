@@ -1167,6 +1167,10 @@ $this | Set-OBSInputSettings -InputSettings ([Ordered]@{color=$realColor})
   <Type>
     <Name>OBS.PowerShell</Name>
     <Members>
+      <AliasProperty>
+        <Name>Stats</Name>
+        <ReferencedMemberName>Statistics</ReferencedMemberName>
+      </AliasProperty>
       <ScriptProperty>
         <Name>Commands</Name>
         <GetScriptBlock>
@@ -1359,7 +1363,7 @@ $this.Scenes | Get-OBSSceneItem
                     </GetScriptBlock>
       </ScriptProperty>
       <ScriptProperty>
-        <Name>Stats</Name>
+        <Name>Statistics</Name>
         <GetScriptBlock>
                         &lt;#
 .SYNOPSIS

@@ -11,7 +11,7 @@ $NewDriveSplat = @{PSProvider='FileSystem';ErrorAction='Ignore';Scope='Global'}
 New-PSDrive -Name $myModule.Name -Root $PSScriptRoot -Description "$MyModule" @NewDriveSplat
 
 if ($home) {
-    New-PSDrive -Name "my-$($MyModule.Name)" -Root (Join-Path $home $myModule.Name) -Description "My $MyModule" @NewDriveSplat
+    New-PSDrive -Name "my-$($MyModule.Name)" -Root (Join-Path $home ".$($myModule.Name)") -Description "My $MyModule" @NewDriveSplat
 }
 
 foreach ($noun in 'Streaming','Recording') {

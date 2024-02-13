@@ -18,7 +18,7 @@ $CloneAndGetShaders = {
         $cloneOut = git clone @cloneArgs *>&1
         Push-Location (Join-Path $pwd "obs-shaderfilter")
         git sparse-checkout set --no-cone '**.shader' '**.effect'
-        git checkout
+        $checkoutOut = git checkout
         Get-ChildItem -Recurse -File | Where-Object { $_.Directory.Name -notin 'internal' }
         Pop-Location
     )    
@@ -32,7 +32,7 @@ $CloneAndGetShaders
 " | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
 }
 
-$SparselyClonedShaders =. $CloneAndGetShaders
+$SparselyClonedShaders = . $CloneAndGetShaders
 #endregion Sparse cloning https://github.com/Exeldro/obs-shaderfilter.git
 
 $parentPath = $PSScriptRoot | Split-Path
@@ -86,7 +86,7 @@ $capitalizeNames = {
     $matchAsString.Substring(0,1).ToUpper() + $matchAsString.Substring(1) -replace "_"
 }
 
-$FindAnnotations = [Regex]::new("$FindShaderParameters\<[\s\S]+?>")
+$FindAnnotations = [Regex]::new("$FindShaderParameters\<[\s\S]+?>",'IgnoreCase')
 $generatingJobs  = @()
 
 foreach ($shaderParameterSet in $ShaderParameters) {
@@ -107,7 +107,9 @@ foreach ($shaderParameterSet in $ShaderParameters) {
     $ShaderParameters = [Ordered]@{}
     
     if ($env:GITHUB_STEP_SUMMARY) {
-        "  * [x] Found $(@($shaderParameterSet.Group).Length) Shader Parameters in $($shaderName)" |
+        "  * [x] Found $(@($shaderParameterSet.Group).Length) Shader Parameters in $($shaderName)
+$($shaderParameterSet.Group | Out-String)
+" |
             Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
     }
 

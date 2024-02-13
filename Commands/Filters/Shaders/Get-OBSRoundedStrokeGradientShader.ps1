@@ -25,12 +25,12 @@ $RotationSpeed,
 # Set the border_colorL of OBSRoundedStrokeGradientShader
 [Alias('border_colorL')]
 [ComponentModel.DefaultBindingProperty('border_colorL')]
-[Single[]]
+[String]
 $BorderColorL,
 # Set the border_colorR of OBSRoundedStrokeGradientShader
 [Alias('border_colorR')]
 [ComponentModel.DefaultBindingProperty('border_colorR')]
-[Single[]]
+[String]
 $BorderColorR,
 # Set the center_width of OBSRoundedStrokeGradientShader
 [Alias('center_width')]
@@ -69,9 +69,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSRoundedStrokeGradientShader'
+$shaderName = 'rounded_stroke_gradient'
+$ShaderNoun = 'OBSRoundedStrokeGradientShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 //rounded rectange shader from https://raw.githubusercontent.com/exeldro/obs-lua/master/rounded_rect.shader
 //modified slightly by Surn 
@@ -275,7 +275,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

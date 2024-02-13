@@ -50,7 +50,7 @@ $Notes,
 $Target,
 # Set the color of OBSBackgroundRemovalShader
 [ComponentModel.DefaultBindingProperty('color')]
-[Single[]]
+[String]
 $Color,
 # Set the opacity of OBSBackgroundRemovalShader
 [ComponentModel.DefaultBindingProperty('opacity')]
@@ -93,9 +93,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSBackgroundRemovalShader'
+$shaderName = 'background_removal'
+$ShaderNoun = 'OBSBackgroundRemovalShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 // background removal effect By Charles Fettinger (https://github.com/Oncorporation)  4/2019
 //Converted to OpenGL by Exeldro February 19, 2022
@@ -225,7 +225,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

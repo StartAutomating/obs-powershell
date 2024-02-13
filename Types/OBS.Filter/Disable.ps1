@@ -11,7 +11,6 @@ param(
 [switch]
 $PassThru
 )
-$this | Set-OBSSourceFilterEnabled -FilterEnabled:$false -PassThru $PassThru
-if (-not $PassThru) {
-    $this | Add-Member filterEnabled $false -Force -PassThru
-}
+$this | 
+    Add-Member filterEnabled $false -Force -PassThru |
+    Set-OBSSourceFilterEnabled -FilterEnabled:$false -PassThru:$PassThru

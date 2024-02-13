@@ -1,8 +1,8 @@
 obs-powershell-commands
 -----------------------
 
-obs-powershell exports 718 commands
-(293 functions and 425 aliases)
+obs-powershell exports 730 commands
+(297 functions and 433 aliases)
 
 A good number of these commands directly correspond to an obs-websocket message.
 For a complete list, see [obs-powershell-websocket-commands](docs/obs-powershell-websocket-commands.md).
@@ -70,6 +70,10 @@ Functions
 |[Get-OBSEmbossShader](docs/Get-OBSEmbossShader.md)                                        |
 |[Get-OBSExeldroBentCameraShader](docs/Get-OBSExeldroBentCameraShader.md)                  |
 |[Get-OBSFadeTransitionShader](docs/Get-OBSFadeTransitionShader.md)                        |
+|[Get-OBSFillColorGradientShader](docs/Get-OBSFillColorGradientShader.md)                  |
+|[Get-OBSFillColorLinearShader](docs/Get-OBSFillColorLinearShader.md)                      |
+|[Get-OBSFillColorRadialDegreesShader](docs/Get-OBSFillColorRadialDegreesShader.md)        |
+|[Get-OBSFillColorRadialPercentageShader](docs/Get-OBSFillColorRadialPercentageShader.md)  |
 |[Get-OBSFilterTemplateShader](docs/Get-OBSFilterTemplateShader.md)                        |
 |[Get-OBSFire3Shader](docs/Get-OBSFire3Shader.md)                                          |
 |[Get-OBSFireShader](docs/Get-OBSFireShader.md)                                            |
@@ -372,6 +376,10 @@ Aliases
 |[Get-OBSEmbossShader](docs/Get-OBSEmbossShader.md)                                        |
 |[Get-OBSExeldroBentCameraShader](docs/Get-OBSExeldroBentCameraShader.md)                  |
 |[Get-OBSFadeTransitionShader](docs/Get-OBSFadeTransitionShader.md)                        |
+|[Get-OBSFillColorGradientShader](docs/Get-OBSFillColorGradientShader.md)                  |
+|[Get-OBSFillColorLinearShader](docs/Get-OBSFillColorLinearShader.md)                      |
+|[Get-OBSFillColorRadialDegreesShader](docs/Get-OBSFillColorRadialDegreesShader.md)        |
+|[Get-OBSFillColorRadialPercentageShader](docs/Get-OBSFillColorRadialPercentageShader.md)  |
 |[Get-OBSFilterTemplateShader](docs/Get-OBSFilterTemplateShader.md)                        |
 |[Get-OBSFire3Shader](docs/Get-OBSFire3Shader.md)                                          |
 |[Get-OBSFireShader](docs/Get-OBSFireShader.md)                                            |

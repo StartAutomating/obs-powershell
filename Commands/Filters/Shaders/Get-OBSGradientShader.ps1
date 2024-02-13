@@ -5,7 +5,7 @@ param(
 # Set the start_color of OBSGradientShader
 [Alias('start_color')]
 [ComponentModel.DefaultBindingProperty('start_color')]
-[Single[]]
+[String]
 $StartColor,
 # Set the start_step of OBSGradientShader
 [Alias('start_step')]
@@ -15,7 +15,7 @@ $StartStep,
 # Set the middle_color of OBSGradientShader
 [Alias('middle_color')]
 [ComponentModel.DefaultBindingProperty('middle_color')]
-[Single[]]
+[String]
 $MiddleColor,
 # Set the middle_step of OBSGradientShader
 [Alias('middle_step')]
@@ -25,7 +25,7 @@ $MiddleStep,
 # Set the end_color of OBSGradientShader
 [Alias('end_color')]
 [ComponentModel.DefaultBindingProperty('end_color')]
-[Single[]]
+[String]
 $EndColor,
 # Set the end_step of OBSGradientShader
 [Alias('end_step')]
@@ -64,7 +64,7 @@ $ApplyToSpecificColor,
 # Set the Color_To_Replace of OBSGradientShader
 [Alias('Color_To_Replace')]
 [ComponentModel.DefaultBindingProperty('Color_To_Replace')]
-[Single[]]
+[String]
 $ColorToReplace,
 # Set the horizontal of OBSGradientShader
 [ComponentModel.DefaultBindingProperty('horizontal')]
@@ -111,9 +111,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSGradientShader'
+$shaderName = 'gradient'
+$ShaderNoun = 'OBSGradientShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 // gradient shader by Charles Fettinger for obs-shaderfilter plugin 3/2019
 //https://github.com/Oncorporation/obs-shaderfilter
@@ -328,7 +328,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

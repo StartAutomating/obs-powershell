@@ -34,9 +34,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSRemovePartialPixelsShader'
+$shaderName = 'remove_partial_pixels'
+$ShaderNoun = 'OBSRemovePartialPixelsShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 // Remove Partial Pixels shader by Charles Fettinger for obs-shaderfilter plugin 8/2020
 // https://github.com/Oncorporation/obs-shaderfilter
@@ -79,7 +79,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

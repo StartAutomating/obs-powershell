@@ -29,7 +29,7 @@ $Part1,
 # Set the color_1 of OBSPieChartShader
 [Alias('color_1')]
 [ComponentModel.DefaultBindingProperty('color_1')]
-[Single[]]
+[String]
 $Color1,
 # Set the part_2 of OBSPieChartShader
 [Alias('part_2')]
@@ -39,7 +39,7 @@ $Part2,
 # Set the color_2 of OBSPieChartShader
 [Alias('color_2')]
 [ComponentModel.DefaultBindingProperty('color_2')]
-[Single[]]
+[String]
 $Color2,
 # Set the part_3 of OBSPieChartShader
 [Alias('part_3')]
@@ -49,7 +49,7 @@ $Part3,
 # Set the color_3 of OBSPieChartShader
 [Alias('color_3')]
 [ComponentModel.DefaultBindingProperty('color_3')]
-[Single[]]
+[String]
 $Color3,
 # Set the part_4 of OBSPieChartShader
 [Alias('part_4')]
@@ -59,7 +59,7 @@ $Part4,
 # Set the color_4 of OBSPieChartShader
 [Alias('color_4')]
 [ComponentModel.DefaultBindingProperty('color_4')]
-[Single[]]
+[String]
 $Color4,
 # Set the part_5 of OBSPieChartShader
 [Alias('part_5')]
@@ -69,7 +69,7 @@ $Part5,
 # Set the color_5 of OBSPieChartShader
 [Alias('color_5')]
 [ComponentModel.DefaultBindingProperty('color_5')]
-[Single[]]
+[String]
 $Color5,
 # Set the part_6 of OBSPieChartShader
 [Alias('part_6')]
@@ -79,7 +79,7 @@ $Part6,
 # Set the color_6 of OBSPieChartShader
 [Alias('color_6')]
 [ComponentModel.DefaultBindingProperty('color_6')]
-[Single[]]
+[String]
 $Color6,
 # Set the part_7 of OBSPieChartShader
 [Alias('part_7')]
@@ -89,7 +89,7 @@ $Part7,
 # Set the color_7 of OBSPieChartShader
 [Alias('color_7')]
 [ComponentModel.DefaultBindingProperty('color_7')]
-[Single[]]
+[String]
 $Color7,
 # Set the part_8 of OBSPieChartShader
 [Alias('part_8')]
@@ -99,7 +99,7 @@ $Part8,
 # Set the color_8 of OBSPieChartShader
 [Alias('color_8')]
 [ComponentModel.DefaultBindingProperty('color_8')]
-[Single[]]
+[String]
 $Color8,
 # Set the part_9 of OBSPieChartShader
 [Alias('part_9')]
@@ -109,7 +109,7 @@ $Part9,
 # Set the color_9 of OBSPieChartShader
 [Alias('color_9')]
 [ComponentModel.DefaultBindingProperty('color_9')]
-[Single[]]
+[String]
 $Color9,
 # Set the part_10 of OBSPieChartShader
 [Alias('part_10')]
@@ -119,7 +119,7 @@ $Part10,
 # Set the color_10 of OBSPieChartShader
 [Alias('color_10')]
 [ComponentModel.DefaultBindingProperty('color_10')]
-[Single[]]
+[String]
 $Color10,
 # The name of the source.  This must be provided when adding an item for the first time
 [Parameter(ValueFromPipelineByPropertyName)]
@@ -144,9 +144,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSPieChartShader'
+$shaderName = 'pie-chart'
+$ShaderNoun = 'OBSPieChartShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 uniform float inner_radius<
     string label = "inner radius";
@@ -312,7 +312,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

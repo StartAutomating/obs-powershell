@@ -72,7 +72,7 @@ filter ToScale {
 
 $nextTimeSpan = [timespan]0
 
-$keyNames = 'positionX', 'positionY', 'scaleX','scaleY', 'cropBottom', 'cropLeft', 'cropRight', 'cropTop', 'rotation'
+$keyNames = 'boundsWidth','boundsHeight','positionX', 'positionY', 'scaleX','scaleY', 'cropBottom', 'cropLeft', 'cropRight', 'cropTop', 'rotation'
 $keyAliases = [Ordered]@{'Rotate'='rotation'}
 $duplicatedKeyAliases = [Ordered]@{
     'position' = 'positionX', 'positionY'

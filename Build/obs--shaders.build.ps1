@@ -4,6 +4,18 @@
 .DESCRIPTION
 
 #>
+
+@"
+## Shader build
+
+We are trying to build shaders, from $(
+    Get-PSCallStack | 
+    Out-Host
+)
+
+There are currently $($Error.Count) errors.
+"@ | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+
 $updatedSubmodules = git submodule update --remote 
 
 $parentPath = $PSScriptRoot | Split-Path

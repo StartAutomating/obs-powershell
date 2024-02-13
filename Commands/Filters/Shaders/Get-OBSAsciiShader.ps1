@@ -9,7 +9,7 @@ $Scale,
 # Set the base_color of OBSAsciiShader
 [Alias('base_color')]
 [ComponentModel.DefaultBindingProperty('base_color')]
-[Single[]]
+[String]
 $BaseColor,
 # Set the monochrome of OBSAsciiShader
 [ComponentModel.DefaultBindingProperty('monochrome')]
@@ -47,9 +47,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSAsciiShader'
+$shaderName = 'ascii'
+$ShaderNoun = 'OBSAsciiShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 // ASCII shader for use with obs-shaderfilter 7/2020 v1.0
 // https://github.com/Oncorporation/obs-shaderfilter
@@ -166,7 +166,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

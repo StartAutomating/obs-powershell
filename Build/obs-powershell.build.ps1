@@ -402,4 +402,7 @@ $filesBuilt |
         }
     }
 
+# Building shaders
+. .\obs--shaders.build.ps1
+
 Pop-Location

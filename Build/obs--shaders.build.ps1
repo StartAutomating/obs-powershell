@@ -8,7 +8,8 @@ $updatedSubmodules = git submodule update --remote
 
 $parentPath = $PSScriptRoot | Split-Path
 
-$ShaderFiles =  Get-ChildItem -Path $parentPath  -File -Recurse |
+$ShaderFiles = 
+    Get-ChildItem -Path $parentPath  -File -Recurse |
     Where-Object Extension -in '.shader', '.effect'
 
 $commandsPath = Join-Path $parentPath Commands
@@ -19,7 +20,7 @@ if (-not (Test-Path $ShaderCommandsPath))  {
     $null = New-Item -ItemType Directory -path $ShaderCommandsPath
 }
 
-$FindShaderParameters = 'uniform\s{1,}(?<Type>\S+)\s{1,}(?<ParameterName>[\S-[\<\;]]+)'
+$FindShaderParameters = '^[^/]{0,}uniform\s{1,}(?<Type>\S+)\s{1,}(?<ParameterName>[\S-[\<\;]]+)'
 
 $ShaderParameters = $ShaderFiles | 
         Select-String $FindShaderParameters |

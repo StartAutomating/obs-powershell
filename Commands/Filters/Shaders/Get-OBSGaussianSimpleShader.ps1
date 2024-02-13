@@ -90,9 +90,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSGaussianSimpleShader'
+$shaderName = 'gaussian-simple'
+$ShaderNoun = 'OBSGaussianSimpleShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 // Single-pass gaussian blur - fast shader modified by Charles Fettinger for use with obs-shaderfilter 7/2020 v.01
 // https://github.com/Oncorporation/obs-shaderfilter
@@ -200,7 +200,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

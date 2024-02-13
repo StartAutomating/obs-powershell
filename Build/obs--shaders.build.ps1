@@ -99,8 +99,13 @@ foreach ($shaderParameterSet in $ShaderParameters) {
     }
     $ShaderContent = [IO.File]::ReadAllText($shaderParameterSet.Name)
     $ShaderAnnotations = [Ordered]@{}
+    $foundShaderAnnotations = @($FindAnnotations.Matches($ShaderContent))
+    if ($env:GITHUB_STEP_SUMMARY) {
+        "  * [x] Found $($foundShaderAnnotations.Length) Shader annotations in $shaderFileName ( $ShaderNoun )" |
+            Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+    }
     foreach ($shaderAnnotation in $FindAnnotations.Matches($ShaderContent)) {
-        $null = $shaderAnnotation -match $FindAnnotations
+        $null = $shaderAnnotation -match $FindAnnotations        
         $shaderAnnotations[$matches.'ParameterName'] = [Ordered]@{} + $matches
     }
 
@@ -335,12 +340,6 @@ if ($env:GITHUB_STEP_SUMMARY) {
 ShaderName: ``$ShaderName``
 ~~~
 $($_ | Out-String)
-~~~
-
-~~~json
-$(
-    $NewPipeScriptSplat | ConvertTo-Json -Depth 5
-)
 ~~~
 "@ | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
 }        

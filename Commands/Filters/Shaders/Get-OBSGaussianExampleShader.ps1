@@ -53,7 +53,7 @@ $AfterImage,
 # Set the text_color of OBSGaussianExampleShader
 [Alias('text_color')]
 [ComponentModel.DefaultBindingProperty('text_color')]
-[Single[]]
+[String]
 $TextColor,
 # Set the max_distance of OBSGaussianExampleShader
 [Alias('max_distance')]
@@ -87,9 +87,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSGaussianExampleShader'
+$shaderName = 'gaussian-example'
+$ShaderNoun = 'OBSGaussianExampleShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 uniform float4x4 ViewProj;
 uniform texture2d image;
@@ -288,7 +288,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

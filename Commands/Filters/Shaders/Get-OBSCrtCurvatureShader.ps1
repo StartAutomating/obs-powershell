@@ -8,7 +8,7 @@ param(
 $Strength,
 # Set the border of OBSCrtCurvatureShader
 [ComponentModel.DefaultBindingProperty('border')]
-[Single[]]
+[String]
 $Border,
 # Set the feathering of OBSCrtCurvatureShader
 [ComponentModel.DefaultBindingProperty('feathering')]
@@ -37,9 +37,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSCrtCurvatureShader'
+$shaderName = 'crt-curvature'
+$ShaderNoun = 'OBSCrtCurvatureShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 uniform float strength<
 	string label = "Strength";
@@ -95,7 +95,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

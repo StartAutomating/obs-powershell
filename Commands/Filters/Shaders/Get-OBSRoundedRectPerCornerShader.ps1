@@ -30,7 +30,7 @@ $BorderThickness,
 # Set the border_color of OBSRoundedRectPerCornerShader
 [Alias('border_color')]
 [ComponentModel.DefaultBindingProperty('border_color')]
-[Single[]]
+[String]
 $BorderColor,
 # Set the border_alpha_start of OBSRoundedRectPerCornerShader
 [Alias('border_alpha_start')]
@@ -70,9 +70,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSRoundedRectPerCornerShader'
+$shaderName = 'rounded_rect_per_corner'
+$ShaderNoun = 'OBSRoundedRectPerCornerShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 //Converted to OpenGL by Q-mii & Exeldro February 18, 2022
 uniform int corner_radius_tl<
@@ -264,7 +264,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

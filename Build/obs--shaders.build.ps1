@@ -105,6 +105,11 @@ foreach ($shaderParameterSet in $ShaderParameters) {
     }
 
     $ShaderParameters = [Ordered]@{}
+    
+    if ($env:GITHUB_STEP_SUMMARY) {
+        "  * [x] Found $(@($shaderParameterSet.Group).Length) Shader Parameters in $($shaderName)" |
+            Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+    }
 
     foreach ($shaderParameterInSet in $shaderParameterSet.Group) {
         $shaderMatch = $shaderParameterInSet -match $FindShaderParameters
@@ -328,7 +333,10 @@ ShaderName: ``$ShaderName``
 ~~~
 $($_ | Out-String)
 ~~~
+~~~
+$($NewPipeScriptSplat | ConvertTo-Json)
+~~~
 "@ | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
 }        
-    continue
+    continue OutOfBuild
 }

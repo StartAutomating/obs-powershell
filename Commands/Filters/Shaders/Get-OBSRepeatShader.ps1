@@ -90,9 +90,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSRepeatShader'
+$shaderName = 'repeat'
+$ShaderNoun = 'OBSRepeatShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 // Repeat Effect By Charles Fettinger (https://github.com/Oncorporation)  2/2019
 
@@ -177,7 +177,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

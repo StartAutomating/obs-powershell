@@ -208,7 +208,7 @@ foreach ($shaderParameterSet in $ShaderParameters) {
             Help = $ShaderParameterHelp                        
         }
         
-        if ($shaderParameterSystemName -ne $shaderParameterName) {
+        if ($shaderParameterSystemName -ne $shaderParameterName -and $shaderParameterSystemName -notin 'debug') {
             $ShaderParameters[$shaderParameterName].Alias = $shaderParameterSystemName
         }
     }

@@ -38,12 +38,12 @@ $BorderOffset,
 # Set the Border_Color of OBSGlassShader
 [Alias('Border_Color')]
 [ComponentModel.DefaultBindingProperty('Border_Color')]
-[Single[]]
+[String]
 $BorderColor,
 # Set the Glass_Color of OBSGlassShader
 [Alias('Glass_Color')]
 [ComponentModel.DefaultBindingProperty('Glass_Color')]
-[Single[]]
+[String]
 $GlassColor,
 # Set the notes of OBSGlassShader
 [ComponentModel.DefaultBindingProperty('notes')]
@@ -72,9 +72,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSGlassShader'
+$shaderName = 'glass'
+$ShaderNoun = 'OBSGlassShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 // Glass shader by Charles Fettinger for obs-shaderfilter plugin 4/2019
 //https://github.com/Oncorporation/obs-shaderfilter
@@ -177,7 +177,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

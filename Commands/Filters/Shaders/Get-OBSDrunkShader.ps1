@@ -39,7 +39,7 @@ $ApplyToAlphaLayer,
 # Set the glow_color of OBSDrunkShader
 [Alias('glow_color')]
 [ComponentModel.DefaultBindingProperty('glow_color')]
-[Single[]]
+[String]
 $GlowColor,
 # Set the ease of OBSDrunkShader
 [ComponentModel.DefaultBindingProperty('ease')]
@@ -76,9 +76,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSDrunkShader'
+$shaderName = 'drunk'
+$ShaderNoun = 'OBSDrunkShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 // Drunk shader by Charles Fettinger  (https://github.com/Oncorporation)  2/2019
 //Converted to OpenGL by Q-mii & Exeldro March 11, 2022
@@ -246,7 +246,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

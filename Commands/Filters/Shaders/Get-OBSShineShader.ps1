@@ -10,7 +10,7 @@ $LTex,
 # Set the shine_color of OBSShineShader
 [Alias('shine_color')]
 [ComponentModel.DefaultBindingProperty('shine_color')]
-[Single[]]
+[String]
 $ShineColor,
 # Set the speed_percent of OBSShineShader
 [Alias('speed_percent')]
@@ -90,9 +90,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSShineShader'
+$shaderName = 'shine'
+$ShaderNoun = 'OBSShineShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 // Shine Shader By Charles Fettinger (https://github.com/Oncorporation)  3/2019
 // use color to control shine amount, use transition wipes or make your own alpha texture
@@ -281,7 +281,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

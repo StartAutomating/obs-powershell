@@ -28,12 +28,12 @@ $UseAlphaLayer,
 # Set the Fore_Color of OBSSimplexNoiseShader
 [Alias('Fore_Color')]
 [ComponentModel.DefaultBindingProperty('Fore_Color')]
-[Single[]]
+[String]
 $ForeColor,
 # Set the Back_Color of OBSSimplexNoiseShader
 [Alias('Back_Color')]
 [ComponentModel.DefaultBindingProperty('Back_Color')]
-[Single[]]
+[String]
 $BackColor,
 # Set the Alpha_Percent of OBSSimplexNoiseShader
 [Alias('Alpha_Percent')]
@@ -67,9 +67,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSSimplexNoiseShader'
+$shaderName = 'simplex_noise'
+$ShaderNoun = 'OBSSimplexNoiseShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 // Simplex Noise shader by Charles Fettinger (https://github.com/Oncorporation)  5/2019
 // for use with obs-shaderfilter 1.0
@@ -280,7 +280,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

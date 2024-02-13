@@ -41,9 +41,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSGammaCorrectionShader'
+$shaderName = 'gamma_correction'
+$ShaderNoun = 'OBSGammaCorrectionShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 // Gamma Correction shader by Charles Fettinger for obs-shaderfilter plugin 4/2019
 //https://github.com/Oncorporation/obs-shaderfilter
@@ -94,7 +94,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

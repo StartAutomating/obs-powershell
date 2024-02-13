@@ -14,7 +14,8 @@ if ($env:GITHUB_STEP_SUMMARY) {
 #region Sparse cloning https://github.com/Exeldro/obs-shaderfilter.git
 $CloneAndGetShaders = {
     @(
-        git clone --sparse --no-checkout "--filter=tree:0" https://github.com/Exeldro/obs-shaderfilter.git
+        $cloneArgs = @("--sparse","--no-checkout","--filter=tree:0", "https://github.com/Exeldro/obs-shaderfilter.git")
+        git clone --sparse --no-checkout "--filter=tree:0" "https://github.com/Exeldro/obs-shaderfilter.git"
         Push-Location $pwd "obs-shaderfilter"
         git sparse-checkout set --no-cone '**.shader' '**.effect'
         git checkout
@@ -318,17 +319,14 @@ do {
 } while (($generatingJobStates -match '(?>NotStarted|Running)'))
 #>
 
-trap {
+trap [Exception] {
 if ($env:GITHUB_STEP_SUMMARY) {
 @"
 ### Trapped Error!
 
-We are trying to build shaders, from $(
-    Get-PSCallStack | 
-    Out-String
-)
-
-There are currently $($Error.Count) errors.
+~~~
+$($_ | Out-String)
+~~~
 "@ | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
 }    
     $_

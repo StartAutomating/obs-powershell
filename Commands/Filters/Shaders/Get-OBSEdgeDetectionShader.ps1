@@ -14,7 +14,7 @@ $InvertEdge,
 # Set the edge_color of OBSEdgeDetectionShader
 [Alias('edge_color')]
 [ComponentModel.DefaultBindingProperty('edge_color')]
-[Single[]]
+[String]
 $EdgeColor,
 # Set the edge_multiply of OBSEdgeDetectionShader
 [Alias('edge_multiply')]
@@ -24,7 +24,7 @@ $EdgeMultiply,
 # Set the non_edge_color of OBSEdgeDetectionShader
 [Alias('non_edge_color')]
 [ComponentModel.DefaultBindingProperty('non_edge_color')]
-[Single[]]
+[String]
 $NonEdgeColor,
 # Set the non_edge_multiply of OBSEdgeDetectionShader
 [Alias('non_edge_multiply')]
@@ -78,9 +78,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSEdgeDetectionShader'
+$shaderName = 'edge_detection'
+$ShaderNoun = 'OBSEdgeDetectionShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 // Edge Detection for OBS Studio
 // originally from Andersama (https://github.com/Andersama)
@@ -188,7 +188,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

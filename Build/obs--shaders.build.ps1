@@ -53,10 +53,11 @@ if (-not (Test-Path $ShaderCommandsPath))  {
     $null = New-Item -ItemType Directory -path $ShaderCommandsPath
 }
 
-$FindShaderParameters = '(?<!//.+?){0,}uniform\s{1,}(?<Type>\S+)\s{1,}(?<ParameterName>[\S-[\<\;]]+)'
+$FindShaderParameters = '[^/]{0,}uniform\s{1,}(?<Type>\S+)\s{1,}(?<ParameterName>[\S-[\<\;]]+)'
 
 $AllShaderParameters = $ShaderFiles | 
-    Select-String $FindShaderParameters
+    Select-String $FindShaderParameters |
+    Where-Object { "$_" -notlike "*//*"}
 $ShaderParameters = $AllShaderParameters |
         Group-Object Path
 
@@ -131,7 +132,13 @@ Processing $($shaderParameterInSet | Out-String)
         $shaderMatch = [Ordered]@{} + $matches
         $shaderParameterSystemName = $shaderMatch.ParameterName
 
-
+        if ($shaderParameterSystemName -match '[^\w_]') {
+            if ($env:GITHUB_STEP_SUMMARY) {
+                "    * [ ] Shader Parameter $shaderParameterSystemName will be skipped due to improper naming" |
+                    Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+            }
+            continue
+        }
         $shaderParameterName = [Regex]::Replace($shaderParameterSystemName, $underscoreWord,$capitalizeNames)
         if ($env:GITHUB_STEP_SUMMARY) {
             "    * [x] Shader Parameter $shaderParameterSystemName will become $ShaderParameterName" |

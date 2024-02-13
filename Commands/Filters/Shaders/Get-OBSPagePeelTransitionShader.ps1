@@ -25,7 +25,7 @@ $ConvertLinear,
 # Set the page_color of OBSPagePeelTransitionShader
 [Alias('page_color')]
 [ComponentModel.DefaultBindingProperty('page_color')]
-[Single[]]
+[String]
 $PageColor,
 # Set the page_transparency of OBSPagePeelTransitionShader
 [Alias('page_transparency')]
@@ -55,9 +55,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSPagePeelTransitionShader'
+$shaderName = 'page-peel-transition'
+$ShaderNoun = 'OBSPagePeelTransitionShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 uniform texture2d image_a;
 uniform texture2d image_b;
@@ -140,7 +140,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

@@ -4,7 +4,7 @@ function Get-OBSLuminance2Shader {
 param(
 # Set the color of OBSLuminance2Shader
 [ComponentModel.DefaultBindingProperty('color')]
-[Single[]]
+[String]
 $Color,
 # Set the lumaMax of OBSLuminance2Shader
 [ComponentModel.DefaultBindingProperty('lumaMax')]
@@ -57,9 +57,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSLuminance2Shader'
+$shaderName = 'luminance2'
+$ShaderNoun = 'OBSLuminance2Shader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 //Converted to OpenGL by Q-mii & Exeldro February 25, 2022
 uniform float4 color;
@@ -150,7 +150,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

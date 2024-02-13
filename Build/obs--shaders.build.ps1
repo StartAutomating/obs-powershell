@@ -126,6 +126,10 @@ $($shaderParameterSet.Group | Out-String)
 
 
         $shaderParameterName = [Regex]::Replace($shaderParameterSystemName, $underscoreWord,$capitalizeNames)
+        if ($env:GITHUB_STEP_SUMMARY) {
+            "    * [x] Shader Parameter $shaderParameterSystemName will become $ShaderParameterName" |
+                Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+        }
 
         $ShaderParameterHelp = "Set the $shaderParameterSystemName of $ShaderNoun"
         $ShaderParameterAttributes = @()

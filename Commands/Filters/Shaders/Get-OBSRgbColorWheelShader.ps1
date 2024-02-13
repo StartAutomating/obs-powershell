@@ -29,7 +29,7 @@ $ApplyToSpecificColor,
 # Set the Color_To_Replace of OBSRgbColorWheelShader
 [Alias('Color_To_Replace')]
 [ComponentModel.DefaultBindingProperty('Color_To_Replace')]
-[Single[]]
+[String]
 $ColorToReplace,
 # Set the Alpha_Percentage of OBSRgbColorWheelShader
 [Alias('Alpha_Percentage')]
@@ -69,9 +69,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSRgbColorWheelShader'
+$shaderName = 'rgb_color_wheel'
+$ShaderNoun = 'OBSRgbColorWheelShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 // RGB Color Wheel shader by Charles Fettinger for obs-shaderfilter plugin 5/2020
 // https://github.com/Oncorporation/obs-shaderfilter
@@ -178,7 +178,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

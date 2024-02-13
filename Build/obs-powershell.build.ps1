@@ -402,7 +402,5 @@ $filesBuilt |
         }
     }
 
-# Building shaders
-. $PSScriptRoot\obs--shaders.build.ps1
 
 Pop-Location

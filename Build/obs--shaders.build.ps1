@@ -5,16 +5,18 @@
 
 #>
 
+if ($env:GITHUB_STEP_SUMMARY) {
 @"
 ## Shader build
 
 We are trying to build shaders, from $(
     Get-PSCallStack | 
-    Out-Host
+    Out-String
 )
 
 There are currently $($Error.Count) errors.
 "@ | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+}
 
 $updatedSubmodules = git submodule update --remote 
 
@@ -23,6 +25,12 @@ $parentPath = $PSScriptRoot | Split-Path
 $ShaderFiles = 
     Get-ChildItem -Path $parentPath  -File -Recurse |
     Where-Object Extension -in '.shader', '.effect'
+
+if ($env:GITHUB_STEP_SUMMARY) {
+"* [x] Found $($shaderFiles.Length) Shaders to Build" |
+    Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+}    
+
 
 $commandsPath = Join-Path $parentPath Commands
 $FilterCommandsPath = Join-Path $commandsPath Filters
@@ -34,13 +42,25 @@ if (-not (Test-Path $ShaderCommandsPath))  {
 
 $FindShaderParameters = '^[^/]{0,}uniform\s{1,}(?<Type>\S+)\s{1,}(?<ParameterName>[\S-[\<\;]]+)'
 
-$ShaderParameters = $ShaderFiles | 
-        Select-String $FindShaderParameters |
+$AllShaderParameters = $ShaderFiles | 
+    Select-String $FindShaderParameters
+$ShaderParameters = $AllShaderParameters |
         Group-Object Path
+
+if ($env:GITHUB_STEP_SUMMARY) {
+    "* [x] Found $($AllShaderParameters.Length) Shader Parameters in $($ShaderParameters.Count) files" |
+        Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+}
 
 $importedModule = Import-Module $parentPath -Global -PassThru
 
 if (-not $importedModule) {
+    if ($env:GITHUB_STEP_SUMMARY) {
+@"
+**Could Not Import Module from $parentPath**
+"@ | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+    }
+        
     Write-Error "Could not import module"
     return
 }
@@ -57,10 +77,13 @@ $FindAnnotations = [Regex]::new("$FindShaderParameters\<[\s\S]+?>")
 $generatingJobs  = @()
 
 foreach ($shaderParameterSet in $ShaderParameters) {
-
-    $shaderName = @($shaderParameterSet.Name.Split([IO.Path]::DirectorySeparatorChar))[-1] -replace '\.(?>effect|shader)$'
+    $shaderFileName = @($shaderParameterSet.Name.Split([IO.Path]::DirectorySeparatorChar))[-1]
+    $shaderName = $shaderFileName -replace '\.(?>effect|shader)$'
     $ShaderNoun = "OBS" + ([Regex]::Replace($shaderName, $underscoreWord,$capitalizeNames) -replace '[\p{P}_\+]') + "Shader"
-    
+    if ($env:GITHUB_STEP_SUMMARY) {
+        "  * [x] Generating Shader from $shaderFileName ( $ShaderNoun )" |
+            Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+    }
     $ShaderContent = [IO.File]::ReadAllText($shaderParameterSet.Name)
     $ShaderAnnotations = [Ordered]@{}
     foreach ($shaderAnnotation in $FindAnnotations.Matches($ShaderContent)) {
@@ -282,3 +305,20 @@ do {
     Start-Sleep -Seconds 1
 } while (($generatingJobStates -match '(?>NotStarted|Running)'))
 #>
+
+trap {
+if ($env:GITHUB_STEP_SUMMARY) {
+@"
+### Trapped Error!
+
+We are trying to build shaders, from $(
+    Get-PSCallStack | 
+    Out-String
+)
+
+There are currently $($Error.Count) errors.
+"@ | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+}    
+    $_
+    break
+}

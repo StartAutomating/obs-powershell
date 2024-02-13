@@ -47,7 +47,7 @@ $UvSize,
 $ColorMatrix,
 # Set the color of OBSLuminanceAlphaShader
 [ComponentModel.DefaultBindingProperty('color')]
-[Single[]]
+[String]
 $Color,
 # Set the mul_val of OBSLuminanceAlphaShader
 [Alias('mul_val')]
@@ -90,9 +90,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSLuminanceAlphaShader'
+$shaderName = 'luminance_alpha'
+$ShaderNoun = 'OBSLuminanceAlphaShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 // Luminance Alpha Effect By Charles Fettinger (https://github.com/Oncorporation)  2/2019
 //Converted to OpenGL by Q-mii & Exeldro February 22, 2022
@@ -208,7 +208,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

@@ -54,7 +54,7 @@ $ApplyToSpecificColor,
 # Set the Color_To_Replace of OBSRainbowShader
 [Alias('Color_To_Replace')]
 [ComponentModel.DefaultBindingProperty('Color_To_Replace')]
-[Single[]]
+[String]
 $ColorToReplace,
 # Set the Notes of OBSRainbowShader
 [ComponentModel.DefaultBindingProperty('Notes')]
@@ -83,9 +83,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSRainbowShader'
+$shaderName = 'rainbow'
+$ShaderNoun = 'OBSRainbowShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 // Rainbow shader by Charles Fettinger for obs-shaderfilter plugin 3/2019
 // https://github.com/Oncorporation/obs-shaderfilter
@@ -241,7 +241,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

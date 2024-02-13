@@ -120,14 +120,7 @@ $($shaderParameterSet.Group | Out-String)
             Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
     }
 
-    foreach ($shaderParameterInSet in $shaderParameterSet.Group) {
-        if ($env:GITHUB_STEP_SUMMARY) {
-            "
-Processing $($shaderParameterInSet | Out-String)            
-            " |
-                Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
-        }
-
+    foreach ($shaderParameterInSet in $shaderParameterSet.Group) {        
         $shaderMatch = "$(@("$($shaderParameterInSet)") -join '')" -match $FindShaderParameters
         $shaderMatch = [Ordered]@{} + $matches
         $shaderParameterSystemName = $shaderMatch.ParameterName
@@ -194,7 +187,7 @@ Processing $($shaderParameterInSet | Out-String)
                 float { [float] }                
                 float2 { [float[]] }
                 float3 { [float[]] }
-                float4 { [float[]] }
+                float4 { [string] <# float4 is usually a color #>}
                 float4x4 { [float[][]]}
 
                 default {                    
@@ -248,9 +241,9 @@ Processing $($shaderParameterInSet | Out-String)
 
 
     $ShaderProcess = [scriptblock]::Create(@"
-if (-not `$psBoundParameters['ShaderText']) {
-    `$shaderName = `$shaderName    
-    `$ShaderNoun = '$ShaderNoun'
+`$shaderName = '$shaderName'
+`$ShaderNoun = '$ShaderNoun'
+if (-not `$psBoundParameters['ShaderText']) {    
     `$psBoundParameters['ShaderText'] = `$ShaderText = '
 $($ShaderContent -replace "'","''")
 '
@@ -268,7 +261,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

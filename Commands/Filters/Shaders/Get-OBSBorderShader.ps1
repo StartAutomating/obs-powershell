@@ -4,7 +4,7 @@ function Get-OBSBorderShader {
 param(
 # Set the borderColor of OBSBorderShader
 [ComponentModel.DefaultBindingProperty('borderColor')]
-[Single[]]
+[String]
 $BorderColor,
 # The name of the source.  This must be provided when adding an item for the first time
 [Parameter(ValueFromPipelineByPropertyName)]
@@ -29,9 +29,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSBorderShader'
+$shaderName = 'border'
+$ShaderNoun = 'OBSBorderShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 uniform float4 borderColor;
 
@@ -61,7 +61,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

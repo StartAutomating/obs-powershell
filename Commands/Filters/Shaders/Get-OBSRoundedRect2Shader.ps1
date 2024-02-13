@@ -15,7 +15,7 @@ $BorderThickness,
 # Set the border_color of OBSRoundedRect2Shader
 [Alias('border_color')]
 [ComponentModel.DefaultBindingProperty('border_color')]
-[Single[]]
+[String]
 $BorderColor,
 # Set the border_alpha_start of OBSRoundedRect2Shader
 [Alias('border_alpha_start')]
@@ -60,9 +60,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSRoundedRect2Shader'
+$shaderName = 'rounded_rect2'
+$ShaderNoun = 'OBSRoundedRect2Shader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 uniform int corner_radius<
     string label = "Corner radius";
@@ -240,7 +240,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

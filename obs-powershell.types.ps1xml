@@ -344,9 +344,61 @@ $this |
     <Name>OBS.GetInputList.Response</Name>
     <Members>
       <AliasProperty>
+        <Name>DisableAllFilters</Name>
+        <ReferencedMemberName>DisableAllFilter</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>EnableAllFilters</Name>
+        <ReferencedMemberName>EnableAllFilter</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
         <Name>SourceName</Name>
         <ReferencedMemberName>inputName</ReferencedMemberName>
       </AliasProperty>
+      <ScriptMethod>
+        <Name>DisableAllFilter</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Quickly disables all filters
+.DESCRIPTION
+    Quickly disables all filters, except for a list of provided names
+#&gt;
+param(
+# A list of filter names to leave disabled.
+[string[]]
+$ExceptFilterName
+)
+
+$this.Filters | 
+    Where-Object FilterName -NotIn $ExceptFilterName |
+    Foreach-Object { $_.Enable($true) } |
+    Send-OBS
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>EnableAllFilter</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Quickly enables all filters
+.DESCRIPTION
+    Quickly enables all filters, except for a list of provided names
+#&gt;
+param(
+# A list of filter names to leave disabled.
+[string[]]
+$ExceptFilterName
+)
+
+$this.Filters | 
+    Where-Object FilterName -NotIn $ExceptFilterName |
+    Foreach-Object { $_.Enable($true) } |
+    Send-OBS
+
+                    </Script>
+      </ScriptMethod>
       <ScriptMethod>
         <Name>Mute</Name>
         <Script>
@@ -720,9 +772,61 @@ $this | Set-OBSInputVolume -InputVolumeMul $Multiple
     <Name>OBS.Input</Name>
     <Members>
       <AliasProperty>
+        <Name>DisableAllFilters</Name>
+        <ReferencedMemberName>DisableAllFilter</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
+        <Name>EnableAllFilters</Name>
+        <ReferencedMemberName>EnableAllFilter</ReferencedMemberName>
+      </AliasProperty>
+      <AliasProperty>
         <Name>SourceName</Name>
         <ReferencedMemberName>inputName</ReferencedMemberName>
       </AliasProperty>
+      <ScriptMethod>
+        <Name>DisableAllFilter</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Quickly disables all filters
+.DESCRIPTION
+    Quickly disables all filters, except for a list of provided names
+#&gt;
+param(
+# A list of filter names to leave disabled.
+[string[]]
+$ExceptFilterName
+)
+
+$this.Filters | 
+    Where-Object FilterName -NotIn $ExceptFilterName |
+    Foreach-Object { $_.Enable($true) } |
+    Send-OBS
+
+                    </Script>
+      </ScriptMethod>
+      <ScriptMethod>
+        <Name>EnableAllFilter</Name>
+        <Script>
+                        &lt;#
+.SYNOPSIS
+    Quickly enables all filters
+.DESCRIPTION
+    Quickly enables all filters, except for a list of provided names
+#&gt;
+param(
+# A list of filter names to leave disabled.
+[string[]]
+$ExceptFilterName
+)
+
+$this.Filters | 
+    Where-Object FilterName -NotIn $ExceptFilterName |
+    Foreach-Object { $_.Enable($true) } |
+    Send-OBS
+
+                    </Script>
+      </ScriptMethod>
       <ScriptMethod>
         <Name>Mute</Name>
         <Script>

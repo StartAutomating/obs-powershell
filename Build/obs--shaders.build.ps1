@@ -120,7 +120,14 @@ $($shaderParameterSet.Group | Out-String)
     }
 
     foreach ($shaderParameterInSet in $shaderParameterSet.Group) {
-        $shaderMatch = $shaderParameterInSet -match $FindShaderParameters
+        if ($env:GITHUB_STEP_SUMMARY) {
+            "
+Processing $($shaderParameterInSet | Out-String)            
+            " |
+                Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+        }
+
+        $shaderMatch = "$(@($shaderParameterInSet.Matches()))" -match $FindShaderParameters
         $shaderMatch = [Ordered]@{} + $matches
         $shaderParameterSystemName = $shaderMatch.ParameterName
 

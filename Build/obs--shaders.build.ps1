@@ -15,8 +15,8 @@ if ($env:GITHUB_STEP_SUMMARY) {
 $CloneAndGetShaders = {
     @(
         $cloneArgs = @("--sparse","--no-checkout","--filter=tree:0", "https://github.com/Exeldro/obs-shaderfilter.git")
-        git clone --sparse --no-checkout "--filter=tree:0" "https://github.com/Exeldro/obs-shaderfilter.git"
-        Push-Location $pwd "obs-shaderfilter"
+        $cloneOut = git clone @cloneArgs *>&1
+        Push-Location (Join-Path $pwd "obs-shaderfilter")
         git sparse-checkout set --no-cone '**.shader' '**.effect'
         git checkout
         Get-ChildItem -Recurse -File | Where-Object { $_.Directory.Name -notin 'internal' }

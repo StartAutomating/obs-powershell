@@ -72,9 +72,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSAnimatedPathShader'
+$shaderName = 'animated_path'
+$ShaderNoun = 'OBSAnimatedPathShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 // Path effect By Charles Fettinger (https://github.com/Oncorporation)  3/2019
 //Converted to OpenGL by Q-mii & Exeldro February 24, 2022
@@ -180,7 +180,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

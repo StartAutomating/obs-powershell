@@ -19,7 +19,7 @@ $Glitch,
 # Set the Spotlight_Color of OBSSpotlightShader
 [Alias('Spotlight_Color')]
 [ComponentModel.DefaultBindingProperty('Spotlight_Color')]
-[Single[]]
+[String]
 $SpotlightColor,
 # Set the Horizontal_Offset of OBSSpotlightShader
 [Alias('Horizontal_Offset')]
@@ -58,9 +58,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSSpotlightShader'
+$shaderName = 'spotlight'
+$ShaderNoun = 'OBSSpotlightShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 // Spotlight By Charles Fettinger (https://github.com/Oncorporation)  4/2019
 uniform float Speed_Percent<
@@ -129,7 +129,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

@@ -46,8 +46,7 @@ if ($env:GITHUB_STEP_SUMMARY) {
 
 
 $commandsPath = Join-Path $parentPath Commands
-$FilterCommandsPath = Join-Path $commandsPath Filters
-$ShaderCommandsPath = Join-Path $FilterCommandsPath Shaders
+$ShaderCommandsPath = Join-Path $commandsPath Shaders
 
 if (-not (Test-Path $ShaderCommandsPath))  {
     $null = New-Item -ItemType Directory -path $ShaderCommandsPath
@@ -113,10 +112,7 @@ foreach ($shaderParameterSet in $ShaderParameters) {
     $ShaderParameters = [Ordered]@{}
     
     if ($env:GITHUB_STEP_SUMMARY) {
-        "  * [x] Found $(@($shaderParameterSet.Group).Length) Shader Parameters in $($shaderName)
-
-$($shaderParameterSet.Group | Out-String)
-" |
+        "  * [x] Found $(@($shaderParameterSet.Group).Length) Shader Parameters in $($shaderName)" |
             Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
     }
 
@@ -132,7 +128,17 @@ $($shaderParameterSet.Group | Out-String)
             }
             continue
         }
-        $shaderParameterName = [Regex]::Replace($shaderParameterSystemName, $underscoreWord,$capitalizeNames)
+        # Shader parameters can conflict with automatic parameters (we can sidestep this with a rename)
+        $shaderParameterName = 
+            switch ($shaderParameterSystemName) {
+                debug {
+                    "DebugShader"
+                }
+                default {
+                    [Regex]::Replace($shaderParameterSystemName, $underscoreWord,$capitalizeNames)
+                }        
+            }
+        
         if ($env:GITHUB_STEP_SUMMARY) {
             "    * [x] Shader Parameter $shaderParameterSystemName will become $ShaderParameterName" |
                 Out-File -Path $env:GITHUB_STEP_SUMMARY -Append

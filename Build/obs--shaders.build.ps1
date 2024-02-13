@@ -108,6 +108,7 @@ foreach ($shaderParameterSet in $ShaderParameters) {
     
     if ($env:GITHUB_STEP_SUMMARY) {
         "  * [x] Found $(@($shaderParameterSet.Group).Length) Shader Parameters in $($shaderName)
+
 $($shaderParameterSet.Group | Out-String)
 " |
             Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
@@ -337,9 +338,11 @@ $($_ | Out-String)
 ~~~
 
 ~~~json
-$($NewPipeScriptSplat | ConvertTo-Json -Depth 10)
+$(
+    $NewPipeScriptSplat | ConvertTo-Json -Depth 5
+)
 ~~~
 "@ | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
 }        
-    continue OutOfBuild
+    continue
 }

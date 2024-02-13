@@ -35,7 +35,7 @@ $ApplyToSpecificColor,
 # Set the Color_To_Replace of OBSSimpleGradientShader
 [Alias('Color_To_Replace')]
 [ComponentModel.DefaultBindingProperty('Color_To_Replace')]
-[Single[]]
+[String]
 $ColorToReplace,
 # Set the notes of OBSSimpleGradientShader
 [ComponentModel.DefaultBindingProperty('notes')]
@@ -64,9 +64,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSSimpleGradientShader'
+$shaderName = 'simple_gradient'
+$ShaderNoun = 'OBSSimpleGradientShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 // Simple Gradient shader by Charles Fettinger for obs-shaderfilter plugin 3/2019
 // https://github.com/Oncorporation/obs-shaderfilter
@@ -198,7 +198,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

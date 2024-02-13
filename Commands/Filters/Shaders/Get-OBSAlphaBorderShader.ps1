@@ -5,7 +5,7 @@ param(
 # Set the border_color of OBSAlphaBorderShader
 [Alias('border_color')]
 [ComponentModel.DefaultBindingProperty('border_color')]
-[Single[]]
+[String]
 $BorderColor,
 # Set the border_thickness of OBSAlphaBorderShader
 [Alias('border_thickness')]
@@ -40,9 +40,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSAlphaBorderShader'
+$shaderName = 'alpha_border'
+$ShaderNoun = 'OBSAlphaBorderShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 uniform float4 border_color<
     string label = "Border color";
@@ -92,7 +92,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

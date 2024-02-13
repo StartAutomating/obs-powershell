@@ -20,7 +20,7 @@ $MinimumAlphaPercent,
 # Set the border_color of OBSRoundedStrokeShader
 [Alias('border_color')]
 [ComponentModel.DefaultBindingProperty('border_color')]
-[Single[]]
+[String]
 $BorderColor,
 # Set the notes of OBSRoundedStrokeShader
 [ComponentModel.DefaultBindingProperty('notes')]
@@ -49,9 +49,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSRoundedStrokeShader'
+$shaderName = 'rounded_stroke'
+$ShaderNoun = 'OBSRoundedStrokeShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 //rounded rectange shader from https://raw.githubusercontent.com/exeldro/obs-lua/master/rounded_rect.shader
 //modified slightly by Surn 
@@ -197,7 +197,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

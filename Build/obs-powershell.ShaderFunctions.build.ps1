@@ -246,7 +246,7 @@ switch -regex ($myVerb) {
     $NewPipeScriptSplat.Alias = "Set-$ShaderNoun", "Add-$ShaderNoun"
     $NewPipeScriptSplat.OutputPath = (Join-Path $ShaderCommandsPath "Get-$ShaderNoun.ps1")
     $NewPipeScriptSplat.Process = $ShaderProcess
-    
+    <#
     $generatingJobs += Start-ThreadJob -ScriptBlock {
         param($PipeScriptPath, $NewPipeScriptSplat)
 
@@ -254,16 +254,18 @@ switch -regex ($myVerb) {
         New-PipeScript @NewPipeScriptSplat
     } -ArgumentList "$(Get-Module PipeScript | Split-Path | Join-Path -ChildPath PipeScript.psd1)",
         $NewPipeScriptSplat
-
-
+    #>
+    New-PipeScript @NewPipeScriptSplat
     <#$generatedFunction = New-PipeScript -FunctionName "Get-$ShaderNoun" -Parameter $ShaderParameters -Alias "Set-$ShaderNoun", 
         "Add-$ShaderNoun" -outputPath (Join-Path $ShaderCommandsPath "Get-$ShaderNoun.ps1") -Process $ShaderProcess
     $generatedFunction
     $null = $null      #>
 }
 
+<#
 do {
     $generatingJobs | Receive-Job
     $generatingJobStates = @($generatingJobs | Select-Object -ExpandProperty State -Unique | Sort-Object) 
     Start-Sleep -Seconds 1
 } while (($generatingJobStates -match '(?>NotStarted|Running)'))
+#>

@@ -1,0 +1,269 @@
+<#
+.SYNOPSIS
+    Generates obs-powershell commands for PixelShaders
+.DESCRIPTION
+
+#>
+$updatedSubmodules = git submodule update --remote 
+
+$parentPath = $PSScriptRoot | Split-Path
+
+$ShaderFiles =  Get-ChildItem -Path $parentPath  -File -Recurse |
+    Where-Object Extension -in '.shader', '.effect'
+
+$commandsPath = Join-Path $parentPath Commands
+$FilterCommandsPath = Join-Path $commandsPath Filters
+$ShaderCommandsPath = Join-Path $FilterCommandsPath Shaders
+
+if (-not (Test-Path $ShaderCommandsPath))  {
+    $null = New-Item -ItemType Directory -path $ShaderCommandsPath
+}
+
+$FindShaderParameters = 'uniform\s{1,}(?<Type>\S+)\s{1,}(?<ParameterName>[\S-[\<\;]]+)'
+
+$ShaderParameters = $ShaderFiles | 
+        Select-String $FindShaderParameters |
+        Group-Object Path
+
+$importedModule = Import-Module $parentPath -Global -PassThru
+
+if (-not $importedModule) {
+    Write-Error "Could not import module"
+    return
+}
+
+
+$underscoreWord  = "[\w-[_]]+_?"
+$capitalizeNames = {
+    param($match)
+    $matchAsString = "$match"
+    $matchAsString.Substring(0,1).ToUpper() + $matchAsString.Substring(1) -replace "_"
+}
+
+$FindAnnotations = [Regex]::new("$FindShaderParameters\<[\s\S]+?>")
+$generatingJobs  = @()
+
+foreach ($shaderParameterSet in $ShaderParameters) {
+
+    $shaderName = @($shaderParameterSet.Name.Split([IO.Path]::DirectorySeparatorChar))[-1] -replace '\.(?>effect|shader)$'
+    $ShaderNoun = "OBS" + ([Regex]::Replace($shaderName, $underscoreWord,$capitalizeNames) -replace '[\p{P}_\+]') + "Shader"
+    
+    $ShaderContent = [IO.File]::ReadAllText($shaderParameterSet.Name)
+    $ShaderAnnotations = [Ordered]@{}
+    foreach ($shaderAnnotation in $FindAnnotations.Matches($ShaderContent)) {
+        $null = $shaderAnnotation -match $FindAnnotations
+        $shaderAnnotations[$matches.'ParameterName'] = [Ordered]@{} + $matches
+    }
+
+    $ShaderParameters = [Ordered]@{}
+
+    foreach ($shaderParameterInSet in $shaderParameterSet.Group) {
+        $shaderMatch = $shaderParameterInSet -match $FindShaderParameters
+        $shaderMatch = [Ordered]@{} + $matches
+        $shaderParameterSystemName = $shaderMatch.ParameterName
+
+
+        $shaderParameterName = [Regex]::Replace($shaderParameterSystemName, $underscoreWord,$capitalizeNames)
+
+        $ShaderParameterHelp = "Set the $shaderParameterSystemName of $ShaderNoun"
+        $ShaderParameterAttributes = @()
+
+        # If there were annotations, pick them out.
+        if ($shaderParameterInSet -like '*<') {            
+            $annotationsForThisShader = $ShaderAnnotations[$shaderParameterSystemName]
+            $annotationList = 
+                $ShaderAnnotations[$shaderParameterSystemName].0 -split '[\<\>\;]' -notmatch '^\s{0,}$' | 
+                Select-Object -Skip 1
+            
+            $ShaderMin, $ShaderMax = $null, $null
+
+            foreach ($annotationItem in $annotationList) {
+                $annotationItems = @($annotationItem -split '\s+' -ne '')
+                $afterEquals = @($annotationItems | Select-Object -Skip 3) -join ' ' -replace '"'                        
+                switch ($annotationItems[1]) {
+                    label { 
+                        $null = $null
+                        $ShaderParameterHelp = $afterEquals
+                    }
+                    maximum {
+                        $null = $null
+                        $ShaderMax = $afterEquals -as [float]
+                    }
+                    minumum {
+                        $ShaderMin = $afterEquals -as [float]
+                    }
+                }
+            }
+
+            if ($null -ne $ShaderMax -and $null -ne $ShaderMin) {
+                $ShaderParameterAttributes += "[ValidateRange($ShaderMin, $ShaderMax)]"
+            }
+        }
+
+
+        $shaderParameterType = $shaderMatch.Type
+        
+        $ShaderPowerShellParameterType = 
+            switch ($shaderParameterType) {
+                int { [int] }
+                bool { [switch] }
+
+                string { [string] }
+                texture2d { [string] }
+                
+                float { [float] }                
+                float2 { [float[]] }
+                float3 { [float[]] }
+                float4 { [float[]] }
+                float4x4 { [float[][]]}
+
+                default {                    
+                    [PSObject]
+                }
+            }
+
+        $ShaderParameters[$shaderParameterName] = [Ordered]@{
+            ParameterName  = $shaderParameterName
+            ParameterType  = $ShaderPowerShellParameterType
+            Attribute = "[ComponentModel.DefaultBindingProperty('$ShaderParameterSystemName')]"
+            Help = $ShaderParameterHelp                        
+        }
+        
+        if ($shaderParameterSystemName -ne $shaderParameterName) {
+            $ShaderParameters[$shaderParameterName].Alias = $shaderParameterSystemName
+        }
+    }
+
+    $ShaderParameters["SourceName"] = [Ordered]@{
+        Attribute = 'ValueFromPipelineByPropertyName'
+        Alias = 'SceneItemName'
+        ParameterType = [string]
+        Help = "The name of the source.  This must be provided when adding an item for the first time"
+    }
+    
+    $ShaderParameters["FilterName"] = [Ordered]@{
+        Attribute = 'ValueFromPipelineByPropertyName'
+        ParameterType = [string]
+        Help = "The name of the filter.  If this is not provided, this will default to the shader name."
+    }
+
+    $ShaderParameters["ShaderText"] = [Ordered]@{
+        ParameterName = "ShaderText"
+        ParameterType = [string]
+        Alias = "ShaderContent"
+        Help = "The inline value of the shader.  This will normally be provided as a default parameter, based off of the name."    
+    }
+
+    $ShaderParameters["PassThru"] = [Ordered]@{
+        ParameterName = "PassThru"
+        ParameterType = [switch]        
+        Help = "If set, will pass thru the commands that would be sent to OBS (these can be sent at any time with Send-OBS)"            
+    }
+
+    $ShaderParameters["NoResponse"] = [Ordered]@{
+        ParameterName = "NoResponse"
+        ParameterType = [switch]        
+        Help = "If set, will not wait for a response from OBS (this will be faster, but will not return anything)"
+    }
+
+
+    $ShaderProcess = [scriptblock]::Create(@"
+if (-not `$psBoundParameters['ShaderText']) {
+    `$shaderName = `$shaderName    
+    `$ShaderNoun = '$ShaderNoun'
+    `$psBoundParameters['ShaderText'] = `$ShaderText = '
+$($ShaderContent -replace "'","''")
+'
+}
+"@ + {
+$MyVerb, $myNoun = $MyInvocation.InvocationName -split '-',2
+if (-not $myNoun) {
+    $myNoun = $myVerb
+    $myVerb = 'Get'    
+}
+switch -regex ($myVerb) {
+    Get {
+        $FilterNamePattern = "(?>$(
+            if ($FilterName) {
+                [Regex]::Escape($FilterName)
+            }
+            else {
+                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+            }
+        ))"
+        if ($SourceName) {
+            Get-OBSInput | 
+                Where-Object InputName -eq $SourceName |
+                Get-OBSSourceFilterList |
+                Where-Object FilterName -Match $FilterNamePattern
+        } else {
+            $obs.Inputs |
+                Get-OBSSourceFilterList |
+                Where-Object FilterName -Match $FilterNamePattern
+        }        
+    }
+    '(?>Add|Set)' {
+        $ShaderSettings = [Ordered]@{}
+        :nextParameter foreach ($parameterMetadata in $MyInvocation.MyCommand.Parameters[@($psBoundParameters.Keys)]) {
+            foreach ($parameterAttribute in $parameterMetadata.Attributes) {
+                if ($parameterAttribute -isnot [ComponentModel.DefaultBindingPropertyAttribute]) { continue }
+                $ShaderSettings[$parameterAttribute.Name] = $PSBoundParameters[$parameterMetadata.Name]
+                continue nextParameter
+            }            
+        }
+
+        if (-not $PSBoundParameters['FilterName']) {
+            $filterName = $PSBoundParameters['FilterName'] = $shaderName
+        }
+
+        $ShaderFilterSplat = [Ordered]@{
+            ShaderSetting = $ShaderSettings
+            FilterName = $FilterName
+            SourceName = $SourceName
+        }
+
+        foreach ($CarryOnParameter in "PassThru", "NoResponse","Force") {
+            if ($PSBoundParameters.ContainsKey($CarryOnParameter)) {
+                $ShaderFilterSplat[$CarryOnParameter] = $PSBoundParameters[$CarryOnParameter]
+            }
+        }
+
+        if ($myVerb -eq 'Add') {
+            $ShaderFilterSplat.ShaderText = $shaderText
+            Add-OBSShaderFilter @ShaderFilterSplat
+        } else {
+            Set-OBSShaderFilter @ShaderFilterSplat
+        }
+    }
+}
+})
+    
+    
+
+    $NewPipeScriptSplat = [Ordered]@{}
+    $NewPipeScriptSplat.FunctionName = "Get-$ShaderNoun"
+    $NewPipeScriptSplat.Parameter = $ShaderParameters
+    $NewPipeScriptSplat.Alias = "Set-$ShaderNoun", "Add-$ShaderNoun"
+    $NewPipeScriptSplat.OutputPath = (Join-Path $ShaderCommandsPath "Get-$ShaderNoun.ps1")
+    $NewPipeScriptSplat.Process = $ShaderProcess
+    
+    $generatingJobs += Start-ThreadJob -ScriptBlock {
+        param($PipeScriptPath, $NewPipeScriptSplat)
+
+        Import-Module $pipeScriptPath
+        New-PipeScript @NewPipeScriptSplat
+    } -ArgumentList "$(Get-Module PipeScript | Split-Path | Join-Path -ChildPath PipeScript.psd1)",
+        $NewPipeScriptSplat
+
+
+    <#$generatedFunction = New-PipeScript -FunctionName "Get-$ShaderNoun" -Parameter $ShaderParameters -Alias "Set-$ShaderNoun", 
+        "Add-$ShaderNoun" -outputPath (Join-Path $ShaderCommandsPath "Get-$ShaderNoun.ps1") -Process $ShaderProcess
+    $generatedFunction
+    $null = $null      #>
+}
+
+do {
+    $generatingJobs | Receive-Job
+    $generatingJobStates = @($generatingJobs | Select-Object -ExpandProperty State -Unique | Sort-Object) 
+    Start-Sleep -Seconds 1
+} while (($generatingJobStates -match '(?>NotStarted|Running)'))

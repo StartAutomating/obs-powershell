@@ -12,5 +12,5 @@ $ExceptFilterName
 
 $this.Filters | 
     Where-Object FilterName -NotIn $ExceptFilterName |
-    Foreach-Object { $_.Enable($true) } |
+    Foreach-Object { $_.Disable($true) } |
     Send-OBS

@@ -15,7 +15,7 @@ $BorderThickness,
 # Set the border_color of OBSRoundedRectShader
 [Alias('border_color')]
 [ComponentModel.DefaultBindingProperty('border_color')]
-[Single[]]
+[String]
 $BorderColor,
 # The name of the source.  This must be provided when adding an item for the first time
 [Parameter(ValueFromPipelineByPropertyName)]
@@ -40,9 +40,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSRoundedRectShader'
+$shaderName = 'rounded_rect'
+$ShaderNoun = 'OBSRoundedRectShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 //Converted to OpenGl by Q-mii & Exeldro February 21, 2022
 uniform int corner_radius<
@@ -93,7 +93,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

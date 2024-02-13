@@ -7,24 +7,36 @@
 
 if ($env:GITHUB_STEP_SUMMARY) {
 @"
-## Shader build
-
-We are trying to build shaders, from $(
-    Get-PSCallStack | 
-    Out-String
-)
-
-There are currently $($Error.Count) errors.
+### Shader build
 "@ | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
 }
 
-$updatedSubmodules = git submodule update --remote 
+#region Sparse cloning https://github.com/Exeldro/obs-shaderfilter.git
+$CloneAndGetShaders = {
+    @(
+        git clone --sparse --no-checkout "--filter=tree:0" https://github.com/Exeldro/obs-shaderfilter.git
+        Push-Location $pwd "obs-shaderfilter"
+        git sparse-checkout set --no-cone '**.shader' '**.effect'
+        git checkout
+        Get-ChildItem -Recurse -File | Where-Object { $_.Directory.Name -notin 'internal' }
+        Pop-Location
+    )    
+}
+
+if ($env:GITHUB_STEP_SUMMARY) {
+    "* [x] Cloning Shaders with
+~~~PowerShell
+$CloneAndGetShaders
+~~~
+" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+}
+
+$SparselyClonedShaders =. $CloneAndGetShaders
+#endregion Sparse cloning https://github.com/Exeldro/obs-shaderfilter.git
 
 $parentPath = $PSScriptRoot | Split-Path
 
-$ShaderFiles = 
-    Get-ChildItem -Path $parentPath  -File -Recurse |
-    Where-Object Extension -in '.shader', '.effect'
+$ShaderFiles = $SparselyClonedShaders
 
 if ($env:GITHUB_STEP_SUMMARY) {
 "* [x] Found $($shaderFiles.Length) Shaders to Build" |

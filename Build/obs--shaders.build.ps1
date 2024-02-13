@@ -25,7 +25,7 @@ $CloneAndGetShaders = {
 }
 
 if ($env:GITHUB_STEP_SUMMARY) {
-    "* [x] Cloning Shaders with
+    "* Cloning Shaders with:
 ~~~PowerShell
 $CloneAndGetShaders
 ~~~
@@ -322,13 +322,13 @@ do {
 trap [Exception] {
 if ($env:GITHUB_STEP_SUMMARY) {
 @"
-### Trapped Error!
+❗❗ Trapped Error!
 
+ShaderName: ``$ShaderName``
 ~~~
 $($_ | Out-String)
 ~~~
 "@ | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
-}    
-    $_
-    break
+}        
+    continue
 }

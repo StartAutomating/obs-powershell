@@ -20,7 +20,7 @@ $ShadowBlurSize,
 # Set the shadow_color of OBSRectangularDropShadowShader
 [Alias('shadow_color')]
 [ComponentModel.DefaultBindingProperty('shadow_color')]
-[Single[]]
+[String]
 $ShadowColor,
 # The name of the source.  This must be provided when adding an item for the first time
 [Parameter(ValueFromPipelineByPropertyName)]
@@ -45,9 +45,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSRectangularDropShadowShader'
+$shaderName = 'rectangular_drop_shadow'
+$ShaderNoun = 'OBSRectangularDropShadowShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 //Converted to OpenGL by Exeldro February 22, 2022
 uniform int shadow_offset_x<
@@ -109,7 +109,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

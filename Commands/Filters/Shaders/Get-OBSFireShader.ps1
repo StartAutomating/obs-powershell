@@ -51,7 +51,7 @@ $ApplyToSpecificColor,
 # Set the Color_To_Replace of OBSFireShader
 [Alias('Color_To_Replace')]
 [ComponentModel.DefaultBindingProperty('Color_To_Replace')]
-[Single[]]
+[String]
 $ColorToReplace,
 # Set the Notes of OBSFireShader
 [ComponentModel.DefaultBindingProperty('Notes')]
@@ -80,9 +80,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSFireShader'
+$shaderName = 'fire'
+$ShaderNoun = 'OBSFireShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 //fire shader modified by Charles Fettinger for use with obs-shaderfilter 07/20 v.6
 // https://github.com/Oncorporation/obs-shaderfilter plugin
@@ -344,7 +344,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

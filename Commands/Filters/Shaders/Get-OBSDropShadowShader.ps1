@@ -24,7 +24,7 @@ $Notes,
 # Set the shadow_color of OBSDropShadowShader
 [Alias('shadow_color')]
 [ComponentModel.DefaultBindingProperty('shadow_color')]
-[Single[]]
+[String]
 $ShadowColor,
 # Set the is_alpha_premultiplied of OBSDropShadowShader
 [Alias('is_alpha_premultiplied')]
@@ -54,9 +54,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSDropShadowShader'
+$shaderName = 'drop_shadow'
+$ShaderNoun = 'OBSDropShadowShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 // Drop Shadow shader modified by Charles Fettinger 
 // impose a limiter to keep from crashing the system
@@ -128,7 +128,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

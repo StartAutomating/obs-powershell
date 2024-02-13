@@ -25,9 +25,10 @@ $TrailColor,
 [Single]
 $Speed,
 # Set the debug of OBSRainWindowShader
+[Alias('debug')]
 [ComponentModel.DefaultBindingProperty('debug')]
 [Management.Automation.SwitchParameter]
-$Debug,
+$DebugShader,
 # The name of the source.  This must be provided when adding an item for the first time
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('SceneItemName')]

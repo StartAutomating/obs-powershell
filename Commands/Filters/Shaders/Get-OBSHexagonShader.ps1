@@ -5,7 +5,7 @@ param(
 # Set the Hex_Color of OBSHexagonShader
 [Alias('Hex_Color')]
 [ComponentModel.DefaultBindingProperty('Hex_Color')]
-[Single[]]
+[String]
 $HexColor,
 # Set the Alpha_Percent of OBSHexagonShader
 [Alias('Alpha_Percent')]
@@ -90,9 +90,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSHexagonShader'
+$shaderName = 'hexagon'
+$ShaderNoun = 'OBSHexagonShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 // Hexagon shader by Charles Fettinger for obs-shaderfilter plugin 4/2019
 //https://github.com/Oncorporation/obs-shaderfilter
@@ -231,7 +231,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

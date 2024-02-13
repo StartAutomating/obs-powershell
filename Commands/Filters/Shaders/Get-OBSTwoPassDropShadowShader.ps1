@@ -58,7 +58,7 @@ $ShadowBlurSize,
 # Set the shadow_color of OBSTwoPassDropShadowShader
 [Alias('shadow_color')]
 [ComponentModel.DefaultBindingProperty('shadow_color')]
-[Single[]]
+[String]
 $ShadowColor,
 # Set the is_alpha_premultiplied of OBSTwoPassDropShadowShader
 [Alias('is_alpha_premultiplied')]
@@ -88,9 +88,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSTwoPassDropShadowShader'
+$shaderName = 'two-pass-drop-shadow'
+$ShaderNoun = 'OBSTwoPassDropShadowShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 //Converted to OpenGL by Q-mii & Exeldro February 22, 2022
 uniform float4x4 ViewProj;
@@ -224,7 +224,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

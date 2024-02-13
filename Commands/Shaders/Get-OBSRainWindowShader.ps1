@@ -25,7 +25,6 @@ $TrailColor,
 [Single]
 $Speed,
 # Set the debug of OBSRainWindowShader
-[Alias('debug')]
 [ComponentModel.DefaultBindingProperty('debug')]
 [Management.Automation.SwitchParameter]
 $DebugShader,

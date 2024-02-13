@@ -40,7 +40,7 @@ $ReplaceImageColor,
 # Set the Color_To_Replace of OBSVHSShader
 [Alias('Color_To_Replace')]
 [ComponentModel.DefaultBindingProperty('Color_To_Replace')]
-[Single[]]
+[String]
 $ColorToReplace,
 # Set the Apply_To_Specific_Color of OBSVHSShader
 [Alias('Apply_To_Specific_Color')]
@@ -70,9 +70,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSVHSShader'
+$shaderName = 'VHS'
+$ShaderNoun = 'OBSVHSShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 //based on https://www.shadertoy.com/view/Ms3XWH converted by Exeldro  v 1.0
 //updated by Charles ''Surn'' Fettinger for obs-shaderfilter 9/2020
@@ -216,7 +216,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

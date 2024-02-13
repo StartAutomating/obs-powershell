@@ -53,7 +53,7 @@ if (-not (Test-Path $ShaderCommandsPath))  {
     $null = New-Item -ItemType Directory -path $ShaderCommandsPath
 }
 
-$FindShaderParameters = '[^/]{0,}uniform\s{1,}(?<Type>\S+)\s{1,}(?<ParameterName>[\S-[\<\;]]+)'
+$FindShaderParameters = '(?<!//.+?){0,}uniform\s{1,}(?<Type>\S+)\s{1,}(?<ParameterName>[\S-[\<\;]]+)'
 
 $AllShaderParameters = $ShaderFiles | 
     Select-String $FindShaderParameters

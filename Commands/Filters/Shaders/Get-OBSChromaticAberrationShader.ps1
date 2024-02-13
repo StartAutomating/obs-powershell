@@ -63,9 +63,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSChromaticAberrationShader'
+$shaderName = 'chromatic-aberration'
+$ShaderNoun = 'OBSChromaticAberrationShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 //based on https://www.shadertoy.com/view/XssGz8
 //Converted to OpenGL by Exeldro February 14, 2022 + black background removed February 23, 2022
@@ -286,7 +286,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

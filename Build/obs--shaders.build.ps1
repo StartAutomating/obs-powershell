@@ -333,8 +333,9 @@ ShaderName: ``$ShaderName``
 ~~~
 $($_ | Out-String)
 ~~~
-~~~
-$($NewPipeScriptSplat | ConvertTo-Json)
+
+~~~json
+$($NewPipeScriptSplat | ConvertTo-Json -Depth 10)
 ~~~
 "@ | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
 }        

@@ -103,7 +103,7 @@ $ReplaceImageColor,
 # Set the Color_To_Replace of OBSFire3Shader
 [Alias('Color_To_Replace')]
 [ComponentModel.DefaultBindingProperty('Color_To_Replace')]
-[Single[]]
+[String]
 $ColorToReplace,
 # Set the Apply_To_Specific_Color of OBSFire3Shader
 [Alias('Apply_To_Specific_Color')]
@@ -158,9 +158,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSFire3Shader'
+$shaderName = 'fire-3'
+$ShaderNoun = 'OBSFire3Shader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 //My effect modified by Me for use with obs-shaderfilter month/year v.02
 //Converted to OpenGL by Q-mii & Exeldro February 22, 2022
@@ -609,7 +609,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

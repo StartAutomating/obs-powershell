@@ -4,6 +4,8 @@
 ### Script Methods
 
 
+* [DisableAllFilter](DisableAllFilter.md)
+* [EnableAllFilter](EnableAllFilter.md)
 * [Mute](Mute.md)
 * [Next](Next.md)
 * [Pause](Pause.md)

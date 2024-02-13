@@ -49,17 +49,17 @@ $NumberStars,
 # Set the SKY_COLOR of OBSNightSkyShader
 [Alias('SKY_COLOR')]
 [ComponentModel.DefaultBindingProperty('SKY_COLOR')]
-[Single[]]
+[String]
 $SKYCOLOR,
 # Set the STAR_COLOR of OBSNightSkyShader
 [Alias('STAR_COLOR')]
 [ComponentModel.DefaultBindingProperty('STAR_COLOR')]
-[Single[]]
+[String]
 $STARCOLOR,
 # Set the LIGHT_SKY of OBSNightSkyShader
 [Alias('LIGHT_SKY')]
 [ComponentModel.DefaultBindingProperty('LIGHT_SKY')]
-[Single[]]
+[String]
 $LIGHTSKY,
 # Set the SKY_LIGHTNESS of OBSNightSkyShader
 [Alias('SKY_LIGHTNESS')]
@@ -69,7 +69,7 @@ $SKYLIGHTNESS,
 # Set the MOON_COLOR of OBSNightSkyShader
 [Alias('MOON_COLOR')]
 [ComponentModel.DefaultBindingProperty('MOON_COLOR')]
-[Single[]]
+[String]
 $MOONCOLOR,
 # Set the moon_size of OBSNightSkyShader
 [Alias('moon_size')]
@@ -114,9 +114,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSNightSkyShader'
+$shaderName = 'night_sky'
+$ShaderNoun = 'OBSNightSkyShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 // Night Sky shader by Charles Fettinger for obs-shaderfilter plugin 6/2020 v.65
 // https://github.com/Oncorporation/obs-shaderfilter
@@ -421,7 +421,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

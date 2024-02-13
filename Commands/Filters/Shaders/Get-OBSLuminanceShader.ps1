@@ -4,7 +4,7 @@ function Get-OBSLuminanceShader {
 param(
 # Set the color of OBSLuminanceShader
 [ComponentModel.DefaultBindingProperty('color')]
-[Single[]]
+[String]
 $Color,
 # Set the level of OBSLuminanceShader
 [ComponentModel.DefaultBindingProperty('level')]
@@ -45,9 +45,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSLuminanceShader'
+$shaderName = 'Luminance'
+$ShaderNoun = 'OBSLuminanceShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 //Converted to OpenGL by Exeldro February 22, 2022
 uniform float4 color;
@@ -115,7 +115,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

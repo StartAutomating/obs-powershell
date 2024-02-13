@@ -29,12 +29,12 @@ $SEAFREQ,
 # Set the SEA_BASE of OBSSeascapeShader
 [Alias('SEA_BASE')]
 [ComponentModel.DefaultBindingProperty('SEA_BASE')]
-[Single[]]
+[String]
 $SEABASE,
 # Set the SEA_WATER_COLOR of OBSSeascapeShader
 [Alias('SEA_WATER_COLOR')]
 [ComponentModel.DefaultBindingProperty('SEA_WATER_COLOR')]
-[Single[]]
+[String]
 $SEAWATERCOLOR,
 # Set the CAMERA_SPEED of OBSSeascapeShader
 [Alias('CAMERA_SPEED')]
@@ -69,9 +69,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSSeascapeShader'
+$shaderName = 'seascape'
+$ShaderNoun = 'OBSSeascapeShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 /*
  * "Seascape" by Alexander Alekseev aka TDM - 2014
@@ -359,7 +359,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

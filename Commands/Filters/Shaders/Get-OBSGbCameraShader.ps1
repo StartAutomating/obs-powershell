@@ -31,22 +31,22 @@ $Gamma,
 # Set the color_1 of OBSGbCameraShader
 [Alias('color_1')]
 [ComponentModel.DefaultBindingProperty('color_1')]
-[Single[]]
+[String]
 $Color1,
 # Set the color_2 of OBSGbCameraShader
 [Alias('color_2')]
 [ComponentModel.DefaultBindingProperty('color_2')]
-[Single[]]
+[String]
 $Color2,
 # Set the color_3 of OBSGbCameraShader
 [Alias('color_3')]
 [ComponentModel.DefaultBindingProperty('color_3')]
-[Single[]]
+[String]
 $Color3,
 # Set the color_4 of OBSGbCameraShader
 [Alias('color_4')]
 [ComponentModel.DefaultBindingProperty('color_4')]
-[Single[]]
+[String]
 $Color4,
 # The name of the source.  This must be provided when adding an item for the first time
 [Parameter(ValueFromPipelineByPropertyName)]
@@ -71,9 +71,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSGbCameraShader'
+$shaderName = 'gb-camera'
+$ShaderNoun = 'OBSGbCameraShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 /*
  * ------------------------------------------------------------
@@ -245,7 +245,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

@@ -42,7 +42,7 @@ $RandF,
 $UvSize,
 # Set the borderColor of OBSAspectRatioShader
 [ComponentModel.DefaultBindingProperty('borderColor')]
-[Single[]]
+[String]
 $BorderColor,
 # Set the notes of OBSAspectRatioShader
 [ComponentModel.DefaultBindingProperty('notes')]
@@ -71,9 +71,9 @@ $NoResponse
 
 
 process {
-if (-not $psBoundParameters['ShaderText']) {
-    $shaderName = $shaderName    
-    $ShaderNoun = 'OBSAspectRatioShader'
+$shaderName = 'aspect_ratio'
+$ShaderNoun = 'OBSAspectRatioShader'
+if (-not $psBoundParameters['ShaderText']) {    
     $psBoundParameters['ShaderText'] = $ShaderText = '
 //Converted to OpenGL by Q-mii & Exeldro March 8, 2022 - DO NOT USE THIS IT WAS NEVER COMPLETED
 uniform float4x4 ViewProj;
@@ -182,7 +182,7 @@ switch -regex ($myVerb) {
                 [Regex]::Escape($FilterName)
             }
             else {
-                [Regex]::Escape($shaderName),[Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$') -join '|'
+                [Regex]::Escape($ShaderNoun -replace '^OBS' -replace 'Shader$'),[Regex]::Escape($shaderName) -join '|'
             }
         ))"
         if ($SourceName) {

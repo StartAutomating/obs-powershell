@@ -3,7 +3,7 @@ Get-OBSNightSkyShader
 
 ### Synopsis
 
-Get-OBSNightSkyShader [[-Speed] <float>] [[-CenterWidthPercentage] <int>] [[-CenterHeightPercentage] <int>] [[-AlphaPercentage] <float>] [[-NumberStars] <int>] [[-SKYCOLOR] <string>] [[-STARCOLOR] <string>] [[-LIGHTSKY] <string>] [[-SKYLIGHTNESS] <float>] [[-MOONCOLOR] <string>] [[-MoonSize] <float>] [[-MoonBumpSize] <float>] [[-MoonPositionX] <float>] [[-MoonPositionY] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-IncludeClouds] [-IncludeMoon] [-ApplyToImage] [-ReplaceImageColor] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSNightSkyShader [[-Speed] <float>] [[-CenterWidthPercentage] <int>] [[-CenterHeightPercentage] <int>] [[-AlphaPercentage] <float>] [[-NumberStars] <int>] [[-SKYCOLOR] <string>] [[-STARCOLOR] <string>] [[-LIGHTSKY] <string>] [[-SKYLIGHTNESS] <float>] [[-MOONCOLOR] <string>] [[-MoonSize] <float>] [[-MoonBumpSize] <float>] [[-MoonPositionX] <float>] [[-MoonPositionY] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-IncludeClouds] [-IncludeMoon] [-ApplyToImage] [-ReplaceImageColor] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -41,6 +41,12 @@ Get-OBSNightSkyShader [[-Speed] <float>] [[-CenterWidthPercentage] <int>] [[-Cen
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |15      |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **IncludeClouds**
 

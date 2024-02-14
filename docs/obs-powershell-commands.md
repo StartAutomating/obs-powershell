@@ -1,8 +1,8 @@
 obs-powershell-commands
 -----------------------
 
-obs-powershell exports 730 commands
-(297 functions and 433 aliases)
+obs-powershell exports 733 commands
+(298 functions and 435 aliases)
 
 A good number of these commands directly correspond to an obs-websocket message.
 For a complete list, see [obs-powershell-websocket-commands](obs-powershell-websocket-commands.md).
@@ -278,6 +278,7 @@ Functions
 |[Set-OBSScrollFilter](Set-OBSScrollFilter.md)                                        |Sets a scroll filter.                                                        |
 |[Set-OBSShaderFilter](Set-OBSShaderFilter.md)                                        |Sets a Shader filter.                                                        |
 |[Set-OBSSharpnessFilter](Set-OBSSharpnessFilter.md)                                  |Sets a Sharpness filter.                                                     |
+|[Set-OBSSoundCloudSource](Set-OBSSoundCloudSource.md)                                |Sets a Sound Cloud Source                                                    |
 |[Set-OBSSourceFilterEnabled](Set-OBSSourceFilterEnabled.md)                          |Set-OBSSourceFilterEnabled : SetSourceFilterEnabled                          |
 |[Set-OBSSourceFilterIndex](Set-OBSSourceFilterIndex.md)                              |Set-OBSSourceFilterIndex : SetSourceFilterIndex                              |
 |[Set-OBSSourceFilterName](Set-OBSSourceFilterName.md)                                |Set-OBSSourceFilterName : SetSourceFilterName                                |
@@ -584,6 +585,7 @@ Aliases
 |[Set-OBSScrollFilter](Set-OBSScrollFilter.md)                                        |
 |[Set-OBSShaderFilter](Set-OBSShaderFilter.md)                                        |
 |[Set-OBSSharpnessFilter](Set-OBSSharpnessFilter.md)                                  |
+|[Set-OBSSoundCloudSource](Set-OBSSoundCloudSource.md)                                |
 |[Set-OBSSourceFilterEnabled](Set-OBSSourceFilterEnabled.md)                          |
 |[Set-OBSSourceFilterIndex](Set-OBSSourceFilterIndex.md)                              |
 |[Set-OBSSourceFilterName](Set-OBSSourceFilterName.md)                                |

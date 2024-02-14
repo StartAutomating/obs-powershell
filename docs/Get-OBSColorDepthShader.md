@@ -3,7 +3,7 @@ Get-OBSColorDepthShader
 
 ### Synopsis
 
-Get-OBSColorDepthShader [[-ColorDepth] <float>] [[-PixelSize] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSColorDepthShader [[-ColorDepth] <float>] [[-PixelSize] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -23,6 +23,12 @@ Get-OBSColorDepthShader [[-ColorDepth] <float>] [[-PixelSize] <float>] [[-Source
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |3       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **NoResponse**
 

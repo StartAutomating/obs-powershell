@@ -3,7 +3,7 @@ Get-OBSSelectiveColorShader
 
 ### Synopsis
 
-Get-OBSSelectiveColorShader [[-CutoffRed] <float>] [[-CutoffGreen] <float>] [[-CutoffBlue] <float>] [[-CutoffYellow] <float>] [[-AcceptanceAmplifier] <float>] [[-Notes] <string>] [[-BackgroundType] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ShowRed] [-ShowGreen] [-ShowBlue] [-ShowYellow] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSSelectiveColorShader [[-CutoffRed] <float>] [[-CutoffGreen] <float>] [[-CutoffBlue] <float>] [[-CutoffYellow] <float>] [[-AcceptanceAmplifier] <float>] [[-Notes] <string>] [[-BackgroundType] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ShowRed] [-ShowGreen] [-ShowBlue] [-ShowYellow] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -53,6 +53,12 @@ Get-OBSSelectiveColorShader [[-CutoffRed] <float>] [[-CutoffGreen] <float>] [[-C
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |8       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **NoResponse**
 

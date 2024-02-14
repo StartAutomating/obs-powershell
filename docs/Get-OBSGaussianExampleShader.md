@@ -3,7 +3,7 @@ Get-OBSGaussianExampleShader
 
 ### Synopsis
 
-Get-OBSGaussianExampleShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvSize] <float[]>] [[-UvPixelInterval] <float[]>] [[-InitialImage] <string>] [[-BeforeImage] <string>] [[-AfterImage] <string>] [[-TextColor] <string>] [[-MaxDistance] <float>] [[-Exp] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSGaussianExampleShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvSize] <float[]>] [[-UvPixelInterval] <float[]>] [[-InitialImage] <string>] [[-BeforeImage] <string>] [[-AfterImage] <string>] [[-TextColor] <string>] [[-MaxDistance] <float>] [[-Exp] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -41,6 +41,12 @@ Get-OBSGaussianExampleShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-El
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |14      |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **Image**
 

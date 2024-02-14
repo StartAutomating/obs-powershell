@@ -1,5 +1,46 @@
 #requires -Module PipeScript
 
+[ValidateScript({
+    $args -match 'websocket'
+})]
+param()
+
+#region Build Condition
+$logOutput = git log -n 1 
+foreach ($myAttribute in $MyInvocation.MyCommand.ScriptBlock.Attributes)  {
+    if ($myAttribute -is [ValidatePattern]) {
+        if ($env:GITHUB_STEP_SUMMARY) {
+            "* Validating Build Pattern (``$($myAttribute.RegexPattern)``) against $($logOutput.CommitMessage,$logOutput -join [Environment]::Newline)" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+        }
+        $myRegex = [Regex]::new($myAttribute.RegexPattern, $myAttribute.Options, '00:00:00.1')
+        if (
+            ($logOutput.CommitMessage -and -not $myRegex.IsMatch("$($logOutput.CommitMessage)")) -or 
+            (-not $myRegex.IsMatch("$logOutput"))
+        ) {
+            if ($env:GITHUB_STEP_SUMMARY) {
+                "* skipping $($MyInvocation.MyCommand.Name) because $($logOutput) did not match ($($myAttribute.RegexPattern))" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+            }
+            Write-Warning "Skipping $($MyInvocation.MyCommand) :The last commit did not match $($myRegex)"
+            return
+        } 
+    }
+
+    if ($myAttribute -is [ValidateScript]) {
+        $validationOutput = . $myAttribute.ScriptBlock $logOutput
+        if (-not $validationOutput) {
+            if ($env:GITHUB_STEP_SUMMARY) {
+                "* Skipping $($MyInvocation.MyCommand.Name) because $($logOutput) did not meet the validation criteria:" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+                "~~~PowerShell" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+                "$($myAttribute.ScriptBlock)"
+                "~~~PowerShell" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+            }
+            Write-Warning "Skipping $($MyInvocation.MyCommand) :The last commit did not match $($myRegex)"
+            return
+        }
+    }
+}
+#endregion Build Condition
+
 
 # The WebSocket is nice enough to provide it's documentation in JSON
 $obsWebSocketProtocol = Invoke-RestMethod https://raw.githubusercontent.com/obsproject/obs-websocket/master/docs/generated/protocol.json

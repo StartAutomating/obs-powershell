@@ -33,6 +33,20 @@ foreach ($myAttribute in $MyInvocation.MyCommand.ScriptBlock.Attributes)  {
             return
         } 
     }
+
+    if ($myAttribute -is [ValidateScript]) {
+        $validationOutput = . $myAttribute.ScriptBlock $logOutput
+        if (-not $validationOutput) {
+            if ($env:GITHUB_STEP_SUMMARY) {
+                "* Skipping $($MyInvocation.MyCommand.Name) because $($logOutput) did not meet the validation criteria:" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+                "~~~PowerShell" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+                "$($myAttribute.ScriptBlock)"
+                "~~~PowerShell" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+            }
+            Write-Warning "Skipping $($MyInvocation.MyCommand) :The last commit did not match $($myRegex)"
+            return
+        }
+    }
 }
 
 if ($env:GITHUB_STEP_SUMMARY) {

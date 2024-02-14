@@ -3,7 +3,7 @@ Get-OBSRgbColorWheelShader
 
 ### Synopsis
 
-Get-OBSRgbColorWheelShader [[-Speed] <float>] [[-ColorDepth] <float>] [[-ColorToReplace] <string>] [[-AlphaPercentage] <float>] [[-CenterWidthPercentage] <int>] [[-CenterHeightPercentage] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ApplyToImage] [-ReplaceImageColor] [-ApplyToSpecificColor] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSRgbColorWheelShader [[-Speed] <float>] [[-ColorDepth] <float>] [[-ColorToReplace] <string>] [[-AlphaPercentage] <float>] [[-CenterWidthPercentage] <int>] [[-CenterHeightPercentage] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ApplyToImage] [-ReplaceImageColor] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -59,6 +59,12 @@ Get-OBSRgbColorWheelShader [[-Speed] <float>] [[-ColorDepth] <float>] [[-ColorTo
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |7       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **NoResponse**
 

@@ -148,13 +148,13 @@ If provided, the browser source will render at a custom frame rate.
 The name of the scene.    
 If no scene name is provided, the current program scene will be used.
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[String]`|false   |8       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput        |Aliases  |
+|----------|--------|--------|---------------------|---------|
+|`[String]`|false   |8       |true (ByPropertyName)|SceneName|
 
 #### **Name**
 The name of the input.    
-If no name is provided, the last segment of the URI or file path will be the input name.
+If no name is provided, then "SoundCloud" will be used.
 
 |Type      |Required|Position|PipelineInput        |Aliases                 |
 |----------|--------|--------|---------------------|------------------------|

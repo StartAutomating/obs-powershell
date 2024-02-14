@@ -9,3 +9,5 @@
 * [set_BeatStart](set_BeatStart.md)
 * [get_BPM](get_BPM.md)
 * [set_BPM](set_BPM.md)
+* [get_Duration](get_Duration.md)
+* [set_Duration](set_Duration.md)

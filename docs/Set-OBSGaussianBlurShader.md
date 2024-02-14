@@ -3,7 +3,7 @@ Get-OBSGaussianBlurShader
 
 ### Synopsis
 
-Get-OBSGaussianBlurShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ImageSize] <float[]>] [[-ImageTexel] <float[]>] [[-URadius] <int>] [[-UDiameter] <int>] [[-UTexelDelta] <float[]>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-Kernel] <string>] [[-KernelTexel] <float[]>] [[-PixelSize] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSGaussianBlurShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ImageSize] <float[]>] [[-ImageTexel] <float[]>] [[-URadius] <int>] [[-UDiameter] <int>] [[-UTexelDelta] <float[]>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-Kernel] <string>] [[-KernelTexel] <float[]>] [[-PixelSize] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -23,6 +23,12 @@ Get-OBSGaussianBlurShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-Image
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |15      |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **Image**
 

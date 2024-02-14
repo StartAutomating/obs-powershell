@@ -3,7 +3,7 @@ Get-OBSDeadPixelFixerShader
 
 ### Synopsis
 
-Get-OBSDeadPixelFixerShader [[-DeadPixelX] <int>] [[-DeadPixelY] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSDeadPixelFixerShader [[-DeadPixelX] <int>] [[-DeadPixelY] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -29,6 +29,12 @@ Get-OBSDeadPixelFixerShader [[-DeadPixelX] <int>] [[-DeadPixelY] <int>] [[-Sourc
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |3       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **NoResponse**
 

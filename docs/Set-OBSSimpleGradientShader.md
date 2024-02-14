@@ -3,7 +3,7 @@ Get-OBSSimpleGradientShader
 
 ### Synopsis
 
-Get-OBSSimpleGradientShader [[-SpeedPercentage] <int>] [[-AlphaPercentage] <int>] [[-ColorToReplace] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-LensFlair] [-AnimateLensFlair] [-ApplyToAlphaLayer] [-ApplyToSpecificColor] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSSimpleGradientShader [[-SpeedPercentage] <int>] [[-AlphaPercentage] <int>] [[-ColorToReplace] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-LensFlair] [-AnimateLensFlair] [-ApplyToAlphaLayer] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -47,6 +47,12 @@ Get-OBSSimpleGradientShader [[-SpeedPercentage] <int>] [[-AlphaPercentage] <int>
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |5       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **LensFlair**
 

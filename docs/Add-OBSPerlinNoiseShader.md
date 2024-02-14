@@ -3,7 +3,7 @@ Get-OBSPerlinNoiseShader
 
 ### Synopsis
 
-Get-OBSPerlinNoiseShader [[-Speed] <float>] [[-SpeedHorizonal] <float>] [[-SpeedVertical] <float>] [[-Iterations] <int>] [[-WhiteNoise] <float>] [[-BlackNoise] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Animated] [-ApplyToChannel] [-Inverted] [-Multiply] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSPerlinNoiseShader [[-Speed] <float>] [[-SpeedHorizonal] <float>] [[-SpeedVertical] <float>] [[-Iterations] <int>] [[-WhiteNoise] <float>] [[-BlackNoise] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Animated] [-ApplyToChannel] [-Inverted] [-Multiply] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -35,6 +35,12 @@ Get-OBSPerlinNoiseShader [[-Speed] <float>] [[-SpeedHorizonal] <float>] [[-Speed
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |8       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **Inverted**
 

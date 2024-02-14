@@ -18,12 +18,18 @@ param()
 $logOutput = git log -n 1 
 foreach ($myAttribute in $MyInvocation.MyCommand.ScriptBlock.Attributes)  {
     if ($myAttribute -is [ValidatePattern]) {
+        if ($env:GITHUB_STEP_SUMMARY) {
+            "* Validating Build Pattern ($($myAttribute.RegexPattern))" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+        }
         $myRegex = [Regex]::new($myAttribute.RegexPattern, $myAttribute.Options, '00:00:00.1')
         if (
             ($logOutput.CommitMessage -and $logOutput.CommitMessage -match $myRegex) -or 
             ($logOutput -match $myRegex)
         ) {
-            Write-Warning "Skipping $($MyInvocation.MyCommand), because the last commit did not match $($myRegex)"
+            if ($env:GITHUB_STEP_SUMMARY) {
+                "* SKIPPING SHADER BUILD because $($logOutput) did not match ($($myAttribute.RegexPattern))" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+            }
+            Write-Warning "Skipping $($MyInvocation.MyCommand) :The last commit did not match $($myRegex)"
             return
         } 
     }

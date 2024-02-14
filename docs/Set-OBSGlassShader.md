@@ -3,7 +3,7 @@ Get-OBSGlassShader
 
 ### Synopsis
 
-Get-OBSGlassShader [[-AlphaPercent] <float>] [[-OffsetAmount] <float>] [[-XSize] <int>] [[-YSize] <int>] [[-ReflectionOffset] <int>] [[-BorderOffset] <float>] [[-BorderColor] <string>] [[-GlassColor] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-HorizontalBorder] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSGlassShader [[-AlphaPercent] <float>] [[-OffsetAmount] <float>] [[-XSize] <int>] [[-YSize] <int>] [[-ReflectionOffset] <int>] [[-BorderOffset] <float>] [[-BorderColor] <string>] [[-GlassColor] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-HorizontalBorder] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -35,6 +35,12 @@ Get-OBSGlassShader [[-AlphaPercent] <float>] [[-OffsetAmount] <float>] [[-XSize]
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |10      |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **GlassColor**
 

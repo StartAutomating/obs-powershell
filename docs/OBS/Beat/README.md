@@ -15,3 +15,5 @@
 * [get_Duration](get_Duration.md)
 * [set_Duration](set_Duration.md)
 * [get_Sine](get_Sine.md)
+* [get_Timer](get_Timer.md)
+* [set_Timer](set_Timer.md)

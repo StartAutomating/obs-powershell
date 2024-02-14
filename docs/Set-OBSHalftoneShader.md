@@ -3,7 +3,7 @@ Get-OBSHalftoneShader
 
 ### Synopsis
 
-Get-OBSHalftoneShader [[-Threshold] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSHalftoneShader [[-Threshold] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -17,6 +17,12 @@ Get-OBSHalftoneShader [[-Threshold] <float>] [[-SourceName] <string>] [[-FilterN
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |2       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **NoResponse**
 

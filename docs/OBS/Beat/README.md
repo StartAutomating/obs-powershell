@@ -14,3 +14,4 @@
 * [get_Cosine](get_Cosine.md)
 * [get_Duration](get_Duration.md)
 * [set_Duration](set_Duration.md)
+* [get_Sine](get_Sine.md)

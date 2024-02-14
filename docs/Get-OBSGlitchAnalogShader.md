@@ -3,7 +3,7 @@ Get-OBSGlitchAnalogShader
 
 ### Synopsis
 
-Get-OBSGlitchAnalogShader [[-ScanLineJitterDisplacement] <float>] [[-ScanLineJitterThresholdPercent] <int>] [[-VerticalJumpAmount] <float>] [[-VerticalSpeed] <float>] [[-HorizontalShake] <float>] [[-ColorDriftAmount] <float>] [[-ColorDriftSpeed] <float>] [[-PulseSpeedPercent] <int>] [[-AlphaPercent] <int>] [[-ColorToReplace] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-RotateColors] [-ApplyToAlphaLayer] [-ReplaceImageColor] [-ApplyToSpecificColor] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSGlitchAnalogShader [[-ScanLineJitterDisplacement] <float>] [[-ScanLineJitterThresholdPercent] <int>] [[-VerticalJumpAmount] <float>] [[-VerticalSpeed] <float>] [[-HorizontalShake] <float>] [[-ColorDriftAmount] <float>] [[-ColorDriftSpeed] <float>] [[-PulseSpeedPercent] <int>] [[-AlphaPercent] <int>] [[-ColorToReplace] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-RotateColors] [-ApplyToAlphaLayer] [-ReplaceImageColor] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -53,6 +53,12 @@ Get-OBSGlitchAnalogShader [[-ScanLineJitterDisplacement] <float>] [[-ScanLineJit
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |12      |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **HorizontalShake**
 

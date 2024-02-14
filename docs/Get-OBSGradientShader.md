@@ -3,7 +3,7 @@ Get-OBSGradientShader
 
 ### Synopsis
 
-Get-OBSGradientShader [[-StartColor] <string>] [[-StartStep] <float>] [[-MiddleColor] <string>] [[-MiddleStep] <float>] [[-EndColor] <string>] [[-EndStep] <float>] [[-AlphaPercent] <int>] [[-PulseSpeed] <int>] [[-ColorToReplace] <string>] [[-GradientCenterWidthPercentage] <int>] [[-GradientCenterHeightPercentage] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Ease] [-RotateColors] [-ApplyToAlphaLayer] [-ApplyToSpecificColor] [-Horizontal] [-Vertical] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSGradientShader [[-StartColor] <string>] [[-StartStep] <float>] [[-MiddleColor] <string>] [[-MiddleStep] <float>] [[-EndColor] <string>] [[-EndStep] <float>] [[-AlphaPercent] <int>] [[-PulseSpeed] <int>] [[-ColorToReplace] <string>] [[-GradientCenterWidthPercentage] <int>] [[-GradientCenterHeightPercentage] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Ease] [-RotateColors] [-ApplyToAlphaLayer] [-ApplyToSpecificColor] [-Horizontal] [-Vertical] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -59,6 +59,12 @@ Get-OBSGradientShader [[-StartColor] <string>] [[-StartStep] <float>] [[-MiddleC
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |13      |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **GradientCenterHeightPercentage**
 

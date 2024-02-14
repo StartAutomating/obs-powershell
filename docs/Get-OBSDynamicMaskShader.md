@@ -3,7 +3,7 @@ Get-OBSDynamicMaskShader
 
 ### Synopsis
 
-Get-OBSDynamicMaskShader [[-InputSource] <string>] [[-RedBaseValue] <float>] [[-RedRedInputValue] <float>] [[-RedGreenInputValue] <float>] [[-RedBlueInputValue] <float>] [[-RedAlphaInputValue] <float>] [[-RedMultiplier] <float>] [[-GreenBaseValue] <float>] [[-GreenRedInputValue] <float>] [[-GreenGreenInputValue] <float>] [[-GreenBlueInputValue] <float>] [[-GreenAlphaInputValue] <float>] [[-GreenMultiplier] <float>] [[-BlueBaseValue] <float>] [[-BlueRedInputValue] <float>] [[-BlueGreenInputValue] <float>] [[-BlueBlueInputValue] <float>] [[-BlueAlphaInputValue] <float>] [[-BlueMultiplier] <float>] [[-AlphaBaseValue] <float>] [[-AlphaRedInputValue] <float>] [[-AlphaGreenInputValue] <float>] [[-AlphaBlueInputValue] <float>] [[-AlphaAlphaInputValue] <float>] [[-AlphaMultiplier] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSDynamicMaskShader [[-InputSource] <string>] [[-RedBaseValue] <float>] [[-RedRedInputValue] <float>] [[-RedGreenInputValue] <float>] [[-RedBlueInputValue] <float>] [[-RedAlphaInputValue] <float>] [[-RedMultiplier] <float>] [[-GreenBaseValue] <float>] [[-GreenRedInputValue] <float>] [[-GreenGreenInputValue] <float>] [[-GreenBlueInputValue] <float>] [[-GreenAlphaInputValue] <float>] [[-GreenMultiplier] <float>] [[-BlueBaseValue] <float>] [[-BlueRedInputValue] <float>] [[-BlueGreenInputValue] <float>] [[-BlueBlueInputValue] <float>] [[-BlueAlphaInputValue] <float>] [[-BlueMultiplier] <float>] [[-AlphaBaseValue] <float>] [[-AlphaRedInputValue] <float>] [[-AlphaGreenInputValue] <float>] [[-AlphaBlueInputValue] <float>] [[-AlphaAlphaInputValue] <float>] [[-AlphaMultiplier] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -89,6 +89,12 @@ Get-OBSDynamicMaskShader [[-InputSource] <string>] [[-RedBaseValue] <float>] [[-
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |26      |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **GreenAlphaInputValue**
 

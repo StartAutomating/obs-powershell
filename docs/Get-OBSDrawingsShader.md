@@ -3,7 +3,7 @@ Get-OBSDrawingsShader
 
 ### Synopsis
 
-Get-OBSDrawingsShader [[-AngleNum] <int>] [[-SampNum] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSDrawingsShader [[-AngleNum] <int>] [[-SampNum] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -23,6 +23,12 @@ Get-OBSDrawingsShader [[-AngleNum] <int>] [[-SampNum] <int>] [[-SourceName] <str
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |3       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **NoResponse**
 

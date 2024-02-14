@@ -3,7 +3,7 @@ Get-OBSFillColorRadialPercentageShader
 
 ### Synopsis
 
-Get-OBSFillColorRadialPercentageShader [[-FillDirection] <int>] [[-Fill] <float>] [[-StartAngle] <float>] [[-OffsetX] <float>] [[-OffsetY] <float>] [[-FillColor] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSFillColorRadialPercentageShader [[-FillDirection] <int>] [[-Fill] <float>] [[-StartAngle] <float>] [[-OffsetX] <float>] [[-OffsetY] <float>] [[-FillColor] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -35,6 +35,12 @@ Get-OBSFillColorRadialPercentageShader [[-FillDirection] <int>] [[-Fill] <float>
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |7       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **NoResponse**
 

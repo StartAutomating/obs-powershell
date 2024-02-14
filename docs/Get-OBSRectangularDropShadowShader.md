@@ -3,7 +3,7 @@ Get-OBSRectangularDropShadowShader
 
 ### Synopsis
 
-Get-OBSRectangularDropShadowShader [[-ShadowOffsetX] <int>] [[-ShadowOffsetY] <int>] [[-ShadowBlurSize] <int>] [[-ShadowColor] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSRectangularDropShadowShader [[-ShadowOffsetX] <int>] [[-ShadowOffsetY] <int>] [[-ShadowBlurSize] <int>] [[-ShadowColor] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -17,6 +17,12 @@ Get-OBSRectangularDropShadowShader [[-ShadowOffsetX] <int>] [[-ShadowOffsetY] <i
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |5       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **NoResponse**
 

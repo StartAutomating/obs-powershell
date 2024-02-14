@@ -3,7 +3,7 @@ Get-OBSBurnShader
 
 ### Synopsis
 
-Get-OBSBurnShader [[-BurnGradient] <string>] [[-Speed] <float>] [[-GradientAdjust] <float>] [[-DissolveValue] <float>] [[-SmokeHorizonalSpeed] <float>] [[-SmokeVerticalSpeed] <float>] [[-Iterations] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Animated] [-ApplyToChannel] [-ApplySmoke] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSBurnShader [[-BurnGradient] <string>] [[-Speed] <float>] [[-GradientAdjust] <float>] [[-DissolveValue] <float>] [[-SmokeHorizonalSpeed] <float>] [[-SmokeVerticalSpeed] <float>] [[-Iterations] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Animated] [-ApplyToChannel] [-ApplySmoke] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -47,6 +47,12 @@ Get-OBSBurnShader [[-BurnGradient] <string>] [[-Speed] <float>] [[-GradientAdjus
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |9       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **GradientAdjust**
 

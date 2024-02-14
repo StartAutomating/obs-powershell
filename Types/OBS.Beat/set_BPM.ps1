@@ -12,3 +12,8 @@ param(
 $BPM
 )
 $this | Add-Member NoteProperty ".BPM" $BPM -Force -PassThru
+$duration = 
+    [Timespan]::FromMilliseconds(
+        (60 * 1000) / $this.'.BPM'
+    )
+$this.Timer = $duration

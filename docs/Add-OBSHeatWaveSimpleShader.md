@@ -3,7 +3,7 @@ Get-OBSHeatWaveSimpleShader
 
 ### Synopsis
 
-Get-OBSHeatWaveSimpleShader [[-Rate] <float>] [[-Strength] <float>] [[-Distortion] <float>] [[-Opacity] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSHeatWaveSimpleShader [[-Rate] <float>] [[-Strength] <float>] [[-Distortion] <float>] [[-Opacity] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -23,6 +23,12 @@ Get-OBSHeatWaveSimpleShader [[-Rate] <float>] [[-Strength] <float>] [[-Distortio
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |5       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **NoResponse**
 

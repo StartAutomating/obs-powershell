@@ -8,7 +8,7 @@ param()
 #region Build Condition
 $logOutput = git log -n 1 
 foreach ($myAttribute in $MyInvocation.MyCommand.ScriptBlock.Attributes)  {
-    if ($myAttribute -is [ValidatePattern]) {
+    if ($myAttribute.RegexPattern) {
         if ($env:GITHUB_STEP_SUMMARY) {
             "* Validating Build Pattern (``$($myAttribute.RegexPattern)``) against $($logOutput.CommitMessage,$logOutput -join [Environment]::Newline)" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
         }
@@ -24,8 +24,15 @@ foreach ($myAttribute in $MyInvocation.MyCommand.ScriptBlock.Attributes)  {
             return
         } 
     }
-
-    if ($myAttribute -is [ValidateScript]) {
+    elseif ($myAttribute -is [ValidateScript]) 
+    {
+        if ($env:GITHUB_STEP_SUMMARY) {
+            "* Validating Build Against Script:
+~~~PowerShell
+$($myAttribute.ScriptBlock)
+~~~
+" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+        }
         $validationOutput = . $myAttribute.ScriptBlock $logOutput
         if (-not $validationOutput) {
             if ($env:GITHUB_STEP_SUMMARY) {

@@ -15,9 +15,10 @@
 param()
 
 
+#region Build Condition
 $logOutput = git log -n 1 
 foreach ($myAttribute in $MyInvocation.MyCommand.ScriptBlock.Attributes)  {
-    if ($myAttribute -is [ValidatePattern]) {
+    if ($myAttribute.RegexPattern) {
         if ($env:GITHUB_STEP_SUMMARY) {
             "* Validating Build Pattern (``$($myAttribute.RegexPattern)``) against $($logOutput.CommitMessage,$logOutput -join [Environment]::Newline)" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
         }
@@ -27,14 +28,21 @@ foreach ($myAttribute in $MyInvocation.MyCommand.ScriptBlock.Attributes)  {
             (-not $myRegex.IsMatch("$logOutput"))
         ) {
             if ($env:GITHUB_STEP_SUMMARY) {
-                "* SKIPPING SHADER BUILD because $($logOutput) did not match ($($myAttribute.RegexPattern))" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+                "* skipping $($MyInvocation.MyCommand.Name) because $($logOutput) did not match ($($myAttribute.RegexPattern))" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
             }
             Write-Warning "Skipping $($MyInvocation.MyCommand) :The last commit did not match $($myRegex)"
             return
         } 
     }
-
-    if ($myAttribute -is [ValidateScript]) {
+    elseif ($myAttribute -is [ValidateScript]) 
+    {
+        if ($env:GITHUB_STEP_SUMMARY) {
+            "* Validating Build Against Script:
+~~~PowerShell
+$($myAttribute.ScriptBlock)
+~~~
+" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+        }
         $validationOutput = . $myAttribute.ScriptBlock $logOutput
         if (-not $validationOutput) {
             if ($env:GITHUB_STEP_SUMMARY) {
@@ -48,6 +56,7 @@ foreach ($myAttribute in $MyInvocation.MyCommand.ScriptBlock.Attributes)  {
         }
     }
 }
+#endregion Build Condition
 
 if ($env:GITHUB_STEP_SUMMARY) {
 @"
@@ -369,29 +378,13 @@ switch -regex ($myVerb) {
     $NewPipeScriptSplat.Alias = "Set-$ShaderNoun", "Add-$ShaderNoun"
     $NewPipeScriptSplat.OutputPath = (Join-Path $ShaderCommandsPath "Get-$ShaderNoun.ps1")
     $NewPipeScriptSplat.Process = $ShaderProcess
-    <#
-    $generatingJobs += Start-ThreadJob -ScriptBlock {
-        param($PipeScriptPath, $NewPipeScriptSplat)
-
-        Import-Module $pipeScriptPath
-        New-PipeScript @NewPipeScriptSplat
-    } -ArgumentList "$(Get-Module PipeScript | Split-Path | Join-Path -ChildPath PipeScript.psd1)",
-        $NewPipeScriptSplat
-    #>
     New-PipeScript @NewPipeScriptSplat
-    <#$generatedFunction = New-PipeScript -FunctionName "Get-$ShaderNoun" -Parameter $ShaderParameters -Alias "Set-$ShaderNoun", 
-        "Add-$ShaderNoun" -outputPath (Join-Path $ShaderCommandsPath "Get-$ShaderNoun.ps1") -Process $ShaderProcess
-    $generatedFunction
-    $null = $null      #>
 }
 
-<#
-do {
-    $generatingJobs | Receive-Job
-    $generatingJobStates = @($generatingJobs | Select-Object -ExpandProperty State -Unique | Sort-Object) 
-    Start-Sleep -Seconds 1
-} while (($generatingJobStates -match '(?>NotStarted|Running)'))
-#>
+if (Test-Path "obs-shaderfilter") {
+    Remove-Item -Recurse -Force -Path "obs-shaderfilter"
+}
+
 
 trap [Exception] {
 if ($env:GITHUB_STEP_SUMMARY) {

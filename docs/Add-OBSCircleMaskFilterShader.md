@@ -3,7 +3,7 @@ Get-OBSCircleMaskFilterShader
 
 ### Synopsis
 
-Get-OBSCircleMaskFilterShader [[-Radius] <float>] [[-CircleOffsetX] <int>] [[-CircleOffsetY] <int>] [[-SourceOffsetX] <int>] [[-SourceOffsetY] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Antialiasing] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSCircleMaskFilterShader [[-Radius] <float>] [[-CircleOffsetX] <int>] [[-CircleOffsetY] <int>] [[-SourceOffsetX] <int>] [[-SourceOffsetY] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Antialiasing] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -35,6 +35,12 @@ Get-OBSCircleMaskFilterShader [[-Radius] <float>] [[-CircleOffsetX] <int>] [[-Ci
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |6       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **NoResponse**
 

@@ -2,6 +2,43 @@
 <!-- Generated with EZOut 2.0.4: Install-Module EZOut or https://github.com/StartAutomating/EZOut -->
 <Types>
   <Type>
+    <Name>OBS.Beat</Name>
+    <Members>
+      <ScriptProperty>
+        <Name>BPM</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the BPM
+.DESCRIPTION
+    Gets the Beats Per Minute (BPM) of obs-powershell.
+
+    This can be used to time effects to a beat.
+#&gt;
+return $this.'.BPM'
+
+                    </GetScriptBlock>
+        <SetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Sets the BPM    
+.DESCRIPTION
+    Set the Beats Per Minute (BPM) of obs-powershell.
+
+    This can be used to time effects to a beat.
+#&gt;
+param(
+# The new BPM
+[double]
+$BPM
+)
+$this | Add-Member NoteProperty ".BPM" $BPM -Force -PassThru
+
+                    </SetScriptBlock>
+      </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
     <Name>OBS.GetSourceFilterList.Response</Name>
     <Members>
       <ScriptMethod>

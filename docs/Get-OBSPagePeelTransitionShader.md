@@ -3,7 +3,7 @@ Get-OBSPagePeelTransitionShader
 
 ### Synopsis
 
-Get-OBSPagePeelTransitionShader [[-ImageA] <string>] [[-ImageB] <string>] [[-TransitionTime] <float>] [[-PageColor] <string>] [[-PageTransparency] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ConvertLinear] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSPagePeelTransitionShader [[-ImageA] <string>] [[-ImageB] <string>] [[-TransitionTime] <float>] [[-PageColor] <string>] [[-PageTransparency] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ConvertLinear] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -23,6 +23,12 @@ Get-OBSPagePeelTransitionShader [[-ImageA] <string>] [[-ImageB] <string>] [[-Tra
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |6       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **ImageA**
 

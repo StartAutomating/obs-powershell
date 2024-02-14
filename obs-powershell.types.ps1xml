@@ -206,6 +206,47 @@ $this | Add-Member NoteProperty ".BPM" (
 [Math]::Cos($this.BeatCount * [Math]::PI/2)
                     </GetScriptBlock>
       </ScriptProperty>
+      <ScriptProperty>
+        <Name>Timer</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the Beat Timer
+.DESCRIPTION
+    Gets the Timer object that should elapse every beat.
+
+    This can be used to Register-ObjectEvent to run on a beat.
+#&gt;
+return $this.'.Timer'
+
+                    </GetScriptBlock>
+        <SetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Sets the Beat Timer
+.DESCRIPTION
+    Sets the Beat Timer.
+
+    If no timer exists, one is created.  Otherwise, the interval is updated.
+.OUTPUTS
+    [TimeSpan]
+#&gt;
+param(
+# The new timer interval.
+[timespan]
+$Interval
+)
+
+if (-not $this.'.Timer') {
+    $this.'.Timer' = [Timers.Timer]::new($Interval.TotalMilliseconds)
+} else {
+    $this.'.Timer'.Interval = $Interval.TotalMilliseconds
+}
+
+
+
+                    </SetScriptBlock>
+      </ScriptProperty>
     </Members>
   </Type>
   <Type>

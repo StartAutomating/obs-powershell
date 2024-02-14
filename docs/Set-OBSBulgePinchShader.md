@@ -3,7 +3,7 @@ Get-OBSBulgePinchShader
 
 ### Synopsis
 
-Get-OBSBulgePinchShader [[-Radius] <float>] [[-Magnitude] <float>] [[-CenterX] <float>] [[-CenterY] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Animate] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSBulgePinchShader [[-Radius] <float>] [[-Magnitude] <float>] [[-CenterX] <float>] [[-CenterY] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Animate] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -35,6 +35,12 @@ Get-OBSBulgePinchShader [[-Radius] <float>] [[-Magnitude] <float>] [[-CenterX] <
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |6       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **Magnitude**
 

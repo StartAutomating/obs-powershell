@@ -3,7 +3,7 @@ Get-OBSAnimatedTextureShader
 
 ### Synopsis
 
-Get-OBSAnimatedTextureShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-RandF] <float>] [[-UvSize] <float[]>] [[-Notes] <string>] [[-AnimationImage] <string>] [[-ColorizationImage] <string>] [[-PolarAngle] <float>] [[-PolarHeight] <float>] [[-SpeedHorizontalPercent] <float>] [[-SpeedVerticalPercent] <float>] [[-TintSpeedHorizontalPercent] <float>] [[-TintSpeedVerticalPercent] <float>] [[-Alpha] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Reverse] [-Bounce] [-CenterAnimation] [-PolarAnimation] [-UseAnimationImageColor] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSAnimatedTextureShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-RandF] <float>] [[-UvSize] <float[]>] [[-Notes] <string>] [[-AnimationImage] <string>] [[-ColorizationImage] <string>] [[-PolarAngle] <float>] [[-PolarHeight] <float>] [[-SpeedHorizontalPercent] <float>] [[-SpeedVerticalPercent] <float>] [[-TintSpeedHorizontalPercent] <float>] [[-TintSpeedVerticalPercent] <float>] [[-Alpha] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Reverse] [-Bounce] [-CenterAnimation] [-PolarAnimation] [-UseAnimationImageColor] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -53,6 +53,12 @@ Get-OBSAnimatedTextureShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-El
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |19      |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **Image**
 

@@ -136,6 +136,15 @@ switch -regex ($myVerb) {
                 Where-Object FilterName -Match $FilterNamePattern
         }        
     }
+    'Remove' {
+        if ($SourceName) {
+            Get-OBSInput | 
+                Where-Object InputName -eq $SourceName |
+                Get-OBSSourceFilterList |
+                Where-Object FilterName -Match $FilterNamePattern |
+                Remove-OBSSourceFilter
+        }
+    }
     '(?>Add|Set)' {
         $ShaderSettings = [Ordered]@{}
         :nextParameter foreach ($parameterMetadata in $MyInvocation.MyCommand.Parameters[@($psBoundParameters.Keys)]) {
@@ -162,8 +171,23 @@ switch -regex ($myVerb) {
             }
         }
 
-        if ($myVerb -eq 'Add') {
+        if (-not $script:CachedShaderFilesFromCommand) {
+            $script:CachedShaderFilesFromCommand = @{}
+        }
+
+        if ($Home -and -not $script:CachedShaderFilesFromCommand[$shaderName]) {
+            $MyObsPowerShellPath = Join-Path $home ".obs-powershell"
+            $ThisShaderPath = Join-Path $MyObsPowerShellPath "$shaderName.shader"
+            $shaderText | Set-Content -LiteralPath $ThisShaderPath
+            $script:CachedShaderFilesFromCommand[$shaderName] = Get-Item -LiteralPath $ThisShaderPath
+        }
+        if ($script:CachedShaderFilesFromCommand[$shaderName]) {
+            $ShaderFilterSplat.ShaderFile = $script:CachedShaderFilesFromCommand[$shaderName].FullName
+        } else {
             $ShaderFilterSplat.ShaderText = $shaderText
+        }
+
+        if ($myVerb -eq 'Add') {                        
             Add-OBSShaderFilter @ShaderFilterSplat
         } else {
             Set-OBSShaderFilter @ShaderFilterSplat

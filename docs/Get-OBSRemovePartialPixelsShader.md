@@ -3,7 +3,7 @@ Get-OBSRemovePartialPixelsShader
 
 ### Synopsis
 
-Get-OBSRemovePartialPixelsShader [[-MinimumAlphaPercent] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSRemovePartialPixelsShader [[-MinimumAlphaPercent] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -17,6 +17,12 @@ Get-OBSRemovePartialPixelsShader [[-MinimumAlphaPercent] <int>] [[-Notes] <strin
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |3       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **MinimumAlphaPercent**
 

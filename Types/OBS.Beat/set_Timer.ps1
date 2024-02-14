@@ -15,7 +15,7 @@ $Interval
 )
 
 if (-not $this.'.Timer') {
-    $this.'.Timer' = [Timers.Timer]::new($Interval.TotalMilliseconds)
+    $this | Add-Member NoteProperty '.Timer' ([Timers.Timer]::new($Interval.TotalMilliseconds)) -Force
 } else {
     $this.'.Timer'.Interval = $Interval.TotalMilliseconds
 }

@@ -3,7 +3,7 @@ Get-OBSRotatoeShader
 
 ### Synopsis
 
-Get-OBSRotatoeShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-RandF] <float>] [[-UvSize] <float[]>] [[-SpeedPercent] <int>] [[-AxisX] <float>] [[-AxisY] <float>] [[-AxisZ] <float>] [[-AngleDegrees] <float>] [[-CenterWidthPercentage] <int>] [[-CenterHeightPercentage] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-RotateTransform] [-RotatePixels] [-RotateColors] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSRotatoeShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-RandF] <float>] [[-UvSize] <float[]>] [[-SpeedPercent] <int>] [[-AxisX] <float>] [[-AxisY] <float>] [[-AxisZ] <float>] [[-AngleDegrees] <float>] [[-CenterWidthPercentage] <int>] [[-CenterHeightPercentage] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-RotateTransform] [-RotatePixels] [-RotateColors] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -59,6 +59,12 @@ Get-OBSRotatoeShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTim
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |17      |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **Image**
 

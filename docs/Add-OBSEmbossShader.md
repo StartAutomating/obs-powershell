@@ -3,7 +3,7 @@ Get-OBSEmbossShader
 
 ### Synopsis
 
-Get-OBSEmbossShader [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-UseColor] [-ApplyToAlphaLayer] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSEmbossShader [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-UseColor] [-ApplyToAlphaLayer] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -23,6 +23,12 @@ Get-OBSEmbossShader [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderT
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |1       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **NoResponse**
 

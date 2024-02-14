@@ -3,7 +3,7 @@ Get-OBSShakeShader
 
 ### Synopsis
 
-Get-OBSShakeShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-RandF] <float>] [[-UvSize] <float[]>] [[-LocalTime] <float>] [[-RandomScale] <float>] [[-Speed] <float>] [[-MinGrowthPixels] <float>] [[-MaxGrowthPixels] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Worble] [-RandomizeMovement] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSShakeShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-RandF] <float>] [[-UvSize] <float[]>] [[-LocalTime] <float>] [[-RandomScale] <float>] [[-Speed] <float>] [[-MinGrowthPixels] <float>] [[-MaxGrowthPixels] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Worble] [-RandomizeMovement] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -23,6 +23,12 @@ Get-OBSShakeShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime]
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |15      |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **Image**
 

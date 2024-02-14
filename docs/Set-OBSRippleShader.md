@@ -3,7 +3,7 @@ Get-OBSRippleShader
 
 ### Synopsis
 
-Get-OBSRippleShader [[-DistanceFactor] <float>] [[-TimeFactor] <float>] [[-PowerFactor] <float>] [[-CenterPosX] <float>] [[-CenterPosY] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSRippleShader [[-DistanceFactor] <float>] [[-TimeFactor] <float>] [[-PowerFactor] <float>] [[-CenterPosX] <float>] [[-CenterPosY] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -35,6 +35,12 @@ Get-OBSRippleShader [[-DistanceFactor] <float>] [[-TimeFactor] <float>] [[-Power
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |6       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **NoResponse**
 

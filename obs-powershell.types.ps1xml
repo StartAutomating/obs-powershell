@@ -83,6 +83,45 @@ $this | Add-Member NoteProperty ".BPM" $BPM -Force -PassThru
 
                     </SetScriptBlock>
       </ScriptProperty>
+      <ScriptProperty>
+        <Name>Duration</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the Duration
+.DESCRIPTION
+    Gets the Duration of a Beat
+.OUTPUTS
+    [TimeSpan]
+#&gt;
+if ($this.'.BPM') {
+    [Timespan]::FromMilliseconds((60 * 1000) / $this.'.BPM')
+}
+
+                    </GetScriptBlock>
+        <SetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the Duration
+.DESCRIPTION
+    Gets the Duration of a Beat
+.OUTPUTSobs
+    [TimeSpan]
+#&gt;
+param(
+# The new duration.
+# This will also set the BPM
+[timespan]
+$Duration
+)
+
+$this | Add-Member NoteProperty ".BPM" (
+    (60 * 1000) / $Duration.TotalMilliseconds
+) -Force -PassThru
+
+
+                    </SetScriptBlock>
+      </ScriptProperty>
     </Members>
   </Type>
   <Type>

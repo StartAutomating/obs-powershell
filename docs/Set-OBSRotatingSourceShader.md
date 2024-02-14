@@ -3,7 +3,7 @@ Get-OBSRotatingSourceShader
 
 ### Synopsis
 
-Get-OBSRotatingSourceShader [[-SpinSpeed] <float>] [[-Rotation] <float>] [[-Zoomin] <float>] [[-XCenter] <float>] [[-YCenter] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-KeepAspectratio] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSRotatingSourceShader [[-SpinSpeed] <float>] [[-Rotation] <float>] [[-Zoomin] <float>] [[-XCenter] <float>] [[-YCenter] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-KeepAspectratio] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -17,6 +17,12 @@ Get-OBSRotatingSourceShader [[-SpinSpeed] <float>] [[-Rotation] <float>] [[-Zoom
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |6       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **KeepAspectratio**
 

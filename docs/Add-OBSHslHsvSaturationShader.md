@@ -3,7 +3,7 @@ Get-OBSHslHsvSaturationShader
 
 ### Synopsis
 
-Get-OBSHslHsvSaturationShader [[-HslSaturationFactor] <float>] [[-HsvSaturationFactor] <float>] [[-AdjustmentOrder] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSHslHsvSaturationShader [[-HslSaturationFactor] <float>] [[-HsvSaturationFactor] <float>] [[-AdjustmentOrder] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -23,6 +23,12 @@ Get-OBSHslHsvSaturationShader [[-HslSaturationFactor] <float>] [[-HsvSaturationF
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |5       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **HslSaturationFactor**
 

@@ -3,7 +3,7 @@ Get-OBSGaussianBlurAdvancedShader
 
 ### Synopsis
 
-Get-OBSGaussianBlurAdvancedShader [[-Directions] <float>] [[-Quality] <float>] [[-Size] <float>] [[-MaskLeft] <float>] [[-MaskRight] <float>] [[-MaskTop] <float>] [[-MaskBottom] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSGaussianBlurAdvancedShader [[-Directions] <float>] [[-Quality] <float>] [[-Size] <float>] [[-MaskLeft] <float>] [[-MaskRight] <float>] [[-MaskTop] <float>] [[-MaskBottom] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -23,6 +23,12 @@ Get-OBSGaussianBlurAdvancedShader [[-Directions] <float>] [[-Quality] <float>] [
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |8       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **MaskBottom**
 

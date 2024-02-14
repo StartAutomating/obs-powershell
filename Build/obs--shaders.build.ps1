@@ -17,18 +17,22 @@ param()
 
 #region Build Condition
 $logOutput = git log -n 1 
+$checkIfThisIsValid = $logOutput.CommitMessage ? $logOutput.CommitMessage : $logOutput -join [Environment]::Newline
 foreach ($myAttribute in $MyInvocation.MyCommand.ScriptBlock.Attributes)  {
     if ($myAttribute.RegexPattern) {
+        
         if ($env:GITHUB_STEP_SUMMARY) {
-            "* Validating Build Pattern (``$($myAttribute.RegexPattern)``) against $($logOutput.CommitMessage,$logOutput -join [Environment]::Newline)" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+            @(
+                "* $($MyInvocation.MyCommand.Name) has a Build Validation Pattern: (``$($myAttribute.RegexPattern)``)."
+                "* $($MyInvocation.MyCommand.Name) Validating Commit: ``$checkIfThisIsValid``"
+            ) -join [Environment]::Newline | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
         }
         $myRegex = [Regex]::new($myAttribute.RegexPattern, $myAttribute.Options, '00:00:00.1')
-        if (
-            ($logOutput.CommitMessage -and -not $myRegex.IsMatch("$($logOutput.CommitMessage)")) -or 
-            (-not $myRegex.IsMatch("$logOutput"))
+        if ($myRegex.IsMatch($checkIfThisIsValid) -or 
+            (-not $myRegex.IsMatch("$checkIfThisIsValid"))
         ) {
             if ($env:GITHUB_STEP_SUMMARY) {
-                "* skipping $($MyInvocation.MyCommand.Name) because $($logOutput) did not match ($($myAttribute.RegexPattern))" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+                "* skipping $($MyInvocation.MyCommand.Name) because $checkIfThisIsValid did not match ($($myAttribute.RegexPattern))" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
             }
             Write-Warning "Skipping $($MyInvocation.MyCommand) :The last commit did not match $($myRegex)"
             return
@@ -43,13 +47,17 @@ $($myAttribute.ScriptBlock)
 ~~~
 " | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
         }
-        $validationOutput = . $myAttribute.ScriptBlock $logOutput
+        $validationOutput = . $myAttribute.ScriptBlock $checkIfThisIsValid
         if (-not $validationOutput) {
             if ($env:GITHUB_STEP_SUMMARY) {
-                "* Skipping $($MyInvocation.MyCommand.Name) because $($logOutput) did not meet the validation criteria:" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
-                "~~~PowerShell" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
-                "$($myAttribute.ScriptBlock)"
-                "~~~PowerShell" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+                "* Skipping $($MyInvocation.MyCommand.Name) because $($checkIfThisIsValid) did not meet the validation criteria:" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+                @(
+                    "~~~PowerShell"
+                    "$($myAttribute.ScriptBlock)"
+                    "~~~"
+                ) -join [Environment]::Newline | 
+                    Out-File -Path $env:GITHUB_STEP_SUMMARY -Append                 
+                
             }
             Write-Warning "Skipping $($MyInvocation.MyCommand) :The last commit did not match $($myRegex)"
             return

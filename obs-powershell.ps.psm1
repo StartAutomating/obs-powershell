@@ -3,6 +3,10 @@ $CommandsPath = (Join-Path $PSScriptRoot "Commands")
 
 $MyInvocation.MyCommand.ScriptBlock.Module.OnRemove = {
     Get-OBSEffect | Stop-OBSEffect
+    if (${obs-powershell}.Beat.Timer) {
+        ${obs-powershell}.Beat.Timer.Stop()
+        Get-EventSubscriber | Where-Object SourceObject -eq ${obs-powershell}.Beat.Timer | Unregister-Event
+    }
     Disconnect-OBS
 }
 

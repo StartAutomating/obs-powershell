@@ -3,7 +3,7 @@ Get-OBSAlphaGamingBentCameraShader
 
 ### Synopsis
 
-Get-OBSAlphaGamingBentCameraShader [[-LeftSideWidth] <float>] [[-LeftSideSize] <float>] [[-LeftSideShadow] <float>] [[-LeftFlipWidth] <float>] [[-LeftFlipShadow] <float>] [[-RightSideWidth] <float>] [[-RightSideSize] <float>] [[-RightSideShadow] <float>] [[-RightFlipWidth] <float>] [[-RightFlipShadow] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSAlphaGamingBentCameraShader [[-LeftSideWidth] <float>] [[-LeftSideSize] <float>] [[-LeftSideShadow] <float>] [[-LeftFlipWidth] <float>] [[-LeftFlipShadow] <float>] [[-RightSideWidth] <float>] [[-RightSideSize] <float>] [[-RightSideShadow] <float>] [[-RightFlipWidth] <float>] [[-RightFlipShadow] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -17,6 +17,12 @@ Get-OBSAlphaGamingBentCameraShader [[-LeftSideWidth] <float>] [[-LeftSideSize] <
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |11      |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **LeftFlipShadow**
 

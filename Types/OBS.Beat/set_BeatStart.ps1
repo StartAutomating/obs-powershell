@@ -8,6 +8,10 @@ param(
     # The Beat Start Time
     [DateTime]$BeatStartTime
 )
-$this | Add-Member NoteProperty ".BeatStart" (
-    $BeatStartTime
-) -Force
+if ($this.'.BPM') {
+    $this | Add-Member NoteProperty ".BeatStart" (
+        $BeatStartTime
+    ) -Force
+    $this.Timer.Start()
+}
+

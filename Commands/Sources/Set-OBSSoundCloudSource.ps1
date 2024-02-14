@@ -112,11 +112,12 @@ function Set-OBSSoundCloudSource {
     # The name of the scene.    
     # If no scene name is provided, the current program scene will be used.    
     [Parameter(ValueFromPipelineByPropertyName)]
+    [Alias('SceneName')]
     [string]
     $Scene,
 
     # The name of the input.    
-    # If no name is provided, the last segment of the URI or file path will be the input name.    
+    # If no name is provided, then "SoundCloud" will be used.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [Alias('InputName','SourceName')]
     [string]
@@ -312,14 +313,7 @@ function Set-OBSSoundCloudSource {
         $myParameterData["is_local_file"] = $true    
 
         if (-not $Name) {
-            $Name = $myParameters['Name'] =
-                if ($uri.Segments) {
-                    $uri.Segments[-1] -replace '\.html$'
-                } elseif ($uri -match '[\\/]') {
-                    @($uri -split '[\\/]')[-1]
-                } else {
-                    $uri
-                }
+            $Name = $myParameters['Name'] = 'SoundCloud'
         }        
 
         $addSplat = [Ordered]@{

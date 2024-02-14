@@ -3,7 +3,7 @@ Get-OBSTwistShader
 
 ### Synopsis
 
-Get-OBSTwistShader [[-CenterXPercent] <int>] [[-CenterYPercent] <int>] [[-Power] <float>] [[-Rotation] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSTwistShader [[-CenterXPercent] <int>] [[-CenterYPercent] <int>] [[-Power] <float>] [[-Rotation] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -29,6 +29,12 @@ Get-OBSTwistShader [[-CenterXPercent] <int>] [[-CenterYPercent] <int>] [[-Power]
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |5       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **NoResponse**
 

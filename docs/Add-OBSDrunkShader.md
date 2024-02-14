@@ -3,7 +3,7 @@ Get-OBSDrunkShader
 
 ### Synopsis
 
-Get-OBSDrunkShader [[-ColorMatrix] <float[][]>] [[-GlowPercent] <int>] [[-Blur] <int>] [[-MinBrightness] <int>] [[-MaxBrightness] <int>] [[-PulseSpeedPercent] <int>] [[-GlowColor] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ApplyToAlphaLayer] [-Ease] [-Glitch] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSDrunkShader [[-ColorMatrix] <float[][]>] [[-GlowPercent] <int>] [[-Blur] <int>] [[-MinBrightness] <int>] [[-MaxBrightness] <int>] [[-PulseSpeedPercent] <int>] [[-GlowColor] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ApplyToAlphaLayer] [-Ease] [-Glitch] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -41,6 +41,12 @@ Get-OBSDrunkShader [[-ColorMatrix] <float[][]>] [[-GlowPercent] <int>] [[-Blur] 
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |9       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **Glitch**
 

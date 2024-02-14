@@ -192,6 +192,20 @@ $this | Add-Member NoteProperty ".BPM" (
 
                     </SetScriptBlock>
       </ScriptProperty>
+      <ScriptProperty>
+        <Name>Sine</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the Beat Sine
+.DESCRIPTION
+    Gets the Sine of the BeatCount.
+
+    Since this starts at 0, this would be at its highest value during the middle of the beat.
+#&gt;
+[Math]::Cos($this.BeatCount * [Math]::PI/2)
+                    </GetScriptBlock>
+      </ScriptProperty>
     </Members>
   </Type>
   <Type>

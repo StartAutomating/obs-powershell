@@ -3,7 +3,7 @@ Get-OBSCylinderShader
 
 ### Synopsis
 
-Get-OBSCylinderShader [[-CylinderFactor] <float>] [[-BackgroundCut] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSCylinderShader [[-CylinderFactor] <float>] [[-BackgroundCut] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -29,6 +29,12 @@ Get-OBSCylinderShader [[-CylinderFactor] <float>] [[-BackgroundCut] <float>] [[-
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |3       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **NoResponse**
 

@@ -5,6 +5,24 @@
     <Name>OBS.Beat</Name>
     <Members>
       <ScriptProperty>
+        <Name>BeatCount</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the Beat Count
+.DESCRIPTION
+    Gets the number of beats since the beat started.
+.EXAMPLE
+    $obs.Beat.BeatCount
+#&gt;
+if ($this.'.BPM' -and $this.'.BeatStart') {
+    ([DateTime]::Now - $this.'.BeatStart').TotalMilliseconds /  
+        ((60 * 1000) / $this.'.BPM')
+}
+
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
         <Name>BeatStart</Name>
         <GetScriptBlock>
                         &lt;#

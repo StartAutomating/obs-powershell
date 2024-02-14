@@ -4,6 +4,7 @@
 ### Script Methods
 
 
+* [get_BeatCount](get_BeatCount.md)
 * [get_BeatStart](get_BeatStart.md)
 * [set_BeatStart](set_BeatStart.md)
 * [get_BPM](get_BPM.md)

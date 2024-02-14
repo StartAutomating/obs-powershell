@@ -23,8 +23,8 @@ foreach ($myAttribute in $MyInvocation.MyCommand.ScriptBlock.Attributes)  {
         }
         $myRegex = [Regex]::new($myAttribute.RegexPattern, $myAttribute.Options, '00:00:00.1')
         if (
-            ($logOutput.CommitMessage -and $myRegex.IsMatch("$($logOutput.CommitMessage)")) -or 
-            ($myRegex.IsMatch("$logOutput"))
+            ($logOutput.CommitMessage -and -not $myRegex.IsMatch("$($logOutput.CommitMessage)")) -or 
+            (-not $myRegex.IsMatch("$logOutput"))
         ) {
             if ($env:GITHUB_STEP_SUMMARY) {
                 "* SKIPPING SHADER BUILD because $($logOutput) did not match ($($myAttribute.RegexPattern))" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append

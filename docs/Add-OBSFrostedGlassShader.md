@@ -3,7 +3,7 @@ Get-OBSFrostedGlassShader
 
 ### Synopsis
 
-Get-OBSFrostedGlassShader [[-AlphaPercent] <float>] [[-Amount] <float>] [[-Scale] <float>] [[-BorderOffset] <float>] [[-BorderColor] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Animate] [-HorizontalBorder] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSFrostedGlassShader [[-AlphaPercent] <float>] [[-Amount] <float>] [[-Scale] <float>] [[-BorderOffset] <float>] [[-BorderColor] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Animate] [-HorizontalBorder] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -47,6 +47,12 @@ Get-OBSFrostedGlassShader [[-AlphaPercent] <float>] [[-Amount] <float>] [[-Scale
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |7       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **HorizontalBorder**
 

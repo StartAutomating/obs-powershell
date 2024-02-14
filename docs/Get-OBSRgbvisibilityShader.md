@@ -3,7 +3,7 @@ Get-OBSRgbvisibilityShader
 
 ### Synopsis
 
-Get-OBSRgbvisibilityShader [[-Red] <float>] [[-Green] <float>] [[-Blue] <float>] [[-RedVisibility] <float>] [[-GreenVisibility] <float>] [[-BlueVisibility] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSRgbvisibilityShader [[-Red] <float>] [[-Green] <float>] [[-Blue] <float>] [[-RedVisibility] <float>] [[-GreenVisibility] <float>] [[-BlueVisibility] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -29,6 +29,12 @@ Get-OBSRgbvisibilityShader [[-Red] <float>] [[-Green] <float>] [[-Blue] <float>]
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |8       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **Green**
 

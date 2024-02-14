@@ -140,6 +140,20 @@ $this | Add-Member NoteProperty ".BPM" $BPM -Force -PassThru
                     </SetScriptBlock>
       </ScriptProperty>
       <ScriptProperty>
+        <Name>Cosine</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the Beat Cosine
+.DESCRIPTION
+    Gets the Cosine of the BeatCount.
+
+    Since this starts at 1, this would be at its highest value during the top of the beat.
+#&gt;
+[Math]::Cos($this.BeatCount * [Math]::PI/2)
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
         <Name>Duration</Name>
         <GetScriptBlock>
                         &lt;#

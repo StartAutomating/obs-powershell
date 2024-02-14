@@ -3,7 +3,7 @@ Get-OBSVoronoiPixelationShader
 
 ### Synopsis
 
-Get-OBSVoronoiPixelationShader [[-PixH] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Alternative] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSVoronoiPixelationShader [[-PixH] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Alternative] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -23,6 +23,12 @@ Get-OBSVoronoiPixelationShader [[-PixH] <float>] [[-SourceName] <string>] [[-Fil
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |2       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **NoResponse**
 

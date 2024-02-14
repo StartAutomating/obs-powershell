@@ -335,6 +335,7 @@ Initial Release of obs-powershell
 'Set-OBSDisplaySource',
 'Set-OBSMarkdownSource',
 'Set-OBSMediaSource',
+'Set-OBSSoundCloudSource',
 'Set-OBSSwitchSource',
 'Set-OBSVLCSource',
 'Set-OBSWaveformSource',

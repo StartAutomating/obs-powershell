@@ -3,7 +3,7 @@ Get-OBSPixelationTransitionShader
 
 ### Synopsis
 
-Get-OBSPixelationTransitionShader [[-TransitionTime] <float>] [[-Power] <float>] [[-CenterX] <float>] [[-CenterY] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ConvertLinear] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSPixelationTransitionShader [[-TransitionTime] <float>] [[-Power] <float>] [[-CenterX] <float>] [[-CenterY] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ConvertLinear] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -35,6 +35,12 @@ Get-OBSPixelationTransitionShader [[-TransitionTime] <float>] [[-Power] <float>]
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |5       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **NoResponse**
 

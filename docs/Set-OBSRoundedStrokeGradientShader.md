@@ -3,7 +3,7 @@ Get-OBSRoundedStrokeGradientShader
 
 ### Synopsis
 
-Get-OBSRoundedStrokeGradientShader [[-CornerRadius] <int>] [[-BorderThickness] <int>] [[-MinimumAlphaPercent] <int>] [[-RotationSpeed] <int>] [[-BorderColorL] <string>] [[-BorderColorR] <string>] [[-CenterWidth] <int>] [[-CenterHeight] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSRoundedStrokeGradientShader [[-CornerRadius] <int>] [[-BorderThickness] <int>] [[-MinimumAlphaPercent] <int>] [[-RotationSpeed] <int>] [[-BorderColorL] <string>] [[-BorderColorR] <string>] [[-CenterWidth] <int>] [[-CenterHeight] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -53,6 +53,12 @@ Get-OBSRoundedStrokeGradientShader [[-CornerRadius] <int>] [[-BorderThickness] <
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |10      |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **MinimumAlphaPercent**
 

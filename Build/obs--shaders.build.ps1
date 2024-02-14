@@ -2,8 +2,32 @@
 .SYNOPSIS
     Generates obs-powershell commands for PixelShaders
 .DESCRIPTION
+    Generates `*-OBS*Shader` commands, based off of pixel shaders.
+.NOTES
+    Most of the shaders come from the excellent [obs-shaderfilter](https://github.com/Exeldro/obs-shaderfilter) plugin.
+    This plugin is required for any of these shader functions to work.
 
+    This file should only build if the commit message matches "shader"
+.LINK
+    https://github.com/Exeldro/obs-shaderfilter
 #>
+[ValidatePattern("Shader")]
+param()
+
+
+$logOutput = git log -n 1 
+foreach ($myAttribute in $MyInvocation.MyCommand.ScriptBlock.Attributes)  {
+    if ($myAttribute -is [ValidatePattern]) {
+        $myRegex = [Regex]::new($myAttribute.RegexPattern, $myAttribute.Options, '00:00:00.1')
+        if (
+            ($logOutput.CommitMessage -and $logOutput.CommitMessage -match $myRegex) -or 
+            ($logOutput -match $myRegex)
+        ) {
+            Write-Warning "Skipping $($MyInvocation.MyCommand), because the last commit did not match $($myRegex)"
+            return
+        } 
+    }
+}
 
 if ($env:GITHUB_STEP_SUMMARY) {
 @"

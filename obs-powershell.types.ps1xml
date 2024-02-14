@@ -5,6 +5,35 @@
     <Name>OBS.Beat</Name>
     <Members>
       <ScriptProperty>
+        <Name>BeatStart</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the Beat Start Time
+.DESCRIPTION
+    Gets the time when the beat started. 
+#&gt;
+return $this.'.BeatStart'
+
+                    </GetScriptBlock>
+        <SetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Sets the Beat Start Time
+.DESCRIPTION
+    Sets the time when the beat started. 
+#&gt;
+param(
+    # The Beat Start Time
+    [DateTime]$BeatStartTime
+)
+$this | Add-Member NoteProperty ".BeatStart" (
+    $BeatStartTime
+) -Force
+
+                    </SetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
         <Name>BPM</Name>
         <GetScriptBlock>
                         &lt;#

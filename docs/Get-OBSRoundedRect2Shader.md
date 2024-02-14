@@ -3,7 +3,7 @@ Get-OBSRoundedRect2Shader
 
 ### Synopsis
 
-Get-OBSRoundedRect2Shader [[-CornerRadius] <int>] [[-BorderThickness] <int>] [[-BorderColor] <string>] [[-BorderAlphaStart] <float>] [[-BorderAlphaEnd] <float>] [[-AlphaCutOff] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-FasterScan] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSRoundedRect2Shader [[-CornerRadius] <int>] [[-BorderThickness] <int>] [[-BorderColor] <string>] [[-BorderAlphaStart] <float>] [[-BorderAlphaEnd] <float>] [[-AlphaCutOff] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-FasterScan] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -59,6 +59,12 @@ Get-OBSRoundedRect2Shader [[-CornerRadius] <int>] [[-BorderThickness] <int>] [[-
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |7       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **NoResponse**
 

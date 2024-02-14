@@ -3,7 +3,7 @@ Get-OBSMatrixShader
 
 ### Synopsis
 
-Get-OBSMatrixShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvSize] <float[]>] [[-UvPixelInterval] <float[]>] [[-RandF] <float>] [[-RandInstanceF] <float>] [[-RandActivationF] <float>] [[-Loops] <int>] [[-LocalTime] <float>] [[-Mouse] <float[]>] [[-LumaMin] <float>] [[-LumaMinSmooth] <float>] [[-Ratio] <float>] [[-AlphaPercentage] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-InvertDirection] [-ApplyToAlphaLayer] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSMatrixShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvSize] <float[]>] [[-UvPixelInterval] <float[]>] [[-RandF] <float>] [[-RandInstanceF] <float>] [[-RandActivationF] <float>] [[-Loops] <int>] [[-LocalTime] <float>] [[-Mouse] <float[]>] [[-LumaMin] <float>] [[-LumaMinSmooth] <float>] [[-Ratio] <float>] [[-AlphaPercentage] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-InvertDirection] [-ApplyToAlphaLayer] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -35,6 +35,12 @@ Get-OBSMatrixShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |18      |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **Image**
 

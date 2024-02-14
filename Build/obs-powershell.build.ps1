@@ -18,9 +18,7 @@ foreach ($myAttribute in $MyInvocation.MyCommand.ScriptBlock.Attributes)  {
             ) -join [Environment]::Newline | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
         }
         $myRegex = [Regex]::new($myAttribute.RegexPattern, $myAttribute.Options, '00:00:00.1')
-        if ($myRegex.IsMatch($checkIfThisIsValid) -or 
-            (-not $myRegex.IsMatch("$checkIfThisIsValid"))
-        ) {
+        if (-not $myRegex.IsMatch($checkIfThisIsValid)) {
             if ($env:GITHUB_STEP_SUMMARY) {
                 "* skipping $($MyInvocation.MyCommand.Name) because $checkIfThisIsValid did not match ($($myAttribute.RegexPattern))" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
             }
@@ -31,11 +29,7 @@ foreach ($myAttribute in $MyInvocation.MyCommand.ScriptBlock.Attributes)  {
     elseif ($myAttribute -is [ValidateScript]) 
     {
         if ($env:GITHUB_STEP_SUMMARY) {
-            "* Validating Build Against Script:
-~~~PowerShell
-$($myAttribute.ScriptBlock)
-~~~
-" | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
+            "* $($MyInvocation.MyCommand.Name) has a Build Validation Script." | Out-File -Path $env:GITHUB_STEP_SUMMARY -Append
         }
         $validationOutput = . $myAttribute.ScriptBlock $checkIfThisIsValid
         if (-not $validationOutput) {
@@ -46,10 +40,9 @@ $($myAttribute.ScriptBlock)
                     "$($myAttribute.ScriptBlock)"
                     "~~~"
                 ) -join [Environment]::Newline | 
-                    Out-File -Path $env:GITHUB_STEP_SUMMARY -Append                 
-                
+                    Out-File -Path $env:GITHUB_STEP_SUMMARY -Append                                 
             }
-            Write-Warning "Skipping $($MyInvocation.MyCommand) :The last commit did not match $($myRegex)"
+            Write-Warning "Skipping $($MyInvocation.MyCommand) : The $CheckIfThisIsValid was not valid"
             return
         }
     }

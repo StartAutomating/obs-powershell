@@ -3,7 +3,7 @@ Get-OBSGlowShader
 
 ### Synopsis
 
-Get-OBSGlowShader [[-GlowPercent] <int>] [[-Blur] <int>] [[-MinBrightness] <int>] [[-MaxBrightness] <int>] [[-PulseSpeed] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Ease] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSGlowShader [[-GlowPercent] <int>] [[-Blur] <int>] [[-MinBrightness] <int>] [[-MaxBrightness] <int>] [[-PulseSpeed] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Ease] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -29,6 +29,12 @@ Get-OBSGlowShader [[-GlowPercent] <int>] [[-Blur] <int>] [[-MinBrightness] <int>
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |7       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **GlowPercent**
 

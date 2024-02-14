@@ -3,7 +3,7 @@ Get-OBSFillColorLinearShader
 
 ### Synopsis
 
-Get-OBSFillColorLinearShader [[-Fill] <float>] [[-FillDirection] <int>] [[-FillColor] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSFillColorLinearShader [[-Fill] <float>] [[-FillDirection] <int>] [[-FillColor] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -35,6 +35,12 @@ Get-OBSFillColorLinearShader [[-Fill] <float>] [[-FillDirection] <int>] [[-FillC
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |4       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **NoResponse**
 

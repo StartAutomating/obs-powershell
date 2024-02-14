@@ -3,7 +3,7 @@ Get-OBSHexagonShader
 
 ### Synopsis
 
-Get-OBSHexagonShader [[-HexColor] <string>] [[-AlphaPercent] <int>] [[-Quantity] <float>] [[-BorderWidth] <int>] [[-SpeedPercent] <int>] [[-DistortX] <float>] [[-DistortY] <float>] [[-OffsetX] <float>] [[-OffsetY] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Blend] [-Equilateral] [-ZoomAnimate] [-Glitch] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSHexagonShader [[-HexColor] <string>] [[-AlphaPercent] <int>] [[-Quantity] <float>] [[-BorderWidth] <int>] [[-SpeedPercent] <int>] [[-DistortX] <float>] [[-DistortY] <float>] [[-OffsetX] <float>] [[-OffsetY] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Blend] [-Equilateral] [-ZoomAnimate] [-Glitch] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -53,6 +53,12 @@ Get-OBSHexagonShader [[-HexColor] <string>] [[-AlphaPercent] <int>] [[-Quantity]
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |11      |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **Glitch**
 

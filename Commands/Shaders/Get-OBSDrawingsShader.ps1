@@ -23,6 +23,9 @@ $FilterName,
 [Alias('ShaderContent')]
 [String]
 $ShaderText,
+# If set, will force the recreation of a shader that already exists
+[Management.Automation.SwitchParameter]
+$Force,
 # If set, will pass thru the commands that would be sent to OBS (these can be sent at any time with Send-OBS)
 [Management.Automation.SwitchParameter]
 $PassThru,
@@ -226,7 +229,7 @@ switch -regex ($myVerb) {
             ShaderSetting = $ShaderSettings
             FilterName = $FilterName
             SourceName = $SourceName
-        }
+        }        
 
         foreach ($CarryOnParameter in "PassThru", "NoResponse","Force") {
             if ($PSBoundParameters.ContainsKey($CarryOnParameter)) {
@@ -248,7 +251,7 @@ switch -regex ($myVerb) {
             $ShaderFilterSplat.ShaderFile = $script:CachedShaderFilesFromCommand[$shaderName].FullName
         } else {
             $ShaderFilterSplat.ShaderText = $shaderText
-        }
+        }        
 
         if ($myVerb -eq 'Add') {                        
             Add-OBSShaderFilter @ShaderFilterSplat

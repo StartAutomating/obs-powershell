@@ -3,7 +3,7 @@ Get-OBSEdgeDetectionShader
 
 ### Synopsis
 
-Get-OBSEdgeDetectionShader [[-Sensitivity] <float>] [[-EdgeColor] <string>] [[-NonEdgeColor] <string>] [[-AlphaLevel] <float>] [[-RandF] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-InvertEdge] [-EdgeMultiply] [-NonEdgeMultiply] [-AlphaChannel] [-AlphaInvert] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSEdgeDetectionShader [[-Sensitivity] <float>] [[-EdgeColor] <string>] [[-NonEdgeColor] <string>] [[-AlphaLevel] <float>] [[-RandF] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-InvertEdge] [-EdgeMultiply] [-NonEdgeMultiply] [-AlphaChannel] [-AlphaInvert] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -47,6 +47,12 @@ Get-OBSEdgeDetectionShader [[-Sensitivity] <float>] [[-EdgeColor] <string>] [[-N
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |7       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **InvertEdge**
 

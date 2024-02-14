@@ -287,6 +287,12 @@ foreach ($shaderParameterSet in $ShaderParameters) {
         Help = "The inline value of the shader.  This will normally be provided as a default parameter, based off of the name."    
     }
 
+    $ShaderParameters["Force"] = [Ordered]@{
+        ParameterName = "Force"
+        ParameterType = [switch]        
+        Help = "If set, will force the recreation of a shader that already exists"            
+    }
+
     $ShaderParameters["PassThru"] = [Ordered]@{
         ParameterName = "PassThru"
         ParameterType = [switch]        
@@ -362,7 +368,7 @@ switch -regex ($myVerb) {
             ShaderSetting = $ShaderSettings
             FilterName = $FilterName
             SourceName = $SourceName
-        }
+        }        
 
         foreach ($CarryOnParameter in "PassThru", "NoResponse","Force") {
             if ($PSBoundParameters.ContainsKey($CarryOnParameter)) {
@@ -384,7 +390,7 @@ switch -regex ($myVerb) {
             $ShaderFilterSplat.ShaderFile = $script:CachedShaderFilesFromCommand[$shaderName].FullName
         } else {
             $ShaderFilterSplat.ShaderText = $shaderText
-        }
+        }        
 
         if ($myVerb -eq 'Add') {                        
             Add-OBSShaderFilter @ShaderFilterSplat

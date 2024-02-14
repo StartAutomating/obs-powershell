@@ -4,6 +4,7 @@
 ### Script Methods
 
 
+* [get_Beat](get_Beat.md)
 * [get_Commands](get_Commands.md)
 * [get_CurrentScene](get_CurrentScene.md)
 * [get_Inputs](get_Inputs.md)

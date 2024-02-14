@@ -1276,6 +1276,25 @@ $this | Set-OBSInputSettings -InputSettings ([Ordered]@{color=$realColor})
         <ReferencedMemberName>Statistics</ReferencedMemberName>
       </AliasProperty>
       <ScriptProperty>
+        <Name>Beat</Name>
+        <GetScriptBlock>
+                        &lt;#
+.SYNOPSIS
+    Gets the Beat
+.DESCRIPTION
+    Gets the Beat Controller for obs-powershell.
+
+    The beat controller allows you to control effects on a beat.
+#&gt;
+if (-not $this.'.Beat') {
+    $this | Add-Member NoteProperty '.Beat' ([PSCustomObject]@{
+        PSTypeName = "OBS.Beat"
+    }) -Force
+}
+return $this.'.Beat'
+                    </GetScriptBlock>
+      </ScriptProperty>
+      <ScriptProperty>
         <Name>Commands</Name>
         <GetScriptBlock>
                         &lt;#

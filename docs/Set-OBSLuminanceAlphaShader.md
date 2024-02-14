@@ -3,7 +3,7 @@ Get-OBSLuminanceAlphaShader
 
 ### Synopsis
 
-Get-OBSLuminanceAlphaShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-RandF] <float>] [[-UvSize] <float[]>] [[-ColorMatrix] <float[][]>] [[-Color] <string>] [[-MulVal] <float>] [[-AddVal] <float>] [[-Level] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-InvertAlphaChannel] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSLuminanceAlphaShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-RandF] <float>] [[-UvSize] <float[]>] [[-ColorMatrix] <float[][]>] [[-Color] <string>] [[-MulVal] <float>] [[-AddVal] <float>] [[-Level] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-InvertAlphaChannel] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -41,6 +41,12 @@ Get-OBSLuminanceAlphaShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-Ela
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |14      |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **Image**
 

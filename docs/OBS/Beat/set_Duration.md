@@ -2,30 +2,27 @@ OBS.Beat.set_Duration()
 -----------------------
 
 ### Synopsis
-
-OBS.Beat.set_Duration [[-Duration] <timespan>]
+Gets the Duration
 
 ---
 
 ### Description
 
+Gets the Duration of a Beat
+
 ---
 
 ### Parameters
 #### **Duration**
+The new duration.
 
 |Type        |Required|Position|PipelineInput|
 |------------|--------|--------|-------------|
-|`[timespan]`|false   |0       |false        |
-
----
-
-### Inputs
-None
+|`[TimeSpan]`|false   |1       |false        |
 
 ---
 
 ### Outputs
-* [Object](https://learn.microsoft.com/en-us/dotnet/api/System.Object)
+* [TimeSpan]
 
 ---

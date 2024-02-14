@@ -3,7 +3,7 @@ Get-OBSChromaUVDistortionShader
 
 ### Synopsis
 
-Get-OBSChromaUVDistortionShader [[-Distortion] <float>] [[-Amplitude] <float>] [[-Chroma] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSChromaUVDistortionShader [[-Distortion] <float>] [[-Amplitude] <float>] [[-Chroma] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -35,6 +35,12 @@ Get-OBSChromaUVDistortionShader [[-Distortion] <float>] [[-Amplitude] <float>] [
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |4       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **NoResponse**
 

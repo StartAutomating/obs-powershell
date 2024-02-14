@@ -3,7 +3,7 @@ Get-OBSRoundedRectPerSideShader
 
 ### Synopsis
 
-Get-OBSRoundedRectPerSideShader [[-CornerRadiusBottom] <int>] [[-CornerRadiusLeft] <int>] [[-CornerRadiusTop] <int>] [[-CornerRadiusRight] <int>] [[-BorderThickness] <int>] [[-BorderColor] <string>] [[-BorderAlphaStart] <float>] [[-BorderAlphaEnd] <float>] [[-AlphaCutOff] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSRoundedRectPerSideShader [[-CornerRadiusBottom] <int>] [[-CornerRadiusLeft] <int>] [[-CornerRadiusTop] <int>] [[-CornerRadiusRight] <int>] [[-BorderThickness] <int>] [[-BorderColor] <string>] [[-BorderAlphaStart] <float>] [[-BorderAlphaEnd] <float>] [[-AlphaCutOff] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -71,6 +71,12 @@ Get-OBSRoundedRectPerSideShader [[-CornerRadiusBottom] <int>] [[-CornerRadiusLef
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |10      |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **NoResponse**
 

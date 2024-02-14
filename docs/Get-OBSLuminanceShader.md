@@ -3,7 +3,7 @@ Get-OBSLuminanceShader
 
 ### Synopsis
 
-Get-OBSLuminanceShader [[-Color] <string>] [[-Level] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-InvertImageColor] [-InvertAlphaChannel] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSLuminanceShader [[-Color] <string>] [[-Level] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-InvertImageColor] [-InvertAlphaChannel] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -23,6 +23,12 @@ Get-OBSLuminanceShader [[-Color] <string>] [[-Level] <float>] [[-Notes] <string>
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |4       |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **InvertAlphaChannel**
 

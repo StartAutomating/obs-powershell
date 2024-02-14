@@ -100,9 +100,13 @@ param(
     # The Beat Start Time
     [DateTime]$BeatStartTime
 )
-$this | Add-Member NoteProperty ".BeatStart" (
-    $BeatStartTime
-) -Force
+if ($this.'.BPM') {
+    $this | Add-Member NoteProperty ".BeatStart" (
+        $BeatStartTime
+    ) -Force
+    $this.Timer.Start()
+}
+
 
                     </SetScriptBlock>
       </ScriptProperty>
@@ -154,7 +158,7 @@ $this.Timer = $duration
 
     Since this starts at 1, this would be at its highest value during the top of the beat.
 #&gt;
-[Math]::Cos($this.BeatCount * [Math]::PI/2)
+[Math]::Cos($this.BeatCount * ([Math]::PI/2))
                     </GetScriptBlock>
       </ScriptProperty>
       <ScriptProperty>

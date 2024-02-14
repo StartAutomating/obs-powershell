@@ -3,7 +3,7 @@ Get-OBSRepeatShader
 
 ### Synopsis
 
-Get-OBSRepeatShader [[-ViewProj] <float[][]>] [[-ColorMatrix] <float[][]>] [[-ColorRangeMin] <float[]>] [[-ColorRangeMax] <float[]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-UvSize] <float[]>] [[-RandF] <float>] [[-Alpha] <float>] [[-Copies] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSRepeatShader [[-ViewProj] <float[][]>] [[-ColorMatrix] <float[][]>] [[-ColorRangeMin] <float[]>] [[-ColorRangeMax] <float[]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-UvSize] <float[]>] [[-RandF] <float>] [[-Alpha] <float>] [[-Copies] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
 
 ---
 
@@ -53,6 +53,12 @@ Get-OBSRepeatShader [[-ViewProj] <float[][]>] [[-ColorMatrix] <float[][]>] [[-Co
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[string]`|false   |15      |true (ByPropertyName)|
+
+#### **Force**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **Image**
 

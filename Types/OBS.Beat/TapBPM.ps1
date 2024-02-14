@@ -28,7 +28,7 @@ $beatTimes = do {
 $averageTimeBetweenBeats = 
     $beatTimes.TotalMilliseconds | Measure-Object -Average  | Select-Object -ExpandProperty Average
 
-$this.Duration = $averageTimeBetweenBeats
+$this.Duration = [Timespan]::FromMilliseconds($averageTimeBetweenBeats)
 $this.BeatStart = $beatTimes[-1]
 $TappedBpm
 

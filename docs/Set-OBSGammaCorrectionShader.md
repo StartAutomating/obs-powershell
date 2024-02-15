@@ -3,7 +3,7 @@ Get-OBSGammaCorrectionShader
 
 ### Synopsis
 
-Get-OBSGammaCorrectionShader [[-Red] <float>] [[-Green] <float>] [[-Blue] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSGammaCorrectionShader [[-Red] <float>] [[-Green] <float>] [[-Blue] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -71,6 +71,12 @@ Get-OBSGammaCorrectionShader [[-Red] <float>] [[-Green] <float>] [[-Blue] <float
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
 |`[string]`|false   |4       |true (ByPropertyName)|SceneItemName|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

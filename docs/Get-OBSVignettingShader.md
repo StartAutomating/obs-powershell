@@ -3,7 +3,7 @@ Get-OBSVignettingShader
 
 ### Synopsis
 
-Get-OBSVignettingShader [[-InnerRadius] <float>] [[-OuterRadius] <float>] [[-Opacity] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSVignettingShader [[-InnerRadius] <float>] [[-OuterRadius] <float>] [[-Opacity] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -71,6 +71,12 @@ Get-OBSVignettingShader [[-InnerRadius] <float>] [[-OuterRadius] <float>] [[-Opa
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
 |`[string]`|false   |4       |true (ByPropertyName)|SceneItemName|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

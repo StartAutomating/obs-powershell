@@ -3,7 +3,7 @@ Get-OBSIntensityScopeShader
 
 ### Synopsis
 
-Get-OBSIntensityScopeShader [[-Gain] <float>] [[-Blend] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSIntensityScopeShader [[-Gain] <float>] [[-Blend] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -59,6 +59,12 @@ Get-OBSIntensityScopeShader [[-Gain] <float>] [[-Blend] <float>] [[-SourceName] 
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
 |`[string]`|false   |2       |true (ByPropertyName)|SceneItemName|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

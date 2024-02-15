@@ -3,7 +3,7 @@ Get-OBSSeascapeShader
 
 ### Synopsis
 
-Get-OBSSeascapeShader [[-SEAHEIGHT] <float>] [[-SEACHOPPY] <float>] [[-SEASPEED] <float>] [[-SEAFREQ] <float>] [[-SEABASE] <string>] [[-SEAWATERCOLOR] <string>] [[-CAMERASPEED] <float>] [[-CAMERATURNSPEED] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-AA] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSSeascapeShader [[-SEAHEIGHT] <float>] [[-SEACHOPPY] <float>] [[-SEASPEED] <float>] [[-SEAFREQ] <float>] [[-SEABASE] <string>] [[-SEAWATERCOLOR] <string>] [[-CAMERASPEED] <float>] [[-CAMERATURNSPEED] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-AA] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -101,6 +101,12 @@ Get-OBSSeascapeShader [[-SEAHEIGHT] <float>] [[-SEACHOPPY] <float>] [[-SEASPEED]
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
 |`[string]`|false   |8       |true (ByPropertyName)|SceneItemName|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

@@ -3,7 +3,7 @@ Get-OBSCornerPinShader
 
 ### Synopsis
 
-Get-OBSCornerPinShader [[-TopLeftX] <float>] [[-TopLeftY] <float>] [[-TopRightX] <float>] [[-TopRightY] <float>] [[-BottomLeftX] <float>] [[-BottomLeftY] <float>] [[-BottomRightX] <float>] [[-BottomRightY] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-AntialiasEdges] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSCornerPinShader [[-TopLeftX] <float>] [[-TopLeftY] <float>] [[-TopRightX] <float>] [[-TopRightY] <float>] [[-BottomLeftX] <float>] [[-BottomLeftY] <float>] [[-BottomRightX] <float>] [[-BottomRightY] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-AntialiasEdges] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -101,6 +101,12 @@ Get-OBSCornerPinShader [[-TopLeftX] <float>] [[-TopLeftY] <float>] [[-TopRightX]
 |Type     |Required|Position|PipelineInput|Aliases    |
 |---------|--------|--------|-------------|-----------|
 |`[float]`|false   |3       |false        |Top_Right_Y|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

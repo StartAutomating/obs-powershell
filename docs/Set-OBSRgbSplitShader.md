@@ -3,7 +3,7 @@ Get-OBSRgbSplitShader
 
 ### Synopsis
 
-Get-OBSRgbSplitShader [[-Redx] <float>] [[-Redy] <float>] [[-Greenx] <float>] [[-Greeny] <float>] [[-Bluex] <float>] [[-Bluey] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSRgbSplitShader [[-Redx] <float>] [[-Redy] <float>] [[-Greenx] <float>] [[-Greeny] <float>] [[-Bluex] <float>] [[-Bluey] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -83,6 +83,12 @@ Get-OBSRgbSplitShader [[-Redx] <float>] [[-Redy] <float>] [[-Greenx] <float>] [[
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
 |`[string]`|false   |6       |true (ByPropertyName)|SceneItemName|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

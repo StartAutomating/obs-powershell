@@ -3,7 +3,7 @@ Get-OBSPieChartShader
 
 ### Synopsis
 
-Get-OBSPieChartShader [[-InnerRadius] <float>] [[-OuterRadius] <float>] [[-StartAngle] <float>] [[-Total] <int>] [[-Part1] <int>] [[-Color1] <string>] [[-Part2] <int>] [[-Color2] <string>] [[-Part3] <int>] [[-Color3] <string>] [[-Part4] <int>] [[-Color4] <string>] [[-Part5] <int>] [[-Color5] <string>] [[-Part6] <int>] [[-Color6] <string>] [[-Part7] <int>] [[-Color7] <string>] [[-Part8] <int>] [[-Color8] <string>] [[-Part9] <int>] [[-Color9] <string>] [[-Part10] <int>] [[-Color10] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSPieChartShader [[-InnerRadius] <float>] [[-OuterRadius] <float>] [[-StartAngle] <float>] [[-Total] <int>] [[-Part1] <int>] [[-Color1] <string>] [[-Part2] <int>] [[-Color2] <string>] [[-Part3] <int>] [[-Color3] <string>] [[-Part4] <int>] [[-Color4] <string>] [[-Part5] <int>] [[-Color5] <string>] [[-Part6] <int>] [[-Color6] <string>] [[-Part7] <int>] [[-Color7] <string>] [[-Part8] <int>] [[-Color8] <string>] [[-Part9] <int>] [[-Color9] <string>] [[-Part10] <int>] [[-Color10] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -191,6 +191,12 @@ Get-OBSPieChartShader [[-InnerRadius] <float>] [[-OuterRadius] <float>] [[-Start
 |Type   |Required|Position|PipelineInput|
 |-------|--------|--------|-------------|
 |`[int]`|false   |3       |false        |
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

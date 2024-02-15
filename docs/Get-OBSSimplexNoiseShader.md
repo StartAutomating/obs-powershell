@@ -3,7 +3,7 @@ Get-OBSSimplexNoiseShader
 
 ### Synopsis
 
-Get-OBSSimplexNoiseShader [[-SnapPercent] <float>] [[-SpeedPercent] <float>] [[-Resolution] <float>] [[-ForeColor] <string>] [[-BackColor] <string>] [[-AlphaPercent] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Fractal] [-UseAlphaLayer] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSSimplexNoiseShader [[-SnapPercent] <float>] [[-SpeedPercent] <float>] [[-Resolution] <float>] [[-ForeColor] <string>] [[-BackColor] <string>] [[-AlphaPercent] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Fractal] [-UseAlphaLayer] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -101,6 +101,12 @@ Get-OBSSimplexNoiseShader [[-SnapPercent] <float>] [[-SpeedPercent] <float>] [[-
 |Type      |Required|Position|PipelineInput|Aliases        |
 |----------|--------|--------|-------------|---------------|
 |`[switch]`|false   |Named   |false        |Use_Alpha_Layer|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

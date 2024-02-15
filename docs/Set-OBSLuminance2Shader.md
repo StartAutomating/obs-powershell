@@ -3,7 +3,7 @@ Get-OBSLuminance2Shader
 
 ### Synopsis
 
-Get-OBSLuminance2Shader [[-Color] <string>] [[-LumaMax] <float>] [[-LumaMin] <float>] [[-LumaMaxSmooth] <float>] [[-LumaMinSmooth] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-InvertImageColor] [-InvertAlphaChannel] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSLuminance2Shader [[-Color] <string>] [[-LumaMax] <float>] [[-LumaMin] <float>] [[-LumaMaxSmooth] <float>] [[-LumaMinSmooth] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-InvertImageColor] [-InvertAlphaChannel] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -95,6 +95,12 @@ Get-OBSLuminance2Shader [[-Color] <string>] [[-LumaMax] <float>] [[-LumaMin] <fl
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
 |`[string]`|false   |6       |true (ByPropertyName)|SceneItemName|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

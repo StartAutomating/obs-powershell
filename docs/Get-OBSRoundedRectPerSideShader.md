@@ -3,7 +3,7 @@ Get-OBSRoundedRectPerSideShader
 
 ### Synopsis
 
-Get-OBSRoundedRectPerSideShader [[-CornerRadiusBottom] <int>] [[-CornerRadiusLeft] <int>] [[-CornerRadiusTop] <int>] [[-CornerRadiusRight] <int>] [[-BorderThickness] <int>] [[-BorderColor] <string>] [[-BorderAlphaStart] <float>] [[-BorderAlphaEnd] <float>] [[-AlphaCutOff] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSRoundedRectPerSideShader [[-CornerRadiusBottom] <int>] [[-CornerRadiusLeft] <int>] [[-CornerRadiusTop] <int>] [[-CornerRadiusRight] <int>] [[-BorderThickness] <int>] [[-BorderColor] <string>] [[-BorderAlphaStart] <float>] [[-BorderAlphaEnd] <float>] [[-AlphaCutOff] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -101,6 +101,12 @@ Get-OBSRoundedRectPerSideShader [[-CornerRadiusBottom] <int>] [[-CornerRadiusLef
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
 |`[string]`|false   |9       |true (ByPropertyName)|SceneItemName|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

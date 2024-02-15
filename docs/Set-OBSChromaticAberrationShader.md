@@ -3,7 +3,7 @@ Get-OBSChromaticAberrationShader
 
 ### Synopsis
 
-Get-OBSChromaticAberrationShader [[-Power] <float>] [[-Gamma] <float>] [[-NumIter] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-DistortRadial] [-DistortBarrel] [-OffsetSpectrumYcgco] [-OffsetSpectrumYuv] [-UseRandom] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSChromaticAberrationShader [[-Power] <float>] [[-Gamma] <float>] [[-NumIter] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-DistortRadial] [-DistortBarrel] [-OffsetSpectrumYcgco] [-OffsetSpectrumYuv] [-UseRandom] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -95,6 +95,12 @@ Get-OBSChromaticAberrationShader [[-Power] <float>] [[-Gamma] <float>] [[-NumIte
 |Type      |Required|Position|PipelineInput|Aliases   |
 |----------|--------|--------|-------------|----------|
 |`[switch]`|false   |Named   |false        |use_random|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

@@ -3,7 +3,7 @@ Get-OBSFisheyeXyShader
 
 ### Synopsis
 
-Get-OBSFisheyeXyShader [[-CenterXPercent] <float>] [[-CenterYPercent] <float>] [[-PowerX] <float>] [[-PowerY] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSFisheyeXyShader [[-CenterXPercent] <float>] [[-CenterYPercent] <float>] [[-PowerX] <float>] [[-PowerY] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -71,6 +71,12 @@ Get-OBSFisheyeXyShader [[-CenterXPercent] <float>] [[-CenterYPercent] <float>] [
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
 |`[string]`|false   |4       |true (ByPropertyName)|SceneItemName|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

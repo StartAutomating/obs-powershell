@@ -3,7 +3,7 @@ Get-OBSAlphaBorderShader
 
 ### Synopsis
 
-Get-OBSAlphaBorderShader [[-BorderColor] <string>] [[-BorderThickness] <int>] [[-AlphaCutOff] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSAlphaBorderShader [[-BorderColor] <string>] [[-BorderThickness] <int>] [[-AlphaCutOff] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -65,6 +65,12 @@ Get-OBSAlphaBorderShader [[-BorderColor] <string>] [[-BorderThickness] <int>] [[
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
 |`[string]`|false   |3       |true (ByPropertyName)|SceneItemName|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

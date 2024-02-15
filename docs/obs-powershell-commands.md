@@ -1,8 +1,8 @@
 obs-powershell-commands
 -----------------------
 
-obs-powershell exports 736 commands
-(299 functions and 437 aliases)
+obs-powershell exports 739 commands
+(300 functions and 439 aliases)
 
 A good number of these commands directly correspond to an obs-websocket message.
 For a complete list, see [obs-powershell-websocket-commands](obs-powershell-websocket-commands.md).
@@ -147,6 +147,7 @@ Functions
 |[Get-OBSRepeatShader](Get-OBSRepeatShader.md)                                        |
 |[Get-OBSRepeatTextureShader](Get-OBSRepeatTextureShader.md)                          |
 |[Get-OBSReplayBufferStatus](Get-OBSReplayBufferStatus.md)                            |Get-OBSReplayBufferStatus : GetReplayBufferStatus                            |
+|[Get-OBSRGBAPercentShader](Get-OBSRGBAPercentShader.md)                              |
 |[Get-OBSRgbColorWheelShader](Get-OBSRgbColorWheelShader.md)                          |
 |[Get-OBSRgbSplitShader](Get-OBSRgbSplitShader.md)                                    |
 |[Get-OBSRgbvisibilityShader](Get-OBSRgbvisibilityShader.md)                          |
@@ -455,6 +456,7 @@ Aliases
 |[Get-OBSRepeatShader](Get-OBSRepeatShader.md)                                        |
 |[Get-OBSRepeatTextureShader](Get-OBSRepeatTextureShader.md)                          |
 |[Get-OBSReplayBufferStatus](Get-OBSReplayBufferStatus.md)                            |
+|[Get-OBSRGBAPercentShader](Get-OBSRGBAPercentShader.md)                              |
 |[Get-OBSRgbColorWheelShader](Get-OBSRgbColorWheelShader.md)                          |
 |[Get-OBSRgbSplitShader](Get-OBSRgbSplitShader.md)                                    |
 |[Get-OBSRgbvisibilityShader](Get-OBSRgbvisibilityShader.md)                          |

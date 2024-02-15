@@ -3,7 +3,7 @@ Get-OBSZigZagShader
 
 ### Synopsis
 
-Get-OBSZigZagShader [[-Radius] <float>] [[-Angle] <float>] [[-Period] <float>] [[-Amplitude] <float>] [[-CenterX] <float>] [[-CenterY] <float>] [[-Phase] <float>] [[-Animate] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSZigZagShader [[-Radius] <float>] [[-Angle] <float>] [[-Period] <float>] [[-Amplitude] <float>] [[-CenterX] <float>] [[-CenterY] <float>] [[-Phase] <float>] [[-Animate] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -101,6 +101,12 @@ Get-OBSZigZagShader [[-Radius] <float>] [[-Angle] <float>] [[-Period] <float>] [
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
 |`[string]`|false   |9       |true (ByPropertyName)|SceneItemName|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

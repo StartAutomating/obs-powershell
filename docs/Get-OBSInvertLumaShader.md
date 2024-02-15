@@ -3,7 +3,7 @@ Get-OBSInvertLumaShader
 
 ### Synopsis
 
-Get-OBSInvertLumaShader [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-InvertColor] [-InvertLuma] [-GammaCorrection] [-TestRamp] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSInvertLumaShader [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-InvertColor] [-InvertLuma] [-GammaCorrection] [-TestRamp] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -71,6 +71,12 @@ Get-OBSInvertLumaShader [[-SourceName] <string>] [[-FilterName] <string>] [[-Sha
 |Type      |Required|Position|PipelineInput|Aliases  |
 |----------|--------|--------|-------------|---------|
 |`[switch]`|false   |Named   |false        |Test_Ramp|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

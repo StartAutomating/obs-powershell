@@ -3,7 +3,7 @@ Get-OBSGbCameraShader
 
 ### Synopsis
 
-Get-OBSGbCameraShader [[-PixelSize] <float>] [[-DitherFactor] <float>] [[-Brightness] <float>] [[-Contrast] <float>] [[-Gamma] <float>] [[-Color1] <string>] [[-Color2] <string>] [[-Color3] <string>] [[-Color4] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-AlternativeBayer] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSGbCameraShader [[-PixelSize] <float>] [[-DitherFactor] <float>] [[-Brightness] <float>] [[-Contrast] <float>] [[-Gamma] <float>] [[-Color1] <string>] [[-Color2] <string>] [[-Color3] <string>] [[-Color4] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-AlternativeBayer] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -107,6 +107,12 @@ Get-OBSGbCameraShader [[-PixelSize] <float>] [[-DitherFactor] <float>] [[-Bright
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
 |`[string]`|false   |9       |true (ByPropertyName)|SceneItemName|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

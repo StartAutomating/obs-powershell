@@ -3,7 +3,7 @@ Get-OBSGlassShader
 
 ### Synopsis
 
-Get-OBSGlassShader [[-AlphaPercent] <float>] [[-OffsetAmount] <float>] [[-XSize] <int>] [[-YSize] <int>] [[-ReflectionOffset] <int>] [[-BorderOffset] <float>] [[-BorderColor] <string>] [[-GlassColor] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-HorizontalBorder] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSGlassShader [[-AlphaPercent] <float>] [[-OffsetAmount] <float>] [[-XSize] <int>] [[-YSize] <int>] [[-ReflectionOffset] <int>] [[-BorderOffset] <float>] [[-BorderColor] <string>] [[-GlassColor] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-HorizontalBorder] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -95,6 +95,12 @@ Get-OBSGlassShader [[-AlphaPercent] <float>] [[-OffsetAmount] <float>] [[-XSize]
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
 |`[string]`|false   |9       |true (ByPropertyName)|SceneItemName|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **XSize**
 

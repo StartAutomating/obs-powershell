@@ -431,6 +431,7 @@ Initial Release of obs-powershell
 'Get-OBSRemovePartialPixelsShader',
 'Get-OBSRepeatShader',
 'Get-OBSRepeatTextureShader',
+'Get-OBSRGBAPercentShader',
 'Get-OBSRgbColorWheelShader',
 'Get-OBSRgbSplitShader',
 'Get-OBSRgbvisibilityShader',

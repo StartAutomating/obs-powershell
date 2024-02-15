@@ -3,7 +3,7 @@ Get-OBSBackgroundRemovalShader
 
 ### Synopsis
 
-Get-OBSBackgroundRemovalShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-RandF] <float>] [[-UvSize] <float[]>] [[-Notes] <string>] [[-Target] <string>] [[-Color] <string>] [[-Opacity] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Invert] [-Convert709to601] [-Convert601to709] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSBackgroundRemovalShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-RandF] <float>] [[-UvSize] <float[]>] [[-Notes] <string>] [[-Target] <string>] [[-Color] <string>] [[-Opacity] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Invert] [-Convert709to601] [-Convert601to709] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -107,6 +107,12 @@ Get-OBSBackgroundRemovalShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
 |`[string]`|false   |9       |false        |
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **UvOffset**
 

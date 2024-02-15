@@ -13,8 +13,6 @@
 #>
 [ValidatePattern("Shader")]
 param()
-
-
 #region Build Condition
 $logOutput = git log -n 1 
 $checkIfThisIsValid = $logOutput.CommitMessage ? $logOutput.CommitMessage : $logOutput -join [Environment]::Newline
@@ -311,6 +309,12 @@ foreach ($shaderParameterSet in $ShaderParameters) {
         Help = "If set, will not wait for a response from OBS (this will be faster, but will not return anything)"
     }
 
+    $ShaderParameters["UseShaderTime"] = [Ordered]@{
+        ParameterName = "UseShaderTime"
+        ParameterType = [switch]
+        Attributes = "[ComponentModel.DefaultBindingProperty('use_shader_elapsed_time')]"
+        Help = "If set, use the shader elapsed time, instead of the OBS system elapsed time"
+    }
 
     $ShaderProcess = [scriptblock]::Create(@"
 `$shaderName = '$shaderName'
@@ -362,6 +366,9 @@ switch -regex ($myVerb) {
             foreach ($parameterAttribute in $parameterMetadata.Attributes) {
                 if ($parameterAttribute -isnot [ComponentModel.DefaultBindingPropertyAttribute]) { continue }
                 $ShaderSettings[$parameterAttribute.Name] = $PSBoundParameters[$parameterMetadata.Name]
+                if ($ShaderSettings[$parameterAttribute.Name] -is [switch]) {
+                    $ShaderSettings[$parameterAttribute.Name] = $ShaderSettings[$parameterAttribute.Name] -as [bool]
+                }
                 continue nextParameter
             }            
         }

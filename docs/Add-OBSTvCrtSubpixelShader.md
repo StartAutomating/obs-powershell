@@ -3,7 +3,7 @@ Get-OBSTvCrtSubpixelShader
 
 ### Synopsis
 
-Get-OBSTvCrtSubpixelShader [[-ChannelWidth] <int>] [[-ChannelHeight] <int>] [[-HGap] <int>] [[-VGap] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSTvCrtSubpixelShader [[-ChannelWidth] <int>] [[-ChannelHeight] <int>] [[-HGap] <int>] [[-VGap] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -65,6 +65,12 @@ Get-OBSTvCrtSubpixelShader [[-ChannelWidth] <int>] [[-ChannelHeight] <int>] [[-H
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
 |`[string]`|false   |4       |true (ByPropertyName)|SceneItemName|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **VGap**
 

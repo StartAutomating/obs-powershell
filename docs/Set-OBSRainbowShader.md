@@ -3,7 +3,7 @@ Get-OBSRainbowShader
 
 ### Synopsis
 
-Get-OBSRainbowShader [[-Saturation] <float>] [[-Luminosity] <float>] [[-Spread] <float>] [[-Speed] <float>] [[-AlphaPercentage] <float>] [[-RotationOffset] <float>] [[-ColorToReplace] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Vertical] [-Rotational] [-ApplyToImage] [-ReplaceImageColor] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSRainbowShader [[-Saturation] <float>] [[-Luminosity] <float>] [[-Spread] <float>] [[-Speed] <float>] [[-AlphaPercentage] <float>] [[-RotationOffset] <float>] [[-ColorToReplace] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Vertical] [-Rotational] [-ApplyToImage] [-ReplaceImageColor] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -119,6 +119,12 @@ Get-OBSRainbowShader [[-Saturation] <float>] [[-Luminosity] <float>] [[-Spread] 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
 |`[float]`|false   |2       |false        |
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **Vertical**
 

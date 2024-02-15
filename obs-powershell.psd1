@@ -464,6 +464,7 @@ Initial Release of obs-powershell
 'Get-OBSVoronoiPixelationShader',
 'Get-OBSZigZagShader',
 'Get-OBSZoomBlurShader',
-'Get-OBSZoomShader'
+'Get-OBSZoomShader',
+'Get-OBSZoomXYShader'
 }
 

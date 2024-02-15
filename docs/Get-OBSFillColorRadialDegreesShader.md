@@ -3,7 +3,7 @@ Get-OBSFillColorRadialDegreesShader
 
 ### Synopsis
 
-Get-OBSFillColorRadialDegreesShader [[-FillDirection] <int>] [[-Fill] <float>] [[-StartAngle] <float>] [[-OffsetX] <float>] [[-OffsetY] <float>] [[-FillColor] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSFillColorRadialDegreesShader [[-FillDirection] <int>] [[-Fill] <float>] [[-StartAngle] <float>] [[-OffsetX] <float>] [[-OffsetY] <float>] [[-FillColor] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -83,6 +83,12 @@ Get-OBSFillColorRadialDegreesShader [[-FillDirection] <int>] [[-Fill] <float>] [
 |Type     |Required|Position|PipelineInput|Aliases    |
 |---------|--------|--------|-------------|-----------|
 |`[float]`|false   |2       |false        |Start_Angle|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

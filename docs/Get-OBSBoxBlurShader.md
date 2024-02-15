@@ -3,7 +3,7 @@ Get-OBSBoxBlurShader
 
 ### Synopsis
 
-Get-OBSBoxBlurShader [[-Strength] <int>] [[-MaskLeft] <float>] [[-MaskRight] <float>] [[-MaskTop] <float>] [[-MaskBottom] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSBoxBlurShader [[-Strength] <int>] [[-MaskLeft] <float>] [[-MaskRight] <float>] [[-MaskTop] <float>] [[-MaskBottom] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -77,6 +77,12 @@ Get-OBSBoxBlurShader [[-Strength] <int>] [[-MaskLeft] <float>] [[-MaskRight] <fl
 |Type   |Required|Position|PipelineInput|
 |-------|--------|--------|-------------|
 |`[int]`|false   |0       |false        |
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

@@ -3,7 +3,7 @@ Get-OBSSeasickShader
 
 ### Synopsis
 
-Get-OBSSeasickShader [[-Notes] <string>] [[-Amplitude] <float>] [[-Speed] <float>] [[-Frequency] <float>] [[-Opacity] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSSeasickShader [[-Notes] <string>] [[-Amplitude] <float>] [[-Speed] <float>] [[-Frequency] <float>] [[-Opacity] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -77,6 +77,12 @@ Get-OBSSeasickShader [[-Notes] <string>] [[-Amplitude] <float>] [[-Speed] <float
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
 |`[float]`|false   |2       |false        |
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

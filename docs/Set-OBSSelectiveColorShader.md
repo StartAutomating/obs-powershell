@@ -3,7 +3,7 @@ Get-OBSSelectiveColorShader
 
 ### Synopsis
 
-Get-OBSSelectiveColorShader [[-CutoffRed] <float>] [[-CutoffGreen] <float>] [[-CutoffBlue] <float>] [[-CutoffYellow] <float>] [[-AcceptanceAmplifier] <float>] [[-Notes] <string>] [[-BackgroundType] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ShowRed] [-ShowGreen] [-ShowBlue] [-ShowYellow] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSSelectiveColorShader [[-CutoffRed] <float>] [[-CutoffGreen] <float>] [[-CutoffBlue] <float>] [[-CutoffYellow] <float>] [[-AcceptanceAmplifier] <float>] [[-Notes] <string>] [[-BackgroundType] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ShowRed] [-ShowGreen] [-ShowBlue] [-ShowYellow] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -113,6 +113,12 @@ Get-OBSSelectiveColorShader [[-CutoffRed] <float>] [[-CutoffGreen] <float>] [[-C
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
 |`[string]`|false   |7       |true (ByPropertyName)|SceneItemName|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

@@ -3,7 +3,7 @@ Get-OBSPagePeelShader
 
 ### Synopsis
 
-Get-OBSPagePeelShader [[-Speed] <float>] [[-Position] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSPagePeelShader [[-Speed] <float>] [[-Position] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -59,6 +59,12 @@ Get-OBSPagePeelShader [[-Speed] <float>] [[-Position] <float>] [[-SourceName] <s
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
 |`[float]`|false   |0       |false        |
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

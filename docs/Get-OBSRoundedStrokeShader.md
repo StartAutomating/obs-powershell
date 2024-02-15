@@ -3,7 +3,7 @@ Get-OBSRoundedStrokeShader
 
 ### Synopsis
 
-Get-OBSRoundedStrokeShader [[-CornerRadius] <int>] [[-BorderThickness] <int>] [[-MinimumAlphaPercent] <int>] [[-BorderColor] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSRoundedStrokeShader [[-CornerRadius] <int>] [[-BorderThickness] <int>] [[-MinimumAlphaPercent] <int>] [[-BorderColor] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -77,6 +77,12 @@ Get-OBSRoundedStrokeShader [[-CornerRadius] <int>] [[-BorderThickness] <int>] [[
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
 |`[string]`|false   |5       |true (ByPropertyName)|SceneItemName|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

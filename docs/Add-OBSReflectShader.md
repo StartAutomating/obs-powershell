@@ -3,7 +3,7 @@ Get-OBSReflectShader
 
 ### Synopsis
 
-Get-OBSReflectShader [[-CenterXPercent] <int>] [[-CenterYPercent] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Horizontal] [-Vertical] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSReflectShader [[-CenterXPercent] <int>] [[-CenterYPercent] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Horizontal] [-Vertical] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -65,6 +65,12 @@ Get-OBSReflectShader [[-CenterXPercent] <int>] [[-CenterYPercent] <int>] [[-Sour
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
 |`[string]`|false   |2       |true (ByPropertyName)|SceneItemName|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **Vertical**
 

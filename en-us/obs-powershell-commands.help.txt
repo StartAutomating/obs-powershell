@@ -1,8 +1,8 @@
 obs-powershell-commands
 -----------------------
 
-obs-powershell exports 733 commands
-(298 functions and 435 aliases)
+obs-powershell exports 736 commands
+(299 functions and 437 aliases)
 
 A good number of these commands directly correspond to an obs-websocket message.
 For a complete list, see [obs-powershell-websocket-commands](docs/obs-powershell-websocket-commands.md).
@@ -142,6 +142,7 @@ Functions
 |[Get-OBSRecordDirectory](docs/Get-OBSRecordDirectory.md)                                  |Get-OBSRecordDirectory : GetRecordDirectory                                  |
 |[Get-OBSRecordStatus](docs/Get-OBSRecordStatus.md)                                        |Get-OBSRecordStatus : GetRecordStatus                                        |
 |[Get-OBSRectangularDropShadowShader](docs/Get-OBSRectangularDropShadowShader.md)          |
+|[Get-OBSReflectShader](docs/Get-OBSReflectShader.md)                                      |
 |[Get-OBSRemovePartialPixelsShader](docs/Get-OBSRemovePartialPixelsShader.md)              |
 |[Get-OBSRepeatShader](docs/Get-OBSRepeatShader.md)                                        |
 |[Get-OBSRepeatTextureShader](docs/Get-OBSRepeatTextureShader.md)                          |
@@ -449,6 +450,7 @@ Aliases
 |[Get-OBSRecordDirectory](docs/Get-OBSRecordDirectory.md)                                  |
 |[Get-OBSRecordStatus](docs/Get-OBSRecordStatus.md)                                        |
 |[Get-OBSRectangularDropShadowShader](docs/Get-OBSRectangularDropShadowShader.md)          |
+|[Get-OBSReflectShader](docs/Get-OBSReflectShader.md)                                      |
 |[Get-OBSRemovePartialPixelsShader](docs/Get-OBSRemovePartialPixelsShader.md)              |
 |[Get-OBSRepeatShader](docs/Get-OBSRepeatShader.md)                                        |
 |[Get-OBSRepeatTextureShader](docs/Get-OBSRepeatTextureShader.md)                          |

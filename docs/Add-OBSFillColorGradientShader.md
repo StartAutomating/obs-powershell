@@ -3,7 +3,7 @@ Get-OBSFillColorGradientShader
 
 ### Synopsis
 
-Get-OBSFillColorGradientShader [[-Fill] <float>] [[-GradientWidth] <float>] [[-GradientOffset] <float>] [[-FillDirection] <int>] [[-FillColor] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSFillColorGradientShader [[-Fill] <float>] [[-GradientWidth] <float>] [[-GradientOffset] <float>] [[-FillDirection] <int>] [[-FillColor] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -77,6 +77,12 @@ Get-OBSFillColorGradientShader [[-Fill] <float>] [[-GradientWidth] <float>] [[-G
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
 |`[string]`|false   |5       |true (ByPropertyName)|SceneItemName|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

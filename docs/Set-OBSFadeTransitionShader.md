@@ -3,7 +3,7 @@ Get-OBSFadeTransitionShader
 
 ### Synopsis
 
-Get-OBSFadeTransitionShader [[-ImageA] <string>] [[-ImageB] <string>] [[-TransitionTime] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ConvertLinear] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSFadeTransitionShader [[-ImageA] <string>] [[-ImageB] <string>] [[-TransitionTime] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ConvertLinear] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -71,6 +71,12 @@ Get-OBSFadeTransitionShader [[-ImageA] <string>] [[-ImageB] <string>] [[-Transit
 |Type     |Required|Position|PipelineInput|Aliases        |
 |---------|--------|--------|-------------|---------------|
 |`[float]`|false   |2       |false        |transition_time|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

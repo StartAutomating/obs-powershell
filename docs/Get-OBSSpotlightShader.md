@@ -3,7 +3,7 @@ Get-OBSSpotlightShader
 
 ### Synopsis
 
-Get-OBSSpotlightShader [[-SpeedPercent] <float>] [[-FocusPercent] <float>] [[-SpotlightColor] <string>] [[-HorizontalOffset] <float>] [[-VerticalOffset] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Glitch] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSSpotlightShader [[-SpeedPercent] <float>] [[-FocusPercent] <float>] [[-SpotlightColor] <string>] [[-HorizontalOffset] <float>] [[-VerticalOffset] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Glitch] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -83,6 +83,12 @@ Get-OBSSpotlightShader [[-SpeedPercent] <float>] [[-FocusPercent] <float>] [[-Sp
 |Type      |Required|Position|PipelineInput|Aliases        |
 |----------|--------|--------|-------------|---------------|
 |`[string]`|false   |2       |false        |Spotlight_Color|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **VerticalOffset**
 

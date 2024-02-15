@@ -3,7 +3,7 @@ Get-OBSGaussianBlurSimpleShader
 
 ### Synopsis
 
-Get-OBSGaussianBlurSimpleShader [[-Strength] <int>] [[-MaskLeft] <float>] [[-MaskRight] <float>] [[-MaskTop] <float>] [[-MaskBottom] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSGaussianBlurSimpleShader [[-Strength] <int>] [[-MaskLeft] <float>] [[-MaskRight] <float>] [[-MaskTop] <float>] [[-MaskBottom] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -77,6 +77,12 @@ Get-OBSGaussianBlurSimpleShader [[-Strength] <int>] [[-MaskLeft] <float>] [[-Mas
 |Type   |Required|Position|PipelineInput|
 |-------|--------|--------|-------------|
 |`[int]`|false   |0       |false        |
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

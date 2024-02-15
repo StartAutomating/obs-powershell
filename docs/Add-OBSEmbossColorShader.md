@@ -3,7 +3,7 @@ Get-OBSEmbossColorShader
 
 ### Synopsis
 
-Get-OBSEmbossColorShader [[-AngleSteps] <int>] [[-RadiusSteps] <int>] [[-AmpFactor] <float>] [[-UpDownPercent] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ApplyToAlphaLayer] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSEmbossColorShader [[-AngleSteps] <int>] [[-RadiusSteps] <int>] [[-AmpFactor] <float>] [[-UpDownPercent] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ApplyToAlphaLayer] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -83,6 +83,12 @@ Get-OBSEmbossColorShader [[-AngleSteps] <int>] [[-RadiusSteps] <int>] [[-AmpFact
 |Type   |Required|Position|PipelineInput|Aliases        |
 |-------|--------|--------|-------------|---------------|
 |`[int]`|false   |3       |false        |Up_Down_Percent|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

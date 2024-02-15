@@ -3,7 +3,7 @@ Get-OBSColorGradeFilterShader
 
 ### Synopsis
 
-Get-OBSColorGradeFilterShader [[-Notes] <string>] [[-Lut] <string>] [[-LutAmountPercent] <int>] [[-LutScalePercent] <int>] [[-LutOffsetPercent] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSColorGradeFilterShader [[-Notes] <string>] [[-Lut] <string>] [[-LutAmountPercent] <int>] [[-LutScalePercent] <int>] [[-LutOffsetPercent] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -77,6 +77,12 @@ Get-OBSColorGradeFilterShader [[-Notes] <string>] [[-Lut] <string>] [[-LutAmount
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
 |`[string]`|false   |5       |true (ByPropertyName)|SceneItemName|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

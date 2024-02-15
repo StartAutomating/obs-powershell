@@ -3,7 +3,7 @@ Get-OBSFireworksShader
 
 ### Synopsis
 
-Get-OBSFireworksShader [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ShowFlash] [-ShowStars] [-UseTransparancy] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSFireworksShader [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ShowFlash] [-ShowStars] [-UseTransparancy] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -59,6 +59,12 @@ Get-OBSFireworksShader [[-SourceName] <string>] [[-FilterName] <string>] [[-Shad
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
 |`[string]`|false   |0       |true (ByPropertyName)|SceneItemName|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **UseTransparancy**
 

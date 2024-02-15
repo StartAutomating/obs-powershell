@@ -3,7 +3,7 @@ Get-OBSSwirlShader
 
 ### Synopsis
 
-Get-OBSSwirlShader [[-Radius] <float>] [[-Angle] <float>] [[-CenterX] <float>] [[-CenterY] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Animate] [-Inverse] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSSwirlShader [[-Radius] <float>] [[-Angle] <float>] [[-CenterX] <float>] [[-CenterY] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Animate] [-Inverse] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -89,6 +89,12 @@ Get-OBSSwirlShader [[-Radius] <float>] [[-Angle] <float>] [[-CenterX] <float>] [
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
 |`[string]`|false   |5       |true (ByPropertyName)|SceneItemName|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

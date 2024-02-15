@@ -3,7 +3,7 @@ Get-OBSFireShader
 
 ### Synopsis
 
-Get-OBSFireShader [[-AlphaPercentage] <int>] [[-Speed] <int>] [[-FlameSize] <int>] [[-FireType] <int>] [[-LumaMin] <float>] [[-LumaMinSmooth] <float>] [[-ColorToReplace] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Invert] [-ApplyToImage] [-ReplaceImageColor] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSFireShader [[-AlphaPercentage] <int>] [[-Speed] <int>] [[-FlameSize] <int>] [[-FireType] <int>] [[-LumaMin] <float>] [[-LumaMinSmooth] <float>] [[-ColorToReplace] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Invert] [-ApplyToImage] [-ReplaceImageColor] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -119,6 +119,12 @@ Get-OBSFireShader [[-AlphaPercentage] <int>] [[-Speed] <int>] [[-FlameSize] <int
 |Type   |Required|Position|PipelineInput|
 |-------|--------|--------|-------------|
 |`[int]`|false   |1       |false        |
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

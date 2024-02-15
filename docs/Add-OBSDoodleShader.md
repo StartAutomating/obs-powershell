@@ -3,7 +3,7 @@ Get-OBSDoodleShader
 
 ### Synopsis
 
-Get-OBSDoodleShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-RandF] <float>] [[-UvSize] <float[]>] [[-DoodleScalePercent] <float>] [[-SnapPercent] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSDoodleShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-RandF] <float>] [[-UvSize] <float[]>] [[-DoodleScalePercent] <float>] [[-SnapPercent] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -83,6 +83,12 @@ Get-OBSDoodleShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
 |`[string]`|false   |11      |true (ByPropertyName)|SceneItemName|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **UvOffset**
 

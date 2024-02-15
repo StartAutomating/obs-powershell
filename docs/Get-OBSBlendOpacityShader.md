@@ -3,7 +3,7 @@ Get-OBSBlendOpacityShader
 
 ### Synopsis
 
-Get-OBSBlendOpacityShader [[-RotationOffset] <float>] [[-OpacityStartPercent] <float>] [[-OpacityEndPercent] <float>] [[-Spread] <float>] [[-Speed] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Vertical] [-Rotational] [-ApplyToAlphaLayer] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSBlendOpacityShader [[-RotationOffset] <float>] [[-OpacityStartPercent] <float>] [[-OpacityEndPercent] <float>] [[-Spread] <float>] [[-Speed] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Vertical] [-Rotational] [-ApplyToAlphaLayer] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -95,6 +95,12 @@ Get-OBSBlendOpacityShader [[-RotationOffset] <float>] [[-OpacityStartPercent] <f
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
 |`[float]`|false   |3       |false        |
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **Vertical**
 

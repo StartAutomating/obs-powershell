@@ -3,7 +3,7 @@ Get-OBSPixelationShader
 
 ### Synopsis
 
-Get-OBSPixelationShader [[-TargetWidth] <float>] [[-TargetHeight] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSPixelationShader [[-TargetWidth] <float>] [[-TargetHeight] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -65,6 +65,12 @@ Get-OBSPixelationShader [[-TargetWidth] <float>] [[-TargetHeight] <float>] [[-No
 |Type     |Required|Position|PipelineInput|Aliases     |
 |---------|--------|--------|-------------|------------|
 |`[float]`|false   |0       |false        |Target_Width|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

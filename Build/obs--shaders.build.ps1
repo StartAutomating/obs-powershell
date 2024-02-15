@@ -78,7 +78,7 @@ $CloneAndGetShaders = {
         Push-Location ($pwd | Split-Path)
         # Get shaders anywhere in the root repo (this will include the sparsely checked out repo)
         Get-ChildItem -Recurse -File | 
-            Where-Object -Extension -in '.shader','.effect' | 
+            Where-Object Extension -in '.shader','.effect' | 
             Where-Object { $_.Directory.Name -notin 'internal' }
         Pop-Location        
     )    

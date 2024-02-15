@@ -3,7 +3,7 @@ Get-OBSDivideRotateShader
 
 ### Synopsis
 
-Get-OBSDivideRotateShader [[-IChannel0] <string>] [[-SpeedPercentage] <int>] [[-AlphaPercentage] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ApplyToAlphaLayer] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSDivideRotateShader [[-IChannel0] <string>] [[-SpeedPercentage] <int>] [[-AlphaPercentage] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ApplyToAlphaLayer] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -77,6 +77,12 @@ Get-OBSDivideRotateShader [[-IChannel0] <string>] [[-SpeedPercentage] <int>] [[-
 |Type   |Required|Position|PipelineInput|Aliases         |
 |-------|--------|--------|-------------|----------------|
 |`[int]`|false   |1       |false        |speed_percentage|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

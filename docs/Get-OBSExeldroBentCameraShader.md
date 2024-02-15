@@ -3,7 +3,7 @@ Get-OBSExeldroBentCameraShader
 
 ### Synopsis
 
-Get-OBSExeldroBentCameraShader [[-LeftSideWidth] <float>] [[-LeftSideSize] <float>] [[-LeftSideShadow] <float>] [[-LeftFlipWidth] <float>] [[-LeftFlipShadow] <float>] [[-RightSideWidth] <float>] [[-RightSideSize] <float>] [[-RightSideShadow] <float>] [[-RightFlipWidth] <float>] [[-RightFlipShadow] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSExeldroBentCameraShader [[-LeftSideWidth] <float>] [[-LeftSideSize] <float>] [[-LeftSideShadow] <float>] [[-LeftFlipWidth] <float>] [[-LeftFlipShadow] <float>] [[-RightSideWidth] <float>] [[-RightSideSize] <float>] [[-RightSideShadow] <float>] [[-RightFlipWidth] <float>] [[-RightFlipShadow] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -107,6 +107,12 @@ Get-OBSExeldroBentCameraShader [[-LeftSideWidth] <float>] [[-LeftSideSize] <floa
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
 |`[string]`|false   |10      |true (ByPropertyName)|SceneItemName|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

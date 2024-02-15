@@ -3,7 +3,7 @@ Get-OBSCrtCurvatureShader
 
 ### Synopsis
 
-Get-OBSCrtCurvatureShader [[-Strength] <float>] [[-Border] <string>] [[-Feathering] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSCrtCurvatureShader [[-Strength] <float>] [[-Border] <string>] [[-Feathering] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -65,6 +65,12 @@ Get-OBSCrtCurvatureShader [[-Strength] <float>] [[-Border] <string>] [[-Featheri
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
 |`[float]`|false   |0       |false        |
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

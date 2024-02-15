@@ -3,7 +3,7 @@ Get-OBSScanLineShader
 
 ### Synopsis
 
-Get-OBSScanLineShader [[-Speed] <float>] [[-Angle] <float>] [[-Floor] <float>] [[-Period] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Lengthwise] [-Animate] [-Shift] [-Boost] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSScanLineShader [[-Speed] <float>] [[-Angle] <float>] [[-Floor] <float>] [[-Period] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Lengthwise] [-Animate] [-Shift] [-Boost] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -101,6 +101,12 @@ Get-OBSScanLineShader [[-Speed] <float>] [[-Angle] <float>] [[-Floor] <float>] [
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
 |`[float]`|false   |0       |false        |
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

@@ -3,7 +3,7 @@ Get-OBSAnimatedPathShader
 
 ### Synopsis
 
-Get-OBSAnimatedPathShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-RandF] <float>] [[-SpeedPercent] <int>] [[-PathMap] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Reverse] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSAnimatedPathShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-RandF] <float>] [[-SpeedPercent] <int>] [[-PathMap] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Reverse] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -83,6 +83,12 @@ Get-OBSAnimatedPathShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-Elaps
 |Type   |Required|Position|PipelineInput|Aliases      |
 |-------|--------|--------|-------------|-------------|
 |`[int]`|false   |7       |false        |speed_percent|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **UvOffset**
 

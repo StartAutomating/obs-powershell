@@ -3,7 +3,7 @@ Get-OBSShineShader
 
 ### Synopsis
 
-Get-OBSShineShader [[-LTex] <string>] [[-ShineColor] <string>] [[-SpeedPercent] <int>] [[-GradientPercent] <int>] [[-DelayPercent] <int>] [[-Notes] <string>] [[-StartAdjust] <float>] [[-StopAdjust] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ApplyToAlphaLayer] [-Ease] [-Hide] [-Reverse] [-OneDirection] [-Glitch] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSShineShader [[-LTex] <string>] [[-ShineColor] <string>] [[-SpeedPercent] <int>] [[-GradientPercent] <int>] [[-DelayPercent] <int>] [[-Notes] <string>] [[-StartAdjust] <float>] [[-StopAdjust] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ApplyToAlphaLayer] [-Ease] [-Hide] [-Reverse] [-OneDirection] [-Glitch] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -131,6 +131,12 @@ Get-OBSShineShader [[-LTex] <string>] [[-ShineColor] <string>] [[-SpeedPercent] 
 |Type     |Required|Position|PipelineInput|Aliases    |
 |---------|--------|--------|-------------|-----------|
 |`[float]`|false   |7       |false        |stop_adjust|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

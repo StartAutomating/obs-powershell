@@ -3,7 +3,7 @@ Get-OBSRainWindowShader
 
 ### Synopsis
 
-Get-OBSRainWindowShader [[-Size] <float>] [[-BlurSize] <float>] [[-TrailStrength] <float>] [[-TrailColor] <float>] [[-Speed] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-DebugShader] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSRainWindowShader [[-Size] <float>] [[-BlurSize] <float>] [[-TrailStrength] <float>] [[-TrailColor] <float>] [[-Speed] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-DebugShader] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -83,6 +83,12 @@ Get-OBSRainWindowShader [[-Size] <float>] [[-BlurSize] <float>] [[-TrailStrength
 |Type     |Required|Position|PipelineInput|Aliases       |
 |---------|--------|--------|-------------|--------------|
 |`[float]`|false   |2       |false        |trail_strength|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

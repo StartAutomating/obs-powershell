@@ -3,7 +3,7 @@ Get-OBSRepeatTextureShader
 
 ### Synopsis
 
-Get-OBSRepeatTextureShader [[-ViewProj] <float[][]>] [[-ColorMatrix] <float[][]>] [[-ColorRangeMin] <float[]>] [[-ColorRangeMax] <float[]>] [[-Image] <string>] [[-TexImage] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-UvSize] <float[]>] [[-RandF] <float>] [[-Blend] <float>] [[-Copies] <float>] [[-Notes] <string>] [[-AlphaPercentage] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSRepeatTextureShader [[-ViewProj] <float[][]>] [[-ColorMatrix] <float[][]>] [[-ColorRangeMin] <float[]>] [[-ColorRangeMax] <float[]>] [[-Image] <string>] [[-TexImage] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-UvSize] <float[]>] [[-RandF] <float>] [[-Blend] <float>] [[-Copies] <float>] [[-Notes] <string>] [[-AlphaPercentage] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -113,6 +113,12 @@ Get-OBSRepeatTextureShader [[-ViewProj] <float[][]>] [[-ColorMatrix] <float[][]>
 |Type      |Required|Position|PipelineInput|Aliases  |
 |----------|--------|--------|-------------|---------|
 |`[string]`|false   |5       |false        |tex_image|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **UvOffset**
 

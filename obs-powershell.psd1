@@ -427,6 +427,7 @@ Initial Release of obs-powershell
 'Get-OBSRainbowShader',
 'Get-OBSRainWindowShader',
 'Get-OBSRectangularDropShadowShader',
+'Get-OBSReflectShader',
 'Get-OBSRemovePartialPixelsShader',
 'Get-OBSRepeatShader',
 'Get-OBSRepeatTextureShader',

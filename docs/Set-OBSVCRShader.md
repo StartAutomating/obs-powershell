@@ -3,7 +3,7 @@ Get-OBSVCRShader
 
 ### Synopsis
 
-Get-OBSVCRShader [[-VerticalShift] <float>] [[-Distort] <float>] [[-Vignet] <float>] [[-Stripe] <float>] [[-VerticalFactor] <float>] [[-VerticalHeight] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSVCRShader [[-VerticalShift] <float>] [[-Distort] <float>] [[-Vignet] <float>] [[-Stripe] <float>] [[-VerticalFactor] <float>] [[-VerticalHeight] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -59,6 +59,12 @@ Get-OBSVCRShader [[-VerticalShift] <float>] [[-Distort] <float>] [[-Vignet] <flo
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
 |`[float]`|false   |3       |false        |
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 #### **VerticalFactor**
 

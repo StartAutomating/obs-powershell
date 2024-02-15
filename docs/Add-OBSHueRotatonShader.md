@@ -3,7 +3,7 @@ Get-OBSHueRotatonShader
 
 ### Synopsis
 
-Get-OBSHueRotatonShader [[-Speed] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-HueOverride] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSHueRotatonShader [[-Speed] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-HueOverride] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -59,6 +59,12 @@ Get-OBSHueRotatonShader [[-Speed] <float>] [[-SourceName] <string>] [[-FilterNam
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
 |`[float]`|false   |0       |false        |
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

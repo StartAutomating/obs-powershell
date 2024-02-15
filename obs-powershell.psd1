@@ -390,6 +390,7 @@ Initial Release of obs-powershell
 'Get-OBSFireworksShader',
 'Get-OBSFisheyeShader',
 'Get-OBSFisheyeXyShader',
+'Get-OBSFlipShader',
 'Get-OBSFrostedGlassShader',
 'Get-OBSGammaCorrectionShader',
 'Get-OBSGaussianBlurAdvancedShader',

@@ -1,8 +1,8 @@
 obs-powershell-commands
 -----------------------
 
-obs-powershell exports 739 commands
-(300 functions and 439 aliases)
+obs-powershell exports 742 commands
+(301 functions and 441 aliases)
 
 A good number of these commands directly correspond to an obs-websocket message.
 For a complete list, see [obs-powershell-websocket-commands](obs-powershell-websocket-commands.md).
@@ -208,6 +208,7 @@ Functions
 |[Get-OBSZigZagShader](Get-OBSZigZagShader.md)                                        |
 |[Get-OBSZoomBlurShader](Get-OBSZoomBlurShader.md)                                    |
 |[Get-OBSZoomShader](Get-OBSZoomShader.md)                                            |
+|[Get-OBSZoomXYShader](Get-OBSZoomXYShader.md)                                        |
 |[Hide-OBS](Hide-OBS.md)                                                              |Hide OBS                                                                     |
 |[Import-OBSEffect](Import-OBSEffect.md)                                              |Imports Effects                                                              |
 |[Open-OBSInputFiltersDialog](Open-OBSInputFiltersDialog.md)                          |Open-OBSInputFiltersDialog : OpenInputFiltersDialog                          |
@@ -517,6 +518,7 @@ Aliases
 |[Get-OBSZigZagShader](Get-OBSZigZagShader.md)                                        |
 |[Get-OBSZoomBlurShader](Get-OBSZoomBlurShader.md)                                    |
 |[Get-OBSZoomShader](Get-OBSZoomShader.md)                                            |
+|[Get-OBSZoomXYShader](Get-OBSZoomXYShader.md)                                        |
 |[Hide-OBS](Hide-OBS.md)                                                              |
 |[Import-OBSEffect](Import-OBSEffect.md)                                              |
 |[Open-OBSInputFiltersDialog](Open-OBSInputFiltersDialog.md)                          |

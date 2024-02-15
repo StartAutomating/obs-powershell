@@ -3,7 +3,7 @@ Get-OBSAsciiShader
 
 ### Synopsis
 
-Get-OBSAsciiShader [[-Scale] <int>] [[-BaseColor] <string>] [[-CharacterSet] <int>] [[-Note] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Monochrome] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSAsciiShader [[-Scale] <int>] [[-BaseColor] <string>] [[-CharacterSet] <int>] [[-Note] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Monochrome] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -77,6 +77,12 @@ Get-OBSAsciiShader [[-Scale] <int>] [[-BaseColor] <string>] [[-CharacterSet] <in
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
 |`[string]`|false   |4       |true (ByPropertyName)|SceneItemName|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

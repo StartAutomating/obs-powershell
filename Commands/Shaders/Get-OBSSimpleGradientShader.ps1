@@ -62,7 +62,11 @@ $Force,
 $PassThru,
 # If set, will not wait for a response from OBS (this will be faster, but will not return anything)
 [Management.Automation.SwitchParameter]
-$NoResponse
+$NoResponse,
+# If set, use the shader elapsed time, instead of the OBS system elapsed time
+[ComponentModel.DefaultBindingProperty('use_shader_elapsed_time')]
+[Management.Automation.SwitchParameter]
+$UseShaderTime
 )
 
 
@@ -230,6 +234,9 @@ switch -regex ($myVerb) {
             foreach ($parameterAttribute in $parameterMetadata.Attributes) {
                 if ($parameterAttribute -isnot [ComponentModel.DefaultBindingPropertyAttribute]) { continue }
                 $ShaderSettings[$parameterAttribute.Name] = $PSBoundParameters[$parameterMetadata.Name]
+                if ($ShaderSettings[$parameterAttribute.Name] -is [switch]) {
+                    $ShaderSettings[$parameterAttribute.Name] = $ShaderSettings[$parameterAttribute.Name] -as [bool]
+                }
                 continue nextParameter
             }            
         }

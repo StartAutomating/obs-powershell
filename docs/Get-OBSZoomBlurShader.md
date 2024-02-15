@@ -3,7 +3,7 @@ Get-OBSZoomBlurShader
 
 ### Synopsis
 
-Get-OBSZoomBlurShader [[-Samples] <int>] [[-Magnitude] <float>] [[-SpeedPercent] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Ease] [-Glitch] [-Force] [-PassThru] [-NoResponse] [<CommonParameters>]
+Get-OBSZoomBlurShader [[-Samples] <int>] [[-Magnitude] <float>] [[-SpeedPercent] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Ease] [-Glitch] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -83,6 +83,12 @@ Get-OBSZoomBlurShader [[-Samples] <int>] [[-Magnitude] <float>] [[-SpeedPercent]
 |Type   |Required|Position|PipelineInput|Aliases      |
 |-------|--------|--------|-------------|-------------|
 |`[int]`|false   |2       |false        |speed_percent|
+
+#### **UseShaderTime**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[switch]`|false   |Named   |false        |
 
 ---
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-16"?>
-<!-- Generated with EZOut 2.0.4: Install-Module EZOut or https://github.com/StartAutomating/EZOut -->
+<!-- Generated with EZOut 2.0.6: Install-Module EZOut or https://github.com/StartAutomating/EZOut -->
 <Types>
   <Type>
     <Name>OBS.Beat</Name>
@@ -589,6 +589,17 @@ $this |
                         ,$this.filterSettings
                     </GetScriptBlock>
       </ScriptProperty>
+    </Members>
+  </Type>
+  <Type>
+    <Name>OBS.GetCurrentProgramScene.Response</Name>
+    <Members>
+      <ScriptMethod>
+        <Name>ToString</Name>
+        <Script>
+                        $this.currentProgramSceneName
+                    </Script>
+      </ScriptMethod>
     </Members>
   </Type>
   <Type>

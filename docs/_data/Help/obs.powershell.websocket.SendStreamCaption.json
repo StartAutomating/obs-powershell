@@ -1,0 +1,35 @@
+{
+  "Synopsis": "Send-OBSStreamCaption : SendStreamCaption",
+  "Description": "Sends CEA-608 caption text over the stream output.\n\n\nSend-OBSStreamCaption calls the OBS WebSocket with a request of type SendStreamCaption.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    "https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#sendstreamcaption"
+  ],
+  "Examples": []
+}

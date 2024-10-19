@@ -1,5 +1,5 @@
-OBS.Beat.get_BeatStart()
-------------------------
+get_BeatStart
+-------------
 
 ### Synopsis
 Gets the Beat Start Time

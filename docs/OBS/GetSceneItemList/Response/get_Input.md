@@ -1,5 +1,5 @@
-OBS.GetSceneItemList.Response.get_Input()
------------------------------------------
+get_Input
+---------
 
 ### Synopsis
 Gets a Scene Item's Input

@@ -1,5 +1,5 @@
-OBS.PowerShell.Effect.get_Index()
----------------------------------
+get_Index
+---------
 
 ### Synopsis
 Gets the index of the effect

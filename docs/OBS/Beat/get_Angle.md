@@ -1,5 +1,5 @@
-OBS.Beat.get_Angle()
---------------------
+get_Angle
+---------
 
 ### Synopsis
 Gets the Beat Angle

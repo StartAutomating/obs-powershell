@@ -1,5 +1,5 @@
-OBS.PowerShell.get_OBSWebSocketVersion()
-----------------------------------------
+get_OBSWebSocketVersion
+-----------------------
 
 ### Synopsis
 Gets the obs version.

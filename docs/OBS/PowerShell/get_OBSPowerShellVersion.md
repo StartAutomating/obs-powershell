@@ -1,5 +1,5 @@
-OBS.PowerShell.get_OBSPowerShellVersion()
------------------------------------------
+get_OBSPowerShellVersion
+------------------------
 
 ### Synopsis
 Gets the obs-powershell version.

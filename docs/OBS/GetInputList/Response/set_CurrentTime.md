@@ -1,5 +1,5 @@
-OBS.GetInputList.Response.set_CurrentTime()
--------------------------------------------
+set_CurrentTime
+---------------
 
 ### Synopsis
 Sets an input's current time

@@ -1,5 +1,5 @@
-OBS.Input.get_CurrentTime()
----------------------------
+get_CurrentTime
+---------------
 
 ### Synopsis
 Gets an input's current time

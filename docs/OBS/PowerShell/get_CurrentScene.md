@@ -1,5 +1,5 @@
-OBS.PowerShell.get_CurrentScene()
----------------------------------
+get_CurrentScene
+----------------
 
 ### Synopsis
 Gets the current scene

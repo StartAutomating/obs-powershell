@@ -1,5 +1,5 @@
-OBS.PowerShell.get_Statistics()
--------------------------------
+get_Statistics
+--------------
 
 ### Synopsis
 Gets OBS stats.

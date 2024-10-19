@@ -1,5 +1,5 @@
-OBS.PowerShell.get_StreamStatus()
----------------------------------
+get_StreamStatus
+----------------
 
 ### Synopsis
 Gets OBS stream status.

@@ -1,5 +1,5 @@
-OBS.GetInputList.Response.set_Volume()
---------------------------------------
+set_Volume
+----------
 
 ### Synopsis
 Sets an input's volume

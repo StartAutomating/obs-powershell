@@ -1,5 +1,5 @@
-OBS.PowerShell.get_OBSVersion()
--------------------------------
+get_OBSVersion
+--------------
 
 ### Synopsis
 Gets the obs version.

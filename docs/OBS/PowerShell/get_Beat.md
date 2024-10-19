@@ -1,5 +1,5 @@
-OBS.PowerShell.get_Beat()
--------------------------
+get_Beat
+--------
 
 ### Synopsis
 Gets the Beat

@@ -1,5 +1,5 @@
-OBS.PowerShell.Effect.get_Duration()
-------------------------------------
+get_Duration
+------------
 
 ### Synopsis
 Gets an Effect's Duration

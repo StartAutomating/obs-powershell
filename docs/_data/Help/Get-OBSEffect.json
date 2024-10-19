@@ -1,0 +1,36 @@
+{
+  "Synopsis": "Gets OBS Effects",
+  "Description": "Gets effects currently loaded into OBS-PowerShell.\n\nAn effect can be thought of as a name with a series of messages to OBS.\n\nThose messages can be defined in a .json file or a script, in any module that tags OBS.\n\nThey can also be defined in a function or script named like:\n\n* `*.OBS.FX.*`\n* `*.OBS.Effect.*`\n* `*.OBS.Effects.*`",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    null,
+    null
+  ],
+  "Examples": []
+}

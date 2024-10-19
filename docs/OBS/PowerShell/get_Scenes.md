@@ -1,5 +1,5 @@
-OBS.PowerShell.get_Scenes()
----------------------------
+get_Scenes
+----------
 
 ### Synopsis
 Gets the loaded OBS scenes.

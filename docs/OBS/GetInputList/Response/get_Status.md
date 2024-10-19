@@ -1,5 +1,5 @@
-OBS.GetInputList.Response.get_Status()
---------------------------------------
+get_Status
+----------
 
 ### Synopsis
 Gets an input's status

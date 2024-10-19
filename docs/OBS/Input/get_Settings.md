@@ -1,5 +1,5 @@
-OBS.Input.get_Settings()
-------------------------
+get_Settings
+------------
 
 ### Synopsis
 Gets an input's settings

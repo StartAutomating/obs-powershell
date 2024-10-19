@@ -1,5 +1,5 @@
-OBS.GetInputList.Response.get_Filters()
----------------------------------------
+get_Filters
+-----------
 
 ### Synopsis
 Gets an input's filters

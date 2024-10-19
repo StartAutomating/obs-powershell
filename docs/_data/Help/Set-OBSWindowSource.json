@@ -1,0 +1,39 @@
+{
+  "Synopsis": "Adds or sets a window capture source",
+  "Description": "Adds or sets a windows capture source in OBS.  This captures the contents of a window.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [],
+  "Examples": [
+    {
+      "Title": "EXAMPLE 1",
+      "Markdown": "",
+      "Code": "Get-Process -id $PID | Set-OBSWindowCaptureSource -Name CurrentWindow"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
-OBS.PowerShell.get_Commands()
------------------------------
+get_Commands
+------------
 
 ### Synopsis
 Gets obs-powershell commands

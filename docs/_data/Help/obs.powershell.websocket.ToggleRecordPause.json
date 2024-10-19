@@ -1,0 +1,41 @@
+{
+  "Synopsis": "Switch-OBSRecordPause : ToggleRecordPause",
+  "Description": "Toggles pause on the record output.\n\n\nSwitch-OBSRecordPause calls the OBS WebSocket with a request of type ToggleRecordPause.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    "https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#togglerecordpause"
+  ],
+  "Examples": [
+    {
+      "Title": "EXAMPLE 1",
+      "Markdown": "",
+      "Code": "Switch-OBSRecordPause"
+    }
+  ]
+}

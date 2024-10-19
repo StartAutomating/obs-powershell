@@ -429,6 +429,13 @@ if (Test-Path "obs-shaderfilter") {
     Remove-Item -Recurse -Force -Path "obs-shaderfilter"
 }
 
+$shaderReadme = Join-Path $ShaderCommandsPath "README.md"
+New-Item -Path $shaderReadme -Value @'
+## obs-powershell Shader Commands
+
+This folder contains the generated commands for the shaders in the [obs-shaderfilter plugin](https://github.com/exeldro/obs-shaderfilter/).
+'@ -Force
+
 
 trap [Exception] {
 if ($env:GITHUB_STEP_SUMMARY) {

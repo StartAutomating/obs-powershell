@@ -1,5 +1,5 @@
-OBS.PowerShell.get_SceneItems()
--------------------------------
+get_SceneItems
+--------------
 
 ### Synopsis
 Gets all obs scene items.

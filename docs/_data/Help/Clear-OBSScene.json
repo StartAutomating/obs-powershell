@@ -1,0 +1,39 @@
+{
+  "Synopsis": "Clears a Scene in OBS",
+  "Description": "Clears a Scene in OBS.\n\nAll inputs will be removed from the scene.\n\nThis cannot be undone, so you will be prompted for confirmation.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [],
+  "Examples": [
+    {
+      "Title": "EXAMPLE 1",
+      "Markdown": "",
+      "Code": "Clear-OBSScene -SceneName Scene"
+    }
+  ]
+}

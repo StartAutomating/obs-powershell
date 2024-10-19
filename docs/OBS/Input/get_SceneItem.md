@@ -1,5 +1,5 @@
-OBS.Input.get_SceneItem()
--------------------------
+get_SceneItem
+-------------
 
 ### Synopsis
 Gets an input's scene items

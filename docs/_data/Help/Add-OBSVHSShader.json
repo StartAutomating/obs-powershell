@@ -1,5 +1,5 @@
 {
-  "Synopsis": "\nGet-OBSVHSShader [[-Range] <float>] [[-OffsetIntensity] <float>] [[-NoiseQuality] <int>] [[-NoiseIntensity] <float>] [[-ColorOffsetIntensity] <float>] [[-AlphaPercentage] <float>] [[-ColorToReplace] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ApplyToImage] [-ReplaceImageColor] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]\n",
+  "Synopsis": "\nGet-OBSVHSShader [[-Range] <float>] [[-OffsetIntensity] <float>] [[-NoiseQuality] <float>] [[-NoiseIntensity] <float>] [[-ColorOffsetIntensity] <float>] [[-AlphaPercentage] <float>] [[-ColorToReplace] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ApplyToImage] [-ReplaceImageColor] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]\n",
   "Description": "",
   "Parameters": [
     {

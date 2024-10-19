@@ -1,5 +1,5 @@
-OBS.Beat.get_Sine()
--------------------
+get_Sine
+--------
 
 ### Synopsis
 Gets the Beat Sine

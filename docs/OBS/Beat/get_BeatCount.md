@@ -1,5 +1,5 @@
-OBS.Beat.get_BeatCount()
-------------------------
+get_BeatCount
+-------------
 
 ### Synopsis
 Gets the Beat Count

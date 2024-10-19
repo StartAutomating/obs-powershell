@@ -1,5 +1,5 @@
-OBS.Beat.get_BPM()
-------------------
+get_BPM
+-------
 
 ### Synopsis
 Gets the BPM

@@ -1,5 +1,5 @@
-OBS.Beat.set_BeatStart()
-------------------------
+set_BeatStart
+-------------
 
 ### Synopsis
 Sets the Beat Start Time

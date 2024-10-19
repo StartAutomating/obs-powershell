@@ -1,5 +1,5 @@
-OBS.GetSceneItemId.Response.get_Filters()
------------------------------------------
+get_Filters
+-----------
 
 ### Synopsis
 Gets a Scene Item's filters

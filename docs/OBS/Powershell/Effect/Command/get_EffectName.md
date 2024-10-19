@@ -1,5 +1,5 @@
-OBS.Powershell.Effect.Command.get_EffectName()
-----------------------------------------------
+get_EffectName
+--------------
 
 ### Synopsis
 Gets the Effect Name

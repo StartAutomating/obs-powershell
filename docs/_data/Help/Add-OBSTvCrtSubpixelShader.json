@@ -1,0 +1,33 @@
+{
+  "Synopsis": "\nGet-OBSTvCrtSubpixelShader [[-ChannelWidth] <int>] [[-ChannelHeight] <int>] [[-HGap] <int>] [[-VGap] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]\n",
+  "Description": "",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    "System.String\n"
+  ],
+  "Outputs": [
+    "System.Object"
+  ],
+  "Links": [],
+  "Examples": []
+}

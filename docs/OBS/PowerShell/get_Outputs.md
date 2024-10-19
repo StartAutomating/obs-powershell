@@ -1,5 +1,5 @@
-OBS.PowerShell.get_Outputs()
-----------------------------
+get_Outputs
+-----------
 
 ### Synopsis
 Gets the loaded OBS outputs.

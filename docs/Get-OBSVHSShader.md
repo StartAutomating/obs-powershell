@@ -3,7 +3,7 @@ Get-OBSVHSShader
 
 ### Synopsis
 
-Get-OBSVHSShader [[-Range] <float>] [[-OffsetIntensity] <float>] [[-NoiseQuality] <int>] [[-NoiseIntensity] <float>] [[-ColorOffsetIntensity] <float>] [[-AlphaPercentage] <float>] [[-ColorToReplace] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ApplyToImage] [-ReplaceImageColor] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
+Get-OBSVHSShader [[-Range] <float>] [[-OffsetIntensity] <float>] [[-NoiseQuality] <float>] [[-NoiseIntensity] <float>] [[-ColorOffsetIntensity] <float>] [[-AlphaPercentage] <float>] [[-ColorToReplace] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ApplyToImage] [-ReplaceImageColor] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -68,9 +68,9 @@ Get-OBSVHSShader [[-Range] <float>] [[-OffsetIntensity] <float>] [[-NoiseQuality
 
 #### **NoiseQuality**
 
-|Type   |Required|Position|PipelineInput|
-|-------|--------|--------|-------------|
-|`[int]`|false   |2       |false        |
+|Type     |Required|Position|PipelineInput|
+|---------|--------|--------|-------------|
+|`[float]`|false   |2       |false        |
 
 #### **OffsetIntensity**
 

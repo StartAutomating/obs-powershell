@@ -1,0 +1,35 @@
+{
+  "Synopsis": "Set-OBSSceneItemIndex : SetSceneItemIndex",
+  "Description": "Sets the index position of a scene item in a scene.\n\nScenes and Groups\n\n\nSet-OBSSceneItemIndex calls the OBS WebSocket with a request of type SetSceneItemIndex.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    "https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setsceneitemindex"
+  ],
+  "Examples": []
+}

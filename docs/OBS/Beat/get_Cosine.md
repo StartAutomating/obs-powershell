@@ -1,5 +1,5 @@
-OBS.Beat.get_Cosine()
----------------------
+get_Cosine
+----------
 
 ### Synopsis
 Gets the Beat Cosine

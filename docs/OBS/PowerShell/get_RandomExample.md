@@ -1,5 +1,5 @@
-OBS.PowerShell.get_RandomExample()
-----------------------------------
+get_RandomExample
+-----------------
 
 ### Synopsis
 

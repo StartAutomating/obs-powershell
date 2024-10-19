@@ -1,0 +1,33 @@
+{
+  "Synopsis": "\nGet-OBSNightSkyShader [[-Speed] <float>] [[-CenterWidthPercentage] <int>] [[-CenterHeightPercentage] <int>] [[-AlphaPercentage] <float>] [[-NumberStars] <int>] [[-SKYCOLOR] <string>] [[-STARCOLOR] <string>] [[-LIGHTSKY] <string>] [[-SKYLIGHTNESS] <float>] [[-MOONCOLOR] <string>] [[-MoonSize] <float>] [[-MoonBumpSize] <float>] [[-MoonPositionX] <float>] [[-MoonPositionY] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-IncludeClouds] [-IncludeMoon] [-ApplyToImage] [-ReplaceImageColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]\n",
+  "Description": "",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    "System.String\n"
+  ],
+  "Outputs": [
+    "System.Object"
+  ],
+  "Links": [],
+  "Examples": []
+}

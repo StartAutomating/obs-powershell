@@ -1,0 +1,39 @@
+{
+  "Synopsis": "Sets a Sound Cloud Source",
+  "Description": "Adds or changes a Sound Cloud source OBS.    \nSound Cloud Sources are Browser Sources that display a [SoundCloud Player Widget](https://developers.soundcloud.com/docs/api/html5-widget).",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [],
+  "Examples": [
+    {
+      "Title": "EXAMPLE 1",
+      "Markdown": "",
+      "Code": "Set-obssoundCloudSource -Uri https://soundcloud.com/outertone/sets/new-earth"
+    }
+  ]
+}

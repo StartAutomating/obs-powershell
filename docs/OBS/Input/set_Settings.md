@@ -1,5 +1,5 @@
-OBS.Input.set_Settings()
-------------------------
+set_Settings
+------------
 
 ### Synopsis
 Sets an input's settings

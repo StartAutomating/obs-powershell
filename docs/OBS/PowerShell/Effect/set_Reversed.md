@@ -1,5 +1,5 @@
-OBS.PowerShell.Effect.set_Reversed()
-------------------------------------
+set_Reversed
+------------
 
 ### Synopsis
 Sets if an effect should be reversed.

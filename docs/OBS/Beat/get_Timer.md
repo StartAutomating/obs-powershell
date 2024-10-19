@@ -1,5 +1,5 @@
-OBS.Beat.get_Timer()
---------------------
+get_Timer
+---------
 
 ### Synopsis
 Gets the Beat Timer

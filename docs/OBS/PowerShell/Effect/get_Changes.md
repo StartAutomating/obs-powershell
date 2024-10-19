@@ -1,5 +1,5 @@
-OBS.PowerShell.Effect.get_Changes()
------------------------------------
+get_Changes
+-----------
 
 ### Synopsis
 Gets the Effect's Changes

@@ -1,5 +1,5 @@
-OBS.GetInputList.Response.get_Volume()
---------------------------------------
+get_Volume
+----------
 
 ### Synopsis
 Gets an input's volume

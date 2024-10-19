@@ -1,7 +1,7 @@
 ## OBS.Powershell.Effect.Command
 
 
-### Script Methods
+### Script Properties
 
 
 * [get_EffectName](get_EffectName.md)

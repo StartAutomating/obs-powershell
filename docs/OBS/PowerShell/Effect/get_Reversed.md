@@ -1,5 +1,5 @@
-OBS.PowerShell.Effect.get_Reversed()
-------------------------------------
+get_Reversed
+------------
 
 ### Synopsis
 Gets if an effect is reversed.

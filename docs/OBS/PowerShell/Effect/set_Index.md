@@ -1,5 +1,5 @@
-OBS.PowerShell.Effect.set_Index()
----------------------------------
+set_Index
+---------
 
 ### Synopsis
 Updates the Effect's Index

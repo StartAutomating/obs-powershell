@@ -1,0 +1,35 @@
+{
+  "Synopsis": "Get-OBSInputKind : GetInputKindList",
+  "Description": "Gets an array of all available input kinds in OBS.\n\n\nGet-OBSInputKind calls the OBS WebSocket with a request of type GetInputKindList.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    "https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getinputkindlist"
+  ],
+  "Examples": []
+}

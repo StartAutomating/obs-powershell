@@ -1,0 +1,35 @@
+{
+  "Synopsis": "Remove-OBSInput : RemoveInput",
+  "Description": "Removes an existing input.\n\nNote: Will immediately remove all associated scene items.\n\n\nRemove-OBSInput calls the OBS WebSocket with a request of type RemoveInput.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    "https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#removeinput"
+  ],
+  "Examples": []
+}

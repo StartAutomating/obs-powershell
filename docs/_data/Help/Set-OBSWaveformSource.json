@@ -1,0 +1,39 @@
+{
+  "Synopsis": "OBS Waveform Source",
+  "Description": "Gets, Sets, or Adds a waveform source in OBS.    \nWaveform sources require the [Waveform Plugin](https://obsproject.com/forum/resources/waveform.1423/)",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [],
+  "Examples": [
+    {
+      "Title": "EXAMPLE 1",
+      "Markdown": "",
+      "Code": "Add-OBSWaveformSource -Name \"SpeakerWaveform\""
+    }
+  ]
+}

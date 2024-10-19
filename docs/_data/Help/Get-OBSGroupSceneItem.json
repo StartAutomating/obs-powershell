@@ -1,0 +1,35 @@
+{
+  "Synopsis": "Get-OBSGroupSceneItem : GetGroupSceneItemList",
+  "Description": "Basically GetSceneItemList, but for groups.\n\nUsing groups at all in OBS is discouraged, as they are very broken under the hood. Please use nested scenes instead.\n\nGroups only\n\n\nGet-OBSGroupSceneItem calls the OBS WebSocket with a request of type GetGroupSceneItemList.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    "https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getgroupsceneitemlist"
+  ],
+  "Examples": []
+}

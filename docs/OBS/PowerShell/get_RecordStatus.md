@@ -1,5 +1,5 @@
-OBS.PowerShell.get_RecordStatus()
----------------------------------
+get_RecordStatus
+----------------
 
 ### Synopsis
 Gets OBS record status.

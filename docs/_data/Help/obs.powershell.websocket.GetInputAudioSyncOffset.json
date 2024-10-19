@@ -1,0 +1,35 @@
+{
+  "Synopsis": "Get-OBSInputAudioSyncOffset : GetInputAudioSyncOffset",
+  "Description": "Gets the audio sync offset of an input.\n\nNote: The audio sync offset can be negative too!\n\n\nGet-OBSInputAudioSyncOffset calls the OBS WebSocket with a request of type GetInputAudioSyncOffset.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    "https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getinputaudiosyncoffset"
+  ],
+  "Examples": []
+}

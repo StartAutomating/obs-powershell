@@ -1,5 +1,5 @@
-OBS.Beat.get_Duration()
------------------------
+get_Duration
+------------
 
 ### Synopsis
 Gets the Duration

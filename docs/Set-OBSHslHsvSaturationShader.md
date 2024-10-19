@@ -3,7 +3,7 @@ Get-OBSHslHsvSaturationShader
 
 ### Synopsis
 
-Get-OBSHslHsvSaturationShader [[-HslSaturationFactor] <float>] [[-HsvSaturationFactor] <float>] [[-AdjustmentOrder] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
+Get-OBSHslHsvSaturationShader [[-HslSaturationFactor] <float>] [[-HslGamma] <float>] [[-HsvSaturationFactor] <float>] [[-HsvGamma] <float>] [[-AdjustmentOrder] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
 
@@ -14,15 +14,15 @@ Get-OBSHslHsvSaturationShader [[-HslSaturationFactor] <float>] [[-HsvSaturationF
 ### Parameters
 #### **AdjustmentOrder**
 
-|Type     |Required|Position|PipelineInput|
-|---------|--------|--------|-------------|
-|`[float]`|false   |2       |false        |
+|Type   |Required|Position|PipelineInput|
+|-------|--------|--------|-------------|
+|`[int]`|false   |4       |false        |
 
 #### **FilterName**
 
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
-|`[string]`|false   |5       |true (ByPropertyName)|
+|`[string]`|false   |6       |true (ByPropertyName)|
 
 #### **Force**
 
@@ -30,29 +30,35 @@ Get-OBSHslHsvSaturationShader [[-HslSaturationFactor] <float>] [[-HsvSaturationF
 |----------|--------|--------|-------------|
 |`[switch]`|false   |Named   |false        |
 
+#### **HslGamma**
+
+|Type     |Required|Position|PipelineInput|
+|---------|--------|--------|-------------|
+|`[float]`|false   |1       |false        |
+
 #### **HslSaturationFactor**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
 |`[float]`|false   |0       |false        |
 
+#### **HsvGamma**
+
+|Type     |Required|Position|PipelineInput|
+|---------|--------|--------|-------------|
+|`[float]`|false   |3       |false        |
+
 #### **HsvSaturationFactor**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |1       |false        |
+|`[float]`|false   |2       |false        |
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
 |`[switch]`|false   |Named   |false        |
-
-#### **Notes**
-
-|Type      |Required|Position|PipelineInput|
-|----------|--------|--------|-------------|
-|`[string]`|false   |3       |false        |
 
 #### **PassThru**
 
@@ -64,13 +70,13 @@ Get-OBSHslHsvSaturationShader [[-HslSaturationFactor] <float>] [[-HsvSaturationF
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |6       |false        |ShaderContent|
+|`[string]`|false   |7       |false        |ShaderContent|
 
 #### **SourceName**
 
 |Type      |Required|Position|PipelineInput        |Aliases      |
 |----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |4       |true (ByPropertyName)|SceneItemName|
+|`[string]`|false   |5       |true (ByPropertyName)|SceneItemName|
 
 #### **UseShaderTime**
 

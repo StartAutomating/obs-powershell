@@ -1,10 +1,9 @@
 ## OBS.Beat
 
 
-### Script Methods
+### Script Properties
 
 
-* [TapBPM](TapBPM.md)
 * [get_Angle](get_Angle.md)
 * [get_BeatCount](get_BeatCount.md)
 * [get_BeatStart](get_BeatStart.md)
@@ -17,3 +16,9 @@
 * [get_Sine](get_Sine.md)
 * [get_Timer](get_Timer.md)
 * [set_Timer](set_Timer.md)
+
+
+### Script Methods
+
+
+* [TapBPM()](TapBPM.md)

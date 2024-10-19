@@ -1,0 +1,49 @@
+{
+  "Synopsis": "Sets a Shader filter.",
+  "Description": "Adds or Changes a Shader Filter on an OBS Input.    \nThis requires that the [OBS Shader Filter](https://github.com/exeldro/obs-shaderfilter) is installed.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [],
+  "Examples": [
+    {
+      "Title": "EXAMPLE 1",
+      "Markdown": "",
+      "Code": "Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg |    \n    Set-OBSShaderFilter -FilterName \"FisheyeShader\" -ShaderFile fisheye-xy -ShaderSetting @{    \n        center_x_percent=30    \n        center_y_percent=70    \n    }"
+    },
+    {
+      "Title": "EXAMPLE 2",
+      "Markdown": "",
+      "Code": "Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg |    \n    Set-OBSShaderFilter -FilterName \"SeasickShader\" -ShaderFile seasick -ShaderSetting @{    \n        amplitude = 0.05    \n        speed = 0.5    \n        frequency = 12    \n        opacity = 1    \n    }"
+    },
+    {
+      "Title": "EXAMPLE 3",
+      "Markdown": "",
+      "Code": "Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg |    \n    Set-OBSShaderFilter -FilterName \"TwistShader\" -ShaderFile twist -ShaderSetting @{    \n        center_x_percent=50    \n        center_y_percent=50    \n        power = 0.05    \n        rotation = 80    \n    }"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "Synopsis": "Stops obs-powershell effects.",
+  "Description": "Stops an effect in OBS PowerShell.\n\nA running effect is a series of messages, and the obs-websocket does not let you cancel a message.\n\nHowever, OBS effects can be bounced or running in a loop.\n\nIf these effects are stopped, they will not continue to loop or bounce.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    null,
+    null
+  ],
+  "Examples": []
+}

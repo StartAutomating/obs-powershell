@@ -1,5 +1,5 @@
-OBS.GetInputList.Response.set_Settings()
-----------------------------------------
+set_Settings
+------------
 
 ### Synopsis
 Sets an input's settings

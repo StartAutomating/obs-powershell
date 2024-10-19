@@ -4,4 +4,4 @@
 ### Script Methods
 
 
-* [SetColor](SetColor.md)
+* [SetColor()](SetColor.md)

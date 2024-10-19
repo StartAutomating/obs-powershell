@@ -1,5 +1,5 @@
-OBS.Beat.set_Timer()
---------------------
+set_Timer
+---------
 
 ### Synopsis
 Sets the Beat Timer

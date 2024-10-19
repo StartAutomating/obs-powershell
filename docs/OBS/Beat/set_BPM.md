@@ -1,5 +1,5 @@
-OBS.Beat.set_BPM()
-------------------
+set_BPM
+-------
 
 ### Synopsis
 Sets the BPM

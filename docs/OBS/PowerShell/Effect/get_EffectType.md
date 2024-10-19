@@ -1,5 +1,5 @@
-OBS.PowerShell.Effect.get_EffectType()
---------------------------------------
+get_EffectType
+--------------
 
 ### Synopsis
 Gets an obs-powershell effect's type

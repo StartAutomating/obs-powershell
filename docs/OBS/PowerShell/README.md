@@ -1,7 +1,7 @@
 ## OBS.PowerShell
 
 
-### Script Methods
+### Script Properties
 
 
 * [get_Beat](get_Beat.md)

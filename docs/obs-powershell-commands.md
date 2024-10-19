@@ -1,8 +1,8 @@
 obs-powershell-commands
 -----------------------
 
-obs-powershell exports 742 commands
-(301 functions and 441 aliases)
+obs-powershell exports 745 commands
+(302 functions and 443 aliases)
 
 A good number of these commands directly correspond to an obs-websocket message.
 For a complete list, see [obs-powershell-websocket-commands](obs-powershell-websocket-commands.md).
@@ -80,6 +80,7 @@ Functions
 |[Get-OBSFireworksShader](Get-OBSFireworksShader.md)                                  |
 |[Get-OBSFisheyeShader](Get-OBSFisheyeShader.md)                                      |
 |[Get-OBSFisheyeXyShader](Get-OBSFisheyeXyShader.md)                                  |
+|[Get-OBSFlipShader](Get-OBSFlipShader.md)                                            |
 |[Get-OBSFrostedGlassShader](Get-OBSFrostedGlassShader.md)                            |
 |[Get-OBSGammaCorrectionShader](Get-OBSGammaCorrectionShader.md)                      |
 |[Get-OBSGaussianBlurAdvancedShader](Get-OBSGaussianBlurAdvancedShader.md)            |
@@ -390,6 +391,7 @@ Aliases
 |[Get-OBSFireworksShader](Get-OBSFireworksShader.md)                                  |
 |[Get-OBSFisheyeShader](Get-OBSFisheyeShader.md)                                      |
 |[Get-OBSFisheyeXyShader](Get-OBSFisheyeXyShader.md)                                  |
+|[Get-OBSFlipShader](Get-OBSFlipShader.md)                                            |
 |[Get-OBSFrostedGlassShader](Get-OBSFrostedGlassShader.md)                            |
 |[Get-OBSGammaCorrectionShader](Get-OBSGammaCorrectionShader.md)                      |
 |[Get-OBSGaussianBlurAdvancedShader](Get-OBSGaussianBlurAdvancedShader.md)            |

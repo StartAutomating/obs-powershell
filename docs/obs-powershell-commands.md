@@ -1,8 +1,8 @@
 obs-powershell-commands
 -----------------------
 
-obs-powershell exports 745 commands
-(302 functions and 443 aliases)
+obs-powershell exports 757 commands
+(306 functions and 451 aliases)
 
 A good number of these commands directly correspond to an obs-websocket message.
 For a complete list, see [obs-powershell-websocket-commands](obs-powershell-websocket-commands.md).
@@ -53,10 +53,12 @@ Functions
 |[Get-OBSCurrentProgramScene](Get-OBSCurrentProgramScene.md)                          |Get-OBSCurrentProgramScene : GetCurrentProgramScene                          |
 |[Get-OBSCurrentSceneTransition](Get-OBSCurrentSceneTransition.md)                    |Get-OBSCurrentSceneTransition : GetCurrentSceneTransition                    |
 |[Get-OBSCurrentSceneTransitionCursor](Get-OBSCurrentSceneTransitionCursor.md)        |Get-OBSCurrentSceneTransitionCursor : GetCurrentSceneTransitionCursor        |
+|[Get-OBSCurveShader](Get-OBSCurveShader.md)                                          |
 |[Get-OBSCutRectPerCornerShader](Get-OBSCutRectPerCornerShader.md)                    |
 |[Get-OBSCylinderShader](Get-OBSCylinderShader.md)                                    |
 |[Get-OBSDarkenShader](Get-OBSDarkenShader.md)                                        |
 |[Get-OBSDeadPixelFixerShader](Get-OBSDeadPixelFixerShader.md)                        |
+|[Get-OBSDigitalRainShader](Get-OBSDigitalRainShader.md)                              |
 |[Get-OBSDivideRotateShader](Get-OBSDivideRotateShader.md)                            |
 |[Get-OBSDoodleShader](Get-OBSDoodleShader.md)                                        |
 |[Get-OBSDrawingsShader](Get-OBSDrawingsShader.md)                                    |
@@ -77,6 +79,7 @@ Functions
 |[Get-OBSFilterTemplateShader](Get-OBSFilterTemplateShader.md)                        |
 |[Get-OBSFire3Shader](Get-OBSFire3Shader.md)                                          |
 |[Get-OBSFireShader](Get-OBSFireShader.md)                                            |
+|[Get-OBSFireworks2Shader](Get-OBSFireworks2Shader.md)                                |
 |[Get-OBSFireworksShader](Get-OBSFireworksShader.md)                                  |
 |[Get-OBSFisheyeShader](Get-OBSFisheyeShader.md)                                      |
 |[Get-OBSFisheyeXyShader](Get-OBSFisheyeXyShader.md)                                  |
@@ -135,6 +138,7 @@ Functions
 |[Get-OBSPieChartShader](Get-OBSPieChartShader.md)                                    |
 |[Get-OBSPixelationShader](Get-OBSPixelationShader.md)                                |
 |[Get-OBSPixelationTransitionShader](Get-OBSPixelationTransitionShader.md)            |
+|[Get-OBSPolarShader](Get-OBSPolarShader.md)                                          |
 |[Get-OBSProfile](Get-OBSProfile.md)                                                  |Get-OBSProfile : GetProfileList                                              |
 |[Get-OBSProfileParameter](Get-OBSProfileParameter.md)                                |Get-OBSProfileParameter : GetProfileParameter                                |
 |[Get-OBSPulseShader](Get-OBSPulseShader.md)                                          |
@@ -364,10 +368,12 @@ Aliases
 |[Get-OBSCurrentProgramScene](Get-OBSCurrentProgramScene.md)                          |
 |[Get-OBSCurrentSceneTransition](Get-OBSCurrentSceneTransition.md)                    |
 |[Get-OBSCurrentSceneTransitionCursor](Get-OBSCurrentSceneTransitionCursor.md)        |
+|[Get-OBSCurveShader](Get-OBSCurveShader.md)                                          |
 |[Get-OBSCutRectPerCornerShader](Get-OBSCutRectPerCornerShader.md)                    |
 |[Get-OBSCylinderShader](Get-OBSCylinderShader.md)                                    |
 |[Get-OBSDarkenShader](Get-OBSDarkenShader.md)                                        |
 |[Get-OBSDeadPixelFixerShader](Get-OBSDeadPixelFixerShader.md)                        |
+|[Get-OBSDigitalRainShader](Get-OBSDigitalRainShader.md)                              |
 |[Get-OBSDivideRotateShader](Get-OBSDivideRotateShader.md)                            |
 |[Get-OBSDoodleShader](Get-OBSDoodleShader.md)                                        |
 |[Get-OBSDrawingsShader](Get-OBSDrawingsShader.md)                                    |
@@ -388,6 +394,7 @@ Aliases
 |[Get-OBSFilterTemplateShader](Get-OBSFilterTemplateShader.md)                        |
 |[Get-OBSFire3Shader](Get-OBSFire3Shader.md)                                          |
 |[Get-OBSFireShader](Get-OBSFireShader.md)                                            |
+|[Get-OBSFireworks2Shader](Get-OBSFireworks2Shader.md)                                |
 |[Get-OBSFireworksShader](Get-OBSFireworksShader.md)                                  |
 |[Get-OBSFisheyeShader](Get-OBSFisheyeShader.md)                                      |
 |[Get-OBSFisheyeXyShader](Get-OBSFisheyeXyShader.md)                                  |
@@ -446,6 +453,7 @@ Aliases
 |[Get-OBSPieChartShader](Get-OBSPieChartShader.md)                                    |
 |[Get-OBSPixelationShader](Get-OBSPixelationShader.md)                                |
 |[Get-OBSPixelationTransitionShader](Get-OBSPixelationTransitionShader.md)            |
+|[Get-OBSPolarShader](Get-OBSPolarShader.md)                                          |
 |[Get-OBSProfile](Get-OBSProfile.md)                                                  |
 |[Get-OBSProfileParameter](Get-OBSProfileParameter.md)                                |
 |[Get-OBSPulseShader](Get-OBSPulseShader.md)                                          |

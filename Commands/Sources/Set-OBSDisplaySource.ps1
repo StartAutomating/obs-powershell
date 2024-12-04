@@ -91,7 +91,8 @@ function Set-OBSDisplaySource {
         $myParameters = [Ordered]@{} + $PSBoundParameters
         
         if (-not $myParameters["Scene"]) {
-            $myParameters["Scene"] = Get-OBSCurrentProgramScene
+            $myParameters["Scene"] = Get-OBSCurrentProgramScene | 
+                Select-Object -ExpandProperty currentProgramSceneName
         }
                 
         $myParameterData = [Ordered]@{}

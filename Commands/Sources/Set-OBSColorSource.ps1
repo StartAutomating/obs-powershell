@@ -124,7 +124,8 @@ function Set-OBSColorSource {
         }
         
         if (-not $myParameters["Scene"]) {
-            $myParameters["Scene"] = Get-OBSCurrentProgramScene
+            $myParameters["Scene"] = Get-OBSCurrentProgramScene | 
+                Select-Object -ExpandProperty currentProgramSceneName
         }
 
         $hexChar = [Regex]::new('[0-9a-f]')

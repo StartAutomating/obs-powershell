@@ -49,9 +49,16 @@ You can see the websocket password in Tools -> obs-websocket settings -> show co
 |----------|--------|--------|---------------------|-----------------|
 |`[String]`|false   |2       |true (ByPropertyName)|WebSocketPassword|
 
+#### **BufferSize**
+The size of the buffer to use when receiving messages from the websocket.
+
+|Type     |Required|Position|PipelineInput        |
+|---------|--------|--------|---------------------|
+|`[Int32]`|false   |3       |true (ByPropertyName)|
+
 ---
 
 ### Syntax
 ```PowerShell
-Watch-OBS [[-WebSocketURI] <Uri>] [[-WebSocketToken] <String>] [<CommonParameters>]
+Watch-OBS [[-WebSocketURI] <Uri>] [[-WebSocketToken] <String>] [[-BufferSize] <Int32>] [<CommonParameters>]
 ```

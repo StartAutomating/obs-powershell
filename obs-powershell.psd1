@@ -446,6 +446,15 @@ Initial Release of obs-powershell
 'Get-OBSZoomBlurShader',
 'Get-OBSZoomShader',
 'Get-OBSZoomXYShader',
+'Set-OBS3DFilter',
+'Set-OBSColorFilter',
+'Set-OBSEqualizerFilter',
+'Set-OBSGainFilter',
+'Set-OBSRenderDelayFilter',
+'Set-OBSScaleFilter',
+'Set-OBSScrollFilter',
+'Set-OBSShaderFilter',
+'Set-OBSSharpnessFilter',
 'Set-OBSAudioOutputSource',
 'Set-OBSBrowserSource',
 'Set-OBSColorSource',
@@ -461,15 +470,6 @@ Initial Release of obs-powershell
 'Import-OBSEffect',
 'Remove-OBSEffect',
 'Start-OBSEffect',
-'Stop-OBSEffect',
-'Set-OBS3DFilter',
-'Set-OBSColorFilter',
-'Set-OBSEqualizerFilter',
-'Set-OBSGainFilter',
-'Set-OBSRenderDelayFilter',
-'Set-OBSScaleFilter',
-'Set-OBSScrollFilter',
-'Set-OBSShaderFilter',
-'Set-OBSSharpnessFilter'
+'Stop-OBSEffect'
 }
 

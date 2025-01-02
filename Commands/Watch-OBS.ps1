@@ -26,7 +26,13 @@ function Watch-OBS
     [Parameter(ValueFromPipelineByPropertyName)]
     [Alias('WebSocketPassword')]
     [string]
-    $WebSocketToken
+    $WebSocketToken,
+
+    # The size of the buffer to use when receiving messages from the websocket.
+    [Parameter(ValueFromPipelineByPropertyName)]
+    [ValidateRange(1,1mb)]
+    [int]
+    $BufferSize = 64kb
     )
 
     begin {
@@ -35,7 +41,10 @@ function Watch-OBS
             [uri]$webSocketUri,
             
             [Alias('WebSocketPassword')]
-            $WebSocketToken
+            $WebSocketToken,
+    
+            [int]
+            $BufferSize = 64kb
             )
         }.ToString() + 
 "
@@ -56,7 +65,7 @@ $($ExecutionContext.SessionState.InvokeCommand.GetCommand('Send-OBS', 'Function'
             $obsPwd = $WebSocketToken
             $WaitInterval = [Timespan]::FromMilliseconds(7)
     
-            $BufferSize = 16kb
+            $BufferSize = 64kb
     
             $maxWaitTime = [DateTime]::Now + $WaitFor
             while (!$ConnectTask.IsCompleted -and [DateTime]::Now -lt $maxWaitTime) {
@@ -126,7 +135,7 @@ $($ExecutionContext.SessionState.InvokeCommand.GetCommand('Send-OBS', 'Function'
         
         
         $obsWatcher      =
-            Start-ThreadJob -ScriptBlock $obsWatcherJobDefinition -Name "OBS.Connection.$($Credential.UserName)" -ArgumentList $WebSocketURI, $WebSocketToken
+            Start-ThreadJob -ScriptBlock $obsWatcherJobDefinition -Name "OBS.Connection.$($Credential.UserName)" -ArgumentList $WebSocketURI, $WebSocketToken, $BufferSize
         
         $whenOutputAddedHandler =
             Register-ObjectEvent -InputObject $obsWatcher.Output -EventName DataAdded -Action {

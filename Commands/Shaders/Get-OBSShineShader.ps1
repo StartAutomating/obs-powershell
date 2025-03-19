@@ -122,7 +122,7 @@ uniform int gradient_percent<
     int step = 1;
 > = 20;
 uniform int delay_percent<
-    string label = "gradient percent";
+    string label = "delay percent";
     string widget_type = "slider";
     int minimum = 0;
     int maximum = 100;

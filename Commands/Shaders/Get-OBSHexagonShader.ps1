@@ -106,7 +106,7 @@ if (-not $psBoundParameters['ShaderText']) {
 //Converted to OpenGL by Q-mii & Exeldro February 25, 2022
 uniform float4 Hex_Color;
 uniform int Alpha_Percent<
-    string label = "Aplha percent";
+    string label = "Alpha percent";
     string widget_type = "slider";
     int minimum = 0;
     int maximum = 100;

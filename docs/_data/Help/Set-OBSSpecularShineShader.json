@@ -1,0 +1,33 @@
+{
+  "Synopsis": "\nGet-OBSSpecularShineShader [[-Hint] <string>] [[-Roughness] <float>] [[-LightStrength] <float>] [[-LightPositionX] <float>] [[-LightPositionY] <float>] [[-FlattenNormal] <float>] [[-StretchNormalX] <float>] [[-StretchNormalY] <float>] [[-LightColor] <float[]>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]\n",
+  "Description": "",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    "System.String\n"
+  ],
+  "Outputs": [
+    "System.Object"
+  ],
+  "Links": [],
+  "Examples": []
+}

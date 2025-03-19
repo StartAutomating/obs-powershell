@@ -58,7 +58,7 @@ uniform float center_x_percent<
     float step = 0.01;
 > = 50.0;
 uniform float center_y_percent<
-    string label = "Center x percent";
+    string label = "Center y percent";
     string widget_type = "slider";
     float minimum = 0.0;
     float maximum = 100.0;

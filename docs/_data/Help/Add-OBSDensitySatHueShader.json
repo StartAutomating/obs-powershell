@@ -1,0 +1,33 @@
+{
+  "Synopsis": "\nGet-OBSDensitySatHueShader [[-Notes] <string>] [[-DensityR] <float>] [[-SaturationR] <float>] [[-HueShiftR] <float>] [[-DensityY] <float>] [[-SaturationY] <float>] [[-HueShiftY] <float>] [[-DensityG] <float>] [[-SaturationG] <float>] [[-HueShiftG] <float>] [[-DensityC] <float>] [[-SaturationC] <float>] [[-HueShiftC] <float>] [[-DensityB] <float>] [[-SaturationB] <float>] [[-HueShiftB] <float>] [[-DensityM] <float>] [[-SaturationM] <float>] [[-HueShiftM] <float>] [[-GlobalDensity] <float>] [[-GlobalSaturation] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]\n",
+  "Description": "",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    "System.String\n"
+  ],
+  "Outputs": [
+    "System.Object"
+  ],
+  "Links": [],
+  "Examples": []
+}

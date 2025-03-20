@@ -1,8 +1,8 @@
 obs-powershell-commands
 -----------------------
 
-obs-powershell exports 757 commands
-(306 functions and 451 aliases)
+obs-powershell exports 787 commands
+(316 functions and 471 aliases)
 
 A good number of these commands directly correspond to an obs-websocket message.
 For a complete list, see [obs-powershell-websocket-commands](obs-powershell-websocket-commands.md).
@@ -25,6 +25,7 @@ Functions
 |[Copy-OBSSceneItem](Copy-OBSSceneItem.md)                                            |Copy-OBSSceneItem : DuplicateSceneItem                                       |
 |[Disconnect-OBS](Disconnect-OBS.md)                                                  |Disconnects OBS                                                              |
 |[Get-OBS](Get-OBS.md)                                                                |Gets OBS                                                                     |
+|[Get-OBS3dSwapTransitionShader](Get-OBS3dSwapTransitionShader.md)                    |
 |[Get-OBSAddShader](Get-OBSAddShader.md)                                              |
 |[Get-OBSAlphaBorderShader](Get-OBSAlphaBorderShader.md)                              |
 |[Get-OBSAlphaGamingBentCameraShader](Get-OBSAlphaGamingBentCameraShader.md)          |
@@ -45,6 +46,9 @@ Functions
 |[Get-OBSChromaticAberrationShader](Get-OBSChromaticAberrationShader.md)              |
 |[Get-OBSChromaUVDistortionShader](Get-OBSChromaUVDistortionShader.md)                |
 |[Get-OBSCircleMaskFilterShader](Get-OBSCircleMaskFilterShader.md)                    |
+|[Get-OBSClockAnalogShader](Get-OBSClockAnalogShader.md)                              |
+|[Get-OBSClockDigitalLedShader](Get-OBSClockDigitalLedShader.md)                      |
+|[Get-OBSClockDigitalNixieShader](Get-OBSClockDigitalNixieShader.md)                  |
 |[Get-OBSColorDepthShader](Get-OBSColorDepthShader.md)                                |
 |[Get-OBSColorGradeFilterShader](Get-OBSColorGradeFilterShader.md)                    |
 |[Get-OBSCornerPinShader](Get-OBSCornerPinShader.md)                                  |
@@ -58,6 +62,8 @@ Functions
 |[Get-OBSCylinderShader](Get-OBSCylinderShader.md)                                    |
 |[Get-OBSDarkenShader](Get-OBSDarkenShader.md)                                        |
 |[Get-OBSDeadPixelFixerShader](Get-OBSDeadPixelFixerShader.md)                        |
+|[Get-OBSDensitySatHueShader](Get-OBSDensitySatHueShader.md)                          |
+|[Get-OBSDiffuseTransitionShader](Get-OBSDiffuseTransitionShader.md)                  |
 |[Get-OBSDigitalRainShader](Get-OBSDigitalRainShader.md)                              |
 |[Get-OBSDivideRotateShader](Get-OBSDivideRotateShader.md)                            |
 |[Get-OBSDoodleShader](Get-OBSDoodleShader.md)                                        |
@@ -156,6 +162,7 @@ Functions
 |[Get-OBSRgbColorWheelShader](Get-OBSRgbColorWheelShader.md)                          |
 |[Get-OBSRgbSplitShader](Get-OBSRgbSplitShader.md)                                    |
 |[Get-OBSRgbvisibilityShader](Get-OBSRgbvisibilityShader.md)                          |
+|[Get-OBSRGSSAAShader](Get-OBSRGSSAAShader.md)                                        |
 |[Get-OBSRippleShader](Get-OBSRippleShader.md)                                        |
 |[Get-OBSRotatingSourceShader](Get-OBSRotatingSourceShader.md)                        |
 |[Get-OBSRotatoeShader](Get-OBSRotatoeShader.md)                                      |
@@ -185,6 +192,7 @@ Functions
 |[Get-OBSShineShader](Get-OBSShineShader.md)                                          |
 |[Get-OBSSimpleGradientShader](Get-OBSSimpleGradientShader.md)                        |
 |[Get-OBSSimplexNoiseShader](Get-OBSSimplexNoiseShader.md)                            |
+|[Get-OBSSmartDenoiseShader](Get-OBSSmartDenoiseShader.md)                            |
 |[Get-OBSSourceActive](Get-OBSSourceActive.md)                                        |Get-OBSSourceActive : GetSourceActive                                        |
 |[Get-OBSSourceFilter](Get-OBSSourceFilter.md)                                        |Get-OBSSourceFilter : GetSourceFilter                                        |
 |[Get-OBSSourceFilterDefaultSettings](Get-OBSSourceFilterDefaultSettings.md)          |Get-OBSSourceFilterDefaultSettings : GetSourceFilterDefaultSettings          |
@@ -192,12 +200,14 @@ Functions
 |[Get-OBSSourceFilterList](Get-OBSSourceFilterList.md)                                |Get-OBSSourceFilterList : GetSourceFilterList                                |
 |[Get-OBSSourceScreenshot](Get-OBSSourceScreenshot.md)                                |Get-OBSSourceScreenshot : GetSourceScreenshot                                |
 |[Get-OBSSpecialInputs](Get-OBSSpecialInputs.md)                                      |Get-OBSSpecialInputs : GetSpecialInputs                                      |
+|[Get-OBSSpecularShineShader](Get-OBSSpecularShineShader.md)                          |
 |[Get-OBSSpotlightShader](Get-OBSSpotlightShader.md)                                  |
 |[Get-OBSStats](Get-OBSStats.md)                                                      |Get-OBSStats : GetStats                                                      |
 |[Get-OBSStreamServiceSettings](Get-OBSStreamServiceSettings.md)                      |Get-OBSStreamServiceSettings : GetStreamServiceSettings                      |
 |[Get-OBSStreamStatus](Get-OBSStreamStatus.md)                                        |Get-OBSStreamStatus : GetStreamStatus                                        |
 |[Get-OBSStudioModeEnabled](Get-OBSStudioModeEnabled.md)                              |Get-OBSStudioModeEnabled : GetStudioModeEnabled                              |
 |[Get-OBSSwirlShader](Get-OBSSwirlShader.md)                                          |
+|[Get-OBSTetraShader](Get-OBSTetraShader.md)                                          |
 |[Get-OBSThermalShader](Get-OBSThermalShader.md)                                      |
 |[Get-OBSTransitionKind](Get-OBSTransitionKind.md)                                    |Get-OBSTransitionKind : GetTransitionKindList                                |
 |[Get-OBSTvCrtSubpixelShader](Get-OBSTvCrtSubpixelShader.md)                          |
@@ -340,6 +350,7 @@ Aliases
 |[Copy-OBSSceneItem](Copy-OBSSceneItem.md)                                            |
 |[Disconnect-OBS](Disconnect-OBS.md)                                                  |
 |[Get-OBS](Get-OBS.md)                                                                |
+|[Get-OBS3dSwapTransitionShader](Get-OBS3dSwapTransitionShader.md)                    |
 |[Get-OBSAddShader](Get-OBSAddShader.md)                                              |
 |[Get-OBSAlphaBorderShader](Get-OBSAlphaBorderShader.md)                              |
 |[Get-OBSAlphaGamingBentCameraShader](Get-OBSAlphaGamingBentCameraShader.md)          |
@@ -360,6 +371,9 @@ Aliases
 |[Get-OBSChromaticAberrationShader](Get-OBSChromaticAberrationShader.md)              |
 |[Get-OBSChromaUVDistortionShader](Get-OBSChromaUVDistortionShader.md)                |
 |[Get-OBSCircleMaskFilterShader](Get-OBSCircleMaskFilterShader.md)                    |
+|[Get-OBSClockAnalogShader](Get-OBSClockAnalogShader.md)                              |
+|[Get-OBSClockDigitalLedShader](Get-OBSClockDigitalLedShader.md)                      |
+|[Get-OBSClockDigitalNixieShader](Get-OBSClockDigitalNixieShader.md)                  |
 |[Get-OBSColorDepthShader](Get-OBSColorDepthShader.md)                                |
 |[Get-OBSColorGradeFilterShader](Get-OBSColorGradeFilterShader.md)                    |
 |[Get-OBSCornerPinShader](Get-OBSCornerPinShader.md)                                  |
@@ -373,6 +387,8 @@ Aliases
 |[Get-OBSCylinderShader](Get-OBSCylinderShader.md)                                    |
 |[Get-OBSDarkenShader](Get-OBSDarkenShader.md)                                        |
 |[Get-OBSDeadPixelFixerShader](Get-OBSDeadPixelFixerShader.md)                        |
+|[Get-OBSDensitySatHueShader](Get-OBSDensitySatHueShader.md)                          |
+|[Get-OBSDiffuseTransitionShader](Get-OBSDiffuseTransitionShader.md)                  |
 |[Get-OBSDigitalRainShader](Get-OBSDigitalRainShader.md)                              |
 |[Get-OBSDivideRotateShader](Get-OBSDivideRotateShader.md)                            |
 |[Get-OBSDoodleShader](Get-OBSDoodleShader.md)                                        |
@@ -471,6 +487,7 @@ Aliases
 |[Get-OBSRgbColorWheelShader](Get-OBSRgbColorWheelShader.md)                          |
 |[Get-OBSRgbSplitShader](Get-OBSRgbSplitShader.md)                                    |
 |[Get-OBSRgbvisibilityShader](Get-OBSRgbvisibilityShader.md)                          |
+|[Get-OBSRGSSAAShader](Get-OBSRGSSAAShader.md)                                        |
 |[Get-OBSRippleShader](Get-OBSRippleShader.md)                                        |
 |[Get-OBSRotatingSourceShader](Get-OBSRotatingSourceShader.md)                        |
 |[Get-OBSRotatoeShader](Get-OBSRotatoeShader.md)                                      |
@@ -500,6 +517,7 @@ Aliases
 |[Get-OBSShineShader](Get-OBSShineShader.md)                                          |
 |[Get-OBSSimpleGradientShader](Get-OBSSimpleGradientShader.md)                        |
 |[Get-OBSSimplexNoiseShader](Get-OBSSimplexNoiseShader.md)                            |
+|[Get-OBSSmartDenoiseShader](Get-OBSSmartDenoiseShader.md)                            |
 |[Get-OBSSourceActive](Get-OBSSourceActive.md)                                        |
 |[Get-OBSSourceFilter](Get-OBSSourceFilter.md)                                        |
 |[Get-OBSSourceFilterDefaultSettings](Get-OBSSourceFilterDefaultSettings.md)          |
@@ -507,12 +525,14 @@ Aliases
 |[Get-OBSSourceFilterList](Get-OBSSourceFilterList.md)                                |
 |[Get-OBSSourceScreenshot](Get-OBSSourceScreenshot.md)                                |
 |[Get-OBSSpecialInputs](Get-OBSSpecialInputs.md)                                      |
+|[Get-OBSSpecularShineShader](Get-OBSSpecularShineShader.md)                          |
 |[Get-OBSSpotlightShader](Get-OBSSpotlightShader.md)                                  |
 |[Get-OBSStats](Get-OBSStats.md)                                                      |
 |[Get-OBSStreamServiceSettings](Get-OBSStreamServiceSettings.md)                      |
 |[Get-OBSStreamStatus](Get-OBSStreamStatus.md)                                        |
 |[Get-OBSStudioModeEnabled](Get-OBSStudioModeEnabled.md)                              |
 |[Get-OBSSwirlShader](Get-OBSSwirlShader.md)                                          |
+|[Get-OBSTetraShader](Get-OBSTetraShader.md)                                          |
 |[Get-OBSThermalShader](Get-OBSThermalShader.md)                                      |
 |[Get-OBSTransitionKind](Get-OBSTransitionKind.md)                                    |
 |[Get-OBSTvCrtSubpixelShader](Get-OBSTvCrtSubpixelShader.md)                          |

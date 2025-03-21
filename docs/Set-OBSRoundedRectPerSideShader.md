@@ -2,7 +2,6 @@ Get-OBSRoundedRectPerSideShader
 -------------------------------
 
 ### Synopsis
-
 Get-OBSRoundedRectPerSideShader [[-CornerRadiusBottom] <int>] [[-CornerRadiusLeft] <int>] [[-CornerRadiusTop] <int>] [[-CornerRadiusRight] <int>] [[-BorderThickness] <int>] [[-BorderColor] <string>] [[-BorderAlphaStart] <float>] [[-BorderAlphaEnd] <float>] [[-AlphaCutOff] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,97 +15,97 @@ Get-OBSRoundedRectPerSideShader [[-CornerRadiusBottom] <int>] [[-CornerRadiusLef
 
 |Type     |Required|Position|PipelineInput|Aliases      |
 |---------|--------|--------|-------------|-------------|
-|`[float]`|false   |8       |false        |alpha_cut_off|
+|`[Float]`|false   |named   |False        |alpha_cut_off|
 
 #### **BorderAlphaEnd**
 
 |Type     |Required|Position|PipelineInput|Aliases         |
 |---------|--------|--------|-------------|----------------|
-|`[float]`|false   |7       |false        |border_alpha_end|
+|`[Float]`|false   |named   |False        |border_alpha_end|
 
 #### **BorderAlphaStart**
 
 |Type     |Required|Position|PipelineInput|Aliases           |
 |---------|--------|--------|-------------|------------------|
-|`[float]`|false   |6       |false        |border_alpha_start|
+|`[Float]`|false   |named   |False        |border_alpha_start|
 
 #### **BorderColor**
 
 |Type      |Required|Position|PipelineInput|Aliases     |
 |----------|--------|--------|-------------|------------|
-|`[string]`|false   |5       |false        |border_color|
+|`[String]`|false   |named   |False        |border_color|
 
 #### **BorderThickness**
 
 |Type   |Required|Position|PipelineInput|Aliases         |
 |-------|--------|--------|-------------|----------------|
-|`[int]`|false   |4       |false        |border_thickness|
+|`[Int]`|false   |named   |False        |border_thickness|
 
 #### **CornerRadiusBottom**
 
 |Type   |Required|Position|PipelineInput|Aliases             |
 |-------|--------|--------|-------------|--------------------|
-|`[int]`|false   |0       |false        |corner_radius_bottom|
+|`[Int]`|false   |named   |False        |corner_radius_bottom|
 
 #### **CornerRadiusLeft**
 
 |Type   |Required|Position|PipelineInput|Aliases           |
 |-------|--------|--------|-------------|------------------|
-|`[int]`|false   |1       |false        |corner_radius_left|
+|`[Int]`|false   |named   |False        |corner_radius_left|
 
 #### **CornerRadiusRight**
 
 |Type   |Required|Position|PipelineInput|Aliases            |
 |-------|--------|--------|-------------|-------------------|
-|`[int]`|false   |3       |false        |corner_radius_right|
+|`[Int]`|false   |named   |False        |corner_radius_right|
 
 #### **CornerRadiusTop**
 
 |Type   |Required|Position|PipelineInput|Aliases          |
 |-------|--------|--------|-------------|-----------------|
-|`[int]`|false   |2       |false        |corner_radius_top|
+|`[Int]`|false   |named   |False        |corner_radius_top|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |10      |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |11      |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |9       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -122,11 +121,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSRoundedRectPerSideShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSRoundedRectPerSideShader [[-CornerRadiusBottom] <Int>] [[-CornerRadiusLeft] <Int>] [[-CornerRadiusTop] <Int>] [[-CornerRadiusRight] <Int>] [[-BorderThickness] <Int>] [[-BorderColor] <String>] [[-BorderAlphaStart] <Float>] [[-BorderAlphaEnd] <Float>] [[-AlphaCutOff] <Float>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

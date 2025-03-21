@@ -2,7 +2,6 @@ Get-OBSDrunkShader
 ------------------
 
 ### Synopsis
-
 Get-OBSDrunkShader [[-ColorMatrix] <float[][]>] [[-GlowPercent] <int>] [[-Blur] <int>] [[-MinBrightness] <int>] [[-MaxBrightness] <int>] [[-PulseSpeedPercent] <int>] [[-GlowColor] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ApplyToAlphaLayer] [-Ease] [-Glitch] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,109 +15,109 @@ Get-OBSDrunkShader [[-ColorMatrix] <float[][]>] [[-GlowPercent] <int>] [[-Blur] 
 
 |Type      |Required|Position|PipelineInput|Aliases             |
 |----------|--------|--------|-------------|--------------------|
-|`[switch]`|false   |Named   |false        |Apply_To_Alpha_Layer|
+|`[Switch]`|false   |named   |False        |Apply_To_Alpha_Layer|
 
 #### **Blur**
 
 |Type   |Required|Position|PipelineInput|
 |-------|--------|--------|-------------|
-|`[int]`|false   |2       |false        |
+|`[Int]`|false   |named   |False        |
 
 #### **ColorMatrix**
 
-|Type         |Required|Position|PipelineInput|Aliases     |
-|-------------|--------|--------|-------------|------------|
-|`[float[][]]`|false   |0       |false        |color_matrix|
+|Type                 |Required|Position|PipelineInput|Aliases     |
+|---------------------|--------|--------|-------------|------------|
+|`[System.Single[][]]`|false   |named   |False        |color_matrix|
 
 #### **Ease**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |9       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Glitch**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **GlowColor**
 
 |Type      |Required|Position|PipelineInput|Aliases   |
 |----------|--------|--------|-------------|----------|
-|`[string]`|false   |6       |false        |glow_color|
+|`[String]`|false   |named   |False        |glow_color|
 
 #### **GlowPercent**
 
 |Type   |Required|Position|PipelineInput|Aliases     |
 |-------|--------|--------|-------------|------------|
-|`[int]`|false   |1       |false        |glow_percent|
+|`[Int]`|false   |named   |False        |glow_percent|
 
 #### **MaxBrightness**
 
 |Type   |Required|Position|PipelineInput|Aliases       |
 |-------|--------|--------|-------------|--------------|
-|`[int]`|false   |4       |false        |max_brightness|
+|`[Int]`|false   |named   |False        |max_brightness|
 
 #### **MinBrightness**
 
 |Type   |Required|Position|PipelineInput|Aliases       |
 |-------|--------|--------|-------------|--------------|
-|`[int]`|false   |3       |false        |min_brightness|
+|`[Int]`|false   |named   |False        |min_brightness|
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Notes**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |7       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PulseSpeedPercent**
 
 |Type   |Required|Position|PipelineInput|Aliases            |
 |-------|--------|--------|-------------|-------------------|
-|`[int]`|false   |5       |false        |pulse_speed_percent|
+|`[Int]`|false   |named   |False        |pulse_speed_percent|
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |10      |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |8       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -134,11 +133,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSDrunkShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSDrunkShader [[-ColorMatrix] <System.Single[][]>] [[-GlowPercent] <Int>] [[-Blur] <Int>] [[-MinBrightness] <Int>] [[-MaxBrightness] <Int>] [[-PulseSpeedPercent] <Int>] [-ApplyToAlphaLayer <Switch>] [[-GlowColor] <String>] [-Ease <Switch>] [-Glitch <Switch>] [[-Notes] <String>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

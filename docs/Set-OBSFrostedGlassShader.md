@@ -2,7 +2,6 @@ Get-OBSFrostedGlassShader
 -------------------------
 
 ### Synopsis
-
 Get-OBSFrostedGlassShader [[-AlphaPercent] <float>] [[-Amount] <float>] [[-Scale] <float>] [[-BorderOffset] <float>] [[-BorderColor] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Animate] [-HorizontalBorder] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,91 +15,91 @@ Get-OBSFrostedGlassShader [[-AlphaPercent] <float>] [[-Amount] <float>] [[-Scale
 
 |Type     |Required|Position|PipelineInput|Aliases      |
 |---------|--------|--------|-------------|-------------|
-|`[float]`|false   |0       |false        |Alpha_Percent|
+|`[Float]`|false   |named   |False        |Alpha_Percent|
 
 #### **Amount**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |1       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **Animate**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **BorderColor**
 
 |Type      |Required|Position|PipelineInput|Aliases     |
 |----------|--------|--------|-------------|------------|
-|`[string]`|false   |4       |false        |Border_Color|
+|`[String]`|false   |named   |False        |Border_Color|
 
 #### **BorderOffset**
 
 |Type     |Required|Position|PipelineInput|Aliases      |
 |---------|--------|--------|-------------|-------------|
-|`[float]`|false   |3       |false        |Border_Offset|
+|`[Float]`|false   |named   |False        |Border_Offset|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |7       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **HorizontalBorder**
 
 |Type      |Required|Position|PipelineInput|Aliases          |
 |----------|--------|--------|-------------|-----------------|
-|`[switch]`|false   |Named   |false        |Horizontal_Border|
+|`[Switch]`|false   |named   |False        |Horizontal_Border|
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Notes**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |5       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Scale**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |2       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |8       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |6       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -116,11 +115,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSFrostedGlassShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSFrostedGlassShader [[-AlphaPercent] <Float>] [[-Amount] <Float>] [[-Scale] <Float>] [-Animate <Switch>] [-HorizontalBorder <Switch>] [[-BorderOffset] <Float>] [[-BorderColor] <String>] [[-Notes] <String>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

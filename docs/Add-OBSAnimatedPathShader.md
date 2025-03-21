@@ -2,7 +2,6 @@ Get-OBSAnimatedPathShader
 -------------------------
 
 ### Synopsis
-
 Get-OBSAnimatedPathShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-RandF] <float>] [[-SpeedPercent] <int>] [[-PathMap] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Reverse] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,103 +15,103 @@ Get-OBSAnimatedPathShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-Elaps
 
 |Type     |Required|Position|PipelineInput|Aliases     |
 |---------|--------|--------|-------------|------------|
-|`[float]`|false   |2       |false        |elapsed_time|
+|`[Float]`|false   |named   |False        |elapsed_time|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |10      |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Image**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |1       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PathMap**
 
 |Type      |Required|Position|PipelineInput|Aliases |
 |----------|--------|--------|-------------|--------|
-|`[string]`|false   |8       |false        |path_map|
+|`[String]`|false   |named   |False        |path_map|
 
 #### **RandF**
 
 |Type     |Required|Position|PipelineInput|Aliases|
 |---------|--------|--------|-------------|-------|
-|`[float]`|false   |6       |false        |rand_f |
+|`[Float]`|false   |named   |False        |rand_f |
 
 #### **Reverse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |11      |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |9       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **SpeedPercent**
 
 |Type   |Required|Position|PipelineInput|Aliases      |
 |-------|--------|--------|-------------|-------------|
-|`[int]`|false   |7       |false        |speed_percent|
+|`[Int]`|false   |named   |False        |speed_percent|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **UvOffset**
 
-|Type       |Required|Position|PipelineInput|Aliases  |
-|-----------|--------|--------|-------------|---------|
-|`[float[]]`|false   |3       |false        |uv_offset|
+|Type               |Required|Position|PipelineInput|Aliases  |
+|-------------------|--------|--------|-------------|---------|
+|`[System.Single[]]`|false   |named   |False        |uv_offset|
 
 #### **UvPixelInterval**
 
-|Type       |Required|Position|PipelineInput|Aliases          |
-|-----------|--------|--------|-------------|-----------------|
-|`[float[]]`|false   |5       |false        |uv_pixel_interval|
+|Type               |Required|Position|PipelineInput|Aliases          |
+|-------------------|--------|--------|-------------|-----------------|
+|`[System.Single[]]`|false   |named   |False        |uv_pixel_interval|
 
 #### **UvScale**
 
-|Type       |Required|Position|PipelineInput|Aliases |
-|-----------|--------|--------|-------------|--------|
-|`[float[]]`|false   |4       |false        |uv_scale|
+|Type               |Required|Position|PipelineInput|Aliases |
+|-------------------|--------|--------|-------------|--------|
+|`[System.Single[]]`|false   |named   |False        |uv_scale|
 
 #### **ViewProj**
 
-|Type         |Required|Position|PipelineInput|
-|-------------|--------|--------|-------------|
-|`[float[][]]`|false   |0       |false        |
+|Type                 |Required|Position|PipelineInput|
+|---------------------|--------|--------|-------------|
+|`[System.Single[][]]`|false   |named   |False        |
 
 ---
 
@@ -128,11 +127,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSAnimatedPathShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSAnimatedPathShader [[-ViewProj] <System.Single[][]>] [[-Image] <String>] [[-ElapsedTime] <Float>] [[-UvOffset] <System.Single[]>] [[-UvScale] <System.Single[]>] [[-UvPixelInterval] <System.Single[]>] [[-RandF] <Float>] [[-SpeedPercent] <Int>] [[-PathMap] <String>] [-Reverse <Switch>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

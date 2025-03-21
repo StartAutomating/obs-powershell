@@ -2,7 +2,6 @@ Get-OBSRgbColorWheelShader
 --------------------------
 
 ### Synopsis
-
 Get-OBSRgbColorWheelShader [[-Speed] <float>] [[-ColorDepth] <float>] [[-ColorToReplace] <string>] [[-AlphaPercentage] <float>] [[-CenterWidthPercentage] <int>] [[-CenterHeightPercentage] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ApplyToImage] [-ReplaceImageColor] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,97 +15,97 @@ Get-OBSRgbColorWheelShader [[-Speed] <float>] [[-ColorDepth] <float>] [[-ColorTo
 
 |Type     |Required|Position|PipelineInput|Aliases         |
 |---------|--------|--------|-------------|----------------|
-|`[float]`|false   |3       |false        |Alpha_Percentage|
+|`[Float]`|false   |named   |False        |Alpha_Percentage|
 
 #### **ApplyToImage**
 
 |Type      |Required|Position|PipelineInput|Aliases       |
 |----------|--------|--------|-------------|--------------|
-|`[switch]`|false   |Named   |false        |Apply_To_Image|
+|`[Switch]`|false   |named   |False        |Apply_To_Image|
 
 #### **ApplyToSpecificColor**
 
 |Type      |Required|Position|PipelineInput|Aliases                |
 |----------|--------|--------|-------------|-----------------------|
-|`[switch]`|false   |Named   |false        |Apply_To_Specific_Color|
+|`[Switch]`|false   |named   |False        |Apply_To_Specific_Color|
 
 #### **CenterHeightPercentage**
 
 |Type   |Required|Position|PipelineInput|Aliases                 |
 |-------|--------|--------|-------------|------------------------|
-|`[int]`|false   |5       |false        |center_height_percentage|
+|`[Int]`|false   |named   |False        |center_height_percentage|
 
 #### **CenterWidthPercentage**
 
 |Type   |Required|Position|PipelineInput|Aliases                |
 |-------|--------|--------|-------------|-----------------------|
-|`[int]`|false   |4       |false        |center_width_percentage|
+|`[Int]`|false   |named   |False        |center_width_percentage|
 
 #### **ColorDepth**
 
 |Type     |Required|Position|PipelineInput|Aliases    |
 |---------|--------|--------|-------------|-----------|
-|`[float]`|false   |1       |false        |color_depth|
+|`[Float]`|false   |named   |False        |color_depth|
 
 #### **ColorToReplace**
 
 |Type      |Required|Position|PipelineInput|Aliases         |
 |----------|--------|--------|-------------|----------------|
-|`[string]`|false   |2       |false        |Color_To_Replace|
+|`[String]`|false   |named   |False        |Color_To_Replace|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |7       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **ReplaceImageColor**
 
 |Type      |Required|Position|PipelineInput|Aliases            |
 |----------|--------|--------|-------------|-------------------|
-|`[switch]`|false   |Named   |false        |Replace_Image_Color|
+|`[Switch]`|false   |named   |False        |Replace_Image_Color|
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |8       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |6       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **Speed**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |0       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -122,11 +121,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSRgbColorWheelShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSRgbColorWheelShader [[-Speed] <Float>] [[-ColorDepth] <Float>] [-ApplyToImage <Switch>] [-ReplaceImageColor <Switch>] [-ApplyToSpecificColor <Switch>] [[-ColorToReplace] <String>] [[-AlphaPercentage] <Float>] [[-CenterWidthPercentage] <Int>] [[-CenterHeightPercentage] <Int>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

@@ -2,7 +2,6 @@ Get-OBSFisheyeXyShader
 ----------------------
 
 ### Synopsis
-
 Get-OBSFisheyeXyShader [[-CenterXPercent] <float>] [[-CenterYPercent] <float>] [[-PowerX] <float>] [[-PowerY] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,67 +15,67 @@ Get-OBSFisheyeXyShader [[-CenterXPercent] <float>] [[-CenterYPercent] <float>] [
 
 |Type     |Required|Position|PipelineInput|Aliases         |
 |---------|--------|--------|-------------|----------------|
-|`[float]`|false   |0       |false        |center_x_percent|
+|`[Float]`|false   |named   |False        |center_x_percent|
 
 #### **CenterYPercent**
 
 |Type     |Required|Position|PipelineInput|Aliases         |
 |---------|--------|--------|-------------|----------------|
-|`[float]`|false   |1       |false        |center_y_percent|
+|`[Float]`|false   |named   |False        |center_y_percent|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |5       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PowerX**
 
 |Type     |Required|Position|PipelineInput|Aliases|
 |---------|--------|--------|-------------|-------|
-|`[float]`|false   |2       |false        |power_x|
+|`[Float]`|false   |named   |False        |power_x|
 
 #### **PowerY**
 
 |Type     |Required|Position|PipelineInput|Aliases|
 |---------|--------|--------|-------------|-------|
-|`[float]`|false   |3       |false        |power_y|
+|`[Float]`|false   |named   |False        |power_y|
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |6       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |4       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -92,11 +91,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSFisheyeXyShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSFisheyeXyShader [[-CenterXPercent] <Float>] [[-CenterYPercent] <Float>] [[-PowerX] <Float>] [[-PowerY] <Float>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

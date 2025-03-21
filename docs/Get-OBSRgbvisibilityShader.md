@@ -2,7 +2,6 @@ Get-OBSRgbvisibilityShader
 --------------------------
 
 ### Synopsis
-
 Get-OBSRgbvisibilityShader [[-Red] <float>] [[-Green] <float>] [[-Blue] <float>] [[-RedVisibility] <float>] [[-GreenVisibility] <float>] [[-BlueVisibility] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,85 +15,85 @@ Get-OBSRgbvisibilityShader [[-Red] <float>] [[-Green] <float>] [[-Blue] <float>]
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |2       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **BlueVisibility**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |5       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |8       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Green**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |1       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **GreenVisibility**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |4       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Notes**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |6       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Red**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |0       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **RedVisibility**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |3       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |9       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |7       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -110,11 +109,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSRgbvisibilityShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSRgbvisibilityShader [[-Red] <Float>] [[-Green] <Float>] [[-Blue] <Float>] [[-RedVisibility] <Float>] [[-GreenVisibility] <Float>] [[-BlueVisibility] <Float>] [[-Notes] <String>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

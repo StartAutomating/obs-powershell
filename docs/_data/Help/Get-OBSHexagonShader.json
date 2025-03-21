@@ -1,5 +1,5 @@
 {
-  "Synopsis": "\nGet-OBSHexagonShader [[-HexColor] <string>] [[-AlphaPercent] <int>] [[-Quantity] <float>] [[-BorderWidth] <int>] [[-SpeedPercent] <int>] [[-DistortX] <float>] [[-DistortY] <float>] [[-OffsetX] <float>] [[-OffsetY] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Blend] [-Equilateral] [-ZoomAnimate] [-Glitch] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]\n",
+  "Synopsis": "Get-OBSHexagonShader [[-HexColor] <string>] [[-AlphaPercent] <int>] [[-Quantity] <float>] [[-BorderWidth] <int>] [[-SpeedPercent] <int>] [[-DistortX] <float>] [[-DistortY] <float>] [[-OffsetX] <float>] [[-OffsetY] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Blend] [-Equilateral] [-ZoomAnimate] [-Glitch] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]",
   "Description": "",
   "Parameters": [
     {
@@ -23,7 +23,7 @@
     null
   ],
   "Inputs": [
-    "System.String\n"
+    "System.String"
   ],
   "Outputs": [
     "System.Object"

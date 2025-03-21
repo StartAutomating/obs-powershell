@@ -2,7 +2,6 @@ Get-OBSDigitalRainShader
 ------------------------
 
 ### Synopsis
-
 Get-OBSDigitalRainShader [[-Font] <string>] [[-Noise] <string>] [[-BaseColor] <string>] [[-RainSpeed] <float>] [[-CharSpeed] <float>] [[-GlowContrast] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,79 +15,79 @@ Get-OBSDigitalRainShader [[-Font] <string>] [[-Noise] <string>] [[-BaseColor] <s
 
 |Type      |Required|Position|PipelineInput|Aliases   |
 |----------|--------|--------|-------------|----------|
-|`[string]`|false   |2       |false        |base_color|
+|`[String]`|false   |named   |False        |base_color|
 
 #### **CharSpeed**
 
 |Type     |Required|Position|PipelineInput|Aliases   |
 |---------|--------|--------|-------------|----------|
-|`[float]`|false   |4       |false        |char_speed|
+|`[Float]`|false   |named   |False        |char_speed|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |7       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Font**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |0       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **GlowContrast**
 
 |Type     |Required|Position|PipelineInput|Aliases      |
 |---------|--------|--------|-------------|-------------|
-|`[float]`|false   |5       |false        |glow_contrast|
-
-#### **NoResponse**
-
-|Type      |Required|Position|PipelineInput|
-|----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Float]`|false   |named   |False        |glow_contrast|
 
 #### **Noise**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |1       |false        |
+|`[String]`|false   |named   |False        |
+
+#### **NoResponse**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **RainSpeed**
 
 |Type     |Required|Position|PipelineInput|Aliases   |
 |---------|--------|--------|-------------|----------|
-|`[float]`|false   |3       |false        |rain_speed|
+|`[Float]`|false   |named   |False        |rain_speed|
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |8       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |6       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -104,11 +103,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSDigitalRainShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSDigitalRainShader [[-Font] <String>] [[-Noise] <String>] [[-BaseColor] <String>] [[-RainSpeed] <Float>] [[-CharSpeed] <Float>] [[-GlowContrast] <Float>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

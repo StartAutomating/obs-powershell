@@ -2,7 +2,6 @@ Get-OBSPieChartShader
 ---------------------
 
 ### Synopsis
-
 Get-OBSPieChartShader [[-InnerRadius] <float>] [[-OuterRadius] <float>] [[-StartAngle] <float>] [[-Total] <int>] [[-Part1] <int>] [[-Color1] <string>] [[-Part2] <int>] [[-Color2] <string>] [[-Part3] <int>] [[-Color3] <string>] [[-Part4] <int>] [[-Color4] <string>] [[-Part5] <int>] [[-Color5] <string>] [[-Part6] <int>] [[-Color6] <string>] [[-Part7] <int>] [[-Color7] <string>] [[-Part8] <int>] [[-Color8] <string>] [[-Part9] <int>] [[-Color9] <string>] [[-Part10] <int>] [[-Color10] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,187 +15,187 @@ Get-OBSPieChartShader [[-InnerRadius] <float>] [[-OuterRadius] <float>] [[-Start
 
 |Type      |Required|Position|PipelineInput|Aliases|
 |----------|--------|--------|-------------|-------|
-|`[string]`|false   |5       |false        |color_1|
+|`[String]`|false   |named   |False        |color_1|
 
 #### **Color10**
 
 |Type      |Required|Position|PipelineInput|Aliases |
 |----------|--------|--------|-------------|--------|
-|`[string]`|false   |23      |false        |color_10|
+|`[String]`|false   |named   |False        |color_10|
 
 #### **Color2**
 
 |Type      |Required|Position|PipelineInput|Aliases|
 |----------|--------|--------|-------------|-------|
-|`[string]`|false   |7       |false        |color_2|
+|`[String]`|false   |named   |False        |color_2|
 
 #### **Color3**
 
 |Type      |Required|Position|PipelineInput|Aliases|
 |----------|--------|--------|-------------|-------|
-|`[string]`|false   |9       |false        |color_3|
+|`[String]`|false   |named   |False        |color_3|
 
 #### **Color4**
 
 |Type      |Required|Position|PipelineInput|Aliases|
 |----------|--------|--------|-------------|-------|
-|`[string]`|false   |11      |false        |color_4|
+|`[String]`|false   |named   |False        |color_4|
 
 #### **Color5**
 
 |Type      |Required|Position|PipelineInput|Aliases|
 |----------|--------|--------|-------------|-------|
-|`[string]`|false   |13      |false        |color_5|
+|`[String]`|false   |named   |False        |color_5|
 
 #### **Color6**
 
 |Type      |Required|Position|PipelineInput|Aliases|
 |----------|--------|--------|-------------|-------|
-|`[string]`|false   |15      |false        |color_6|
+|`[String]`|false   |named   |False        |color_6|
 
 #### **Color7**
 
 |Type      |Required|Position|PipelineInput|Aliases|
 |----------|--------|--------|-------------|-------|
-|`[string]`|false   |17      |false        |color_7|
+|`[String]`|false   |named   |False        |color_7|
 
 #### **Color8**
 
 |Type      |Required|Position|PipelineInput|Aliases|
 |----------|--------|--------|-------------|-------|
-|`[string]`|false   |19      |false        |color_8|
+|`[String]`|false   |named   |False        |color_8|
 
 #### **Color9**
 
 |Type      |Required|Position|PipelineInput|Aliases|
 |----------|--------|--------|-------------|-------|
-|`[string]`|false   |21      |false        |color_9|
+|`[String]`|false   |named   |False        |color_9|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |25      |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **InnerRadius**
 
 |Type     |Required|Position|PipelineInput|Aliases     |
 |---------|--------|--------|-------------|------------|
-|`[float]`|false   |0       |false        |inner_radius|
+|`[Float]`|false   |named   |False        |inner_radius|
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **OuterRadius**
 
 |Type     |Required|Position|PipelineInput|Aliases     |
 |---------|--------|--------|-------------|------------|
-|`[float]`|false   |1       |false        |outer_radius|
+|`[Float]`|false   |named   |False        |outer_radius|
 
 #### **Part1**
 
 |Type   |Required|Position|PipelineInput|Aliases|
 |-------|--------|--------|-------------|-------|
-|`[int]`|false   |4       |false        |part_1 |
+|`[Int]`|false   |named   |False        |part_1 |
 
 #### **Part10**
 
 |Type   |Required|Position|PipelineInput|Aliases|
 |-------|--------|--------|-------------|-------|
-|`[int]`|false   |22      |false        |part_10|
+|`[Int]`|false   |named   |False        |part_10|
 
 #### **Part2**
 
 |Type   |Required|Position|PipelineInput|Aliases|
 |-------|--------|--------|-------------|-------|
-|`[int]`|false   |6       |false        |part_2 |
+|`[Int]`|false   |named   |False        |part_2 |
 
 #### **Part3**
 
 |Type   |Required|Position|PipelineInput|Aliases|
 |-------|--------|--------|-------------|-------|
-|`[int]`|false   |8       |false        |part_3 |
+|`[Int]`|false   |named   |False        |part_3 |
 
 #### **Part4**
 
 |Type   |Required|Position|PipelineInput|Aliases|
 |-------|--------|--------|-------------|-------|
-|`[int]`|false   |10      |false        |part_4 |
+|`[Int]`|false   |named   |False        |part_4 |
 
 #### **Part5**
 
 |Type   |Required|Position|PipelineInput|Aliases|
 |-------|--------|--------|-------------|-------|
-|`[int]`|false   |12      |false        |part_5 |
+|`[Int]`|false   |named   |False        |part_5 |
 
 #### **Part6**
 
 |Type   |Required|Position|PipelineInput|Aliases|
 |-------|--------|--------|-------------|-------|
-|`[int]`|false   |14      |false        |part_6 |
+|`[Int]`|false   |named   |False        |part_6 |
 
 #### **Part7**
 
 |Type   |Required|Position|PipelineInput|Aliases|
 |-------|--------|--------|-------------|-------|
-|`[int]`|false   |16      |false        |part_7 |
+|`[Int]`|false   |named   |False        |part_7 |
 
 #### **Part8**
 
 |Type   |Required|Position|PipelineInput|Aliases|
 |-------|--------|--------|-------------|-------|
-|`[int]`|false   |18      |false        |part_8 |
+|`[Int]`|false   |named   |False        |part_8 |
 
 #### **Part9**
 
 |Type   |Required|Position|PipelineInput|Aliases|
 |-------|--------|--------|-------------|-------|
-|`[int]`|false   |20      |false        |part_9 |
+|`[Int]`|false   |named   |False        |part_9 |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |26      |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |24      |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **StartAngle**
 
 |Type     |Required|Position|PipelineInput|Aliases    |
 |---------|--------|--------|-------------|-----------|
-|`[float]`|false   |2       |false        |start_angle|
+|`[Float]`|false   |named   |False        |start_angle|
 
 #### **Total**
 
 |Type   |Required|Position|PipelineInput|
 |-------|--------|--------|-------------|
-|`[int]`|false   |3       |false        |
+|`[Int]`|false   |named   |False        |
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -212,11 +211,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSPieChartShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSPieChartShader [[-InnerRadius] <Float>] [[-OuterRadius] <Float>] [[-StartAngle] <Float>] [[-Total] <Int>] [[-Part1] <Int>] [[-Color1] <String>] [[-Part2] <Int>] [[-Color2] <String>] [[-Part3] <Int>] [[-Color3] <String>] [[-Part4] <Int>] [[-Color4] <String>] [[-Part5] <Int>] [[-Color5] <String>] [[-Part6] <Int>] [[-Color6] <String>] [[-Part7] <Int>] [[-Color7] <String>] [[-Part8] <Int>] [[-Color8] <String>] [[-Part9] <Int>] [[-Color9] <String>] [[-Part10] <Int>] [[-Color10] <String>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

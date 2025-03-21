@@ -1,10 +1,11 @@
 
 #requires -Module PSDevOps
 #requires -Module obs-powershell
+Import-BuildStep -SourcePath (
+    Join-Path $PSScriptRoot 'GitHub'
+) -BuildSystem GitHubWorkflow
 
-Import-BuildStep -Module obs-powershell
-
-Push-Location $PSScriptRoot
+Push-Location ($PSScriptRoot | Split-Path)
 
 New-GitHubWorkflow -Job PowerShellStaticAnalysis, TestPowerShellOnLinux, TagReleaseAndPublish, BuildOBSPowerShell -OutputPath @'
 .\.github\workflows\build-obs-powershell.yml

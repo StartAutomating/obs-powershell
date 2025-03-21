@@ -1,5 +1,5 @@
 {
-  "Synopsis": "\nGet-OBSRotatoeShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-RandF] <float>] [[-UvSize] <float[]>] [[-SpeedPercent] <int>] [[-AxisX] <float>] [[-AxisY] <float>] [[-AxisZ] <float>] [[-AngleDegrees] <float>] [[-CenterWidthPercentage] <int>] [[-CenterHeightPercentage] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-RotateTransform] [-RotatePixels] [-RotateColors] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]\n",
+  "Synopsis": "Get-OBSRotatoeShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-RandF] <float>] [[-UvSize] <float[]>] [[-SpeedPercent] <int>] [[-AxisX] <float>] [[-AxisY] <float>] [[-AxisZ] <float>] [[-AngleDegrees] <float>] [[-CenterWidthPercentage] <int>] [[-CenterHeightPercentage] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-RotateTransform] [-RotatePixels] [-RotateColors] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]",
   "Description": "",
   "Parameters": [
     {
@@ -23,7 +23,7 @@
     null
   ],
   "Inputs": [
-    "System.String\n"
+    "System.String"
   ],
   "Outputs": [
     "System.Object"

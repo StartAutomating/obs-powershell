@@ -2,7 +2,6 @@ Get-OBSGlitchAnalogShader
 -------------------------
 
 ### Synopsis
-
 Get-OBSGlitchAnalogShader [[-ScanLineJitterDisplacement] <float>] [[-ScanLineJitterThresholdPercent] <int>] [[-VerticalJumpAmount] <float>] [[-VerticalSpeed] <float>] [[-HorizontalShake] <float>] [[-ColorDriftAmount] <float>] [[-ColorDriftSpeed] <float>] [[-PulseSpeedPercent] <int>] [[-AlphaPercent] <int>] [[-ColorToReplace] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-RotateColors] [-ApplyToAlphaLayer] [-ReplaceImageColor] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,133 +15,133 @@ Get-OBSGlitchAnalogShader [[-ScanLineJitterDisplacement] <float>] [[-ScanLineJit
 
 |Type   |Required|Position|PipelineInput|Aliases      |
 |-------|--------|--------|-------------|-------------|
-|`[int]`|false   |8       |false        |alpha_percent|
+|`[Int]`|false   |named   |False        |alpha_percent|
 
 #### **ApplyToAlphaLayer**
 
 |Type      |Required|Position|PipelineInput|Aliases             |
 |----------|--------|--------|-------------|--------------------|
-|`[switch]`|false   |Named   |false        |Apply_To_Alpha_Layer|
+|`[Switch]`|false   |named   |False        |Apply_To_Alpha_Layer|
 
 #### **ApplyToSpecificColor**
 
 |Type      |Required|Position|PipelineInput|Aliases                |
 |----------|--------|--------|-------------|-----------------------|
-|`[switch]`|false   |Named   |false        |Apply_To_Specific_Color|
+|`[Switch]`|false   |named   |False        |Apply_To_Specific_Color|
 
 #### **ColorDriftAmount**
 
 |Type     |Required|Position|PipelineInput|Aliases           |
 |---------|--------|--------|-------------|------------------|
-|`[float]`|false   |5       |false        |color_drift_amount|
+|`[Float]`|false   |named   |False        |color_drift_amount|
 
 #### **ColorDriftSpeed**
 
 |Type     |Required|Position|PipelineInput|Aliases          |
 |---------|--------|--------|-------------|-----------------|
-|`[float]`|false   |6       |false        |color_drift_speed|
+|`[Float]`|false   |named   |False        |color_drift_speed|
 
 #### **ColorToReplace**
 
 |Type      |Required|Position|PipelineInput|Aliases         |
 |----------|--------|--------|-------------|----------------|
-|`[string]`|false   |9       |false        |Color_To_Replace|
+|`[String]`|false   |named   |False        |Color_To_Replace|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |12      |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **HorizontalShake**
 
 |Type     |Required|Position|PipelineInput|Aliases         |
 |---------|--------|--------|-------------|----------------|
-|`[float]`|false   |4       |false        |horizontal_shake|
+|`[Float]`|false   |named   |False        |horizontal_shake|
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Notes**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |10      |false        |
+|`[String]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PulseSpeedPercent**
 
 |Type   |Required|Position|PipelineInput|Aliases            |
 |-------|--------|--------|-------------|-------------------|
-|`[int]`|false   |7       |false        |pulse_speed_percent|
+|`[Int]`|false   |named   |False        |pulse_speed_percent|
 
 #### **ReplaceImageColor**
 
 |Type      |Required|Position|PipelineInput|Aliases            |
 |----------|--------|--------|-------------|-------------------|
-|`[switch]`|false   |Named   |false        |Replace_Image_Color|
+|`[Switch]`|false   |named   |False        |Replace_Image_Color|
 
 #### **RotateColors**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[switch]`|false   |Named   |false        |rotate_colors|
+|`[Switch]`|false   |named   |False        |rotate_colors|
 
 #### **ScanLineJitterDisplacement**
 
 |Type     |Required|Position|PipelineInput|Aliases                      |
 |---------|--------|--------|-------------|-----------------------------|
-|`[float]`|false   |0       |false        |scan_line_jitter_displacement|
+|`[Float]`|false   |named   |False        |scan_line_jitter_displacement|
 
 #### **ScanLineJitterThresholdPercent**
 
 |Type   |Required|Position|PipelineInput|Aliases                           |
 |-------|--------|--------|-------------|----------------------------------|
-|`[int]`|false   |1       |false        |scan_line_jitter_threshold_percent|
+|`[Int]`|false   |named   |False        |scan_line_jitter_threshold_percent|
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |13      |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |11      |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **VerticalJumpAmount**
 
 |Type     |Required|Position|PipelineInput|Aliases             |
 |---------|--------|--------|-------------|--------------------|
-|`[float]`|false   |2       |false        |vertical_jump_amount|
+|`[Float]`|false   |named   |False        |vertical_jump_amount|
 
 #### **VerticalSpeed**
 
 |Type     |Required|Position|PipelineInput|Aliases       |
 |---------|--------|--------|-------------|--------------|
-|`[float]`|false   |3       |false        |vertical_speed|
+|`[Float]`|false   |named   |False        |vertical_speed|
 
 ---
 
@@ -158,11 +157,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSGlitchAnalogShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSGlitchAnalogShader [[-ScanLineJitterDisplacement] <Float>] [[-ScanLineJitterThresholdPercent] <Int>] [[-VerticalJumpAmount] <Float>] [[-VerticalSpeed] <Float>] [[-HorizontalShake] <Float>] [[-ColorDriftAmount] <Float>] [[-ColorDriftSpeed] <Float>] [[-PulseSpeedPercent] <Int>] [[-AlphaPercent] <Int>] [-RotateColors <Switch>] [-ApplyToAlphaLayer <Switch>] [-ReplaceImageColor <Switch>] [-ApplyToSpecificColor <Switch>] [[-ColorToReplace] <String>] [[-Notes] <String>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

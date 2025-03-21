@@ -1,5 +1,5 @@
 {
-  "Synopsis": "\nGet-OBSClockDigitalLedShader [[-CurrentTimeSec] <int>] [[-CurrentTimeMin] <int>] [[-CurrentTimeHour] <int>] [[-TimeMode] <int>] [[-LedColor] <string>] [[-OffsetHours] <int>] [[-OffsetSeconds] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ShowMatrix] [-ShowOff] [-Ampm] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]\n",
+  "Synopsis": "Get-OBSClockDigitalLedShader [[-CurrentTimeSec] <int>] [[-CurrentTimeMin] <int>] [[-CurrentTimeHour] <int>] [[-TimeMode] <int>] [[-LedColor] <string>] [[-OffsetHours] <int>] [[-OffsetSeconds] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ShowMatrix] [-ShowOff] [-Ampm] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]",
   "Description": "",
   "Parameters": [
     {
@@ -23,7 +23,7 @@
     null
   ],
   "Inputs": [
-    "System.String\n"
+    "System.String"
   ],
   "Outputs": [
     "System.Object"

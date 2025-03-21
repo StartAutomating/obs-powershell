@@ -2,7 +2,6 @@ Get-OBSChromaUVDistortionShader
 -------------------------------
 
 ### Synopsis
-
 Get-OBSChromaUVDistortionShader [[-Distortion] <float>] [[-Amplitude] <float>] [[-Chroma] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,61 +15,61 @@ Get-OBSChromaUVDistortionShader [[-Distortion] <float>] [[-Amplitude] <float>] [
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |1       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **Chroma**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |2       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **Distortion**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |0       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |4       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |5       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |3       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -86,11 +85,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSChromaUVDistortionShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSChromaUVDistortionShader [[-Distortion] <Float>] [[-Amplitude] <Float>] [[-Chroma] <Float>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

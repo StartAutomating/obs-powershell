@@ -2,7 +2,6 @@ Get-OBSFire3Shader
 ------------------
 
 ### Synopsis
-
 Get-OBSFire3Shader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-UvSize] <float[]>] [[-RandF] <float>] [[-RandInstanceF] <float>] [[-RandActivationF] <float>] [[-Loops] <int>] [[-LocalTime] <float>] [[-MovementDirectionHorizontal] <float>] [[-MovementDirectionVertical] <float>] [[-AlphaPercentage] <int>] [[-Speed] <int>] [[-LumaMin] <float>] [[-LumaMinSmooth] <float>] [[-ColorToReplace] <string>] [[-FlameSize] <float>] [[-SparkGridHeight] <float>] [[-FlameModifier] <float>] [[-FlameTongueSize] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Invert] [-ApplyToImage] [-ReplaceImageColor] [-ApplyToSpecificColor] [-FullWidth] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,211 +15,211 @@ Get-OBSFire3Shader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime]
 
 |Type   |Required|Position|PipelineInput|Aliases         |
 |-------|--------|--------|-------------|----------------|
-|`[int]`|false   |14      |false        |Alpha_Percentage|
+|`[Int]`|false   |named   |False        |Alpha_Percentage|
 
 #### **ApplyToImage**
 
 |Type      |Required|Position|PipelineInput|Aliases       |
 |----------|--------|--------|-------------|--------------|
-|`[switch]`|false   |Named   |false        |Apply_To_Image|
+|`[Switch]`|false   |named   |False        |Apply_To_Image|
 
 #### **ApplyToSpecificColor**
 
 |Type      |Required|Position|PipelineInput|Aliases                |
 |----------|--------|--------|-------------|-----------------------|
-|`[switch]`|false   |Named   |false        |Apply_To_Specific_Color|
+|`[Switch]`|false   |named   |False        |Apply_To_Specific_Color|
 
 #### **ColorToReplace**
 
 |Type      |Required|Position|PipelineInput|Aliases         |
 |----------|--------|--------|-------------|----------------|
-|`[string]`|false   |18      |false        |Color_To_Replace|
+|`[String]`|false   |named   |False        |Color_To_Replace|
 
 #### **ElapsedTime**
 
 |Type     |Required|Position|PipelineInput|Aliases     |
 |---------|--------|--------|-------------|------------|
-|`[float]`|false   |2       |false        |elapsed_time|
+|`[Float]`|false   |named   |False        |elapsed_time|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |24      |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **FlameModifier**
 
 |Type     |Required|Position|PipelineInput|Aliases       |
 |---------|--------|--------|-------------|--------------|
-|`[float]`|false   |21      |false        |Flame_Modifier|
+|`[Float]`|false   |named   |False        |Flame_Modifier|
 
 #### **FlameSize**
 
 |Type     |Required|Position|PipelineInput|Aliases   |
 |---------|--------|--------|-------------|----------|
-|`[float]`|false   |19      |false        |Flame_Size|
+|`[Float]`|false   |named   |False        |Flame_Size|
 
 #### **FlameTongueSize**
 
 |Type     |Required|Position|PipelineInput|Aliases          |
 |---------|--------|--------|-------------|-----------------|
-|`[float]`|false   |22      |false        |Flame_Tongue_Size|
+|`[Float]`|false   |named   |False        |Flame_Tongue_Size|
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **FullWidth**
 
 |Type      |Required|Position|PipelineInput|Aliases   |
 |----------|--------|--------|-------------|----------|
-|`[switch]`|false   |Named   |false        |Full_Width|
+|`[Switch]`|false   |named   |False        |Full_Width|
 
 #### **Image**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |1       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **Invert**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **LocalTime**
 
 |Type     |Required|Position|PipelineInput|Aliases   |
 |---------|--------|--------|-------------|----------|
-|`[float]`|false   |11      |false        |local_time|
+|`[Float]`|false   |named   |False        |local_time|
 
 #### **Loops**
 
 |Type   |Required|Position|PipelineInput|
 |-------|--------|--------|-------------|
-|`[int]`|false   |10      |false        |
+|`[Int]`|false   |named   |False        |
 
 #### **LumaMin**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |16      |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **LumaMinSmooth**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |17      |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **MovementDirectionHorizontal**
 
 |Type     |Required|Position|PipelineInput|Aliases                      |
 |---------|--------|--------|-------------|-----------------------------|
-|`[float]`|false   |12      |false        |Movement_Direction_Horizontal|
+|`[Float]`|false   |named   |False        |Movement_Direction_Horizontal|
 
 #### **MovementDirectionVertical**
 
 |Type     |Required|Position|PipelineInput|Aliases                    |
 |---------|--------|--------|-------------|---------------------------|
-|`[float]`|false   |13      |false        |Movement_Direction_Vertical|
+|`[Float]`|false   |named   |False        |Movement_Direction_Vertical|
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **RandActivationF**
 
 |Type     |Required|Position|PipelineInput|Aliases          |
 |---------|--------|--------|-------------|-----------------|
-|`[float]`|false   |9       |false        |rand_activation_f|
+|`[Float]`|false   |named   |False        |rand_activation_f|
 
 #### **RandF**
 
 |Type     |Required|Position|PipelineInput|Aliases|
 |---------|--------|--------|-------------|-------|
-|`[float]`|false   |7       |false        |rand_f |
+|`[Float]`|false   |named   |False        |rand_f |
 
 #### **RandInstanceF**
 
 |Type     |Required|Position|PipelineInput|Aliases        |
 |---------|--------|--------|-------------|---------------|
-|`[float]`|false   |8       |false        |rand_instance_f|
+|`[Float]`|false   |named   |False        |rand_instance_f|
 
 #### **ReplaceImageColor**
 
 |Type      |Required|Position|PipelineInput|Aliases            |
 |----------|--------|--------|-------------|-------------------|
-|`[switch]`|false   |Named   |false        |Replace_Image_Color|
+|`[Switch]`|false   |named   |False        |Replace_Image_Color|
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |25      |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |23      |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **SparkGridHeight**
 
 |Type     |Required|Position|PipelineInput|Aliases          |
 |---------|--------|--------|-------------|-----------------|
-|`[float]`|false   |20      |false        |Spark_Grid_Height|
+|`[Float]`|false   |named   |False        |Spark_Grid_Height|
 
 #### **Speed**
 
 |Type   |Required|Position|PipelineInput|
 |-------|--------|--------|-------------|
-|`[int]`|false   |15      |false        |
+|`[Int]`|false   |named   |False        |
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **UvOffset**
 
-|Type       |Required|Position|PipelineInput|Aliases  |
-|-----------|--------|--------|-------------|---------|
-|`[float[]]`|false   |3       |false        |uv_offset|
+|Type               |Required|Position|PipelineInput|Aliases  |
+|-------------------|--------|--------|-------------|---------|
+|`[System.Single[]]`|false   |named   |False        |uv_offset|
 
 #### **UvPixelInterval**
 
-|Type       |Required|Position|PipelineInput|Aliases          |
-|-----------|--------|--------|-------------|-----------------|
-|`[float[]]`|false   |5       |false        |uv_pixel_interval|
+|Type               |Required|Position|PipelineInput|Aliases          |
+|-------------------|--------|--------|-------------|-----------------|
+|`[System.Single[]]`|false   |named   |False        |uv_pixel_interval|
 
 #### **UvScale**
 
-|Type       |Required|Position|PipelineInput|Aliases |
-|-----------|--------|--------|-------------|--------|
-|`[float[]]`|false   |4       |false        |uv_scale|
+|Type               |Required|Position|PipelineInput|Aliases |
+|-------------------|--------|--------|-------------|--------|
+|`[System.Single[]]`|false   |named   |False        |uv_scale|
 
 #### **UvSize**
 
-|Type       |Required|Position|PipelineInput|Aliases|
-|-----------|--------|--------|-------------|-------|
-|`[float[]]`|false   |6       |false        |uv_size|
+|Type               |Required|Position|PipelineInput|Aliases|
+|-------------------|--------|--------|-------------|-------|
+|`[System.Single[]]`|false   |named   |False        |uv_size|
 
 #### **ViewProj**
 
-|Type         |Required|Position|PipelineInput|
-|-------------|--------|--------|-------------|
-|`[float[][]]`|false   |0       |false        |
+|Type                 |Required|Position|PipelineInput|
+|---------------------|--------|--------|-------------|
+|`[System.Single[][]]`|false   |named   |False        |
 
 ---
 
@@ -236,11 +235,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSFire3Shader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSFire3Shader [[-ViewProj] <System.Single[][]>] [[-Image] <String>] [[-ElapsedTime] <Float>] [[-UvOffset] <System.Single[]>] [[-UvScale] <System.Single[]>] [[-UvPixelInterval] <System.Single[]>] [[-UvSize] <System.Single[]>] [[-RandF] <Float>] [[-RandInstanceF] <Float>] [[-RandActivationF] <Float>] [[-Loops] <Int>] [[-LocalTime] <Float>] [[-MovementDirectionHorizontal] <Float>] [[-MovementDirectionVertical] <Float>] [[-AlphaPercentage] <Int>] [[-Speed] <Int>] [-Invert <Switch>] [[-LumaMin] <Float>] [[-LumaMinSmooth] <Float>] [-ApplyToImage <Switch>] [-ReplaceImageColor <Switch>] [[-ColorToReplace] <String>] [-ApplyToSpecificColor <Switch>] [-FullWidth <Switch>] [[-FlameSize] <Float>] [[-SparkGridHeight] <Float>] [[-FlameModifier] <Float>] [[-FlameTongueSize] <Float>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

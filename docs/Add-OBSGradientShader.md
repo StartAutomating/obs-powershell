@@ -2,7 +2,6 @@ Get-OBSGradientShader
 ---------------------
 
 ### Synopsis
-
 Get-OBSGradientShader [[-StartColor] <string>] [[-StartStep] <float>] [[-MiddleColor] <string>] [[-MiddleStep] <float>] [[-EndColor] <string>] [[-EndStep] <float>] [[-AlphaPercent] <int>] [[-PulseSpeed] <int>] [[-ColorToReplace] <string>] [[-GradientCenterWidthPercentage] <int>] [[-GradientCenterHeightPercentage] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Ease] [-RotateColors] [-ApplyToAlphaLayer] [-ApplyToSpecificColor] [-Horizontal] [-Vertical] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,151 +15,151 @@ Get-OBSGradientShader [[-StartColor] <string>] [[-StartStep] <float>] [[-MiddleC
 
 |Type   |Required|Position|PipelineInput|Aliases      |
 |-------|--------|--------|-------------|-------------|
-|`[int]`|false   |6       |false        |alpha_percent|
+|`[Int]`|false   |named   |False        |alpha_percent|
 
 #### **ApplyToAlphaLayer**
 
 |Type      |Required|Position|PipelineInput|Aliases             |
 |----------|--------|--------|-------------|--------------------|
-|`[switch]`|false   |Named   |false        |Apply_To_Alpha_Layer|
+|`[Switch]`|false   |named   |False        |Apply_To_Alpha_Layer|
 
 #### **ApplyToSpecificColor**
 
 |Type      |Required|Position|PipelineInput|Aliases                |
 |----------|--------|--------|-------------|-----------------------|
-|`[switch]`|false   |Named   |false        |Apply_To_Specific_Color|
+|`[Switch]`|false   |named   |False        |Apply_To_Specific_Color|
 
 #### **ColorToReplace**
 
 |Type      |Required|Position|PipelineInput|Aliases         |
 |----------|--------|--------|-------------|----------------|
-|`[string]`|false   |8       |false        |Color_To_Replace|
+|`[String]`|false   |named   |False        |Color_To_Replace|
 
 #### **Ease**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **EndColor**
 
 |Type      |Required|Position|PipelineInput|Aliases  |
 |----------|--------|--------|-------------|---------|
-|`[string]`|false   |4       |false        |end_color|
+|`[String]`|false   |named   |False        |end_color|
 
 #### **EndStep**
 
 |Type     |Required|Position|PipelineInput|Aliases |
 |---------|--------|--------|-------------|--------|
-|`[float]`|false   |5       |false        |end_step|
+|`[Float]`|false   |named   |False        |end_step|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |13      |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **GradientCenterHeightPercentage**
 
 |Type   |Required|Position|PipelineInput|Aliases                          |
 |-------|--------|--------|-------------|---------------------------------|
-|`[int]`|false   |10      |false        |gradient_center_height_percentage|
+|`[Int]`|false   |named   |False        |gradient_center_height_percentage|
 
 #### **GradientCenterWidthPercentage**
 
 |Type   |Required|Position|PipelineInput|Aliases                         |
 |-------|--------|--------|-------------|--------------------------------|
-|`[int]`|false   |9       |false        |gradient_center_width_percentage|
+|`[Int]`|false   |named   |False        |gradient_center_width_percentage|
 
 #### **Horizontal**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **MiddleColor**
 
 |Type      |Required|Position|PipelineInput|Aliases     |
 |----------|--------|--------|-------------|------------|
-|`[string]`|false   |2       |false        |middle_color|
+|`[String]`|false   |named   |False        |middle_color|
 
 #### **MiddleStep**
 
 |Type     |Required|Position|PipelineInput|Aliases    |
 |---------|--------|--------|-------------|-----------|
-|`[float]`|false   |3       |false        |middle_step|
+|`[Float]`|false   |named   |False        |middle_step|
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Notes**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |11      |false        |
+|`[String]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PulseSpeed**
 
 |Type   |Required|Position|PipelineInput|Aliases    |
 |-------|--------|--------|-------------|-----------|
-|`[int]`|false   |7       |false        |pulse_speed|
+|`[Int]`|false   |named   |False        |pulse_speed|
 
 #### **RotateColors**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[switch]`|false   |Named   |false        |rotate_colors|
+|`[Switch]`|false   |named   |False        |rotate_colors|
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |14      |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |12      |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **StartColor**
 
 |Type      |Required|Position|PipelineInput|Aliases    |
 |----------|--------|--------|-------------|-----------|
-|`[string]`|false   |0       |false        |start_color|
+|`[String]`|false   |named   |False        |start_color|
 
 #### **StartStep**
 
 |Type     |Required|Position|PipelineInput|Aliases   |
 |---------|--------|--------|-------------|----------|
-|`[float]`|false   |1       |false        |start_step|
+|`[Float]`|false   |named   |False        |start_step|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Vertical**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -176,11 +175,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSGradientShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSGradientShader [[-StartColor] <String>] [[-StartStep] <Float>] [[-MiddleColor] <String>] [[-MiddleStep] <Float>] [[-EndColor] <String>] [[-EndStep] <Float>] [[-AlphaPercent] <Int>] [[-PulseSpeed] <Int>] [-Ease <Switch>] [-RotateColors <Switch>] [-ApplyToAlphaLayer <Switch>] [-ApplyToSpecificColor <Switch>] [[-ColorToReplace] <String>] [-Horizontal <Switch>] [-Vertical <Switch>] [[-GradientCenterWidthPercentage] <Int>] [[-GradientCenterHeightPercentage] <Int>] [[-Notes] <String>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

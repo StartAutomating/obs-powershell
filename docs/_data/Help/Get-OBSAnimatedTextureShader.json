@@ -1,5 +1,5 @@
 {
-  "Synopsis": "\nGet-OBSAnimatedTextureShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-RandF] <float>] [[-UvSize] <float[]>] [[-Notes] <string>] [[-AnimationImage] <string>] [[-ColorizationImage] <string>] [[-PolarAngle] <float>] [[-PolarHeight] <float>] [[-SpeedHorizontalPercent] <float>] [[-SpeedVerticalPercent] <float>] [[-TintSpeedHorizontalPercent] <float>] [[-TintSpeedVerticalPercent] <float>] [[-Alpha] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Reverse] [-Bounce] [-CenterAnimation] [-PolarAnimation] [-UseAnimationImageColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]\n",
+  "Synopsis": "Get-OBSAnimatedTextureShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-RandF] <float>] [[-UvSize] <float[]>] [[-Notes] <string>] [[-AnimationImage] <string>] [[-ColorizationImage] <string>] [[-PolarAngle] <float>] [[-PolarHeight] <float>] [[-SpeedHorizontalPercent] <float>] [[-SpeedVerticalPercent] <float>] [[-TintSpeedHorizontalPercent] <float>] [[-TintSpeedVerticalPercent] <float>] [[-Alpha] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Reverse] [-Bounce] [-CenterAnimation] [-PolarAnimation] [-UseAnimationImageColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]",
   "Description": "",
   "Parameters": [
     {
@@ -23,7 +23,7 @@
     null
   ],
   "Inputs": [
-    "System.String\n"
+    "System.String"
   ],
   "Outputs": [
     "System.Object"

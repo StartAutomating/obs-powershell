@@ -2,7 +2,6 @@ Get-OBSFireShader
 -----------------
 
 ### Synopsis
-
 Get-OBSFireShader [[-AlphaPercentage] <int>] [[-Speed] <int>] [[-FlameSize] <int>] [[-FireType] <int>] [[-LumaMin] <float>] [[-LumaMinSmooth] <float>] [[-ColorToReplace] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Invert] [-ApplyToImage] [-ReplaceImageColor] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,115 +15,115 @@ Get-OBSFireShader [[-AlphaPercentage] <int>] [[-Speed] <int>] [[-FlameSize] <int
 
 |Type   |Required|Position|PipelineInput|Aliases         |
 |-------|--------|--------|-------------|----------------|
-|`[int]`|false   |0       |false        |Alpha_Percentage|
+|`[Int]`|false   |named   |False        |Alpha_Percentage|
 
 #### **ApplyToImage**
 
 |Type      |Required|Position|PipelineInput|Aliases       |
 |----------|--------|--------|-------------|--------------|
-|`[switch]`|false   |Named   |false        |Apply_To_Image|
+|`[Switch]`|false   |named   |False        |Apply_To_Image|
 
 #### **ApplyToSpecificColor**
 
 |Type      |Required|Position|PipelineInput|Aliases                |
 |----------|--------|--------|-------------|-----------------------|
-|`[switch]`|false   |Named   |false        |Apply_To_Specific_Color|
+|`[Switch]`|false   |named   |False        |Apply_To_Specific_Color|
 
 #### **ColorToReplace**
 
 |Type      |Required|Position|PipelineInput|Aliases         |
 |----------|--------|--------|-------------|----------------|
-|`[string]`|false   |6       |false        |Color_To_Replace|
+|`[String]`|false   |named   |False        |Color_To_Replace|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |9       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **FireType**
 
 |Type   |Required|Position|PipelineInput|Aliases  |
 |-------|--------|--------|-------------|---------|
-|`[int]`|false   |3       |false        |Fire_Type|
+|`[Int]`|false   |named   |False        |Fire_Type|
 
 #### **FlameSize**
 
 |Type   |Required|Position|PipelineInput|Aliases   |
 |-------|--------|--------|-------------|----------|
-|`[int]`|false   |2       |false        |Flame_Size|
+|`[Int]`|false   |named   |False        |Flame_Size|
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Invert**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **LumaMin**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |4       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **LumaMinSmooth**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |5       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Notes**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |7       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **ReplaceImageColor**
 
 |Type      |Required|Position|PipelineInput|Aliases            |
 |----------|--------|--------|-------------|-------------------|
-|`[switch]`|false   |Named   |false        |Replace_Image_Color|
+|`[Switch]`|false   |named   |False        |Replace_Image_Color|
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |10      |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |8       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **Speed**
 
 |Type   |Required|Position|PipelineInput|
 |-------|--------|--------|-------------|
-|`[int]`|false   |1       |false        |
+|`[Int]`|false   |named   |False        |
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -140,11 +139,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSFireShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSFireShader [[-AlphaPercentage] <Int>] [[-Speed] <Int>] [[-FlameSize] <Int>] [[-FireType] <Int>] [-Invert <Switch>] [[-LumaMin] <Float>] [[-LumaMinSmooth] <Float>] [-ApplyToImage <Switch>] [-ReplaceImageColor <Switch>] [-ApplyToSpecificColor <Switch>] [[-ColorToReplace] <String>] [[-Notes] <String>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

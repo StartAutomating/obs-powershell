@@ -2,7 +2,6 @@ Get-OBSBlendOpacityShader
 -------------------------
 
 ### Synopsis
-
 Get-OBSBlendOpacityShader [[-RotationOffset] <float>] [[-OpacityStartPercent] <float>] [[-OpacityEndPercent] <float>] [[-Spread] <float>] [[-Speed] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Vertical] [-Rotational] [-ApplyToAlphaLayer] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,97 +15,97 @@ Get-OBSBlendOpacityShader [[-RotationOffset] <float>] [[-OpacityStartPercent] <f
 
 |Type      |Required|Position|PipelineInput|Aliases             |
 |----------|--------|--------|-------------|--------------------|
-|`[switch]`|false   |Named   |false        |Apply_To_Alpha_Layer|
+|`[Switch]`|false   |named   |False        |Apply_To_Alpha_Layer|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |7       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Notes**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |5       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **OpacityEndPercent**
 
 |Type     |Required|Position|PipelineInput|Aliases            |
 |---------|--------|--------|-------------|-------------------|
-|`[float]`|false   |2       |false        |Opacity_End_Percent|
+|`[Float]`|false   |named   |False        |Opacity_End_Percent|
 
 #### **OpacityStartPercent**
 
 |Type     |Required|Position|PipelineInput|Aliases              |
 |---------|--------|--------|-------------|---------------------|
-|`[float]`|false   |1       |false        |Opacity_Start_Percent|
+|`[Float]`|false   |named   |False        |Opacity_Start_Percent|
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
-
-#### **RotationOffset**
-
-|Type     |Required|Position|PipelineInput|Aliases        |
-|---------|--------|--------|-------------|---------------|
-|`[float]`|false   |0       |false        |Rotation_Offset|
+|`[Switch]`|false   |named   |False        |
 
 #### **Rotational**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
+
+#### **RotationOffset**
+
+|Type     |Required|Position|PipelineInput|Aliases        |
+|---------|--------|--------|-------------|---------------|
+|`[Float]`|false   |named   |False        |Rotation_Offset|
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |8       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |6       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **Speed**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |4       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **Spread**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |3       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Vertical**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -122,11 +121,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSBlendOpacityShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSBlendOpacityShader [-Vertical <Switch>] [-Rotational <Switch>] [[-RotationOffset] <Float>] [[-OpacityStartPercent] <Float>] [[-OpacityEndPercent] <Float>] [[-Spread] <Float>] [[-Speed] <Float>] [-ApplyToAlphaLayer <Switch>] [[-Notes] <String>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

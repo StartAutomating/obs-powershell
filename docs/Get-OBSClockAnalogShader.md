@@ -2,7 +2,6 @@ Get-OBSClockAnalogShader
 ------------------------
 
 ### Synopsis
-
 Get-OBSClockAnalogShader [[-CurrentTimeMs] <int>] [[-CurrentTimeSec] <int>] [[-CurrentTimeMin] <int>] [[-CurrentTimeHour] <int>] [[-HourHandleColor] <float[]>] [[-MinuteHandleColor] <float[]>] [[-SecondHandleColor] <float[]>] [[-OutlineColor] <float[]>] [[-TopLineColor] <float[]>] [[-BackgroundColor] <float[]>] [[-TimeOffsetHours] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -14,111 +13,111 @@ Get-OBSClockAnalogShader [[-CurrentTimeMs] <int>] [[-CurrentTimeSec] <int>] [[-C
 ### Parameters
 #### **BackgroundColor**
 
-|Type       |Required|Position|PipelineInput|Aliases         |
-|-----------|--------|--------|-------------|----------------|
-|`[float[]]`|false   |9       |false        |background_color|
+|Type               |Required|Position|PipelineInput|Aliases         |
+|-------------------|--------|--------|-------------|----------------|
+|`[System.Single[]]`|false   |named   |False        |background_color|
 
 #### **CurrentTimeHour**
 
 |Type   |Required|Position|PipelineInput|Aliases          |
 |-------|--------|--------|-------------|-----------------|
-|`[int]`|false   |3       |false        |current_time_hour|
+|`[Int]`|false   |named   |False        |current_time_hour|
 
 #### **CurrentTimeMin**
 
 |Type   |Required|Position|PipelineInput|Aliases         |
 |-------|--------|--------|-------------|----------------|
-|`[int]`|false   |2       |false        |current_time_min|
+|`[Int]`|false   |named   |False        |current_time_min|
 
 #### **CurrentTimeMs**
 
 |Type   |Required|Position|PipelineInput|Aliases        |
 |-------|--------|--------|-------------|---------------|
-|`[int]`|false   |0       |false        |current_time_ms|
+|`[Int]`|false   |named   |False        |current_time_ms|
 
 #### **CurrentTimeSec**
 
 |Type   |Required|Position|PipelineInput|Aliases         |
 |-------|--------|--------|-------------|----------------|
-|`[int]`|false   |1       |false        |current_time_sec|
+|`[Int]`|false   |named   |False        |current_time_sec|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |12      |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **HourHandleColor**
 
-|Type       |Required|Position|PipelineInput|Aliases          |
-|-----------|--------|--------|-------------|-----------------|
-|`[float[]]`|false   |4       |false        |hour_handle_color|
+|Type               |Required|Position|PipelineInput|Aliases          |
+|-------------------|--------|--------|-------------|-----------------|
+|`[System.Single[]]`|false   |named   |False        |hour_handle_color|
 
 #### **MinuteHandleColor**
 
-|Type       |Required|Position|PipelineInput|Aliases            |
-|-----------|--------|--------|-------------|-------------------|
-|`[float[]]`|false   |5       |false        |minute_handle_color|
+|Type               |Required|Position|PipelineInput|Aliases            |
+|-------------------|--------|--------|-------------|-------------------|
+|`[System.Single[]]`|false   |named   |False        |minute_handle_color|
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **OutlineColor**
 
-|Type       |Required|Position|PipelineInput|Aliases      |
-|-----------|--------|--------|-------------|-------------|
-|`[float[]]`|false   |7       |false        |outline_color|
+|Type               |Required|Position|PipelineInput|Aliases      |
+|-------------------|--------|--------|-------------|-------------|
+|`[System.Single[]]`|false   |named   |False        |outline_color|
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **SecondHandleColor**
 
-|Type       |Required|Position|PipelineInput|Aliases            |
-|-----------|--------|--------|-------------|-------------------|
-|`[float[]]`|false   |6       |false        |second_handle_color|
+|Type               |Required|Position|PipelineInput|Aliases            |
+|-------------------|--------|--------|-------------|-------------------|
+|`[System.Single[]]`|false   |named   |False        |second_handle_color|
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |13      |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |11      |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **TimeOffsetHours**
 
 |Type   |Required|Position|PipelineInput|Aliases          |
 |-------|--------|--------|-------------|-----------------|
-|`[int]`|false   |10      |false        |time_offset_hours|
+|`[Int]`|false   |named   |False        |time_offset_hours|
 
 #### **TopLineColor**
 
-|Type       |Required|Position|PipelineInput|Aliases       |
-|-----------|--------|--------|-------------|--------------|
-|`[float[]]`|false   |8       |false        |top_line_color|
+|Type               |Required|Position|PipelineInput|Aliases       |
+|-------------------|--------|--------|-------------|--------------|
+|`[System.Single[]]`|false   |named   |False        |top_line_color|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -134,11 +133,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSClockAnalogShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSClockAnalogShader [[-CurrentTimeMs] <Int>] [[-CurrentTimeSec] <Int>] [[-CurrentTimeMin] <Int>] [[-CurrentTimeHour] <Int>] [[-HourHandleColor] <System.Single[]>] [[-MinuteHandleColor] <System.Single[]>] [[-SecondHandleColor] <System.Single[]>] [[-OutlineColor] <System.Single[]>] [[-TopLineColor] <System.Single[]>] [[-BackgroundColor] <System.Single[]>] [[-TimeOffsetHours] <Int>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

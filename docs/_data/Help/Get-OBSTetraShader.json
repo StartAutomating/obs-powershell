@@ -1,5 +1,5 @@
 {
-  "Synopsis": "\nGet-OBSTetraShader [[-RedR] <float>] [[-RedG] <float>] [[-RedB] <float>] [[-YelR] <float>] [[-YelG] <float>] [[-YelB] <float>] [[-GrnR] <float>] [[-GrnG] <float>] [[-GrnB] <float>] [[-CynR] <float>] [[-CynG] <float>] [[-CynB] <float>] [[-BluR] <float>] [[-BluG] <float>] [[-BluB] <float>] [[-MagR] <float>] [[-MagG] <float>] [[-MagB] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]\n",
+  "Synopsis": "Get-OBSTetraShader [[-RedR] <float>] [[-RedG] <float>] [[-RedB] <float>] [[-YelR] <float>] [[-YelG] <float>] [[-YelB] <float>] [[-GrnR] <float>] [[-GrnG] <float>] [[-GrnB] <float>] [[-CynR] <float>] [[-CynG] <float>] [[-CynB] <float>] [[-BluR] <float>] [[-BluG] <float>] [[-BluB] <float>] [[-MagR] <float>] [[-MagG] <float>] [[-MagB] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]",
   "Description": "",
   "Parameters": [
     {
@@ -23,7 +23,7 @@
     null
   ],
   "Inputs": [
-    "System.String\n"
+    "System.String"
   ],
   "Outputs": [
     "System.Object"

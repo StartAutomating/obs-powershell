@@ -2,7 +2,6 @@ Get-OBSPulseShader
 ------------------
 
 ### Synopsis
-
 Get-OBSPulseShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-RandF] <float>] [[-UvSize] <float[]>] [[-Speed] <float>] [[-MinGrowthPixels] <float>] [[-MaxGrowthPixels] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,109 +15,109 @@ Get-OBSPulseShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime]
 
 |Type     |Required|Position|PipelineInput|Aliases     |
 |---------|--------|--------|-------------|------------|
-|`[float]`|false   |2       |false        |elapsed_time|
+|`[Float]`|false   |named   |False        |elapsed_time|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |12      |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Image**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |1       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **MaxGrowthPixels**
 
 |Type     |Required|Position|PipelineInput|Aliases          |
 |---------|--------|--------|-------------|-----------------|
-|`[float]`|false   |10      |false        |max_growth_pixels|
+|`[Float]`|false   |named   |False        |max_growth_pixels|
 
 #### **MinGrowthPixels**
 
 |Type     |Required|Position|PipelineInput|Aliases          |
 |---------|--------|--------|-------------|-----------------|
-|`[float]`|false   |9       |false        |min_growth_pixels|
+|`[Float]`|false   |named   |False        |min_growth_pixels|
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **RandF**
 
 |Type     |Required|Position|PipelineInput|Aliases|
 |---------|--------|--------|-------------|-------|
-|`[float]`|false   |6       |false        |rand_f |
+|`[Float]`|false   |named   |False        |rand_f |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |13      |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |11      |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **Speed**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |8       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **UvOffset**
 
-|Type       |Required|Position|PipelineInput|Aliases  |
-|-----------|--------|--------|-------------|---------|
-|`[float[]]`|false   |3       |false        |uv_offset|
+|Type               |Required|Position|PipelineInput|Aliases  |
+|-------------------|--------|--------|-------------|---------|
+|`[System.Single[]]`|false   |named   |False        |uv_offset|
 
 #### **UvPixelInterval**
 
-|Type       |Required|Position|PipelineInput|Aliases          |
-|-----------|--------|--------|-------------|-----------------|
-|`[float[]]`|false   |5       |false        |uv_pixel_interval|
+|Type               |Required|Position|PipelineInput|Aliases          |
+|-------------------|--------|--------|-------------|-----------------|
+|`[System.Single[]]`|false   |named   |False        |uv_pixel_interval|
 
 #### **UvScale**
 
-|Type       |Required|Position|PipelineInput|Aliases |
-|-----------|--------|--------|-------------|--------|
-|`[float[]]`|false   |4       |false        |uv_scale|
+|Type               |Required|Position|PipelineInput|Aliases |
+|-------------------|--------|--------|-------------|--------|
+|`[System.Single[]]`|false   |named   |False        |uv_scale|
 
 #### **UvSize**
 
-|Type       |Required|Position|PipelineInput|Aliases|
-|-----------|--------|--------|-------------|-------|
-|`[float[]]`|false   |7       |false        |uv_size|
+|Type               |Required|Position|PipelineInput|Aliases|
+|-------------------|--------|--------|-------------|-------|
+|`[System.Single[]]`|false   |named   |False        |uv_size|
 
 #### **ViewProj**
 
-|Type         |Required|Position|PipelineInput|
-|-------------|--------|--------|-------------|
-|`[float[][]]`|false   |0       |false        |
+|Type                 |Required|Position|PipelineInput|
+|---------------------|--------|--------|-------------|
+|`[System.Single[][]]`|false   |named   |False        |
 
 ---
 
@@ -134,11 +133,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSPulseShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSPulseShader [[-ViewProj] <System.Single[][]>] [[-Image] <String>] [[-ElapsedTime] <Float>] [[-UvOffset] <System.Single[]>] [[-UvScale] <System.Single[]>] [[-UvPixelInterval] <System.Single[]>] [[-RandF] <Float>] [[-UvSize] <System.Single[]>] [[-Speed] <Float>] [[-MinGrowthPixels] <Float>] [[-MaxGrowthPixels] <Float>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

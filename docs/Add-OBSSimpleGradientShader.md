@@ -2,7 +2,6 @@ Get-OBSSimpleGradientShader
 ---------------------------
 
 ### Synopsis
-
 Get-OBSSimpleGradientShader [[-SpeedPercentage] <int>] [[-AlphaPercentage] <int>] [[-ColorToReplace] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-LensFlair] [-AnimateLensFlair] [-ApplyToAlphaLayer] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,91 +15,91 @@ Get-OBSSimpleGradientShader [[-SpeedPercentage] <int>] [[-AlphaPercentage] <int>
 
 |Type   |Required|Position|PipelineInput|Aliases         |
 |-------|--------|--------|-------------|----------------|
-|`[int]`|false   |1       |false        |alpha_percentage|
+|`[Int]`|false   |named   |False        |alpha_percentage|
 
 #### **AnimateLensFlair**
 
 |Type      |Required|Position|PipelineInput|Aliases           |
 |----------|--------|--------|-------------|------------------|
-|`[switch]`|false   |Named   |false        |Animate_Lens_Flair|
+|`[Switch]`|false   |named   |False        |Animate_Lens_Flair|
 
 #### **ApplyToAlphaLayer**
 
 |Type      |Required|Position|PipelineInput|Aliases             |
 |----------|--------|--------|-------------|--------------------|
-|`[switch]`|false   |Named   |false        |Apply_To_Alpha_Layer|
+|`[Switch]`|false   |named   |False        |Apply_To_Alpha_Layer|
 
 #### **ApplyToSpecificColor**
 
 |Type      |Required|Position|PipelineInput|Aliases                |
 |----------|--------|--------|-------------|-----------------------|
-|`[switch]`|false   |Named   |false        |Apply_To_Specific_Color|
+|`[Switch]`|false   |named   |False        |Apply_To_Specific_Color|
 
 #### **ColorToReplace**
 
 |Type      |Required|Position|PipelineInput|Aliases         |
 |----------|--------|--------|-------------|----------------|
-|`[string]`|false   |2       |false        |Color_To_Replace|
+|`[String]`|false   |named   |False        |Color_To_Replace|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |5       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **LensFlair**
 
 |Type      |Required|Position|PipelineInput|Aliases   |
 |----------|--------|--------|-------------|----------|
-|`[switch]`|false   |Named   |false        |Lens_Flair|
+|`[Switch]`|false   |named   |False        |Lens_Flair|
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Notes**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |3       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |6       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |4       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **SpeedPercentage**
 
 |Type   |Required|Position|PipelineInput|Aliases         |
 |-------|--------|--------|-------------|----------------|
-|`[int]`|false   |0       |false        |speed_percentage|
+|`[Int]`|false   |named   |False        |speed_percentage|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -116,11 +115,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSSimpleGradientShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSSimpleGradientShader [[-SpeedPercentage] <Int>] [[-AlphaPercentage] <Int>] [-LensFlair <Switch>] [-AnimateLensFlair <Switch>] [-ApplyToAlphaLayer <Switch>] [-ApplyToSpecificColor <Switch>] [[-ColorToReplace] <String>] [[-Notes] <String>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

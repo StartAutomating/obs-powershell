@@ -2,7 +2,6 @@ Get-OBSVCRShader
 ----------------
 
 ### Synopsis
-
 Get-OBSVCRShader [[-VerticalShift] <float>] [[-Distort] <float>] [[-Vignet] <float>] [[-Stripe] <float>] [[-VerticalFactor] <float>] [[-VerticalHeight] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,79 +15,79 @@ Get-OBSVCRShader [[-VerticalShift] <float>] [[-Distort] <float>] [[-Vignet] <flo
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |1       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |7       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |8       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |6       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **Stripe**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |3       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **VerticalFactor**
 
 |Type     |Required|Position|PipelineInput|Aliases        |
 |---------|--------|--------|-------------|---------------|
-|`[float]`|false   |4       |false        |vertical_factor|
+|`[Float]`|false   |named   |False        |vertical_factor|
 
 #### **VerticalHeight**
 
 |Type     |Required|Position|PipelineInput|Aliases        |
 |---------|--------|--------|-------------|---------------|
-|`[float]`|false   |5       |false        |vertical_height|
+|`[Float]`|false   |named   |False        |vertical_height|
 
 #### **VerticalShift**
 
 |Type     |Required|Position|PipelineInput|Aliases       |
 |---------|--------|--------|-------------|--------------|
-|`[float]`|false   |0       |false        |vertical_shift|
+|`[Float]`|false   |named   |False        |vertical_shift|
 
 #### **Vignet**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |2       |false        |
+|`[Float]`|false   |named   |False        |
 
 ---
 
@@ -104,11 +103,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSVCRShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSVCRShader [[-VerticalShift] <Float>] [[-Distort] <Float>] [[-Vignet] <Float>] [[-Stripe] <Float>] [[-VerticalFactor] <Float>] [[-VerticalHeight] <Float>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

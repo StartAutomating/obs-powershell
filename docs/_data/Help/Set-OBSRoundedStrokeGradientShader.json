@@ -1,5 +1,5 @@
 {
-  "Synopsis": "\nGet-OBSRoundedStrokeGradientShader [[-CornerRadius] <int>] [[-BorderThickness] <int>] [[-MinimumAlphaPercent] <int>] [[-RotationSpeed] <int>] [[-BorderColorL] <string>] [[-BorderColorR] <string>] [[-CenterWidth] <int>] [[-CenterHeight] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]\n",
+  "Synopsis": "Get-OBSRoundedStrokeGradientShader [[-CornerRadius] <int>] [[-BorderThickness] <int>] [[-MinimumAlphaPercent] <int>] [[-RotationSpeed] <int>] [[-BorderColorL] <string>] [[-BorderColorR] <string>] [[-CenterWidth] <int>] [[-CenterHeight] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]",
   "Description": "",
   "Parameters": [
     {
@@ -23,7 +23,7 @@
     null
   ],
   "Inputs": [
-    "System.String\n"
+    "System.String"
   ],
   "Outputs": [
     "System.Object"

@@ -2,7 +2,6 @@ Get-OBSRepeatTextureShader
 --------------------------
 
 ### Synopsis
-
 Get-OBSRepeatTextureShader [[-ViewProj] <float[][]>] [[-ColorMatrix] <float[][]>] [[-ColorRangeMin] <float[]>] [[-ColorRangeMax] <float[]>] [[-Image] <string>] [[-TexImage] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-UvSize] <float[]>] [[-RandF] <float>] [[-Blend] <float>] [[-Copies] <float>] [[-Notes] <string>] [[-AlphaPercentage] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,139 +15,139 @@ Get-OBSRepeatTextureShader [[-ViewProj] <float[][]>] [[-ColorMatrix] <float[][]>
 
 |Type     |Required|Position|PipelineInput|Aliases         |
 |---------|--------|--------|-------------|----------------|
-|`[float]`|false   |15      |false        |alpha_percentage|
+|`[Float]`|false   |named   |False        |alpha_percentage|
 
 #### **Blend**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |12      |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **ColorMatrix**
 
-|Type         |Required|Position|PipelineInput|Aliases     |
-|-------------|--------|--------|-------------|------------|
-|`[float[][]]`|false   |1       |false        |color_matrix|
+|Type                 |Required|Position|PipelineInput|Aliases     |
+|---------------------|--------|--------|-------------|------------|
+|`[System.Single[][]]`|false   |named   |False        |color_matrix|
 
 #### **ColorRangeMax**
 
-|Type       |Required|Position|PipelineInput|Aliases        |
-|-----------|--------|--------|-------------|---------------|
-|`[float[]]`|false   |3       |false        |color_range_max|
+|Type               |Required|Position|PipelineInput|Aliases        |
+|-------------------|--------|--------|-------------|---------------|
+|`[System.Single[]]`|false   |named   |False        |color_range_max|
 
 #### **ColorRangeMin**
 
-|Type       |Required|Position|PipelineInput|Aliases        |
-|-----------|--------|--------|-------------|---------------|
-|`[float[]]`|false   |2       |false        |color_range_min|
+|Type               |Required|Position|PipelineInput|Aliases        |
+|-------------------|--------|--------|-------------|---------------|
+|`[System.Single[]]`|false   |named   |False        |color_range_min|
 
 #### **Copies**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |13      |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **ElapsedTime**
 
 |Type     |Required|Position|PipelineInput|Aliases     |
 |---------|--------|--------|-------------|------------|
-|`[float]`|false   |6       |false        |elapsed_time|
+|`[Float]`|false   |named   |False        |elapsed_time|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |17      |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Image**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |4       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Notes**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |14      |false        |
+|`[String]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **RandF**
 
 |Type     |Required|Position|PipelineInput|Aliases|
 |---------|--------|--------|-------------|-------|
-|`[float]`|false   |11      |false        |rand_f |
+|`[Float]`|false   |named   |False        |rand_f |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |18      |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |16      |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **TexImage**
 
 |Type      |Required|Position|PipelineInput|Aliases  |
 |----------|--------|--------|-------------|---------|
-|`[string]`|false   |5       |false        |tex_image|
+|`[String]`|false   |named   |False        |tex_image|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **UvOffset**
 
-|Type       |Required|Position|PipelineInput|Aliases  |
-|-----------|--------|--------|-------------|---------|
-|`[float[]]`|false   |7       |false        |uv_offset|
+|Type               |Required|Position|PipelineInput|Aliases  |
+|-------------------|--------|--------|-------------|---------|
+|`[System.Single[]]`|false   |named   |False        |uv_offset|
 
 #### **UvPixelInterval**
 
-|Type       |Required|Position|PipelineInput|Aliases          |
-|-----------|--------|--------|-------------|-----------------|
-|`[float[]]`|false   |9       |false        |uv_pixel_interval|
+|Type               |Required|Position|PipelineInput|Aliases          |
+|-------------------|--------|--------|-------------|-----------------|
+|`[System.Single[]]`|false   |named   |False        |uv_pixel_interval|
 
 #### **UvScale**
 
-|Type       |Required|Position|PipelineInput|Aliases |
-|-----------|--------|--------|-------------|--------|
-|`[float[]]`|false   |8       |false        |uv_scale|
+|Type               |Required|Position|PipelineInput|Aliases |
+|-------------------|--------|--------|-------------|--------|
+|`[System.Single[]]`|false   |named   |False        |uv_scale|
 
 #### **UvSize**
 
-|Type       |Required|Position|PipelineInput|Aliases|
-|-----------|--------|--------|-------------|-------|
-|`[float[]]`|false   |10      |false        |uv_size|
+|Type               |Required|Position|PipelineInput|Aliases|
+|-------------------|--------|--------|-------------|-------|
+|`[System.Single[]]`|false   |named   |False        |uv_size|
 
 #### **ViewProj**
 
-|Type         |Required|Position|PipelineInput|
-|-------------|--------|--------|-------------|
-|`[float[][]]`|false   |0       |false        |
+|Type                 |Required|Position|PipelineInput|
+|---------------------|--------|--------|-------------|
+|`[System.Single[][]]`|false   |named   |False        |
 
 ---
 
@@ -164,11 +163,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSRepeatTextureShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSRepeatTextureShader [[-ViewProj] <System.Single[][]>] [[-ColorMatrix] <System.Single[][]>] [[-ColorRangeMin] <System.Single[]>] [[-ColorRangeMax] <System.Single[]>] [[-Image] <String>] [[-TexImage] <String>] [[-ElapsedTime] <Float>] [[-UvOffset] <System.Single[]>] [[-UvScale] <System.Single[]>] [[-UvPixelInterval] <System.Single[]>] [[-UvSize] <System.Single[]>] [[-RandF] <Float>] [[-Blend] <Float>] [[-Copies] <Float>] [[-Notes] <String>] [[-AlphaPercentage] <Float>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

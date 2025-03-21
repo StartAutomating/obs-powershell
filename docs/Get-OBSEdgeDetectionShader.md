@@ -2,7 +2,6 @@ Get-OBSEdgeDetectionShader
 --------------------------
 
 ### Synopsis
-
 Get-OBSEdgeDetectionShader [[-Sensitivity] <float>] [[-EdgeColor] <string>] [[-NonEdgeColor] <string>] [[-AlphaLevel] <float>] [[-RandF] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-InvertEdge] [-EdgeMultiply] [-NonEdgeMultiply] [-AlphaChannel] [-AlphaInvert] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,109 +15,109 @@ Get-OBSEdgeDetectionShader [[-Sensitivity] <float>] [[-EdgeColor] <string>] [[-N
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[switch]`|false   |Named   |false        |alpha_channel|
+|`[Switch]`|false   |named   |False        |alpha_channel|
 
 #### **AlphaInvert**
 
 |Type      |Required|Position|PipelineInput|Aliases     |
 |----------|--------|--------|-------------|------------|
-|`[switch]`|false   |Named   |false        |alpha_invert|
+|`[Switch]`|false   |named   |False        |alpha_invert|
 
 #### **AlphaLevel**
 
 |Type     |Required|Position|PipelineInput|Aliases    |
 |---------|--------|--------|-------------|-----------|
-|`[float]`|false   |3       |false        |alpha_level|
+|`[Float]`|false   |named   |False        |alpha_level|
 
 #### **EdgeColor**
 
 |Type      |Required|Position|PipelineInput|Aliases   |
 |----------|--------|--------|-------------|----------|
-|`[string]`|false   |1       |false        |edge_color|
+|`[String]`|false   |named   |False        |edge_color|
 
 #### **EdgeMultiply**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[switch]`|false   |Named   |false        |edge_multiply|
+|`[Switch]`|false   |named   |False        |edge_multiply|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |7       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **InvertEdge**
 
 |Type      |Required|Position|PipelineInput|Aliases    |
 |----------|--------|--------|-------------|-----------|
-|`[switch]`|false   |Named   |false        |invert_edge|
-
-#### **NoResponse**
-
-|Type      |Required|Position|PipelineInput|
-|----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |invert_edge|
 
 #### **NonEdgeColor**
 
 |Type      |Required|Position|PipelineInput|Aliases       |
 |----------|--------|--------|-------------|--------------|
-|`[string]`|false   |2       |false        |non_edge_color|
+|`[String]`|false   |named   |False        |non_edge_color|
 
 #### **NonEdgeMultiply**
 
 |Type      |Required|Position|PipelineInput|Aliases          |
 |----------|--------|--------|-------------|-----------------|
-|`[switch]`|false   |Named   |false        |non_edge_multiply|
+|`[Switch]`|false   |named   |False        |non_edge_multiply|
+
+#### **NoResponse**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[Switch]`|false   |named   |False        |
 
 #### **Notes**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |5       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **RandF**
 
 |Type     |Required|Position|PipelineInput|Aliases|
 |---------|--------|--------|-------------|-------|
-|`[float]`|false   |4       |false        |rand_f |
+|`[Float]`|false   |named   |False        |rand_f |
 
 #### **Sensitivity**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |0       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |8       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |6       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -134,11 +133,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSEdgeDetectionShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSEdgeDetectionShader [[-Sensitivity] <Float>] [-InvertEdge <Switch>] [[-EdgeColor] <String>] [-EdgeMultiply <Switch>] [[-NonEdgeColor] <String>] [-NonEdgeMultiply <Switch>] [-AlphaChannel <Switch>] [[-AlphaLevel] <Float>] [-AlphaInvert <Switch>] [[-RandF] <Float>] [[-Notes] <String>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

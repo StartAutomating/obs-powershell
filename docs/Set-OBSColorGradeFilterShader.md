@@ -2,7 +2,6 @@ Get-OBSColorGradeFilterShader
 -----------------------------
 
 ### Synopsis
-
 Get-OBSColorGradeFilterShader [[-Notes] <string>] [[-Lut] <string>] [[-LutAmountPercent] <int>] [[-LutScalePercent] <int>] [[-LutOffsetPercent] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -14,75 +13,75 @@ Get-OBSColorGradeFilterShader [[-Notes] <string>] [[-Lut] <string>] [[-LutAmount
 ### Parameters
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |6       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Lut**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |1       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **LutAmountPercent**
 
 |Type   |Required|Position|PipelineInput|Aliases           |
 |-------|--------|--------|-------------|------------------|
-|`[int]`|false   |2       |false        |lut_amount_percent|
+|`[Int]`|false   |named   |False        |lut_amount_percent|
 
 #### **LutOffsetPercent**
 
 |Type   |Required|Position|PipelineInput|Aliases           |
 |-------|--------|--------|-------------|------------------|
-|`[int]`|false   |4       |false        |lut_offset_percent|
+|`[Int]`|false   |named   |False        |lut_offset_percent|
 
 #### **LutScalePercent**
 
 |Type   |Required|Position|PipelineInput|Aliases          |
 |-------|--------|--------|-------------|-----------------|
-|`[int]`|false   |3       |false        |lut_scale_percent|
+|`[Int]`|false   |named   |False        |lut_scale_percent|
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Notes**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |0       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |7       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |5       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -98,11 +97,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSColorGradeFilterShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSColorGradeFilterShader [[-Notes] <String>] [[-Lut] <String>] [[-LutAmountPercent] <Int>] [[-LutScalePercent] <Int>] [[-LutOffsetPercent] <Int>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

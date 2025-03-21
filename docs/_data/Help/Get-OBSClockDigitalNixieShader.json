@@ -1,5 +1,5 @@
 {
-  "Synopsis": "\nGet-OBSClockDigitalNixieShader [[-CurrentTimeMs] <int>] [[-CurrentTimeSec] <int>] [[-CurrentTimeMin] <int>] [[-CurrentTimeHour] <int>] [[-TimeMode] <int>] [[-OffsetHours] <int>] [[-OffsetSeconds] <int>] [[-Corecolor] <float[]>] [[-Halocolor] <float[]>] [[-Flarecolor] <float[]>] [[-Anodecolor] <float[]>] [[-Anodehighlightscolor] <float[]>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]\n",
+  "Synopsis": "Get-OBSClockDigitalNixieShader [[-CurrentTimeMs] <int>] [[-CurrentTimeSec] <int>] [[-CurrentTimeMin] <int>] [[-CurrentTimeHour] <int>] [[-TimeMode] <int>] [[-OffsetHours] <int>] [[-OffsetSeconds] <int>] [[-Corecolor] <float[]>] [[-Halocolor] <float[]>] [[-Flarecolor] <float[]>] [[-Anodecolor] <float[]>] [[-Anodehighlightscolor] <float[]>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]",
   "Description": "",
   "Parameters": [
     {
@@ -23,7 +23,7 @@
     null
   ],
   "Inputs": [
-    "System.String\n"
+    "System.String"
   ],
   "Outputs": [
     "System.Object"

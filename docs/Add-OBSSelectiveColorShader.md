@@ -2,7 +2,6 @@ Get-OBSSelectiveColorShader
 ---------------------------
 
 ### Synopsis
-
 Get-OBSSelectiveColorShader [[-CutoffRed] <float>] [[-CutoffGreen] <float>] [[-CutoffBlue] <float>] [[-CutoffYellow] <float>] [[-AcceptanceAmplifier] <float>] [[-Notes] <string>] [[-BackgroundType] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ShowRed] [-ShowGreen] [-ShowBlue] [-ShowYellow] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,109 +15,109 @@ Get-OBSSelectiveColorShader [[-CutoffRed] <float>] [[-CutoffGreen] <float>] [[-C
 
 |Type     |Required|Position|PipelineInput|Aliases             |
 |---------|--------|--------|-------------|--------------------|
-|`[float]`|false   |4       |false        |acceptance_Amplifier|
+|`[Float]`|false   |named   |False        |acceptance_Amplifier|
 
 #### **BackgroundType**
 
 |Type   |Required|Position|PipelineInput|Aliases        |
 |-------|--------|--------|-------------|---------------|
-|`[int]`|false   |6       |false        |background_type|
+|`[Int]`|false   |named   |False        |background_type|
 
 #### **CutoffBlue**
 
 |Type     |Required|Position|PipelineInput|Aliases    |
 |---------|--------|--------|-------------|-----------|
-|`[float]`|false   |2       |false        |cutoff_Blue|
+|`[Float]`|false   |named   |False        |cutoff_Blue|
 
 #### **CutoffGreen**
 
 |Type     |Required|Position|PipelineInput|Aliases     |
 |---------|--------|--------|-------------|------------|
-|`[float]`|false   |1       |false        |cutoff_Green|
+|`[Float]`|false   |named   |False        |cutoff_Green|
 
 #### **CutoffRed**
 
 |Type     |Required|Position|PipelineInput|Aliases   |
 |---------|--------|--------|-------------|----------|
-|`[float]`|false   |0       |false        |cutoff_Red|
+|`[Float]`|false   |named   |False        |cutoff_Red|
 
 #### **CutoffYellow**
 
 |Type     |Required|Position|PipelineInput|Aliases      |
 |---------|--------|--------|-------------|-------------|
-|`[float]`|false   |3       |false        |cutoff_Yellow|
+|`[Float]`|false   |named   |False        |cutoff_Yellow|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |8       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Notes**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |5       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |9       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **ShowBlue**
 
 |Type      |Required|Position|PipelineInput|Aliases  |
 |----------|--------|--------|-------------|---------|
-|`[switch]`|false   |Named   |false        |show_Blue|
+|`[Switch]`|false   |named   |False        |show_Blue|
 
 #### **ShowGreen**
 
 |Type      |Required|Position|PipelineInput|Aliases   |
 |----------|--------|--------|-------------|----------|
-|`[switch]`|false   |Named   |false        |show_Green|
+|`[Switch]`|false   |named   |False        |show_Green|
 
 #### **ShowRed**
 
 |Type      |Required|Position|PipelineInput|Aliases |
 |----------|--------|--------|-------------|--------|
-|`[switch]`|false   |Named   |false        |show_Red|
+|`[Switch]`|false   |named   |False        |show_Red|
 
 #### **ShowYellow**
 
 |Type      |Required|Position|PipelineInput|Aliases    |
 |----------|--------|--------|-------------|-----------|
-|`[switch]`|false   |Named   |false        |show_Yellow|
+|`[Switch]`|false   |named   |False        |show_Yellow|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |7       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -134,11 +133,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSSelectiveColorShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSSelectiveColorShader [[-CutoffRed] <Float>] [[-CutoffGreen] <Float>] [[-CutoffBlue] <Float>] [[-CutoffYellow] <Float>] [[-AcceptanceAmplifier] <Float>] [-ShowRed <Switch>] [-ShowGreen <Switch>] [-ShowBlue <Switch>] [-ShowYellow <Switch>] [[-Notes] <String>] [[-BackgroundType] <Int>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

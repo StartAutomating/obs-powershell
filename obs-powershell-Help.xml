@@ -8,7 +8,7 @@
       <maml:description>
         <maml:para>Add-OBSInput : CreateInput</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Creates a new input, adding it as a scene item to the specified scene.</maml:para>
@@ -247,7 +247,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Add-OBSProfile : CreateProfile</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Creates a new profile, switching to it in the process</maml:para>
@@ -356,7 +356,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Add-OBSScene : CreateScene</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Creates a new scene in OBS.</maml:para>
@@ -465,7 +465,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Add-OBSSceneCollection : CreateSceneCollection</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Creates a new scene collection, switching to it in the process.</maml:para>
@@ -575,7 +575,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Add-OBSSceneItem : CreateSceneItem</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Creates a new scene item using a source.</maml:para>
@@ -789,7 +789,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Add-OBSSourceFilter : CreateSourceFilter</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Creates a new filter, adding it to the specified source.</maml:para>
@@ -1002,7 +1002,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Clears a Scene in OBS</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Clears a Scene in OBS.</maml:para>
@@ -1062,7 +1062,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Connects to Open Broadcast Studio</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Connects to the obs-websocket.</maml:para>
@@ -1159,7 +1159,7 @@ You can see the websocket password in Tools -&gt; obs-websocket settings -&gt; s
       <maml:description>
         <maml:para>Copy-OBSSceneItem : DuplicateSceneItem</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Duplicates a scene item, copying all transform and crop info.</maml:para>
@@ -1373,7 +1373,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Disconnects OBS</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Disconnects Websockets from OBS.</maml:para>
@@ -1413,7 +1413,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Gets OBS</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Outputs OBS connection information and state.</maml:para>
@@ -1445,7 +1445,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBS3dSwapTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string&gt;] [[-TransitionTime] &lt;float&gt;] [[-Reflection] &lt;float&gt;] [[-Perspective] &lt;float&gt;] [[-Depth] &lt;float&gt;] [[-BackgroundColor] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-ConvertLinear] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -1903,7 +1903,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSAddShader [[-OtherImage] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -2165,7 +2165,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSAlphaBorderShader [[-BorderColor] &lt;string&gt;] [[-BorderThickness] &lt;int&gt;] [[-AlphaCutOff] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -2483,7 +2483,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSAlphaGamingBentCameraShader [[-LeftSideWidth] &lt;float&gt;] [[-LeftSideSize] &lt;float&gt;] [[-LeftSideShadow] &lt;float&gt;] [[-LeftFlipWidth] &lt;float&gt;] [[-LeftFlipShadow] &lt;float&gt;] [[-RightSideWidth] &lt;float&gt;] [[-RightSideSize] &lt;float&gt;] [[-RightSideShadow] &lt;float&gt;] [[-RightFlipWidth] &lt;float&gt;] [[-RightFlipShadow] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -2997,7 +2997,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSAnimatedPathShader [[-ViewProj] &lt;float[][]&gt;] [[-Image] &lt;string&gt;] [[-ElapsedTime] &lt;float&gt;] [[-UvOffset] &lt;float[]&gt;] [[-UvScale] &lt;float[]&gt;] [[-UvPixelInterval] &lt;float[]&gt;] [[-RandF] &lt;float&gt;] [[-SpeedPercent] &lt;int&gt;] [[-PathMap] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Reverse] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -3511,7 +3511,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSAnimatedTextureShader [[-ViewProj] &lt;float[][]&gt;] [[-Image] &lt;string&gt;] [[-ElapsedTime] &lt;float&gt;] [[-UvOffset] &lt;float[]&gt;] [[-UvScale] &lt;float[]&gt;] [[-UvPixelInterval] &lt;float[]&gt;] [[-RandF] &lt;float&gt;] [[-UvSize] &lt;float[]&gt;] [[-Notes] &lt;string&gt;] [[-AnimationImage] &lt;string&gt;] [[-ColorizationImage] &lt;string&gt;] [[-PolarAngle] &lt;float&gt;] [[-PolarHeight] &lt;float&gt;] [[-SpeedHorizontalPercent] &lt;float&gt;] [[-SpeedVerticalPercent] &lt;float&gt;] [[-TintSpeedHorizontalPercent] &lt;float&gt;] [[-TintSpeedVerticalPercent] &lt;float&gt;] [[-Alpha] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Reverse] [-Bounce] [-CenterAnimation] [-PolarAnimation] [-UseAnimationImageColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -4389,7 +4389,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSAsciiShader [[-Scale] &lt;int&gt;] [[-BaseColor] &lt;string&gt;] [[-CharacterSet] &lt;int&gt;] [[-Note] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Monochrome] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -4763,7 +4763,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSAspectRatioShader [[-ViewProj] &lt;float[][]&gt;] [[-Image] &lt;string&gt;] [[-ElapsedTime] &lt;float&gt;] [[-UvOffset] &lt;float[]&gt;] [[-UvScale] &lt;float[]&gt;] [[-UvPixelInterval] &lt;float[]&gt;] [[-RandF] &lt;float&gt;] [[-UvSize] &lt;float[]&gt;] [[-BorderColor] &lt;string&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -5277,7 +5277,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSBackgroundRemovalShader [[-ViewProj] &lt;float[][]&gt;] [[-Image] &lt;string&gt;] [[-ElapsedTime] &lt;float&gt;] [[-UvOffset] &lt;float[]&gt;] [[-UvScale] &lt;float[]&gt;] [[-UvPixelInterval] &lt;float[]&gt;] [[-RandF] &lt;float&gt;] [[-UvSize] &lt;float[]&gt;] [[-Notes] &lt;string&gt;] [[-Target] &lt;string&gt;] [[-Color] &lt;string&gt;] [[-Opacity] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Invert] [-Convert709to601] [-Convert601to709] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -5931,7 +5931,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSBlendOpacityShader [[-RotationOffset] &lt;float&gt;] [[-OpacityStartPercent] &lt;float&gt;] [[-OpacityEndPercent] &lt;float&gt;] [[-Spread] &lt;float&gt;] [[-Speed] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Vertical] [-Rotational] [-ApplyToAlphaLayer] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -6417,7 +6417,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSBlinkShader [[-Speed] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -6679,7 +6679,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSBloomShader [[-AngleSteps] &lt;int&gt;] [[-RadiusSteps] &lt;int&gt;] [[-AmpFactor] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -7025,7 +7025,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSBorderShader [[-BorderColor] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -7287,7 +7287,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSBoxBlurShader [[-Strength] &lt;int&gt;] [[-MaskLeft] &lt;float&gt;] [[-MaskRight] &lt;float&gt;] [[-MaskTop] &lt;float&gt;] [[-MaskBottom] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -7661,7 +7661,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSBulgePinchShader [[-Radius] &lt;float&gt;] [[-Magnitude] &lt;float&gt;] [[-CenterX] &lt;float&gt;] [[-CenterY] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Animate] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -8063,7 +8063,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSBurnShader [[-BurnGradient] &lt;string&gt;] [[-Speed] &lt;float&gt;] [[-GradientAdjust] &lt;float&gt;] [[-DissolveValue] &lt;float&gt;] [[-SmokeHorizonalSpeed] &lt;float&gt;] [[-SmokeVerticalSpeed] &lt;float&gt;] [[-Iterations] &lt;int&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Animated] [-ApplyToChannel] [-ApplySmoke] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -8605,7 +8605,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSCartoonShader [[-ViewProj] &lt;float[][]&gt;] [[-Image] &lt;string&gt;] [[-ElapsedTime] &lt;float&gt;] [[-UvOffset] &lt;float[]&gt;] [[-UvScale] &lt;float[]&gt;] [[-UvPixelInterval] &lt;float[]&gt;] [[-RandF] &lt;float&gt;] [[-UvSize] &lt;float[]&gt;] [[-Notes] &lt;string&gt;] [[-HueSteps] &lt;int&gt;] [[-ValueSteps] &lt;int&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-ApplyToAlphaLayer] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -9175,7 +9175,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSCellShadedShader [[-AngleSteps] &lt;int&gt;] [[-RadiusSteps] &lt;int&gt;] [[-AmpFactor] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -9521,7 +9521,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSChromaticAberrationShader [[-Power] &lt;float&gt;] [[-Gamma] &lt;float&gt;] [[-NumIter] &lt;int&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-DistortRadial] [-DistortBarrel] [-OffsetSpectrumYcgco] [-OffsetSpectrumYuv] [-UseRandom] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -9979,7 +9979,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSChromaUVDistortionShader [[-Distortion] &lt;float&gt;] [[-Amplitude] &lt;float&gt;] [[-Chroma] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -10297,7 +10297,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSCircleMaskFilterShader [[-Radius] &lt;float&gt;] [[-CircleOffsetX] &lt;int&gt;] [[-CircleOffsetY] &lt;int&gt;] [[-SourceOffsetX] &lt;int&gt;] [[-SourceOffsetY] &lt;int&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Antialiasing] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -10699,7 +10699,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSClockAnalogShader [[-CurrentTimeMs] &lt;int&gt;] [[-CurrentTimeSec] &lt;int&gt;] [[-CurrentTimeMin] &lt;int&gt;] [[-CurrentTimeHour] &lt;int&gt;] [[-HourHandleColor] &lt;float[]&gt;] [[-MinuteHandleColor] &lt;float[]&gt;] [[-SecondHandleColor] &lt;float[]&gt;] [[-OutlineColor] &lt;float[]&gt;] [[-TopLineColor] &lt;float[]&gt;] [[-BackgroundColor] &lt;float[]&gt;] [[-TimeOffsetHours] &lt;int&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -11241,7 +11241,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSClockDigitalLedShader [[-CurrentTimeSec] &lt;int&gt;] [[-CurrentTimeMin] &lt;int&gt;] [[-CurrentTimeHour] &lt;int&gt;] [[-TimeMode] &lt;int&gt;] [[-LedColor] &lt;string&gt;] [[-OffsetHours] &lt;int&gt;] [[-OffsetSeconds] &lt;int&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-ShowMatrix] [-ShowOff] [-Ampm] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -11755,7 +11755,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSClockDigitalNixieShader [[-CurrentTimeMs] &lt;int&gt;] [[-CurrentTimeSec] &lt;int&gt;] [[-CurrentTimeMin] &lt;int&gt;] [[-CurrentTimeHour] &lt;int&gt;] [[-TimeMode] &lt;int&gt;] [[-OffsetHours] &lt;int&gt;] [[-OffsetSeconds] &lt;int&gt;] [[-Corecolor] &lt;float[]&gt;] [[-Halocolor] &lt;float[]&gt;] [[-Flarecolor] &lt;float[]&gt;] [[-Anodecolor] &lt;float[]&gt;] [[-Anodehighlightscolor] &lt;float[]&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -12325,7 +12325,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSColorDepthShader [[-ColorDepth] &lt;float&gt;] [[-PixelSize] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -12615,7 +12615,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSColorGradeFilterShader [[-Notes] &lt;string&gt;] [[-Lut] &lt;string&gt;] [[-LutAmountPercent] &lt;int&gt;] [[-LutScalePercent] &lt;int&gt;] [[-LutOffsetPercent] &lt;int&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -12989,7 +12989,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSCornerPinShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;float&gt;] [[-TopRightX] &lt;float&gt;] [[-TopRightY] &lt;float&gt;] [[-BottomLeftX] &lt;float&gt;] [[-BottomLeftY] &lt;float&gt;] [[-BottomRightX] &lt;float&gt;] [[-BottomRightY] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-AntialiasEdges] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -13475,7 +13475,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSCrtCurvatureShader [[-Strength] &lt;float&gt;] [[-Border] &lt;string&gt;] [[-Feathering] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -13793,7 +13793,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSCurrentPreviewScene : GetCurrentPreviewScene</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the current preview scene.</maml:para>
@@ -13889,7 +13889,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSCurrentProgramScene : GetCurrentProgramScene</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the current program scene.</maml:para>
@@ -13984,7 +13984,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSCurrentSceneTransition : GetCurrentSceneTransition</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets information about the current scene transition.</maml:para>
@@ -14078,7 +14078,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSCurrentSceneTransitionCursor : GetCurrentSceneTransitionCursor</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the cursor position of the current scene transition.</maml:para>
@@ -14173,7 +14173,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSCurveShader [[-Strength] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-CurveColor] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -14491,7 +14491,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSCutRectPerCornerShader [[-CornerTl] &lt;int&gt;] [[-CornerTr] &lt;int&gt;] [[-CornerBr] &lt;int&gt;] [[-CornerBl] &lt;int&gt;] [[-BorderThickness] &lt;int&gt;] [[-BorderColor] &lt;string&gt;] [[-BorderAlphaStart] &lt;float&gt;] [[-BorderAlphaEnd] &lt;float&gt;] [[-AlphaCutOff] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -14977,7 +14977,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSCylinderShader [[-CylinderFactor] &lt;float&gt;] [[-BackgroundCut] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -15267,7 +15267,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSDarkenShader [[-OpacityPercentage] &lt;float&gt;] [[-FillPercentage] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -15585,7 +15585,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSDeadPixelFixerShader [[-DeadPixelX] &lt;int&gt;] [[-DeadPixelY] &lt;int&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -15875,7 +15875,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSDensitySatHueShader [[-Notes] &lt;string&gt;] [[-DensityR] &lt;float&gt;] [[-SaturationR] &lt;float&gt;] [[-HueShiftR] &lt;float&gt;] [[-DensityY] &lt;float&gt;] [[-SaturationY] &lt;float&gt;] [[-HueShiftY] &lt;float&gt;] [[-DensityG] &lt;float&gt;] [[-SaturationG] &lt;float&gt;] [[-HueShiftG] &lt;float&gt;] [[-DensityC] &lt;float&gt;] [[-SaturationC] &lt;float&gt;] [[-HueShiftC] &lt;float&gt;] [[-DensityB] &lt;float&gt;] [[-SaturationB] &lt;float&gt;] [[-HueShiftB] &lt;float&gt;] [[-DensityM] &lt;float&gt;] [[-SaturationM] &lt;float&gt;] [[-HueShiftM] &lt;float&gt;] [[-GlobalDensity] &lt;float&gt;] [[-GlobalSaturation] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -16697,7 +16697,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSDiffuseTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string&gt;] [[-TransitionTime] &lt;float&gt;] [[-NumSamples] &lt;int&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-ConvertLinear] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -17071,7 +17071,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSDigitalRainShader [[-Font] &lt;string&gt;] [[-Noise] &lt;string&gt;] [[-BaseColor] &lt;string&gt;] [[-RainSpeed] &lt;float&gt;] [[-CharSpeed] &lt;float&gt;] [[-GlowContrast] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -17473,7 +17473,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSDivideRotateShader [[-IChannel0] &lt;string&gt;] [[-SpeedPercentage] &lt;int&gt;] [[-AlphaPercentage] &lt;int&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-ApplyToAlphaLayer] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -17847,7 +17847,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSDoodleShader [[-ViewProj] &lt;float[][]&gt;] [[-Image] &lt;string&gt;] [[-ElapsedTime] &lt;float&gt;] [[-UvOffset] &lt;float[]&gt;] [[-UvScale] &lt;float[]&gt;] [[-UvPixelInterval] &lt;float[]&gt;] [[-RandF] &lt;float&gt;] [[-UvSize] &lt;float[]&gt;] [[-DoodleScalePercent] &lt;float&gt;] [[-SnapPercent] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -18389,7 +18389,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSDrawingsShader [[-AngleNum] &lt;int&gt;] [[-SampNum] &lt;int&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -18679,7 +18679,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSDropShadowShader [[-ShadowOffsetX] &lt;int&gt;] [[-ShadowOffsetY] &lt;int&gt;] [[-ShadowBlurSize] &lt;int&gt;] [[-Notes] &lt;string&gt;] [[-ShadowColor] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-IsAlphaPremultiplied] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -19081,7 +19081,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSDrunkShader [[-ColorMatrix] &lt;float[][]&gt;] [[-GlowPercent] &lt;int&gt;] [[-Blur] &lt;int&gt;] [[-MinBrightness] &lt;int&gt;] [[-MaxBrightness] &lt;int&gt;] [[-PulseSpeedPercent] &lt;int&gt;] [[-GlowColor] &lt;string&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-ApplyToAlphaLayer] [-Ease] [-Glitch] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -19623,7 +19623,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSDynamicMaskShader [[-InputSource] &lt;string&gt;] [[-RedBaseValue] &lt;float&gt;] [[-RedRedInputValue] &lt;float&gt;] [[-RedGreenInputValue] &lt;float&gt;] [[-RedBlueInputValue] &lt;float&gt;] [[-RedAlphaInputValue] &lt;float&gt;] [[-RedMultiplier] &lt;float&gt;] [[-GreenBaseValue] &lt;float&gt;] [[-GreenRedInputValue] &lt;float&gt;] [[-GreenGreenInputValue] &lt;float&gt;] [[-GreenBlueInputValue] &lt;float&gt;] [[-GreenAlphaInputValue] &lt;float&gt;] [[-GreenMultiplier] &lt;float&gt;] [[-BlueBaseValue] &lt;float&gt;] [[-BlueRedInputValue] &lt;float&gt;] [[-BlueGreenInputValue] &lt;float&gt;] [[-BlueBlueInputValue] &lt;float&gt;] [[-BlueAlphaInputValue] &lt;float&gt;] [[-BlueMultiplier] &lt;float&gt;] [[-AlphaBaseValue] &lt;float&gt;] [[-AlphaRedInputValue] &lt;float&gt;] [[-AlphaGreenInputValue] &lt;float&gt;] [[-AlphaBlueInputValue] &lt;float&gt;] [[-AlphaAlphaInputValue] &lt;float&gt;] [[-AlphaMultiplier] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -20557,7 +20557,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSEdgeDetectionShader [[-Sensitivity] &lt;float&gt;] [[-EdgeColor] &lt;string&gt;] [[-NonEdgeColor] &lt;string&gt;] [[-AlphaLevel] &lt;float&gt;] [[-RandF] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-InvertEdge] [-EdgeMultiply] [-NonEdgeMultiply] [-AlphaChannel] [-AlphaInvert] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -21099,7 +21099,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Gets OBS Effects</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets effects currently loaded into OBS-PowerShell.</maml:para>
@@ -21164,7 +21164,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSEmbersShader [[-ViewProj] &lt;float[][]&gt;] [[-Image] &lt;string&gt;] [[-ElapsedTime] &lt;float&gt;] [[-UvOffset] &lt;float[]&gt;] [[-UvScale] &lt;float[]&gt;] [[-UvSize] &lt;float[]&gt;] [[-UvPixelInterval] &lt;float[]&gt;] [[-RandF] &lt;float&gt;] [[-RandInstanceF] &lt;float&gt;] [[-RandActivationF] &lt;float&gt;] [[-Loops] &lt;int&gt;] [[-LocalTime] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-AnimationSpeed] &lt;float&gt;] [[-MovementDirectionHorizontal] &lt;float&gt;] [[-MovementDirectionVertical] &lt;float&gt;] [[-MovementSpeedPercent] &lt;int&gt;] [[-LayersCount] &lt;int&gt;] [[-LumaMin] &lt;float&gt;] [[-LumaMinSmooth] &lt;float&gt;] [[-AlphaPercentage] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-ApplyToAlphaLayer] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -22014,7 +22014,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSEmbossColorShader [[-AngleSteps] &lt;int&gt;] [[-RadiusSteps] &lt;int&gt;] [[-AmpFactor] &lt;float&gt;] [[-UpDownPercent] &lt;int&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-ApplyToAlphaLayer] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -22416,7 +22416,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSEmbossShader [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-UseColor] [-ApplyToAlphaLayer] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -22706,7 +22706,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSExeldroBentCameraShader [[-LeftSideWidth] &lt;float&gt;] [[-LeftSideSize] &lt;float&gt;] [[-LeftSideShadow] &lt;float&gt;] [[-LeftFlipWidth] &lt;float&gt;] [[-LeftFlipShadow] &lt;float&gt;] [[-RightSideWidth] &lt;float&gt;] [[-RightSideSize] &lt;float&gt;] [[-RightSideShadow] &lt;float&gt;] [[-RightFlipWidth] &lt;float&gt;] [[-RightFlipShadow] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -23220,7 +23220,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSFadeTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string&gt;] [[-TransitionTime] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-ConvertLinear] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -23566,7 +23566,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSFillColorGradientShader [[-Fill] &lt;float&gt;] [[-GradientWidth] &lt;float&gt;] [[-GradientOffset] &lt;float&gt;] [[-FillDirection] &lt;int&gt;] [[-FillColor] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -23940,7 +23940,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSFillColorLinearShader [[-Fill] &lt;float&gt;] [[-FillDirection] &lt;int&gt;] [[-FillColor] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -24258,7 +24258,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSFillColorRadialDegreesShader [[-FillDirection] &lt;int&gt;] [[-Fill] &lt;float&gt;] [[-StartAngle] &lt;float&gt;] [[-OffsetX] &lt;float&gt;] [[-OffsetY] &lt;float&gt;] [[-FillColor] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -24660,7 +24660,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSFillColorRadialPercentageShader [[-FillDirection] &lt;int&gt;] [[-Fill] &lt;float&gt;] [[-StartAngle] &lt;float&gt;] [[-OffsetX] &lt;float&gt;] [[-OffsetY] &lt;float&gt;] [[-FillColor] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -25062,7 +25062,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSFilterTemplateShader [[-ViewProj] &lt;float[][]&gt;] [[-Image] &lt;string&gt;] [[-ElapsedTime] &lt;float&gt;] [[-UvOffset] &lt;float[]&gt;] [[-UvScale] &lt;float[]&gt;] [[-UvPixelInterval] &lt;float[]&gt;] [[-UvSize] &lt;float[]&gt;] [[-RandF] &lt;float&gt;] [[-RandInstanceF] &lt;float&gt;] [[-RandActivationF] &lt;float&gt;] [[-Loops] &lt;int&gt;] [[-LocalTime] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -25660,7 +25660,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSFire3Shader [[-ViewProj] &lt;float[][]&gt;] [[-Image] &lt;string&gt;] [[-ElapsedTime] &lt;float&gt;] [[-UvOffset] &lt;float[]&gt;] [[-UvScale] &lt;float[]&gt;] [[-UvPixelInterval] &lt;float[]&gt;] [[-UvSize] &lt;float[]&gt;] [[-RandF] &lt;float&gt;] [[-RandInstanceF] &lt;float&gt;] [[-RandActivationF] &lt;float&gt;] [[-Loops] &lt;int&gt;] [[-LocalTime] &lt;float&gt;] [[-MovementDirectionHorizontal] &lt;float&gt;] [[-MovementDirectionVertical] &lt;float&gt;] [[-AlphaPercentage] &lt;int&gt;] [[-Speed] &lt;int&gt;] [[-LumaMin] &lt;float&gt;] [[-LumaMinSmooth] &lt;float&gt;] [[-ColorToReplace] &lt;string&gt;] [[-FlameSize] &lt;float&gt;] [[-SparkGridHeight] &lt;float&gt;] [[-FlameModifier] &lt;float&gt;] [[-FlameTongueSize] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Invert] [-ApplyToImage] [-ReplaceImageColor] [-ApplyToSpecificColor] [-FullWidth] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -26678,7 +26678,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSFireShader [[-AlphaPercentage] &lt;int&gt;] [[-Speed] &lt;int&gt;] [[-FlameSize] &lt;int&gt;] [[-FireType] &lt;int&gt;] [[-LumaMin] &lt;float&gt;] [[-LumaMinSmooth] &lt;float&gt;] [[-ColorToReplace] &lt;string&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Invert] [-ApplyToImage] [-ReplaceImageColor] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -27248,7 +27248,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSFireworks2Shader [[-Speed] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -27510,7 +27510,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSFireworksShader [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-ShowFlash] [-ShowStars] [-UseTransparancy] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -27828,7 +27828,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSFisheyeShader [[-CenterXPercent] &lt;float&gt;] [[-CenterYPercent] &lt;float&gt;] [[-Power] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -28146,7 +28146,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSFisheyeXyShader [[-CenterXPercent] &lt;float&gt;] [[-CenterYPercent] &lt;float&gt;] [[-PowerX] &lt;float&gt;] [[-PowerY] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -28492,7 +28492,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSFlipShader [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Horizontal] [-Vertical] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -28782,7 +28782,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSFrostedGlassShader [[-AlphaPercent] &lt;float&gt;] [[-Amount] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-BorderOffset] &lt;float&gt;] [[-BorderColor] &lt;string&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Animate] [-HorizontalBorder] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -29240,7 +29240,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSGammaCorrectionShader [[-Red] &lt;float&gt;] [[-Green] &lt;float&gt;] [[-Blue] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -29586,7 +29586,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSGaussianBlurAdvancedShader [[-Directions] &lt;float&gt;] [[-Quality] &lt;float&gt;] [[-Size] &lt;float&gt;] [[-MaskLeft] &lt;float&gt;] [[-MaskRight] &lt;float&gt;] [[-MaskTop] &lt;float&gt;] [[-MaskBottom] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -30016,7 +30016,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSGaussianBlurShader [[-ViewProj] &lt;float[][]&gt;] [[-Image] &lt;string&gt;] [[-ImageSize] &lt;float[]&gt;] [[-ImageTexel] &lt;float[]&gt;] [[-URadius] &lt;int&gt;] [[-UDiameter] &lt;int&gt;] [[-UTexelDelta] &lt;float[]&gt;] [[-ElapsedTime] &lt;float&gt;] [[-UvOffset] &lt;float[]&gt;] [[-UvScale] &lt;float[]&gt;] [[-UvPixelInterval] &lt;float[]&gt;] [[-Kernel] &lt;string&gt;] [[-KernelTexel] &lt;float[]&gt;] [[-PixelSize] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -30642,7 +30642,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSGaussianBlurSimpleShader [[-Strength] &lt;int&gt;] [[-MaskLeft] &lt;float&gt;] [[-MaskRight] &lt;float&gt;] [[-MaskTop] &lt;float&gt;] [[-MaskBottom] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -31016,7 +31016,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSGaussianExampleShader [[-ViewProj] &lt;float[][]&gt;] [[-Image] &lt;string&gt;] [[-ElapsedTime] &lt;float&gt;] [[-UvOffset] &lt;float[]&gt;] [[-UvScale] &lt;float[]&gt;] [[-UvSize] &lt;float[]&gt;] [[-UvPixelInterval] &lt;float[]&gt;] [[-InitialImage] &lt;string&gt;] [[-BeforeImage] &lt;string&gt;] [[-AfterImage] &lt;string&gt;] [[-TextColor] &lt;string&gt;] [[-MaxDistance] &lt;float&gt;] [[-Exp] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -31614,7 +31614,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSGaussianSimpleShader [[-ViewProj] &lt;float[][]&gt;] [[-Image] &lt;string&gt;] [[-ElapsedTime] &lt;float&gt;] [[-UvOffset] &lt;float[]&gt;] [[-UvScale] &lt;float[]&gt;] [[-UvPixelInterval] &lt;float[]&gt;] [[-UvSize] &lt;float[]&gt;] [[-RandF] &lt;float&gt;] [[-RandInstanceF] &lt;float&gt;] [[-RandActivationF] &lt;float&gt;] [[-Loops] &lt;int&gt;] [[-LocalTime] &lt;float&gt;] [[-Samples] &lt;int&gt;] [[-LOD] &lt;int&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -32240,7 +32240,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSGbCameraShader [[-PixelSize] &lt;float&gt;] [[-DitherFactor] &lt;float&gt;] [[-Brightness] &lt;float&gt;] [[-Contrast] &lt;float&gt;] [[-Gamma] &lt;float&gt;] [[-Color1] &lt;string&gt;] [[-Color2] &lt;string&gt;] [[-Color3] &lt;string&gt;] [[-Color4] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-AlternativeBayer] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -32754,7 +32754,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSGlassShader [[-AlphaPercent] &lt;float&gt;] [[-OffsetAmount] &lt;float&gt;] [[-XSize] &lt;int&gt;] [[-YSize] &lt;int&gt;] [[-ReflectionOffset] &lt;int&gt;] [[-BorderOffset] &lt;float&gt;] [[-BorderColor] &lt;string&gt;] [[-GlassColor] &lt;string&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-HorizontalBorder] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -33268,7 +33268,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSGlitchAnalogShader [[-ScanLineJitterDisplacement] &lt;float&gt;] [[-ScanLineJitterThresholdPercent] &lt;int&gt;] [[-VerticalJumpAmount] &lt;float&gt;] [[-VerticalSpeed] &lt;float&gt;] [[-HorizontalShake] &lt;float&gt;] [[-ColorDriftAmount] &lt;float&gt;] [[-ColorDriftSpeed] &lt;float&gt;] [[-PulseSpeedPercent] &lt;int&gt;] [[-AlphaPercent] &lt;int&gt;] [[-ColorToReplace] &lt;string&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-RotateColors] [-ApplyToAlphaLayer] [-ReplaceImageColor] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -33922,7 +33922,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSGlitchShader [[-AMT] &lt;float&gt;] [[-SPEED] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -34212,7 +34212,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSGlowShader [[-GlowPercent] &lt;int&gt;] [[-Blur] &lt;int&gt;] [[-MinBrightness] &lt;int&gt;] [[-MaxBrightness] &lt;int&gt;] [[-PulseSpeed] &lt;int&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Ease] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -34642,7 +34642,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSGradientShader [[-StartColor] &lt;string&gt;] [[-StartStep] &lt;float&gt;] [[-MiddleColor] &lt;string&gt;] [[-MiddleStep] &lt;float&gt;] [[-EndColor] &lt;string&gt;] [[-EndStep] &lt;float&gt;] [[-AlphaPercent] &lt;int&gt;] [[-PulseSpeed] &lt;int&gt;] [[-ColorToReplace] &lt;string&gt;] [[-GradientCenterWidthPercentage] &lt;int&gt;] [[-GradientCenterHeightPercentage] &lt;int&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Ease] [-RotateColors] [-ApplyToAlphaLayer] [-ApplyToSpecificColor] [-Horizontal] [-Vertical] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -35380,7 +35380,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSGroup : GetGroupList</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets an array of all groups in OBS.</maml:para>
@@ -35475,7 +35475,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSGroupSceneItem : GetGroupSceneItemList</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Basically GetSceneItemList, but for groups.</maml:para>
@@ -35612,7 +35612,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSHalftoneShader [[-Threshold] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -35874,7 +35874,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSHeatWaveSimpleShader [[-Rate] &lt;float&gt;] [[-Strength] &lt;float&gt;] [[-Distortion] &lt;float&gt;] [[-Opacity] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -36220,7 +36220,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSHexagonShader [[-HexColor] &lt;string&gt;] [[-AlphaPercent] &lt;int&gt;] [[-Quantity] &lt;float&gt;] [[-BorderWidth] &lt;int&gt;] [[-SpeedPercent] &lt;int&gt;] [[-DistortX] &lt;float&gt;] [[-DistortY] &lt;float&gt;] [[-OffsetX] &lt;float&gt;] [[-OffsetY] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Blend] [-Equilateral] [-ZoomAnimate] [-Glitch] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -36846,7 +36846,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSHotkey : GetHotkeyList</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets an array of all hotkey names in OBS.</maml:para>
@@ -36941,7 +36941,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSHslHsvSaturationShader [[-HslSaturationFactor] &lt;float&gt;] [[-HslGamma] &lt;float&gt;] [[-HsvSaturationFactor] &lt;float&gt;] [[-HsvGamma] &lt;float&gt;] [[-AdjustmentOrder] &lt;int&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -37315,7 +37315,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSHueRotatonShader [[-Speed] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-HueOverride] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -37605,7 +37605,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSInput : GetInputList</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets an array of all inputs in OBS.</maml:para>
@@ -37714,7 +37714,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSInputAudioBalance : GetInputAudioBalance</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the audio balance of an input.</maml:para>
@@ -37849,7 +37849,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSInputAudioMonitorType : GetInputAudioMonitorType</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the audio monitor type of an input.</maml:para>
@@ -37988,7 +37988,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSInputAudioSyncOffset : GetInputAudioSyncOffset</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the audio sync offset of an input.</maml:para>
@@ -38124,7 +38124,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSInputAudioTracks : GetInputAudioTracks</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the enable state of all audio tracks of an input.</maml:para>
@@ -38259,7 +38259,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSInputDefaultSettings : GetInputDefaultSettings</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the default settings for an input kind.</maml:para>
@@ -38368,7 +38368,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSInputKind : GetInputKindList</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets an array of all available input kinds in OBS.</maml:para>
@@ -38477,7 +38477,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSInputMute : GetInputMute</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the audio mute state of an input.</maml:para>
@@ -38612,7 +38612,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSInputPropertiesListPropertyItems : GetInputPropertiesListPropertyItems</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the items of a list property from an input's properties.</maml:para>
@@ -38774,7 +38774,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSInputSettings : GetInputSettings</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the settings of an input.</maml:para>
@@ -38910,7 +38910,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSInputVolume : GetInputVolume</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the current volume setting of an input.</maml:para>
@@ -39045,7 +39045,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSIntensityScopeShader [[-Gain] &lt;float&gt;] [[-Blend] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -39335,7 +39335,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSInvertLumaShader [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-InvertColor] [-InvertLuma] [-GammaCorrection] [-TestRamp] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -39681,7 +39681,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSLastReplayBufferReplay : GetLastReplayBufferReplay</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the filename of the last replay buffer save file.</maml:para>
@@ -39775,7 +39775,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSLuminance2Shader [[-Color] &lt;string&gt;] [[-LumaMax] &lt;float&gt;] [[-LumaMin] &lt;float&gt;] [[-LumaMaxSmooth] &lt;float&gt;] [[-LumaMinSmooth] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-InvertImageColor] [-InvertAlphaChannel] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -40233,7 +40233,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSLuminanceAlphaShader [[-ViewProj] &lt;float[][]&gt;] [[-Image] &lt;string&gt;] [[-ElapsedTime] &lt;float&gt;] [[-UvOffset] &lt;float[]&gt;] [[-UvScale] &lt;float[]&gt;] [[-UvPixelInterval] &lt;float[]&gt;] [[-RandF] &lt;float&gt;] [[-UvSize] &lt;float[]&gt;] [[-ColorMatrix] &lt;float[][]&gt;] [[-Color] &lt;string&gt;] [[-MulVal] &lt;float&gt;] [[-AddVal] &lt;float&gt;] [[-Level] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-InvertAlphaChannel] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -40859,7 +40859,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSLuminanceShader [[-Color] &lt;string&gt;] [[-Level] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-InvertImageColor] [-InvertAlphaChannel] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -41233,7 +41233,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSMatrixShader [[-ViewProj] &lt;float[][]&gt;] [[-Image] &lt;string&gt;] [[-ElapsedTime] &lt;float&gt;] [[-UvOffset] &lt;float[]&gt;] [[-UvScale] &lt;float[]&gt;] [[-UvSize] &lt;float[]&gt;] [[-UvPixelInterval] &lt;float[]&gt;] [[-RandF] &lt;float&gt;] [[-RandInstanceF] &lt;float&gt;] [[-RandActivationF] &lt;float&gt;] [[-Loops] &lt;int&gt;] [[-LocalTime] &lt;float&gt;] [[-Mouse] &lt;float[]&gt;] [[-LumaMin] &lt;float&gt;] [[-LumaMinSmooth] &lt;float&gt;] [[-Ratio] &lt;float&gt;] [[-AlphaPercentage] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-InvertDirection] [-ApplyToAlphaLayer] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -41999,7 +41999,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSMediaInputStatus : GetMediaInputStatus</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the status of a media input.</maml:para>
@@ -42143,7 +42143,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSMonitor : GetMonitorList</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets a list of connected monitors and information about them.</maml:para>
@@ -42237,7 +42237,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSMultiplyShader [[-OtherImage] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -42499,7 +42499,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSNightSkyShader [[-Speed] &lt;float&gt;] [[-CenterWidthPercentage] &lt;int&gt;] [[-CenterHeightPercentage] &lt;int&gt;] [[-AlphaPercentage] &lt;float&gt;] [[-NumberStars] &lt;int&gt;] [[-SKYCOLOR] &lt;string&gt;] [[-STARCOLOR] &lt;string&gt;] [[-LIGHTSKY] &lt;string&gt;] [[-SKYLIGHTNESS] &lt;float&gt;] [[-MOONCOLOR] &lt;string&gt;] [[-MoonSize] &lt;float&gt;] [[-MoonBumpSize] &lt;float&gt;] [[-MoonPositionX] &lt;float&gt;] [[-MoonPositionY] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-IncludeClouds] [-IncludeMoon] [-ApplyToImage] [-ReplaceImageColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -43237,7 +43237,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSOpacityShader [[-Opacity] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -43499,7 +43499,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSOutput : GetOutputList</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the list of available outputs.</maml:para>
@@ -43593,7 +43593,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSOutputSettings : GetOutputSettings</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the settings of an output.</maml:para>
@@ -43702,7 +43702,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSOutputStatus : GetOutputStatus</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the status of an output.</maml:para>
@@ -43811,7 +43811,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSPagePeelShader [[-Speed] &lt;float&gt;] [[-Position] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -44101,7 +44101,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSPagePeelTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string&gt;] [[-TransitionTime] &lt;float&gt;] [[-PageColor] &lt;string&gt;] [[-PageTransparency] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-ConvertLinear] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -44503,7 +44503,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSPerlinNoiseShader [[-Speed] &lt;float&gt;] [[-SpeedHorizonal] &lt;float&gt;] [[-SpeedVertical] &lt;float&gt;] [[-Iterations] &lt;int&gt;] [[-WhiteNoise] &lt;float&gt;] [[-BlackNoise] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Animated] [-ApplyToChannel] [-Inverted] [-Multiply] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -45045,7 +45045,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSPersistentData : GetPersistentData</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the value of a "slot" from the selected persistent data realm.</maml:para>
@@ -45180,7 +45180,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSPieChartShader [[-InnerRadius] &lt;float&gt;] [[-OuterRadius] &lt;float&gt;] [[-StartAngle] &lt;float&gt;] [[-Total] &lt;int&gt;] [[-Part1] &lt;int&gt;] [[-Color1] &lt;string&gt;] [[-Part2] &lt;int&gt;] [[-Color2] &lt;string&gt;] [[-Part3] &lt;int&gt;] [[-Color3] &lt;string&gt;] [[-Part4] &lt;int&gt;] [[-Color4] &lt;string&gt;] [[-Part5] &lt;int&gt;] [[-Color5] &lt;string&gt;] [[-Part6] &lt;int&gt;] [[-Color6] &lt;string&gt;] [[-Part7] &lt;int&gt;] [[-Color7] &lt;string&gt;] [[-Part8] &lt;int&gt;] [[-Color8] &lt;string&gt;] [[-Part9] &lt;int&gt;] [[-Color9] &lt;string&gt;] [[-Part10] &lt;int&gt;] [[-Color10] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -46086,7 +46086,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSPixelationShader [[-TargetWidth] &lt;float&gt;] [[-TargetHeight] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -46404,7 +46404,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSPixelationTransitionShader [[-TransitionTime] &lt;float&gt;] [[-Power] &lt;float&gt;] [[-CenterX] &lt;float&gt;] [[-CenterY] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-ConvertLinear] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -46778,7 +46778,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSPolarShader [[-CenterX] &lt;float&gt;] [[-CenterY] &lt;float&gt;] [[-PointY] &lt;float&gt;] [[-Rotate] &lt;float&gt;] [[-Repeat] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Flip] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -47208,7 +47208,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSProfile : GetProfileList</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets an array of all profiles</maml:para>
@@ -47302,7 +47302,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSProfileParameter : GetProfileParameter</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets a parameter from the current profile's configuration.</maml:para>
@@ -47437,7 +47437,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSPulseShader [[-ViewProj] &lt;float[][]&gt;] [[-Image] &lt;string&gt;] [[-ElapsedTime] &lt;float&gt;] [[-UvOffset] &lt;float[]&gt;] [[-UvScale] &lt;float[]&gt;] [[-UvPixelInterval] &lt;float[]&gt;] [[-RandF] &lt;float&gt;] [[-UvSize] &lt;float[]&gt;] [[-Speed] &lt;float&gt;] [[-MinGrowthPixels] &lt;float&gt;] [[-MaxGrowthPixels] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -47979,7 +47979,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSRainbowShader [[-Saturation] &lt;float&gt;] [[-Luminosity] &lt;float&gt;] [[-Spread] &lt;float&gt;] [[-Speed] &lt;float&gt;] [[-AlphaPercentage] &lt;float&gt;] [[-RotationOffset] &lt;float&gt;] [[-ColorToReplace] &lt;string&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Vertical] [-Rotational] [-ApplyToImage] [-ReplaceImageColor] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -48577,7 +48577,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSRainWindowShader [[-Size] &lt;float&gt;] [[-BlurSize] &lt;float&gt;] [[-TrailStrength] &lt;float&gt;] [[-TrailColor] &lt;float&gt;] [[-Speed] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-DebugShader] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -48979,7 +48979,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSRecordDirectory : GetRecordDirectory</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the current directory that the record output is set to.</maml:para>
@@ -49073,7 +49073,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSRecordStatus : GetRecordStatus</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the status of the record output.</maml:para>
@@ -49167,7 +49167,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSRectangularDropShadowShader [[-ShadowOffsetX] &lt;int&gt;] [[-ShadowOffsetY] &lt;int&gt;] [[-ShadowBlurSize] &lt;int&gt;] [[-ShadowColor] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -49513,7 +49513,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSReflectShader [[-CenterXPercent] &lt;int&gt;] [[-CenterYPercent] &lt;int&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Horizontal] [-Vertical] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -49859,7 +49859,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSRemovePartialPixelsShader [[-MinimumAlphaPercent] &lt;int&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -50149,7 +50149,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSRepeatShader [[-ViewProj] &lt;float[][]&gt;] [[-ColorMatrix] &lt;float[][]&gt;] [[-ColorRangeMin] &lt;float[]&gt;] [[-ColorRangeMax] &lt;float[]&gt;] [[-Image] &lt;string&gt;] [[-ElapsedTime] &lt;float&gt;] [[-UvOffset] &lt;float[]&gt;] [[-UvScale] &lt;float[]&gt;] [[-UvPixelInterval] &lt;float[]&gt;] [[-UvSize] &lt;float[]&gt;] [[-RandF] &lt;float&gt;] [[-Alpha] &lt;float&gt;] [[-Copies] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -50775,7 +50775,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSRepeatTextureShader [[-ViewProj] &lt;float[][]&gt;] [[-ColorMatrix] &lt;float[][]&gt;] [[-ColorRangeMin] &lt;float[]&gt;] [[-ColorRangeMax] &lt;float[]&gt;] [[-Image] &lt;string&gt;] [[-TexImage] &lt;string&gt;] [[-ElapsedTime] &lt;float&gt;] [[-UvOffset] &lt;float[]&gt;] [[-UvScale] &lt;float[]&gt;] [[-UvPixelInterval] &lt;float[]&gt;] [[-UvSize] &lt;float[]&gt;] [[-RandF] &lt;float&gt;] [[-Blend] &lt;float&gt;] [[-Copies] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-AlphaPercentage] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -51457,7 +51457,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSReplayBufferStatus : GetReplayBufferStatus</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the status of the replay buffer output.</maml:para>
@@ -51551,7 +51551,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSRGBAPercentShader [[-RedPercent] &lt;float&gt;] [[-GreenPercent] &lt;float&gt;] [[-BluePercent] &lt;float&gt;] [[-AlphaPercent] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -51897,7 +51897,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSRgbColorWheelShader [[-Speed] &lt;float&gt;] [[-ColorDepth] &lt;float&gt;] [[-ColorToReplace] &lt;string&gt;] [[-AlphaPercentage] &lt;float&gt;] [[-CenterWidthPercentage] &lt;int&gt;] [[-CenterHeightPercentage] &lt;int&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-ApplyToImage] [-ReplaceImageColor] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -52383,7 +52383,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSRgbSplitShader [[-Redx] &lt;float&gt;] [[-Redy] &lt;float&gt;] [[-Greenx] &lt;float&gt;] [[-Greeny] &lt;float&gt;] [[-Bluex] &lt;float&gt;] [[-Bluey] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -52785,7 +52785,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSRgbvisibilityShader [[-Red] &lt;float&gt;] [[-Green] &lt;float&gt;] [[-Blue] &lt;float&gt;] [[-RedVisibility] &lt;float&gt;] [[-GreenVisibility] &lt;float&gt;] [[-BlueVisibility] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -53215,7 +53215,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSRGSSAAShader [[-ColorSigma] &lt;float&gt;] [[-SpatialSigma] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -53533,7 +53533,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSRippleShader [[-DistanceFactor] &lt;float&gt;] [[-TimeFactor] &lt;float&gt;] [[-PowerFactor] &lt;float&gt;] [[-CenterPosX] &lt;float&gt;] [[-CenterPosY] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -53907,7 +53907,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSRotatingSourceShader [[-SpinSpeed] &lt;float&gt;] [[-Rotation] &lt;float&gt;] [[-Zoomin] &lt;float&gt;] [[-XCenter] &lt;float&gt;] [[-YCenter] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-KeepAspectratio] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -54309,7 +54309,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSRotatoeShader [[-ViewProj] &lt;float[][]&gt;] [[-Image] &lt;string&gt;] [[-ElapsedTime] &lt;float&gt;] [[-UvOffset] &lt;float[]&gt;] [[-UvScale] &lt;float[]&gt;] [[-UvPixelInterval] &lt;float[]&gt;] [[-RandF] &lt;float&gt;] [[-UvSize] &lt;float[]&gt;] [[-SpeedPercent] &lt;int&gt;] [[-AxisX] &lt;float&gt;] [[-AxisY] &lt;float&gt;] [[-AxisZ] &lt;float&gt;] [[-AngleDegrees] &lt;float&gt;] [[-CenterWidthPercentage] &lt;int&gt;] [[-CenterHeightPercentage] &lt;int&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-RotateTransform] [-RotatePixels] [-RotateColors] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -55075,7 +55075,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSRoundedRect2Shader [[-CornerRadius] &lt;int&gt;] [[-BorderThickness] &lt;int&gt;] [[-BorderColor] &lt;string&gt;] [[-BorderAlphaStart] &lt;float&gt;] [[-BorderAlphaEnd] &lt;float&gt;] [[-AlphaCutOff] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-FasterScan] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -55505,7 +55505,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSRoundedRectPerCornerShader [[-CornerRadiusTl] &lt;int&gt;] [[-CornerRadiusTr] &lt;int&gt;] [[-CornerRadiusBr] &lt;int&gt;] [[-CornerRadiusBl] &lt;int&gt;] [[-BorderThickness] &lt;int&gt;] [[-BorderColor] &lt;string&gt;] [[-BorderAlphaStart] &lt;float&gt;] [[-BorderAlphaEnd] &lt;float&gt;] [[-AlphaCutOff] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -55991,7 +55991,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSRoundedRectPerSideShader [[-CornerRadiusBottom] &lt;int&gt;] [[-CornerRadiusLeft] &lt;int&gt;] [[-CornerRadiusTop] &lt;int&gt;] [[-CornerRadiusRight] &lt;int&gt;] [[-BorderThickness] &lt;int&gt;] [[-BorderColor] &lt;string&gt;] [[-BorderAlphaStart] &lt;float&gt;] [[-BorderAlphaEnd] &lt;float&gt;] [[-AlphaCutOff] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -56477,7 +56477,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSRoundedRectShader [[-CornerRadius] &lt;int&gt;] [[-BorderThickness] &lt;int&gt;] [[-BorderColor] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -56795,7 +56795,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSRoundedStrokeGradientShader [[-CornerRadius] &lt;int&gt;] [[-BorderThickness] &lt;int&gt;] [[-MinimumAlphaPercent] &lt;int&gt;] [[-RotationSpeed] &lt;int&gt;] [[-BorderColorL] &lt;string&gt;] [[-BorderColorR] &lt;string&gt;] [[-CenterWidth] &lt;int&gt;] [[-CenterHeight] &lt;int&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -57281,7 +57281,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSRoundedStrokeShader [[-CornerRadius] &lt;int&gt;] [[-BorderThickness] &lt;int&gt;] [[-MinimumAlphaPercent] &lt;int&gt;] [[-BorderColor] &lt;string&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -57655,7 +57655,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSScanLineShader [[-Speed] &lt;float&gt;] [[-Angle] &lt;float&gt;] [[-Floor] &lt;float&gt;] [[-Period] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Lengthwise] [-Animate] [-Shift] [-Boost] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -58141,7 +58141,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSScene : GetSceneList</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets an array of all scenes in OBS.</maml:para>
@@ -58235,7 +58235,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSceneCollection : GetSceneCollectionList</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets an array of all scene collections</maml:para>
@@ -58329,7 +58329,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSceneItem : GetSceneItemList</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets a list of all scene items in a scene.</maml:para>
@@ -58465,7 +58465,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSceneItemBlendMode : GetSceneItemBlendMode</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the blend mode of a scene item.</maml:para>
@@ -58635,7 +58635,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSceneItemEnabled : GetSceneItemEnabled</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the enable state of a scene item.</maml:para>
@@ -58797,7 +58797,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSceneItemId : GetSceneItemId</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Searches a scene for a source, and returns its id.</maml:para>
@@ -58985,7 +58985,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSceneItemIndex : GetSceneItemIndex</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the index position of a scene item in a scene.</maml:para>
@@ -59148,7 +59148,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSceneItemLocked : GetSceneItemLocked</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the lock state of a scene item.</maml:para>
@@ -59310,7 +59310,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSceneItemSource : GetSceneItemSource</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the source associated with a scene item.</maml:para>
@@ -59471,7 +59471,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSceneItemTransform : GetSceneItemTransform</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the transform and crop info of a scene item.</maml:para>
@@ -59633,7 +59633,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSceneSceneTransitionOverride : GetSceneSceneTransitionOverride</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the scene transition overridden for a scene.</maml:para>
@@ -59769,7 +59769,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSceneTransition : GetSceneTransitionList</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets an array of all scene transitions in OBS.</maml:para>
@@ -59863,7 +59863,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSeascapeShader [[-SEAHEIGHT] &lt;float&gt;] [[-SEACHOPPY] &lt;float&gt;] [[-SEASPEED] &lt;float&gt;] [[-SEAFREQ] &lt;float&gt;] [[-SEABASE] &lt;string&gt;] [[-SEAWATERCOLOR] &lt;string&gt;] [[-CAMERASPEED] &lt;float&gt;] [[-CAMERATURNSPEED] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-AA] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -60349,7 +60349,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSeasickShader [[-Notes] &lt;string&gt;] [[-Amplitude] &lt;float&gt;] [[-Speed] &lt;float&gt;] [[-Frequency] &lt;float&gt;] [[-Opacity] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -60723,7 +60723,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSelectiveColorShader [[-CutoffRed] &lt;float&gt;] [[-CutoffGreen] &lt;float&gt;] [[-CutoffBlue] &lt;float&gt;] [[-CutoffYellow] &lt;float&gt;] [[-AcceptanceAmplifier] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-BackgroundType] &lt;int&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-ShowRed] [-ShowGreen] [-ShowBlue] [-ShowYellow] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -61265,7 +61265,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSShakeShader [[-ViewProj] &lt;float[][]&gt;] [[-Image] &lt;string&gt;] [[-ElapsedTime] &lt;float&gt;] [[-UvOffset] &lt;float[]&gt;] [[-UvScale] &lt;float[]&gt;] [[-UvPixelInterval] &lt;float[]&gt;] [[-RandF] &lt;float&gt;] [[-UvSize] &lt;float[]&gt;] [[-LocalTime] &lt;float&gt;] [[-RandomScale] &lt;float&gt;] [[-Speed] &lt;float&gt;] [[-MinGrowthPixels] &lt;float&gt;] [[-MaxGrowthPixels] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Worble] [-RandomizeMovement] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -61947,7 +61947,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSShineShader [[-LTex] &lt;string&gt;] [[-ShineColor] &lt;string&gt;] [[-SpeedPercent] &lt;int&gt;] [[-GradientPercent] &lt;int&gt;] [[-DelayPercent] &lt;int&gt;] [[-Notes] &lt;string&gt;] [[-StartAdjust] &lt;float&gt;] [[-StopAdjust] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-ApplyToAlphaLayer] [-Ease] [-Hide] [-Reverse] [-OneDirection] [-Glitch] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -62573,7 +62573,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSimpleGradientShader [[-SpeedPercentage] &lt;int&gt;] [[-AlphaPercentage] &lt;int&gt;] [[-ColorToReplace] &lt;string&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-LensFlair] [-AnimateLensFlair] [-ApplyToAlphaLayer] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -63031,7 +63031,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSimplexNoiseShader [[-SnapPercent] &lt;float&gt;] [[-SpeedPercent] &lt;float&gt;] [[-Resolution] &lt;float&gt;] [[-ForeColor] &lt;string&gt;] [[-BackColor] &lt;string&gt;] [[-AlphaPercent] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Fractal] [-UseAlphaLayer] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -63517,7 +63517,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSmartDenoiseShader [[-USigma] &lt;float&gt;] [[-UKSigma] &lt;float&gt;] [[-UThreshold] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -63835,7 +63835,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSourceActive : GetSourceActive</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the active and show state of a source.</maml:para>
@@ -63971,7 +63971,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSourceFilter : GetSourceFilter</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the info for a specific source filter.</maml:para>
@@ -64132,7 +64132,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSourceFilterDefaultSettings : GetSourceFilterDefaultSettings</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the default settings for a filter kind.</maml:para>
@@ -64241,7 +64241,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSourceFilterKind : GetSourceFilterKindList</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets an array of all available source filter kinds.</maml:para>
@@ -64336,7 +64336,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSourceFilterList : GetSourceFilterList</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets an array of all of a source's filters.</maml:para>
@@ -64471,7 +64471,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSourceScreenshot : GetSourceScreenshot</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets a Base64-encoded screenshot of a source.</maml:para>
@@ -64713,7 +64713,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSpecialInputs : GetSpecialInputs</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the names of all special inputs.</maml:para>
@@ -64807,7 +64807,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSpecularShineShader [[-Hint] &lt;string&gt;] [[-Roughness] &lt;float&gt;] [[-LightStrength] &lt;float&gt;] [[-LightPositionX] &lt;float&gt;] [[-LightPositionY] &lt;float&gt;] [[-FlattenNormal] &lt;float&gt;] [[-StretchNormalX] &lt;float&gt;] [[-StretchNormalY] &lt;float&gt;] [[-LightColor] &lt;float[]&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -65293,7 +65293,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSpotlightShader [[-SpeedPercent] &lt;float&gt;] [[-FocusPercent] &lt;float&gt;] [[-SpotlightColor] &lt;string&gt;] [[-HorizontalOffset] &lt;float&gt;] [[-VerticalOffset] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Glitch] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -65723,7 +65723,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSStats : GetStats</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets statistics about OBS, obs-websocket, and the current session.</maml:para>
@@ -65817,7 +65817,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSStreamServiceSettings : GetStreamServiceSettings</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the current stream service settings (stream destination).</maml:para>
@@ -65911,7 +65911,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSStreamStatus : GetStreamStatus</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the status of the stream output.</maml:para>
@@ -66005,7 +66005,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSStudioModeEnabled : GetStudioModeEnabled</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets whether studio is enabled.</maml:para>
@@ -66099,7 +66099,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSSwirlShader [[-Radius] &lt;float&gt;] [[-Angle] &lt;float&gt;] [[-CenterX] &lt;float&gt;] [[-CenterY] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Animate] [-Inverse] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -66529,7 +66529,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSTetraShader [[-RedR] &lt;float&gt;] [[-RedG] &lt;float&gt;] [[-RedB] &lt;float&gt;] [[-YelR] &lt;float&gt;] [[-YelG] &lt;float&gt;] [[-YelB] &lt;float&gt;] [[-GrnR] &lt;float&gt;] [[-GrnG] &lt;float&gt;] [[-GrnB] &lt;float&gt;] [[-CynR] &lt;float&gt;] [[-CynG] &lt;float&gt;] [[-CynB] &lt;float&gt;] [[-BluR] &lt;float&gt;] [[-BluG] &lt;float&gt;] [[-BluB] &lt;float&gt;] [[-MagR] &lt;float&gt;] [[-MagG] &lt;float&gt;] [[-MagB] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -67267,7 +67267,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSThermalShader [[-Strength] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -67529,7 +67529,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSTransitionKind : GetTransitionKindList</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets an array of all available transition kinds.</maml:para>
@@ -67624,7 +67624,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSTvCrtSubpixelShader [[-ChannelWidth] &lt;int&gt;] [[-ChannelHeight] &lt;int&gt;] [[-HGap] &lt;int&gt;] [[-VGap] &lt;int&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -67970,7 +67970,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSTwistShader [[-CenterXPercent] &lt;int&gt;] [[-CenterYPercent] &lt;int&gt;] [[-Power] &lt;float&gt;] [[-Rotation] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -68316,7 +68316,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSTwoPassDropShadowShader [[-ViewProj] &lt;float[][]&gt;] [[-Image] &lt;string&gt;] [[-ElapsedTime] &lt;float&gt;] [[-UvOffset] &lt;float[]&gt;] [[-UvScale] &lt;float[]&gt;] [[-UvPixelInterval] &lt;float[]&gt;] [[-RandF] &lt;float&gt;] [[-UvSize] &lt;float[]&gt;] [[-ShadowOffsetX] &lt;int&gt;] [[-ShadowOffsetY] &lt;int&gt;] [[-ShadowBlurSize] &lt;int&gt;] [[-ShadowColor] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-IsAlphaPremultiplied] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -68914,7 +68914,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSVCRShader [[-VerticalShift] &lt;float&gt;] [[-Distort] &lt;float&gt;] [[-Vignet] &lt;float&gt;] [[-Stripe] &lt;float&gt;] [[-VerticalFactor] &lt;float&gt;] [[-VerticalHeight] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -69316,7 +69316,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSVersion : GetVersion</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets data about the current plugin and RPC version.</maml:para>
@@ -69410,7 +69410,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSVHSShader [[-Range] &lt;float&gt;] [[-OffsetIntensity] &lt;float&gt;] [[-NoiseQuality] &lt;float&gt;] [[-NoiseIntensity] &lt;float&gt;] [[-ColorOffsetIntensity] &lt;float&gt;] [[-AlphaPercentage] &lt;float&gt;] [[-ColorToReplace] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-ApplyToImage] [-ReplaceImageColor] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -69924,7 +69924,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSVideoSettings : GetVideoSettings</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the current video settings.</maml:para>
@@ -70019,7 +70019,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSVignettingShader [[-InnerRadius] &lt;float&gt;] [[-OuterRadius] &lt;float&gt;] [[-Opacity] &lt;float&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -70365,7 +70365,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSVirtualCamStatus : GetVirtualCamStatus</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets the status of the virtualcam output.</maml:para>
@@ -70459,7 +70459,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSVoronoiPixelationShader [[-PixH] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Alternative] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -70749,7 +70749,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSZigZagShader [[-Radius] &lt;float&gt;] [[-Angle] &lt;float&gt;] [[-Period] &lt;float&gt;] [[-Amplitude] &lt;float&gt;] [[-CenterX] &lt;float&gt;] [[-CenterY] &lt;float&gt;] [[-Phase] &lt;float&gt;] [[-Animate] &lt;int&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -71235,7 +71235,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSZoomBlurShader [[-Samples] &lt;int&gt;] [[-Magnitude] &lt;float&gt;] [[-SpeedPercent] &lt;int&gt;] [[-Notes] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Ease] [-Glitch] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -71637,7 +71637,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSZoomShader [[-CenterXPercent] &lt;int&gt;] [[-CenterYPercent] &lt;int&gt;] [[-Power] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -71955,7 +71955,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Get-OBSZoomXYShader [[-CenterXPercent] &lt;int&gt;] [[-CenterYPercent] &lt;int&gt;] [[-XPower] &lt;float&gt;] [[-YPower] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
     </maml:description>
@@ -72301,7 +72301,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Hide OBS</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Hides items in OBS</maml:para>
@@ -72392,7 +72392,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Imports Effects</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Imports obs-powershell effects</maml:para>
@@ -72459,7 +72459,7 @@ This can be a string, file, directory, command, or module.</maml:para>
       <maml:description>
         <maml:para>Open-OBSInputFiltersDialog : OpenInputFiltersDialog</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Opens the filters dialog of an input.</maml:para>
@@ -72594,7 +72594,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Open-OBSInputInteractDialog : OpenInputInteractDialog</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Opens the interact dialog of an input.</maml:para>
@@ -72729,7 +72729,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Open-OBSInputPropertiesDialog : OpenInputPropertiesDialog</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Opens the properties dialog of an input.</maml:para>
@@ -72864,7 +72864,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Open-OBSSourceProjector : OpenSourceProjector</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Opens a projector for a source.</maml:para>
@@ -73052,7 +73052,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Open-OBSVideoMixProjector : OpenVideoMixProjector</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Opens a projector for a specific output video mix.</maml:para>
@@ -73218,7 +73218,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Receives data from OBS</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Receives responses from the OBS WebSocket</maml:para>
@@ -73387,7 +73387,7 @@ You can see the websocket password in Tools -&gt; obs-websocket settings -&gt; s
       <maml:description>
         <maml:para>Remove OBS</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Removes items from OBS</maml:para>
@@ -73466,7 +73466,7 @@ You can see the websocket password in Tools -&gt; obs-websocket settings -&gt; s
       <maml:description>
         <maml:para>Removes OBS Effects</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Removes effects currently loaded into OBS-PowerShell.</maml:para>
@@ -73527,7 +73527,7 @@ You can see the websocket password in Tools -&gt; obs-websocket settings -&gt; s
       <maml:description>
         <maml:para>Remove-OBSInput : RemoveInput</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Removes an existing input.</maml:para>
@@ -73663,7 +73663,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Remove-OBSProfile : RemoveProfile</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Removes a profile. If the current profile is chosen, it will change to a different profile first.</maml:para>
@@ -73772,7 +73772,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Remove-OBSScene : RemoveScene</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Removes a scene from OBS.</maml:para>
@@ -73907,7 +73907,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Remove-OBSSceneItem : RemoveSceneItem</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Removes a scene item from a scene.</maml:para>
@@ -74069,7 +74069,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Remove-OBSSourceFilter : RemoveSourceFilter</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Removes a filter from a source.</maml:para>
@@ -74230,7 +74230,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Resume-OBSRecord : ResumeRecord</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Resumes the record output.</maml:para>
@@ -74324,7 +74324,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Save-OBSReplayBuffer : SaveReplayBuffer</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Saves the contents of the replay buffer output.</maml:para>
@@ -74418,7 +74418,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Save-OBSSourceScreenshot : SaveSourceScreenshot</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Saves a screenshot of a source to the filesystem.</maml:para>
@@ -74686,7 +74686,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Sends messages to the OBS websocket.</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sends one or more messages to the OBS websocket.</maml:para>
@@ -74879,7 +74879,7 @@ If -SerialFrame was provied, -StepTime will be the number of frames to wait.</ma
       <maml:description>
         <maml:para>Send-OBSCallVendorRequest : CallVendorRequest</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Call a request registered to a vendor.</maml:para>
@@ -75042,7 +75042,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Send-OBSCustomEvent : BroadcastCustomEvent</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Broadcasts a `CustomEvent` to all WebSocket clients. Receivers are clients which are identified and subscribed.</maml:para>
@@ -75151,7 +75151,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Send-OBSOffsetMediaInputCursor : OffsetMediaInputCursor</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Offsets the current cursor position of a media input by the specified value.</maml:para>
@@ -75313,7 +75313,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Send-OBSPauseRecord : PauseRecord</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Pauses the record output.</maml:para>
@@ -75407,7 +75407,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Send-OBSPressInputPropertiesButton : PressInputPropertiesButton</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Presses a button in the properties of an input.</maml:para>
@@ -75571,7 +75571,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Send-OBSSleep : Sleep</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sleeps for a time duration or number of frames. Only available in request batches with types `SERIAL_REALTIME` or `SERIAL_FRAME`.</maml:para>
@@ -75706,7 +75706,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Send-OBSStreamCaption : SendStreamCaption</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sends CEA-608 caption text over the stream output.</maml:para>
@@ -75815,7 +75815,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Send-OBSTriggerHotkeyByKeySequence : TriggerHotkeyByKeySequence</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Triggers a hotkey using a sequence of keys.</maml:para>
@@ -76055,7 +76055,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Send-OBSTriggerHotkeyByName : TriggerHotkeyByName</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Triggers a hotkey using its name. See `GetHotkeyList`.</maml:para>
@@ -76191,7 +76191,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Send-OBSTriggerMediaInputAction : TriggerMediaInputAction</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Triggers an action on a media input.</maml:para>
@@ -76352,7 +76352,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Send-OBSTriggerStudioModeTransition : TriggerStudioModeTransition</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Triggers the current scene transition. Same functionality as the `Transition` button in studio mode.</maml:para>
@@ -76446,7 +76446,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Sets an OBS 3D Filter.</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Adds or Changes a 3D Filter on an OBS Input.    </maml:para>
@@ -76730,7 +76730,7 @@ If this is not provided and the filter already exists, the settings of the filte
       <maml:description>
         <maml:para>Adds or sets an audio output source</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Adds or sets an audio output source in OBS.  This captures the audio that is being sent to an output device.</maml:para>
@@ -76891,7 +76891,7 @@ To add support for other operating systems, file an issue or open a pull request
       <maml:description>
         <maml:para>Sets a browser source</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Adds or changes a browser source in OBS.</maml:para>
@@ -77221,7 +77221,7 @@ If none is provided, this will be the output width of the video settings.</maml:
       <maml:description>
         <maml:para>Sets a color filter</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Adds or Changes a Color Correction Filter on an OBS Input.    </maml:para>
@@ -77499,7 +77499,7 @@ If this is not provided and the filter already exists, the settings of the filte
       <maml:description>
         <maml:para>Adds a color source</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Adds a color source to OBS.  This displays a single 32-bit color (RGBA).</maml:para>
@@ -77640,7 +77640,7 @@ If no scene name is provided, the current program scene will be used.</maml:para
       <maml:description>
         <maml:para>Set-OBSCurrentPreviewScene : SetCurrentPreviewScene</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the current preview scene.</maml:para>
@@ -77776,7 +77776,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSCurrentProfile : SetCurrentProfile</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Switches to a profile.</maml:para>
@@ -77885,7 +77885,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSCurrentProgramScene : SetCurrentProgramScene</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the current program scene.</maml:para>
@@ -78020,7 +78020,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSCurrentSceneCollection : SetCurrentSceneCollection</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Switches to a scene collection.</maml:para>
@@ -78130,7 +78130,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSCurrentSceneTransition : SetCurrentSceneTransition</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the current scene transition.</maml:para>
@@ -78240,7 +78240,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSCurrentSceneTransitionDuration : SetCurrentSceneTransitionDuration</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the duration of the current scene transition, if it is not fixed.</maml:para>
@@ -78349,7 +78349,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSCurrentSceneTransitionSettings : SetCurrentSceneTransitionSettings</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the settings of the current scene transition.</maml:para>
@@ -78484,7 +78484,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Adds a display source</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Adds a display source to OBS.  This captures the contents of the display.</maml:para>
@@ -78667,7 +78667,7 @@ If no scene name is provided, the current program scene will be used.</maml:para
       <maml:description>
         <maml:para>Sets a Equalizer filter.</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Adds or Changes a 3-band Equalizer Filter on an OBS Input.</maml:para>
@@ -78794,7 +78794,7 @@ If this is not provided and the filter already exists, the settings of the filte
       <maml:description>
         <maml:para>Sets a Gain filter.</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Adds or Changes a Gain Filter on an OBS Input.    </maml:para>
@@ -78882,7 +78882,7 @@ If this is not provided and the filter already exists, the settings of the filte
       <maml:description>
         <maml:para>Set-OBSInputAudioBalance : SetInputAudioBalance</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the audio balance of an input.</maml:para>
@@ -79043,7 +79043,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSInputAudioMonitorType : SetInputAudioMonitorType</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the audio monitor type of an input.</maml:para>
@@ -79204,7 +79204,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSInputAudioSyncOffset : SetInputAudioSyncOffset</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the audio sync offset of an input.</maml:para>
@@ -79365,7 +79365,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSInputAudioTracks : SetInputAudioTracks</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the enable state of audio tracks of an input.</maml:para>
@@ -79526,7 +79526,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSInputMute : SetInputMute</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the audio mute state of an input.</maml:para>
@@ -79687,7 +79687,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSInputName : SetInputName</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the name of an input (rename).</maml:para>
@@ -79848,7 +79848,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSInputSettings : SetInputSettings</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the settings of an input.</maml:para>
@@ -80035,7 +80035,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSInputVolume : SetInputVolume</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the volume setting of an input.</maml:para>
@@ -80222,7 +80222,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Sets a markdown source</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Adds or changes a markdown source in OBS.</maml:para>
@@ -80435,7 +80435,7 @@ If none is provided, this will be the output width of the video settings.</maml:
       <maml:description>
         <maml:para>Set-OBSMediaInputCursor : SetMediaInputCursor</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the cursor position of a media input.</maml:para>
@@ -80597,7 +80597,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Adds a media source</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Adds a media source to OBS.</maml:para>
@@ -80917,7 +80917,7 @@ If no scene name is provided, the current program scene will be used.</maml:para
       <maml:description>
         <maml:para>Set-OBSOutputSettings : SetOutputSettings</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the settings of an output.</maml:para>
@@ -81052,7 +81052,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSPersistentData : SetPersistentData</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the value of a "slot" from the selected persistent data realm.</maml:para>
@@ -81213,7 +81213,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSProfileParameter : SetProfileParameter</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the value of a parameter in the current profile's configuration.</maml:para>
@@ -81374,7 +81374,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSRecordDirectory : SetRecordDirectory</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the current directory that the record output writes files to.</maml:para>
@@ -81483,7 +81483,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Sets a RenderDelay filter.</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Adds or Changes a RenderDelay Filter on an OBS Input.    </maml:para>
@@ -81571,7 +81571,7 @@ If this is not provided and the filter already exists, the settings of the filte
       <maml:description>
         <maml:para>Sets a Scale filter.</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Adds or Changes a Scale Filter on an OBS Input.    </maml:para>
@@ -81713,7 +81713,7 @@ This is only valid if the sampling method is set to "lanczos".</maml:para>
       <maml:description>
         <maml:para>Set-OBSSceneItemBlendMode : SetSceneItemBlendMode</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the blend mode of a scene item.</maml:para>
@@ -81901,7 +81901,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSSceneItemEnabled : SetSceneItemEnabled</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the enable state of a scene item.</maml:para>
@@ -82089,7 +82089,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSSceneItemIndex : SetSceneItemIndex</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the index position of a scene item in a scene.</maml:para>
@@ -82277,7 +82277,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSSceneItemLocked : SetSceneItemLocked</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the lock state of a scene item.</maml:para>
@@ -82465,7 +82465,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSSceneItemTransform : SetSceneItemTransform</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the transform and crop info of a scene item.</maml:para>
@@ -82652,7 +82652,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSSceneName : SetSceneName</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the name of a scene (rename).</maml:para>
@@ -82813,7 +82813,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSSceneSceneTransitionOverride : SetSceneSceneTransitionOverride</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the scene transition overridden for a scene.</maml:para>
@@ -83000,7 +83000,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Sets a scroll filter.</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Adds or Changes a Scroll Filter on an OBS Input.    </maml:para>
@@ -83192,7 +83192,7 @@ If this is not provided and the filter already exists, the settings of the filte
       <maml:description>
         <maml:para>Sets a Shader filter.</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Adds or Changes a Shader Filter on an OBS Input.    </maml:para>
@@ -83367,7 +83367,7 @@ To see what the name of a shader setting is, change it in the user interface and
       <maml:description>
         <maml:para>Sets a Sharpness filter.</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Adds or Changes a Sharpness Filter on an OBS Input.    </maml:para>
@@ -83455,7 +83455,7 @@ If this is not provided and the filter already exists, the settings of the filte
       <maml:description>
         <maml:para>Sets a Sound Cloud Source</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Adds or changes a Sound Cloud source OBS.    </maml:para>
@@ -84018,7 +84018,7 @@ If none is provided, this will be the output width of the video settings.</maml:
       <maml:description>
         <maml:para>Set-OBSSourceFilterEnabled : SetSourceFilterEnabled</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the enable state of a source filter.</maml:para>
@@ -84205,7 +84205,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSSourceFilterIndex : SetSourceFilterIndex</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the index position of a filter on a source.</maml:para>
@@ -84392,7 +84392,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSSourceFilterName : SetSourceFilterName</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the name of a source filter (rename).</maml:para>
@@ -84579,7 +84579,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSSourceFilterSettings : SetSourceFilterSettings</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the settings of a source filter.</maml:para>
@@ -84792,7 +84792,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSStreamServiceSettings : SetStreamServiceSettings</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the current stream service settings (stream destination).</maml:para>
@@ -84928,7 +84928,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSStudioModeEnabled : SetStudioModeEnabled</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Enables or disables studio mode</maml:para>
@@ -85037,7 +85037,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Adds a VLC playlist source</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Adds or sets VLC playlist sources to OBS.    </maml:para>
@@ -85626,7 +85626,7 @@ Notice: this current requires confirmation in the UI.</maml:para>
       <maml:description>
         <maml:para>Set-OBSTBarPosition : SetTBarPosition</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the position of the TBar.</maml:para>
@@ -85762,7 +85762,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Set-OBSVideoSettings : SetVideoSettings</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Sets the current video settings.</maml:para>
@@ -86002,7 +86002,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Adds a VLC playlist source</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Adds or sets VLC playlist sources to OBS.    </maml:para>
@@ -86345,7 +86345,7 @@ If an `[IO.FileInfo]` is provided, this will be the exact file.</maml:para>
       <maml:description>
         <maml:para>OBS Waveform Source</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Gets, Sets, or Adds a waveform source in OBS.    </maml:para>
@@ -87224,7 +87224,7 @@ This is the mathematical function used to determine the current "window" of audi
       <maml:description>
         <maml:para>Adds or sets a window capture source</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Adds or sets a windows capture source in OBS.  This captures the contents of a window.</maml:para>
@@ -87504,7 +87504,7 @@ This the number of the monitor you would like to capture.</maml:para>
       <maml:description>
         <maml:para>Shows content in OBS</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Shows content in Open Broadcasting Studio</maml:para>
@@ -87769,7 +87769,7 @@ Show-OBS -FilePath .\BlueRect.svg </dev:code>
       <maml:description>
         <maml:para>Starts obs-powershell effects.</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Starts an effect in OBS PowerShell.</maml:para>
@@ -88140,7 +88140,7 @@ If not provided, each effect should use it's own duration.</maml:para>
       <maml:description>
         <maml:para>Start-OBSOutput : StartOutput</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Starts an output.</maml:para>
@@ -88249,7 +88249,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Start-OBSRecord : StartRecord</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Starts the record output.</maml:para>
@@ -88343,7 +88343,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Start-OBSReplayBuffer : StartReplayBuffer</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Starts the replay buffer output.</maml:para>
@@ -88437,7 +88437,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Start-OBSStream : StartStream</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Starts the stream output.</maml:para>
@@ -88531,7 +88531,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Start-OBSVirtualCam : StartVirtualCam</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Starts the virtualcam output.</maml:para>
@@ -88625,7 +88625,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Stops obs-powershell effects.</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Stops an effect in OBS PowerShell.</maml:para>
@@ -88687,7 +88687,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Stop-OBSOutput : StopOutput</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Stops an output.</maml:para>
@@ -88796,7 +88796,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Stop-OBSRecord : StopRecord</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Stops the record output.</maml:para>
@@ -88890,7 +88890,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Stop-OBSReplayBuffer : StopReplayBuffer</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Stops the replay buffer output.</maml:para>
@@ -88984,7 +88984,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Stop-OBSStream : StopStream</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Stops the stream output.</maml:para>
@@ -89078,7 +89078,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Stop-OBSVirtualCam : StopVirtualCam</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Stops the virtualcam output.</maml:para>
@@ -89172,7 +89172,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Switch-OBSInputMute : ToggleInputMute</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Toggles the audio mute state of an input.</maml:para>
@@ -89307,7 +89307,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Switch-OBSOutput : ToggleOutput</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Toggles the status of an output.</maml:para>
@@ -89416,7 +89416,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Switch-OBSRecord : ToggleRecord</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Toggles the status of the record output.</maml:para>
@@ -89510,7 +89510,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Switch-OBSRecordPause : ToggleRecordPause</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Toggles pause on the record output.</maml:para>
@@ -89604,7 +89604,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Switch-OBSReplayBuffer : ToggleReplayBuffer</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Toggles the state of the replay buffer output.</maml:para>
@@ -89698,7 +89698,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Switch-OBSStream : ToggleStream</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Toggles the status of the stream output.</maml:para>
@@ -89792,7 +89792,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Switch-OBSVirtualCam : ToggleVirtualCam</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Toggles the state of the virtualcam output.</maml:para>
@@ -89886,7 +89886,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <maml:description>
         <maml:para>Watches OBS</maml:para>
       </maml:description>
-      <dev:version>0.1.9</dev:version>
+      <dev:version>0.2</dev:version>
     </command:details>
     <maml:description>
       <maml:para>Watches the OBS websocket for events.</maml:para>

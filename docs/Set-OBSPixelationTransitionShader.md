@@ -2,7 +2,6 @@ Get-OBSPixelationTransitionShader
 ---------------------------------
 
 ### Synopsis
-
 Get-OBSPixelationTransitionShader [[-TransitionTime] <float>] [[-Power] <float>] [[-CenterX] <float>] [[-CenterY] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ConvertLinear] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,73 +15,73 @@ Get-OBSPixelationTransitionShader [[-TransitionTime] <float>] [[-Power] <float>]
 
 |Type     |Required|Position|PipelineInput|Aliases |
 |---------|--------|--------|-------------|--------|
-|`[float]`|false   |2       |false        |center_x|
+|`[Float]`|false   |named   |False        |center_x|
 
 #### **CenterY**
 
 |Type     |Required|Position|PipelineInput|Aliases |
 |---------|--------|--------|-------------|--------|
-|`[float]`|false   |3       |false        |center_y|
+|`[Float]`|false   |named   |False        |center_y|
 
 #### **ConvertLinear**
 
 |Type      |Required|Position|PipelineInput|Aliases       |
 |----------|--------|--------|-------------|--------------|
-|`[switch]`|false   |Named   |false        |convert_linear|
+|`[Switch]`|false   |named   |False        |convert_linear|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |5       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Power**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |1       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |6       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |4       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **TransitionTime**
 
 |Type     |Required|Position|PipelineInput|Aliases        |
 |---------|--------|--------|-------------|---------------|
-|`[float]`|false   |0       |false        |transition_time|
+|`[Float]`|false   |named   |False        |transition_time|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -98,11 +97,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSPixelationTransitionShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSPixelationTransitionShader [[-TransitionTime] <Float>] [-ConvertLinear <Switch>] [[-Power] <Float>] [[-CenterX] <Float>] [[-CenterY] <Float>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

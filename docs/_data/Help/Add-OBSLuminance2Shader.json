@@ -1,5 +1,5 @@
 {
-  "Synopsis": "\nGet-OBSLuminance2Shader [[-Color] <string>] [[-LumaMax] <float>] [[-LumaMin] <float>] [[-LumaMaxSmooth] <float>] [[-LumaMinSmooth] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-InvertImageColor] [-InvertAlphaChannel] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]\n",
+  "Synopsis": "Get-OBSLuminance2Shader [[-Color] <string>] [[-LumaMax] <float>] [[-LumaMin] <float>] [[-LumaMaxSmooth] <float>] [[-LumaMinSmooth] <float>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-InvertImageColor] [-InvertAlphaChannel] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]",
   "Description": "",
   "Parameters": [
     {
@@ -23,7 +23,7 @@
     null
   ],
   "Inputs": [
-    "System.String\n"
+    "System.String"
   ],
   "Outputs": [
     "System.Object"

@@ -1,5 +1,5 @@
 {
-  "Synopsis": "\nGet-OBSRainbowShader [[-Saturation] <float>] [[-Luminosity] <float>] [[-Spread] <float>] [[-Speed] <float>] [[-AlphaPercentage] <float>] [[-RotationOffset] <float>] [[-ColorToReplace] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Vertical] [-Rotational] [-ApplyToImage] [-ReplaceImageColor] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]\n",
+  "Synopsis": "Get-OBSRainbowShader [[-Saturation] <float>] [[-Luminosity] <float>] [[-Spread] <float>] [[-Speed] <float>] [[-AlphaPercentage] <float>] [[-RotationOffset] <float>] [[-ColorToReplace] <string>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Vertical] [-Rotational] [-ApplyToImage] [-ReplaceImageColor] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]",
   "Description": "",
   "Parameters": [
     {
@@ -23,7 +23,7 @@
     null
   ],
   "Inputs": [
-    "System.String\n"
+    "System.String"
   ],
   "Outputs": [
     "System.Object"

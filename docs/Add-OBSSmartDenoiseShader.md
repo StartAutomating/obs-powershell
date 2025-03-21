@@ -2,7 +2,6 @@ Get-OBSSmartDenoiseShader
 -------------------------
 
 ### Synopsis
-
 Get-OBSSmartDenoiseShader [[-USigma] <float>] [[-UKSigma] <float>] [[-UThreshold] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -14,63 +13,63 @@ Get-OBSSmartDenoiseShader [[-USigma] <float>] [[-UKSigma] <float>] [[-UThreshold
 ### Parameters
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |4       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |5       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |3       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **UKSigma**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |1       |false        |
-
-#### **USigma**
-
-|Type     |Required|Position|PipelineInput|
-|---------|--------|--------|-------------|
-|`[float]`|false   |0       |false        |
-
-#### **UThreshold**
-
-|Type     |Required|Position|PipelineInput|
-|---------|--------|--------|-------------|
-|`[float]`|false   |2       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
+
+#### **USigma**
+
+|Type     |Required|Position|PipelineInput|
+|---------|--------|--------|-------------|
+|`[Float]`|false   |named   |False        |
+
+#### **UThreshold**
+
+|Type     |Required|Position|PipelineInput|
+|---------|--------|--------|-------------|
+|`[Float]`|false   |named   |False        |
 
 ---
 
@@ -86,11 +85,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSSmartDenoiseShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSSmartDenoiseShader [[-USigma] <Float>] [[-UKSigma] <Float>] [[-UThreshold] <Float>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

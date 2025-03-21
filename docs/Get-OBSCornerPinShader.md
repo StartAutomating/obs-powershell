@@ -2,7 +2,6 @@ Get-OBSCornerPinShader
 ----------------------
 
 ### Synopsis
-
 Get-OBSCornerPinShader [[-TopLeftX] <float>] [[-TopLeftY] <float>] [[-TopRightX] <float>] [[-TopRightY] <float>] [[-BottomLeftX] <float>] [[-BottomLeftY] <float>] [[-BottomRightX] <float>] [[-BottomRightY] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-AntialiasEdges] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,97 +15,97 @@ Get-OBSCornerPinShader [[-TopLeftX] <float>] [[-TopLeftY] <float>] [[-TopRightX]
 
 |Type      |Required|Position|PipelineInput|Aliases        |
 |----------|--------|--------|-------------|---------------|
-|`[switch]`|false   |Named   |false        |Antialias_Edges|
+|`[Switch]`|false   |named   |False        |Antialias_Edges|
 
 #### **BottomLeftX**
 
 |Type     |Required|Position|PipelineInput|Aliases      |
 |---------|--------|--------|-------------|-------------|
-|`[float]`|false   |4       |false        |Bottom_Left_X|
+|`[Float]`|false   |named   |False        |Bottom_Left_X|
 
 #### **BottomLeftY**
 
 |Type     |Required|Position|PipelineInput|Aliases      |
 |---------|--------|--------|-------------|-------------|
-|`[float]`|false   |5       |false        |Bottom_Left_Y|
+|`[Float]`|false   |named   |False        |Bottom_Left_Y|
 
 #### **BottomRightX**
 
 |Type     |Required|Position|PipelineInput|Aliases       |
 |---------|--------|--------|-------------|--------------|
-|`[float]`|false   |6       |false        |Bottom_Right_X|
+|`[Float]`|false   |named   |False        |Bottom_Right_X|
 
 #### **BottomRightY**
 
 |Type     |Required|Position|PipelineInput|Aliases       |
 |---------|--------|--------|-------------|--------------|
-|`[float]`|false   |7       |false        |Bottom_Right_Y|
+|`[Float]`|false   |named   |False        |Bottom_Right_Y|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |9       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |10      |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |8       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **TopLeftX**
 
 |Type     |Required|Position|PipelineInput|Aliases   |
 |---------|--------|--------|-------------|----------|
-|`[float]`|false   |0       |false        |Top_Left_X|
+|`[Float]`|false   |named   |False        |Top_Left_X|
 
 #### **TopLeftY**
 
 |Type     |Required|Position|PipelineInput|Aliases   |
 |---------|--------|--------|-------------|----------|
-|`[float]`|false   |1       |false        |Top_Left_Y|
+|`[Float]`|false   |named   |False        |Top_Left_Y|
 
 #### **TopRightX**
 
 |Type     |Required|Position|PipelineInput|Aliases    |
 |---------|--------|--------|-------------|-----------|
-|`[float]`|false   |2       |false        |Top_Right_X|
+|`[Float]`|false   |named   |False        |Top_Right_X|
 
 #### **TopRightY**
 
 |Type     |Required|Position|PipelineInput|Aliases    |
 |---------|--------|--------|-------------|-----------|
-|`[float]`|false   |3       |false        |Top_Right_Y|
+|`[Float]`|false   |named   |False        |Top_Right_Y|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -122,11 +121,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSCornerPinShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSCornerPinShader [-AntialiasEdges <Switch>] [[-TopLeftX] <Float>] [[-TopLeftY] <Float>] [[-TopRightX] <Float>] [[-TopRightY] <Float>] [[-BottomLeftX] <Float>] [[-BottomLeftY] <Float>] [[-BottomRightX] <Float>] [[-BottomRightY] <Float>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

@@ -2,7 +2,6 @@ Get-OBSTwoPassDropShadowShader
 ------------------------------
 
 ### Synopsis
-
 Get-OBSTwoPassDropShadowShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvPixelInterval] <float[]>] [[-RandF] <float>] [[-UvSize] <float[]>] [[-ShadowOffsetX] <int>] [[-ShadowOffsetY] <int>] [[-ShadowBlurSize] <int>] [[-ShadowColor] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-IsAlphaPremultiplied] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,121 +15,121 @@ Get-OBSTwoPassDropShadowShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-
 
 |Type     |Required|Position|PipelineInput|Aliases     |
 |---------|--------|--------|-------------|------------|
-|`[float]`|false   |2       |false        |elapsed_time|
+|`[Float]`|false   |named   |False        |elapsed_time|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |13      |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Image**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |1       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **IsAlphaPremultiplied**
 
 |Type      |Required|Position|PipelineInput|Aliases               |
 |----------|--------|--------|-------------|----------------------|
-|`[switch]`|false   |Named   |false        |is_alpha_premultiplied|
+|`[Switch]`|false   |named   |False        |is_alpha_premultiplied|
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **RandF**
 
 |Type     |Required|Position|PipelineInput|Aliases|
 |---------|--------|--------|-------------|-------|
-|`[float]`|false   |6       |false        |rand_f |
+|`[Float]`|false   |named   |False        |rand_f |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |14      |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **ShadowBlurSize**
 
 |Type   |Required|Position|PipelineInput|Aliases         |
 |-------|--------|--------|-------------|----------------|
-|`[int]`|false   |10      |false        |shadow_blur_size|
+|`[Int]`|false   |named   |False        |shadow_blur_size|
 
 #### **ShadowColor**
 
 |Type      |Required|Position|PipelineInput|Aliases     |
 |----------|--------|--------|-------------|------------|
-|`[string]`|false   |11      |false        |shadow_color|
+|`[String]`|false   |named   |False        |shadow_color|
 
 #### **ShadowOffsetX**
 
 |Type   |Required|Position|PipelineInput|Aliases        |
 |-------|--------|--------|-------------|---------------|
-|`[int]`|false   |8       |false        |shadow_offset_x|
+|`[Int]`|false   |named   |False        |shadow_offset_x|
 
 #### **ShadowOffsetY**
 
 |Type   |Required|Position|PipelineInput|Aliases        |
 |-------|--------|--------|-------------|---------------|
-|`[int]`|false   |9       |false        |shadow_offset_y|
+|`[Int]`|false   |named   |False        |shadow_offset_y|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |12      |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **UvOffset**
 
-|Type       |Required|Position|PipelineInput|Aliases  |
-|-----------|--------|--------|-------------|---------|
-|`[float[]]`|false   |3       |false        |uv_offset|
+|Type               |Required|Position|PipelineInput|Aliases  |
+|-------------------|--------|--------|-------------|---------|
+|`[System.Single[]]`|false   |named   |False        |uv_offset|
 
 #### **UvPixelInterval**
 
-|Type       |Required|Position|PipelineInput|Aliases          |
-|-----------|--------|--------|-------------|-----------------|
-|`[float[]]`|false   |5       |false        |uv_pixel_interval|
+|Type               |Required|Position|PipelineInput|Aliases          |
+|-------------------|--------|--------|-------------|-----------------|
+|`[System.Single[]]`|false   |named   |False        |uv_pixel_interval|
 
 #### **UvScale**
 
-|Type       |Required|Position|PipelineInput|Aliases |
-|-----------|--------|--------|-------------|--------|
-|`[float[]]`|false   |4       |false        |uv_scale|
+|Type               |Required|Position|PipelineInput|Aliases |
+|-------------------|--------|--------|-------------|--------|
+|`[System.Single[]]`|false   |named   |False        |uv_scale|
 
 #### **UvSize**
 
-|Type       |Required|Position|PipelineInput|Aliases|
-|-----------|--------|--------|-------------|-------|
-|`[float[]]`|false   |7       |false        |uv_size|
+|Type               |Required|Position|PipelineInput|Aliases|
+|-------------------|--------|--------|-------------|-------|
+|`[System.Single[]]`|false   |named   |False        |uv_size|
 
 #### **ViewProj**
 
-|Type         |Required|Position|PipelineInput|
-|-------------|--------|--------|-------------|
-|`[float[][]]`|false   |0       |false        |
+|Type                 |Required|Position|PipelineInput|
+|---------------------|--------|--------|-------------|
+|`[System.Single[][]]`|false   |named   |False        |
 
 ---
 
@@ -146,11 +145,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSTwoPassDropShadowShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSTwoPassDropShadowShader [[-ViewProj] <System.Single[][]>] [[-Image] <String>] [[-ElapsedTime] <Float>] [[-UvOffset] <System.Single[]>] [[-UvScale] <System.Single[]>] [[-UvPixelInterval] <System.Single[]>] [[-RandF] <Float>] [[-UvSize] <System.Single[]>] [[-ShadowOffsetX] <Int>] [[-ShadowOffsetY] <Int>] [[-ShadowBlurSize] <Int>] [[-ShadowColor] <String>] [-IsAlphaPremultiplied <Switch>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

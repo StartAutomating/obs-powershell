@@ -2,7 +2,6 @@ Get-OBSVHSShader
 ----------------
 
 ### Synopsis
-
 Get-OBSVHSShader [[-Range] <float>] [[-OffsetIntensity] <float>] [[-NoiseQuality] <float>] [[-NoiseIntensity] <float>] [[-ColorOffsetIntensity] <float>] [[-AlphaPercentage] <float>] [[-ColorToReplace] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ApplyToImage] [-ReplaceImageColor] [-ApplyToSpecificColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,103 +15,103 @@ Get-OBSVHSShader [[-Range] <float>] [[-OffsetIntensity] <float>] [[-NoiseQuality
 
 |Type     |Required|Position|PipelineInput|Aliases         |
 |---------|--------|--------|-------------|----------------|
-|`[float]`|false   |5       |false        |Alpha_Percentage|
+|`[Float]`|false   |named   |False        |Alpha_Percentage|
 
 #### **ApplyToImage**
 
 |Type      |Required|Position|PipelineInput|Aliases       |
 |----------|--------|--------|-------------|--------------|
-|`[switch]`|false   |Named   |false        |Apply_To_Image|
+|`[Switch]`|false   |named   |False        |Apply_To_Image|
 
 #### **ApplyToSpecificColor**
 
 |Type      |Required|Position|PipelineInput|Aliases                |
 |----------|--------|--------|-------------|-----------------------|
-|`[switch]`|false   |Named   |false        |Apply_To_Specific_Color|
+|`[Switch]`|false   |named   |False        |Apply_To_Specific_Color|
 
 #### **ColorOffsetIntensity**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |4       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **ColorToReplace**
 
 |Type      |Required|Position|PipelineInput|Aliases         |
 |----------|--------|--------|-------------|----------------|
-|`[string]`|false   |6       |false        |Color_To_Replace|
+|`[String]`|false   |named   |False        |Color_To_Replace|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |8       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
-
-#### **NoResponse**
-
-|Type      |Required|Position|PipelineInput|
-|----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **NoiseIntensity**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |3       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **NoiseQuality**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |2       |false        |
+|`[Float]`|false   |named   |False        |
+
+#### **NoResponse**
+
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[Switch]`|false   |named   |False        |
 
 #### **OffsetIntensity**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |1       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Range**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |0       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **ReplaceImageColor**
 
 |Type      |Required|Position|PipelineInput|Aliases            |
 |----------|--------|--------|-------------|-------------------|
-|`[switch]`|false   |Named   |false        |Replace_Image_Color|
+|`[Switch]`|false   |named   |False        |Replace_Image_Color|
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |9       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |7       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -128,11 +127,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSVHSShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSVHSShader [[-Range] <Float>] [[-OffsetIntensity] <Float>] [[-NoiseQuality] <Float>] [[-NoiseIntensity] <Float>] [[-ColorOffsetIntensity] <Float>] [[-AlphaPercentage] <Float>] [-ApplyToImage <Switch>] [-ReplaceImageColor <Switch>] [[-ColorToReplace] <String>] [-ApplyToSpecificColor <Switch>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

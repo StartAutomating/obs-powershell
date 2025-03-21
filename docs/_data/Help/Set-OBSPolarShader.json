@@ -1,5 +1,5 @@
 {
-  "Synopsis": "\nGet-OBSPolarShader [[-CenterX] <float>] [[-CenterY] <float>] [[-PointY] <float>] [[-Rotate] <float>] [[-Repeat] <float>] [[-Scale] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Flip] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]\n",
+  "Synopsis": "Get-OBSPolarShader [[-CenterX] <float>] [[-CenterY] <float>] [[-PointY] <float>] [[-Rotate] <float>] [[-Repeat] <float>] [[-Scale] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Flip] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]",
   "Description": "",
   "Parameters": [
     {
@@ -23,7 +23,7 @@
     null
   ],
   "Inputs": [
-    "System.String\n"
+    "System.String"
   ],
   "Outputs": [
     "System.Object"

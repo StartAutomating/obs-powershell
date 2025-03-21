@@ -2,7 +2,6 @@ Get-OBSRoundedStrokeGradientShader
 ----------------------------------
 
 ### Synopsis
-
 Get-OBSRoundedStrokeGradientShader [[-CornerRadius] <int>] [[-BorderThickness] <int>] [[-MinimumAlphaPercent] <int>] [[-RotationSpeed] <int>] [[-BorderColorL] <string>] [[-BorderColorR] <string>] [[-CenterWidth] <int>] [[-CenterHeight] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,97 +15,97 @@ Get-OBSRoundedStrokeGradientShader [[-CornerRadius] <int>] [[-BorderThickness] <
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |4       |false        |border_colorL|
+|`[String]`|false   |named   |False        |border_colorL|
 
 #### **BorderColorR**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |5       |false        |border_colorR|
+|`[String]`|false   |named   |False        |border_colorR|
 
 #### **BorderThickness**
 
 |Type   |Required|Position|PipelineInput|Aliases         |
 |-------|--------|--------|-------------|----------------|
-|`[int]`|false   |1       |false        |border_thickness|
+|`[Int]`|false   |named   |False        |border_thickness|
 
 #### **CenterHeight**
 
 |Type   |Required|Position|PipelineInput|Aliases      |
 |-------|--------|--------|-------------|-------------|
-|`[int]`|false   |7       |false        |center_height|
+|`[Int]`|false   |named   |False        |center_height|
 
 #### **CenterWidth**
 
 |Type   |Required|Position|PipelineInput|Aliases     |
 |-------|--------|--------|-------------|------------|
-|`[int]`|false   |6       |false        |center_width|
+|`[Int]`|false   |named   |False        |center_width|
 
 #### **CornerRadius**
 
 |Type   |Required|Position|PipelineInput|Aliases      |
 |-------|--------|--------|-------------|-------------|
-|`[int]`|false   |0       |false        |corner_radius|
+|`[Int]`|false   |named   |False        |corner_radius|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |10      |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **MinimumAlphaPercent**
 
 |Type   |Required|Position|PipelineInput|Aliases              |
 |-------|--------|--------|-------------|---------------------|
-|`[int]`|false   |2       |false        |minimum_alpha_percent|
+|`[Int]`|false   |named   |False        |minimum_alpha_percent|
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Notes**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |8       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **RotationSpeed**
 
 |Type   |Required|Position|PipelineInput|Aliases       |
 |-------|--------|--------|-------------|--------------|
-|`[int]`|false   |3       |false        |rotation_speed|
+|`[Int]`|false   |named   |False        |rotation_speed|
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |11      |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |9       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -122,11 +121,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSRoundedStrokeGradientShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSRoundedStrokeGradientShader [[-CornerRadius] <Int>] [[-BorderThickness] <Int>] [[-MinimumAlphaPercent] <Int>] [[-RotationSpeed] <Int>] [[-BorderColorL] <String>] [[-BorderColorR] <String>] [[-CenterWidth] <Int>] [[-CenterHeight] <Int>] [[-Notes] <String>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

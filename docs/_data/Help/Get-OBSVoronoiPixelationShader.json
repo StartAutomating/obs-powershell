@@ -1,5 +1,5 @@
 {
-  "Synopsis": "\nGet-OBSVoronoiPixelationShader [[-PixH] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Alternative] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]\n",
+  "Synopsis": "Get-OBSVoronoiPixelationShader [[-PixH] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Alternative] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]",
   "Description": "",
   "Parameters": [
     {
@@ -23,7 +23,7 @@
     null
   ],
   "Inputs": [
-    "System.String\n"
+    "System.String"
   ],
   "Outputs": [
     "System.Object"

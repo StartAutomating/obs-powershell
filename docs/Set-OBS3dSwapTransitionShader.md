@@ -2,7 +2,6 @@ Get-OBS3dSwapTransitionShader
 -----------------------------
 
 ### Synopsis
-
 Get-OBS3dSwapTransitionShader [[-ImageA] <string>] [[-ImageB] <string>] [[-TransitionTime] <float>] [[-Reflection] <float>] [[-Perspective] <float>] [[-Depth] <float>] [[-BackgroundColor] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ConvertLinear] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,91 +15,91 @@ Get-OBS3dSwapTransitionShader [[-ImageA] <string>] [[-ImageB] <string>] [[-Trans
 
 |Type      |Required|Position|PipelineInput|Aliases         |
 |----------|--------|--------|-------------|----------------|
-|`[string]`|false   |6       |false        |background_color|
+|`[String]`|false   |named   |False        |background_color|
 
 #### **ConvertLinear**
 
 |Type      |Required|Position|PipelineInput|Aliases       |
 |----------|--------|--------|-------------|--------------|
-|`[switch]`|false   |Named   |false        |convert_linear|
+|`[Switch]`|false   |named   |False        |convert_linear|
 
 #### **Depth**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |5       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |8       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **ImageA**
 
 |Type      |Required|Position|PipelineInput|Aliases|
 |----------|--------|--------|-------------|-------|
-|`[string]`|false   |0       |false        |image_a|
+|`[String]`|false   |named   |False        |image_a|
 
 #### **ImageB**
 
 |Type      |Required|Position|PipelineInput|Aliases|
 |----------|--------|--------|-------------|-------|
-|`[string]`|false   |1       |false        |image_b|
+|`[String]`|false   |named   |False        |image_b|
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Perspective**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |4       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **Reflection**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |3       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |9       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |7       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **TransitionTime**
 
 |Type     |Required|Position|PipelineInput|Aliases        |
 |---------|--------|--------|-------------|---------------|
-|`[float]`|false   |2       |false        |transition_time|
+|`[Float]`|false   |named   |False        |transition_time|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -116,11 +115,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBS3dSwapTransitionShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBS3dSwapTransitionShader [[-ImageA] <String>] [[-ImageB] <String>] [[-TransitionTime] <Float>] [-ConvertLinear <Switch>] [[-Reflection] <Float>] [[-Perspective] <Float>] [[-Depth] <Float>] [[-BackgroundColor] <String>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

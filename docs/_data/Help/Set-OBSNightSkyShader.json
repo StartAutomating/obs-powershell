@@ -1,5 +1,5 @@
 {
-  "Synopsis": "\nGet-OBSNightSkyShader [[-Speed] <float>] [[-CenterWidthPercentage] <int>] [[-CenterHeightPercentage] <int>] [[-AlphaPercentage] <float>] [[-NumberStars] <int>] [[-SKYCOLOR] <string>] [[-STARCOLOR] <string>] [[-LIGHTSKY] <string>] [[-SKYLIGHTNESS] <float>] [[-MOONCOLOR] <string>] [[-MoonSize] <float>] [[-MoonBumpSize] <float>] [[-MoonPositionX] <float>] [[-MoonPositionY] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-IncludeClouds] [-IncludeMoon] [-ApplyToImage] [-ReplaceImageColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]\n",
+  "Synopsis": "Get-OBSNightSkyShader [[-Speed] <float>] [[-CenterWidthPercentage] <int>] [[-CenterHeightPercentage] <int>] [[-AlphaPercentage] <float>] [[-NumberStars] <int>] [[-SKYCOLOR] <string>] [[-STARCOLOR] <string>] [[-LIGHTSKY] <string>] [[-SKYLIGHTNESS] <float>] [[-MOONCOLOR] <string>] [[-MoonSize] <float>] [[-MoonBumpSize] <float>] [[-MoonPositionX] <float>] [[-MoonPositionY] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-IncludeClouds] [-IncludeMoon] [-ApplyToImage] [-ReplaceImageColor] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]",
   "Description": "",
   "Parameters": [
     {
@@ -23,7 +23,7 @@
     null
   ],
   "Inputs": [
-    "System.String\n"
+    "System.String"
   ],
   "Outputs": [
     "System.Object"

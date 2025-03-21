@@ -2,7 +2,6 @@ Get-OBSDivideRotateShader
 -------------------------
 
 ### Synopsis
-
 Get-OBSDivideRotateShader [[-IChannel0] <string>] [[-SpeedPercentage] <int>] [[-AlphaPercentage] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ApplyToAlphaLayer] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,73 +15,73 @@ Get-OBSDivideRotateShader [[-IChannel0] <string>] [[-SpeedPercentage] <int>] [[-
 
 |Type   |Required|Position|PipelineInput|Aliases         |
 |-------|--------|--------|-------------|----------------|
-|`[int]`|false   |2       |false        |alpha_percentage|
+|`[Int]`|false   |named   |False        |alpha_percentage|
 
 #### **ApplyToAlphaLayer**
 
 |Type      |Required|Position|PipelineInput|Aliases             |
 |----------|--------|--------|-------------|--------------------|
-|`[switch]`|false   |Named   |false        |Apply_To_Alpha_Layer|
+|`[Switch]`|false   |named   |False        |Apply_To_Alpha_Layer|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |5       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **IChannel0**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |0       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Notes**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |3       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |6       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |4       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **SpeedPercentage**
 
 |Type   |Required|Position|PipelineInput|Aliases         |
 |-------|--------|--------|-------------|----------------|
-|`[int]`|false   |1       |false        |speed_percentage|
+|`[Int]`|false   |named   |False        |speed_percentage|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -98,11 +97,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSDivideRotateShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSDivideRotateShader [[-IChannel0] <String>] [[-SpeedPercentage] <Int>] [[-AlphaPercentage] <Int>] [-ApplyToAlphaLayer <Switch>] [[-Notes] <String>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

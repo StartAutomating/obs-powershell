@@ -2,7 +2,6 @@ Get-OBSInvertLumaShader
 -----------------------
 
 ### Synopsis
-
 Get-OBSInvertLumaShader [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-InvertColor] [-InvertLuma] [-GammaCorrection] [-TestRamp] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -14,69 +13,69 @@ Get-OBSInvertLumaShader [[-SourceName] <string>] [[-FilterName] <string>] [[-Sha
 ### Parameters
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |1       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **GammaCorrection**
 
 |Type      |Required|Position|PipelineInput|Aliases         |
 |----------|--------|--------|-------------|----------------|
-|`[switch]`|false   |Named   |false        |Gamma_Correction|
+|`[Switch]`|false   |named   |False        |Gamma_Correction|
 
 #### **InvertColor**
 
 |Type      |Required|Position|PipelineInput|Aliases     |
 |----------|--------|--------|-------------|------------|
-|`[switch]`|false   |Named   |false        |Invert_Color|
+|`[Switch]`|false   |named   |False        |Invert_Color|
 
 #### **InvertLuma**
 
 |Type      |Required|Position|PipelineInput|Aliases    |
 |----------|--------|--------|-------------|-----------|
-|`[switch]`|false   |Named   |false        |Invert_Luma|
+|`[Switch]`|false   |named   |False        |Invert_Luma|
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |2       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |0       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **TestRamp**
 
 |Type      |Required|Position|PipelineInput|Aliases  |
 |----------|--------|--------|-------------|---------|
-|`[switch]`|false   |Named   |false        |Test_Ramp|
+|`[Switch]`|false   |named   |False        |Test_Ramp|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -92,11 +91,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSInvertLumaShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSInvertLumaShader [-InvertColor <Switch>] [-InvertLuma <Switch>] [-GammaCorrection <Switch>] [-TestRamp <Switch>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

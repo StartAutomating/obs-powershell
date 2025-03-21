@@ -2,7 +2,6 @@ Get-OBSHeatWaveSimpleShader
 ---------------------------
 
 ### Synopsis
-
 Get-OBSHeatWaveSimpleShader [[-Rate] <float>] [[-Strength] <float>] [[-Distortion] <float>] [[-Opacity] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,67 +15,67 @@ Get-OBSHeatWaveSimpleShader [[-Rate] <float>] [[-Strength] <float>] [[-Distortio
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |2       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |5       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Opacity**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |3       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Rate**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |0       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |6       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |4       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **Strength**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |1       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -92,11 +91,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSHeatWaveSimpleShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSHeatWaveSimpleShader [[-Rate] <Float>] [[-Strength] <Float>] [[-Distortion] <Float>] [[-Opacity] <Float>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

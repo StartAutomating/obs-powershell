@@ -1,0 +1,44 @@
+{
+  "Synopsis": "Shows content in OBS",
+  "Description": "Shows content in Open Broadcasting Studio",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [],
+  "Examples": [
+    {
+      "Title": "EXAMPLE 1",
+      "Markdown": "",
+      "Code": "<polygon points=\"0 0 0 1 1 1 1 0\" fill=\"blue\" />\n</svg>' | Set-Content .\\BlueRect.svg\nShow-OBS -FilePath .\\BlueRect.svg"
+    },
+    {
+      "Title": "EXAMPLE 2",
+      "Markdown": "",
+      "Code": "Show-OBS -FilePath *excited* -RootPath $home\\Pictures\\Gif"
+    }
+  ]
+}

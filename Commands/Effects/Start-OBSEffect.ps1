@@ -86,7 +86,11 @@ function Start-OBSEffect
 
     # If set, will bounce the effect (flip it / reverse it)    
     [switch]
-    $Bounce
+    $Bounce,
+
+    # If set, will reverse an effect.
+    [switch]
+    $Reverse
     )
 
     process {
@@ -109,6 +113,10 @@ function Start-OBSEffect
                 }
             } else {
                 $obsEffect | Add-Member -MemberType NoteProperty Mode "Once" -Force
+            }
+
+            if ($Reverse) {
+                $obsEffect.Reversed = $true
             }
     
             if ($obsEffect -isnot [Management.Automation.CommandInfo]) {

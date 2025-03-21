@@ -1,0 +1,39 @@
+{
+  "Synopsis": "Sets a scroll filter.",
+  "Description": "Adds or Changes a Scroll Filter on an OBS Input.    \nThis allows you to scroll horizontally or vertically.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [],
+  "Examples": [
+    {
+      "Title": "EXAMPLE 1",
+      "Markdown": "",
+      "Code": "Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg |    \n    Set-OBSScrollFilter -HorizontalSpeed 100 -VerticalSpeed 100"
+    }
+  ]
+}

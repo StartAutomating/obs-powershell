@@ -1,71 +1,45 @@
 Remove-OBS
 ----------
 
-
-
-
 ### Synopsis
 Remove OBS
 
-
-
 ---
-
 
 ### Description
 
 Removes items from OBS
 
-
-
 ---
-
 
 ### Related Links
 * [Remove-OBSInput](Remove-OBSInput.md)
 
-
-
 * [Remove-OBSScene](Remove-OBSScene.md)
-
-
-
-
 
 ---
 
-
 ### Examples
-#### EXAMPLE 1
+> EXAMPLE 1
+
 ```PowerShell
 Remove-OBS -SourceName "foo"
 ```
+> EXAMPLE 2
 
-#### EXAMPLE 2
 ```PowerShell
 Remove-OBS -SceneName "bar"
 ```
 
-
-
 ---
-
 
 ### Parameters
 #### **ItemName**
-
 The name of the item we want to remove
-
-
-
-
-
 
 |Type      |Required|Position|PipelineInput        |Aliases                               |
 |----------|--------|--------|---------------------|--------------------------------------|
 |`[Object]`|true    |1       |true (ByPropertyName)|SourceName<br/>InputName<br/>SceneName|
-
-
 
 #### **WhatIf**
 -WhatIf is an automatic variable that is created when a command has ```[CmdletBinding(SupportsShouldProcess)]```.
@@ -76,13 +50,9 @@ The name of the item we want to remove
 
 If you pass ```-Confirm:$false``` you will not be prompted.
 
-
 If the command sets a ```[ConfirmImpact("Medium")]``` which is lower than ```$confirmImpactPreference```, you will not be prompted unless -Confirm is passed.
 
-
-
 ---
-
 
 ### Syntax
 ```PowerShell

@@ -11,7 +11,7 @@ function Set-OBSColorSource
         Set-OBSInputSettings
     #>
     [inherit("Add-OBSInput", Dynamic, Abstract, ExcludeParameter='inputKind','sceneName','inputName')]
-    [Alias('Add-OBSColorSource')]
+    [Alias('Add-OBSColorSource','Get-OBSColorSource')]
     param(
     # The name of the scene.
     # If no scene name is provided, the current program scene will be used.
@@ -38,12 +38,57 @@ function Set-OBSColorSource
     [switch]
     $Force
     )
+
+    begin {
+        $inputKind = "color_source_v3"
+    }
     
     process {
+        # Copy the bound parameters
         $myParameters = [Ordered]@{} + $PSBoundParameters
+        # and determine the name of the invocation
+        $MyInvocationName  = "$($MyInvocation.InvocationName)"
+        # Split it into verb and noun
+        $myVerb, $myNoun   = $MyInvocationName -split '-'
+        # and get a copy of ourself that we can call with anonymous recursion.
+        $myScriptBlock     = $MyInvocation.MyCommand.ScriptBlock
+        # Determine if the verb was get,
+        $IsGet             = $myVerb -eq "Get"
+        # if no verb was used,
+        $NoVerb            = $MyInvocationName -match '^[^\.\&][^-]+$'
+        # and if there were any other parameters then name
+        $NonNameParameters = @($PSBoundParameters.Keys) -ne 'Name'
+
+        # If it is a get or there was no verb
+        if ($IsGet -or $NoVerb) {
+            $inputsOfKind = # Get all inputs of this kind
+                Get-OBSInput -InputKind $InputKind |
+                    Where-Object {
+                        if ($Name) { # If -Name was provided, 
+                            $_.InputName -like $Name # filter by name (as a wildcard).
+                        } else {
+                            $_ #  otherwise, return every input.
+                        }
+                    }
+            
+            # If there were parameters other than name, 
+            # and we were not explicitly called Get-*
+            if ($NonNameParameters -and -not $IsGet) {
+                # remove the name parameter
+                if ($myParameters.Name) { $myParameters.Remove('Name') }
+                # and pipe results back to ourself.
+                $inputsOfKind | & $myScriptBlock @myParameters
+            } else {
+                # Otherwise, we're just getting the list of inputs                
+                $inputsOfKind
+            }
+            # (either way, if we were called Get- or with no verb, we're done now).
+            return
+        }
         
         if (-not $myParameters["Scene"]) {
-            $myParameters["Scene"] = Get-OBSCurrentProgramScene
+            $myParameters["Scene"] = Get-OBSCurrentProgramScene | 
+                Select-Object -ExpandProperty currentProgramSceneName
         }
 
         $hexChar = [Regex]::new('[0-9a-f]')

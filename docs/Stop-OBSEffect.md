@@ -1,16 +1,10 @@
 Stop-OBSEffect
 --------------
 
-
-
-
 ### Synopsis
 Stops obs-powershell effects.
 
-
-
 ---
-
 
 ### Description
 
@@ -22,45 +16,24 @@ However, OBS effects can be bounced or running in a loop.
 
 If these effects are stopped, they will not continue to loop or bounce.
 
-
-
 ---
-
 
 ### Related Links
 * [Get-OBSEffect](Get-OBSEffect.md)
 
-
-
 * [Start-OBSEffect](Start-OBSEffect.md)
-
-
-
-
 
 ---
 
-
 ### Parameters
 #### **EffectName**
-
 The name of the effect.
-
-
-
-
-
 
 |Type      |Required|Position|PipelineInput        |
 |----------|--------|--------|---------------------|
 |`[String]`|true    |1       |true (ByPropertyName)|
 
-
-
-
-
 ---
-
 
 ### Syntax
 ```PowerShell

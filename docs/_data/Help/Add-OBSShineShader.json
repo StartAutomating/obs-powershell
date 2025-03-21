@@ -1,0 +1,33 @@
+{
+  "Synopsis": "Get-OBSShineShader [[-LTex] <string>] [[-ShineColor] <string>] [[-SpeedPercent] <int>] [[-GradientPercent] <int>] [[-DelayPercent] <int>] [[-Notes] <string>] [[-StartAdjust] <float>] [[-StopAdjust] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ApplyToAlphaLayer] [-Ease] [-Hide] [-Reverse] [-OneDirection] [-Glitch] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]",
+  "Description": "",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    "System.String"
+  ],
+  "Outputs": [
+    "System.Object"
+  ],
+  "Links": [],
+  "Examples": []
+}

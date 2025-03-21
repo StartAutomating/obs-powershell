@@ -1,0 +1,41 @@
+{
+  "Synopsis": "Get-OBSCurrentPreviewScene : GetCurrentPreviewScene",
+  "Description": "Gets the current preview scene.\n\nOnly available when studio mode is enabled.\n\nNote: This request is slated to have the `currentPreview`-prefixed fields removed from in an upcoming RPC version.\n\n\nGet-OBSCurrentPreviewScene calls the OBS WebSocket with a request of type GetCurrentPreviewScene.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    "https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getcurrentpreviewscene"
+  ],
+  "Examples": [
+    {
+      "Title": "EXAMPLE 1",
+      "Markdown": "",
+      "Code": "Get-OBSCurrentPreviewScene"
+    }
+  ]
+}

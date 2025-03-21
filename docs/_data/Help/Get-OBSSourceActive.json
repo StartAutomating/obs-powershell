@@ -1,0 +1,35 @@
+{
+  "Synopsis": "Get-OBSSourceActive : GetSourceActive",
+  "Description": "Gets the active and show state of a source.\n\n**Compatible with inputs and scenes.**\n\n\nGet-OBSSourceActive calls the OBS WebSocket with a request of type GetSourceActive.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    "https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getsourceactive"
+  ],
+  "Examples": []
+}

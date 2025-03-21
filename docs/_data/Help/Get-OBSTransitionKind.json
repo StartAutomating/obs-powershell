@@ -1,0 +1,41 @@
+{
+  "Synopsis": "Get-OBSTransitionKind : GetTransitionKindList",
+  "Description": "Gets an array of all available transition kinds.\n\nSimilar to `GetInputKindList`\n\n\nGet-OBSTransitionKind calls the OBS WebSocket with a request of type GetTransitionKindList.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    "https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#gettransitionkindlist"
+  ],
+  "Examples": [
+    {
+      "Title": "EXAMPLE 1",
+      "Markdown": "",
+      "Code": "Get-OBSTransitionKind"
+    }
+  ]
+}

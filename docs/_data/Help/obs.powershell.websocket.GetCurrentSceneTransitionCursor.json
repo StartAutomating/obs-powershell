@@ -1,0 +1,41 @@
+{
+  "Synopsis": "Get-OBSCurrentSceneTransitionCursor : GetCurrentSceneTransitionCursor",
+  "Description": "Gets the cursor position of the current scene transition.\n\nNote: `transitionCursor` will return 1.0 when the transition is inactive.\n\n\nGet-OBSCurrentSceneTransitionCursor calls the OBS WebSocket with a request of type GetCurrentSceneTransitionCursor.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    "https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getcurrentscenetransitioncursor"
+  ],
+  "Examples": [
+    {
+      "Title": "EXAMPLE 1",
+      "Markdown": "",
+      "Code": "Get-OBSCurrentSceneTransitionCursor"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "Synopsis": "Set-OBSSceneItemTransform : SetSceneItemTransform",
+  "Description": "Sets the transform and crop info of a scene item.\n\n\nSet-OBSSceneItemTransform calls the OBS WebSocket with a request of type SetSceneItemTransform.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    "https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setsceneitemtransform"
+  ],
+  "Examples": []
+}

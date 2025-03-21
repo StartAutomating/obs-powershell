@@ -1,0 +1,33 @@
+{
+  "Synopsis": "Get-OBSGbCameraShader [[-PixelSize] <float>] [[-DitherFactor] <float>] [[-Brightness] <float>] [[-Contrast] <float>] [[-Gamma] <float>] [[-Color1] <string>] [[-Color2] <string>] [[-Color3] <string>] [[-Color4] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-AlternativeBayer] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]",
+  "Description": "",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    "System.String"
+  ],
+  "Outputs": [
+    "System.Object"
+  ],
+  "Links": [],
+  "Examples": []
+}

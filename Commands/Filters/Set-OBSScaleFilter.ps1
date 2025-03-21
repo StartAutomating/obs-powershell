@@ -20,11 +20,13 @@ function Set-OBSScaleFilter {
     [Alias('Scale')]
     [string]
     $Resolution,
+
     # The sampling method.  It will default to "lanczos".    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("sampling")]    
     [string]
     $Sampling = 'lanczos',
+
     # If set, will keep the aspect ratio when scaling.    
     # This is only valid if the sampling method is set to "lanczos".    
     [Parameter(ValueFromPipelineByPropertyName)]
@@ -32,6 +34,7 @@ function Set-OBSScaleFilter {
     [Alias('Undistort')]
     [switch]
     $KeepAspectRatio,
+
     # If set, will remove a filter if one already exists.    
     # If this is not provided and the filter already exists, the settings of the filter will be changed.    
     [switch]
@@ -48,6 +51,8 @@ function Set-OBSScaleFilter {
         }
     $IncludeParameter = @()
     $ExcludeParameter = 'FilterKind','FilterSettings'
+
+
     $DynamicParameters = [Management.Automation.RuntimeDefinedParameterDictionary]::new()            
     :nextInputParameter foreach ($paramName in ([Management.Automation.CommandMetaData]$baseCommand).Parameters.Keys) {
         if ($ExcludeParameter) {
@@ -70,6 +75,7 @@ function Set-OBSScaleFilter {
         ))
     }
     $DynamicParameters
+
     }
         process {
         $myParameters = [Ordered]@{} + $PSBoundParameters
@@ -96,8 +102,10 @@ function Set-OBSScaleFilter {
             }
             return            
         }
+
         # Add the input.
         $outputAddedResult = Add-OBSSourceFilter @addSplat *>&1
+
         # If we got back an error
         if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
             # and that error was saying the source already exists, 
@@ -118,6 +126,7 @@ function Set-OBSScaleFilter {
                     $outputAddedResult = $null
                 }
             }
+
             # If the output was still an error
             if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
                 # use $psCmdlet.WriteError so that it shows the error correctly.

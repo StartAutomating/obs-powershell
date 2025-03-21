@@ -1,0 +1,35 @@
+{
+  "Synopsis": "Get-OBSSceneSceneTransitionOverride : GetSceneSceneTransitionOverride",
+  "Description": "Gets the scene transition overridden for a scene.\n\nNote: A transition UUID response field is not currently able to be implemented as of 2024-1-18.\n\n\nGet-OBSSceneSceneTransitionOverride calls the OBS WebSocket with a request of type GetSceneSceneTransitionOverride.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    "https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getscenescenetransitionoverride"
+  ],
+  "Examples": []
+}

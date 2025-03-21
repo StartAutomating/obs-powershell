@@ -1,0 +1,35 @@
+{
+  "Synopsis": "Get-OBSSceneItemLocked : GetSceneItemLocked",
+  "Description": "Gets the lock state of a scene item.\n\nScenes and Groups\n\n\nGet-OBSSceneItemLocked calls the OBS WebSocket with a request of type GetSceneItemLocked.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    "https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getsceneitemlocked"
+  ],
+  "Examples": []
+}

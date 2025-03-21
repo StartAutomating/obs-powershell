@@ -12,7 +12,7 @@ function Set-OBSColorSource {
     
     #>
             
-    [Alias('Add-OBSColorSource')]
+    [Alias('Add-OBSColorSource','Get-OBSColorSource')]
     param(
     # The name of the scene.    
     # If no scene name is provided, the current program scene will be used.    
@@ -20,16 +20,19 @@ function Set-OBSColorSource {
     [Alias('SceneName')]
     [string]
     $Scene,
+
     # The name of the input.    
     # If no name is provided, "Display $($Monitor + 1)" will be the input source name.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [Alias('InputName')]
     [string]
     $Name,
+
     [ValidatePattern('\#(?>[0-9a-f]{8}|[0-9a-f]{6}|[0-9a-f]{4}|[0-9a-f]{3})')]
     [Parameter(ValueFromPipelineByPropertyName)]
     [string]
     $Color,
+
     # If set, will check if the source exists in the scene before creating it and removing any existing sources found.    
     # If not set, you will get an error if a source with the same name exists.    
     [Parameter(ValueFromPipelineByPropertyName)]
@@ -47,6 +50,8 @@ function Set-OBSColorSource {
         }
     $IncludeParameter = @()
     $ExcludeParameter = 'inputKind','sceneName','inputName'
+
+
     $DynamicParameters = [Management.Automation.RuntimeDefinedParameterDictionary]::new()            
     :nextInputParameter foreach ($paramName in ([Management.Automation.CommandMetaData]$baseCommand).Parameters.Keys) {
         if ($ExcludeParameter) {
@@ -69,15 +74,63 @@ function Set-OBSColorSource {
         ))
     }
     $DynamicParameters
+
+    }
+        begin {
+        $inputKind = "color_source_v3"
+    
     }
         process {
+        # Copy the bound parameters
         $myParameters = [Ordered]@{} + $PSBoundParameters
+        # and determine the name of the invocation
+        $MyInvocationName  = "$($MyInvocation.InvocationName)"
+        # Split it into verb and noun
+        $myVerb, $myNoun   = $MyInvocationName -split '-'
+        # and get a copy of ourself that we can call with anonymous recursion.
+        $myScriptBlock     = $MyInvocation.MyCommand.ScriptBlock
+        # Determine if the verb was get,
+        $IsGet             = $myVerb -eq "Get"
+        # if no verb was used,
+        $NoVerb            = $MyInvocationName -match '^[^\.\&][^-]+$'
+        # and if there were any other parameters then name
+        $NonNameParameters = @($PSBoundParameters.Keys) -ne 'Name'
+
+        # If it is a get or there was no verb
+        if ($IsGet -or $NoVerb) {
+            $inputsOfKind = # Get all inputs of this kind
+                Get-OBSInput -InputKind $InputKind |
+                    Where-Object {
+                        if ($Name) { # If -Name was provided, 
+                            $_.InputName -like $Name # filter by name (as a wildcard).
+                        } else {
+                            $_ #  otherwise, return every input.
+                        }
+                    }
+            
+            # If there were parameters other than name, 
+            # and we were not explicitly called Get-*
+            if ($NonNameParameters -and -not $IsGet) {
+                # remove the name parameter
+                if ($myParameters.Name) { $myParameters.Remove('Name') }
+                # and pipe results back to ourself.
+                $inputsOfKind | & $myScriptBlock @myParameters
+            } else {
+                # Otherwise, we're just getting the list of inputs                
+                $inputsOfKind
+            }
+            # (either way, if we were called Get- or with no verb, we're done now).
+            return
+        }
         
         if (-not $myParameters["Scene"]) {
-            $myParameters["Scene"] = Get-OBSCurrentProgramScene
+            $myParameters["Scene"] = Get-OBSCurrentProgramScene | 
+                Select-Object -ExpandProperty currentProgramSceneName
         }
+
         $hexChar = [Regex]::new('[0-9a-f]')
         $hexColors = @($hexChar.Matches($Color))
+
         switch ($hexColors.Length) {
             8 {
                 #full rgba
@@ -117,6 +170,7 @@ function Set-OBSColorSource {
         }
         
         $hexColor = ("{0:x2}{1:x2}{2:x2}{3:x2}" -f $alpha, $blue, $green, $red)
+
         $realColor = [uint32]::Parse($hexColor,'HexNumber')
         
                 
@@ -125,6 +179,7 @@ function Set-OBSColorSource {
         }
         
         $myParameterData = [Ordered]@{color=$realColor}
+
         $addSplat = @{
             sceneName = $myParameters["Scene"]
             inputName = $myParameters["Name"]
@@ -138,6 +193,7 @@ function Set-OBSColorSource {
             # propagate it to Add-OBSInput.
             $addSplat.SceneItemEnabled = $myParameters['SceneItemEnabled'] -as [bool]
         }
+
         # If -PassThru was passed
         if ($MyParameters["PassThru"]) {
             # pass it down to each command
@@ -155,8 +211,10 @@ function Set-OBSColorSource {
             }
             return
         }
+
         # Add the input.
         $outputAddedResult = Add-OBSInput @addSplat *>&1
+
         # If we got back an error
         if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
             # and that error was saying the source already exists, 
@@ -176,6 +234,7 @@ function Set-OBSColorSource {
                     $outputAddedResult = $null
                 }
             }
+
             # If the output was still an error
             if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
                 # use $psCmdlet.WriteError so that it shows the error correctly.

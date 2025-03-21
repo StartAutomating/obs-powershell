@@ -1,0 +1,35 @@
+{
+  "Synopsis": "Get-OBSInputAudioMonitorType : GetInputAudioMonitorType",
+  "Description": "Gets the audio monitor type of an input.\n\nThe available audio monitor types are:\n\n- `OBS_MONITORING_TYPE_NONE`\n- `OBS_MONITORING_TYPE_MONITOR_ONLY`\n- `OBS_MONITORING_TYPE_MONITOR_AND_OUTPUT`\n\n\nGet-OBSInputAudioMonitorType calls the OBS WebSocket with a request of type GetInputAudioMonitorType.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    "https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getinputaudiomonitortype"
+  ],
+  "Examples": []
+}

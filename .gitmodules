@@ -1,0 +1,3 @@
+[submodule "Build/Dependency/obs-shaderfilter"]
+	path = Build/Dependency/obs-shaderfilter
+	url = https://github.com/exeldro/obs-shaderfilter.git

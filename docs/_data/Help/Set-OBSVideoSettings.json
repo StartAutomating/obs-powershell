@@ -1,0 +1,35 @@
+{
+  "Synopsis": "Set-OBSVideoSettings : SetVideoSettings",
+  "Description": "Sets the current video settings.\n\nNote: Fields must be specified in pairs. For example, you cannot set only `baseWidth` without needing to specify `baseHeight`.\n\n\nSet-OBSVideoSettings calls the OBS WebSocket with a request of type SetVideoSettings.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    "https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setvideosettings"
+  ],
+  "Examples": []
+}

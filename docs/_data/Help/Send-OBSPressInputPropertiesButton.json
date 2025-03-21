@@ -1,0 +1,35 @@
+{
+  "Synopsis": "Send-OBSPressInputPropertiesButton : PressInputPropertiesButton",
+  "Description": "Presses a button in the properties of an input.\n\nSome known `propertyName` values are:\n\n- `refreshnocache` - Browser source reload button\n\nNote: Use this in cases where there is a button in the properties of an input that cannot be accessed in any other way. For example, browser sources, where there is a refresh button.\n\n\nSend-OBSPressInputPropertiesButton calls the OBS WebSocket with a request of type PressInputPropertiesButton.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    "https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#pressinputpropertiesbutton"
+  ],
+  "Examples": []
+}

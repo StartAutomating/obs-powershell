@@ -12,7 +12,7 @@ function Set-OBSBrowserSource
         Import-Module ..\..\obs-powershell.psd1 -Global
         "Add-OBSInput"
     }, Dynamic, Abstract, ExcludeParameter='inputKind','sceneName','inputName')]
-    [Alias('Add-OBSBrowserSource')]
+    [Alias('Add-OBSBrowserSource','Get-OBSBrowserSource')]
     param(
     # The uri or file path to display.
     # If the uri points to a local file, this will be preferred
@@ -75,6 +75,7 @@ function Set-OBSBrowserSource
     # The name of the input.
     # If no name is provided, the last segment of the URI or file path will be the input name.
     [Parameter(ValueFromPipelineByPropertyName)]
+    [Alias('InputName','SourceName')]
     [string]
     $Name,
 
@@ -84,10 +85,57 @@ function Set-OBSBrowserSource
     [switch]
     $Force
     )
+
+    begin {
+        # Browser Sources are built into OBS.  Their input kind is browser_source.
+        $inputKind = "browser_source"
+    }
     
     process {
         $myParameters = [Ordered]@{} + $PSBoundParameters
         
+        # Copy the bound parameters
+        $myParameters = [Ordered]@{} + $PSBoundParameters
+        # and determine the name of the invocation
+        $MyInvocationName  = "$($MyInvocation.InvocationName)"
+        # Split it into verb and noun
+        $myVerb, $myNoun   = $MyInvocationName -split '-'
+        # and get a copy of ourself that we can call with anonymous recursion.
+        $myScriptBlock     = $MyInvocation.MyCommand.ScriptBlock
+        # Determine if the verb was get,
+        $IsGet             = $myVerb -eq "Get"
+        # if no verb was used,
+        $NoVerb            = $MyInvocationName -match '^[^\.\&][^-]+$'
+        # and if there were any other parameters then name
+        $NonNameParameters = @($PSBoundParameters.Keys) -ne 'Name'
+
+        # If it is a get or there was no verb
+        if ($IsGet -or $NoVerb) {
+            $inputsOfKind = # Get all inputs of this kind
+                Get-OBSInput -InputKind $InputKind |
+                    Where-Object {
+                        if ($Name) { # If -Name was provided, 
+                            $_.InputName -like $Name # filter by name (as a wildcard).
+                        } else {
+                            $_ #  otherwise, return every input.
+                        }
+                    }
+            
+            # If there were parameters other than name, 
+            # and we were not explicitly called Get-*
+            if ($NonNameParameters -and -not $IsGet) {
+                # remove the name parameter
+                if ($myParameters.Name) { $myParameters.Remove('Name') }
+                # and pipe results back to ourself.
+                $inputsOfKind | & $myScriptBlock @myParameters
+            } else {
+                # Otherwise, we're just getting the list of inputs                
+                $inputsOfKind
+            }
+            # (either way, if we were called Get- or with no verb, we're done now).
+            return
+        }
+
         if ((-not $width) -or (-not $height)) {
             if (-not $script:CachedOBSVideoSettings) {
                 $script:CachedOBSVideoSettings = Get-OBSVideoSettings
@@ -98,13 +146,14 @@ function Set-OBSBrowserSource
         }
 
         if (-not $myParameters["Scene"]) {
-            $myParameters["Scene"] = Get-OBSCurrentProgramScene
+            $myParameters["Scene"] = Get-OBSCurrentProgramScene | 
+                Select-Object -ExpandProperty currentProgramSceneName
         }
                 
         $myParameterData = [Ordered]@{}
         foreach ($parameter in $MyInvocation.MyCommand.Parameters.Values) {
 
-            $bindToPropertyName = $null            
+            $bindToPropertyName = $null
             
             foreach ($attribute in $parameter.Attributes) {
                 if ($attribute -is [ComponentModel.DefaultBindingPropertyAttribute]) {
@@ -117,7 +166,7 @@ function Set-OBSBrowserSource
             if ($myParameters.Contains($parameter.Name)) {
                 $myParameterData[$bindToPropertyName] = $myParameters[$parameter.Name]
                 if ($myParameters[$parameter.Name] -is [switch]) {
-                    $myParameterData[$bindToPropertyName] = $parameter.Name -as [bool]
+                    $myParameterData[$bindToPropertyName] = $myParameters[$parameter.Name] -as [bool]
                 }
             }
         }
@@ -156,7 +205,7 @@ function Set-OBSBrowserSource
 
         $addSplat = [Ordered]@{
             sceneName = $myParameters["Scene"]
-            inputKind = "browser_source"
+            inputKind = $inputKind
             inputSettings = $myParameterData
             inputName = $Name
             NoResponse = $myParameters["NoResponse"]

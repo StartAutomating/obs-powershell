@@ -19,6 +19,7 @@ function Set-OBSGainFilter {
     [ComponentModel.DefaultBindingProperty("db")]    
     [double]
     $Gain,
+
     # If set, will remove a filter if one already exists.    
     # If this is not provided and the filter already exists, the settings of the filter will be changed.    
     [switch]
@@ -35,6 +36,8 @@ function Set-OBSGainFilter {
         }
     $IncludeParameter = @()
     $ExcludeParameter = 'FilterKind','FilterSettings'
+
+
     $DynamicParameters = [Management.Automation.RuntimeDefinedParameterDictionary]::new()            
     :nextInputParameter foreach ($paramName in ([Management.Automation.CommandMetaData]$baseCommand).Parameters.Keys) {
         if ($ExcludeParameter) {
@@ -57,6 +60,7 @@ function Set-OBSGainFilter {
         ))
     }
     $DynamicParameters
+
     }
         process {
         $myParameters = [Ordered]@{} + $PSBoundParameters
@@ -83,8 +87,10 @@ function Set-OBSGainFilter {
             }
             return            
         }
+
         # Add the input.
         $outputAddedResult = Add-OBSSourceFilter @addSplat *>&1
+
         # If we got back an error
         if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
             # and that error was saying the source already exists, 
@@ -105,6 +111,7 @@ function Set-OBSGainFilter {
                     $outputAddedResult = $null
                 }
             }
+
             # If the output was still an error
             if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
                 # use $psCmdlet.WriteError so that it shows the error correctly.

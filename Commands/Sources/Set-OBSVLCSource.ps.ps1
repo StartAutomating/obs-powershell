@@ -15,10 +15,10 @@ function Set-OBSVLCSource
         Set-OBSInputSettings
     #>
     [inherit("Add-OBSInput", Dynamic, Abstract, ExcludeParameter='inputKind','sceneName','inputName')]
-    [Alias('Add-OBSVLCSource','Set-OBSPlaylistSource','Add-OBSPlaylistSource')]
+    [Alias('Add-OBSVLCSource','Set-OBSPlaylistSource','Add-OBSPlaylistSource','Get-OBSVLCSource','Get-OBSPlaylistSource')]
     param(
     # The path to the media file.
-    [Parameter(Mandatory,ValueFromPipelineByPropertyName)]    
+    [Parameter(ValueFromPipelineByPropertyName)]    
     [Alias('FullName','LocalFile','local_file','Playlist')]
     [string[]]
     $FilePath,
@@ -95,13 +95,55 @@ function Set-OBSVLCSource
             }
             $_
         }
+        $InputKind = "vlc_source"
     }
     
     process {
+        # Copy the bound parameters
         $myParameters = [Ordered]@{} + $PSBoundParameters
+        # and determine the name of the invocation
+        $MyInvocationName  = "$($MyInvocation.InvocationName)"
+        # Split it into verb and noun
+        $myVerb, $myNoun   = $MyInvocationName -split '-'
+        # and get a copy of ourself that we can call with anonymous recursion.
+        $myScriptBlock     = $MyInvocation.MyCommand.ScriptBlock
+        # Determine if the verb was get,
+        $IsGet             = $myVerb -eq "Get"
+        # if no verb was used,
+        $NoVerb            = $MyInvocationName -match '^[^\.\&][^-]+$'
+        # and if there were any other parameters then name
+        $NonNameParameters = @($PSBoundParameters.Keys) -ne 'Name'
+
+        # If it is a get or there was no verb
+        if ($IsGet -or $NoVerb) {
+            $inputsOfKind = # Get all inputs of this kind
+                Get-OBSInput -InputKind $InputKind |
+                    Where-Object {
+                        if ($Name) { # If -Name was provided, 
+                            $_.InputName -like $Name # filter by name (as a wildcard).
+                        } else {
+                            $_ #  otherwise, return every input.
+                        }
+                    }
+            
+            # If there were parameters other than name, 
+            # and we were not explicitly called Get-*
+            if ($NonNameParameters -and -not $IsGet) {
+                # remove the name parameter
+                if ($myParameters.Name) { $myParameters.Remove('Name') }
+                # and pipe results back to ourself.
+                $inputsOfKind | & $myScriptBlock @myParameters
+            } else {
+                # Otherwise, we're just getting the list of inputs                
+                $inputsOfKind
+            }
+            # (either way, if we were called Get- or with no verb, we're done now).
+            return
+        }
         
         if (-not $myParameters["Scene"]) {
-            $myParameters["Scene"] = Get-OBSCurrentProgramScene
+            $myParameters["Scene"] = Get-OBSCurrentProgramScene | 
+                Select-Object -ExpandProperty currentProgramSceneName
         }
                 
         $myParameterData = [Ordered]@{}
@@ -120,15 +162,11 @@ function Set-OBSVLCSource
             if ($myParameters.Contains($parameter.Name)) {
                 $myParameterData[$bindToPropertyName] = $myParameters[$parameter.Name]
                 if ($myParameters[$parameter.Name] -is [switch]) {
-                    $myParameterData[$bindToPropertyName] = $parameter.Name -as [bool]
+                    $myParameterData[$bindToPropertyName] = $myParameters[$parameter.Name] -as [bool]
                 }
             }
         }
-
-        if (-not (Test-Path $FilePath)) {
-            return
-        }
-
+        
         $allPaths = @(foreach ($path in $FilePath) {
             foreach ($_ in $ExecutionContext.SessionState.Path.GetResolvedPSPathFromPSPath($path)) {
                 $_.Path
@@ -156,7 +194,7 @@ function Set-OBSVLCSource
 
         $addSplat = [Ordered]@{
             sceneName = $myParameters["Scene"]
-            inputKind = "vlc_source"
+            inputKind = $InputKind
             inputSettings = $myParameterData
             inputName = $Name
             NoResponse = $myParameters["NoResponse"]

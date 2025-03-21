@@ -16,46 +16,55 @@ function Set-OBS3DFilter {
     [ComponentModel.DefaultBindingProperty("fov")]    
     [double]
     $FieldOfView,
+
     # The Rotation along the X-axis    
     [Parameter(ValueFromPipelineByPropertyName)]    
     [ComponentModel.DefaultBindingProperty("rot_x")]   
     [double]
     $RotationX,
+
     # The Rotation along the Y-axis    
     [Parameter(ValueFromPipelineByPropertyName)]    
     [ComponentModel.DefaultBindingProperty("rot_y")]
     [double]
     $RotationY,
+
     # The Rotation along the Z-axis    
     [Parameter(ValueFromPipelineByPropertyName)]    
     [ComponentModel.DefaultBindingProperty("rot_z")]
     [double]
     $RotationZ,
+
     # The Position along the X-axis    
     [Parameter(ValueFromPipelineByPropertyName)]    
     [ComponentModel.DefaultBindingProperty("pos_x")]
     [double]
     $PositionX,
+
     # The Position along the Y-axis    
     [Parameter(ValueFromPipelineByPropertyName)]    
     [ComponentModel.DefaultBindingProperty("pos_y")]
     [double]
     $PositionY,
+
     # The Position along the Z-axis    
     [Parameter(ValueFromPipelineByPropertyName)]    
     [ComponentModel.DefaultBindingProperty("pos_z")]
     [double]
     $PositionZ,
+
     # The scale of the source along the X-axis    
     [Parameter(ValueFromPipelineByPropertyName)]    
     [ComponentModel.DefaultBindingProperty("scale_x")]
     [double]
     $ScaleX,
+
     # The scale of the source along the Y-axis    
     [Parameter(ValueFromPipelineByPropertyName)]    
     [ComponentModel.DefaultBindingProperty("scale_y")]
     [double]
     $ScaleY,
+
     # If set, will remove a filter if one already exists.    
     # If this is not provided and the filter already exists, the settings of the filter will be changed.    
     [switch]
@@ -72,6 +81,8 @@ function Set-OBS3DFilter {
         }
     $IncludeParameter = @()
     $ExcludeParameter = 'FilterKind','FilterSettings'
+
+
     $DynamicParameters = [Management.Automation.RuntimeDefinedParameterDictionary]::new()            
     :nextInputParameter foreach ($paramName in ([Management.Automation.CommandMetaData]$baseCommand).Parameters.Keys) {
         if ($ExcludeParameter) {
@@ -94,6 +105,7 @@ function Set-OBS3DFilter {
         ))
     }
     $DynamicParameters
+
     }
         process {
         $myParameters = [Ordered]@{} + $PSBoundParameters
@@ -104,6 +116,7 @@ function Set-OBS3DFilter {
                 
         $myParameterData = [Ordered]@{}
         foreach ($parameter in $MyInvocation.MyCommand.Parameters.Values) {
+
             $bindToPropertyName = $null            
             
             foreach ($attribute in $parameter.Attributes) {
@@ -112,6 +125,7 @@ function Set-OBS3DFilter {
                     break
                 }
             }
+
             if (-not $bindToPropertyName) { continue }
             if ($myParameters.Contains($parameter.Name)) {
                 $myParameterData[$bindToPropertyName] = $myParameters[$parameter.Name]
@@ -128,6 +142,7 @@ function Set-OBS3DFilter {
             filterSettings = $myParameterData
             NoResponse = $myParameters["NoResponse"]
         }
+
         if ($MyParameters["PassThru"]) {
             $addSplat.Passthru = $MyParameters["PassThru"]
             if ($MyInvocation.InvocationName -like 'Add-*') {
@@ -138,9 +153,11 @@ function Set-OBS3DFilter {
             }
             return            
         }
+
         # Add the input.
         $outputAddedResult = Add-OBSSourceFilter @addSplat *>&1
         
+
         # If we got back an error
         if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
             # and that error was saying the source already exists, 
@@ -161,6 +178,7 @@ function Set-OBS3DFilter {
                     $outputAddedResult = $null
                 }
             }
+
             # If the output was still an error
             if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
                 # use $psCmdlet.WriteError so that it shows the error correctly.

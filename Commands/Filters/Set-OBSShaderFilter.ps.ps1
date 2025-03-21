@@ -9,9 +9,25 @@ function Set-OBSShaderFilter
         This requires that the [OBS Shader Filter](https://github.com/exeldro/obs-shaderfilter) is installed.
     .EXAMPLE
         Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg |
-            Set-OBSShaderFilter -FilterName "Shader" -ShaderFile fisheye-xy -ShaderSetting @{
+            Set-OBSShaderFilter -FilterName "FisheyeShader" -ShaderFile fisheye-xy -ShaderSetting @{
                 center_x_percent=30
                 center_y_percent=70
+            }
+    .EXAMPLE
+        Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg |
+            Set-OBSShaderFilter -FilterName "SeasickShader" -ShaderFile seasick -ShaderSetting @{
+                amplitude = 0.05
+                speed = 0.5
+                frequency = 12
+                opacity = 1
+            }
+    .EXAMPLE
+        Show-OBS -Uri https://pssvg.start-automating.com/Examples/Stars.svg |
+            Set-OBSShaderFilter -FilterName "TwistShader" -ShaderFile twist -ShaderSetting @{
+                center_x_percent=50
+                center_y_percent=50
+                power = 0.05
+                rotation = 80
             }
     #>
     [inherit(Command={
@@ -56,7 +72,7 @@ function Set-OBSShaderFilter
         }
         elseif ($ShaderFile) {
             if ($ShaderFile -match '[\\/]') {
-                $shaderSettings.shader_file_name = $shaderSettings.$ExecutionContext.SessionState.Path.GetResolvedProviderPathFromPSPath($ShaderFile) -replace "\\", "/"
+                $shaderSettings.shader_file_name = "$($ExecutionContext.SessionState.Path.GetResolvedPSPathFromPSPath($ShaderFile))" -replace "\\", "/"
             } else {
                 if (-not $script:CachedOBSShaderFilters) {
                     $script:CachedOBSShaderFilters = 

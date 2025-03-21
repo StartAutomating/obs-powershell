@@ -1,4 +1,5 @@
 function Set-OBSCurrentProgramScene {
+
 <#
 .Synopsis
     
@@ -15,11 +16,16 @@ function Set-OBSCurrentProgramScene {
 [Reflection.AssemblyMetadata('OBS.WebSocket.RequestType', 'SetCurrentProgramScene')]
 [Alias('obs.powershell.websocket.SetCurrentProgramScene')]
 param(
-<# Scene to set as the current program scene #>
-[Parameter(Mandatory,ValueFromPipelineByPropertyName)]
+<# Scene name to set as the current program scene #>
+[Parameter(ValueFromPipelineByPropertyName)]
 [ComponentModel.DefaultBindingProperty('sceneName')]
 [string]
 $SceneName,
+<# Scene UUID to set as the current program scene #>
+[Parameter(ValueFromPipelineByPropertyName)]
+[ComponentModel.DefaultBindingProperty('sceneUuid')]
+[string]
+$SceneUuid,
 # If set, will return the information that would otherwise be sent to OBS.
 [Parameter(ValueFromPipelineByPropertyName)]
 [Alias('OutputRequest','OutputInput')]
@@ -32,16 +38,22 @@ $PassThru,
 [switch]
 $NoResponse
 )
+
+
 process {
+
+
         # Create a copy of the parameters (that are part of the payload)
         $paramCopy = [Ordered]@{}
         # get a reference to this command
         $myCmd = $MyInvocation.MyCommand
+
         # Keep track of how many requests we have done of a given type
         # (this makes creating RequestIDs easy)
         if (-not $script:ObsRequestsCounts) {
             $script:ObsRequestsCounts = @{}
         }
+
         # Set my requestType to blank
         $myRequestType = ''
         # and indicate we are not expecting a response
@@ -61,6 +73,7 @@ process {
                 }
             }
         }
+
         # Walk over each parameter
         :nextParam foreach ($keyValue in $PSBoundParameters.GetEnumerator()) {
             # and walk over each of it's attributes to see if it part of the payload
@@ -94,12 +107,16 @@ process {
             # and optional data
             requestData = $paramCopy
         }
+
         if ($PassThru) {
             [PSCustomObject]$requestPayload
         } else {
             [PSCustomObject]$requestPayload | 
                 Send-OBS -NoResponse:$NoResponse
         }
+
 }
+
+
 } 
 

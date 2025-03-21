@@ -1,0 +1,44 @@
+{
+  "Synopsis": "Adds or sets an audio output source",
+  "Description": "Adds or sets an audio output source in OBS.  This captures the audio that is being sent to an output device.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    "This command currently only supports capturing default audio on Windows.    \nTo add support for other operating systems, file an issue or open a pull request."
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [],
+  "Examples": [
+    {
+      "Title": "EXAMPLE 1",
+      "Markdown": "",
+      "Code": "Add-OBSAudioOutputSource"
+    },
+    {
+      "Title": "EXAMPLE 2",
+      "Markdown": "",
+      "Code": "Set-OBSAudioOutputSource -AudioDevice Speakers"
+    }
+  ]
+}

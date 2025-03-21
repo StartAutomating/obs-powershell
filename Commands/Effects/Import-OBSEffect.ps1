@@ -1,4 +1,5 @@
 function Import-OBSEffect {
+
     <#
     .SYNOPSIS
         Imports Effects
@@ -24,6 +25,7 @@ function Import-OBSEffect {
     )]    
     [ValidateScript({
     $validTypeList = [System.String],[System.IO.FileInfo],[System.IO.DirectoryInfo],[System.Management.Automation.CommandInfo],[System.Management.Automation.PSModuleInfo]
+    
     $thisType = $_.GetType()
     $IsTypeOk =
         $(@( foreach ($validType in $validTypeList) {
@@ -31,6 +33,7 @@ function Import-OBSEffect {
                 $true;break
             }
         }))
+    
     if (-not $isTypeOk) {
         throw "Unexpected type '$(@($thisType)[0])'.  Must be 'string','System.IO.FileInfo','System.IO.DirectoryInfo','System.Management.Automation.CommandInfo','psmoduleinfo'."
     }
@@ -39,10 +42,12 @@ function Import-OBSEffect {
     
     $From
     )
+
     begin {        
         if (-not $script:OBSFX) {
             $script:OBSFX = [Ordered]@{}
         }
+
         $newEffects = @()
         $obsEffectsPattern = [Regex]::new('
         (?>
@@ -54,10 +59,12 @@ function Import-OBSEffect {
         )
         ','IgnoreCase,IgnorePatternWhitespace')
     }
+
     process {
         # Since -From can be many things, but a metric has to be a command,
         # the purpose of this function is to essentially resolve many things to a command, 
         # and then cache that command.
+
         # If -From was a string
         if ($From -is [string]) {
             # It could be a module, so check those first.            
@@ -78,6 +85,7 @@ function Import-OBSEffect {
                 }
             } while ($false)
         }
+
         # If -From is a module
         if ($from -is [Management.Automation.PSModuleInfo]) {
             # recursively call ourselves with all matching commands
@@ -98,6 +106,7 @@ function Import-OBSEffect {
                 Import-OBSEffect
             return
         }
+
         # If -From is a file
         if ($from -is [IO.FileInfo]) {
             # and it matches the naming convention
@@ -105,12 +114,14 @@ function Import-OBSEffect {
             # make -From a command.
             $from = $ExecutionContext.SessionState.InvokeCommand.GetCommand($from.FullName, 'ExternalScript,Application')
         }
+
         # If -From is a command
         if ($from -is [Management.Automation.CommandInfo]) {
             # decorate the command
             if ($from.pstypenames -notcontains 'OBS.PowerShell.Effect') {
                 $from.pstypenames.insert(0,'OBS.PowerShell.Effect')                
             }
+
             if ($from -is [Management.Automation.ApplicationInfo]) {
                 $effectName = $from.Name -replace '\.obs\.(?>fx|effects?).(?>ps1|json)$'
                 $newEffect  = [PSCustomObject][Ordered]@{
@@ -133,5 +144,8 @@ function Import-OBSEffect {
             }                    
         }                
     }
+
+
+
 }
 

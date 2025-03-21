@@ -1,0 +1,35 @@
+{
+  "Synopsis": "Add-OBSInput : CreateInput",
+  "Description": "Creates a new input, adding it as a scene item to the specified scene.\n\n\nAdd-OBSInput calls the OBS WebSocket with a request of type CreateInput.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    "https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#createinput"
+  ],
+  "Examples": []
+}

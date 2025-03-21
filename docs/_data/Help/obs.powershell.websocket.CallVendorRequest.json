@@ -1,0 +1,35 @@
+{
+  "Synopsis": "Send-OBSCallVendorRequest : CallVendorRequest",
+  "Description": "Call a request registered to a vendor.\n\nA vendor is a unique name registered by a third-party plugin or script, which allows for custom requests and events to be added to obs-websocket.\nIf a plugin or script implements vendor requests or events, documentation is expected to be provided with them.\n\n\nSend-OBSCallVendorRequest calls the OBS WebSocket with a request of type CallVendorRequest.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    "https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#callvendorrequest"
+  ],
+  "Examples": []
+}

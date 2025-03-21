@@ -1,0 +1,35 @@
+{
+  "Synopsis": "Switch-OBSInputMute : ToggleInputMute",
+  "Description": "Toggles the audio mute state of an input.\n\n\nSwitch-OBSInputMute calls the OBS WebSocket with a request of type ToggleInputMute.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    "https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#toggleinputmute"
+  ],
+  "Examples": []
+}

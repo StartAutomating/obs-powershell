@@ -10,7 +10,7 @@ function Set-OBSBrowserSource {
     
     #>
             
-    [Alias('Add-OBSBrowserSource')]
+    [Alias('Add-OBSBrowserSource','Get-OBSBrowserSource')]
     param(
     # The uri or file path to display.    
     # If the uri points to a local file, this will be preferred    
@@ -18,54 +18,65 @@ function Set-OBSBrowserSource {
     [Alias('Url', 'Href','Path','FilePath','FullName')]
     [uri]
     $Uri,
+
     # The width of the browser source.    
     # If none is provided, this will be the output width of the video settings.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("width")]
     [int]
     $Width,
+
     # The width of the browser source.    
     # If none is provided, this will be the output height of the video settings.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("height")]
     [int]
     $Height,
+
     # The css style used to render the browser page.     
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("css")]
     [string]
     $CSS = "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+
     # If set, the browser source will shutdown when it is hidden    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("shutdown")]
     [switch]
     $ShutdownWhenHidden,
+
     # If set, the browser source will restart when it is activated.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("restart_when_active")]
     [switch]
     $RestartWhenActived,
+
     # If set, audio from the browser source will be rerouted into OBS.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("reroute_audio")]
     [switch]
     $RerouteAudio,
+
     # If provided, the browser source will render at a custom frame rate.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("fps")]
     [Alias('FPS')]    
     [int]
     $FramesPerSecond,
+
     # The name of the scene.    
     # If no scene name is provided, the current program scene will be used.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [string]
     $Scene,
+
     # The name of the input.    
     # If no name is provided, the last segment of the URI or file path will be the input name.    
     [Parameter(ValueFromPipelineByPropertyName)]
+    [Alias('InputName','SourceName')]
     [string]
     $Name,
+
     # If set, will check if the source exists in the scene before creating it and removing any existing sources found.    
     # If not set, you will get an error if a source with the same name exists.    
     [Parameter(ValueFromPipelineByPropertyName)]
@@ -83,6 +94,8 @@ function Set-OBSBrowserSource {
         }
     $IncludeParameter = @()
     $ExcludeParameter = 'inputKind','sceneName','inputName'
+
+
     $DynamicParameters = [Management.Automation.RuntimeDefinedParameterDictionary]::new()            
     :nextInputParameter foreach ($paramName in ([Management.Automation.CommandMetaData]$baseCommand).Parameters.Keys) {
         if ($ExcludeParameter) {
@@ -105,10 +118,58 @@ function Set-OBSBrowserSource {
         ))
     }
     $DynamicParameters
+
+    }
+        begin {
+        # Browser Sources are built into OBS.  Their input kind is browser_source.
+        $inputKind = "browser_source"
+    
     }
         process {
         $myParameters = [Ordered]@{} + $PSBoundParameters
         
+        # Copy the bound parameters
+        $myParameters = [Ordered]@{} + $PSBoundParameters
+        # and determine the name of the invocation
+        $MyInvocationName  = "$($MyInvocation.InvocationName)"
+        # Split it into verb and noun
+        $myVerb, $myNoun   = $MyInvocationName -split '-'
+        # and get a copy of ourself that we can call with anonymous recursion.
+        $myScriptBlock     = $MyInvocation.MyCommand.ScriptBlock
+        # Determine if the verb was get,
+        $IsGet             = $myVerb -eq "Get"
+        # if no verb was used,
+        $NoVerb            = $MyInvocationName -match '^[^\.\&][^-]+$'
+        # and if there were any other parameters then name
+        $NonNameParameters = @($PSBoundParameters.Keys) -ne 'Name'
+
+        # If it is a get or there was no verb
+        if ($IsGet -or $NoVerb) {
+            $inputsOfKind = # Get all inputs of this kind
+                Get-OBSInput -InputKind $InputKind |
+                    Where-Object {
+                        if ($Name) { # If -Name was provided, 
+                            $_.InputName -like $Name # filter by name (as a wildcard).
+                        } else {
+                            $_ #  otherwise, return every input.
+                        }
+                    }
+            
+            # If there were parameters other than name, 
+            # and we were not explicitly called Get-*
+            if ($NonNameParameters -and -not $IsGet) {
+                # remove the name parameter
+                if ($myParameters.Name) { $myParameters.Remove('Name') }
+                # and pipe results back to ourself.
+                $inputsOfKind | & $myScriptBlock @myParameters
+            } else {
+                # Otherwise, we're just getting the list of inputs                
+                $inputsOfKind
+            }
+            # (either way, if we were called Get- or with no verb, we're done now).
+            return
+        }
+
         if ((-not $width) -or (-not $height)) {
             if (-not $script:CachedOBSVideoSettings) {
                 $script:CachedOBSVideoSettings = Get-OBSVideoSettings
@@ -117,13 +178,16 @@ function Set-OBSBrowserSource {
             $myParameters["Width"]  = $width = $videoSettings.outputWidth
             $myParameters["Height"] = $height = $videoSettings.outputHeight
         }
+
         if (-not $myParameters["Scene"]) {
-            $myParameters["Scene"] = Get-OBSCurrentProgramScene
+            $myParameters["Scene"] = Get-OBSCurrentProgramScene | 
+                Select-Object -ExpandProperty currentProgramSceneName
         }
                 
         $myParameterData = [Ordered]@{}
         foreach ($parameter in $MyInvocation.MyCommand.Parameters.Values) {
-            $bindToPropertyName = $null            
+
+            $bindToPropertyName = $null
             
             foreach ($attribute in $parameter.Attributes) {
                 if ($attribute -is [ComponentModel.DefaultBindingPropertyAttribute]) {
@@ -131,14 +195,16 @@ function Set-OBSBrowserSource {
                     break
                 }
             }
+
             if (-not $bindToPropertyName) { continue }
             if ($myParameters.Contains($parameter.Name)) {
                 $myParameterData[$bindToPropertyName] = $myParameters[$parameter.Name]
                 if ($myParameters[$parameter.Name] -is [switch]) {
-                    $myParameterData[$bindToPropertyName] = $parameter.Name -as [bool]
+                    $myParameterData[$bindToPropertyName] = $myParameters[$parameter.Name] -as [bool]
                 }
             }
         }
+
         if ($fps -and $fps -ne 30) {
             $myParameterData["custom_fps"] = $true            
         }
@@ -158,6 +224,7 @@ function Set-OBSBrowserSource {
                 $myParameterData["url"] = "$uri"
             }            
         }
+
  
         if (-not $Name) {
             $Name = $myParameters['Name'] =
@@ -169,9 +236,10 @@ function Set-OBSBrowserSource {
                     $uri
                 }
         }        
+
         $addSplat = [Ordered]@{
             sceneName = $myParameters["Scene"]
-            inputKind = "browser_source"
+            inputKind = $inputKind
             inputSettings = $myParameterData
             inputName = $Name
             NoResponse = $myParameters["NoResponse"]
@@ -181,6 +249,7 @@ function Set-OBSBrowserSource {
             # propagate it to Add-OBSInput.
             $addSplat.SceneItemEnabled = $myParameters['SceneItemEnabled'] -as [bool]
         }
+
         # If -PassThru was passed
         if ($MyParameters["PassThru"]) {
             # pass it down to each command
@@ -201,6 +270,7 @@ function Set-OBSBrowserSource {
         
         # Add the input.
         $outputAddedResult = Add-OBSInput @addSplat *>&1
+
         # If we got back an error
         if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
             # and that error was saying the source already exists, 
@@ -220,6 +290,7 @@ function Set-OBSBrowserSource {
                     $outputAddedResult = $null
                 }
             }
+
             # If the output was still an error
             if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
                 # use $psCmdlet.WriteError so that it shows the error correctly.

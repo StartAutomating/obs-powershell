@@ -19,17 +19,20 @@ function Set-OBSScrollFilter {
     [Alias('SpeedX', 'Speed_X','HSpeed')]
     [double]
     $HorizontalSpeed,
+
     # The vertical scroll speed.    
     [Parameter(ValueFromPipelineByPropertyName)]    
     [ComponentModel.DefaultBindingProperty("speed_y")]
     [Alias('SpeedY', 'Speed_Y','VSpeed')]
     [double]
     $VerticalSpeed,
+
     # If set, will not loop    
     [Parameter(ValueFromPipelineByPropertyName)]    
     [ComponentModel.DefaultBindingProperty("loop")]
     [switch]
     $NoLoop,
+
     # If provided, will limit the width.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ValidateRange(-500, 500)]
@@ -37,6 +40,7 @@ function Set-OBSScrollFilter {
     [Alias('LimitX', 'Limit_CX','WidthLimit')]    
     [double]
     $LimitWidth,
+
     # If provided, will limit the height.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ValidateRange(-500, 500)]
@@ -44,6 +48,7 @@ function Set-OBSScrollFilter {
     [Alias('LimitY', 'Limit_CY','HeightLimit')]    
     [double]
     $LimitHeight,
+
     # If set, will remove a filter if one already exists.    
     # If this is not provided and the filter already exists, the settings of the filter will be changed.    
     [switch]
@@ -60,6 +65,8 @@ function Set-OBSScrollFilter {
         }
     $IncludeParameter = @()
     $ExcludeParameter = 'FilterKind','FilterSettings'
+
+
     $DynamicParameters = [Management.Automation.RuntimeDefinedParameterDictionary]::new()            
     :nextInputParameter foreach ($paramName in ([Management.Automation.CommandMetaData]$baseCommand).Parameters.Keys) {
         if ($ExcludeParameter) {
@@ -82,6 +89,7 @@ function Set-OBSScrollFilter {
         ))
     }
     $DynamicParameters
+
     }
         process {
         $myParameters = [Ordered]@{} + $PSBoundParameters
@@ -92,6 +100,7 @@ function Set-OBSScrollFilter {
                 
         $myParameterData = [Ordered]@{}
         foreach ($parameter in $MyInvocation.MyCommand.Parameters.Values) {
+
             $bindToPropertyName = $null            
             
             foreach ($attribute in $parameter.Attributes) {
@@ -100,6 +109,7 @@ function Set-OBSScrollFilter {
                     break
                 }
             }
+
             if (-not $bindToPropertyName) { continue }
             if ($myParameters.Contains($parameter.Name)) {
                 $myParameterData[$bindToPropertyName] = $myParameters[$parameter.Name]
@@ -108,6 +118,7 @@ function Set-OBSScrollFilter {
                 }
             }
         }
+
         if ($myParameterData["loop"]) {
             $myParameterData["loop"] = -not $myParameterData["loop"]
         }
@@ -125,6 +136,7 @@ function Set-OBSScrollFilter {
             filterSettings = $myParameterData
             NoResponse = $myParameters["NoResponse"]
         }        
+
         if ($MyParameters["PassThru"]) {
             $addSplat.Passthru = $MyParameters["PassThru"]
             if ($MyInvocation.InvocationName -like 'Add-*') {
@@ -135,8 +147,10 @@ function Set-OBSScrollFilter {
             }
             return            
         }
+
         # Add the input.
         $outputAddedResult = Add-OBSSourceFilter @addSplat *>&1
+
         # If we got back an error
         if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
             # and that error was saying the source already exists, 
@@ -157,6 +171,7 @@ function Set-OBSScrollFilter {
                     $outputAddedResult = $null
                 }
             }
+
             # If the output was still an error
             if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
                 # use $psCmdlet.WriteError so that it shows the error correctly.

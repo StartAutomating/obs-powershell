@@ -1,0 +1,33 @@
+{
+  "Synopsis": "Sets an OBS 3D Filter.",
+  "Description": "Adds or Changes a 3D Filter on an OBS Input.    \nThis requires the [3D Effect](https://github.com/exeldro/obs-3d-effect).",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [],
+  "Examples": []
+}

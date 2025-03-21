@@ -1,3 +1,9 @@
+<#
+.SYNOPSIS
+    Sets the color.
+.DESCRIPTION
+    Changes the color of a color source.
+#>
 param(
 [ValidatePattern('\#(?>[0-9a-f]{8}|[0-9a-f]{6}|[0-9a-f]{4}|[0-9a-f]{3})')]
 [string]

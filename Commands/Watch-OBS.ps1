@@ -26,17 +26,24 @@ function Watch-OBS
     [Parameter(ValueFromPipelineByPropertyName)]
     [Alias('WebSocketPassword')]
     [string]
-    $WebSocketToken
+    $WebSocketToken,
+
+    # The size of the buffer to use when receiving messages from the websocket.
+    [Parameter(ValueFromPipelineByPropertyName)]
+    [ValidateRange(1,1mb)]
+    [int]
+    $BufferSize = 64kb
     )
 
     begin {
         $obsWatcherJobDefinition = '' + {
             param(            
-            [uri]$webSocketUri,
-            
-            [Alias('WebSocketPassword')]
-            $WebSocketToken
+            [Collections.IDictionary]$Variable
             )
+
+            foreach ($keyValue in $Variable.GetEnumerator()) {
+                $ExecutionContext.SessionState.PSVariable.Set($keyValue.Name, $keyValue.Value)
+            }
         }.ToString() + 
 "
 function Receive-OBS {
@@ -56,7 +63,7 @@ $($ExecutionContext.SessionState.InvokeCommand.GetCommand('Send-OBS', 'Function'
             $obsPwd = $WebSocketToken
             $WaitInterval = [Timespan]::FromMilliseconds(7)
     
-            $BufferSize = 16kb
+            $BufferSize = 64kb
     
             $maxWaitTime = [DateTime]::Now + $WaitFor
             while (!$ConnectTask.IsCompleted -and [DateTime]::Now -lt $maxWaitTime) {
@@ -67,6 +74,7 @@ $($ExecutionContext.SessionState.InvokeCommand.GetCommand('Send-OBS', 'Function'
                 $script:ObsConnections = @{}
             }
             $script:ObsConnections[$webSocketUri] = $Websocket
+            $Variable['WebSocket'] = $Websocket
     
             [PSCustomObject][Ordered]@{
                 PSTypename = 'obs.websocket'
@@ -92,11 +100,21 @@ $($ExecutionContext.SessionState.InvokeCommand.GetCommand('Send-OBS', 'Function'
             
             if ($msg) {
                 $messageData = try { ConvertFrom-Json $msg -ErrorAction Ignore} catch { $_ }
-                if ($messageData -isnot [Management.Automation.ErrorRecord]) {
-                    $messageData | Receive-OBS -WebSocketToken $WebSocketToken -WebSocketUri $webSocketUri -SendEvent
+                $received = if ($messageData -isnot [Management.Automation.ErrorRecord]) {
+                    $messageData | Receive-OBS -WebSocketToken $WebSocketToken -WebSocketUri $webSocketUri -SendEvent -Subscription $Subscription
                 } else {
                     $messageData
                 }
+                if ($MainRunspace) {
+                    foreach ($receivedItem in $received) {
+                        if ($receivedItem -is [Management.Automation.PSEvent]) {
+                            $MainRunspace.Events.GenerateEvent($receivedItem.SourceIdentifier, $receivedItem.Sender, $receivedItem.SourceArgs, $receivedItem.MessageData)
+                        } else {
+                            $MainRunspace.Events.GenerateEvent('obs://', $Websocket, $received, $null)
+                        }
+                    }                    
+                }
+                $received                
             }
     
             $buffer.Clear()
@@ -124,9 +142,14 @@ $($ExecutionContext.SessionState.InvokeCommand.GetCommand('Send-OBS', 'Function'
 
     process {
         
-        
+        $MainRunspace = [Runspace]::DefaultRunspace
         $obsWatcher      =
-            Start-ThreadJob -ScriptBlock $obsWatcherJobDefinition -Name "OBS.Connection.$($Credential.UserName)" -ArgumentList $WebSocketURI, $WebSocketToken
+            Start-ThreadJob -ScriptBlock $obsWatcherJobDefinition -Name "OBS.Connection.$($Credential.UserName)" -ArgumentList ([Ordered]@{
+                WebSocketURI = $WebSocketURI
+                WebSocketToken = $WebSocketToken
+                BufferSize = $BufferSize                
+                MainRunspace = $MainRunspace
+            })
         
         $whenOutputAddedHandler =
             Register-ObjectEvent -InputObject $obsWatcher.Output -EventName DataAdded -Action {

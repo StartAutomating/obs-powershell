@@ -1,0 +1,35 @@
+{
+  "Synopsis": "Set-OBSRecordDirectory : SetRecordDirectory",
+  "Description": "Sets the current directory that the record output writes files to.\n\n\nSet-OBSRecordDirectory calls the OBS WebSocket with a request of type SetRecordDirectory.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    "https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#setrecorddirectory"
+  ],
+  "Examples": []
+}

@@ -1,0 +1,35 @@
+{
+  "Synopsis": "Send-OBSOffsetMediaInputCursor : OffsetMediaInputCursor",
+  "Description": "Offsets the current cursor position of a media input by the specified value.\n\nThis request does not perform bounds checking of the cursor position.\n\n\nSend-OBSOffsetMediaInputCursor calls the OBS WebSocket with a request of type OffsetMediaInputCursor.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    "https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#offsetmediainputcursor"
+  ],
+  "Examples": []
+}

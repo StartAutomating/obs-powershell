@@ -28,46 +28,54 @@ function Set-OBSColorFilter {
     [ComponentModel.DefaultBindingProperty("opacity")]
     [double]
     $Opacity,
+
     # The brightness, as a number between -1 and 1.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ValidateRange(-1,1)]    
     [ComponentModel.DefaultBindingProperty("brightness")]
     [double]
     $Brightness,
+
     # The constrast, as a number between -4 and 4.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ValidateRange(-4,4)]    
     [ComponentModel.DefaultBindingProperty("contrast")]
     [double]
     $Contrast,
+
     # The gamma correction, as a number between -3 and 3.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ValidateRange(-3,3)]
     [ComponentModel.DefaultBindingProperty("gamma")]
     [double]
     $Gamma,
+
     # The saturation, as a number between -1 and 5.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ValidateRange(-1,5)]
     [ComponentModel.DefaultBindingProperty("saturation")]
     [double]
     $Saturation,
+
     # The change in hue, as represented in degrees around a color cicrle    
     [Parameter(ValueFromPipelineByPropertyName)]    
     [ComponentModel.DefaultBindingProperty("hue_shift")]
     [Alias('Spin')]
     [double]
     $Hue,
+
     # Multiply this color by all pixels within the source.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("color_multiply")]
     [string]
     $MultiplyColor,
+
     # Add all this color to all pixels within the source.    
     [Parameter(ValueFromPipelineByPropertyName)]
     [ComponentModel.DefaultBindingProperty("color_add")]
     [string]
     $AddColor,
+
     # If set, will remove a filter if one already exists.    
     # If this is not provided and the filter already exists, the settings of the filter will be changed.    
     [switch]
@@ -84,6 +92,8 @@ function Set-OBSColorFilter {
         }
     $IncludeParameter = @()
     $ExcludeParameter = 'FilterKind','FilterSettings'
+
+
     $DynamicParameters = [Management.Automation.RuntimeDefinedParameterDictionary]::new()            
     :nextInputParameter foreach ($paramName in ([Management.Automation.CommandMetaData]$baseCommand).Parameters.Keys) {
         if ($ExcludeParameter) {
@@ -106,14 +116,17 @@ function Set-OBSColorFilter {
         ))
     }
     $DynamicParameters
+
     }
         begin {
         filter ToOBSColor {
+        
                     if ($_ -is [uint32]) { $_ }
                     elseif ($_ -is [string]) {                
                         if ($_ -match '^\#[a-f0-9]{3,4}$') {                    
                             $_ = $_ -replace '[a-f0-9]','$0$0'                    
                         }                
+        
                         if ($_ -match '^#[a-f0-9]{8}$') {                    
                             $_ -replace '#','0x' -as [UInt32]
                         }
@@ -134,6 +147,7 @@ function Set-OBSColorFilter {
                 
         $myParameterData = [Ordered]@{}
         foreach ($parameter in $MyInvocation.MyCommand.Parameters.Values) {
+
             $bindToPropertyName = $null            
             
             foreach ($attribute in $parameter.Attributes) {
@@ -142,6 +156,7 @@ function Set-OBSColorFilter {
                     break
                 }
             }
+
             if (-not $bindToPropertyName) { continue }
             if ($myParameters.Contains($parameter.Name)) {
                 $myParameterData[$bindToPropertyName] = $myParameters[$parameter.Name]
@@ -154,9 +169,11 @@ function Set-OBSColorFilter {
         if ($myParameterData.color_add) {
             $myParameterData.color_add = $myParameterData.color_add | ToOBSColor
         }
+
         if ($myParameterData.color_multiply) {
             $myParameterData.color_multiply = $myParameterData.color_multiply | ToOBSColor
         }
+
         
         $addSplat = @{            
             filterName = $myParameters["FilterName"]
@@ -176,11 +193,14 @@ function Set-OBSColorFilter {
             }
             return            
         }        
+
         # Add the input.
         $outputAddedResult = Add-OBSSourceFilter @addSplat *>&1
+
         if ($PassThru) {
             return $outputAddedResult
         }
+
         # If we got back an error
         if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
             # and that error was saying the source already exists, 
@@ -201,6 +221,7 @@ function Set-OBSColorFilter {
                     $outputAddedResult = $null
                 }
             }
+
             # If the output was still an error
             if ($outputAddedResult -is [Management.Automation.ErrorRecord]) {
                 # use $psCmdlet.WriteError so that it shows the error correctly.

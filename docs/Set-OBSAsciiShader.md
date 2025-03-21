@@ -2,7 +2,6 @@ Get-OBSAsciiShader
 ------------------
 
 ### Synopsis
-
 Get-OBSAsciiShader [[-Scale] <int>] [[-BaseColor] <string>] [[-CharacterSet] <int>] [[-Note] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Monochrome] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,73 +15,73 @@ Get-OBSAsciiShader [[-Scale] <int>] [[-BaseColor] <string>] [[-CharacterSet] <in
 
 |Type      |Required|Position|PipelineInput|Aliases   |
 |----------|--------|--------|-------------|----------|
-|`[string]`|false   |1       |false        |base_color|
+|`[String]`|false   |named   |False        |base_color|
 
 #### **CharacterSet**
 
 |Type   |Required|Position|PipelineInput|Aliases      |
 |-------|--------|--------|-------------|-------------|
-|`[int]`|false   |2       |false        |character_set|
+|`[Int]`|false   |named   |False        |character_set|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |5       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Monochrome**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Note**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |3       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Scale**
 
 |Type   |Required|Position|PipelineInput|
 |-------|--------|--------|-------------|
-|`[int]`|false   |0       |false        |
+|`[Int]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |6       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |4       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -98,11 +97,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSAsciiShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSAsciiShader [[-Scale] <Int>] [[-BaseColor] <String>] [-Monochrome <Switch>] [[-CharacterSet] <Int>] [[-Note] <String>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

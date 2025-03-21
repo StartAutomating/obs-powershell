@@ -2,7 +2,6 @@ Get-OBSSpecularShineShader
 --------------------------
 
 ### Synopsis
-
 Get-OBSSpecularShineShader [[-Hint] <string>] [[-Roughness] <float>] [[-LightStrength] <float>] [[-LightPositionX] <float>] [[-LightPositionY] <float>] [[-FlattenNormal] <float>] [[-StretchNormalX] <float>] [[-StretchNormalY] <float>] [[-LightColor] <float[]>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -14,99 +13,99 @@ Get-OBSSpecularShineShader [[-Hint] <string>] [[-Roughness] <float>] [[-LightStr
 ### Parameters
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |10      |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **FlattenNormal**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |5       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Hint**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |0       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **LightColor**
 
-|Type       |Required|Position|PipelineInput|Aliases    |
-|-----------|--------|--------|-------------|-----------|
-|`[float[]]`|false   |8       |false        |Light_Color|
+|Type               |Required|Position|PipelineInput|Aliases    |
+|-------------------|--------|--------|-------------|-----------|
+|`[System.Single[]]`|false   |named   |False        |Light_Color|
 
 #### **LightPositionX**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |3       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **LightPositionY**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |4       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **LightStrength**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |2       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Roughness**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |1       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |11      |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |9       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **StretchNormalX**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |6       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **StretchNormalY**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |7       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -122,11 +121,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSSpecularShineShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSSpecularShineShader [[-Hint] <String>] [[-Roughness] <Float>] [[-LightStrength] <Float>] [[-LightPositionX] <Float>] [[-LightPositionY] <Float>] [[-FlattenNormal] <Float>] [[-StretchNormalX] <Float>] [[-StretchNormalY] <Float>] [[-LightColor] <System.Single[]>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

@@ -2,7 +2,6 @@ Get-OBSPolarShader
 ------------------
 
 ### Synopsis
-
 Get-OBSPolarShader [[-CenterX] <float>] [[-CenterY] <float>] [[-PointY] <float>] [[-Rotate] <float>] [[-Repeat] <float>] [[-Scale] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Flip] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,85 +15,85 @@ Get-OBSPolarShader [[-CenterX] <float>] [[-CenterY] <float>] [[-PointY] <float>]
 
 |Type     |Required|Position|PipelineInput|Aliases |
 |---------|--------|--------|-------------|--------|
-|`[float]`|false   |0       |false        |center_x|
+|`[Float]`|false   |named   |False        |center_x|
 
 #### **CenterY**
 
 |Type     |Required|Position|PipelineInput|Aliases |
 |---------|--------|--------|-------------|--------|
-|`[float]`|false   |1       |false        |center_y|
+|`[Float]`|false   |named   |False        |center_y|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |7       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Flip**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PointY**
 
 |Type     |Required|Position|PipelineInput|Aliases|
 |---------|--------|--------|-------------|-------|
-|`[float]`|false   |2       |false        |point_y|
+|`[Float]`|false   |named   |False        |point_y|
 
 #### **Repeat**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |4       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **Rotate**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |3       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **Scale**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |5       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |8       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |6       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -110,11 +109,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSPolarShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSPolarShader [[-CenterX] <Float>] [[-CenterY] <Float>] [[-PointY] <Float>] [-Flip <Switch>] [[-Rotate] <Float>] [[-Repeat] <Float>] [[-Scale] <Float>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

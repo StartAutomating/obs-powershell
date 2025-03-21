@@ -2,7 +2,6 @@ Get-OBSRotatingSourceShader
 ---------------------------
 
 ### Synopsis
-
 Get-OBSRotatingSourceShader [[-SpinSpeed] <float>] [[-Rotation] <float>] [[-Zoomin] <float>] [[-XCenter] <float>] [[-YCenter] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-KeepAspectratio] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -14,81 +13,81 @@ Get-OBSRotatingSourceShader [[-SpinSpeed] <float>] [[-Rotation] <float>] [[-Zoom
 ### Parameters
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |6       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **KeepAspectratio**
 
 |Type      |Required|Position|PipelineInput|Aliases         |
 |----------|--------|--------|-------------|----------------|
-|`[switch]`|false   |Named   |false        |keep_aspectratio|
+|`[Switch]`|false   |named   |False        |keep_aspectratio|
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Rotation**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |1       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |7       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |5       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **SpinSpeed**
 
 |Type     |Required|Position|PipelineInput|Aliases   |
 |---------|--------|--------|-------------|----------|
-|`[float]`|false   |0       |false        |spin_speed|
+|`[Float]`|false   |named   |False        |spin_speed|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **XCenter**
 
 |Type     |Required|Position|PipelineInput|Aliases |
 |---------|--------|--------|-------------|--------|
-|`[float]`|false   |3       |false        |x_center|
+|`[Float]`|false   |named   |False        |x_center|
 
 #### **YCenter**
 
 |Type     |Required|Position|PipelineInput|Aliases |
 |---------|--------|--------|-------------|--------|
-|`[float]`|false   |4       |false        |y_center|
+|`[Float]`|false   |named   |False        |y_center|
 
 #### **Zoomin**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |2       |false        |
+|`[Float]`|false   |named   |False        |
 
 ---
 
@@ -104,11 +103,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSRotatingSourceShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSRotatingSourceShader [[-SpinSpeed] <Float>] [[-Rotation] <Float>] [[-Zoomin] <Float>] [-KeepAspectratio <Switch>] [[-XCenter] <Float>] [[-YCenter] <Float>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

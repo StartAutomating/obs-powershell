@@ -2,7 +2,6 @@ Get-OBSGlowShader
 -----------------
 
 ### Synopsis
-
 Get-OBSGlowShader [[-GlowPercent] <int>] [[-Blur] <int>] [[-MinBrightness] <int>] [[-MaxBrightness] <int>] [[-PulseSpeed] <int>] [[-Notes] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Ease] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,85 +15,85 @@ Get-OBSGlowShader [[-GlowPercent] <int>] [[-Blur] <int>] [[-MinBrightness] <int>
 
 |Type   |Required|Position|PipelineInput|
 |-------|--------|--------|-------------|
-|`[int]`|false   |1       |false        |
+|`[Int]`|false   |named   |False        |
 
 #### **Ease**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |7       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **GlowPercent**
 
 |Type   |Required|Position|PipelineInput|Aliases     |
 |-------|--------|--------|-------------|------------|
-|`[int]`|false   |0       |false        |glow_percent|
+|`[Int]`|false   |named   |False        |glow_percent|
 
 #### **MaxBrightness**
 
 |Type   |Required|Position|PipelineInput|Aliases       |
 |-------|--------|--------|-------------|--------------|
-|`[int]`|false   |3       |false        |max_brightness|
+|`[Int]`|false   |named   |False        |max_brightness|
 
 #### **MinBrightness**
 
 |Type   |Required|Position|PipelineInput|Aliases       |
 |-------|--------|--------|-------------|--------------|
-|`[int]`|false   |2       |false        |min_brightness|
+|`[Int]`|false   |named   |False        |min_brightness|
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Notes**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |5       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PulseSpeed**
 
 |Type   |Required|Position|PipelineInput|Aliases    |
 |-------|--------|--------|-------------|-----------|
-|`[int]`|false   |4       |false        |pulse_speed|
+|`[Int]`|false   |named   |False        |pulse_speed|
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |8       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |6       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -110,11 +109,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSGlowShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSGlowShader [[-GlowPercent] <Int>] [[-Blur] <Int>] [[-MinBrightness] <Int>] [[-MaxBrightness] <Int>] [[-PulseSpeed] <Int>] [-Ease <Switch>] [[-Notes] <String>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

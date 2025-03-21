@@ -2,7 +2,6 @@ Get-OBSGaussianExampleShader
 ----------------------------
 
 ### Synopsis
-
 Get-OBSGaussianExampleShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-ElapsedTime] <float>] [[-UvOffset] <float[]>] [[-UvScale] <float[]>] [[-UvSize] <float[]>] [[-UvPixelInterval] <float[]>] [[-InitialImage] <string>] [[-BeforeImage] <string>] [[-AfterImage] <string>] [[-TextColor] <string>] [[-MaxDistance] <float>] [[-Exp] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,121 +15,121 @@ Get-OBSGaussianExampleShader [[-ViewProj] <float[][]>] [[-Image] <string>] [[-El
 
 |Type      |Required|Position|PipelineInput|Aliases    |
 |----------|--------|--------|-------------|-----------|
-|`[string]`|false   |9       |false        |after_image|
+|`[String]`|false   |named   |False        |after_image|
 
 #### **BeforeImage**
 
 |Type      |Required|Position|PipelineInput|Aliases     |
 |----------|--------|--------|-------------|------------|
-|`[string]`|false   |8       |false        |before_image|
+|`[String]`|false   |named   |False        |before_image|
 
 #### **ElapsedTime**
 
 |Type     |Required|Position|PipelineInput|Aliases     |
 |---------|--------|--------|-------------|------------|
-|`[float]`|false   |2       |false        |elapsed_time|
+|`[Float]`|false   |named   |False        |elapsed_time|
 
 #### **Exp**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |12      |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |14      |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Image**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |1       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **InitialImage**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |7       |false        |initial_image|
+|`[String]`|false   |named   |False        |initial_image|
 
 #### **MaxDistance**
 
 |Type     |Required|Position|PipelineInput|Aliases     |
 |---------|--------|--------|-------------|------------|
-|`[float]`|false   |11      |false        |max_distance|
+|`[Float]`|false   |named   |False        |max_distance|
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |15      |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |13      |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **TextColor**
 
 |Type      |Required|Position|PipelineInput|Aliases   |
 |----------|--------|--------|-------------|----------|
-|`[string]`|false   |10      |false        |text_color|
+|`[String]`|false   |named   |False        |text_color|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **UvOffset**
 
-|Type       |Required|Position|PipelineInput|Aliases  |
-|-----------|--------|--------|-------------|---------|
-|`[float[]]`|false   |3       |false        |uv_offset|
+|Type               |Required|Position|PipelineInput|Aliases  |
+|-------------------|--------|--------|-------------|---------|
+|`[System.Single[]]`|false   |named   |False        |uv_offset|
 
 #### **UvPixelInterval**
 
-|Type       |Required|Position|PipelineInput|Aliases          |
-|-----------|--------|--------|-------------|-----------------|
-|`[float[]]`|false   |6       |false        |uv_pixel_interval|
+|Type               |Required|Position|PipelineInput|Aliases          |
+|-------------------|--------|--------|-------------|-----------------|
+|`[System.Single[]]`|false   |named   |False        |uv_pixel_interval|
 
 #### **UvScale**
 
-|Type       |Required|Position|PipelineInput|Aliases |
-|-----------|--------|--------|-------------|--------|
-|`[float[]]`|false   |4       |false        |uv_scale|
+|Type               |Required|Position|PipelineInput|Aliases |
+|-------------------|--------|--------|-------------|--------|
+|`[System.Single[]]`|false   |named   |False        |uv_scale|
 
 #### **UvSize**
 
-|Type       |Required|Position|PipelineInput|Aliases|
-|-----------|--------|--------|-------------|-------|
-|`[float[]]`|false   |5       |false        |uv_size|
+|Type               |Required|Position|PipelineInput|Aliases|
+|-------------------|--------|--------|-------------|-------|
+|`[System.Single[]]`|false   |named   |False        |uv_size|
 
 #### **ViewProj**
 
-|Type         |Required|Position|PipelineInput|
-|-------------|--------|--------|-------------|
-|`[float[][]]`|false   |0       |false        |
+|Type                 |Required|Position|PipelineInput|
+|---------------------|--------|--------|-------------|
+|`[System.Single[][]]`|false   |named   |False        |
 
 ---
 
@@ -146,11 +145,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSGaussianExampleShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSGaussianExampleShader [[-ViewProj] <System.Single[][]>] [[-Image] <String>] [[-ElapsedTime] <Float>] [[-UvOffset] <System.Single[]>] [[-UvScale] <System.Single[]>] [[-UvSize] <System.Single[]>] [[-UvPixelInterval] <System.Single[]>] [[-InitialImage] <String>] [[-BeforeImage] <String>] [[-AfterImage] <String>] [[-TextColor] <String>] [[-MaxDistance] <Float>] [[-Exp] <Float>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

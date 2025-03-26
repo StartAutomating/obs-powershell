@@ -1,6 +1,14 @@
 > Like It? [Star It](https://github.com/StartAutomating/obs-powershell)
 > Love It? [Support It](https://github.com/sponsors/StartAutomating)
 
+## obs-powershell 0.2.0.1:
+
+* Fixing `Watch-OBS` (Fixes #216)
+* Adding `CONTRIBUTING.md` (Fixes #204)
+* Adding `CODE_OF_CONDUCT.md` (Fixes #205)
+
+---
+
 ## obs-powershell 0.2:
 
 * So Many Shaders!

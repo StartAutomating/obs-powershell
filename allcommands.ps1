@@ -927,7 +927,7 @@ $($ExecutionContext.SessionState.InvokeCommand.GetCommand('Send-OBS', 'Function'
             if ($msg) {
                 $messageData = try { ConvertFrom-Json $msg -ErrorAction Ignore} catch { $_ }
                 $received = if ($messageData -isnot [Management.Automation.ErrorRecord]) {
-                    $messageData | Receive-OBS -WebSocketToken $WebSocketToken -WebSocketUri $webSocketUri -SendEvent -Subscription $Subscription
+                    $messageData | Receive-OBS -WebSocketToken $WebSocketToken -WebSocketUri $webSocketUri -SendEvent 
                 } else {
                     $messageData
                 }

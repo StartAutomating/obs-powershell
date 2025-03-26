@@ -1,6 +1,6 @@
 # Code of Conduct
 
-We have a simple subjective code of conduct:
+We have a simple and subjective code of conduct:
 
 1. Be Respectful
 2. Be Helpful

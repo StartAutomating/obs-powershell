@@ -88,14 +88,14 @@ uniform int corner_radius<
     int minimum = 0;
     int maximum = 200;
     int step = 1;
->;
+> = 0;
 uniform int border_thickness<
     string label = "Border thickness";
     string widget_type = "slider";
     int minimum = 0;
     int maximum = 100;
     int step = 1;
->;
+> = 0;
 uniform int minimum_alpha_percent<
     string label = "Minimum alpha percent";
     string widget_type = "slider";
@@ -109,7 +109,7 @@ uniform int rotation_speed<
     int minimum = 0;
     int maximum = 100;
     int step = 1;
->;
+> = 0;
 uniform float4 border_colorL;
 uniform float4 border_colorR;
 //uniform float color_spread = 2.0;

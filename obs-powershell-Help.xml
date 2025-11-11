@@ -1439,6 +1439,526 @@ This can increase performance, and also silently ignore critical errors</maml:pa
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
     <command:details>
+      <command:name>Get-OBS3dPanelShader</command:name>
+      <command:noun>OBS3dPanelShader</command:noun>
+      <command:verb>Get</command:verb>
+      <maml:description>
+        <maml:para>
+Get-OBS3dPanelShader [[-Credits] &lt;string&gt;] [[-Scale] &lt;float&gt;] [[-TiltXDeg] &lt;float&gt;] [[-TiltYDeg] &lt;float&gt;] [[-TiltZDeg] &lt;float&gt;] [[-PosX] &lt;float&gt;] [[-PosY] &lt;float&gt;] [[-Thickness] &lt;float&gt;] [[-RadiusFb] &lt;float&gt;] [[-Brightness] &lt;float&gt;] [[-LightPosition] &lt;int&gt;] [[-Wiggle] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-WiggleRot] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]
+</maml:para>
+      </maml:description>
+      <dev:version>0.2.0.1</dev:version>
+    </command:details>
+    <maml:description>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-OBS3dPanelShader</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Credits</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="1" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Scale</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+          <dev:type>
+            <maml:name>Float</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="2" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>TiltXDeg</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+          <dev:type>
+            <maml:name>Float</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="3" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>TiltYDeg</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+          <dev:type>
+            <maml:name>Float</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="4" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>TiltZDeg</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+          <dev:type>
+            <maml:name>Float</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="5" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>PosX</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+          <dev:type>
+            <maml:name>Float</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="6" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>PosY</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+          <dev:type>
+            <maml:name>Float</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="7" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Thickness</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+          <dev:type>
+            <maml:name>Float</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="8" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>RadiusFb</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+          <dev:type>
+            <maml:name>Float</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="9" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Brightness</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+          <dev:type>
+            <maml:name>Float</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="10" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>LightPosition</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Int</command:parameterValue>
+          <dev:type>
+            <maml:name>Int</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="11" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Wiggle</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+          <dev:type>
+            <maml:name>Float</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>WiggleRot</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="12" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
+          <maml:name>SourceName</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="13" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
+          <maml:name>FilterName</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="14" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>ShaderText</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Force</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>NoResponse</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>UseShaderTime</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Brightness</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+        <dev:type>
+          <maml:name>Float</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Credits</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>FilterName</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Force</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>LightPosition</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Int</command:parameterValue>
+        <dev:type>
+          <maml:name>Int</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>NoResponse</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>PassThru</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>PosX</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+        <dev:type>
+          <maml:name>Float</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>PosY</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+        <dev:type>
+          <maml:name>Float</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>RadiusFb</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+        <dev:type>
+          <maml:name>Float</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Scale</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+        <dev:type>
+          <maml:name>Float</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>ShaderText</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>SourceName</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Thickness</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+        <dev:type>
+          <maml:name>Float</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>TiltXDeg</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+        <dev:type>
+          <maml:name>Float</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>TiltYDeg</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+        <dev:type>
+          <maml:name>Float</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>TiltZDeg</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+        <dev:type>
+          <maml:name>Float</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>UseShaderTime</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Wiggle</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+        <dev:type>
+          <maml:name>Float</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>WiggleRot</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+          <maml:description />
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+          <maml:uri />
+          <maml:description />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
       <command:name>Get-OBS3dSwapTransitionShader</command:name>
       <command:noun>OBS3dSwapTransitionShader</command:noun>
       <command:verb>Get</command:verb>
@@ -13756,6 +14276,358 @@ This can increase performance, and also silently ignore critical errors</maml:pa
         <maml:description>
           <maml:para>
           </maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+          <maml:description />
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+          <maml:uri />
+          <maml:description />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Get-OBSCubeRotatingShader</command:name>
+      <command:noun>OBSCubeRotatingShader</command:noun>
+      <command:verb>Get</command:verb>
+      <maml:description>
+        <maml:para>
+Get-OBSCubeRotatingShader [[-Images] &lt;int&gt;] [[-Speed] &lt;float&gt;] [[-Shadow] &lt;float&gt;] [[-OtherImage1] &lt;string&gt;] [[-OtherImage2] &lt;string&gt;] [[-OtherImage3] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]
+</maml:para>
+      </maml:description>
+      <dev:version>0.2.0.1</dev:version>
+    </command:details>
+    <maml:description>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-OBSCubeRotatingShader</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Images</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Int</command:parameterValue>
+          <dev:type>
+            <maml:name>Int</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="1" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Speed</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+          <dev:type>
+            <maml:name>Float</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="2" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Shadow</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+          <dev:type>
+            <maml:name>Float</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="3" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>OtherImage1</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="4" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>OtherImage2</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="5" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>OtherImage3</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="6" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
+          <maml:name>SourceName</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="7" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
+          <maml:name>FilterName</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="8" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>ShaderText</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Force</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>NoResponse</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>UseShaderTime</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>FilterName</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Force</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Images</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Int</command:parameterValue>
+        <dev:type>
+          <maml:name>Int</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>NoResponse</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>OtherImage1</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>OtherImage2</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>OtherImage3</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>PassThru</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>ShaderText</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Shadow</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+        <dev:type>
+          <maml:name>Float</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>SourceName</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Speed</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+        <dev:type>
+          <maml:name>Float</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>UseShaderTime</maml:name>
+        <maml:description>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -35868,6 +36740,262 @@ This can increase performance, and also silently ignore critical errors</maml:pa
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
     <command:details>
+      <command:name>Get-OBSHardBlinkShader</command:name>
+      <command:noun>OBSHardBlinkShader</command:noun>
+      <command:verb>Get</command:verb>
+      <maml:description>
+        <maml:para>
+Get-OBSHardBlinkShader [[-Timeon] &lt;float&gt;] [[-Timeoff] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]
+</maml:para>
+      </maml:description>
+      <dev:version>0.2.0.1</dev:version>
+    </command:details>
+    <maml:description>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-OBSHardBlinkShader</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Timeon</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+          <dev:type>
+            <maml:name>Float</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="1" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Timeoff</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+          <dev:type>
+            <maml:name>Float</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="2" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
+          <maml:name>SourceName</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="3" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
+          <maml:name>FilterName</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="4" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>ShaderText</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Force</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>NoResponse</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>UseShaderTime</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>FilterName</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Force</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>NoResponse</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>PassThru</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>ShaderText</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>SourceName</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Timeoff</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+        <dev:type>
+          <maml:name>Float</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Timeon</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+        <dev:type>
+          <maml:name>Float</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>UseShaderTime</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+          <maml:description />
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+          <maml:uri />
+          <maml:description />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
       <command:name>Get-OBSHeatWaveSimpleShader</command:name>
       <command:noun>OBSHeatWaveSimpleShader</command:noun>
       <command:verb>Get</command:verb>
@@ -42231,6 +43359,262 @@ This can increase performance, and also silently ignore critical errors</maml:pa
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
     <command:details>
+      <command:name>Get-OBSMotionBlurShader</command:name>
+      <command:noun>OBSMotionBlurShader</command:noun>
+      <command:verb>Get</command:verb>
+      <maml:description>
+        <maml:para>
+Get-OBSMotionBlurShader [[-PreviousOutput] &lt;string&gt;] [[-Strength] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]
+</maml:para>
+      </maml:description>
+      <dev:version>0.2.0.1</dev:version>
+    </command:details>
+    <maml:description>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-OBSMotionBlurShader</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>PreviousOutput</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="1" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Strength</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+          <dev:type>
+            <maml:name>Float</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="2" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
+          <maml:name>SourceName</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="3" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
+          <maml:name>FilterName</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="4" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>ShaderText</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Force</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>NoResponse</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>UseShaderTime</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>FilterName</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Force</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>NoResponse</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>PassThru</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>PreviousOutput</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>ShaderText</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>SourceName</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Strength</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+        <dev:type>
+          <maml:name>Float</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>UseShaderTime</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+          <maml:description />
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+          <maml:uri />
+          <maml:description />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
       <command:name>Get-OBSMultiplyShader</command:name>
       <command:noun>OBSMultiplyShader</command:noun>
       <command:verb>Get</command:verb>
@@ -45171,6 +46555,358 @@ This can increase performance, and also silently ignore critical errors</maml:pa
         <maml:uri>https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#getpersistentdata</maml:uri>
       </maml:navigationLink>
     </maml:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Get-OBSPerspectiveShader</command:name>
+      <command:noun>OBSPerspectiveShader</command:noun>
+      <command:verb>Get</command:verb>
+      <maml:description>
+        <maml:para>
+Get-OBSPerspectiveShader [[-AngleX] &lt;float&gt;] [[-AngleY] &lt;float&gt;] [[-AngleZ] &lt;float&gt;] [[-Perspective] &lt;float&gt;] [[-BorderColor] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-ShowBorder] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]
+</maml:para>
+      </maml:description>
+      <dev:version>0.2.0.1</dev:version>
+    </command:details>
+    <maml:description>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-OBSPerspectiveShader</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>AngleX</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+          <dev:type>
+            <maml:name>Float</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="1" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>AngleY</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+          <dev:type>
+            <maml:name>Float</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="2" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>AngleZ</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+          <dev:type>
+            <maml:name>Float</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="3" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Perspective</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+          <dev:type>
+            <maml:name>Float</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="4" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>BorderColor</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>ShowBorder</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="5" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
+          <maml:name>SourceName</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="6" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
+          <maml:name>FilterName</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="7" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>ShaderText</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Force</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>NoResponse</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>UseShaderTime</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>AngleX</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+        <dev:type>
+          <maml:name>Float</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>AngleY</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+        <dev:type>
+          <maml:name>Float</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>AngleZ</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+        <dev:type>
+          <maml:name>Float</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>BorderColor</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>FilterName</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Force</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>NoResponse</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>PassThru</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Perspective</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+        <dev:type>
+          <maml:name>Float</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>ShaderText</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>ShowBorder</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>SourceName</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>UseShaderTime</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+          <maml:description />
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+          <maml:uri />
+          <maml:description />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
     <command:details>
@@ -50116,6 +51852,334 @@ This can increase performance, and also silently ignore critical errors</maml:pa
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
           <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+          <maml:description />
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+          <maml:uri />
+          <maml:description />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Get-OBSRepeatGridCenterCropShader</command:name>
+      <command:noun>OBSRepeatGridCenterCropShader</command:noun>
+      <command:verb>Get</command:verb>
+      <maml:description>
+        <maml:para>
+Get-OBSRepeatGridCenterCropShader [[-ViewProj] &lt;float[][]&gt;] [[-Image] &lt;string&gt;] [[-Alpha] &lt;float&gt;] [[-Columns] &lt;float&gt;] [[-Rows] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]
+</maml:para>
+      </maml:description>
+      <dev:version>0.2.0.1</dev:version>
+    </command:details>
+    <maml:description>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-OBSRepeatGridCenterCropShader</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>ViewProj</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">System.Single[][]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Single[][]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="1" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Image</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="2" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Alpha</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+          <dev:type>
+            <maml:name>Float</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="3" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Columns</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+          <dev:type>
+            <maml:name>Float</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="4" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Rows</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+          <dev:type>
+            <maml:name>Float</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="5" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
+          <maml:name>SourceName</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="6" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
+          <maml:name>FilterName</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="7" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>ShaderText</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Force</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>NoResponse</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>UseShaderTime</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Alpha</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+        <dev:type>
+          <maml:name>Float</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Columns</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+        <dev:type>
+          <maml:name>Float</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>FilterName</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Force</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Image</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>NoResponse</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>PassThru</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Rows</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+        <dev:type>
+          <maml:name>Float</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>ShaderText</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>SourceName</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>UseShaderTime</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>ViewProj</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">System.Single[][]</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Single[][]</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>
@@ -70712,6 +72776,454 @@ This can increase performance, and also silently ignore critical errors</maml:pa
         <maml:description>
           <maml:para>
           </maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>System.String</maml:name>
+          <maml:uri />
+          <maml:description />
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>System.Object</maml:name>
+          <maml:uri />
+          <maml:description />
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Get-OBSWalkingDeadPixelFixerShader</command:name>
+      <command:noun>OBSWalkingDeadPixelFixerShader</command:noun>
+      <command:verb>Get</command:verb>
+      <maml:description>
+        <maml:para>
+Get-OBSWalkingDeadPixelFixerShader [[-ScanWidth] &lt;int&gt;] [[-ScanHeight] &lt;int&gt;] [[-ScanOffsetX] &lt;int&gt;] [[-ScanOffsetY] &lt;int&gt;] [[-ContrastThreshold] &lt;float&gt;] [[-MinClusterSize] &lt;int&gt;] [[-MaxClusterSize] &lt;int&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-ShowBorder] [-ShowGreen] [-Bypass] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]
+</maml:para>
+      </maml:description>
+      <dev:version>0.2.0.1</dev:version>
+    </command:details>
+    <maml:description>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-OBSWalkingDeadPixelFixerShader</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>ScanWidth</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Int</command:parameterValue>
+          <dev:type>
+            <maml:name>Int</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="1" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>ScanHeight</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Int</command:parameterValue>
+          <dev:type>
+            <maml:name>Int</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="2" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>ScanOffsetX</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Int</command:parameterValue>
+          <dev:type>
+            <maml:name>Int</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="3" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>ScanOffsetY</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Int</command:parameterValue>
+          <dev:type>
+            <maml:name>Int</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>ShowBorder</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="4" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>ContrastThreshold</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+          <dev:type>
+            <maml:name>Float</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="5" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>MinClusterSize</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Int</command:parameterValue>
+          <dev:type>
+            <maml:name>Int</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="6" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>MaxClusterSize</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Int</command:parameterValue>
+          <dev:type>
+            <maml:name>Int</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>ShowGreen</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Bypass</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="7" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
+          <maml:name>SourceName</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="8" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
+          <maml:name>FilterName</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="9" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>ShaderText</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Force</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>PassThru</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>NoResponse</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>UseShaderTime</maml:name>
+          <maml:description>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Bypass</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>ContrastThreshold</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
+        <dev:type>
+          <maml:name>Float</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>FilterName</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Force</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>MaxClusterSize</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Int</command:parameterValue>
+        <dev:type>
+          <maml:name>Int</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>MinClusterSize</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Int</command:parameterValue>
+        <dev:type>
+          <maml:name>Int</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>NoResponse</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>PassThru</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>ScanHeight</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Int</command:parameterValue>
+        <dev:type>
+          <maml:name>Int</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>ScanOffsetX</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Int</command:parameterValue>
+        <dev:type>
+          <maml:name>Int</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>ScanOffsetY</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Int</command:parameterValue>
+        <dev:type>
+          <maml:name>Int</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>ScanWidth</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Int</command:parameterValue>
+        <dev:type>
+          <maml:name>Int</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>ShaderText</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>ShowBorder</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>ShowGreen</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>SourceName</maml:name>
+        <maml:description>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>UseShaderTime</maml:name>
+        <maml:description>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>

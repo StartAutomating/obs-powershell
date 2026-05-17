@@ -2,7 +2,6 @@ Get-OBSWalkingDeadPixelFixerShader
 ----------------------------------
 
 ### Synopsis
-
 Get-OBSWalkingDeadPixelFixerShader [[-ScanWidth] <int>] [[-ScanHeight] <int>] [[-ScanOffsetX] <int>] [[-ScanOffsetY] <int>] [[-ContrastThreshold] <float>] [[-MinClusterSize] <int>] [[-MaxClusterSize] <int>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ShowBorder] [-ShowGreen] [-Bypass] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,103 +15,103 @@ Get-OBSWalkingDeadPixelFixerShader [[-ScanWidth] <int>] [[-ScanHeight] <int>] [[
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **ContrastThreshold**
 
 |Type     |Required|Position|PipelineInput|Aliases           |
 |---------|--------|--------|-------------|------------------|
-|`[float]`|false   |4       |false        |Contrast_Threshold|
+|`[Float]`|false   |named   |False        |Contrast_Threshold|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |8       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **MaxClusterSize**
 
 |Type   |Required|Position|PipelineInput|Aliases         |
 |-------|--------|--------|-------------|----------------|
-|`[int]`|false   |6       |false        |Max_Cluster_Size|
+|`[Int]`|false   |named   |False        |Max_Cluster_Size|
 
 #### **MinClusterSize**
 
 |Type   |Required|Position|PipelineInput|Aliases         |
 |-------|--------|--------|-------------|----------------|
-|`[int]`|false   |5       |false        |Min_Cluster_Size|
+|`[Int]`|false   |named   |False        |Min_Cluster_Size|
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **ScanHeight**
 
 |Type   |Required|Position|PipelineInput|Aliases    |
 |-------|--------|--------|-------------|-----------|
-|`[int]`|false   |1       |false        |Scan_Height|
+|`[Int]`|false   |named   |False        |Scan_Height|
 
 #### **ScanOffsetX**
 
 |Type   |Required|Position|PipelineInput|Aliases      |
 |-------|--------|--------|-------------|-------------|
-|`[int]`|false   |2       |false        |Scan_Offset_X|
+|`[Int]`|false   |named   |False        |Scan_Offset_X|
 
 #### **ScanOffsetY**
 
 |Type   |Required|Position|PipelineInput|Aliases      |
 |-------|--------|--------|-------------|-------------|
-|`[int]`|false   |3       |false        |Scan_Offset_Y|
+|`[Int]`|false   |named   |False        |Scan_Offset_Y|
 
 #### **ScanWidth**
 
 |Type   |Required|Position|PipelineInput|Aliases   |
 |-------|--------|--------|-------------|----------|
-|`[int]`|false   |0       |false        |Scan_Width|
+|`[Int]`|false   |named   |False        |Scan_Width|
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |9       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **ShowBorder**
 
 |Type      |Required|Position|PipelineInput|Aliases    |
 |----------|--------|--------|-------------|-----------|
-|`[switch]`|false   |Named   |false        |Show_Border|
+|`[Switch]`|false   |named   |False        |Show_Border|
 
 #### **ShowGreen**
 
 |Type      |Required|Position|PipelineInput|Aliases   |
 |----------|--------|--------|-------------|----------|
-|`[switch]`|false   |Named   |false        |Show_Green|
+|`[Switch]`|false   |named   |False        |Show_Green|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |7       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -128,11 +127,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSWalkingDeadPixelFixerShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSWalkingDeadPixelFixerShader [[-ScanWidth] <Int>] [[-ScanHeight] <Int>] [[-ScanOffsetX] <Int>] [[-ScanOffsetY] <Int>] [-ShowBorder <Switch>] [[-ContrastThreshold] <Float>] [[-MinClusterSize] <Int>] [[-MaxClusterSize] <Int>] [-ShowGreen <Switch>] [-Bypass <Switch>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

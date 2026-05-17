@@ -2,7 +2,6 @@ Get-OBS3dPanelShader
 --------------------
 
 ### Synopsis
-
 Get-OBS3dPanelShader [[-Credits] <string>] [[-Scale] <float>] [[-TiltXDeg] <float>] [[-TiltYDeg] <float>] [[-TiltZDeg] <float>] [[-PosX] <float>] [[-PosY] <float>] [[-Thickness] <float>] [[-RadiusFb] <float>] [[-Brightness] <float>] [[-LightPosition] <int>] [[-Wiggle] <float>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-WiggleRot] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,121 +15,121 @@ Get-OBS3dPanelShader [[-Credits] <string>] [[-Scale] <float>] [[-TiltXDeg] <floa
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |9       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **Credits**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[string]`|false   |0       |false        |
+|`[String]`|false   |named   |False        |
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |13      |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **LightPosition**
 
 |Type   |Required|Position|PipelineInput|Aliases       |
 |-------|--------|--------|-------------|--------------|
-|`[int]`|false   |10      |false        |light_position|
+|`[Int]`|false   |named   |False        |light_position|
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PosX**
 
 |Type     |Required|Position|PipelineInput|Aliases|
 |---------|--------|--------|-------------|-------|
-|`[float]`|false   |5       |false        |pos_x  |
+|`[Float]`|false   |named   |False        |pos_x  |
 
 #### **PosY**
 
 |Type     |Required|Position|PipelineInput|Aliases|
 |---------|--------|--------|-------------|-------|
-|`[float]`|false   |6       |false        |pos_y  |
+|`[Float]`|false   |named   |False        |pos_y  |
 
 #### **RadiusFb**
 
 |Type     |Required|Position|PipelineInput|Aliases  |
 |---------|--------|--------|-------------|---------|
-|`[float]`|false   |8       |false        |radius_fb|
+|`[Float]`|false   |named   |False        |radius_fb|
 
 #### **Scale**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |1       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |14      |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |12      |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **Thickness**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |7       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **TiltXDeg**
 
 |Type     |Required|Position|PipelineInput|Aliases   |
 |---------|--------|--------|-------------|----------|
-|`[float]`|false   |2       |false        |tilt_x_deg|
+|`[Float]`|false   |named   |False        |tilt_x_deg|
 
 #### **TiltYDeg**
 
 |Type     |Required|Position|PipelineInput|Aliases   |
 |---------|--------|--------|-------------|----------|
-|`[float]`|false   |3       |false        |tilt_y_deg|
+|`[Float]`|false   |named   |False        |tilt_y_deg|
 
 #### **TiltZDeg**
 
 |Type     |Required|Position|PipelineInput|Aliases   |
 |---------|--------|--------|-------------|----------|
-|`[float]`|false   |4       |false        |tilt_z_deg|
+|`[Float]`|false   |named   |False        |tilt_z_deg|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Wiggle**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |11      |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **WiggleRot**
 
 |Type      |Required|Position|PipelineInput|Aliases   |
 |----------|--------|--------|-------------|----------|
-|`[switch]`|false   |Named   |false        |wiggle_rot|
+|`[Switch]`|false   |named   |False        |wiggle_rot|
 
 ---
 
@@ -146,11 +145,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBS3dPanelShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBS3dPanelShader [[-Credits] <String>] [[-Scale] <Float>] [[-TiltXDeg] <Float>] [[-TiltYDeg] <Float>] [[-TiltZDeg] <Float>] [[-PosX] <Float>] [[-PosY] <Float>] [[-Thickness] <Float>] [[-RadiusFb] <Float>] [[-Brightness] <Float>] [[-LightPosition] <Int>] [[-Wiggle] <Float>] [-WiggleRot <Switch>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

@@ -1,5 +1,5 @@
 {
-  "Synopsis": "\nGet-OBSCubeRotatingShader [[-Images] <int>] [[-Speed] <float>] [[-Shadow] <float>] [[-OtherImage1] <string>] [[-OtherImage2] <string>] [[-OtherImage3] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]\n",
+  "Synopsis": "Get-OBSCubeRotatingShader [[-Images] <int>] [[-Speed] <float>] [[-Shadow] <float>] [[-OtherImage1] <string>] [[-OtherImage2] <string>] [[-OtherImage3] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]",
   "Description": "",
   "Parameters": [
     {
@@ -23,7 +23,7 @@
     null
   ],
   "Inputs": [
-    "System.String\n"
+    "System.String"
   ],
   "Outputs": [
     "System.Object"

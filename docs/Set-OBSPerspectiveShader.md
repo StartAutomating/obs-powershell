@@ -2,7 +2,6 @@ Get-OBSPerspectiveShader
 ------------------------
 
 ### Synopsis
-
 Get-OBSPerspectiveShader [[-AngleX] <float>] [[-AngleY] <float>] [[-AngleZ] <float>] [[-Perspective] <float>] [[-BorderColor] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ShowBorder] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,79 +15,79 @@ Get-OBSPerspectiveShader [[-AngleX] <float>] [[-AngleY] <float>] [[-AngleZ] <flo
 
 |Type     |Required|Position|PipelineInput|Aliases|
 |---------|--------|--------|-------------|-------|
-|`[float]`|false   |0       |false        |angle_x|
+|`[Float]`|false   |named   |False        |angle_x|
 
 #### **AngleY**
 
 |Type     |Required|Position|PipelineInput|Aliases|
 |---------|--------|--------|-------------|-------|
-|`[float]`|false   |1       |false        |angle_y|
+|`[Float]`|false   |named   |False        |angle_y|
 
 #### **AngleZ**
 
 |Type     |Required|Position|PipelineInput|Aliases|
 |---------|--------|--------|-------------|-------|
-|`[float]`|false   |2       |false        |angle_z|
+|`[Float]`|false   |named   |False        |angle_z|
 
 #### **BorderColor**
 
 |Type      |Required|Position|PipelineInput|Aliases     |
 |----------|--------|--------|-------------|------------|
-|`[string]`|false   |4       |false        |border_color|
+|`[String]`|false   |named   |False        |border_color|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |6       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **Perspective**
 
 |Type     |Required|Position|PipelineInput|
 |---------|--------|--------|-------------|
-|`[float]`|false   |3       |false        |
+|`[Float]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |7       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **ShowBorder**
 
 |Type      |Required|Position|PipelineInput|Aliases    |
 |----------|--------|--------|-------------|-----------|
-|`[switch]`|false   |Named   |false        |show_border|
+|`[Switch]`|false   |named   |False        |show_border|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |5       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -104,11 +103,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSPerspectiveShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSPerspectiveShader [[-AngleX] <Float>] [[-AngleY] <Float>] [[-AngleZ] <Float>] [[-Perspective] <Float>] [[-BorderColor] <String>] [-ShowBorder <Switch>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

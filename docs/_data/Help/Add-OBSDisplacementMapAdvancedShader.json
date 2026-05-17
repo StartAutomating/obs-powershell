@@ -1,0 +1,33 @@
+{
+  "Synopsis": "\nGet-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] <string>] [[-DisplacementX] <float>] [[-DisplacementY] <float>] [[-DisplacementCurve] <int>] [[-BlurInfo] <string>] [[-BlurSize] <float>] [[-BlurQuality] <float>] [[-BlurDirections] <float>] [[-BlurAngle] <float>] [[-ChromaticAberrationInfo] <string>] [[-ChromaticAberration] <float>] [[-ColorizeInfo] <string>] [[-ColorizeColor] <string>] [[-FlagsInfo] <string>] [[-MaskLayer] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-BlueAffectsStrength] [-BlueAffectsColorize] [-BlueAffectsBlur] [-AlphaAffectsStrength] [-ApplyAlpha] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]\n",
+  "Description": "",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    "System.String\n"
+  ],
+  "Outputs": [
+    "System.Object"
+  ],
+  "Links": [],
+  "Examples": []
+}

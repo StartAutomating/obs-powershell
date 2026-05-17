@@ -1,8 +1,8 @@
 obs-powershell-commands
 -----------------------
 
-obs-powershell exports 787 commands
-(316 functions and 471 aliases)
+obs-powershell exports 808 commands
+(323 functions and 485 aliases)
 
 A good number of these commands directly correspond to an obs-websocket message.
 For a complete list, see [obs-powershell-websocket-commands](docs/obs-powershell-websocket-commands.md).
@@ -25,6 +25,7 @@ Functions
 |[Copy-OBSSceneItem](docs/Copy-OBSSceneItem.md)                                            |Copy-OBSSceneItem : DuplicateSceneItem                                       |
 |[Disconnect-OBS](docs/Disconnect-OBS.md)                                                  |Disconnects OBS                                                              |
 |[Get-OBS](docs/Get-OBS.md)                                                                |Gets OBS                                                                     |
+|[Get-OBS3dPanelShader](docs/Get-OBS3dPanelShader.md)                                      |
 |[Get-OBS3dSwapTransitionShader](docs/Get-OBS3dSwapTransitionShader.md)                    |
 |[Get-OBSAddShader](docs/Get-OBSAddShader.md)                                              |
 |[Get-OBSAlphaBorderShader](docs/Get-OBSAlphaBorderShader.md)                              |
@@ -53,6 +54,7 @@ Functions
 |[Get-OBSColorGradeFilterShader](docs/Get-OBSColorGradeFilterShader.md)                    |
 |[Get-OBSCornerPinShader](docs/Get-OBSCornerPinShader.md)                                  |
 |[Get-OBSCrtCurvatureShader](docs/Get-OBSCrtCurvatureShader.md)                            |
+|[Get-OBSCubeRotatingShader](docs/Get-OBSCubeRotatingShader.md)                            |
 |[Get-OBSCurrentPreviewScene](docs/Get-OBSCurrentPreviewScene.md)                          |Get-OBSCurrentPreviewScene : GetCurrentPreviewScene                          |
 |[Get-OBSCurrentProgramScene](docs/Get-OBSCurrentProgramScene.md)                          |Get-OBSCurrentProgramScene : GetCurrentProgramScene                          |
 |[Get-OBSCurrentSceneTransition](docs/Get-OBSCurrentSceneTransition.md)                    |Get-OBSCurrentSceneTransition : GetCurrentSceneTransition                    |
@@ -106,6 +108,7 @@ Functions
 |[Get-OBSGroup](docs/Get-OBSGroup.md)                                                      |Get-OBSGroup : GetGroupList                                                  |
 |[Get-OBSGroupSceneItem](docs/Get-OBSGroupSceneItem.md)                                    |Get-OBSGroupSceneItem : GetGroupSceneItemList                                |
 |[Get-OBSHalftoneShader](docs/Get-OBSHalftoneShader.md)                                    |
+|[Get-OBSHardBlinkShader](docs/Get-OBSHardBlinkShader.md)                                  |
 |[Get-OBSHeatWaveSimpleShader](docs/Get-OBSHeatWaveSimpleShader.md)                        |
 |[Get-OBSHexagonShader](docs/Get-OBSHexagonShader.md)                                      |
 |[Get-OBSHotkey](docs/Get-OBSHotkey.md)                                                    |Get-OBSHotkey : GetHotkeyList                                                |
@@ -131,6 +134,7 @@ Functions
 |[Get-OBSMatrixShader](docs/Get-OBSMatrixShader.md)                                        |
 |[Get-OBSMediaInputStatus](docs/Get-OBSMediaInputStatus.md)                                |Get-OBSMediaInputStatus : GetMediaInputStatus                                |
 |[Get-OBSMonitor](docs/Get-OBSMonitor.md)                                                  |Get-OBSMonitor : GetMonitorList                                              |
+|[Get-OBSMotionBlurShader](docs/Get-OBSMotionBlurShader.md)                                |
 |[Get-OBSMultiplyShader](docs/Get-OBSMultiplyShader.md)                                    |
 |[Get-OBSNightSkyShader](docs/Get-OBSNightSkyShader.md)                                    |
 |[Get-OBSOpacityShader](docs/Get-OBSOpacityShader.md)                                      |
@@ -141,6 +145,7 @@ Functions
 |[Get-OBSPagePeelTransitionShader](docs/Get-OBSPagePeelTransitionShader.md)                |
 |[Get-OBSPerlinNoiseShader](docs/Get-OBSPerlinNoiseShader.md)                              |
 |[Get-OBSPersistentData](docs/Get-OBSPersistentData.md)                                    |Get-OBSPersistentData : GetPersistentData                                    |
+|[Get-OBSPerspectiveShader](docs/Get-OBSPerspectiveShader.md)                              |
 |[Get-OBSPieChartShader](docs/Get-OBSPieChartShader.md)                                    |
 |[Get-OBSPixelationShader](docs/Get-OBSPixelationShader.md)                                |
 |[Get-OBSPixelationTransitionShader](docs/Get-OBSPixelationTransitionShader.md)            |
@@ -155,6 +160,7 @@ Functions
 |[Get-OBSRectangularDropShadowShader](docs/Get-OBSRectangularDropShadowShader.md)          |
 |[Get-OBSReflectShader](docs/Get-OBSReflectShader.md)                                      |
 |[Get-OBSRemovePartialPixelsShader](docs/Get-OBSRemovePartialPixelsShader.md)              |
+|[Get-OBSRepeatGridCenterCropShader](docs/Get-OBSRepeatGridCenterCropShader.md)            |
 |[Get-OBSRepeatShader](docs/Get-OBSRepeatShader.md)                                        |
 |[Get-OBSRepeatTextureShader](docs/Get-OBSRepeatTextureShader.md)                          |
 |[Get-OBSReplayBufferStatus](docs/Get-OBSReplayBufferStatus.md)                            |Get-OBSReplayBufferStatus : GetReplayBufferStatus                            |
@@ -220,6 +226,7 @@ Functions
 |[Get-OBSVignettingShader](docs/Get-OBSVignettingShader.md)                                |
 |[Get-OBSVirtualCamStatus](docs/Get-OBSVirtualCamStatus.md)                                |Get-OBSVirtualCamStatus : GetVirtualCamStatus                                |
 |[Get-OBSVoronoiPixelationShader](docs/Get-OBSVoronoiPixelationShader.md)                  |
+|[Get-OBSWalkingDeadPixelFixerShader](docs/Get-OBSWalkingDeadPixelFixerShader.md)          |
 |[Get-OBSZigZagShader](docs/Get-OBSZigZagShader.md)                                        |
 |[Get-OBSZoomBlurShader](docs/Get-OBSZoomBlurShader.md)                                    |
 |[Get-OBSZoomShader](docs/Get-OBSZoomShader.md)                                            |
@@ -350,6 +357,7 @@ Aliases
 |[Copy-OBSSceneItem](docs/Copy-OBSSceneItem.md)                                            |
 |[Disconnect-OBS](docs/Disconnect-OBS.md)                                                  |
 |[Get-OBS](docs/Get-OBS.md)                                                                |
+|[Get-OBS3dPanelShader](docs/Get-OBS3dPanelShader.md)                                      |
 |[Get-OBS3dSwapTransitionShader](docs/Get-OBS3dSwapTransitionShader.md)                    |
 |[Get-OBSAddShader](docs/Get-OBSAddShader.md)                                              |
 |[Get-OBSAlphaBorderShader](docs/Get-OBSAlphaBorderShader.md)                              |
@@ -378,6 +386,7 @@ Aliases
 |[Get-OBSColorGradeFilterShader](docs/Get-OBSColorGradeFilterShader.md)                    |
 |[Get-OBSCornerPinShader](docs/Get-OBSCornerPinShader.md)                                  |
 |[Get-OBSCrtCurvatureShader](docs/Get-OBSCrtCurvatureShader.md)                            |
+|[Get-OBSCubeRotatingShader](docs/Get-OBSCubeRotatingShader.md)                            |
 |[Get-OBSCurrentPreviewScene](docs/Get-OBSCurrentPreviewScene.md)                          |
 |[Get-OBSCurrentProgramScene](docs/Get-OBSCurrentProgramScene.md)                          |
 |[Get-OBSCurrentSceneTransition](docs/Get-OBSCurrentSceneTransition.md)                    |
@@ -431,6 +440,7 @@ Aliases
 |[Get-OBSGroup](docs/Get-OBSGroup.md)                                                      |
 |[Get-OBSGroupSceneItem](docs/Get-OBSGroupSceneItem.md)                                    |
 |[Get-OBSHalftoneShader](docs/Get-OBSHalftoneShader.md)                                    |
+|[Get-OBSHardBlinkShader](docs/Get-OBSHardBlinkShader.md)                                  |
 |[Get-OBSHeatWaveSimpleShader](docs/Get-OBSHeatWaveSimpleShader.md)                        |
 |[Get-OBSHexagonShader](docs/Get-OBSHexagonShader.md)                                      |
 |[Get-OBSHotkey](docs/Get-OBSHotkey.md)                                                    |
@@ -456,6 +466,7 @@ Aliases
 |[Get-OBSMatrixShader](docs/Get-OBSMatrixShader.md)                                        |
 |[Get-OBSMediaInputStatus](docs/Get-OBSMediaInputStatus.md)                                |
 |[Get-OBSMonitor](docs/Get-OBSMonitor.md)                                                  |
+|[Get-OBSMotionBlurShader](docs/Get-OBSMotionBlurShader.md)                                |
 |[Get-OBSMultiplyShader](docs/Get-OBSMultiplyShader.md)                                    |
 |[Get-OBSNightSkyShader](docs/Get-OBSNightSkyShader.md)                                    |
 |[Get-OBSOpacityShader](docs/Get-OBSOpacityShader.md)                                      |
@@ -466,6 +477,7 @@ Aliases
 |[Get-OBSPagePeelTransitionShader](docs/Get-OBSPagePeelTransitionShader.md)                |
 |[Get-OBSPerlinNoiseShader](docs/Get-OBSPerlinNoiseShader.md)                              |
 |[Get-OBSPersistentData](docs/Get-OBSPersistentData.md)                                    |
+|[Get-OBSPerspectiveShader](docs/Get-OBSPerspectiveShader.md)                              |
 |[Get-OBSPieChartShader](docs/Get-OBSPieChartShader.md)                                    |
 |[Get-OBSPixelationShader](docs/Get-OBSPixelationShader.md)                                |
 |[Get-OBSPixelationTransitionShader](docs/Get-OBSPixelationTransitionShader.md)            |
@@ -480,6 +492,7 @@ Aliases
 |[Get-OBSRectangularDropShadowShader](docs/Get-OBSRectangularDropShadowShader.md)          |
 |[Get-OBSReflectShader](docs/Get-OBSReflectShader.md)                                      |
 |[Get-OBSRemovePartialPixelsShader](docs/Get-OBSRemovePartialPixelsShader.md)              |
+|[Get-OBSRepeatGridCenterCropShader](docs/Get-OBSRepeatGridCenterCropShader.md)            |
 |[Get-OBSRepeatShader](docs/Get-OBSRepeatShader.md)                                        |
 |[Get-OBSRepeatTextureShader](docs/Get-OBSRepeatTextureShader.md)                          |
 |[Get-OBSReplayBufferStatus](docs/Get-OBSReplayBufferStatus.md)                            |
@@ -545,6 +558,7 @@ Aliases
 |[Get-OBSVignettingShader](docs/Get-OBSVignettingShader.md)                                |
 |[Get-OBSVirtualCamStatus](docs/Get-OBSVirtualCamStatus.md)                                |
 |[Get-OBSVoronoiPixelationShader](docs/Get-OBSVoronoiPixelationShader.md)                  |
+|[Get-OBSWalkingDeadPixelFixerShader](docs/Get-OBSWalkingDeadPixelFixerShader.md)          |
 |[Get-OBSZigZagShader](docs/Get-OBSZigZagShader.md)                                        |
 |[Get-OBSZoomBlurShader](docs/Get-OBSZoomBlurShader.md)                                    |
 |[Get-OBSZoomShader](docs/Get-OBSZoomShader.md)                                            |

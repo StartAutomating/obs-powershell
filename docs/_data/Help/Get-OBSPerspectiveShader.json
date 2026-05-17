@@ -1,5 +1,5 @@
 {
-  "Synopsis": "\nGet-OBSPerspectiveShader [[-AngleX] <float>] [[-AngleY] <float>] [[-AngleZ] <float>] [[-Perspective] <float>] [[-BorderColor] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ShowBorder] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]\n",
+  "Synopsis": "Get-OBSPerspectiveShader [[-AngleX] <float>] [[-AngleY] <float>] [[-AngleZ] <float>] [[-Perspective] <float>] [[-BorderColor] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-ShowBorder] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]",
   "Description": "",
   "Parameters": [
     {
@@ -23,7 +23,7 @@
     null
   ],
   "Inputs": [
-    "System.String\n"
+    "System.String"
   ],
   "Outputs": [
     "System.Object"

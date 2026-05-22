@@ -92,7 +92,7 @@ function Start-OBS {
         if ($Recording -and (
             $WhatIfPreference -or 
             $PSCmdlet.ShouldProcess('Start Recording')
-        ) {
+        )) {
             # `Start-OBSRecord`.
             Start-OBSRecord -PassThru:$WhatIfPreference
         }

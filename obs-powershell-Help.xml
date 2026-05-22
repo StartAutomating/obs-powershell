@@ -5873,9 +5873,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <command:noun>OBSAudioShader</command:noun>
       <command:verb>Get</command:verb>
       <maml:description>
-        <maml:para>
-Get-OBSAudioShader [[-AudioPeak] &lt;float&gt;] [[-AudioMagnitude] &lt;float&gt;] [[-Intensity] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]
-</maml:para>
+        <maml:para>Get-OBSAudioShader [[-AudioPeak] &lt;float&gt;] [[-AudioMagnitude] &lt;float&gt;] [[-Intensity] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
       <dev:version>0.2.0.1</dev:version>
     </command:details>
@@ -5887,6 +5885,8 @@ Get-OBSAudioShader [[-AudioPeak] &lt;float&gt;] [[-AudioMagnitude] &lt;float&gt;
         <command:parameter required="false" position="0" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>AudioPeak</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -5899,6 +5899,8 @@ Get-OBSAudioShader [[-AudioPeak] &lt;float&gt;] [[-AudioMagnitude] &lt;float&gt;
         <command:parameter required="false" position="1" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>AudioMagnitude</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -5911,6 +5913,8 @@ Get-OBSAudioShader [[-AudioPeak] &lt;float&gt;] [[-AudioMagnitude] &lt;float&gt;
         <command:parameter required="false" position="2" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>Intensity</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -5923,6 +5927,8 @@ Get-OBSAudioShader [[-AudioPeak] &lt;float&gt;] [[-AudioMagnitude] &lt;float&gt;
         <command:parameter required="false" position="3" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
           <maml:name>SourceName</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -5935,6 +5941,8 @@ Get-OBSAudioShader [[-AudioPeak] &lt;float&gt;] [[-AudioMagnitude] &lt;float&gt;
         <command:parameter required="false" position="4" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
           <maml:name>FilterName</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -5947,6 +5955,8 @@ Get-OBSAudioShader [[-AudioPeak] &lt;float&gt;] [[-AudioMagnitude] &lt;float&gt;
         <command:parameter required="false" position="5" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>ShaderText</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -5959,6 +5969,8 @@ Get-OBSAudioShader [[-AudioPeak] &lt;float&gt;] [[-AudioMagnitude] &lt;float&gt;
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>Force</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -5971,6 +5983,8 @@ Get-OBSAudioShader [[-AudioPeak] &lt;float&gt;] [[-AudioMagnitude] &lt;float&gt;
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>PassThru</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -5983,6 +5997,8 @@ Get-OBSAudioShader [[-AudioPeak] &lt;float&gt;] [[-AudioMagnitude] &lt;float&gt;
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>NoResponse</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -5995,6 +6011,8 @@ Get-OBSAudioShader [[-AudioPeak] &lt;float&gt;] [[-AudioMagnitude] &lt;float&gt;
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>UseShaderTime</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -6010,6 +6028,8 @@ Get-OBSAudioShader [[-AudioPeak] &lt;float&gt;] [[-AudioMagnitude] &lt;float&gt;
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>AudioMagnitude</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -6022,6 +6042,8 @@ Get-OBSAudioShader [[-AudioPeak] &lt;float&gt;] [[-AudioMagnitude] &lt;float&gt;
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>AudioPeak</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -6034,6 +6056,8 @@ Get-OBSAudioShader [[-AudioPeak] &lt;float&gt;] [[-AudioMagnitude] &lt;float&gt;
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>FilterName</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -6046,6 +6070,8 @@ Get-OBSAudioShader [[-AudioPeak] &lt;float&gt;] [[-AudioMagnitude] &lt;float&gt;
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>Force</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -6058,6 +6084,8 @@ Get-OBSAudioShader [[-AudioPeak] &lt;float&gt;] [[-AudioMagnitude] &lt;float&gt;
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>Intensity</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -6070,6 +6098,8 @@ Get-OBSAudioShader [[-AudioPeak] &lt;float&gt;] [[-AudioMagnitude] &lt;float&gt;
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>NoResponse</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -6082,6 +6112,8 @@ Get-OBSAudioShader [[-AudioPeak] &lt;float&gt;] [[-AudioMagnitude] &lt;float&gt;
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>PassThru</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -6094,6 +6126,8 @@ Get-OBSAudioShader [[-AudioPeak] &lt;float&gt;] [[-AudioMagnitude] &lt;float&gt;
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>ShaderText</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -6106,6 +6140,8 @@ Get-OBSAudioShader [[-AudioPeak] &lt;float&gt;] [[-AudioMagnitude] &lt;float&gt;
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>SourceName</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -6118,6 +6154,8 @@ Get-OBSAudioShader [[-AudioPeak] &lt;float&gt;] [[-AudioMagnitude] &lt;float&gt;
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>UseShaderTime</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -18751,9 +18789,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <command:noun>OBSDisplacementMapAdvancedInvertShader</command:noun>
       <command:verb>Get</command:verb>
       <maml:description>
-        <maml:para>
-Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-DisplacementX] &lt;float&gt;] [[-DisplacementY] &lt;float&gt;] [[-DisplacementCurve] &lt;int&gt;] [[-BlurInfo] &lt;string&gt;] [[-BlurSize] &lt;float&gt;] [[-BlurQuality] &lt;float&gt;] [[-BlurDirections] &lt;float&gt;] [[-BlurAngle] &lt;float&gt;] [[-ChromaticAberrationInfo] &lt;string&gt;] [[-ChromaticAberration] &lt;float&gt;] [[-ColorizeInfo] &lt;string&gt;] [[-ColorizeColor] &lt;string&gt;] [[-FlagsInfo] &lt;string&gt;] [[-BackgroundLayer] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-BlueAffectsStrength] [-BlueAffectsColorize] [-BlueAffectsBlur] [-AlphaAffectsStrength] [-ApplyAlpha] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]
-</maml:para>
+        <maml:para>Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-DisplacementX] &lt;float&gt;] [[-DisplacementY] &lt;float&gt;] [[-DisplacementCurve] &lt;int&gt;] [[-BlurInfo] &lt;string&gt;] [[-BlurSize] &lt;float&gt;] [[-BlurQuality] &lt;float&gt;] [[-BlurDirections] &lt;float&gt;] [[-BlurAngle] &lt;float&gt;] [[-ChromaticAberrationInfo] &lt;string&gt;] [[-ChromaticAberration] &lt;float&gt;] [[-ColorizeInfo] &lt;string&gt;] [[-ColorizeColor] &lt;string&gt;] [[-FlagsInfo] &lt;string&gt;] [[-BackgroundLayer] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-BlueAffectsStrength] [-BlueAffectsColorize] [-BlueAffectsBlur] [-AlphaAffectsStrength] [-ApplyAlpha] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
       <dev:version>0.2.0.1</dev:version>
     </command:details>
@@ -18765,6 +18801,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="0" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>DisplacementInfo</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -18777,6 +18815,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="1" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>DisplacementX</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -18789,6 +18829,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="2" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>DisplacementY</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -18801,6 +18843,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="3" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>DisplacementCurve</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Int</command:parameterValue>
           <dev:type>
@@ -18813,6 +18857,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="4" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>BlurInfo</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -18825,6 +18871,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="5" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>BlurSize</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -18837,6 +18885,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="6" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>BlurQuality</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -18849,6 +18899,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="7" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>BlurDirections</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -18861,6 +18913,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="8" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>BlurAngle</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -18873,6 +18927,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="9" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>ChromaticAberrationInfo</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -18885,6 +18941,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="10" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>ChromaticAberration</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -18897,6 +18955,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="11" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>ColorizeInfo</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -18909,6 +18969,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="12" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>ColorizeColor</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -18921,6 +18983,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="13" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>FlagsInfo</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -18933,6 +18997,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>BlueAffectsStrength</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -18945,6 +19011,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>BlueAffectsColorize</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -18957,6 +19025,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>BlueAffectsBlur</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -18969,6 +19039,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>AlphaAffectsStrength</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -18981,6 +19053,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>ApplyAlpha</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -18993,6 +19067,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="14" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>BackgroundLayer</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -19005,6 +19081,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="15" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
           <maml:name>SourceName</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -19017,6 +19095,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="16" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
           <maml:name>FilterName</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -19029,6 +19109,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="17" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>ShaderText</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -19041,6 +19123,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>Force</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -19053,6 +19137,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>PassThru</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -19065,6 +19151,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>NoResponse</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -19077,6 +19165,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>UseShaderTime</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -19092,6 +19182,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>AlphaAffectsStrength</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -19104,6 +19196,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>ApplyAlpha</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -19116,6 +19210,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>BackgroundLayer</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -19128,6 +19224,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>BlueAffectsBlur</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -19140,6 +19238,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>BlueAffectsColorize</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -19152,6 +19252,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>BlueAffectsStrength</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -19164,6 +19266,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>BlurAngle</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -19176,6 +19280,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>BlurDirections</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -19188,6 +19294,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>BlurInfo</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -19200,6 +19308,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>BlurQuality</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -19212,6 +19322,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>BlurSize</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -19224,6 +19336,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>ChromaticAberration</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -19236,6 +19350,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>ChromaticAberrationInfo</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -19248,6 +19364,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>ColorizeColor</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -19260,6 +19378,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>ColorizeInfo</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -19272,6 +19392,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>DisplacementCurve</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Int</command:parameterValue>
         <dev:type>
@@ -19284,6 +19406,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>DisplacementInfo</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -19296,6 +19420,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>DisplacementX</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -19308,6 +19434,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>DisplacementY</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -19320,6 +19448,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>FilterName</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -19332,6 +19462,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>FlagsInfo</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -19344,6 +19476,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>Force</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -19356,6 +19490,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>NoResponse</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -19368,6 +19504,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>PassThru</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -19380,6 +19518,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>ShaderText</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -19392,6 +19532,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>SourceName</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -19404,6 +19546,8 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>UseShaderTime</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -19439,9 +19583,7 @@ Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] &lt;string&gt;] 
       <command:noun>OBSDisplacementMapAdvancedShader</command:noun>
       <command:verb>Get</command:verb>
       <maml:description>
-        <maml:para>
-Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-DisplacementX] &lt;float&gt;] [[-DisplacementY] &lt;float&gt;] [[-DisplacementCurve] &lt;int&gt;] [[-BlurInfo] &lt;string&gt;] [[-BlurSize] &lt;float&gt;] [[-BlurQuality] &lt;float&gt;] [[-BlurDirections] &lt;float&gt;] [[-BlurAngle] &lt;float&gt;] [[-ChromaticAberrationInfo] &lt;string&gt;] [[-ChromaticAberration] &lt;float&gt;] [[-ColorizeInfo] &lt;string&gt;] [[-ColorizeColor] &lt;string&gt;] [[-FlagsInfo] &lt;string&gt;] [[-MaskLayer] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-BlueAffectsStrength] [-BlueAffectsColorize] [-BlueAffectsBlur] [-AlphaAffectsStrength] [-ApplyAlpha] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]
-</maml:para>
+        <maml:para>Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-DisplacementX] &lt;float&gt;] [[-DisplacementY] &lt;float&gt;] [[-DisplacementCurve] &lt;int&gt;] [[-BlurInfo] &lt;string&gt;] [[-BlurSize] &lt;float&gt;] [[-BlurQuality] &lt;float&gt;] [[-BlurDirections] &lt;float&gt;] [[-BlurAngle] &lt;float&gt;] [[-ChromaticAberrationInfo] &lt;string&gt;] [[-ChromaticAberration] &lt;float&gt;] [[-ColorizeInfo] &lt;string&gt;] [[-ColorizeColor] &lt;string&gt;] [[-FlagsInfo] &lt;string&gt;] [[-MaskLayer] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-BlueAffectsStrength] [-BlueAffectsColorize] [-BlueAffectsBlur] [-AlphaAffectsStrength] [-ApplyAlpha] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
       <dev:version>0.2.0.1</dev:version>
     </command:details>
@@ -19453,6 +19595,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="0" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>DisplacementInfo</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -19465,6 +19609,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="1" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>DisplacementX</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -19477,6 +19623,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="2" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>DisplacementY</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -19489,6 +19637,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="3" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>DisplacementCurve</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Int</command:parameterValue>
           <dev:type>
@@ -19501,6 +19651,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="4" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>BlurInfo</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -19513,6 +19665,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="5" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>BlurSize</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -19525,6 +19679,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="6" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>BlurQuality</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -19537,6 +19693,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="7" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>BlurDirections</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -19549,6 +19707,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="8" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>BlurAngle</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -19561,6 +19721,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="9" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>ChromaticAberrationInfo</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -19573,6 +19735,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="10" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>ChromaticAberration</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -19585,6 +19749,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="11" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>ColorizeInfo</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -19597,6 +19763,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="12" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>ColorizeColor</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -19609,6 +19777,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="13" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>FlagsInfo</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -19621,6 +19791,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>BlueAffectsStrength</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -19633,6 +19805,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>BlueAffectsColorize</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -19645,6 +19819,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>BlueAffectsBlur</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -19657,6 +19833,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>AlphaAffectsStrength</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -19669,6 +19847,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>ApplyAlpha</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -19681,6 +19861,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="14" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>MaskLayer</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -19693,6 +19875,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="15" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
           <maml:name>SourceName</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -19705,6 +19889,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="16" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
           <maml:name>FilterName</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -19717,6 +19903,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="17" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>ShaderText</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -19729,6 +19917,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>Force</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -19741,6 +19931,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>PassThru</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -19753,6 +19945,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>NoResponse</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -19765,6 +19959,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>UseShaderTime</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -19780,6 +19976,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>AlphaAffectsStrength</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -19792,6 +19990,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>ApplyAlpha</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -19804,6 +20004,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>BlueAffectsBlur</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -19816,6 +20018,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>BlueAffectsColorize</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -19828,6 +20032,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>BlueAffectsStrength</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -19840,6 +20046,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>BlurAngle</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -19852,6 +20060,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>BlurDirections</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -19864,6 +20074,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>BlurInfo</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -19876,6 +20088,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>BlurQuality</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -19888,6 +20102,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>BlurSize</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -19900,6 +20116,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>ChromaticAberration</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -19912,6 +20130,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>ChromaticAberrationInfo</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -19924,6 +20144,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>ColorizeColor</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -19936,6 +20158,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>ColorizeInfo</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -19948,6 +20172,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>DisplacementCurve</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Int</command:parameterValue>
         <dev:type>
@@ -19960,6 +20186,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>DisplacementInfo</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -19972,6 +20200,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>DisplacementX</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -19984,6 +20214,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>DisplacementY</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -19996,6 +20228,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>FilterName</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -20008,6 +20242,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>FlagsInfo</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -20020,6 +20256,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>Force</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -20032,6 +20270,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>MaskLayer</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -20044,6 +20284,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>NoResponse</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -20056,6 +20298,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>PassThru</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -20068,6 +20312,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>ShaderText</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -20080,6 +20326,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>SourceName</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -20092,6 +20340,8 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>UseShaderTime</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -20127,9 +20377,7 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] &lt;string&gt;] [[-Dis
       <command:noun>OBSDisplacementMapInvertShader</command:noun>
       <command:verb>Get</command:verb>
       <maml:description>
-        <maml:para>
-Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-DisplacementX] &lt;float&gt;] [[-DisplacementY] &lt;float&gt;] [[-BackgroundLayer] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]
-</maml:para>
+        <maml:para>Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-DisplacementX] &lt;float&gt;] [[-DisplacementY] &lt;float&gt;] [[-BackgroundLayer] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
       <dev:version>0.2.0.1</dev:version>
     </command:details>
@@ -20141,6 +20389,8 @@ Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-Displ
         <command:parameter required="false" position="0" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>DisplacementInfo</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -20153,6 +20403,8 @@ Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-Displ
         <command:parameter required="false" position="1" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>DisplacementX</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -20165,6 +20417,8 @@ Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-Displ
         <command:parameter required="false" position="2" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>DisplacementY</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -20177,6 +20431,8 @@ Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-Displ
         <command:parameter required="false" position="3" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>BackgroundLayer</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -20189,6 +20445,8 @@ Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-Displ
         <command:parameter required="false" position="4" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
           <maml:name>SourceName</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -20201,6 +20459,8 @@ Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-Displ
         <command:parameter required="false" position="5" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
           <maml:name>FilterName</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -20213,6 +20473,8 @@ Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-Displ
         <command:parameter required="false" position="6" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>ShaderText</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -20225,6 +20487,8 @@ Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-Displ
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>Force</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -20237,6 +20501,8 @@ Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-Displ
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>PassThru</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -20249,6 +20515,8 @@ Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-Displ
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>NoResponse</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -20261,6 +20529,8 @@ Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-Displ
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>UseShaderTime</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -20276,6 +20546,8 @@ Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-Displ
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>BackgroundLayer</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -20288,6 +20560,8 @@ Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-Displ
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>DisplacementInfo</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -20300,6 +20574,8 @@ Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-Displ
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>DisplacementX</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -20312,6 +20588,8 @@ Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-Displ
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>DisplacementY</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -20324,6 +20602,8 @@ Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-Displ
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>FilterName</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -20336,6 +20616,8 @@ Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-Displ
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>Force</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -20348,6 +20630,8 @@ Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-Displ
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>NoResponse</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -20360,6 +20644,8 @@ Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-Displ
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>PassThru</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -20372,6 +20658,8 @@ Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-Displ
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>ShaderText</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -20384,6 +20672,8 @@ Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-Displ
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>SourceName</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -20396,6 +20686,8 @@ Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-Displ
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>UseShaderTime</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -20431,9 +20723,7 @@ Get-OBSDisplacementMapInvertShader [[-DisplacementInfo] &lt;string&gt;] [[-Displ
       <command:noun>OBSDisplacementMapShader</command:noun>
       <command:verb>Get</command:verb>
       <maml:description>
-        <maml:para>
-Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-DisplacementX] &lt;float&gt;] [[-DisplacementY] &lt;float&gt;] [[-MaskLayer] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]
-</maml:para>
+        <maml:para>Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-DisplacementX] &lt;float&gt;] [[-DisplacementY] &lt;float&gt;] [[-MaskLayer] &lt;string&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
       <dev:version>0.2.0.1</dev:version>
     </command:details>
@@ -20445,6 +20735,8 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-Displacemen
         <command:parameter required="false" position="0" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>DisplacementInfo</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -20457,6 +20749,8 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-Displacemen
         <command:parameter required="false" position="1" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>DisplacementX</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -20469,6 +20763,8 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-Displacemen
         <command:parameter required="false" position="2" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>DisplacementY</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -20481,6 +20777,8 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-Displacemen
         <command:parameter required="false" position="3" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>MaskLayer</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -20493,6 +20791,8 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-Displacemen
         <command:parameter required="false" position="4" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
           <maml:name>SourceName</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -20505,6 +20805,8 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-Displacemen
         <command:parameter required="false" position="5" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
           <maml:name>FilterName</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -20517,6 +20819,8 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-Displacemen
         <command:parameter required="false" position="6" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>ShaderText</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -20529,6 +20833,8 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-Displacemen
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>Force</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -20541,6 +20847,8 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-Displacemen
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>PassThru</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -20553,6 +20861,8 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-Displacemen
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>NoResponse</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -20565,6 +20875,8 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-Displacemen
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>UseShaderTime</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -20580,6 +20892,8 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-Displacemen
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>DisplacementInfo</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -20592,6 +20906,8 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-Displacemen
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>DisplacementX</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -20604,6 +20920,8 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-Displacemen
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>DisplacementY</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -20616,6 +20934,8 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-Displacemen
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>FilterName</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -20628,6 +20948,8 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-Displacemen
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>Force</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -20640,6 +20962,8 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-Displacemen
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>MaskLayer</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -20652,6 +20976,8 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-Displacemen
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>NoResponse</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -20664,6 +20990,8 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-Displacemen
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>PassThru</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -20676,6 +21004,8 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-Displacemen
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>ShaderText</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -20688,6 +21018,8 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-Displacemen
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>SourceName</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -20700,6 +21032,8 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-Displacemen
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>UseShaderTime</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -37184,9 +37518,7 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] &lt;string&gt;] [[-Displacemen
       <command:noun>OBSGlitchPeriodicShader</command:noun>
       <command:verb>Get</command:verb>
       <maml:description>
-        <maml:para>
-Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-AMPL] &lt;float&gt;] [[-SCRA] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]
-</maml:para>
+        <maml:para>Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-AMPL] &lt;float&gt;] [[-SCRA] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
       <dev:version>0.2.0.1</dev:version>
     </command:details>
@@ -37198,6 +37530,8 @@ Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-A
         <command:parameter required="false" position="0" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>PERI</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -37210,6 +37544,8 @@ Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-A
         <command:parameter required="false" position="1" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>DURA</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -37222,6 +37558,8 @@ Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-A
         <command:parameter required="false" position="2" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>AMPL</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -37234,6 +37572,8 @@ Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-A
         <command:parameter required="false" position="3" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>SCRA</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -37246,6 +37586,8 @@ Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-A
         <command:parameter required="false" position="4" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
           <maml:name>SourceName</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -37258,6 +37600,8 @@ Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-A
         <command:parameter required="false" position="5" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
           <maml:name>FilterName</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -37270,6 +37614,8 @@ Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-A
         <command:parameter required="false" position="6" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>ShaderText</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -37282,6 +37628,8 @@ Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-A
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>Force</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -37294,6 +37642,8 @@ Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-A
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>PassThru</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -37306,6 +37656,8 @@ Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-A
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>NoResponse</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -37318,6 +37670,8 @@ Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-A
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>UseShaderTime</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -37333,6 +37687,8 @@ Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-A
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>AMPL</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -37345,6 +37701,8 @@ Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-A
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>DURA</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -37357,6 +37715,8 @@ Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-A
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>FilterName</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -37369,6 +37729,8 @@ Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-A
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>Force</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -37381,6 +37743,8 @@ Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-A
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>NoResponse</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -37393,6 +37757,8 @@ Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-A
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>PassThru</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -37405,6 +37771,8 @@ Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-A
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>PERI</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -37417,6 +37785,8 @@ Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-A
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>SCRA</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -37429,6 +37799,8 @@ Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-A
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>ShaderText</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -37441,6 +37813,8 @@ Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-A
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>SourceName</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -37453,6 +37827,8 @@ Get-OBSGlitchPeriodicShader [[-PERI] &lt;float&gt;] [[-DURA] &lt;float&gt;] [[-A
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>UseShaderTime</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -47383,9 +47759,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <command:noun>OBSNoiseShader</command:noun>
       <command:verb>Get</command:verb>
       <maml:description>
-        <maml:para>
-Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLevel] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Monochromatic] [-UseRand] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]
-</maml:para>
+        <maml:para>Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLevel] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Monochromatic] [-UseRand] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
       <dev:version>0.2.0.1</dev:version>
     </command:details>
@@ -47397,6 +47771,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
         <command:parameter required="false" position="0" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>Speed</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -47409,6 +47785,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
         <command:parameter required="false" position="1" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>Scale</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -47421,6 +47799,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
         <command:parameter required="false" position="2" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>NoiseLevel</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -47433,6 +47813,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>Monochromatic</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -47445,6 +47827,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>UseRand</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -47457,6 +47841,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
         <command:parameter required="false" position="3" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
           <maml:name>SourceName</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -47469,6 +47855,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
         <command:parameter required="false" position="4" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
           <maml:name>FilterName</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -47481,6 +47869,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
         <command:parameter required="false" position="5" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>ShaderText</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -47493,6 +47883,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>Force</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -47505,6 +47897,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>PassThru</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -47517,6 +47911,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>NoResponse</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -47529,6 +47925,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>UseShaderTime</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -47544,6 +47942,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>FilterName</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -47556,6 +47956,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>Force</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -47568,6 +47970,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>Monochromatic</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -47580,6 +47984,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>NoiseLevel</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -47592,6 +47998,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>NoResponse</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -47604,6 +48012,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>PassThru</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -47616,6 +48026,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>Scale</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -47628,6 +48040,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>ShaderText</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -47640,6 +48054,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>SourceName</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -47652,6 +48068,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>Speed</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -47664,6 +48082,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>UseRand</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -47676,6 +48096,8 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>UseShaderTime</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -47711,9 +48133,7 @@ Get-OBSNoiseShader [[-Speed] &lt;float&gt;] [[-Scale] &lt;float&gt;] [[-NoiseLev
       <command:noun>OBSNormalMapShader</command:noun>
       <command:verb>Get</command:verb>
       <maml:description>
-        <maml:para>
-Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-OffsetHeight] [-InvertR] [-InvertG] [-InvertH] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]
-</maml:para>
+        <maml:para>Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-OffsetHeight] [-InvertR] [-InvertG] [-InvertH] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
       <dev:version>0.2.0.1</dev:version>
     </command:details>
@@ -47725,6 +48145,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
         <command:parameter required="false" position="0" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>Strength</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -47737,6 +48159,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>OffsetHeight</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -47749,6 +48173,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>InvertR</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -47761,6 +48187,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>InvertG</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -47773,6 +48201,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>InvertH</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -47785,6 +48215,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
         <command:parameter required="false" position="1" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>Type</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Int</command:parameterValue>
           <dev:type>
@@ -47797,6 +48229,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
         <command:parameter required="false" position="2" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
           <maml:name>SourceName</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -47809,6 +48243,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
         <command:parameter required="false" position="3" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
           <maml:name>FilterName</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -47821,6 +48257,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
         <command:parameter required="false" position="4" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>ShaderText</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -47833,6 +48271,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>Force</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -47845,6 +48285,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>PassThru</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -47857,6 +48299,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>NoResponse</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -47869,6 +48313,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>UseShaderTime</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -47884,6 +48330,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>FilterName</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -47896,6 +48344,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>Force</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -47908,6 +48358,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>InvertG</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -47920,6 +48372,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>InvertH</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -47932,6 +48386,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>InvertR</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -47944,6 +48400,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>NoResponse</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -47956,6 +48414,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>OffsetHeight</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -47968,6 +48428,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>PassThru</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -47980,6 +48442,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>ShaderText</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -47992,6 +48456,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>SourceName</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -48004,6 +48470,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>Strength</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -48016,6 +48484,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>Type</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Int</command:parameterValue>
         <dev:type>
@@ -48028,6 +48498,8 @@ Get-OBSNormalMapShader [[-Strength] &lt;float&gt;] [[-Type] &lt;int&gt;] [[-Sour
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>UseShaderTime</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -53207,9 +53679,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <command:noun>OBSQuadrilateralCropShader</command:noun>
       <command:verb>Get</command:verb>
       <maml:description>
-        <maml:para>
-Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;float&gt;] [[-TopRightX] &lt;float&gt;] [[-TopRightY] &lt;float&gt;] [[-BottomLeftX] &lt;float&gt;] [[-BottomLeftY] &lt;float&gt;] [[-BottomRightX] &lt;float&gt;] [[-BottomRightY] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]
-</maml:para>
+        <maml:para>Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;float&gt;] [[-TopRightX] &lt;float&gt;] [[-TopRightY] &lt;float&gt;] [[-BottomLeftX] &lt;float&gt;] [[-BottomLeftY] &lt;float&gt;] [[-BottomRightX] &lt;float&gt;] [[-BottomRightY] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
       <dev:version>0.2.0.1</dev:version>
     </command:details>
@@ -53221,6 +53691,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
         <command:parameter required="false" position="0" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>TopLeftX</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -53233,6 +53705,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
         <command:parameter required="false" position="1" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>TopLeftY</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -53245,6 +53719,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
         <command:parameter required="false" position="2" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>TopRightX</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -53257,6 +53733,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
         <command:parameter required="false" position="3" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>TopRightY</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -53269,6 +53747,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
         <command:parameter required="false" position="4" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>BottomLeftX</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -53281,6 +53761,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
         <command:parameter required="false" position="5" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>BottomLeftY</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -53293,6 +53775,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
         <command:parameter required="false" position="6" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>BottomRightX</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -53305,6 +53789,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
         <command:parameter required="false" position="7" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>BottomRightY</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -53317,6 +53803,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
         <command:parameter required="false" position="8" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
           <maml:name>SourceName</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -53329,6 +53817,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
         <command:parameter required="false" position="9" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
           <maml:name>FilterName</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -53341,6 +53831,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
         <command:parameter required="false" position="10" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>ShaderText</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -53353,6 +53845,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>Force</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -53365,6 +53859,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>PassThru</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -53377,6 +53873,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>NoResponse</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -53389,6 +53887,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>UseShaderTime</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -53404,6 +53904,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>BottomLeftX</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -53416,6 +53918,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>BottomLeftY</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -53428,6 +53932,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>BottomRightX</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -53440,6 +53946,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>BottomRightY</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -53452,6 +53960,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>FilterName</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -53464,6 +53974,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>Force</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -53476,6 +53988,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>NoResponse</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -53488,6 +54002,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>PassThru</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -53500,6 +54016,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>ShaderText</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -53512,6 +54030,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>SourceName</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -53524,6 +54044,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>TopLeftX</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -53536,6 +54058,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>TopLeftY</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -53548,6 +54072,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>TopRightX</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -53560,6 +54086,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>TopRightY</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -53572,6 +54100,8 @@ Get-OBSQuadrilateralCropShader [[-TopLeftX] &lt;float&gt;] [[-TopLeftY] &lt;floa
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>UseShaderTime</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -78153,9 +78683,7 @@ This can increase performance, and also silently ignore critical errors</maml:pa
       <command:noun>OBSZoomBlurTransitionShader</command:noun>
       <command:verb>Get</command:verb>
       <maml:description>
-        <maml:para>
-Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string&gt;] [[-TransitionTime] &lt;float&gt;] [[-Strength] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-ConvertLinear] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]
-</maml:para>
+        <maml:para>Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string&gt;] [[-TransitionTime] &lt;float&gt;] [[-Strength] &lt;float&gt;] [[-SourceName] &lt;string&gt;] [[-FilterName] &lt;string&gt;] [[-ShaderText] &lt;string&gt;] [-ConvertLinear] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [&lt;CommonParameters&gt;]</maml:para>
       </maml:description>
       <dev:version>0.2.0.1</dev:version>
     </command:details>
@@ -78167,6 +78695,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
         <command:parameter required="false" position="0" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>ImageA</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -78179,6 +78709,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
         <command:parameter required="false" position="1" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>ImageB</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -78191,6 +78723,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
         <command:parameter required="false" position="2" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>TransitionTime</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -78203,6 +78737,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>ConvertLinear</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -78215,6 +78751,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
         <command:parameter required="false" position="3" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>Strength</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
           <dev:type>
@@ -78227,6 +78765,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
         <command:parameter required="false" position="4" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
           <maml:name>SourceName</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -78239,6 +78779,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
         <command:parameter required="false" position="5" pipelineInput="True (ByPropertyName)" aliases="" variableLength="true" globbing="false">
           <maml:name>FilterName</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -78251,6 +78793,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
         <command:parameter required="false" position="6" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>ShaderText</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
           <dev:type>
@@ -78263,6 +78807,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>Force</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -78275,6 +78821,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>PassThru</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -78287,6 +78835,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>NoResponse</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -78299,6 +78849,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
         <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
           <maml:name>UseShaderTime</maml:name>
           <maml:description>
+            <maml:para>
+            </maml:para>
           </maml:description>
           <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
           <dev:type>
@@ -78314,6 +78866,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>ConvertLinear</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -78326,6 +78880,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>FilterName</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -78338,6 +78894,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>Force</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -78350,6 +78908,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>ImageA</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -78362,6 +78922,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>ImageB</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -78374,6 +78936,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>NoResponse</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -78386,6 +78950,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>PassThru</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -78398,6 +78964,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>ShaderText</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -78410,6 +78978,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>SourceName</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">String</command:parameterValue>
         <dev:type>
@@ -78422,6 +78992,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>Strength</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -78434,6 +79006,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>TransitionTime</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Float</command:parameterValue>
         <dev:type>
@@ -78446,6 +79020,8 @@ Get-OBSZoomBlurTransitionShader [[-ImageA] &lt;string&gt;] [[-ImageB] &lt;string
       <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
         <maml:name>UseShaderTime</maml:name>
         <maml:description>
+          <maml:para>
+          </maml:para>
         </maml:description>
         <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
         <dev:type>
@@ -95460,6 +96036,257 @@ This can increase performance, and also silently ignore critical errors</maml:pa
         <maml:linkText>
         </maml:linkText>
         <maml:uri>https://github.com/obsproject/obs-websocket/blob/master/docs/generated/protocol.md#startvirtualcam</maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Stop-OBS</command:name>
+      <command:noun>OBS</command:noun>
+      <command:verb>Stop</command:verb>
+      <maml:description>
+        <maml:para>Stops OBS</maml:para>
+      </maml:description>
+      <dev:version>0.2.0.1</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>Stops OBS.</maml:para>
+      <maml:para>By default, stops recording and streaming.</maml:para>
+      <maml:para>If -Process is provided, will stop all running OBS processes</maml:para>
+      <maml:para>If -Recording is provided, will stop recording</maml:para>
+      <maml:para>If -Streaming if provided, will stop obs streaming</maml:para>
+      <maml:para>If -VirtualCamera is provided, will stop the virtual camera</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Stop-OBS</maml:name>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Recording</maml:name>
+          <maml:description>
+            <maml:para>If set, will stop recording.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Streaming</maml:name>
+          <maml:description>
+            <maml:para>If set, will stop streaming</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>VirtualCamera</maml:name>
+          <maml:description>
+            <maml:para>If set, will stop the virtual camera.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Process</maml:name>
+          <maml:description>
+            <maml:para>If set, will stop the OBS process.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>StudioMode</maml:name>
+          <maml:description>
+            <maml:para>If set, will enable studio mode.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Process</maml:name>
+        <maml:description>
+          <maml:para>If set, will stop the OBS process.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Recording</maml:name>
+        <maml:description>
+          <maml:para>If set, will stop recording.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Streaming</maml:name>
+        <maml:description>
+          <maml:para>If set, will stop streaming</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>StudioMode</maml:name>
+        <maml:description>
+          <maml:para>If set, will enable studio mode.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>VirtualCamera</maml:name>
+        <maml:description>
+          <maml:para>If set, will stop the virtual camera.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <maml:alertSet>
+      <maml:title>
+      </maml:title>
+      <maml:alert>
+        <maml:para> This command Supports Should Process and has a ConfirmImpact of 'High'
+
+In an interactive session, this command prompt by default.
+
+If `-WhatIf` is passed, will output what happen if this ran
+If `-Confirm:$false`, confirmation will be skipped. </maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title> -------------------------- EXAMPLE 1 -------------------------- </maml:title>
+        <maml:introduction>
+          <maml:para> PS &gt;  </maml:para>
+        </maml:introduction>
+        <dev:code> # Stop Streaming and Recording
+Stop-OBS </dev:code>
+        <dev:remarks>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title> -------------------------- EXAMPLE 2 -------------------------- </maml:title>
+        <maml:introduction>
+          <maml:para> PS &gt;  </maml:para>
+        </maml:introduction>
+        <dev:code> # Stops obs recording
+Stop-OBS -Recording </dev:code>
+        <dev:remarks>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title> -------------------------- EXAMPLE 3 -------------------------- </maml:title>
+        <maml:introduction>
+          <maml:para> PS &gt;  </maml:para>
+        </maml:introduction>
+        <dev:code> # Stop Streaming        
+Stop-OBS -Streaming </dev:code>
+        <dev:remarks>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title> -------------------------- EXAMPLE 4 -------------------------- </maml:title>
+        <maml:introduction>
+          <maml:para> PS &gt;  </maml:para>
+        </maml:introduction>
+        <dev:code> # Stop OBS Virtual Camera
+Stop-OBS -VirtualCamera </dev:code>
+        <dev:remarks>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title> -------------------------- EXAMPLE 5 -------------------------- </maml:title>
+        <maml:introduction>
+          <maml:para> PS &gt;  </maml:para>
+        </maml:introduction>
+        <dev:code> # Stop OBS Virtual Camera without prompting
+Stop-OBS -VirtualCamera -Confirm:$false </dev:code>
+        <dev:remarks>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title> -------------------------- EXAMPLE 6 -------------------------- </maml:title>
+        <maml:introduction>
+          <maml:para> PS &gt;  </maml:para>
+        </maml:introduction>
+        <dev:code> Stop-OBS -StudioMode </dev:code>
+        <dev:remarks>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Stop-OBSRecord</maml:linkText>
+        <maml:uri>
+        </maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Stop-OBSStream</maml:linkText>
+        <maml:uri>
+        </maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Stop-OBSVirtualCam</maml:linkText>
+        <maml:uri>
+        </maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Set-OBSStudioModeEnabled</maml:linkText>
+        <maml:uri>
+        </maml:uri>
       </maml:navigationLink>
     </maml:relatedLinks>
   </command:command>

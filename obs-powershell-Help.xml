@@ -95185,6 +95185,212 @@ Show-OBS -FilePath .\BlueRect.svg </dev:code>
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
     <command:details>
+      <command:name>Start-OBS</command:name>
+      <command:noun>OBS</command:noun>
+      <command:verb>Start</command:verb>
+      <maml:description>
+        <maml:para>Start OBS</maml:para>
+      </maml:description>
+      <dev:version>0.2.0.1</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>Starts OBS</maml:para>
+      <maml:para>Without any parameters, will attempt to start the obs process.</maml:para>
+      <maml:para>If OBS is already running, will output the current obs process.</maml:para>
+      <maml:para>* If `-Recording` is passed, will start recording</maml:para>
+      <maml:para>* If `-Streaming` is passed, will start streaming</maml:para>
+      <maml:para>* If `-StudioMode` is passed, will start studio mode</maml:para>
+      <maml:para>* If `-VirtualCamera` is passed, will start the virtual camera</maml:para>
+      <maml:para>If additional arguments are passed, will pass them thru to a new obs process.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Start-OBS</maml:name>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>ArgumentList</maml:name>
+          <maml:description>
+            <maml:para>A list of arguments.  These will be passed to a new obs process.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">System.Management.Automation.PSObject[]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.PSObject[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="True (ByValue)" aliases="" variableLength="true" globbing="false">
+          <maml:name>InputObject</maml:name>
+          <maml:description>
+            <maml:para>Any input object.  This will currently be ignored.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">System.Management.Automation.PSObject[]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Management.Automation.PSObject[]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Recording</maml:name>
+          <maml:description>
+            <maml:para>If set, will start recording.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>Streaming</maml:name>
+          <maml:description>
+            <maml:para>If set, will start streaming.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>StudioMode</maml:name>
+          <maml:description>
+            <maml:para>If set, will start studio mode.</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+          <maml:name>VirtualCamera</maml:name>
+          <maml:description>
+            <maml:para>If set, will start the virtual camera</maml:para>
+          </maml:description>
+          <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+          <dev:type>
+            <maml:name>Switch</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>
+          </dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>ArgumentList</maml:name>
+        <maml:description>
+          <maml:para>A list of arguments.  These will be passed to a new obs process.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">System.Management.Automation.PSObject[]</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.PSObject[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>InputObject</maml:name>
+        <maml:description>
+          <maml:para>Any input object.  This will currently be ignored.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">System.Management.Automation.PSObject[]</command:parameterValue>
+        <dev:type>
+          <maml:name>System.Management.Automation.PSObject[]</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Recording</maml:name>
+        <maml:description>
+          <maml:para>If set, will start recording.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>Streaming</maml:name>
+        <maml:description>
+          <maml:para>If set, will start streaming.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>StudioMode</maml:name>
+        <maml:description>
+          <maml:para>If set, will start studio mode.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="False" aliases="" variableLength="true" globbing="false">
+        <maml:name>VirtualCamera</maml:name>
+        <maml:description>
+          <maml:para>If set, will start the virtual camera</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">Switch</command:parameterValue>
+        <dev:type>
+          <maml:name>Switch</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>
+        </dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Stop-OBS</maml:linkText>
+        <maml:uri>
+        </maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Start-OBSRecord</maml:linkText>
+        <maml:uri>
+        </maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Start-OBSStream</maml:linkText>
+        <maml:uri>
+        </maml:uri>
+      </maml:navigationLink>
+      <maml:navigationLink>
+        <maml:linkText>Start-OBSVirtualCam</maml:linkText>
+        <maml:uri>
+        </maml:uri>
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
       <command:name>Start-OBSEffect</command:name>
       <command:noun>OBSEffect</command:noun>
       <command:verb>Start</command:verb>

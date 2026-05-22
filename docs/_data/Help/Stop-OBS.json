@@ -1,0 +1,69 @@
+{
+  "Synopsis": "Stops OBS",
+  "Description": "Stops OBS.\n\nBy default, stops recording and streaming.\n\nIf -Process is provided, will stop all running OBS processes\n\nIf -Recording is provided, will stop recording\nIf -Streaming if provided, will stop obs streaming\nIf -VirtualCamera is provided, will stop the virtual camera",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    "This command Supports Should Process and has a ConfirmImpact of 'High'\n\nIn an interactive session, this command prompt by default.\n\nIf `-WhatIf` is passed, will output what happen if this ran\nIf `-Confirm:$false`, confirmation will be skipped."
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "Examples": [
+    {
+      "Title": "EXAMPLE 1",
+      "Markdown": "Stop Streaming and Recording",
+      "Code": "Stop-OBS"
+    },
+    {
+      "Title": "EXAMPLE 2",
+      "Markdown": "Stops obs recording",
+      "Code": "Stop-OBS -Recording"
+    },
+    {
+      "Title": "EXAMPLE 3",
+      "Markdown": "Stop Streaming        ",
+      "Code": "Stop-OBS -Streaming"
+    },
+    {
+      "Title": "EXAMPLE 4",
+      "Markdown": "Stop OBS Virtual Camera",
+      "Code": "Stop-OBS -VirtualCamera"
+    },
+    {
+      "Title": "EXAMPLE 5",
+      "Markdown": "Stop OBS Virtual Camera without prompting",
+      "Code": "Stop-OBS -VirtualCamera -Confirm:$false"
+    },
+    {
+      "Title": "EXAMPLE 6",
+      "Markdown": "",
+      "Code": "Stop-OBS -StudioMode"
+    }
+  ]
+}

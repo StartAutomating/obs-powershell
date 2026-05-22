@@ -103,6 +103,7 @@ Previous release notes available in the [CHANGELOG](https://github.com/StartAuto
 'Remove-OBS',
 'Send-OBS',
 'Show-OBS',
+'Start-OBS',
 'Stop-OBS',
 'Watch-OBS',
 'Set-OBS3DFilter',

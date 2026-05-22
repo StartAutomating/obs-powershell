@@ -2,7 +2,6 @@ Get-OBSDisplacementMapAdvancedShader
 ------------------------------------
 
 ### Synopsis
-
 Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] <string>] [[-DisplacementX] <float>] [[-DisplacementY] <float>] [[-DisplacementCurve] <int>] [[-BlurInfo] <string>] [[-BlurSize] <float>] [[-BlurQuality] <float>] [[-BlurDirections] <float>] [[-BlurAngle] <float>] [[-ChromaticAberrationInfo] <string>] [[-ChromaticAberration] <float>] [[-ColorizeInfo] <string>] [[-ColorizeColor] <string>] [[-FlagsInfo] <string>] [[-MaskLayer] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-BlueAffectsStrength] [-BlueAffectsColorize] [-BlueAffectsBlur] [-AlphaAffectsStrength] [-ApplyAlpha] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,163 +15,163 @@ Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] <string>] [[-Displacem
 
 |Type      |Required|Position|PipelineInput|Aliases               |
 |----------|--------|--------|-------------|----------------------|
-|`[switch]`|false   |Named   |false        |alpha_affects_strength|
+|`[Switch]`|false   |named   |False        |alpha_affects_strength|
 
 #### **ApplyAlpha**
 
 |Type      |Required|Position|PipelineInput|Aliases    |
 |----------|--------|--------|-------------|-----------|
-|`[switch]`|false   |Named   |false        |apply_alpha|
+|`[Switch]`|false   |named   |False        |apply_alpha|
 
 #### **BlueAffectsBlur**
 
 |Type      |Required|Position|PipelineInput|Aliases          |
 |----------|--------|--------|-------------|-----------------|
-|`[switch]`|false   |Named   |false        |blue_affects_blur|
+|`[Switch]`|false   |named   |False        |blue_affects_blur|
 
 #### **BlueAffectsColorize**
 
 |Type      |Required|Position|PipelineInput|Aliases              |
 |----------|--------|--------|-------------|---------------------|
-|`[switch]`|false   |Named   |false        |blue_affects_colorize|
+|`[Switch]`|false   |named   |False        |blue_affects_colorize|
 
 #### **BlueAffectsStrength**
 
 |Type      |Required|Position|PipelineInput|Aliases              |
 |----------|--------|--------|-------------|---------------------|
-|`[switch]`|false   |Named   |false        |blue_affects_strength|
+|`[Switch]`|false   |named   |False        |blue_affects_strength|
 
 #### **BlurAngle**
 
 |Type     |Required|Position|PipelineInput|Aliases   |
 |---------|--------|--------|-------------|----------|
-|`[float]`|false   |8       |false        |blur_angle|
+|`[Float]`|false   |named   |False        |blur_angle|
 
 #### **BlurDirections**
 
 |Type     |Required|Position|PipelineInput|Aliases        |
 |---------|--------|--------|-------------|---------------|
-|`[float]`|false   |7       |false        |blur_directions|
+|`[Float]`|false   |named   |False        |blur_directions|
 
 #### **BlurInfo**
 
 |Type      |Required|Position|PipelineInput|Aliases  |
 |----------|--------|--------|-------------|---------|
-|`[string]`|false   |4       |false        |blur_info|
+|`[String]`|false   |named   |False        |blur_info|
 
 #### **BlurQuality**
 
 |Type     |Required|Position|PipelineInput|Aliases     |
 |---------|--------|--------|-------------|------------|
-|`[float]`|false   |6       |false        |blur_quality|
+|`[Float]`|false   |named   |False        |blur_quality|
 
 #### **BlurSize**
 
 |Type     |Required|Position|PipelineInput|Aliases  |
 |---------|--------|--------|-------------|---------|
-|`[float]`|false   |5       |false        |blur_size|
+|`[Float]`|false   |named   |False        |blur_size|
 
 #### **ChromaticAberration**
 
 |Type     |Required|Position|PipelineInput|Aliases             |
 |---------|--------|--------|-------------|--------------------|
-|`[float]`|false   |10      |false        |chromatic_aberration|
+|`[Float]`|false   |named   |False        |chromatic_aberration|
 
 #### **ChromaticAberrationInfo**
 
 |Type      |Required|Position|PipelineInput|Aliases                  |
 |----------|--------|--------|-------------|-------------------------|
-|`[string]`|false   |9       |false        |chromatic_aberration_info|
+|`[String]`|false   |named   |False        |chromatic_aberration_info|
 
 #### **ColorizeColor**
 
 |Type      |Required|Position|PipelineInput|Aliases       |
 |----------|--------|--------|-------------|--------------|
-|`[string]`|false   |12      |false        |colorize_color|
+|`[String]`|false   |named   |False        |colorize_color|
 
 #### **ColorizeInfo**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |11      |false        |colorize_info|
+|`[String]`|false   |named   |False        |colorize_info|
 
 #### **DisplacementCurve**
 
 |Type   |Required|Position|PipelineInput|Aliases           |
 |-------|--------|--------|-------------|------------------|
-|`[int]`|false   |3       |false        |displacement_curve|
+|`[Int]`|false   |named   |False        |displacement_curve|
 
 #### **DisplacementInfo**
 
 |Type      |Required|Position|PipelineInput|Aliases          |
 |----------|--------|--------|-------------|-----------------|
-|`[string]`|false   |0       |false        |displacement_info|
+|`[String]`|false   |named   |False        |displacement_info|
 
 #### **DisplacementX**
 
 |Type     |Required|Position|PipelineInput|Aliases       |
 |---------|--------|--------|-------------|--------------|
-|`[float]`|false   |1       |false        |displacement_x|
+|`[Float]`|false   |named   |False        |displacement_x|
 
 #### **DisplacementY**
 
 |Type     |Required|Position|PipelineInput|Aliases       |
 |---------|--------|--------|-------------|--------------|
-|`[float]`|false   |2       |false        |displacement_y|
+|`[Float]`|false   |named   |False        |displacement_y|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |16      |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **FlagsInfo**
 
 |Type      |Required|Position|PipelineInput|Aliases   |
 |----------|--------|--------|-------------|----------|
-|`[string]`|false   |13      |false        |flags_info|
+|`[String]`|false   |named   |False        |flags_info|
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **MaskLayer**
 
 |Type      |Required|Position|PipelineInput|Aliases   |
 |----------|--------|--------|-------------|----------|
-|`[string]`|false   |14      |false        |mask_layer|
+|`[String]`|false   |named   |False        |mask_layer|
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |17      |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |15      |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -188,11 +187,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSDisplacementMapAdvancedShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSDisplacementMapAdvancedShader [[-DisplacementInfo] <String>] [[-DisplacementX] <Float>] [[-DisplacementY] <Float>] [[-DisplacementCurve] <Int>] [[-BlurInfo] <String>] [[-BlurSize] <Float>] [[-BlurQuality] <Float>] [[-BlurDirections] <Float>] [[-BlurAngle] <Float>] [[-ChromaticAberrationInfo] <String>] [[-ChromaticAberration] <Float>] [[-ColorizeInfo] <String>] [[-ColorizeColor] <String>] [[-FlagsInfo] <String>] [-BlueAffectsStrength <Switch>] [-BlueAffectsColorize <Switch>] [-BlueAffectsBlur <Switch>] [-AlphaAffectsStrength <Switch>] [-ApplyAlpha <Switch>] [[-MaskLayer] <String>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

@@ -2,7 +2,6 @@ Get-OBSDisplacementMapShader
 ----------------------------
 
 ### Synopsis
-
 Get-OBSDisplacementMapShader [[-DisplacementInfo] <string>] [[-DisplacementX] <float>] [[-DisplacementY] <float>] [[-MaskLayer] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]
 
 ---
@@ -16,67 +15,67 @@ Get-OBSDisplacementMapShader [[-DisplacementInfo] <string>] [[-DisplacementX] <f
 
 |Type      |Required|Position|PipelineInput|Aliases          |
 |----------|--------|--------|-------------|-----------------|
-|`[string]`|false   |0       |false        |displacement_info|
+|`[String]`|false   |named   |False        |displacement_info|
 
 #### **DisplacementX**
 
 |Type     |Required|Position|PipelineInput|Aliases       |
 |---------|--------|--------|-------------|--------------|
-|`[float]`|false   |1       |false        |displacement_x|
+|`[Float]`|false   |named   |False        |displacement_x|
 
 #### **DisplacementY**
 
 |Type     |Required|Position|PipelineInput|Aliases       |
 |---------|--------|--------|-------------|--------------|
-|`[float]`|false   |2       |false        |displacement_y|
+|`[Float]`|false   |named   |False        |displacement_y|
 
 #### **FilterName**
 
-|Type      |Required|Position|PipelineInput        |
-|----------|--------|--------|---------------------|
-|`[string]`|false   |5       |true (ByPropertyName)|
+|Type      |Required|Position|PipelineInput|
+|----------|--------|--------|-------------|
+|`[String]`|false   |named   |False        |
 
 #### **Force**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **MaskLayer**
 
 |Type      |Required|Position|PipelineInput|Aliases   |
 |----------|--------|--------|-------------|----------|
-|`[string]`|false   |3       |false        |mask_layer|
+|`[String]`|false   |named   |False        |mask_layer|
 
 #### **NoResponse**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **PassThru**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 #### **ShaderText**
 
 |Type      |Required|Position|PipelineInput|Aliases      |
 |----------|--------|--------|-------------|-------------|
-|`[string]`|false   |6       |false        |ShaderContent|
+|`[String]`|false   |named   |False        |ShaderContent|
 
 #### **SourceName**
 
-|Type      |Required|Position|PipelineInput        |Aliases      |
-|----------|--------|--------|---------------------|-------------|
-|`[string]`|false   |4       |true (ByPropertyName)|SceneItemName|
+|Type      |Required|Position|PipelineInput|Aliases      |
+|----------|--------|--------|-------------|-------------|
+|`[String]`|false   |named   |False        |SceneItemName|
 
 #### **UseShaderTime**
 
 |Type      |Required|Position|PipelineInput|
 |----------|--------|--------|-------------|
-|`[switch]`|false   |Named   |false        |
+|`[Switch]`|false   |named   |False        |
 
 ---
 
@@ -92,11 +91,5 @@ System.String
 
 ### Syntax
 ```PowerShell
-syntaxItem
-```
-```PowerShell
-----------
-```
-```PowerShell
-{@{name=Get-OBSDisplacementMapShader; CommonParameters=True; parameter=System.Object[]}}
+Get-OBSDisplacementMapShader [[-DisplacementInfo] <String>] [[-DisplacementX] <Float>] [[-DisplacementY] <Float>] [[-MaskLayer] <String>] [[-SourceName] <String>] [[-FilterName] <String>] [[-ShaderText] <String>] [-Force <Switch>] [-PassThru <Switch>] [-NoResponse <Switch>] [-UseShaderTime <Switch>] [<CommonParameters>]
 ```

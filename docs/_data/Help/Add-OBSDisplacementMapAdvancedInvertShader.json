@@ -1,5 +1,5 @@
 {
-  "Synopsis": "\nGet-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] <string>] [[-DisplacementX] <float>] [[-DisplacementY] <float>] [[-DisplacementCurve] <int>] [[-BlurInfo] <string>] [[-BlurSize] <float>] [[-BlurQuality] <float>] [[-BlurDirections] <float>] [[-BlurAngle] <float>] [[-ChromaticAberrationInfo] <string>] [[-ChromaticAberration] <float>] [[-ColorizeInfo] <string>] [[-ColorizeColor] <string>] [[-FlagsInfo] <string>] [[-BackgroundLayer] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-BlueAffectsStrength] [-BlueAffectsColorize] [-BlueAffectsBlur] [-AlphaAffectsStrength] [-ApplyAlpha] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]\n",
+  "Synopsis": "Get-OBSDisplacementMapAdvancedInvertShader [[-DisplacementInfo] <string>] [[-DisplacementX] <float>] [[-DisplacementY] <float>] [[-DisplacementCurve] <int>] [[-BlurInfo] <string>] [[-BlurSize] <float>] [[-BlurQuality] <float>] [[-BlurDirections] <float>] [[-BlurAngle] <float>] [[-ChromaticAberrationInfo] <string>] [[-ChromaticAberration] <float>] [[-ColorizeInfo] <string>] [[-ColorizeColor] <string>] [[-FlagsInfo] <string>] [[-BackgroundLayer] <string>] [[-SourceName] <string>] [[-FilterName] <string>] [[-ShaderText] <string>] [-BlueAffectsStrength] [-BlueAffectsColorize] [-BlueAffectsBlur] [-AlphaAffectsStrength] [-ApplyAlpha] [-Force] [-PassThru] [-NoResponse] [-UseShaderTime] [<CommonParameters>]",
   "Description": "",
   "Parameters": [
     {
@@ -23,7 +23,7 @@
     null
   ],
   "Inputs": [
-    "System.String\n"
+    "System.String"
   ],
   "Outputs": [
     "System.Object"

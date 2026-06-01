@@ -1,11 +1,11 @@
 @{
-    ModuleVersion     = '0.2.0.1'
+    ModuleVersion     = '0.2.1'
     RootModule        = 'obs-powershell.psm1'
     Description       = 'Script your streams'
     Guid              = '1417123e-a932-439f-9b68-a7313cf1e170'
     Author            = 'James Brundage'
     CompanyName       = 'Start-Automating'
-    Copyright         = '2022-2025 Start-Automating'
+    Copyright         = '2022-2026 Start-Automating'
     FormatsToProcess  = 'obs-powershell.format.ps1xml'
     TypesToProcess    = 'obs-powershell.types.ps1xml'
     PowerShellVersion = '7.0'
@@ -15,82 +15,37 @@
             ProjectURI = 'https://github.com/StartAutomating/obs-powershell'
             LicenseURI = 'https://github.com/StartAutomating/obs-powershell/blob/main/LICENSE'
             ReleaseNotes = @'
+## obs-powershell 0.2.1:
+
+* New General Purpose Commands
+  * Start-OBS (#220)
+  * Stop-OBS (#226)
+* New Shader Commands:
+  * Get-OBS3dPanelShader
+  * Get-OBSAudioShader
+  * Get-OBSCubeRotatingShader
+  * Get-OBSDisplacementMapAdvancedInvertShader
+  * Get-OBSDisplacementMapAdvancedShader
+  * Get-OBSDisplacementMapInvertShader
+  * Get-OBSDisplacementMapShader
+  * Get-OBSGlitchPeriodicShader
+  * Get-OBSHardBlinkShader
+  * Get-OBSMotionBlurShader
+  * Get-OBSNoiseShader
+  * Get-OBSNormalMapShader
+  * Get-OBSPerspectiveShader
+  * Get-OBSQuadrilateralCropShader
+  * Get-OBSRepeatGridCenterCropShader
+  * Get-OBSWalkingDeadPixelFixerShader
+  * Get-OBSZoomBlurTransitionShader
+
+---
+
 > Like It? [Star It](https://github.com/StartAutomating/obs-powershell)
 > Love It? [Support It](https://github.com/sponsors/StartAutomating)
 
-## obs-powershell 0.2.0.1:
 
-* Fixing `Watch-OBS` (Fixes #216)
-* Adding `CONTRIBUTING.md` (Fixes #204)
-* Adding `CODE_OF_CONDUCT.md` (Fixes #205)
-
----
-
-## obs-powershell 0.2:
-
-* So Many Shaders!
-* @exeldro makes some excellent obs plugins
-  * Every PixelShader from [obs-shaderfilter](https://github.com/exeldro/obs-shaderfilter) has an auto-generated function:
-  * As of this build, there are 142 Shader functions!
-  * Flip Shader ( #200 )
-  * Zoom XY Shader ( #199 )
-  * RGBA Percent Shader ( #198 )
-  * Reflect Shader ( #197 )
-  * Shader Commands now support -Force
-* Drastically improved start time on Windows (#214)
-* OBS Sources:
-  * New Sources:
-    * OBSSoundCloudSource ( #179 )
-    * OBSSwitchSource (#142)
-    * OBSMarkdownSource (#143)
-    * OBSWaveformSource (#141)
-  * All existing sources are now implemented in a `Get`, and aliased to `Set`,`Add`
-    * Making Set also Get-OBSWindowSource (#152)
-    * Making Set also Get-OBSVLCSource (#151)
-    * Making Set also Get-OBSMediaSource (#150)
-    * Making Set also Get-OBSColorSource (#148)
-    * Making Set also Get-OBSBrowserSource (#147)
-    * Making Set also Get-OBSAudioOutputSource (#146)
-* New Effects:
-  * Zoom In / Out Effect ( #164 )
-  * Start-OBSEffect - Adding -Reverse (Fixes #121)
-* Exporting `$obs` (#157, #158, #159) and drastically expanding pseudo types
-* Pseudo Types
-  * GetCurrentProgramScene.ToString() ( Fixes #202, Fixes #166 )
-  * OBS.Beat ( #195 )
-    * OBS.Beat.Timer
-    * OBS.Beat.TapBPM ( #191)
-    * Stopping OBS.Beat.Timer on Unload
-    * OBS.Beat.get_Sine ( #192 )
-    * OBS.Beat.get_Cosine ( #193 )
-    * OBS.Beat.Angle ( #194 )
-    * OBS.Beat.Duration ( #189 )
-    * OBS.Beat.BeatCount ( #190 )
-    * OBS.Beat.BeatStart ( #188 )
-    * OBS.Beat.BPM ( #187 )
-    * $obs.Beat ( #186 )
-  * OBS.Input
-    * OBS.Input.Disable/EnableAllFilter(s) ( #183 )
-    * OBS.SceneItem.Animate Permissiveness ( #182 )
-    * OBS.Filter.Disable PassThru support ( #181 )
-  * OBS.Statistics ( #178 )
-  * OBS.Input ( #174 )
-  * OBS.Filter ( #175 )
-  * OBS.SceneItem ( #173 )
-  * OBS.GetSceneItemList.Response.Stretch() ( #172 )
-  * OBS.GetSceneItemList.Response.Center() ( #171 )
-  * OBS.GetInputList .SourceName alias ( #170 )
-  * Adding .SceneItem to OBS.Inputs (Fixes #154)
-* Minor Fixes:
-  * Watch-OBS -BufferSize: Defaulting to 64kb ( Fixes #212, Fixes #213 )
-  * Fixing -Scene parameter defaults ( Fixes #210 )
-  * Updating Build Conditions
-  * obs-powershell now mounts itself ( #180 )
-  * obs-powershell supporting module profiles (#155)
-
----
-
-Previous release notes available in the [CHANGELOG](https://github.com/StartAutomating/obs-powershell/blob/main/CHANGELOG.md)
+Additional History available in the [CHANGELOG](https://github.com/StartAutomating/obs-powershell/blob/main/CHANGELOG.md)
 '@
         }
     }
@@ -115,6 +70,151 @@ Previous release notes available in the [CHANGELOG](https://github.com/StartAuto
 'Set-OBSScrollFilter',
 'Set-OBSShaderFilter',
 'Set-OBSSharpnessFilter',
+'Get-OBSEffect',
+'Import-OBSEffect',
+'Remove-OBSEffect',
+'Start-OBSEffect',
+'Stop-OBSEffect',
+'Add-OBSInput',
+'Add-OBSProfile',
+'Add-OBSScene',
+'Add-OBSSceneCollection',
+'Add-OBSSceneItem',
+'Add-OBSSourceFilter',
+'Copy-OBSSceneItem',
+'Get-OBSCurrentPreviewScene',
+'Get-OBSCurrentProgramScene',
+'Get-OBSCurrentSceneTransition',
+'Get-OBSCurrentSceneTransitionCursor',
+'Get-OBSGroup',
+'Get-OBSGroupSceneItem',
+'Get-OBSHotkey',
+'Get-OBSInput',
+'Get-OBSInputAudioBalance',
+'Get-OBSInputAudioMonitorType',
+'Get-OBSInputAudioSyncOffset',
+'Get-OBSInputAudioTracks',
+'Get-OBSInputDefaultSettings',
+'Get-OBSInputKind',
+'Get-OBSInputMute',
+'Get-OBSInputPropertiesListPropertyItems',
+'Get-OBSInputSettings',
+'Get-OBSInputVolume',
+'Get-OBSLastReplayBufferReplay',
+'Get-OBSMediaInputStatus',
+'Get-OBSMonitor',
+'Get-OBSOutput',
+'Get-OBSOutputSettings',
+'Get-OBSOutputStatus',
+'Get-OBSPersistentData',
+'Get-OBSProfile',
+'Get-OBSProfileParameter',
+'Get-OBSRecordDirectory',
+'Get-OBSRecordStatus',
+'Get-OBSReplayBufferStatus',
+'Get-OBSScene',
+'Get-OBSSceneCollection',
+'Get-OBSSceneItem',
+'Get-OBSSceneItemBlendMode',
+'Get-OBSSceneItemEnabled',
+'Get-OBSSceneItemId',
+'Get-OBSSceneItemIndex',
+'Get-OBSSceneItemLocked',
+'Get-OBSSceneItemSource',
+'Get-OBSSceneItemTransform',
+'Get-OBSSceneSceneTransitionOverride',
+'Get-OBSSceneTransition',
+'Get-OBSSourceActive',
+'Get-OBSSourceFilter',
+'Get-OBSSourceFilterDefaultSettings',
+'Get-OBSSourceFilterKind',
+'Get-OBSSourceFilterList',
+'Get-OBSSourceScreenshot',
+'Get-OBSSpecialInputs',
+'Get-OBSStats',
+'Get-OBSStreamServiceSettings',
+'Get-OBSStreamStatus',
+'Get-OBSStudioModeEnabled',
+'Get-OBSTransitionKind',
+'Get-OBSVersion',
+'Get-OBSVideoSettings',
+'Get-OBSVirtualCamStatus',
+'Open-OBSInputFiltersDialog',
+'Open-OBSInputInteractDialog',
+'Open-OBSInputPropertiesDialog',
+'Open-OBSSourceProjector',
+'Open-OBSVideoMixProjector',
+'Remove-OBSInput',
+'Remove-OBSProfile',
+'Remove-OBSScene',
+'Remove-OBSSceneItem',
+'Remove-OBSSourceFilter',
+'Resume-OBSRecord',
+'Save-OBSReplayBuffer',
+'Save-OBSSourceScreenshot',
+'Send-OBSCallVendorRequest',
+'Send-OBSCustomEvent',
+'Send-OBSOffsetMediaInputCursor',
+'Send-OBSPauseRecord',
+'Send-OBSPressInputPropertiesButton',
+'Send-OBSSleep',
+'Send-OBSStreamCaption',
+'Send-OBSTriggerHotkeyByKeySequence',
+'Send-OBSTriggerHotkeyByName',
+'Send-OBSTriggerMediaInputAction',
+'Send-OBSTriggerStudioModeTransition',
+'Set-OBSCurrentPreviewScene',
+'Set-OBSCurrentProfile',
+'Set-OBSCurrentProgramScene',
+'Set-OBSCurrentSceneCollection',
+'Set-OBSCurrentSceneTransition',
+'Set-OBSCurrentSceneTransitionDuration',
+'Set-OBSCurrentSceneTransitionSettings',
+'Set-OBSInputAudioBalance',
+'Set-OBSInputAudioMonitorType',
+'Set-OBSInputAudioSyncOffset',
+'Set-OBSInputAudioTracks',
+'Set-OBSInputMute',
+'Set-OBSInputName',
+'Set-OBSInputSettings',
+'Set-OBSInputVolume',
+'Set-OBSMediaInputCursor',
+'Set-OBSOutputSettings',
+'Set-OBSPersistentData',
+'Set-OBSProfileParameter',
+'Set-OBSRecordDirectory',
+'Set-OBSSceneItemBlendMode',
+'Set-OBSSceneItemEnabled',
+'Set-OBSSceneItemIndex',
+'Set-OBSSceneItemLocked',
+'Set-OBSSceneItemTransform',
+'Set-OBSSceneName',
+'Set-OBSSceneSceneTransitionOverride',
+'Set-OBSSourceFilterEnabled',
+'Set-OBSSourceFilterIndex',
+'Set-OBSSourceFilterName',
+'Set-OBSSourceFilterSettings',
+'Set-OBSStreamServiceSettings',
+'Set-OBSStudioModeEnabled',
+'Set-OBSTBarPosition',
+'Set-OBSVideoSettings',
+'Start-OBSOutput',
+'Start-OBSRecord',
+'Start-OBSReplayBuffer',
+'Start-OBSStream',
+'Start-OBSVirtualCam',
+'Stop-OBSOutput',
+'Stop-OBSRecord',
+'Stop-OBSReplayBuffer',
+'Stop-OBSStream',
+'Stop-OBSVirtualCam',
+'Switch-OBSInputMute',
+'Switch-OBSOutput',
+'Switch-OBSRecord',
+'Switch-OBSRecordPause',
+'Switch-OBSReplayBuffer',
+'Switch-OBSStream',
+'Switch-OBSVirtualCam',
 'Get-OBS3dPanelShader',
 'Get-OBS3dSwapTransitionShader',
 'Get-OBSAddShader',
@@ -283,151 +383,6 @@ Previous release notes available in the [CHANGELOG](https://github.com/StartAuto
 'Set-OBSSwitchSource',
 'Set-OBSVLCSource',
 'Set-OBSWaveformSource',
-'Set-OBSWindowSource',
-'Add-OBSInput',
-'Add-OBSProfile',
-'Add-OBSScene',
-'Add-OBSSceneCollection',
-'Add-OBSSceneItem',
-'Add-OBSSourceFilter',
-'Copy-OBSSceneItem',
-'Get-OBSCurrentPreviewScene',
-'Get-OBSCurrentProgramScene',
-'Get-OBSCurrentSceneTransition',
-'Get-OBSCurrentSceneTransitionCursor',
-'Get-OBSGroup',
-'Get-OBSGroupSceneItem',
-'Get-OBSHotkey',
-'Get-OBSInput',
-'Get-OBSInputAudioBalance',
-'Get-OBSInputAudioMonitorType',
-'Get-OBSInputAudioSyncOffset',
-'Get-OBSInputAudioTracks',
-'Get-OBSInputDefaultSettings',
-'Get-OBSInputKind',
-'Get-OBSInputMute',
-'Get-OBSInputPropertiesListPropertyItems',
-'Get-OBSInputSettings',
-'Get-OBSInputVolume',
-'Get-OBSLastReplayBufferReplay',
-'Get-OBSMediaInputStatus',
-'Get-OBSMonitor',
-'Get-OBSOutput',
-'Get-OBSOutputSettings',
-'Get-OBSOutputStatus',
-'Get-OBSPersistentData',
-'Get-OBSProfile',
-'Get-OBSProfileParameter',
-'Get-OBSRecordDirectory',
-'Get-OBSRecordStatus',
-'Get-OBSReplayBufferStatus',
-'Get-OBSScene',
-'Get-OBSSceneCollection',
-'Get-OBSSceneItem',
-'Get-OBSSceneItemBlendMode',
-'Get-OBSSceneItemEnabled',
-'Get-OBSSceneItemId',
-'Get-OBSSceneItemIndex',
-'Get-OBSSceneItemLocked',
-'Get-OBSSceneItemSource',
-'Get-OBSSceneItemTransform',
-'Get-OBSSceneSceneTransitionOverride',
-'Get-OBSSceneTransition',
-'Get-OBSSourceActive',
-'Get-OBSSourceFilter',
-'Get-OBSSourceFilterDefaultSettings',
-'Get-OBSSourceFilterKind',
-'Get-OBSSourceFilterList',
-'Get-OBSSourceScreenshot',
-'Get-OBSSpecialInputs',
-'Get-OBSStats',
-'Get-OBSStreamServiceSettings',
-'Get-OBSStreamStatus',
-'Get-OBSStudioModeEnabled',
-'Get-OBSTransitionKind',
-'Get-OBSVersion',
-'Get-OBSVideoSettings',
-'Get-OBSVirtualCamStatus',
-'Open-OBSInputFiltersDialog',
-'Open-OBSInputInteractDialog',
-'Open-OBSInputPropertiesDialog',
-'Open-OBSSourceProjector',
-'Open-OBSVideoMixProjector',
-'Remove-OBSInput',
-'Remove-OBSProfile',
-'Remove-OBSScene',
-'Remove-OBSSceneItem',
-'Remove-OBSSourceFilter',
-'Resume-OBSRecord',
-'Save-OBSReplayBuffer',
-'Save-OBSSourceScreenshot',
-'Send-OBSCallVendorRequest',
-'Send-OBSCustomEvent',
-'Send-OBSOffsetMediaInputCursor',
-'Send-OBSPauseRecord',
-'Send-OBSPressInputPropertiesButton',
-'Send-OBSSleep',
-'Send-OBSStreamCaption',
-'Send-OBSTriggerHotkeyByKeySequence',
-'Send-OBSTriggerHotkeyByName',
-'Send-OBSTriggerMediaInputAction',
-'Send-OBSTriggerStudioModeTransition',
-'Set-OBSCurrentPreviewScene',
-'Set-OBSCurrentProfile',
-'Set-OBSCurrentProgramScene',
-'Set-OBSCurrentSceneCollection',
-'Set-OBSCurrentSceneTransition',
-'Set-OBSCurrentSceneTransitionDuration',
-'Set-OBSCurrentSceneTransitionSettings',
-'Set-OBSInputAudioBalance',
-'Set-OBSInputAudioMonitorType',
-'Set-OBSInputAudioSyncOffset',
-'Set-OBSInputAudioTracks',
-'Set-OBSInputMute',
-'Set-OBSInputName',
-'Set-OBSInputSettings',
-'Set-OBSInputVolume',
-'Set-OBSMediaInputCursor',
-'Set-OBSOutputSettings',
-'Set-OBSPersistentData',
-'Set-OBSProfileParameter',
-'Set-OBSRecordDirectory',
-'Set-OBSSceneItemBlendMode',
-'Set-OBSSceneItemEnabled',
-'Set-OBSSceneItemIndex',
-'Set-OBSSceneItemLocked',
-'Set-OBSSceneItemTransform',
-'Set-OBSSceneName',
-'Set-OBSSceneSceneTransitionOverride',
-'Set-OBSSourceFilterEnabled',
-'Set-OBSSourceFilterIndex',
-'Set-OBSSourceFilterName',
-'Set-OBSSourceFilterSettings',
-'Set-OBSStreamServiceSettings',
-'Set-OBSStudioModeEnabled',
-'Set-OBSTBarPosition',
-'Set-OBSVideoSettings',
-'Start-OBSOutput',
-'Start-OBSRecord',
-'Start-OBSReplayBuffer',
-'Start-OBSStream',
-'Start-OBSVirtualCam',
-'Stop-OBSOutput',
-'Stop-OBSRecord',
-'Stop-OBSReplayBuffer',
-'Stop-OBSStream',
-'Stop-OBSVirtualCam',
-'Switch-OBSInputMute',
-'Switch-OBSOutput',
-'Switch-OBSRecord',
-'Switch-OBSRecordPause',
-'Switch-OBSReplayBuffer',
-'Switch-OBSStream',
-'Switch-OBSVirtualCam',
-'Get-OBSEffect',
-'Import-OBSEffect',
-'Remove-OBSEffect',
-'Start-OBSEffect',
-'Stop-OBSEffect'
+'Set-OBSWindowSource'
 }
 

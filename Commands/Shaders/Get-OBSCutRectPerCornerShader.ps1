@@ -88,35 +88,35 @@ uniform int corner_tl<
     int minimum = 0;
     int maximum = 100;
     int step = 1;
->;
+> = 0;
 uniform int corner_tr<
     string label = "Corner top right";
     string widget_type = "slider";
     int minimum = 0;
     int maximum = 100;
     int step = 1;
->;
+> = 0;
 uniform int corner_br<
     string label = "Corner bottom right";
     string widget_type = "slider";
     int minimum = 0;
     int maximum = 100;
     int step = 1;
->;
+> = 0;
 uniform int corner_bl<
     string label = "Corner bottom left";
     string widget_type = "slider";
     int minimum = 0;
     int maximum = 100;
     int step = 1;
->;
+> = 0;
 uniform int border_thickness<
     string label = "Border thickness";
     string widget_type = "slider";
     int minimum = 0;
     int maximum = 100;
     int step = 1;
->;
+> = 0;
 uniform float4 border_color;
 uniform float border_alpha_start<
     string label = "Border aplha start";

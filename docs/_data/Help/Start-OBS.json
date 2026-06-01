@@ -1,0 +1,38 @@
+{
+  "Synopsis": "Start OBS",
+  "Description": "Starts OBS\n\nWithout any parameters, will attempt to start the obs process.\n\nIf OBS is already running, will output the current obs process.\n\n* If `-Recording` is passed, will start recording\n* If `-Streaming` is passed, will start streaming\n* If `-StudioMode` is passed, will start studio mode\n* If `-VirtualCamera` is passed, will start the virtual camera\n\nIf additional arguments are passed, will pass them thru to a new obs process.",
+  "Parameters": [
+    {
+      "Name": null,
+      "Type": null,
+      "Description": "",
+      "Required": false,
+      "Position": 0,
+      "Aliases": null,
+      "DefaultValue": null,
+      "Globbing": false,
+      "PipelineInput": null,
+      "variableLength": false
+    }
+  ],
+  "Notes": [
+    null
+  ],
+  "CommandType": "Function",
+  "Component": [
+    null
+  ],
+  "Inputs": [
+    null
+  ],
+  "Outputs": [
+    null
+  ],
+  "Links": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "Examples": []
+}

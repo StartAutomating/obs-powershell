@@ -69,14 +69,14 @@ uniform int corner_radius<
     int minimum = 0;
     int maximum = 200;
     int step = 1;
->;
+> = 0;
 uniform int border_thickness<
     string label = "border thickness";
     string widget_type = "slider";
     int minimum = 0;
     int maximum = 100;
     int step = 1;
->;
+> = 0;
 uniform int minimum_alpha_percent<
     string label = "Minimum alpha percent";
     string widget_type = "slider";

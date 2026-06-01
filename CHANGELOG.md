@@ -1,6 +1,32 @@
 > Like It? [Star It](https://github.com/StartAutomating/obs-powershell)
 > Love It? [Support It](https://github.com/sponsors/StartAutomating)
 
+## obs-powershell 0.2.1:
+
+* New General Purpose Commands
+  * Start-OBS (#220)
+  * Stop-OBS (#226)
+* New Shader Commands:
+  * Get-OBS3dPanelShader
+  * Get-OBSAudioShader
+  * Get-OBSCubeRotatingShader
+  * Get-OBSDisplacementMapAdvancedInvertShader
+  * Get-OBSDisplacementMapAdvancedShader
+  * Get-OBSDisplacementMapInvertShader
+  * Get-OBSDisplacementMapShader
+  * Get-OBSGlitchPeriodicShader
+  * Get-OBSHardBlinkShader
+  * Get-OBSMotionBlurShader
+  * Get-OBSNoiseShader
+  * Get-OBSNormalMapShader
+  * Get-OBSPerspectiveShader
+  * Get-OBSQuadrilateralCropShader
+  * Get-OBSRepeatGridCenterCropShader
+  * Get-OBSWalkingDeadPixelFixerShader
+  * Get-OBSZoomBlurTransitionShader
+
+---
+
 ## obs-powershell 0.2.0.1:
 
 * Fixing `Watch-OBS` (Fixes #216)

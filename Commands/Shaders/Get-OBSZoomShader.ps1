@@ -70,7 +70,7 @@ uniform float power<
     float minimum = 0;
     float maximum = 20.0;
     float step = 0.001;
-> = 1.75;
+> = 1.0;
 
 float4 mainImage(VertData v_in) : TARGET
 {

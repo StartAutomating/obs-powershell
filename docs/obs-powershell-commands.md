@@ -1,8 +1,8 @@
 obs-powershell-commands
 -----------------------
 
-obs-powershell exports 839 commands
-(334 functions and 505 aliases)
+obs-powershell exports 840 commands
+(335 functions and 505 aliases)
 
 A good number of these commands directly correspond to an obs-websocket message.
 For a complete list, see [obs-powershell-websocket-commands](obs-powershell-websocket-commands.md).
@@ -327,6 +327,7 @@ Functions
 |[Set-OBSWaveformSource](Set-OBSWaveformSource.md)                                          |
 |[Set-OBSWindowSource](Set-OBSWindowSource.md)                                              |
 |[Show-OBS](Show-OBS.md)                                                                    |
+|[Start-OBS](Start-OBS.md)                                                                  |
 |[Start-OBSEffect](Start-OBSEffect.md)                                                      |
 |[Start-OBSOutput](Start-OBSOutput.md)                                                      |
 |[Start-OBSRecord](Start-OBSRecord.md)                                                      |
@@ -670,6 +671,7 @@ Aliases
 |[Set-OBSWaveformSource](Set-OBSWaveformSource.md)                                          |
 |[Set-OBSWindowSource](Set-OBSWindowSource.md)                                              |
 |[Show-OBS](Show-OBS.md)                                                                    |
+|[Start-OBS](Start-OBS.md)                                                                  |
 |[Start-OBSEffect](Start-OBSEffect.md)                                                      |
 |[Start-OBSOutput](Start-OBSOutput.md)                                                      |
 |[Start-OBSRecord](Start-OBSRecord.md)                                                      |
